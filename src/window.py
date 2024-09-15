@@ -32,6 +32,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     bpm_spin_button = Gtk.Template.Child()
     volume_scale = Gtk.Template.Child()
     play_pause_button = Gtk.Template.Child()
+    drum_machine_box = Gtk.Template.Child()
+    label_box = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -55,3 +57,5 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.header_bar.get_style_context().add_class("header_bar")
         self.bpm_spin_button.get_style_context().add_class("spinbutton-button")
         self.play_pause_button.get_style_context().add_class("play-button")
+        self.drum_machine_box.get_style_context().add_class("drum-machine-box")
+        self.label_box.get_style_context().add_class("center-align")
