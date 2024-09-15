@@ -1,0 +1,38 @@
+.header_label {
+    font-size: 36px;
+    color: #ffffff;
+    padding: 20px;
+    padding-left: 5px;
+    border-radius: 10px;
+}
+
+.outer_box {
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main_controls_box {
+    border: 2px solid #4c6ef5;
+    padding: 20px;
+    background: linear-gradient(45deg, rgb(41, 43, 44), #37393a);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header_bar {
+    background: linear-gradient(45deg, #232526, #2d3031);
+    padding: 7px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+spinbutton button {
+    min-width: 30px;
+    padding: 10px;
+}
+
+.play-button {
+    margin-left: 400px;
+    padding: 20px;
+}

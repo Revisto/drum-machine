@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="DrumMachineWindow" parent="AdwApplicationWindow">
+    <property name="default-width">1000</property>
+    <property name="default-height">800</property>
+    <property name="content">
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar" id="header_bar">
+            <property name="title-widget">
+              <object class="AdwWindowTitle">
+                <property name="title" translatable="yes">Title</property>
+              </object>
+            </property>
+            <child type="end">
+              <object class="GtkMenuButton">
+                <property name="primary">True</property>
+                <property name="icon-name">open-menu-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Menu</property>
+                <property name="menu-model">primary_menu</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <property name="content">
+          <object class="GtkBox" id="outer_box">
+            <property name="orientation">vertical</property>
+            <property name="spacing">10</property>
+            <property name="margin-start">20</property>
+            <property name="margin-end">20</property>
+            <property name="margin-top">20</property>
+            <property name="margin-bottom">20</property>
+            <property name="width-request">960</property>
+            <property name="height-request">760</property>
+            <child>
+              <object class="GtkBox" id="main_box">
+                <property name="orientation">vertical</property>
+                <property name="spacing">10</property>
+                <child>
+                  <object class="GtkLabel" id="header_label">
+                    <property name="label">Revisto Drum Machine</property>
+                    <property name="halign">start</property>
+                    <style>
+                      <class name="title-1"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkFrame" id="main_controls_box">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">10</property>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">horizontal</property>
+                            <property name="spacing">30</property>
+                            <child>
+                              <object class="GtkBox">
+                                <property name="orientation">horizontal</property>
+                                <property name="spacing">10</property>
+                                <child>
+                                  <object class="GtkLabel">
+                                    <property name="label">BPM:</property>
+                                    <property name="halign">start</property>
+                                  </object>
+                                </child>
+                                
+                                <child>
+                                  <object class="GtkSpinButton" id="bpm_spin_button">
+                                    <property name="adjustment">
+                                      <object class="GtkAdjustment">
+                                        <property name="lower">30</property>
+                                        <property name="upper">300</property>
+                                        <property name="step-increment">1</property>
+                                        <property name="page-increment">10</property>
+                                        <property name="value">120</property>
+                                      </object>
+                                    </property>
+                                    <property name="halign">start</property>
+                                    <property name="can-focus">False</property>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkBox">
+                                <property name="orientation">horizontal</property>
+                                <property name="spacing">10</property>
+                                <child>
+                                  <object class="GtkLabel">
+                                    <property name="label">Volume:</property>
+                                    <property name="halign">start</property>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkScale" id="volume_scale">
+                                    <property name="orientation">horizontal</property>
+                                    <property name="adjustment">
+                                      <object class="GtkAdjustment">
+                                        <property name="lower">0</property>
+                                        <property name="upper">100</property>
+                                        <property name="step-increment">1</property>
+                                        <property name="page-increment">10</property>
+                                        <property name="value">80</property>
+                                      </object>
+                                    </property>
+                                    <property name="halign">start</property>
+                                    <property name="draw-value">True</property>
+                                    <property name="width-request">100</property> 
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="play_pause_button">
+                                <property name="label">Play</property>
+                                <property name="halign">end</property>
+                                <property name="valign">center</property>
+                                <property name="css-classes">play-button</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </property>
+  </template>
+  <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Preferences</attribute>
+        <attribute name="action">app.preferences</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About Drum-machine</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

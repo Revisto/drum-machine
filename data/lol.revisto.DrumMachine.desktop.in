@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=drum-machine
+Exec=drum-machine
+Icon=lol.revisto.DrumMachine
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

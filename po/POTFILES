@@ -1,0 +1,6 @@
+data/lol.revisto.DrumMachine.desktop.in
+data/lol.revisto.DrumMachine.metainfo.xml.in
+data/lol.revisto.DrumMachine.gschema.xml
+src/main.py
+src/window.py
+src/window.ui
