@@ -18,8 +18,12 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import os
-from gi.repository import Adw
-from gi.repository import Gtk, Gdk, Gio
+import time
+import threading
+import gi
+gi.require_version('Gst', '1.0')
+from gi.repository import Adw, Gtk, Gdk, Gio, Gst
+
 
 @Gtk.Template(resource_path='/lol/revisto/DrumMachine/window.ui')
 class DrumMachineWindow(Adw.ApplicationWindow):
@@ -35,10 +39,27 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     drum_machine_box = Gtk.Template.Child()
     label_box = Gtk.Template.Child()
 
+    TOGGLE_PARTS = ['kick', 'snare', 'hihat']
+    NUM_TOGGLES = 16
+
+    # Dynamically creating toggle children
+    for part in TOGGLE_PARTS:
+        for i in range(1, NUM_TOGGLES + 1):
+            locals()[f"{part}_toggle_{i}"] = Gtk.Template.Child()
+
     def __init__(self, **kwargs):
+        Gst.init(None)  # Initialize GStreamer
         super().__init__(**kwargs)
+        self.playing = False  # Initialize playing state
+        self.bpm = 120  # Initialize BPM
+        self.volume = 0.8  # Initialize volume
+        self.play_thread = None  # Thread for playing drum sequence
+        self.stop_event = threading.Event() 
         self.init_css()
         self.apply_css_classes()
+        self.connect_signals()
+        self.init_drum_parts()
+        self.load_drum_sounds()
 
     def init_css(self):
         path = os.path.join(os.path.dirname(__file__), "style.css")
@@ -59,3 +80,89 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.play_pause_button.get_style_context().add_class("play-button")
         self.drum_machine_box.get_style_context().add_class("drum-machine-box")
         self.label_box.get_style_context().add_class("center-align")
+
+    def connect_signals(self):
+        self.bpm_spin_button.connect("value-changed", self.on_bpm_changed)
+        self.volume_scale.connect("value-changed", self.on_volume_changed)
+        self.play_pause_button.connect("clicked", self.handle_play_pause)  # Connect play/pause button
+
+    def init_drum_parts(self):
+        self.drum_parts = {part: [False for _ in range(self.NUM_TOGGLES)] for part in self.TOGGLE_PARTS}
+
+        for part in self.TOGGLE_PARTS:
+            for i in range(self.NUM_TOGGLES):
+                toggle = getattr(self, f"{part}_toggle_{i + 1}")
+                self.drum_parts[part][i] = toggle.get_active()
+                toggle.connect("toggled", self.on_toggle_changed, part, i)
+
+    def load_drum_sounds(self):
+        self.sounds = {
+            'kick': Gst.ElementFactory.make("playbin", "kick"),
+            'snare': Gst.ElementFactory.make("playbin", "snare"),
+            'hihat': Gst.ElementFactory.make("playbin", "hihat")
+        }
+
+        self.sounds['kick'].set_property("uri", "file:///home/rev/Projects/drum-machine/data/drumkit/KICK/KICK.wav")
+        self.sounds['snare'].set_property("uri", "file:///home/rev/Projects/drum-machine/data/drumkit/SNARE/SNARE.wav")
+        self.sounds['hihat'].set_property("uri", "file:///home/rev/Projects/drum-machine/data/drumkit/HATS/CLOSED-HAT.wav")
+
+    def on_toggle_changed(self, toggle_button, part, index):
+        state = toggle_button.get_active()
+        self.drum_parts[part][index] = state
+
+    def on_bpm_changed(self, spin_button):
+        self.bpm = spin_button.get_value()
+        print(f"BPM changed to: {self.bpm}")
+
+    def on_volume_changed(self, scale):
+        self.volume = scale.get_value()
+        print(f"Volume changed to: {self.volume}")
+
+    def handle_play_pause(self, button):
+        self.playing = not self.playing  # Toggle playing state
+        if self.playing:
+            button.set_label("Pause")
+            print("Playing...")
+            self.start_playback()
+        else:
+            button.set_label("Play")
+            print("Paused.")
+            self.stop_playback()
+
+    def start_playback(self):
+        self.stop_event.clear()  # Clear the stop event before starting playback
+        self.play_thread = threading.Thread(target=self.play_drum_sequence)
+        self.play_thread.start()
+
+    def stop_playback(self):
+        self.playing = False
+        print("Stopping playback...")
+        self.stop_event.set()  # Signal the thread to stop
+        if self.play_thread is not None:
+            self.play_thread.join()
+            self.play_thread = None
+        print("Playback stopped.")
+
+    def play_drum_sequence(self):
+
+        def play_sounds():
+            beat_interval = 60 / self.bpm
+            for i in range(self.NUM_TOGGLES):
+                if self.stop_event.is_set():  # Check if stop event is set
+                    return
+                if self.drum_parts['kick'][i]:
+                    print("Playing kick")
+                    self.sounds['kick'].set_state(Gst.State.PLAYING)
+                if self.drum_parts['snare'][i]:
+                    print("Playing snare")
+                    self.sounds['snare'].set_state(Gst.State.PLAYING)
+                if self.drum_parts['hihat'][i]:
+                    print("Playing hihat")
+                    self.sounds['hihat'].set_state(Gst.State.PLAYING)
+                time.sleep(beat_interval)
+                self.sounds['kick'].set_state(Gst.State.NULL)
+                self.sounds['snare'].set_state(Gst.State.NULL)
+                self.sounds['hihat'].set_state(Gst.State.NULL)
+
+        while self.playing and not self.stop_event.is_set():
+            play_sounds()

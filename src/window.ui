@@ -167,161 +167,161 @@
                               <object class="GtkBox">
                                 <property name="orientation">horizontal</property>
                                 <property name="spacing">30</property>
-                                <!-- Group 1: 4 toggle buttons for Hi-Hat -->
+                                <!-- Group 1: 4 toggle buttons for Kick -->
                                 <child>
                                   <object class="GtkBox">
                                     <property name="orientation">horizontal</property>
                                     <property name="spacing">10</property>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_1"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_2"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_3"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_4"/>
                                     </child>
                                   </object>
                                 </child>
-                                <!-- Group 2: 4 toggle buttons for Hi-Hat -->
+                                <!-- Group 2: 4 toggle buttons for Kick -->
                                 <child>
                                   <object class="GtkBox">
                                     <property name="orientation">horizontal</property>
                                     <property name="spacing">10</property>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_5"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_6"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_7"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_8"/>
                                     </child>
                                   </object>
                                 </child>
-                                <!-- Group 3: 4 toggle buttons for Hi-Hat -->
+                                <!-- Group 3: 4 toggle buttons for Kick -->
                                 <child>
                                   <object class="GtkBox">
                                     <property name="orientation">horizontal</property>
                                     <property name="spacing">10</property>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_9"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_10"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_11"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_12"/>
                                     </child>
                                   </object>
                                 </child>
-                                <!-- Group 4: 4 toggle buttons for Hi-Hat -->
+                                <!-- Group 4: 4 toggle buttons for Kick -->
                                 <child>
                                   <object class="GtkBox">
                                     <property name="orientation">horizontal</property>
                                     <property name="spacing">10</property>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_13"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_14"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_15"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="kick_toggle_16"/>
                                     </child>
                                   </object>
                                 </child>
                               </object>
                             </child>
-                                <child>
+                            <child>
                               <object class="GtkBox">
                                 <property name="orientation">horizontal</property>
                                 <property name="spacing">30</property>
-                                <!-- Group 1: 4 toggle buttons for Hi-Hat -->
+                                <!-- Group 1: 4 toggle buttons for Snare -->
                                 <child>
                                   <object class="GtkBox">
                                     <property name="orientation">horizontal</property>
                                     <property name="spacing">10</property>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_1"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_2"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_3"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_4"/>
                                     </child>
                                   </object>
                                 </child>
-                                <!-- Group 2: 4 toggle buttons for Hi-Hat -->
+                                <!-- Group 2: 4 toggle buttons for Snare -->
                                 <child>
                                   <object class="GtkBox">
                                     <property name="orientation">horizontal</property>
                                     <property name="spacing">10</property>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_5"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_6"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_7"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_8"/>
                                     </child>
                                   </object>
                                 </child>
-                                <!-- Group 3: 4 toggle buttons for Hi-Hat -->
+                                <!-- Group 3: 4 toggle buttons for Snare -->
                                 <child>
                                   <object class="GtkBox">
                                     <property name="orientation">horizontal</property>
                                     <property name="spacing">10</property>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_9"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_10"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_11"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_12"/>
                                     </child>
                                   </object>
                                 </child>
-                                <!-- Group 4: 4 toggle buttons for Hi-Hat -->
+                                <!-- Group 4: 4 toggle buttons for Snare -->
                                 <child>
                                   <object class="GtkBox">
                                     <property name="orientation">horizontal</property>
                                     <property name="spacing">10</property>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_13"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_14"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_15"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="snare_toggle_16"/>
                                     </child>
                                   </object>
                                 </child>
@@ -337,16 +337,16 @@
                                     <property name="orientation">horizontal</property>
                                     <property name="spacing">10</property>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_1"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_2"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_3"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_4"/>
                                     </child>
                                   </object>
                                 </child>
@@ -356,16 +356,16 @@
                                     <property name="orientation">horizontal</property>
                                     <property name="spacing">10</property>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_5"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_6"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_7"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_8"/>
                                     </child>
                                   </object>
                                 </child>
@@ -375,16 +375,16 @@
                                     <property name="orientation">horizontal</property>
                                     <property name="spacing">10</property>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_9"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_10"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_11"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_12"/>
                                     </child>
                                   </object>
                                 </child>
@@ -394,16 +394,16 @@
                                     <property name="orientation">horizontal</property>
                                     <property name="spacing">10</property>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_13"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_14"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_15"/>
                                     </child>
                                     <child>
-                                      <object class="GtkToggleButton"/>
+                                      <object class="GtkToggleButton" id="hihat_toggle_16"/>
                                     </child>
                                   </object>
                                 </child>
