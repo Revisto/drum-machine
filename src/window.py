@@ -61,15 +61,6 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def init_css(self):
         path = os.path.join(os.path.dirname(__file__), "style.css")
-        print(path)
-        print(path)
-        print(path)
-        print(path)
-        print(path)
-        print(Gio.File.new_for_path(path))
-        print(Gio.File.new_for_path(path))
-        print(Gio.File.new_for_path(path))
-        print(Gio.File.new_for_path(path))
         css_provider = Gtk.CssProvider()
         css_provider.load_from_file(Gio.File.new_for_path(path))
         Gtk.StyleContext.add_provider_for_display(
@@ -121,7 +112,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def on_volume_changed(self, scale):
         self.volume = scale.get_value()
         for sound in self.sounds.values():
-            sound.set_volume(self.volume)
+            sound.set_volume(self.volume / 100)
         print(f"Volume changed to: {self.volume}")
 
     def handle_play_pause(self, button):
