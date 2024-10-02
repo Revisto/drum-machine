@@ -24,6 +24,7 @@
         "*.a"
     ],
     "modules" : [
+        "python-dependencies.json",
         {
             "name" : "drum-machine",
             "builddir" : true,

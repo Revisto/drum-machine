@@ -2,6 +2,8 @@
 <gresources>
   <gresource prefix="/lol/revisto/DrumMachine">
     <file>style.css</file>
+    <file>drumkit/KICK/KICK.wav</file>
+    <file>KICK.wav</file>
     <file preprocess="xml-stripblanks">window.ui</file>
     <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
   </gresource>

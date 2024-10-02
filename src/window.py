@@ -20,10 +20,8 @@
 import os
 import time
 import threading
-import gi
-gi.require_version('Gst', '1.0')
-from gi.repository import Adw, Gtk, Gdk, Gio, Gst
-
+import pygame
+from gi.repository import Adw, Gtk, Gdk, Gio
 
 @Gtk.Template(resource_path='/lol/revisto/DrumMachine/window.ui')
 class DrumMachineWindow(Adw.ApplicationWindow):
@@ -48,13 +46,13 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             locals()[f"{part}_toggle_{i}"] = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
-        Gst.init(None)  # Initialize GStreamer
         super().__init__(**kwargs)
+        pygame.init()
         self.playing = False  # Initialize playing state
         self.bpm = 120  # Initialize BPM
         self.volume = 0.8  # Initialize volume
         self.play_thread = None  # Thread for playing drum sequence
-        self.stop_event = threading.Event() 
+        self.stop_event = threading.Event()
         self.init_css()
         self.apply_css_classes()
         self.connect_signals()
@@ -63,6 +61,15 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def init_css(self):
         path = os.path.join(os.path.dirname(__file__), "style.css")
+        print(path)
+        print(path)
+        print(path)
+        print(path)
+        print(path)
+        print(Gio.File.new_for_path(path))
+        print(Gio.File.new_for_path(path))
+        print(Gio.File.new_for_path(path))
+        print(Gio.File.new_for_path(path))
         css_provider = Gtk.CssProvider()
         css_provider.load_from_file(Gio.File.new_for_path(path))
         Gtk.StyleContext.add_provider_for_display(
@@ -96,15 +103,12 @@ class DrumMachineWindow(Adw.ApplicationWindow):
                 toggle.connect("toggled", self.on_toggle_changed, part, i)
 
     def load_drum_sounds(self):
+        base_path = os.path.join(os.path.dirname(__file__))
         self.sounds = {
-            'kick': Gst.ElementFactory.make("playbin", "kick"),
-            'snare': Gst.ElementFactory.make("playbin", "snare"),
-            'hihat': Gst.ElementFactory.make("playbin", "hihat")
+            'kick': pygame.mixer.Sound(os.path.join(base_path, "KICK.wav")),
+            'snare': pygame.mixer.Sound(os.path.join(base_path, "SNARE.wav")),
+            'hihat': pygame.mixer.Sound(os.path.join(base_path, "CLOSED-HAT.wav")),
         }
-
-        self.sounds['kick'].set_property("uri", "file:///home/rev/Projects/drum-machine/data/drumkit/KICK/KICK.wav")
-        self.sounds['snare'].set_property("uri", "file:///home/rev/Projects/drum-machine/data/drumkit/SNARE/SNARE.wav")
-        self.sounds['hihat'].set_property("uri", "file:///home/rev/Projects/drum-machine/data/drumkit/HATS/CLOSED-HAT.wav")
 
     def on_toggle_changed(self, toggle_button, part, index):
         state = toggle_button.get_active()
@@ -116,6 +120,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def on_volume_changed(self, scale):
         self.volume = scale.get_value()
+        for sound in self.sounds.values():
+            sound.set_volume(self.volume)
         print(f"Volume changed to: {self.volume}")
 
     def handle_play_pause(self, button):
@@ -152,17 +158,14 @@ class DrumMachineWindow(Adw.ApplicationWindow):
                     return
                 if self.drum_parts['kick'][i]:
                     print("Playing kick")
-                    self.sounds['kick'].set_state(Gst.State.PLAYING)
+                    self.sounds['kick'].play()
                 if self.drum_parts['snare'][i]:
                     print("Playing snare")
-                    self.sounds['snare'].set_state(Gst.State.PLAYING)
+                    self.sounds['snare'].play()
                 if self.drum_parts['hihat'][i]:
                     print("Playing hihat")
-                    self.sounds['hihat'].set_state(Gst.State.PLAYING)
+                    self.sounds['hihat'].play()
                 time.sleep(beat_interval)
-                self.sounds['kick'].set_state(Gst.State.NULL)
-                self.sounds['snare'].set_state(Gst.State.NULL)
-                self.sounds['hihat'].set_state(Gst.State.NULL)
 
         while self.playing and not self.stop_event.is_set():
             play_sounds()
