@@ -140,23 +140,48 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             self.play_thread = None
         print("Playback stopped.")
 
-    def play_drum_sequence(self):
+    def play_sound(self, sound_name):
+        print(f"Playing {sound_name}")
+        self.sounds[sound_name].play()
 
+    def update_toggle_ui(self, index, add_class=True):
+        for part in self.TOGGLE_PARTS:
+            toggle = getattr(self, f"{part}_toggle_{index + 1}")
+            if add_class:
+                toggle.get_style_context().add_class("toggle-active")
+            else:
+                toggle.get_style_context().remove_class("toggle-active")
+                
+    def calculate_beat_interval(self):
+        return 60 / self.bpm
+
+    def play_drum_sequence(self):
         def play_sounds():
-            beat_interval = 60 / self.bpm
             for i in range(self.NUM_TOGGLES):
                 if self.stop_event.is_set():  # Check if stop event is set
                     return
                 if self.drum_parts['kick'][i]:
-                    print("Playing kick")
-                    self.sounds['kick'].play()
+                    self.play_sound('kick')
                 if self.drum_parts['snare'][i]:
-                    print("Playing snare")
-                    self.sounds['snare'].play()
+                    self.play_sound('snare')
                 if self.drum_parts['hihat'][i]:
-                    print("Playing hihat")
-                    self.sounds['hihat'].play()
-                time.sleep(beat_interval)
+                    self.play_sound('hihat')
+                
+                self.update_toggle_ui(i, add_class=True)
+                
+                # Calculate the total sleep time for each beat
+                total_sleep_time = self.calculate_beat_interval()
+                sleep_interval = 0.01  # Smaller sleep interval
+                elapsed_time = 0
+                
+                while elapsed_time < total_sleep_time:
+                    if self.stop_event.is_set():
+                        self.update_toggle_ui(i, add_class=False)
+                        return
+                    time.sleep(sleep_interval)
+                    elapsed_time += sleep_interval
+                
+                self.update_toggle_ui(i, add_class=False)
 
         while self.playing and not self.stop_event.is_set():
             play_sounds()
