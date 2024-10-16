@@ -21,11 +21,15 @@ import os
 import time
 import threading
 import pygame
+import gi
+
+gi.require_version("Gio", "2.0")
 from gi.repository import Adw, Gtk, Gdk, Gio
 
-@Gtk.Template(resource_path='/lol/revisto/DrumMachine/window.ui')
+
+@Gtk.Template(resource_path="/lol/revisto/DrumMachine/window.ui")
 class DrumMachineWindow(Adw.ApplicationWindow):
-    __gtype_name__ = 'DrumMachineWindow'
+    __gtype_name__ = "DrumMachineWindow"
 
     header_label = Gtk.Template.Child()
     outer_box = Gtk.Template.Child()
@@ -37,7 +41,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     drum_machine_box = Gtk.Template.Child()
     label_box = Gtk.Template.Child()
 
-    TOGGLE_PARTS = ['kick', 'snare', 'hihat']
+    TOGGLE_PARTS = ["kick", "snare", "hihat"]
     NUM_TOGGLES = 16
 
     # Dynamically creating toggle children
@@ -64,9 +68,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         css_provider = Gtk.CssProvider()
         css_provider.load_from_file(Gio.File.new_for_path(path))
         Gtk.StyleContext.add_provider_for_display(
-            Gdk.Display.get_default(),
-            css_provider,
-            Gtk.STYLE_PROVIDER_PRIORITY_USER
+            Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER
         )
 
     def apply_css_classes(self):
@@ -82,10 +84,14 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def connect_signals(self):
         self.bpm_spin_button.connect("value-changed", self.on_bpm_changed)
         self.volume_scale.connect("value-changed", self.on_volume_changed)
-        self.play_pause_button.connect("clicked", self.handle_play_pause)  # Connect play/pause button
+        self.play_pause_button.connect(
+            "clicked", self.handle_play_pause
+        )  # Connect play/pause button
 
     def init_drum_parts(self):
-        self.drum_parts = {part: [False for _ in range(self.NUM_TOGGLES)] for part in self.TOGGLE_PARTS}
+        self.drum_parts = {
+            part: [False for _ in range(self.NUM_TOGGLES)] for part in self.TOGGLE_PARTS
+        }
 
         for part in self.TOGGLE_PARTS:
             for i in range(self.NUM_TOGGLES):
@@ -94,11 +100,12 @@ class DrumMachineWindow(Adw.ApplicationWindow):
                 toggle.connect("toggled", self.on_toggle_changed, part, i)
 
     def load_drum_sounds(self):
-        base_path = os.path.join(os.path.dirname(__file__))
+        drumkit_dir = os.path.join(os.path.dirname(__file__), "..", "data", "drumkit")
+
         self.sounds = {
-            'kick': pygame.mixer.Sound(os.path.join(base_path, "KICK.wav")),
-            'snare': pygame.mixer.Sound(os.path.join(base_path, "SNARE.wav")),
-            'hihat': pygame.mixer.Sound(os.path.join(base_path, "CLOSED-HAT.wav")),
+            "kick": pygame.mixer.Sound(os.path.join(drumkit_dir, "KICK.wav")),
+            "snare": pygame.mixer.Sound(os.path.join(drumkit_dir, "SNARE.wav")),
+            "hihat": pygame.mixer.Sound(os.path.join(drumkit_dir, "CLOSED-HAT.wav")),
         }
 
     def on_toggle_changed(self, toggle_button, part, index):
@@ -151,7 +158,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
                 toggle.get_style_context().add_class("toggle-active")
             else:
                 toggle.get_style_context().remove_class("toggle-active")
-                
+
     def calculate_beat_interval(self):
         return 60 / self.bpm
 
@@ -160,27 +167,27 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             for i in range(self.NUM_TOGGLES):
                 if self.stop_event.is_set():  # Check if stop event is set
                     return
-                if self.drum_parts['kick'][i]:
-                    self.play_sound('kick')
-                if self.drum_parts['snare'][i]:
-                    self.play_sound('snare')
-                if self.drum_parts['hihat'][i]:
-                    self.play_sound('hihat')
-                
+                if self.drum_parts["kick"][i]:
+                    self.play_sound("kick")
+                if self.drum_parts["snare"][i]:
+                    self.play_sound("snare")
+                if self.drum_parts["hihat"][i]:
+                    self.play_sound("hihat")
+
                 self.update_toggle_ui(i, add_class=True)
-                
+
                 # Calculate the total sleep time for each beat
                 total_sleep_time = self.calculate_beat_interval()
                 sleep_interval = 0.01  # Smaller sleep interval
                 elapsed_time = 0
-                
+
                 while elapsed_time < total_sleep_time:
                     if self.stop_event.is_set():
                         self.update_toggle_ui(i, add_class=False)
                         return
                     time.sleep(sleep_interval)
                     elapsed_time += sleep_interval
-                
+
                 self.update_toggle_ui(i, add_class=False)
 
         while self.playing and not self.stop_event.is_set():

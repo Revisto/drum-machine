@@ -31,10 +31,6 @@ drum_machine_sources = [
   'main.py',
   'window.py',
   'style.css',
-  'drumkit/KICK/KICK.wav',
-  'KICK.wav',
-  'SNARE.wav',
-  'CLOSED-HAT.wav',
 ]
 
 install_data(drum_machine_sources, install_dir: moduledir)
