@@ -1,4 +1,4 @@
-# main.py
+# interfaces/sound.py
 #
 # Copyright 2024 revisto
 #
@@ -17,9 +17,17 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import sys
-from .application import DrumMachineApplication
+from abc import ABC, abstractmethod
 
-def main(version):
-    app = DrumMachineApplication()
-    return app.run(sys.argv)
+class ISoundService(ABC):
+    @abstractmethod
+    def load_sounds(self):
+        pass
+
+    @abstractmethod
+    def play_sound(self, sound_name):
+        pass
+
+    @abstractmethod
+    def set_volume(self, volume):
+        pass

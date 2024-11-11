@@ -30,7 +30,11 @@ drum_machine_sources = [
   '__init__.py',
   'main.py',
   'window.py',
+  'application.py',
   'style.css',
 ]
+
+subdir('interfaces')
+subdir('services')
 
 install_data(drum_machine_sources, install_dir: moduledir)

@@ -1,4 +1,4 @@
-# main.py
+# interfaces/player.py
 #
 # Copyright 2024 revisto
 #
@@ -17,9 +17,21 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import sys
-from .application import DrumMachineApplication
+from abc import ABC, abstractmethod
 
-def main(version):
-    app = DrumMachineApplication()
-    return app.run(sys.argv)
+class IPlayer(ABC):
+    @abstractmethod
+    def play(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
+
+    @abstractmethod
+    def set_bpm(self, bpm):
+        pass
+
+    @abstractmethod
+    def set_volume(self, volume):
+        pass
