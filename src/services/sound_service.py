@@ -21,6 +21,7 @@ import os
 import pygame
 from ..interfaces.sound import ISoundService
 
+
 class SoundService(ISoundService):
     def __init__(self, drumkit_dir):
         pygame.init()
@@ -31,7 +32,9 @@ class SoundService(ISoundService):
         self.sounds = {
             "kick": pygame.mixer.Sound(os.path.join(self.drumkit_dir, "KICK.wav")),
             "snare": pygame.mixer.Sound(os.path.join(self.drumkit_dir, "SNARE.wav")),
-            "hihat": pygame.mixer.Sound(os.path.join(self.drumkit_dir, "CLOSED-HAT.wav")),
+            "hihat": pygame.mixer.Sound(
+                os.path.join(self.drumkit_dir, "CLOSED-HAT.wav")
+            ),
         }
 
     def play_sound(self, sound_name):

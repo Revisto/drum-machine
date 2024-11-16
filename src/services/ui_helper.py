@@ -17,6 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+
 class UIHelper:
     def __init__(self, window, toggle_parts, num_toggles):
         self.window = window

@@ -20,6 +20,7 @@
 import sys
 from .application import DrumMachineApplication
 
+
 def main(version):
     app = DrumMachineApplication()
     return app.run(sys.argv)

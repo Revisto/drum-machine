@@ -18,14 +18,19 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import gi
+
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, Gio
 from .window import DrumMachineWindow
 
+
 class DrumMachineApplication(Adw.Application):
     def __init__(self):
-        super().__init__(application_id="lol.revisto.DrumMachine", flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
+        super().__init__(
+            application_id="lol.revisto.DrumMachine",
+            flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
+        )
         self.create_action("quit", lambda *_: self.quit(), ["<primary>q"])
         self.create_action("about", self.on_about_action)
         self.create_action("preferences", self.on_preferences_action)

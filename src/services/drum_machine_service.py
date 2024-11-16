@@ -21,6 +21,7 @@ import threading
 import time
 from ..interfaces.player import IPlayer
 
+
 class DrumMachineService(IPlayer):
     def __init__(self, sound_service, ui_helper):
         self.sound_service = sound_service
@@ -30,7 +31,11 @@ class DrumMachineService(IPlayer):
         self.volume = 0.8
         self.play_thread = None
         self.stop_event = threading.Event()
-        self.drum_parts = {"kick": [False] * 16, "snare": [False] * 16, "hihat": [False] * 16}
+        self.drum_parts = {
+            "kick": [False] * 16,
+            "snare": [False] * 16,
+            "hihat": [False] * 16,
+        }
 
     def play(self):
         self.playing = True

@@ -19,6 +19,7 @@
 
 from abc import ABC, abstractmethod
 
+
 class ISoundService(ABC):
     @abstractmethod
     def load_sounds(self):
