@@ -19,12 +19,14 @@
 
 import os
 import gi
+
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, Gtk, Gdk, Gio
 from .services.sound_service import SoundService
 from .services.drum_machine_service import DrumMachineService
 from .services.ui_helper import UIHelper
+
 
 @Gtk.Template(resource_path="/lol/revisto/DrumMachine/window.ui")
 class DrumMachineWindow(Adw.ApplicationWindow):
@@ -38,14 +40,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     volume_scale = Gtk.Template.Child()
     play_pause_button = Gtk.Template.Child()
     drum_machine_box = Gtk.Template.Child()
-    label_box = Gtk.Template.Child()
 
     TOGGLE_PARTS = ["kick", "snare", "hihat"]
     NUM_TOGGLES = 16
-
-    for part in TOGGLE_PARTS:
-        for i in range(1, NUM_TOGGLES + 1):
-            locals()[f"{part}_toggle_{i}"] = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -53,11 +50,54 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.sound_service = SoundService(drumkit_dir)
         self.sound_service.load_sounds()
         self.ui_helper = UIHelper(self, self.TOGGLE_PARTS, self.NUM_TOGGLES)
-        self.drum_machine_service = DrumMachineService(self.sound_service, self.ui_helper)
+        self.drum_machine_service = DrumMachineService(
+            self.sound_service, self.ui_helper
+        )
         self.init_css()
+        self.create_drumkit_toggle_buttons()
         self.apply_css_classes()
         self.connect_signals()
         self.init_drum_parts()
+
+    def create_drumkit_toggle_buttons(self):
+        # Create containers for labels and toggle buttons
+        self.label_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=24)
+        self.toggle_button_box = Gtk.Box(
+            orientation=Gtk.Orientation.VERTICAL, spacing=10
+        )
+
+        # Add labels for each drum part
+        for part in self.TOGGLE_PARTS:
+            label = Gtk.Label(label=f"{part.capitalize()}:")
+            label.set_halign(Gtk.Align.END)
+            self.label_box.append(label)
+
+            # Create horizontal box for the part's toggle groups
+            part_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=30)
+
+            # Create 4 groups of 4 buttons each
+            for group in range(4):
+                # Create box for group of 4 buttons
+                group_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+
+                # Add 4 toggle buttons to the group
+                for i in range(4):
+                    toggle_num = group * 4 + i + 1
+                    toggle_button = Gtk.ToggleButton()
+                    toggle_button.set_name(f"{part}_toggle_{toggle_num}")
+                    toggle_button.connect(
+                        "toggled", self.on_toggle_changed, part, toggle_num - 1
+                    )
+                    setattr(self, f"{part}_toggle_{toggle_num}", toggle_button)
+                    group_box.append(toggle_button)
+
+                part_box.append(group_box)
+
+            self.toggle_button_box.append(part_box)
+
+        # Add label_box and toggle_button_box to the UI
+        self.drum_machine_box.append(self.label_box)
+        self.drum_machine_box.append(self.toggle_button_box)
 
     def init_css(self):
         path = os.path.join(os.path.dirname(__file__), "style.css")
