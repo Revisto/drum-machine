@@ -119,6 +119,14 @@
                                   </object>
                                 </child>
                                 <child>
+                                  <object class="GtkButton" id="clear_button">
+                                    <property name="label">Clear</property>
+                                    <property name="halign">center</property>
+                                    <property name="valign">center</property>
+                                    <property name="css-classes">clear-button</property>
+                                  </object>
+                                </child>
+                                <child>
                                   <object class="GtkButton" id="play_pause_button">
                                     <property name="label">Play</property>
                                     <property name="halign">center</property>

@@ -39,6 +39,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     header_bar = Gtk.Template.Child()
     bpm_spin_button = Gtk.Template.Child()
     volume_scale = Gtk.Template.Child()
+    clear_button = Gtk.Template.Child()
     play_pause_button = Gtk.Template.Child()
     drum_machine_box = Gtk.Template.Child()
 
@@ -116,6 +117,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.main_controls_box.get_style_context().add_class("main_controls_box")
         self.header_bar.get_style_context().add_class("header_bar")
         self.bpm_spin_button.get_style_context().add_class("spinbutton-button")
+        self.clear_button.get_style_context().add_class("clear-button")
         self.play_pause_button.get_style_context().add_class("play-button")
         self.drum_machine_box.get_style_context().add_class("drum-machine-box")
         self.label_box.get_style_context().add_class("center-align")
@@ -123,6 +125,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def connect_signals(self):
         self.bpm_spin_button.connect("value-changed", self.on_bpm_changed)
         self.volume_scale.connect("value-changed", self.on_volume_changed)
+        self.clear_button.connect("clicked", self.handle_clear)
         self.play_pause_button.connect("clicked", self.handle_play_pause)
 
     def init_drum_parts(self):
@@ -148,6 +151,10 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def on_volume_changed(self, scale):
         self.drum_machine_service.set_volume(scale.get_value())
         print(f"Volume changed to: {self.drum_machine_service.volume}")
+
+    def handle_clear(self, button):
+        self.drum_machine_service.clear_all_toggles()
+        print("All toggles cleared.")
 
     def handle_play_pause(self, button):
         if self.drum_machine_service.playing:

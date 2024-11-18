@@ -36,6 +36,10 @@ spinbutton button {
     padding: 20px;
 }
 
+.clear-button {
+    padding: 20px;
+}
+
 .center-align {
     margin-top: 8px;
     margin-right: 10px;

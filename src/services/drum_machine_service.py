@@ -55,6 +55,12 @@ class DrumMachineService(IPlayer):
         self.volume = volume
         self.sound_service.set_volume(volume)
 
+    def clear_all_toggles(self):
+        for part in self.drum_parts:
+            for i in range(len(self.drum_parts[part])):
+                self.drum_parts[part][i] = False
+        self.ui_helper.clear_all_toggles()
+
     def _play_drum_sequence(self):
         while self.playing and not self.stop_event.is_set():
             delay_per_step = 60 / self.bpm / GROUP_TOGGLE_COUNT

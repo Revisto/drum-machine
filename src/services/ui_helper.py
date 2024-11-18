@@ -40,3 +40,9 @@ class UIHelper:
     def clear_highlight(self):
         for i in range(self.num_toggles):
             self.update_toggle_ui(i, add_class=False)
+
+    def clear_all_toggles(self):
+        for part in self.toggle_parts:
+            for i in range(self.num_toggles):
+                toggle = getattr(self.window, f"{part}_toggle_{i + 1}")
+                toggle.set_active(False)
