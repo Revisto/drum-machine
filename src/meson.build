@@ -31,6 +31,7 @@ drum_machine_sources = [
   'main.py',
   'window.py',
   'application.py',
+  'config.py',
   'style.css',
 ]
 

@@ -20,6 +20,7 @@
 import threading
 import time
 from ..interfaces.player import IPlayer
+from ..config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
 
 
 class DrumMachineService(IPlayer):
@@ -31,11 +32,7 @@ class DrumMachineService(IPlayer):
         self.volume = 0.8
         self.play_thread = None
         self.stop_event = threading.Event()
-        self.drum_parts = {
-            "kick": [False] * 16,
-            "snare": [False] * 16,
-            "hihat": [False] * 16,
-        }
+        self.drum_parts = {drum_part: [False] * NUM_TOGGLES for drum_part in DRUM_PARTS}
 
     def play(self):
         self.playing = True
@@ -60,14 +57,13 @@ class DrumMachineService(IPlayer):
 
     def _play_drum_sequence(self):
         while self.playing and not self.stop_event.is_set():
-            delay_per_step = 60 / self.bpm / 4
-            for i in range(16):
+            delay_per_step = 60 / self.bpm / GROUP_TOGGLE_COUNT
+            for i in range(NUM_TOGGLES):
                 if self.stop_event.is_set():
                     return
                 self.ui_helper.highlight_playing_bar(i)
                 if self.drum_parts["kick"][i]:
                     self.sound_service.play_sound("kick")
-                    print("Playing kick")
                 if self.drum_parts["snare"][i]:
                     self.sound_service.play_sound("snare")
                 if self.drum_parts["hihat"][i]:

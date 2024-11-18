@@ -26,6 +26,7 @@ from gi.repository import Adw, Gtk, Gdk, Gio
 from .services.sound_service import SoundService
 from .services.drum_machine_service import DrumMachineService
 from .services.ui_helper import UIHelper
+from .config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
 
 
 @Gtk.Template(resource_path="/lol/revisto/DrumMachine/window.ui")
@@ -41,15 +42,12 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     play_pause_button = Gtk.Template.Child()
     drum_machine_box = Gtk.Template.Child()
 
-    TOGGLE_PARTS = ["kick", "snare", "hihat"]
-    NUM_TOGGLES = 16
-
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         drumkit_dir = os.path.join(os.path.dirname(__file__), "..", "data", "drumkit")
         self.sound_service = SoundService(drumkit_dir)
         self.sound_service.load_sounds()
-        self.ui_helper = UIHelper(self, self.TOGGLE_PARTS, self.NUM_TOGGLES)
+        self.ui_helper = UIHelper(self, DRUM_PARTS, NUM_TOGGLES)
         self.drum_machine_service = DrumMachineService(
             self.sound_service, self.ui_helper
         )
@@ -67,7 +65,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         )
 
         # Add labels for each drum part
-        for part in self.TOGGLE_PARTS:
+        for part in DRUM_PARTS:
             label = Gtk.Label(label=f"{part.capitalize()}:")
             label.set_halign(Gtk.Align.END)
             self.label_box.append(label)
@@ -75,14 +73,19 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             # Create horizontal box for the part's toggle groups
             part_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=30)
 
-            # Create 4 groups of 4 buttons each
-            for group in range(4):
-                # Create box for group of 4 buttons
+            # Calculate the number of groups
+            num_groups = (NUM_TOGGLES + GROUP_TOGGLE_COUNT - 1) // GROUP_TOGGLE_COUNT
+
+            # Create groups of buttons
+            for group in range(num_groups):
+                # Create box for group of buttons
                 group_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
 
-                # Add 4 toggle buttons to the group
-                for i in range(4):
-                    toggle_num = group * 4 + i + 1
+                # Add toggle buttons to the group
+                for i in range(GROUP_TOGGLE_COUNT):
+                    toggle_num = group * GROUP_TOGGLE_COUNT + i + 1
+                    if toggle_num > NUM_TOGGLES:
+                        break
                     toggle_button = Gtk.ToggleButton()
                     toggle_button.set_name(f"{part}_toggle_{toggle_num}")
                     toggle_button.connect(
@@ -124,11 +127,11 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def init_drum_parts(self):
         self.drum_parts = {
-            part: [False for _ in range(self.NUM_TOGGLES)] for part in self.TOGGLE_PARTS
+            part: [False for _ in range(NUM_TOGGLES)] for part in DRUM_PARTS
         }
 
-        for part in self.TOGGLE_PARTS:
-            for i in range(self.NUM_TOGGLES):
+        for part in DRUM_PARTS:
+            for i in range(NUM_TOGGLES):
                 toggle = getattr(self, f"{part}_toggle_{i + 1}")
                 self.drum_parts[part][i] = toggle.get_active()
                 toggle.connect("toggled", self.on_toggle_changed, part, i)
