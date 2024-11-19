@@ -6,12 +6,25 @@ An interactive Drum Machine built with **Python**, **GTK4 (libadwaita)**, and **
 
 ## 🚀 Features
 
-- **16-Step Sequencer**: Toggle bars for 3 different drum parts:
+## 🚀 Features
+
+- **16-Step Sequencer**: Toggle bars for 10 different drum parts:
   - Kick
+  - Kick-2
+  - Kick-3
   - Snare
+  - Snare-2
   - Hi-Hat
+  - Hi-Hat-2
+  - Clap
+  - Tom
+  - Crash
+
 - **BPM Control**: Adjust the tempo to match your groove.
-- **Volume Adjustment**: Fine-tune the volume for the perfect mix.
+- **Volume Adjustment**: Fine-tune the master volume.
+- **MIDI Pattern Export**: Export your drum patterns as `.mid` files.
+- **Default Patterns**: Load weird default patterns.
+- **Pattern Import**: Import custom patterns from `.mid` files.
 
 ## 🎯 Goals
 
