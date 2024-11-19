@@ -23,11 +23,33 @@ from ..config import DRUM_PARTS, NUM_TOGGLES
 
 class PresetService:
     def _get_midi_note_for_part(self, part):
-        mapping = {"kick": 36, "snare": 38, "hihat": 42}
+        mapping = {
+            "kick": 36,
+            "kick-2": 35,
+            "kick-3": 34,
+            "snare": 38,
+            "snare-2": 37,
+            "hihat": 42,
+            "hihat-2": 44,
+            "clap": 39,
+            "tom": 41,
+            "crash": 49,
+        }
         return mapping.get(part, 0)
 
     def _get_part_for_midi_note(self, note):
-        mapping = {36: "kick", 38: "snare", 42: "hihat"}
+        mapping = {
+            36: "kick",
+            35: "kick-2",
+            34: "kick-3",
+            38: "snare",
+            37: "snare-2",
+            42: "hihat",
+            44: "hihat-2",
+            39: "clap",
+            41: "tom",
+            49: "crash",
+        }
         return mapping.get(note, None)
 
     def save_preset(self, file_path, drum_parts, bpm):
@@ -37,7 +59,7 @@ class PresetService:
 
         track.append(mido.MetaMessage("set_tempo", tempo=mido.bpm2tempo(bpm)))
 
-        for i in range(len(drum_parts["kick"])):
+        for i in range(NUM_TOGGLES):
             for part, notes in drum_parts.items():
                 if notes[i]:
                     note = self._get_midi_note_for_part(part)
