@@ -21,6 +21,7 @@ import threading
 import time
 from ..interfaces.player import IPlayer
 from ..config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
+from .preset_service import PresetService
 
 
 class DrumMachineService(IPlayer):
@@ -33,6 +34,7 @@ class DrumMachineService(IPlayer):
         self.play_thread = None
         self.stop_event = threading.Event()
         self.drum_parts = {drum_part: [False] * NUM_TOGGLES for drum_part in DRUM_PARTS}
+        self.preset_service = PresetService()
 
     def play(self):
         self.playing = True
@@ -60,6 +62,14 @@ class DrumMachineService(IPlayer):
             for i in range(len(self.drum_parts[part])):
                 self.drum_parts[part][i] = False
         self.ui_helper.clear_all_toggles()
+
+    def save_preset(self, file_path):
+        self.preset_service.save_preset(file_path, self.drum_parts, self.bpm)
+
+    def load_preset(self, file_path):
+        self.drum_parts, self.bpm = self.preset_service.load_preset(file_path)
+        self.ui_helper.update_ui_from_drum_parts(self.drum_parts)
+        self.ui_helper.update_bpm(self.bpm)
 
     def _play_drum_sequence(self):
         while self.playing and not self.stop_event.is_set():

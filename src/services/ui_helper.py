@@ -46,3 +46,12 @@ class UIHelper:
             for i in range(self.num_toggles):
                 toggle = getattr(self.window, f"{part}_toggle_{i + 1}")
                 toggle.set_active(False)
+
+    def update_ui_from_drum_parts(self, drum_parts):
+        for part, toggles in drum_parts.items():
+            for i, active in enumerate(toggles):
+                toggle = getattr(self.window, f"{part}_toggle_{i + 1}")
+                toggle.set_active(active)
+
+    def update_bpm(self, bpm):
+        self.window.bpm_spin_button.set_value(bpm)

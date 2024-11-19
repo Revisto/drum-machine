@@ -147,6 +147,33 @@
                         <property name="spacing">10</property>
                       </object>
                     </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">horizontal</property>
+                        <property name="halign">center</property>
+                        <property name="spacing">10</property>
+                        <child>
+                          <object class="GtkComboBoxText" id="preset_combo_box">
+                            <property name="halign">start</property>
+                            <property name="tooltip-text" translatable="yes">Select a preset</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="load_preset_button">
+                            <property name="label">Load Preset</property>
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="save_preset_button">
+                            <property name="label">Save Preset</property>
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
                   </object>
                 </child>
               </object>
