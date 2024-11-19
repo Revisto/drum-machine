@@ -11,7 +11,7 @@
           <object class="AdwHeaderBar" id="header_bar">
             <property name="title-widget">
               <object class="AdwWindowTitle">
-                <property name="title" translatable="yes">Title</property>
+                <property name="title" translatable="yes">Revisto Drum Machine</property>
               </object>
             </property>
             <child type="end">
