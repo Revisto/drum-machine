@@ -174,7 +174,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def load_presets(self):
         # Load default presets and add them to the combo box
-        default_presets = ["Rock", "HipHop", "Jazz"]
+        default_presets = ["Shoot", "Maybe Rock", "Boom Boom", "Night", "Slow", "Chill"]
         for preset in default_presets:
             self.preset_combo_box.append_text(preset)
         self.preset_combo_box.append_text("Load Your File...")
