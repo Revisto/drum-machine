@@ -152,25 +152,20 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def on_bpm_changed(self, spin_button):
         self.drum_machine_service.set_bpm(spin_button.get_value())
-        print(f"BPM changed to: {self.drum_machine_service.bpm}")
 
     def on_volume_changed(self, scale):
         self.drum_machine_service.set_volume(scale.get_value())
-        print(f"Volume changed to: {self.drum_machine_service.volume}")
 
     def handle_clear(self, button):
         self.drum_machine_service.clear_all_toggles()
-        print("All toggles cleared.")
 
     def handle_play_pause(self, button):
         if self.drum_machine_service.playing:
             button.set_label("Play")
             self.drum_machine_service.stop()
-            print("Paused.")
         else:
             button.set_label("Pause")
             self.drum_machine_service.play()
-            print("Playing...")
 
     def load_presets(self):
         # Load default presets and add them to the combo box
@@ -204,7 +199,6 @@ class DrumMachineWindow(Adw.ApplicationWindow):
                 if response == Gtk.ResponseType.OK:
                     file_path = dialog.get_file().get_path()
                     self.drum_machine_service.load_preset(file_path)
-                    print(f"Preset loaded from {file_path}")
                 dialog.close()
 
             dialog.connect("response", on_response)
@@ -215,7 +209,6 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             )
             file_path = os.path.join(preset_dir, f"{selected_preset}.mid")
             self.drum_machine_service.load_preset(file_path)
-            print(f"Preset loaded: {selected_preset}")
 
     def on_save_preset(self, button):
         dialog = Gtk.FileChooserDialog(
