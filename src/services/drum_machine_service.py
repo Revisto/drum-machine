@@ -78,11 +78,8 @@ class DrumMachineService(IPlayer):
                 if self.stop_event.is_set():
                     return
                 self.ui_helper.highlight_playing_bar(i)
-                if self.drum_parts["kick"][i]:
-                    self.sound_service.play_sound("kick")
-                if self.drum_parts["snare"][i]:
-                    self.sound_service.play_sound("snare")
-                if self.drum_parts["hihat"][i]:
-                    self.sound_service.play_sound("hihat")
+                for part in DRUM_PARTS:
+                    if self.drum_parts[part][i]:
+                        self.sound_service.play_sound(part)
                 time.sleep(delay_per_step)
         self.ui_helper.clear_highlight()

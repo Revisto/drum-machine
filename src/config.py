@@ -17,6 +17,17 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-DRUM_PARTS = ["kick", "snare", "hihat"]
+DRUM_PARTS = [
+    "kick",
+    "kick-2",
+    "kick-3",
+    "snare",
+    "snare-2",
+    "hihat",
+    "hihat-2",
+    "clap",
+    "tom",
+    "crash",
+]
 NUM_TOGGLES = 16
 GROUP_TOGGLE_COUNT = 4

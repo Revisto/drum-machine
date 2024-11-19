@@ -64,7 +64,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def create_drumkit_toggle_buttons(self):
         # Create containers for labels and toggle buttons
-        self.label_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=24)
+        self.label_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=26)
         self.toggle_button_box = Gtk.Box(
             orientation=Gtk.Orientation.VERTICAL, spacing=10
         )
