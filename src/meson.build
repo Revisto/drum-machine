@@ -33,6 +33,7 @@ drum_machine_sources = [
   'application.py',
   'config.py',
   'style.css',
+  'style-dark.css',
 ]
 
 subdir('interfaces')

@@ -9,6 +9,7 @@
       <object class="AdwToolbarView">
         <child type="top">
           <object class="AdwHeaderBar" id="header_bar">
+            <property name="css-classes">header-bar</property>
             <property name="title-widget">
               <object class="AdwWindowTitle">
                 <property name="title" translatable="yes">Revisto Drum Machine</property>
@@ -30,6 +31,7 @@
             <property name="vscrollbar-policy">automatic</property>
             <child>
               <object class="GtkBox" id="outer_box">
+                <property name="css-classes">outer-box</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">10</property>
                 <property name="margin-start">20</property>
@@ -44,6 +46,7 @@
                     <property name="spacing">10</property>
                     <child>
                       <object class="GtkLabel" id="header_label">
+                        <property name="css-classes">header-label</property>
                         <property name="label">Revisto Drum Machine</property>
                         <property name="halign">start</property>
                         <style>
@@ -53,6 +56,7 @@
                     </child>
                     <child>
                       <object class="GtkFrame" id="main_controls_box">
+                        <property name="css-classes">main-controls-box</property>
                         <child>
                           <object class="GtkBox">
                             <property name="orientation">vertical</property>
@@ -74,6 +78,7 @@
                                     </child>
                                     <child>
                                       <object class="GtkSpinButton" id="bpm_spin_button">
+                                        <property name="css-classes">bpm-spin-button</property>
                                         <property name="adjustment">
                                           <object class="GtkAdjustment">
                                             <property name="lower">30</property>
@@ -143,6 +148,7 @@
                     </child>
                     <child>
                       <object class="GtkBox" id="drum_machine_box">
+                        <property name="css-classes">drum-machine-box</property>
                         <property name="orientation">horizontal</property>
                         <property name="halign">center</property>
                         <property name="spacing">10</property>
@@ -150,6 +156,7 @@
                     </child>
                     <child>
                       <object class="GtkBox">
+                        <property name="css-classes">preset-box</property>
                         <property name="orientation">horizontal</property>
                         <property name="halign">center</property>
                         <property name="spacing">10</property>

@@ -22,7 +22,7 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Adw, Gtk, Gdk, Gio
+from gi.repository import Adw, Gtk
 from .services.sound_service import SoundService
 from .services.drum_machine_service import DrumMachineService
 from .services.ui_helper import UIHelper
@@ -33,10 +33,7 @@ from .config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
 class DrumMachineWindow(Adw.ApplicationWindow):
     __gtype_name__ = "DrumMachineWindow"
 
-    header_label = Gtk.Template.Child()
     outer_box = Gtk.Template.Child()
-    main_controls_box = Gtk.Template.Child()
-    header_bar = Gtk.Template.Child()
     bpm_spin_button = Gtk.Template.Child()
     volume_scale = Gtk.Template.Child()
     clear_button = Gtk.Template.Child()
@@ -55,16 +52,14 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_machine_service = DrumMachineService(
             self.sound_service, self.ui_helper
         )
-        self.init_css()
         self.create_drumkit_toggle_buttons()
-        self.apply_css_classes()
         self.connect_signals()
         self.init_drum_parts()
         self.load_presets()
 
     def create_drumkit_toggle_buttons(self):
         # Create containers for labels and toggle buttons
-        self.label_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=26)
+        self.label_box = Gtk.Box(css_classes=["center-align"], orientation=Gtk.Orientation.VERTICAL, spacing=26)
         self.toggle_button_box = Gtk.Box(
             orientation=Gtk.Orientation.VERTICAL, spacing=10
         )
@@ -106,25 +101,6 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         # Add label_box and toggle_button_box to the UI
         self.drum_machine_box.append(self.label_box)
         self.drum_machine_box.append(self.toggle_button_box)
-
-    def init_css(self):
-        path = os.path.join(os.path.dirname(__file__), "style.css")
-        css_provider = Gtk.CssProvider()
-        css_provider.load_from_file(Gio.File.new_for_path(path))
-        Gtk.StyleContext.add_provider_for_display(
-            Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER
-        )
-
-    def apply_css_classes(self):
-        self.header_label.get_style_context().add_class("header_label")
-        self.outer_box.get_style_context().add_class("outer_box")
-        self.main_controls_box.get_style_context().add_class("main_controls_box")
-        self.header_bar.get_style_context().add_class("header_bar")
-        self.bpm_spin_button.get_style_context().add_class("spinbutton-button")
-        self.clear_button.get_style_context().add_class("clear-button")
-        self.play_pause_button.get_style_context().add_class("play-button")
-        self.drum_machine_box.get_style_context().add_class("drum-machine-box")
-        self.label_box.get_style_context().add_class("center-align")
 
     def connect_signals(self):
         self.bpm_spin_button.connect("value-changed", self.on_bpm_changed)
