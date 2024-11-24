@@ -1,52 +1,23 @@
 .header-label {
-    font-size: 36px;
     color: #ffffff;
-    padding: 20px;
-    padding-left: 5px;
-    border-radius: 10px;
 }
 
 .outer-box {
-    padding: 30px;
-    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background: linear-gradient(45deg, #75498f, #420a8136);
 }
 
 .main-controls-box {
-    border: 2px solid #d792ff;
-    padding: 20px;
     background-color: #0000003b;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header-bar {
     background: linear-gradient(45deg, #232526, #342f38);
-    padding: 7px;
-    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.play-button {
-    padding: 20px;
-}
-
-.clear-button {
-    padding: 20px;
-}
-
-.center-align {
-    margin-top: 8px;
-    margin-right: 10px;
 }
 
 .drum-machine-box {
-    margin-top: 10px;
-    padding: 20px;
-    border-radius: 10px;
     background-color: #00000027;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .drum-machine-box button.toggle-active {
@@ -55,7 +26,6 @@
 }
 
 .bpm-spin-button {
-    padding: 10px;
     background-color: #ffffff1c;
 }
 
