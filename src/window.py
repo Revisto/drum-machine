@@ -58,20 +58,16 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.load_presets()
 
     def create_drumkit_toggle_buttons(self):
-        # Create containers for labels and toggle buttons
-        self.label_box = Gtk.Box(css_classes=["center-align"], orientation=Gtk.Orientation.VERTICAL, spacing=26)
-        self.toggle_button_box = Gtk.Box(
-            orientation=Gtk.Orientation.VERTICAL, spacing=10
-        )
+        container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+        container.set_homogeneous(False)
 
-        # Add labels for each drum part
         for part in DRUM_PARTS:
-            label = Gtk.Label(label=f"{part.capitalize()}:")
-            label.set_halign(Gtk.Align.END)
-            self.label_box.append(label)
+            # Create label for drum part
+            label = Gtk.Label(label=f"{part.capitalize()}:", halign=Gtk.Align.START)
+            label.set_size_request(100, -1)
 
-            # Create horizontal box for the part's toggle groups
-            part_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=30)
+            # Create box for toggle buttons
+            toggle_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=30)
 
             # Calculate the number of groups
             num_groups = (NUM_TOGGLES + GROUP_TOGGLE_COUNT - 1) // GROUP_TOGGLE_COUNT
@@ -79,7 +75,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             # Create groups of buttons
             for group in range(num_groups):
                 # Create box for group of buttons
-                group_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+                group_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
 
                 # Add toggle buttons to the group
                 for i in range(GROUP_TOGGLE_COUNT):
@@ -87,20 +83,25 @@ class DrumMachineWindow(Adw.ApplicationWindow):
                     if toggle_num > NUM_TOGGLES:
                         break
                     toggle_button = Gtk.ToggleButton()
+                    toggle_button.set_size_request(30, 30)
                     toggle_button.set_name(f"{part}_toggle_{toggle_num}")
-                    toggle_button.connect(
-                        "toggled", self.on_toggle_changed, part, toggle_num - 1
-                    )
-                    setattr(self, f"{part}_toggle_{toggle_num}", toggle_button)
+                    toggle_button.connect("toggled", self.on_toggle_changed, part, toggle_num - 1)
                     group_box.append(toggle_button)
+                    # Store reference to toggle button
+                    setattr(self, f"{part}_toggle_{toggle_num}", toggle_button)
 
-                part_box.append(group_box)
+                toggle_box.append(group_box)
 
-            self.toggle_button_box.append(part_box)
+            # Create a horizontal box for label and toggles
+            part_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+            part_box.append(label)
+            part_box.append(toggle_box)
 
-        # Add label_box and toggle_button_box to the UI
-        self.drum_machine_box.append(self.label_box)
-        self.drum_machine_box.append(self.toggle_button_box)
+            # Add part_box to the container
+            container.append(part_box)
+
+        # Add the container to the drum_machine_box
+        self.drum_machine_box.append(container)
 
     def connect_signals(self):
         self.bpm_spin_button.connect("value-changed", self.on_bpm_changed)

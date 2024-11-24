@@ -83,3 +83,9 @@
 .main-controls-box button:checked {
     background-color: #ffffff;
 }
+
+.preset-box {
+    border: none;
+    background: none;
+    box-shadow: none;
+}
