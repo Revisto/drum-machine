@@ -59,6 +59,7 @@
                     <child>
                       <object class="AdwBreakpointBin">
                         <property name="width-request">200</property>
+                        <property name="height-request">50</property>
                         <child>
                           <object class="AdwBreakpoint">
                             <condition>max-width: 550sp</condition>
@@ -178,7 +179,7 @@
                     <property name="propagate-natural-width">true</property>
                     <child>
                       <object class="AdwClamp">
-                        <property name="maximum-size">1200</property>
+                        <property name="maximum-size">800</property>
                         <property name="tightening-threshold">800</property>
                         <child>
                           <object class="GtkBox" id="drum_machine_box">
@@ -201,13 +202,14 @@
                       <object class="GtkScrolledWindow" id="preset_scroll">
                         <property name="hexpand">true</property>
                         <property name="propagate-natural-height">true</property>
-                        <property name="propagate-natural-width">true</property>
                         <child>
                           <object class="AdwClamp">
                             <property name="maximum-size">1200</property>
                             <property name="tightening-threshold">800</property>
                             <child>
                               <object class="AdwBreakpointBin">
+                                <property name="width-request">200</property>
+                                <property name="height-request">20</property>
                                 <child>
                                   <object class="AdwBreakpoint">
                                     <condition>max-width: 450sp</condition>
