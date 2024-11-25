@@ -210,7 +210,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         if selected_preset == "Load Your File...":
             dialog = Gtk.FileChooserDialog(
                 title="Please choose a file",
-                parent=self,
+                transient_for=self,
+                modal=True,
                 action=Gtk.FileChooserAction.OPEN,
             )
             dialog.add_buttons(
@@ -240,7 +241,10 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def on_save_preset(self, button):
         dialog = Gtk.FileChooserDialog(
-            title="Save Preset", parent=self, action=Gtk.FileChooserAction.SAVE
+            title="Save Preset",
+            transient_for=self,
+            modal=True,
+            action=Gtk.FileChooserAction.SAVE
         )
         dialog.add_buttons(
             "_Cancel", Gtk.ResponseType.CANCEL, "_Save", Gtk.ResponseType.OK
