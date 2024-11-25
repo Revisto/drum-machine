@@ -22,7 +22,7 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Adw, Gtk
+from gi.repository import Adw, Gtk, Gio
 from .services.sound_service import SoundService
 from .services.drum_machine_service import DrumMachineService
 from .services.ui_helper import UIHelper
@@ -45,6 +45,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.application = self.get_application()
         drumkit_dir = os.path.join(os.path.dirname(__file__), "..", "data", "drumkit")
         self.sound_service = SoundService(drumkit_dir)
         self.sound_service.load_sounds()
@@ -56,6 +57,56 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.connect_signals()
         self.init_drum_parts()
         self.load_presets()
+        self.create_actions()
+
+    def create_actions(self):
+        self._create_action("play_pause", self.handle_play_pause_action, ["space"])
+        self._create_action("clear_toggles", self.handle_clear_action, ["<primary>Delete"])
+        self._create_action("increase_bpm", self.increase_bpm_action, ["plus", "equal"])
+        self._create_action("decrease_bpm", self.decrease_bpm_action, ["minus"])
+        self._create_action("increase_volume", self.increase_volume_action, ["<primary>Up"])
+        self._create_action("decrease_volume", self.decrease_volume_action, ["<primary>Down"])
+        self._create_action("load_preset", self.on_load_preset_action, ["<primary>o"])
+        self._create_action("save_preset", self.on_save_preset_action, ["<primary>s"])
+        self._create_action("quit", self.on_quit_action, ["<primary>q"])
+
+    def _create_action(self, name, callback, shortcuts=None):
+        action = Gio.SimpleAction.new(name, None)
+        action.connect("activate", callback)
+        self.add_action(action)
+        if shortcuts:
+            self.application.set_accels_for_action(f"win.{name}", shortcuts)
+
+    def handle_play_pause_action(self, action, param):
+        self.handle_play_pause(self.play_pause_button)
+
+    def handle_clear_action(self, action, param):
+        self.handle_clear(self.clear_button)
+
+    def increase_bpm_action(self, action, param):
+        current_bpm = self.bpm_spin_button.get_value()
+        self.bpm_spin_button.set_value(current_bpm + 1)
+
+    def decrease_bpm_action(self, action, param):
+        current_bpm = self.bpm_spin_button.get_value()
+        self.bpm_spin_button.set_value(current_bpm - 1)
+
+    def increase_volume_action(self, action, param):
+        current_volume = self.volume_scale.get_value()
+        self.volume_scale.set_value(min(current_volume + 5, 100))
+
+    def decrease_volume_action(self, action, param):
+        current_volume = self.volume_scale.get_value()
+        self.volume_scale.set_value(max(current_volume - 5, 0))
+
+    def on_load_preset_action(self, action, param):
+        self.on_load_preset(self.load_preset_button)
+
+    def on_save_preset_action(self, action, param):
+        self.on_save_preset(self.save_preset_button)
+
+    def on_quit_action(self, action, param):
+        self.close()
 
     def create_drumkit_toggle_buttons(self):
         container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
