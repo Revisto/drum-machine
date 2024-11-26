@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="drum-machine">
-	<schema id="lol.revisto.DrumMachine" path="/lol/revisto/DrumMachine/">
+	<schema id="io.github.revisto.DrumMachine" path="/io/github/revisto/DrumMachine/">
 	</schema>
 </schemalist>

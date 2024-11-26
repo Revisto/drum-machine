@@ -1,4 +1,4 @@
-application_id = 'lol.revisto.DrumMachine'
+application_id = 'io.github.revisto.DrumMachine'
 
 scalable_dir = 'hicolor' / 'scalable' / 'apps'
 install_data(

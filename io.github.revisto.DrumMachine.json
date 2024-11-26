@@ -1,5 +1,5 @@
 {
-    "id" : "lol.revisto.DrumMachine",
+    "id" : "io.github.revisto.DrumMachine",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "46",
     "sdk" : "org.gnome.Sdk",

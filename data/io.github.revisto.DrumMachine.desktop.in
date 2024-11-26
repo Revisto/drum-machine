@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=drum-machine
 Exec=drum-machine
-Icon=lol.revisto.DrumMachine
+Icon=io.github.revisto.DrumMachine
 Terminal=false
 Type=Application
 Categories=GTK;
