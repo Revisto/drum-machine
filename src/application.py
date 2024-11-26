@@ -46,10 +46,10 @@ class DrumMachineApplication(Adw.Application):
             transient_for=self.props.active_window,
             application_name="drum-machine",
             application_icon="io.github.revisto.DrumMachine",
-            developer_name="rev",
+            developer_name="Revisto",
             version="0.1.0",
-            developers=["rev"],
-            copyright="© 2024 revisto",
+            developers=["Revisto"],
+            copyright="© 2024 Revisto",
         )
         about.present()
 
