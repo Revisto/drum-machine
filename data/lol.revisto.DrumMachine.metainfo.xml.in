@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-	<id>lol.revisto.DrumMachine.desktop</id>
-	<metadata_license>CC0-1.0</metadata_license>
-	<project_license>GPL-3.0-or-later</project_license>
-	<description>
-	  <p>No description</p>
-	</description>
+  <id>lol.revisto.DrumMachine</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Drum Machine</name>
+  <summary>Create and play drum beats</summary>
+  <description>
+    <p>
+      Drum Machine is a modern and intuitive application for creating, playing, and
+      managing drum patterns. Perfect for musicians, producers, and anyone interested
+      in rhythm creation, this application provides a simple interface for drum
+      pattern programming. Have fun!
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Intuitive grid-based pattern editor</li>
+      <li>Adjustable BPM control</li>
+      <li>Volume control for overall mix</li>
+      <li>Save and load preset patterns</li>
+      <li>Multiple drum sounds including kick, snare, hi-hat, and more</li>
+      <li>Keyboard shortcuts for quick access to all functions</li>
+    </ul>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main window showing the drum pattern editor</caption>
+      <image>https://github.com/revisto/drum-machine/raw/master/data/screenshots/main-window.png</image>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>Audio</category>
+    <category>Music</category>
+    <category>GNOME</category>
+    <category>GTK</category>
+  </categories>
+  <keywords>
+    <keyword>drum</keyword>
+    <keyword>machine</keyword>
+    <keyword>rhythm</keyword>
+    <keyword>music</keyword>
+    <keyword>pattern</keyword>
+    <keyword>beats</keyword>
+  </keywords>
+  <translation type="gettext">drum-machine</translation>
+  <launchable type="desktop-id">lol.revisto.DrumMachine.desktop</launchable>
+  <url type="homepage">https://github.com/revisto/drum-machine</url>
+  <url type="bugtracker">https://github.com/revisto/drum-machine/issues</url>
+  <url type="vcs-browser">https://github.com/revisto/drum-machine</url>
+  <update_contact>revisto_at_gmail.com</update_contact>
+  <developer id="gmail.com">
+    <name>Revisto</name>
+    <email>therevisto@gmail.com</email>
+  </developer>
+  <releases>
+    <release version="1.0.0" date="2024-11-25">
+      <description>
+        <p>Initial release of Drum Machine!</p>
+        <ul>
+          <li>Grid-based pattern editor with multiple drum sounds</li>
+          <li>Adjustable BPM and volume controls</li>
+          <li>Preset management system</li>
+          <li>Keyboard shortcuts for all main functions</li>
+          <li>Modern GTK4 and libadwaita interface</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <requires>
+    <hardware>
+      <sound>yes</sound>
+    </hardware>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </supports>
+  <content_rating type="oars-1.1" />
 </component>

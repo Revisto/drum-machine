@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlns="http://usefulinc.com/ns/doap#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <name>Drum Machine</name>
+  <shortdesc>Create and play drum beats</shortdesc>
+  <description>
+    Drum Machine is a modern application for creating, playing, and managing drum patterns. Perfect for musicians, producers, and anyone interested in rhythm creation, this application provides a simple interface for drum pattern programming.
+  </description>
+  <homepage rdf:resource="https://github.com/revisto/drum-machine"/>
+  <created>2024-11-27</created>
+  <programming-language>Python</programming-language>
+  <license rdf:resource="https://www.gnu.org/licenses/gpl-3.0.html"/>
+  <platform>GTK 4</platform>
+  <platform>Libadwaita</platform>
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Revisto</foaf:name>
+      <foaf:mbox rdf:resource="mailto:therevisto@gmail.com"/>
+      <foaf:account>
+        <foaf:OnlineAccount>
+          <foaf:accountServiceHomepage rdf:resource="https://github.com"/>
+          <foaf:accountName>revisto</foaf:accountName>
+        </foaf:OnlineAccount>
+      </foaf:account>
+    </foaf:Person>
+  </maintainer>
+</Project>
