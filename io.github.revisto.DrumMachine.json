@@ -32,7 +32,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "file:///home/rev/Projects"
+                    "url" : "https://github.com/revisto/drum-machine.git"
                 }
             ]
         }
