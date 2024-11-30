@@ -28,7 +28,7 @@ from .window import DrumMachineWindow
 class DrumMachineApplication(Adw.Application):
     def __init__(self):
         super().__init__(
-            application_id="io.github.revisto.DrumMachine",
+            application_id="io.github.revisto.drum-machine",
             flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
         )
         self.create_action("quit", lambda *_: self.quit(), ["<primary>q"])
@@ -45,7 +45,7 @@ class DrumMachineApplication(Adw.Application):
         about = Adw.AboutWindow(
             transient_for=self.props.active_window,
             application_name="drum-machine",
-            application_icon="io.github.revisto.DrumMachine",
+            application_icon="io.github.revisto.drum-machine",
             developer_name="Revisto",
             version="0.1.0",
             developers=["Revisto"],

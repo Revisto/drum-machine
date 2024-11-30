@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-  <id>io.github.revisto.DrumMachine</id>
+  <id>io.github.revisto.drum-machine</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <name>Drum Machine</name>
@@ -43,7 +43,7 @@
     <keyword>beats</keyword>
   </keywords>
   <translation type="gettext">drum-machine</translation>
-  <launchable type="desktop-id">io.github.revisto.DrumMachine.desktop</launchable>
+  <launchable type="desktop-id">io.github.revisto.drum-machine.desktop</launchable>
   <url type="homepage">https://github.com/revisto/drum-machine</url>
   <url type="bugtracker">https://github.com/revisto/drum-machine/issues</url>
   <url type="vcs-browser">https://github.com/revisto/drum-machine</url>

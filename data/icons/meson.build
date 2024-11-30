@@ -1,4 +1,4 @@
-application_id = 'io.github.revisto.DrumMachine'
+application_id = 'io.github.revisto.drum-machine'
 
 scalable_dir = join_paths('hicolor', 'scalable', 'apps')
 install_data(

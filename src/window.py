@@ -29,7 +29,7 @@ from .services.ui_helper import UIHelper
 from .config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
 
 
-@Gtk.Template(resource_path="/io/github/revisto/DrumMachine/window.ui")
+@Gtk.Template(resource_path="/io/github/revisto/drum-machine/window.ui")
 class DrumMachineWindow(Adw.ApplicationWindow):
     __gtype_name__ = "DrumMachineWindow"
 

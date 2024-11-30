@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/io/github/revisto/DrumMachine/">
+  <gresource prefix="/io/github/revisto/drum-machine/">
     <file alias="style.css">style.css</file>
     <file alias="style-dark.css">style-dark.css</file>
     <file preprocess="xml-stripblanks">window.ui</file>

@@ -1,6 +1,6 @@
-data/io.github.revisto.DrumMachine.desktop.in
-data/io.github.revisto.DrumMachine.metainfo.xml.in
-data/io.github.revisto.DrumMachine.gschema.xml
+data/io.github.revisto.drum-machine.desktop.in
+data/io.github.revisto.drum-machine.metainfo.xml.in
+data/io.github.revisto.drum-machine.gschema.xml
 src/main.py
 src/window.py
 src/window.ui
