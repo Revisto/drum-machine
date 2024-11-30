@@ -66,11 +66,6 @@
       </description>
     </release>
   </releases>
-  <requires>
-    <hardware>
-      <sound>yes</sound>
-    </hardware>
-  </requires>
   <supports>
     <control>keyboard</control>
     <control>pointing</control>
