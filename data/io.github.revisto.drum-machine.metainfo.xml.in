@@ -27,10 +27,22 @@
     <color type="primary" scheme_preference="dark">#75498f</color>
   </branding>
   <screenshots>
-    <screenshot type="default">
-      <caption>Main window showing the drum pattern editor</caption>
-      <image>https://github.com/revisto/drum-machine/raw/master/data/screenshots/main-window.png</image>
-    </screenshot>
+      <screenshot>
+          <caption>Empty sequencer in light mode</caption>
+          <image>https://github.com/revisto/drum-machine/raw/master/data/screenshots/empty-light.png</image>
+      </screenshot>
+      <screenshot>
+          <caption>Drum pattern loaded in light mode</caption>
+          <image>https://github.com/revisto/drum-machine/raw/master/data/screenshots/pattern-light.png</image>
+      </screenshot>
+      <screenshot>
+          <caption>Empty sequencer in dark mode</caption>
+          <image>https://github.com/revisto/drum-machine/raw/master/data/screenshots/empty-dark.png</image>
+      </screenshot>
+      <screenshot type="default">
+          <caption>Drum pattern loaded in dark mode</caption>
+          <image>https://github.com/revisto/drum-machine/raw/master/data/screenshots/pattern-dark.png</image>
+      </screenshot>
   </screenshots>
   <categories>
     <category>Audio</category>
