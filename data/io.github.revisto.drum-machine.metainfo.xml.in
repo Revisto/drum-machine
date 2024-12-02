@@ -22,6 +22,10 @@
       <li>Keyboard shortcuts for quick access to all functions</li>
     </ul>
   </description>
+  <branding>
+    <color type="primary" scheme_preference="light">#d792ff</color>
+    <color type="primary" scheme_preference="dark">#75498f</color>
+  </branding>
   <screenshots>
     <screenshot type="default">
       <caption>Main window showing the drum pattern editor</caption>
