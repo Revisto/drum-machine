@@ -61,11 +61,17 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def create_actions(self):
         self._create_action("play_pause", self.handle_play_pause_action, ["space"])
-        self._create_action("clear_toggles", self.handle_clear_action, ["<primary>Delete"])
+        self._create_action(
+            "clear_toggles", self.handle_clear_action, ["<primary>Delete"]
+        )
         self._create_action("increase_bpm", self.increase_bpm_action, ["plus", "equal"])
         self._create_action("decrease_bpm", self.decrease_bpm_action, ["minus"])
-        self._create_action("increase_volume", self.increase_volume_action, ["<primary>Up"])
-        self._create_action("decrease_volume", self.decrease_volume_action, ["<primary>Down"])
+        self._create_action(
+            "increase_volume", self.increase_volume_action, ["<primary>Up"]
+        )
+        self._create_action(
+            "decrease_volume", self.decrease_volume_action, ["<primary>Down"]
+        )
         self._create_action("load_preset", self.on_load_preset_action, ["<primary>o"])
         self._create_action("save_preset", self.on_save_preset_action, ["<primary>s"])
         self._create_action("quit", self.on_quit_action, ["<primary>q"])
@@ -136,7 +142,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
                     toggle_button = Gtk.ToggleButton()
                     toggle_button.set_size_request(30, 30)
                     toggle_button.set_name(f"{part}_toggle_{toggle_num}")
-                    toggle_button.connect("toggled", self.on_toggle_changed, part, toggle_num - 1)
+                    toggle_button.connect(
+                        "toggled", self.on_toggle_changed, part, toggle_num - 1
+                    )
                     group_box.append(toggle_button)
                     # Store reference to toggle button
                     setattr(self, f"{part}_toggle_{toggle_num}", toggle_button)
@@ -244,7 +252,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             title="Save Preset",
             transient_for=self,
             modal=True,
-            action=Gtk.FileChooserAction.SAVE
+            action=Gtk.FileChooserAction.SAVE,
         )
         dialog.add_buttons(
             "_Cancel", Gtk.ResponseType.CANCEL, "_Save", Gtk.ResponseType.OK
