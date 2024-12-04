@@ -1,75 +1,72 @@
-# 🥁 Rev Drum Machine
+<img src="data/icons/hicolor/scalable/apps/io.github.revisto.drum-machine.svg" alt="Drum Machine" width="128" height="128" align="left"/>
 
-An interactive Drum Machine built with **Python**, **GTK4 (libadwaita)**, and **Pygame**! 🎵 Create beats, adjust the tempo, and unleash your inner rhythm!
+# Drum Machine
 
-![Watch the video demo](data/screen-recording.gif)
+**Create and play drum beats**
 
-## 🚀 Features
+<br>
 
-## 🚀 Features
+[![GitHub](https://img.shields.io/github/license/revisto/drum-machine.svg)](https://github.com/revisto/drum-machine/blob/master/COPYING)
 
-- **16-Step Sequencer**: Toggle bars for 10 different drum parts:
-  - Kick
-  - Kick-2
-  - Kick-3
-  - Snare
-  - Snare-2
-  - Hi-Hat
-  - Hi-Hat-2
-  - Clap
-  - Tom
-  - Crash
+<p align="center">
+  <img src="data/screenshots/pattern-dark.png"/>
+</p>
 
-- **BPM Control**: Adjust the tempo to match your groove.
-- **Volume Adjustment**: Fine-tune the master volume.
-- **MIDI Pattern Export**: Export your drum patterns as `.mid` files.
-- **Default Patterns**: Load weird default patterns.
-- **Pattern Import**: Import custom patterns from `.mid` files.
+## Description
+Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns. Perfect for musicians, producers, and anyone interested in rhythm creation, this application provides a simple interface for drum pattern programming.
 
-## 🎯 Goals
+## Features
+- Intuitive grid-based pattern editor
+- Adjustable BPM control
+- Volume control for overall mix
+- Save and load preset patterns 
+- Multiple drum sounds including kick, snare, hi-hat, and more
+- Keyboard shortcuts for quick access to all functions
+- Modern GTK4 and libadwaita interface
 
-Our aim is to make this Drum Machine a part of the **GNOME Circle**. This means adhering to GNOME's high standards for design and integration.
+## Install
 
-## 📋 Roadmap
+<a href="https://flathub.org/apps/details/io.github.revisto.drum-machine">
+<img width="200" alt="Download on Flathub" src="https://flathub.org/api/badge?svg&locale=en"/>
+</a>
 
-### **User Interface and Experience**
+### Build from source
 
-- 🖥️ **Responsive Design**: Ensure the UI works well across different screen sizes.
-- 🎹 **Keyboard Shortcuts**: Implement intuitive shortcuts for toggling, playback control, and more.
-- 🌗 **Dark Mode/Light Mode Support**: Seamless switching to match the user’s system theme.
+You can clone and run from GNOME Builder.
 
-### **Drum Machine Features**
+#### Requirements
 
-- 💾 **Save and Load Projects**: Allow users to save and load their drum patterns and settings.
-- 🎛️ **Effects and Modulations**: Add effects like reverb, delay, and pitch modulation.
-- 🔢 **Step Sequencer Customization**: Let users adjust the number of steps beyond the default 16.
-- 🥁 **More Drum Kits**: Provide more drum kits and allow users to load custom samples.
-- 🎙️ **Audio Recording**: Enable recording of drum patterns as audio files (e.g., WAV, MP3).
+- Python 3 `python`
+- PyGObject `python-gobject`
+- GTK4 `gtk4`
+- libadwaita `libadwaita`
+- pygame `pygame`
+- mido `mido` 
+- Meson `meson`
+- Ninja `ninja`
 
-### **GNOME Integration**
+Run these commands to build it with meson:
+```bash
+meson builddir --prefix=/usr/local
+sudo ninja -C builddir install
+```
 
-- 🤝 **Integration with GNOME Shell**: Provide app indicators, notifications, and settings integration.
-- 📦 **Flatpak Packaging**: Package the app for easy installation on GNOME systems.
+## Keyboard Shortcuts
 
-## 🛠️ Technologies Used
+| Action | Shortcut |
+|--------|----------|
+| Play/Pause | Space |
+| Clear All | Ctrl+Delete |
+| Increase BPM | Plus/Equal |
+| Decrease BPM | Minus |
+| Increase Volume | Ctrl+Up |
+| Decrease Volume | Ctrl+Down |
+| Load Preset | Ctrl+O |
+| Save Preset | Ctrl+S |
+| Quit | Ctrl+Q |
 
-- **Python**
-- **GTK4 (libadwaita)**
-- **Pygame**
-- **Meson Build System**
+## Credits
+Developed by **[Revisto](https://github.com/revisto)**.
 
-## 📸 Screenshots
-
-*Add screenshots to showcase your application’s interface.*
-
-## 🤔 Getting Started
-
-*Instructions on how to download, build, and run your application.*
-
-## 🌟 Contributing
-
-*Guidelines on how others can contribute to your project.*
-
-## 📄 License
-
-This project is licensed under the **GNU General Public License v3.0** - see the LICENSE file for details.
+## License
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
