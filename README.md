@@ -1,16 +1,23 @@
-<img src="data/icons/hicolor/scalable/apps/io.github.revisto.drum-machine.svg" alt="Drum Machine" width="128" height="128" align="left"/>
+[license-url]: https://github.com/revisto/drum-machine/blob/master/COPYING
+[license-image]: https://img.shields.io/github/license/revisto/drum-machine.svg?style=for-the-badge
+[flathub-url]: https://flathub.org/apps/io.github.revisto.drum-machine
+[flathub-image]: https://img.shields.io/flathub/v/io.github.revisto.drum-machine?logo=flathub&style=for-the-badge
+[issues-url]: https://github.com/revisto/drum-machine/issues
+[issues-image]: https://img.shields.io/github/issues/revisto/drum-machine?style=for-the-badge
 
-# Drum Machine
+<div align="center">
+  <img src="data/icons/hicolor/scalable/apps/io.github.revisto.drum-machine.svg" width="128" height="128">
 
-**Create and play drum beats**
+  # Drum Machine
 
-<br>
+  **Create and play drum beats**
 
-[![GitHub](https://img.shields.io/github/license/revisto/drum-machine.svg)](https://github.com/revisto/drum-machine/blob/master/COPYING)
+  [![License][license-image]][license-url]
+  [![Flathub][flathub-image]][flathub-url]
+  [![Issues][issues-image]][issues-url]
 
-<p align="center">
-  <img src="data/screenshots/pattern-dark.png"/>
-</p>
+  <img src="data/screenshots/pattern-dark.png">
+</div>
 
 ## Description
 Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns. Perfect for musicians, producers, and anyone interested in rhythm creation, this application provides a simple interface for drum pattern programming.
