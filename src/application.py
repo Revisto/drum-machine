@@ -33,7 +33,6 @@ class DrumMachineApplication(Adw.Application):
         )
         self.create_action("quit", lambda *_: self.quit(), ["<primary>q"])
         self.create_action("about", self.on_about_action)
-        self.create_action("preferences", self.on_preferences_action)
 
     def do_activate(self):
         win = self.props.active_window
@@ -52,9 +51,6 @@ class DrumMachineApplication(Adw.Application):
             copyright="© 2024 Revisto",
         )
         about.present()
-
-    def on_preferences_action(self, widget, _):
-        print("app.preferences action activated")
 
     def create_action(self, name, callback, shortcuts=None):
         action = Gio.SimpleAction.new(name, None)
