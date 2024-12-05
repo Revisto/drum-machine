@@ -22,5 +22,5 @@ from .application import DrumMachineApplication
 
 
 def main(version):
-    app = DrumMachineApplication()
+    app = DrumMachineApplication(version=version)
     return app.run(sys.argv)
