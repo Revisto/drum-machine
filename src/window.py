@@ -33,6 +33,7 @@ from .config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
 class DrumMachineWindow(Adw.ApplicationWindow):
     __gtype_name__ = "DrumMachineWindow"
 
+    menu_button = Gtk.Template.Child()
     outer_box = Gtk.Template.Child()
     bpm_spin_button = Gtk.Template.Child()
     volume_scale = Gtk.Template.Child()
@@ -60,6 +61,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.create_actions()
 
     def create_actions(self):
+        self._create_action("open_menu", self.on_open_menu_action, ["F10"])
         self._create_action("play_pause", self.handle_play_pause_action, ["space"])
         self._create_action(
             "clear_toggles", self.handle_clear_action, ["<primary>Delete"]
@@ -75,6 +77,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self._create_action("load_preset", self.on_load_preset_action, ["<primary>o"])
         self._create_action("save_preset", self.on_save_preset_action, ["<primary>s"])
         self._create_action("quit", self.on_quit_action, ["<primary>q"])
+        self._create_action("close_window", self.on_quit_action, ["<primary>w"])
 
     def _create_action(self, name, callback, shortcuts=None):
         action = Gio.SimpleAction.new(name, None)
@@ -82,6 +85,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.add_action(action)
         if shortcuts:
             self.application.set_accels_for_action(f"win.{name}", shortcuts)
+
+    def on_open_menu_action(self, action, param):
+        self.menu_button.activate()
 
     def handle_play_pause_action(self, action, param):
         self.handle_play_pause(self.play_pause_button)

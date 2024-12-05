@@ -16,7 +16,7 @@
               </object>
             </property>
             <child type="end">
-              <object class="GtkMenuButton">
+              <object class="GtkMenuButton" id="menu_button">
                 <property name="primary">True</property>
                 <property name="icon-name">open-menu-symbolic</property>
                 <property name="tooltip-text" translatable="yes">Menu</property>
