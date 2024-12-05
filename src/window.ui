@@ -12,7 +12,7 @@
             <property name="css-classes">header-bar</property>
             <property name="title-widget">
               <object class="AdwWindowTitle">
-                <property name="title" translatable="yes">Revisto Drum Machine</property>
+                <property name="title" translatable="yes">Drum Machine</property>
               </object>
             </property>
             <child type="end">
