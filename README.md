@@ -73,7 +73,19 @@ sudo ninja -C builddir install
 | Quit | Ctrl+Q |
 
 ## Credits
-Developed by **[Revisto](https://github.com/revisto)**.
+Developed by **[Revisto](https://github.com/revisto)**
+
+<p>
+  <a href="https://youtube.com/@theRevisto" title="YouTube">
+    <img src="https://img.shields.io/badge/Revisto-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
+  </a>
+  <a href="https://linkedin.com/in/revisto" title="LinkedIn">
+    <img src="https://img.shields.io/badge/Revisto-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+</p>
 
 ## License
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+## Code of Conduct
+We follow the [GNOME Code of Conduct](https://wiki.gnome.org/Foundation/CodeOfConduct) to ensure a welcoming environment for everyone. Be kind, be respectful, and help us build something awesome and fun together. 
