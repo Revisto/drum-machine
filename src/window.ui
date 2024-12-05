@@ -87,7 +87,8 @@
                                         <property name="spacing">10</property>
                                         <child>
                                           <object class="GtkLabel">
-                                            <property name="label">BPM:</property>
+                                            <property name="label" translatable="yes">BPM:</property>
+                                            <property name="tooltip-text" translatable="yes">Adjust tempo in beats per minute (30-300 BPM)</property>
                                             <property name="halign">start</property>
                                           </object>
                                         </child>
@@ -115,7 +116,7 @@
                                         <property name="spacing">10</property>
                                         <child>
                                           <object class="GtkLabel">
-                                            <property name="label">Volume:</property>
+                                            <property name="label" translatable="yes">Volume:</property>
                                             <property name="halign">start</property>
                                           </object>
                                         </child>
@@ -145,7 +146,7 @@
                                         <property name="spacing">10</property>
                                         <child>
                                           <object class="GtkButton" id="clear_button">
-                                            <property name="label">Clear</property>
+                                            <property name="label" translatable="yes">Clear</property>
                                             <property name="halign">center</property>
                                             <property name="valign">center</property>
                                             <property name="css-classes">clear-button</property>
@@ -153,7 +154,7 @@
                                         </child>
                                         <child>
                                           <object class="GtkButton" id="play_pause_button">
-                                            <property name="label">Play</property>
+                                            <property name="label" translatable="yes">Play</property>
                                             <property name="halign">center</property>
                                             <property name="valign">center</property>
                                             <property name="css-classes">play-button</property>
@@ -234,14 +235,14 @@
                                     </child>
                                     <child>
                                       <object class="GtkButton" id="load_preset_button">
-                                        <property name="label">Load Preset</property>
+                                        <property name="label" translatable="yes">Load Preset</property>
                                         <property name="halign">center</property>
                                         <property name="valign">center</property>
                                       </object>
                                     </child>
                                     <child>
                                       <object class="GtkButton" id="save_preset_button">
-                                        <property name="label">Save Preset</property>
+                                        <property name="label" translatable="yes">Save Preset</property>
                                         <property name="halign">center</property>
                                         <property name="valign">center</property>
                                       </object>
