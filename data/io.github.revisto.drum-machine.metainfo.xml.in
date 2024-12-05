@@ -87,5 +87,8 @@
     <control>pointing</control>
     <control>touch</control>
   </supports>
+  <requires>
+    <internet>offline-only</internet>
+  </requires>
   <content_rating type="oars-1.1" />
 </component>
