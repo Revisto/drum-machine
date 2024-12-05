@@ -62,6 +62,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def create_actions(self):
         self._create_action("open_menu", self.on_open_menu_action, ["F10"])
+        self._create_action("show-help-overlay", self.on_show_help_overlay, ["<primary>question"])
         self._create_action("play_pause", self.handle_play_pause_action, ["space"])
         self._create_action(
             "clear_toggles", self.handle_clear_action, ["<primary>Delete"]
@@ -88,6 +89,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def on_open_menu_action(self, action, param):
         self.menu_button.activate()
+
+    def on_show_help_overlay(self, action, param):
+        self.get_help_overlay().present()
 
     def handle_play_pause_action(self, action, param):
         self.handle_play_pause(self.play_pause_button)
