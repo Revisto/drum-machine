@@ -1,19 +1,10 @@
-.header-label {
-    color: #ffffff;
-}
-
 .outer-box {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background: linear-gradient(45deg, #75498f, #9639ff36);
 }
 
-.main-controls-box {
-    background-color: #0000003b;
-}
-
 .header-bar {
     background: linear-gradient(45deg, #232526, #342f38);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .drum-machine-box {
@@ -29,24 +20,18 @@
     background-color: #ffffff1c;
 }
 
-.drum-machine-box button,
-.main-controls-box button,
-.preset-box button,
-.play-button,
-.clear-button {
+.drum-machine-box button {
     background-color: #ffffff1c;
 }
 
-.drum-machine-box button:hover,
-.main-controls-box button:hover,
-.preset-box button:hover,
-.play-button:hover,
-.clear-button:hover {
+.drum-machine-box button:hover {
     background-color: #ffffff42;
 }
 
-.drum-machine-box button:checked,
-.preset-box button:checked,
-.main-controls-box button:checked {
+.drum-machine-box button:checked {
     background-color: #ffffff5e;
+}
+
+.bottom-wrapper {
+    background: linear-gradient(45deg, #75498f, #9639ff36);
 }

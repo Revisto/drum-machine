@@ -1,45 +1,13 @@
-.header-label {
-    font-size: 36px;
-    color: #422d4e;
-    padding: 20px;
-    padding-left: 5px;
-    border-radius: 10px;
-}
-
 .outer-box {
     padding: 30px;
-    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     background: linear-gradient(45deg, #d792ff, #d792ffa8);
-    border-radius: 25px;
-}
-
-.main-controls-box {
-    border: 2px solid #d792ff;
-    padding: 20px;
-    background-color: #ffffff3b;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header-bar {
     background: linear-gradient(45deg, #ffffff, #f2e3ff);
     padding: 7px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-}
-
-.play-button {
-    padding: 20px;
-}
-
-.clear-button {
-    padding: 20px;
-}
-
-.center-align {
-    margin-top: 8px;
-    margin-right: 10px;
 }
 
 .drum-machine-box {
@@ -64,29 +32,16 @@
     background-color: #ffffff7c;
 }
 
-.main-controls-box button,
-.preset-box button,
-.play-button,
-.clear-button {
-    background-color: #ffffff7c;
-}
-
-.drum-machine-box button:hover,
-.main-controls-box button:hover,
-.preset-box button:hover,
-.play-button:hover,
-.clear-button:hover {
+.drum-machine-box button:hover {
     background-color: #ffffffb0;
 }
 
-.drum-machine-box button:checked,
-.preset-box button:checked,
-.main-controls-box button:checked {
+.drum-machine-box button:checked {
     background-color: #ffffff;
 }
 
-.preset-box {
-    border: none;
-    background: none;
-    box-shadow: none;
+.bottom-wrapper {
+    background: linear-gradient(45deg, #db9dff, #d792ffc0);
+    padding: 10px;
+    width: 100%;
 }
