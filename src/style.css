@@ -1,7 +1,7 @@
 .outer-box {
     padding: 30px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    background: linear-gradient(45deg, #d792ff, #d792ffa8);
+    background: linear-gradient(45deg, #c766ff, #c766ffde);
 }
 
 .header-bar {
@@ -16,7 +16,7 @@
 }
 
 .drum-machine-box button {
-    background-color: #ffffff73;
+    background-color: #ffffff65;
 }
 
 .drum-machine-box button.toggle-active {
@@ -43,7 +43,7 @@
 }
 
 .bottom-wrapper {
-    background: linear-gradient(45deg, #db9dff, #d792ffc0);
+    background: #c766ffaf;
     padding: 10px;
     width: 100%;
 }
