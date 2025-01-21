@@ -151,7 +151,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
                     if toggle_num > NUM_TOGGLES:
                         break
                     toggle_button = Gtk.ToggleButton()
-                    toggle_button.set_size_request(30, 30)
+                    toggle_button.set_size_request(20, 20)
                     toggle_button.set_name(f"{part}_toggle_{toggle_num}")
                     toggle_button.connect(
                         "toggled", self.on_toggle_changed, part, toggle_num - 1

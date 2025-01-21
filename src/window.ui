@@ -5,6 +5,15 @@
   <template class="DrumMachineWindow" parent="AdwApplicationWindow">
     <property name="default-width">1000</property>
     <property name="default-height">800</property>
+    <property name="width-request">430</property>
+    <property name="height-request">420</property>
+    <child>
+      <object class="AdwBreakpoint">
+        <condition>max-width: 700px or max-height: 600px</condition>
+        <setter object="drum_machine_box" property="css-classes">drum-machine-box
+compact</setter>
+      </object>
+    </child>
     <property name="content">
       <object class="AdwToolbarView">
         <child type="top">
@@ -33,7 +42,6 @@
                             <property name="value">120</property>
                           </object>
                         </property>
-                        <property name="width-request">80</property>
                       </object>
                     </child>
                   </object>
