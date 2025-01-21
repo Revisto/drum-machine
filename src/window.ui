@@ -18,7 +18,6 @@ compact</setter>
       <object class="AdwToolbarView">
         <child type="top">
           <object class="AdwHeaderBar" id="header_bar">
-            <property name="css-classes">header-bar</property>
             <child type="title">
               <object class="GtkBox">
                 <property name="spacing">12</property>

@@ -3,10 +3,6 @@
     background: linear-gradient(45deg, #75498f, #9639ff36);
 }
 
-.header-bar {
-    background: linear-gradient(45deg, #232526, #342f38);
-}
-
 .drum-machine-box {
     background-color: #00000027;
 }
@@ -14,10 +10,6 @@
 .drum-machine-box button.toggle-active {
     background-color: #bf79e7;
     box-shadow: 0 0 10px #bf79e7;
-}
-
-.bpm-spin-button {
-    background-color: #ffffff1c;
 }
 
 .drum-machine-box button {

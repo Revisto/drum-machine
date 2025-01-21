@@ -5,13 +5,10 @@
 }
 
 .header-bar {
-    background: linear-gradient(45deg, #ffffff, #f2e3ff);
     padding: 7px;
-    border-radius: 10px;
 }
 
 .drum-machine-box {
-    margin-top: 10px;
     padding: 20px;
     border-radius: 10px;
     background-color: #ffffff27;
@@ -31,12 +28,10 @@
     min-width: 10px;
     min-height: 10px;
     padding: 0;
-    margin: 0;
 }
 
 .bpm-spin-button {
-    padding: 10px;
-    background-color: #ffffff7c;
+    padding: 3px;
 }
 
 .drum-machine-box button:hover {
