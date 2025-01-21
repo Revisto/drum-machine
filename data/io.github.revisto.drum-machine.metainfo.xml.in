@@ -69,15 +69,13 @@
     <email>therevisto@gmail.com</email>
   </developer>
   <releases>
-    <release version="1.0.0" date="2024-11-25">
+    <release version="1.2.0" date="2025-01-21">
       <description>
-        <p>Initial release of Drum Machine!</p>
+        <p>Improved UI and functionality updates</p>
         <ul>
-          <li>Grid-based pattern editor with multiple drum sounds</li>
-          <li>Adjustable BPM and volume controls</li>
-          <li>Preset management system</li>
-          <li>Keyboard shortcuts for all main functions</li>
-          <li>Modern GTK4 and libadwaita interface</li>
+          <li>Improve UI responsiveness and reduce early scrolling</li>
+          <li>Improve contrast for active grid squares in light mode</li>
+          <li>Simplify and tone down custom CSS</li>
         </ul>
       </description>
     </release>
