@@ -130,7 +130,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
         for part in DRUM_PARTS:
             # Create label for drum part
-            label = Gtk.Label(label=f"{part.capitalize().replace('-', ' ')}:", halign=Gtk.Align.START)
+            label = Gtk.Label(label=f"{part.capitalize().replace('-', ' ')}", halign=Gtk.Align.START)
             label.set_size_request(70, -1)
             label.set_xalign(0)
 
