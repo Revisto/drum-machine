@@ -18,9 +18,91 @@ compact</setter>
       <object class="AdwToolbarView">
         <child type="top">
           <object class="AdwHeaderBar" id="header_bar">
-            <child type="title">
+            <property name="css-classes">header-bar</property>
+            <child type="start">
               <object class="GtkBox">
+                <property name="spacing">0</property>
+                <child>
+                  <object class="GtkButton" id="open_file_button">
+                    <property name="label" translatable="yes">Open</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkMenuButton" id="preset_menu_button">
+                    <property name="icon-name">pan-down-symbolic</property>
+                    <property name="menu-model">preset_menu</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <menu id="preset_menu">
+              <section>
+                <!-- Presets will be added here programmatically -->
+              </section>
+            </menu>
+            <child type="title">
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Drum Machine</property>
+              </object>
+            </child>
+            <child type="end">
+              <object class="GtkMenuButton" id="menu_button">
+                <property name="icon-name">open-menu-symbolic</property>
+                <property name="menu-model">primary_menu</property>
+              </object>
+            </child>
+            <child type="end">
+              <object class="GtkButton" id="save_preset_button">
+                <property name="icon-name">document-save-symbolic</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <property name="content">
+          <object class="GtkBox" id="outer_box">
+            <property name="orientation">vertical</property>
+            <property name="css-classes">outer-box</property>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="vexpand">true</property>
+                <property name="hexpand">true</property>
+                <child>
+                  <object class="GtkBox" id="drum_machine_box">
+                      <property name="orientation">vertical</property>
+                      <property name="spacing">12</property>
+                      <property name="halign">center</property>
+                      <property name="valign">center</property>
+                      <property name="css-classes">drum-machine-box</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+        <child type="bottom">
+          <object class="GtkBox" id="bottom_wrapper">
+            <property name="css-classes">bottom-wrapper</property>
+            <property name="hexpand">true</property>
+            <child>
+              <object class="GtkBox" id="bottom_action_box">
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="hexpand">true</property>
                 <property name="spacing">12</property>
+                <property name="margin-start">12</property>
+                <property name="margin-end">12</property>
+                <property name="margin-top">6</property>
+                <property name="margin-bottom">6</property>
+                <child>
+                  <object class="GtkButton" id="play_pause_button">
+                    <property name="icon-name">media-playback-start-symbolic</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="clear_button">
+                    <property name="icon-name">edit-clear-symbolic</property>
+                  </object>
+                </child>
                 <child>
                   <object class="GtkBox">
                     <property name="spacing">6</property>
@@ -56,83 +138,6 @@ compact</setter>
                         <property name="value">100</property>
                       </object>
                     </property>
-                  </object>
-                </child>
-              </object>
-            </child>
-            <child type="end">
-              <object class="GtkMenuButton" id="menu_button">
-                <property name="icon-name">open-menu-symbolic</property>
-                <property name="menu-model">primary_menu</property>
-              </object>
-            </child>
-          </object>
-        </child>
-
-        <property name="content">
-          <object class="GtkBox" id="outer_box">
-            <property name="orientation">vertical</property>
-            <property name="css-classes">outer-box</property>
-            <child>
-              <object class="GtkScrolledWindow">
-                <property name="vexpand">true</property>
-                <property name="hexpand">true</property>
-                <child>
-                  <object class="GtkBox" id="drum_machine_box">
-                      <property name="orientation">vertical</property>
-                      <property name="spacing">12</property>
-                      <property name="halign">center</property>
-                      <property name="valign">center</property>
-                      <property name="css-classes">drum-machine-box</property>
-                  </object>
-                </child>
-              </object>
-            </child>
-          </object>
-        </property>
-
-        <child type="bottom">
-          <object class="GtkBox" id="bottom_wrapper">
-            <property name="css-classes">bottom-wrapper</property>
-            <property name="hexpand">true</property>
-            <child>
-              <object class="GtkBox" id="bottom_action_box">
-                <property name="halign">center</property>
-                <property name="valign">center</property>
-                <property name="hexpand">true</property>
-                <property name="spacing">12</property>
-                <property name="margin-start">12</property>
-                <property name="margin-end">12</property>
-                <property name="margin-top">6</property>
-                <property name="margin-bottom">6</property>
-                <child>
-                  <object class="GtkButton" id="play_pause_button">
-                    <property name="icon-name">media-playback-start-symbolic</property>
-                    <property name="tooltip-text" translatable="yes">Play/Pause</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkButton" id="clear_button">
-                    <property name="icon-name">edit-clear-symbolic</property>
-                    <property name="tooltip-text" translatable="yes">Clear Pattern</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkBox">
-                    <property name="spacing">6</property>
-                    <child>
-                      <object class="GtkComboBoxText" id="preset_combo_box"/>
-                    </child>
-                    <child>
-                      <object class="GtkButton" id="load_preset_button">
-                        <property name="label">Load</property>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkButton" id="save_preset_button">
-                        <property name="label">Save</property>
-                      </object>
-                    </child>
                   </object>
                 </child>
               </object>

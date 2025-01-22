@@ -22,11 +22,11 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Adw, Gtk, Gio
+from gi.repository import Adw, Gtk, Gio, GLib
 from .services.sound_service import SoundService
 from .services.drum_machine_service import DrumMachineService
 from .services.ui_helper import UIHelper
-from .config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
+from .config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT, DEFAULT_PRESETS
 
 
 @Gtk.Template(resource_path="/io/github/revisto/drum-machine/window.ui")
@@ -40,8 +40,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     clear_button = Gtk.Template.Child()
     play_pause_button = Gtk.Template.Child()
     drum_machine_box = Gtk.Template.Child()
-    preset_combo_box = Gtk.Template.Child()
-    load_preset_button = Gtk.Template.Child()
+    open_file_button = Gtk.Template.Child()
+    preset_menu_button = Gtk.Template.Child()
     save_preset_button = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
@@ -55,9 +55,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             self.sound_service, self.ui_helper
         )
         self.create_drumkit_toggle_buttons()
+        self.setup_preset_menu()
         self.connect_signals()
         self.init_drum_parts()
-        self.load_presets()
         self.create_actions()
 
     def create_actions(self):
@@ -178,7 +178,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.volume_button.connect("value-changed", self.on_volume_changed)
         self.clear_button.connect("clicked", self.handle_clear)
         self.play_pause_button.connect("clicked", self.handle_play_pause)
-        self.load_preset_button.connect("clicked", self.on_load_preset)
+        self.open_file_button.connect("clicked", self.on_open_file)
         self.save_preset_button.connect("clicked", self.on_save_preset)
 
     def init_drum_parts(self):
@@ -214,49 +214,62 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             button.set_icon_name("media-playback-pause-symbolic")
             self.drum_machine_service.play()
 
-    def load_presets(self):
-        # Load default presets and add them to the combo box
-        default_presets = ["Shoot", "Maybe Rock", "Boom Boom", "Night", "Slow", "Chill"]
-        for preset in default_presets:
-            self.preset_combo_box.append_text(preset)
-        self.preset_combo_box.append_text("Load Your File...")
-
-        # Set the active preset to the first default preset
-        self.preset_combo_box.set_active(0)
-
-    def on_load_preset(self, button):
-        selected_preset = self.preset_combo_box.get_active_text()
-        if selected_preset == "Load Your File...":
-            dialog = Gtk.FileChooserDialog(
-                title="Please choose a file",
-                transient_for=self,
-                modal=True,
-                action=Gtk.FileChooserAction.OPEN,
+    def setup_preset_menu(self):
+        # Create menu for presets
+        menu = Gio.Menu.new()
+        for preset in DEFAULT_PRESETS:
+            # Use regular menu item without state
+            item = Gio.MenuItem.new(preset, f"win.load-preset")
+            item.set_action_and_target_value(
+                "win.load-preset", 
+                GLib.Variant.new_string(preset)
             )
-            dialog.add_buttons(
-                "_Cancel", Gtk.ResponseType.CANCEL, "_Open", Gtk.ResponseType.OK
-            )
+            menu.append_item(item)
+        
+        # Create the action without state
+        preset_action = Gio.SimpleAction.new(
+            "load-preset",
+            GLib.VariantType.new("s")
+        )
+        preset_action.connect("activate", self.on_preset_selected)
+        self.add_action(preset_action)
+        
+        # Set the menu
+        self.preset_menu_button.set_menu_model(menu)
 
-            # Add a filter to show only .mid files
-            filter_midi = Gtk.FileFilter()
-            filter_midi.set_name("MIDI files")
-            filter_midi.add_pattern("*.mid")
-            dialog.add_filter(filter_midi)
+    def on_open_file(self, button):
+        dialog = Gtk.FileChooserDialog(
+            title="Open MIDI File",
+            transient_for=self,
+            modal=True,
+            action=Gtk.FileChooserAction.OPEN,
+        )
+        dialog.add_buttons(
+            "_Cancel", Gtk.ResponseType.CANCEL,
+            "_Open", Gtk.ResponseType.OK
+        )
 
-            def on_response(dialog, response):
-                if response == Gtk.ResponseType.OK:
-                    file_path = dialog.get_file().get_path()
-                    self.drum_machine_service.load_preset(file_path)
-                dialog.close()
+        # Add a filter to show only .mid files
+        filter_midi = Gtk.FileFilter()
+        filter_midi.set_name("MIDI files")
+        filter_midi.add_pattern("*.mid")
+        dialog.add_filter(filter_midi)
 
-            dialog.connect("response", on_response)
-            dialog.show()
-        else:
-            preset_dir = os.path.join(
-                os.path.dirname(__file__), "..", "data", "presets"
-            )
-            file_path = os.path.join(preset_dir, f"{selected_preset}.mid")
+        dialog.connect("response", self._handle_file_response)
+        dialog.show()
+
+    def _handle_file_response(self, dialog, response):
+        if response == Gtk.ResponseType.OK:
+            file_path = dialog.get_file().get_path()
             self.drum_machine_service.load_preset(file_path)
+        dialog.close()
+
+    def on_preset_selected(self, action, parameter):
+        preset_name = parameter.get_string()
+        preset_dir = os.path.join(os.path.dirname(__file__), "..", "data", "presets")
+        file_path = os.path.join(preset_dir, f"{preset_name}.mid")
+        self.drum_machine_service.load_preset(file_path)
+
 
     def on_save_preset(self, button):
         dialog = Gtk.FileChooserDialog(
