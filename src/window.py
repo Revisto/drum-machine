@@ -75,7 +75,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self._create_action(
             "decrease_volume", self.decrease_volume_action, ["<primary>Down"]
         )
-        self._create_action("load_preset", self.on_load_preset_action, ["<primary>o"])
+        self._create_action("load_preset", self.on_open_file_action, ["<primary>o"])
         self._create_action("save_preset", self.on_save_preset_action, ["<primary>s"])
         self._create_action("quit", self.on_quit_action, ["<primary>q"])
         self._create_action("close_window", self.on_quit_action, ["<primary>w"])
@@ -115,8 +115,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         current_volume = self.volume_button.get_value()
         self.volume_button.set_value(max(current_volume - 5, 0))
 
-    def on_load_preset_action(self, action, param):
-        self.on_load_preset(self.load_preset_button)
+    def on_open_file_action(self, action, param):
+        self.on_open_file(self.open_file_button)
 
     def on_save_preset_action(self, action, param):
         self.on_save_preset(self.save_preset_button)
