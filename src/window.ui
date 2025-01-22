@@ -100,7 +100,7 @@ compact</setter>
                 </child>
                 <child>
                   <object class="GtkButton" id="clear_button">
-                    <property name="icon-name">edit-clear-symbolic</property>
+                    <property name="label" translatable="yes">Reset</property>
                   </object>
                 </child>
                 <child>
