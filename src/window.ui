@@ -94,16 +94,6 @@ compact</setter>
                 <property name="margin-top">6</property>
                 <property name="margin-bottom">6</property>
                 <child>
-                  <object class="GtkButton" id="play_pause_button">
-                    <property name="icon-name">media-playback-start-symbolic</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkButton" id="clear_button">
-                    <property name="label" translatable="yes">Reset</property>
-                  </object>
-                </child>
-                <child>
                   <object class="GtkBox">
                     <property name="spacing">6</property>
                     <child>
@@ -125,6 +115,23 @@ compact</setter>
                         </property>
                       </object>
                     </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="play_pause_button">
+                    <property name="width-request">80</property>
+                    <property name="height-request">44</property>
+                    <property name="icon-name">media-playback-start-symbolic</property>
+                    <property name="tooltip-text" translatable="yes">Play</property>
+                    <property name="valign">center</property>
+                    <style>
+                      <class name="circular"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="clear_button">
+                    <property name="label" translatable="yes">Reset</property>
                   </object>
                 </child>
                 <child>
