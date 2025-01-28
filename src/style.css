@@ -1,6 +1,6 @@
 .outer-box {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    background: #C86DFF
+    background: #C86DFF;
 }
 
 .header-bar {
@@ -40,5 +40,4 @@
 .bottom-wrapper {
     background: #D182FF;
     padding: 10px;
-    width: 100%;
 }
