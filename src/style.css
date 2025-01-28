@@ -29,10 +29,6 @@
     padding: 0;
 }
 
-.bpm-spin-button {
-    padding: 5px;
-}
-
 .drum-machine-box button:hover {
     background-color: #ffffffb0;
 }

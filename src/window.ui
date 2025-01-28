@@ -107,7 +107,6 @@ compact</setter>
                     </child>
                     <child>
                       <object class="GtkSpinButton" id="bpm_spin_button">
-                        <property name="css-classes">bpm-spin-button</property>
                         <property name="adjustment">
                           <object class="GtkAdjustment">
                             <property name="lower">30</property>
