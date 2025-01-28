@@ -72,6 +72,10 @@ compact</setter>
                       <property name="spacing">12</property>
                       <property name="halign">center</property>
                       <property name="valign">center</property>
+                      <property name="margin-start">12</property>
+                      <property name="margin-end">12</property>
+                      <property name="margin-top">12</property>
+                      <property name="margin-bottom">12</property>
                       <property name="css-classes">drum-machine-box</property>
                   </object>
                 </child>
