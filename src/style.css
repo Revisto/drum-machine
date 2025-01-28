@@ -1,10 +1,11 @@
 .outer-box {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    background: linear-gradient(45deg, #c766ff, #c766ffde);
+    background: #C86DFF
 }
 
 .header-bar {
     padding: 5px;
+    background-color: #D182FF;
 }
 
 .drum-machine-box {
@@ -42,7 +43,7 @@
 }
 
 .bottom-wrapper {
-    background: #c766ffaf;
+    background: #D182FF;
     padding: 10px;
     width: 100%;
 }
