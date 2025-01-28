@@ -88,38 +88,37 @@ compact</setter>
             <property name="css-classes">bottom-wrapper</property>
             <property name="hexpand">true</property>
             <child>
-              <object class="GtkBox" id="bottom_action_box">
-                <property name="halign">center</property>
-                <property name="valign">center</property>
-                <property name="hexpand">true</property>
-                <property name="spacing">12</property>
+              <!-- Left aligned BPM controls -->
+              <object class="GtkBox" id="bpm_box">
+                <property name="halign">start</property>
+                <property name="spacing">6</property>
                 <property name="margin-start">12</property>
-                <property name="margin-end">12</property>
-                <property name="margin-top">6</property>
-                <property name="margin-bottom">6</property>
                 <child>
-                  <object class="GtkBox">
-                    <property name="spacing">6</property>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="label" translatable="yes">BPM</property>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkSpinButton" id="bpm_spin_button">
-                        <property name="adjustment">
-                          <object class="GtkAdjustment">
-                            <property name="lower">30</property>
-                            <property name="upper">300</property>
-                            <property name="step-increment">1</property>
-                            <property name="page-increment">10</property>
-                            <property name="value">120</property>
-                          </object>
-                        </property>
-                      </object>
-                    </child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">BPM</property>
                   </object>
                 </child>
+                <child>
+                  <object class="GtkSpinButton" id="bpm_spin_button">
+                    <property name="adjustment">
+                      <object class="GtkAdjustment">
+                        <property name="lower">30</property>
+                        <property name="upper">300</property>
+                        <property name="step-increment">1</property>
+                        <property name="page-increment">10</property>
+                        <property name="value">120</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <!-- Center box for play/pause and volume -->
+              <object class="GtkBox">
+                <property name="hexpand">true</property>
+                <property name="halign">center</property>
+                <property name="spacing">12</property>
                 <child>
                   <object class="GtkButton" id="play_pause_button">
                     <property name="width-request">80</property>
@@ -133,11 +132,6 @@ compact</setter>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkButton" id="clear_button">
-                    <property name="label" translatable="yes">Reset</property>
-                  </object>
-                </child>
-                <child>
                   <object class="GtkVolumeButton" id="volume_button">
                     <property name="adjustment">
                       <object class="GtkAdjustment">
@@ -148,6 +142,18 @@ compact</setter>
                         <property name="value">100</property>
                       </object>
                     </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <!-- Right aligned reset button -->
+              <object class="GtkBox" id="reset_box">
+                <property name="halign">end</property>
+                <property name="margin-end">12</property>
+                <child>
+                  <object class="GtkButton" id="clear_button">
+                    <property name="label" translatable="yes">Reset</property>
                   </object>
                 </child>
               </object>
