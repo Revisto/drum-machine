@@ -41,8 +41,8 @@ compact</setter>
               </section>
             </menu>
             <child type="title">
-              <object class="GtkLabel">
-                <property name="label" translatable="yes">Drum Machine</property>
+              <object class="AdwWindowTitle">
+                <property name="title" translatable="yes">Drum Machine</property>
               </object>
             </child>
             <child type="end">
