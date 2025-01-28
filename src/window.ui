@@ -91,15 +91,18 @@ compact</setter>
               <!-- Left aligned BPM controls -->
               <object class="GtkBox" id="bpm_box">
                 <property name="halign">start</property>
+                <property name="valign">center</property>
                 <property name="spacing">6</property>
                 <property name="margin-start">12</property>
                 <child>
                   <object class="GtkLabel">
+                    <property name="valign">center</property>
                     <property name="label" translatable="yes">BPM</property>
                   </object>
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="bpm_spin_button">
+                    <property name="valign">center</property>
                     <property name="adjustment">
                       <object class="GtkAdjustment">
                         <property name="lower">30</property>
@@ -118,11 +121,12 @@ compact</setter>
               <object class="GtkBox">
                 <property name="hexpand">true</property>
                 <property name="halign">center</property>
+                <property name="valign">center</property>
                 <property name="spacing">12</property>
                 <child>
                   <object class="GtkButton" id="play_pause_button">
-                    <property name="width-request">80</property>
-                    <property name="height-request">44</property>
+                    <property name="width-request">60</property>
+                    <property name="height-request">60</property>
                     <property name="icon-name">media-playback-start-symbolic</property>
                     <property name="tooltip-text" translatable="yes">Play</property>
                     <property name="valign">center</property>
@@ -133,6 +137,7 @@ compact</setter>
                 </child>
                 <child>
                   <object class="GtkVolumeButton" id="volume_button">
+                    <property name="valign">center</property>
                     <property name="adjustment">
                       <object class="GtkAdjustment">
                         <property name="lower">0</property>
@@ -150,9 +155,11 @@ compact</setter>
               <!-- Right aligned reset button -->
               <object class="GtkBox" id="reset_box">
                 <property name="halign">end</property>
+                <property name="valign">center</property>
                 <property name="margin-end">12</property>
                 <child>
                   <object class="GtkButton" id="clear_button">
+                    <property name="valign">center</property>
                     <property name="label" translatable="yes">Reset</property>
                   </object>
                 </child>
