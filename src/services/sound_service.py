@@ -37,9 +37,6 @@ class SoundService(ISoundService):
             )
             for drum_part in DRUM_PARTS
         }
-        self.sounds["clap"] = pygame.mixer.Sound(
-            os.path.join(self.drumkit_dir, "clap.wav")
-        )
 
     def play_sound(self, sound_name):
         self.sounds[sound_name].play()
@@ -47,3 +44,7 @@ class SoundService(ISoundService):
     def set_volume(self, volume):
         for sound in self.sounds.values():
             sound.set_volume(volume / 100)
+
+    def preview_sound(self, sound_name):
+        if sound_name in self.sounds:
+            self.play_sound(sound_name)

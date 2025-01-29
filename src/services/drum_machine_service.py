@@ -83,3 +83,8 @@ class DrumMachineService(IPlayer):
                         self.sound_service.play_sound(part)
                 time.sleep(delay_per_step)
         self.ui_helper.clear_highlight()
+
+    def preview_drum_part(self, part):
+        """Preview a drum part sound"""
+        if part in DRUM_PARTS:
+            self.sound_service.preview_sound(part)

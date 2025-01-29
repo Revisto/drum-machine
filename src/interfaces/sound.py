@@ -32,3 +32,8 @@ class ISoundService(ABC):
     @abstractmethod
     def set_volume(self, volume):
         pass
+
+    @abstractmethod
+    def preview_sound(self, sound_name):
+        """Play a preview of the sound at preview volume level"""
+        pass

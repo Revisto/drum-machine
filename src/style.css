@@ -41,3 +41,11 @@
     background: #D182FF;
     padding: 10px;
 }
+
+.drum-machine-box .drum-part-button {
+    min-width: 50px;
+}
+
+.drum-machine-box.compact .drum-part-button {
+    min-width: 60px;
+}

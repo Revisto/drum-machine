@@ -129,10 +129,19 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         container.set_homogeneous(False)
 
         for part in DRUM_PARTS:
-            # Create label for drum part
-            label = Gtk.Label(label=f"{part.capitalize().replace('-', ' ')}", halign=Gtk.Align.START)
-            label.set_size_request(70, -1)
-            label.set_xalign(0)
+            # Create button for drum parts
+            drum_part_button = Gtk.Button(
+                label=f"{part.capitalize().replace('-', ' ')}"
+            )
+            drum_part_button.set_halign(Gtk.Align.START)
+            drum_part_button.set_margin_end(10)
+            drum_part_button.connect("clicked", self.on_drum_part_button_clicked, part)
+            drum_part_button.add_css_class("drum-part-button")
+            drum_part_button.add_css_class("flat")
+            drum_part_button.set_tooltip_text(
+                f"Click to preview {part.capitalize().replace('-', ' ')}"
+            )
+            drum_part_button.set_has_tooltip(True)
 
             # Create box for toggle buttons
             toggle_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=30)
@@ -162,9 +171,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
                 toggle_box.append(group_box)
 
-            # Create a horizontal box for label and toggles
+            # Create a horizontal box for drum part button and toggles
             part_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-            part_box.append(label)
+            part_box.append(drum_part_button)
             part_box.append(toggle_box)
 
             # Add part_box to the container
@@ -172,6 +181,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
         # Add the container to the drum_machine_box
         self.drum_machine_box.append(container)
+
+    def on_drum_part_button_clicked(self, button, part):
+        self.drum_machine_service.preview_drum_part(part)
 
     def connect_signals(self):
         self.bpm_spin_button.connect("value-changed", self.on_bpm_changed)
@@ -225,7 +237,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
                 GLib.Variant.new_string(preset)
             )
             menu.append_item(item)
-        
+
         # Create the action without state
         preset_action = Gio.SimpleAction.new(
             "load-preset",
@@ -233,7 +245,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         )
         preset_action.connect("activate", self.on_preset_selected)
         self.add_action(preset_action)
-        
+
         # Set the menu
         self.preset_menu_button.set_menu_model(menu)
 
@@ -269,7 +281,6 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         preset_dir = os.path.join(os.path.dirname(__file__), "..", "data", "presets")
         file_path = os.path.join(preset_dir, f"{preset_name}.mid")
         self.drum_machine_service.load_preset(file_path)
-
 
     def on_save_preset(self, button):
         dialog = Gtk.FileChooserDialog(
