@@ -4,3 +4,4 @@ data/io.github.revisto.drum-machine.gschema.xml
 src/window.py
 src/window.ui
 src/gtk/help-overlay.ui
+src/gtk/save_changes_dialog.ui

@@ -31,7 +31,7 @@ DRUM_PARTS = [
 ]
 DEFAULT_PRESETS = [
     "Shoot",
-    "Maybe Rock", 
+    "Maybe Rock",
     "Boom Boom",
     "Night",
     "Slow",

@@ -32,7 +32,6 @@ class DrumMachineApplication(Adw.Application):
             flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
         )
         self.version = version
-        self.create_action("quit", lambda *_: self.quit(), ["<primary>q"])
         self.create_action("about", self.on_about_action)
 
     def do_activate(self):

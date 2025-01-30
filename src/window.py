@@ -26,6 +26,7 @@ from gi.repository import Adw, Gtk, Gio, GLib
 from .services.sound_service import SoundService
 from .services.drum_machine_service import DrumMachineService
 from .services.ui_helper import UIHelper
+from .services.save_changes_service import SaveChangesService
 from .config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT, DEFAULT_PRESETS
 
 
@@ -54,6 +55,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_machine_service = DrumMachineService(
             self.sound_service, self.ui_helper
         )
+        self.save_changes_service = SaveChangesService(self, self.drum_machine_service)
         self.create_drumkit_toggle_buttons()
         self.setup_preset_menu()
         self.connect_signals()
@@ -62,7 +64,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def create_actions(self):
         self._create_action("open_menu", self.on_open_menu_action, ["F10"])
-        self._create_action("show-help-overlay", self.on_show_help_overlay, ["<primary>question"])
+        self._create_action(
+            "show-help-overlay", self.on_show_help_overlay, ["<primary>question"]
+        )
         self._create_action("play_pause", self.handle_play_pause_action, ["space"])
         self._create_action(
             "clear_toggles", self.handle_clear_action, ["<primary>Delete"]
@@ -122,7 +126,15 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.on_save_preset(self.save_preset_button)
 
     def on_quit_action(self, action, param):
-        self.close()
+        if self.save_changes_service.has_unsaved_changes():
+            self.save_changes_service.prompt_save_changes(
+                on_save=self._save_and_close, on_discard=self.close
+            )
+        else:
+            self.close()
+
+    def _save_and_close(self):
+        self._show_save_dialog(lambda: self.close())
 
     def create_drumkit_toggle_buttons(self):
         container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
@@ -208,15 +220,21 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         state = toggle_button.get_active()
         self.drum_parts[part][index] = state
         self.drum_machine_service.drum_parts[part][index] = state
+        # Mark as unsaved when toggles change
+        self.save_changes_service.mark_unsaved_changes(True)
 
     def on_bpm_changed(self, spin_button):
         self.drum_machine_service.set_bpm(spin_button.get_value())
+        # Mark as unsaved when BPM changes
+        self.save_changes_service.mark_unsaved_changes(True)
 
     def on_volume_changed(self, button, value):
         self.drum_machine_service.set_volume(value)
 
     def handle_clear(self, button):
         self.drum_machine_service.clear_all_toggles()
+        # Mark as unsaved when clearing
+        self.save_changes_service.mark_unsaved_changes(True)
 
     def handle_play_pause(self, button):
         if self.drum_machine_service.playing:
@@ -231,18 +249,14 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         menu = Gio.Menu.new()
         for preset in DEFAULT_PRESETS:
             # Use regular menu item without state
-            item = Gio.MenuItem.new(preset, f"win.load-preset")
+            item = Gio.MenuItem.new(preset, "win.load-preset")
             item.set_action_and_target_value(
-                "win.load-preset", 
-                GLib.Variant.new_string(preset)
+                "win.load-preset", GLib.Variant.new_string(preset)
             )
             menu.append_item(item)
 
         # Create the action without state
-        preset_action = Gio.SimpleAction.new(
-            "load-preset",
-            GLib.VariantType.new("s")
-        )
+        preset_action = Gio.SimpleAction.new("load-preset", GLib.VariantType.new("s"))
         preset_action.connect("activate", self.on_preset_selected)
         self.add_action(preset_action)
 
@@ -250,6 +264,21 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.preset_menu_button.set_menu_model(menu)
 
     def on_open_file(self, button):
+        # If unsaved changes exist, prompt the user first
+        if self.save_changes_service.has_unsaved_changes():
+            self.save_changes_service.prompt_save_changes(
+                on_save=self._save_and_open_file, on_discard=self._open_file_directly
+            )
+        else:
+            self._open_file_directly()
+
+    def _save_and_open_file(self):
+        self._show_save_dialog(self._open_file_directly)
+
+    def _save_and_open_preset(self, parameter):
+        self._show_save_dialog(lambda: self._open_preset_directly(parameter))
+
+    def _open_file_directly(self):
         dialog = Gtk.FileChooserDialog(
             title="Open MIDI File",
             transient_for=self,
@@ -257,8 +286,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             action=Gtk.FileChooserAction.OPEN,
         )
         dialog.add_buttons(
-            "_Cancel", Gtk.ResponseType.CANCEL,
-            "_Open", Gtk.ResponseType.OK
+            "_Cancel", Gtk.ResponseType.CANCEL, "_Open", Gtk.ResponseType.OK
         )
 
         # Add a filter to show only .mid files
@@ -274,15 +302,28 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         if response == Gtk.ResponseType.OK:
             file_path = dialog.get_file().get_path()
             self.drum_machine_service.load_preset(file_path)
+            # Reset unsaved changes after loading
+            self.save_changes_service.mark_unsaved_changes(False)
         dialog.close()
 
     def on_preset_selected(self, action, parameter):
+        if self.save_changes_service.has_unsaved_changes():
+            self.save_changes_service.prompt_save_changes(
+                on_save=lambda: self._save_and_open_preset(parameter),
+                on_discard=lambda: self._open_preset_directly(parameter),
+            )
+        else:
+            self._open_preset_directly(parameter)
+
+    def _open_preset_directly(self, parameter):
         preset_name = parameter.get_string()
         preset_dir = os.path.join(os.path.dirname(__file__), "..", "data", "presets")
         file_path = os.path.join(preset_dir, f"{preset_name}.mid")
         self.drum_machine_service.load_preset(file_path)
+        # Reset unsaved changes after loading preset
+        self.save_changes_service.mark_unsaved_changes(False)
 
-    def on_save_preset(self, button):
+    def _show_save_dialog(self, after_save_callback=None):
         dialog = Gtk.FileChooserDialog(
             title="Save Preset",
             transient_for=self,
@@ -301,7 +342,14 @@ class DrumMachineWindow(Adw.ApplicationWindow):
                 if not file_path.endswith(".mid"):
                     file_path += ".mid"
                 self.drum_machine_service.save_preset(file_path)
+                # Reset unsaved changes after saving
+                self.save_changes_service.mark_unsaved_changes(False)
+                if after_save_callback:
+                    after_save_callback()
             dialog.close()
 
         dialog.connect("response", on_response)
         dialog.show()
+
+    def on_save_preset(self, button):
+        self._show_save_dialog()
