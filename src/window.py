@@ -91,6 +91,17 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         if shortcuts:
             self.application.set_accels_for_action(f"win.{name}", shortcuts)
 
+    def cleanup(self):
+        """Stop playback and cleanup resources"""
+        if self.drum_machine_service.playing:
+            self.drum_machine_service.stop()
+        # Ensure thread is stopped
+        self.drum_machine_service.playing = False
+
+    def cleanup_and_destroy(self):
+        self.cleanup()
+        self.destroy()
+
     def on_open_menu_action(self, action, param):
         self.menu_button.activate()
 
@@ -125,16 +136,21 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def on_save_preset_action(self, action, param):
         self.on_save_preset(self.save_preset_button)
 
+    def _on_close_request(self, *args):
+        self.on_quit_action(None, None)
+        return True
+
     def on_quit_action(self, action, param):
         if self.save_changes_service.has_unsaved_changes():
             self.save_changes_service.prompt_save_changes(
-                on_save=self._save_and_close, on_discard=self.close
+                on_save=self._save_and_close,
+                on_discard=self.cleanup_and_destroy
             )
         else:
-            self.close()
+            self.cleanup_and_destroy()
 
     def _save_and_close(self):
-        self._show_save_dialog(lambda: self.close())
+        self._show_save_dialog(lambda: self.cleanup_and_destroy())
 
     def create_drumkit_toggle_buttons(self):
         container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
@@ -198,6 +214,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_machine_service.preview_drum_part(part)
 
     def connect_signals(self):
+        self.connect('close-request', self._on_close_request)
         self.bpm_spin_button.connect("value-changed", self.on_bpm_changed)
         self.volume_button.connect("value-changed", self.on_volume_changed)
         self.clear_button.connect("clicked", self.handle_clear)
