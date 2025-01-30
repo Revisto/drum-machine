@@ -23,6 +23,7 @@ import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, Gtk, Gio, GLib
+from gettext import gettext as _
 from .services.sound_service import SoundService
 from .services.drum_machine_service import DrumMachineService
 from .services.ui_helper import UIHelper
@@ -41,8 +42,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     clear_button = Gtk.Template.Child()
     play_pause_button = Gtk.Template.Child()
     drum_machine_box = Gtk.Template.Child()
-    open_file_button = Gtk.Template.Child()
-    preset_menu_button = Gtk.Template.Child()
+    file_preset_button = Gtk.Template.Child()
     save_preset_button = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
@@ -131,7 +131,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.volume_button.set_value(max(current_volume - 5, 0))
 
     def on_open_file_action(self, action, param):
-        self.on_open_file(self.open_file_button)
+        self.on_open_file(self.file_preset_button)
 
     def on_save_preset_action(self, action, param):
         self.on_save_preset(self.save_preset_button)
@@ -143,8 +143,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def on_quit_action(self, action, param):
         if self.save_changes_service.has_unsaved_changes():
             self.save_changes_service.prompt_save_changes(
-                on_save=self._save_and_close,
-                on_discard=self.cleanup_and_destroy
+                on_save=self._save_and_close, on_discard=self.cleanup_and_destroy
             )
         else:
             self.cleanup_and_destroy()
@@ -214,12 +213,12 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_machine_service.preview_drum_part(part)
 
     def connect_signals(self):
-        self.connect('close-request', self._on_close_request)
+        self.connect("close-request", self._on_close_request)
         self.bpm_spin_button.connect("value-changed", self.on_bpm_changed)
         self.volume_button.connect("value-changed", self.on_volume_changed)
         self.clear_button.connect("clicked", self.handle_clear)
         self.play_pause_button.connect("clicked", self.handle_play_pause)
-        self.open_file_button.connect("clicked", self.on_open_file)
+        self.file_preset_button.connect("clicked", self.on_open_file)
         self.save_preset_button.connect("clicked", self.on_save_preset)
 
     def init_drum_parts(self):
@@ -262,23 +261,25 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             self.drum_machine_service.play()
 
     def setup_preset_menu(self):
-        # Create menu for presets
         menu = Gio.Menu.new()
+        section = Gio.Menu.new()
+
+        # Add presets section
         for preset in DEFAULT_PRESETS:
-            # Use regular menu item without state
             item = Gio.MenuItem.new(preset, "win.load-preset")
             item.set_action_and_target_value(
                 "win.load-preset", GLib.Variant.new_string(preset)
             )
-            menu.append_item(item)
+            section.append_item(item)
+
+        menu.append_section(_("Default Presets"), section)
 
         # Create the action without state
         preset_action = Gio.SimpleAction.new("load-preset", GLib.VariantType.new("s"))
         preset_action.connect("activate", self.on_preset_selected)
         self.add_action(preset_action)
 
-        # Set the menu
-        self.preset_menu_button.set_menu_model(menu)
+        self.file_preset_button.set_menu_model(menu)
 
     def on_open_file(self, button):
         # If unsaved changes exist, prompt the user first

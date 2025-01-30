@@ -20,19 +20,11 @@ compact</setter>
           <object class="AdwHeaderBar" id="header_bar">
             <property name="css-classes">header-bar</property>
             <child type="start">
-              <object class="GtkBox">
-                <property name="spacing">0</property>
-                <child>
-                  <object class="GtkButton" id="open_file_button">
-                    <property name="label" translatable="yes">Open</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkMenuButton" id="preset_menu_button">
-                    <property name="icon-name">pan-down-symbolic</property>
-                    <property name="menu-model">preset_menu</property>
-                  </object>
-                </child>
+              <object class="AdwSplitButton" id="file_preset_button">
+                <property name="label" translatable="yes">Open</property>
+                <property name="use-underline">True</property>
+                <property name="tooltip-text" translatable="yes">Open File</property>
+                <property name="menu-model">preset_menu</property>
               </object>
             </child>
             <menu id="preset_menu">
