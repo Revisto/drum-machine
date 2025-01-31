@@ -56,7 +56,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             self.sound_service, self.ui_helper
         )
         self.save_changes_service = SaveChangesService(self, self.drum_machine_service)
-        self.create_drumkit_toggle_buttons()
+        self.initialize_drum_machine_interface()
         self.setup_preset_menu()
         self.connect_signals()
         self.init_drum_parts()
@@ -151,63 +151,67 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def _save_and_close(self):
         self._show_save_dialog(lambda: self.cleanup_and_destroy())
 
-    def create_drumkit_toggle_buttons(self):
+    def initialize_drum_machine_interface(self):
         container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
         container.set_homogeneous(False)
 
         for part in DRUM_PARTS:
-            # Create button for drum parts
-            drum_part_button = Gtk.Button(
-                label=f"{part.capitalize().replace('-', ' ')}"
-            )
-            drum_part_button.set_halign(Gtk.Align.START)
-            drum_part_button.set_margin_end(10)
-            drum_part_button.connect("clicked", self.on_drum_part_button_clicked, part)
-            drum_part_button.add_css_class("drum-part-button")
-            drum_part_button.add_css_class("flat")
-            drum_part_button.set_tooltip_text(
-                f"Click to preview {part.capitalize().replace('-', ' ')}"
-            )
-            drum_part_button.set_has_tooltip(True)
-
-            # Create box for toggle buttons
-            toggle_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=30)
-
-            # Calculate the number of groups
-            num_groups = (NUM_TOGGLES + GROUP_TOGGLE_COUNT - 1) // GROUP_TOGGLE_COUNT
-
-            # Create groups of buttons
-            for group in range(num_groups):
-                # Create box for group of buttons
-                group_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
-
-                # Add toggle buttons to the group
-                for i in range(GROUP_TOGGLE_COUNT):
-                    toggle_num = group * GROUP_TOGGLE_COUNT + i + 1
-                    if toggle_num > NUM_TOGGLES:
-                        break
-                    toggle_button = Gtk.ToggleButton()
-                    toggle_button.set_size_request(20, 20)
-                    toggle_button.set_name(f"{part}_toggle_{toggle_num}")
-                    toggle_button.connect(
-                        "toggled", self.on_toggle_changed, part, toggle_num - 1
-                    )
-                    group_box.append(toggle_button)
-                    # Store reference to toggle button
-                    setattr(self, f"{part}_toggle_{toggle_num}", toggle_button)
-
-                toggle_box.append(group_box)
-
-            # Create a horizontal box for drum part button and toggles
-            part_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-            part_box.append(drum_part_button)
-            part_box.append(toggle_box)
-
-            # Add part_box to the container
+            part_box = self.create_part_container(part)
             container.append(part_box)
 
-        # Add the container to the drum_machine_box
         self.drum_machine_box.append(container)
+
+    def create_part_container(self, part):
+        part_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+        drum_part_button = self.create_drum_part_button(part)
+        toggle_box = self.create_toggle_box(part)
+
+        part_box.append(drum_part_button)
+        part_box.append(toggle_box)
+        return part_box
+
+    def create_drum_part_button(self, part):
+        button = Gtk.Button(label=f"{part.capitalize().replace('-', ' ')}")
+        button.set_halign(Gtk.Align.START)
+        button.set_margin_end(10)
+        button.connect("clicked", self.on_drum_part_button_clicked, part)
+        button.add_css_class("drum-part-button")
+        button.add_css_class("flat")
+        button.set_tooltip_text(
+            f"Click to preview {part.capitalize().replace('-', ' ')}"
+        )
+        button.set_has_tooltip(True)
+        return button
+
+    def create_toggle_box(self, part):
+        toggle_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=30)
+        num_groups = (NUM_TOGGLES + GROUP_TOGGLE_COUNT - 1) // GROUP_TOGGLE_COUNT
+
+        for group in range(num_groups):
+            group_box = self.create_toggle_button_group(part, group)
+            toggle_box.append(group_box)
+
+        return toggle_box
+
+    def create_toggle_button_group(self, part, group):
+        group_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+
+        for i in range(GROUP_TOGGLE_COUNT):
+            toggle_num = group * GROUP_TOGGLE_COUNT + i + 1
+            if toggle_num > NUM_TOGGLES:
+                break
+            toggle_button = self.create_single_toggle_button(part, toggle_num)
+            group_box.append(toggle_button)
+
+        return group_box
+
+    def create_single_toggle_button(self, part, toggle_num):
+        toggle_button = Gtk.ToggleButton()
+        toggle_button.set_size_request(20, 20)
+        toggle_button.set_name(f"{part}_toggle_{toggle_num}")
+        toggle_button.connect("toggled", self.on_toggle_changed, part, toggle_num - 1)
+        setattr(self, f"{part}_toggle_{toggle_num}", toggle_button)
+        return toggle_button
 
     def on_drum_part_button_clicked(self, button, part):
         self.drum_machine_service.preview_drum_part(part)
