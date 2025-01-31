@@ -26,7 +26,7 @@
     "modules" : [
         "python-dependencies.json",
         {
-            "name" : "drum-machine",
+            "name" : "Drum Machine",
             "builddir" : true,
             "buildsystem" : "meson",
             "sources" : [

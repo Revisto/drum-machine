@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=drum-machine
+Name=Drum Machine
 Exec=drum-machine
 Icon=io.github.revisto.drum-machine
 Terminal=false

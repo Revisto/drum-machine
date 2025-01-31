@@ -43,7 +43,7 @@ class DrumMachineApplication(Adw.Application):
     def on_about_action(self, widget, _):
         about = Adw.AboutWindow(
             transient_for=self.props.active_window,
-            application_name="drum-machine",
+            application_name="Drum Machine",
             application_icon="io.github.revisto.drum-machine",
             developer_name="Revisto",
             version=self.version,
