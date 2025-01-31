@@ -312,32 +312,29 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self._show_save_dialog(lambda: self._open_preset_directly(parameter))
 
     def _open_file_directly(self):
-        dialog = Gtk.FileChooserDialog(
-            title="Open MIDI File",
-            transient_for=self,
-            modal=True,
-            action=Gtk.FileChooserAction.OPEN,
-        )
-        dialog.add_buttons(
-            "_Cancel", Gtk.ResponseType.CANCEL, "_Open", Gtk.ResponseType.OK
-        )
+        filefilter = Gtk.FileFilter.new()
+        filefilter.add_pattern("*.mid")
+        filefilter.set_name(_("MIDI files"))
 
-        # Add a filter to show only .mid files
-        filter_midi = Gtk.FileFilter()
-        filter_midi.set_name("MIDI files")
-        filter_midi.add_pattern("*.mid")
-        dialog.add_filter(filter_midi)
+        filefilters = Gio.ListStore.new(Gtk.FileFilter)
+        filefilters.append(filefilter)
 
-        dialog.connect("response", self._handle_file_response)
-        dialog.show()
+        dialog = Gtk.FileDialog.new()
+        dialog.set_title(_("Open MIDI File"))
+        dialog.set_filters(filefilters)
+        dialog.set_modal(True)
+
+        dialog.open(parent=self, callback=self._handle_file_response)
 
     def _handle_file_response(self, dialog, response):
-        if response == Gtk.ResponseType.OK:
-            file_path = dialog.get_file().get_path()
-            self.drum_machine_service.load_preset(file_path)
-            # Reset unsaved changes after loading
-            self.save_changes_service.mark_unsaved_changes(False)
-        dialog.close()
+        try:
+            file = dialog.open_finish(response)
+            if file:
+                self.drum_machine_service.load_preset(file.get_path())
+                # Reset unsaved changes after loading
+                self.save_changes_service.mark_unsaved_changes(False)
+        except GLib.Error:
+            return
 
     def on_preset_selected(self, action, parameter):
         if self.save_changes_service.has_unsaved_changes():
