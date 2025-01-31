@@ -171,9 +171,13 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         return part_box
 
     def create_drum_part_button(self, part):
+        # Create container box
+        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        button_box.set_spacing(5)
+
+        # Create button that fits text
         button = Gtk.Button(label=f"{part.capitalize().replace('-', ' ')}")
         button.set_halign(Gtk.Align.START)
-        button.set_margin_end(10)
         button.connect("clicked", self.on_drum_part_button_clicked, part)
         button.add_css_class("drum-part-button")
         button.add_css_class("flat")
@@ -181,7 +185,14 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             f"Click to preview {part.capitalize().replace('-', ' ')}"
         )
         button.set_has_tooltip(True)
-        return button
+
+        # Add button and flexible spacer to box
+        button_box.append(button)
+        spacer = Gtk.Label()
+        spacer.set_hexpand(True)
+        button_box.append(spacer)
+
+        return button_box
 
     def create_toggle_box(self, part):
         toggle_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=30)

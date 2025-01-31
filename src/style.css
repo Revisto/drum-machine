@@ -42,10 +42,7 @@
     padding: 10px;
 }
 
-.drum-machine-box .drum-part-button {
-    min-width: 50px;
-}
-
 .drum-machine-box.compact .drum-part-button {
-    min-width: 60px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
