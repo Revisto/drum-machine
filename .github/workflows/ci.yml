@@ -35,7 +35,7 @@ jobs:
       options: --privileged
     steps:
       - uses: actions/checkout@v4
-      - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
+      - uses: jochumdev/flatpak-github-actions/flatpak-builder@builder-update-deps
         with:
           bundle: "drum-machine-devel.flatpak"
           manifest-path: "io.github.revisto.drum-machine.json"
