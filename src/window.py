@@ -355,32 +355,34 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.save_changes_service.mark_unsaved_changes(False)
 
     def _show_save_dialog(self, after_save_callback=None):
-        dialog = Gtk.FileChooserDialog(
-            title="Save Preset",
-            transient_for=self,
-            modal=True,
-            action=Gtk.FileChooserAction.SAVE,
-        )
-        dialog.add_buttons(
-            "_Cancel", Gtk.ResponseType.CANCEL, "_Save", Gtk.ResponseType.OK
-        )
+        filefilter = Gtk.FileFilter.new()
+        filefilter.add_pattern("*.mid")
+        filefilter.set_name("MIDI files")
 
-        dialog.set_current_name("new_preset.mid")
+        filefilters = Gio.ListStore.new(Gtk.FileFilter)
+        filefilters.append(filefilter)
 
-        def on_response(dialog, response):
-            if response == Gtk.ResponseType.OK:
-                file_path = dialog.get_file().get_path()
-                if not file_path.endswith(".mid"):
-                    file_path += ".mid"
-                self.drum_machine_service.save_preset(file_path)
-                # Reset unsaved changes after saving
-                self.save_changes_service.mark_unsaved_changes(False)
-                if after_save_callback:
-                    after_save_callback()
-            dialog.close()
+        dialog = Gtk.FileDialog.new()
+        dialog.set_title("Save Preset")
+        dialog.set_filters(filefilters)
+        dialog.set_modal(True)
+        dialog.set_initial_name("new_preset.mid")
 
-        dialog.connect("response", on_response)
-        dialog.show()
+        def save_callback(dialog, result):
+            try:
+                file = dialog.save_finish(result)
+                if file:
+                    file_path = file.get_path()
+                    if not file_path.endswith(".mid"):
+                        file_path += ".mid"
+                    self.drum_machine_service.save_preset(file_path)
+                    self.save_changes_service.mark_unsaved_changes(False)
+                    if after_save_callback:
+                        after_save_callback()
+            except GLib.Error:
+                return
+
+        dialog.save(parent=self, callback=save_callback)
 
     def on_save_preset(self, button):
         self._show_save_dialog()
