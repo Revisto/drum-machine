@@ -221,6 +221,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         toggle_button.set_size_request(20, 20)
         toggle_button.set_name(f"{part}_toggle_{toggle_num}")
         toggle_button.set_valign(Gtk.Align.CENTER)
+        toggle_button.add_css_class("drum-toggle")
         toggle_button.connect("toggled", self.on_toggle_changed, part, toggle_num - 1)
         setattr(self, f"{part}_toggle_{toggle_num}", toggle_button)
         return toggle_button

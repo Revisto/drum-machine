@@ -14,27 +14,27 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.drum-machine-box button {
+.drum-machine-box .drum-toggle {
     background-color: #ffffff65;
 }
 
-.drum-machine-box button.toggle-active {
+.drum-machine-box .drum-toggle.toggle-active {
     background-color: #ffffff;
     box-shadow: 0 0 10px #ffffff;
+}
+
+.drum-machine-box .drum-toggle:hover {
+    background-color: #ffffffb0;
+}
+
+.drum-machine-box .drum-toggle:checked {
+    background-color: #ffffff;
 }
 
 .drum-machine-box.compact button {
     min-width: 10px;
     min-height: 10px;
     padding: 0;
-}
-
-.drum-machine-box button:hover {
-    background-color: #ffffffb0;
-}
-
-.drum-machine-box button:checked {
-    background-color: #ffffff;
 }
 
 .bottom-wrapper {

@@ -11,20 +11,20 @@
     background-color: #00000027;
 }
 
-.drum-machine-box button.toggle-active {
+.drum-machine-box .drum-toggle.toggle-active {
     background-color: #bf79e7;
     box-shadow: 0 0 10px #bf79e7;
 }
 
-.drum-machine-box button {
+.drum-machine-box .drum-toggle {
     background-color: #ffffff1c;
 }
 
-.drum-machine-box button:hover {
+.drum-machine-box .drum-toggle:hover {
     background-color: #ffffff42;
 }
 
-.drum-machine-box button:checked {
+.drum-machine-box .drum-toggle:checked {
     background-color: #ffffff5e;
 }
 
