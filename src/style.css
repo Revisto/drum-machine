@@ -30,6 +30,13 @@
     background-color: #ffffff;
 }
 
+.drum-machine-box.medium button {
+    min-width: 20px;
+    min-height: 20px;
+    padding: 4px;
+    border-radius: 6px;
+}
+
 .drum-machine-box.compact button {
     min-width: 10px;
     min-height: 10px;

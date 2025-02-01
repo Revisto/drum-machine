@@ -8,11 +8,18 @@
     <property name="width-request">430</property>
     <property name="height-request">420</property>
     <child>
-      <object class="AdwBreakpoint">
-        <condition>max-width: 880px or max-height: 630px</condition>
-        <setter object="drum_machine_box" property="css-classes">drum-machine-box
+        <object class="AdwBreakpoint">
+            <condition>max-width: 890px or max-height: 625px</condition>
+            <setter object="drum_machine_box" property="css-classes">drum-machine-box
+medium</setter>
+        </object>
+    </child>
+    <child>
+        <object class="AdwBreakpoint">
+            <condition>max-width: 740px or max-height: 560px</condition>
+            <setter object="drum_machine_box" property="css-classes">drum-machine-box
 compact</setter>
-      </object>
+        </object>
     </child>
     <property name="content">
       <object class="AdwToolbarView">
