@@ -1,5 +1,4 @@
 .outer-box {
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     background: #D38CFF;
 }
 
@@ -35,6 +34,7 @@
     min-width: 10px;
     min-height: 10px;
     padding: 0;
+    border-radius: 6px;
 }
 
 .bottom-wrapper {
@@ -43,6 +43,6 @@
 }
 
 .drum-machine-box.compact .drum-part-button {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
