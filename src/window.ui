@@ -3,6 +3,9 @@
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
   <template class="DrumMachineWindow" parent="AdwApplicationWindow">
+    <style>
+      <class name="adw-window"/>
+    </style>
     <property name="default-width">1000</property>
     <property name="default-height">800</property>
     <property name="width-request">430</property>
@@ -25,10 +28,6 @@ compact</setter>
       <object class="AdwToolbarView">
         <child type="top">
           <object class="AdwHeaderBar" id="header_bar">
-            <property name="css-classes">header-bar</property>
-            <style>
-              <class name="flat"/>
-            </style>
             <child type="start">
               <object class="AdwSplitButton" id="file_preset_button">
                 <property name="label" translatable="yes">Open</property>
@@ -77,7 +76,6 @@ compact</setter>
         <property name="content">
           <object class="GtkBox" id="outer_box">
             <property name="orientation">vertical</property>
-            <property name="css-classes">outer-box</property>
             <child>
               <object class="GtkScrolledWindow">
                 <property name="vexpand">true</property>
@@ -103,9 +101,6 @@ compact</setter>
           <object class="GtkBox" id="bottom_wrapper">
             <property name="css-classes">bottom-wrapper</property>
             <property name="hexpand">true</property>
-              <style>
-                <class name="flat"/>
-              </style>
             <child>
               <!-- Left aligned BPM controls -->
               <object class="GtkBox" id="bpm_box">

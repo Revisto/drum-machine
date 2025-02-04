@@ -1,9 +1,5 @@
-.outer-box {
+.adw-window {
     background: #D38CFF;
-}
-
-.header-bar {
-    background-color: #D38CFF;
 }
 
 .drum-machine-box {
@@ -45,7 +41,6 @@
 }
 
 .bottom-wrapper {
-    background: #D38CFF;
     padding: 10px;
 }
 
