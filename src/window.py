@@ -263,6 +263,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def on_volume_changed(self, button, value):
         self.drum_machine_service.set_volume(value)
+        # Update button tooltip to show current volume level
+        volume_text = _("{:.0f}% volume").format(value)
+        button.set_tooltip_text(volume_text)
 
     def handle_clear(self, button):
         self.drum_machine_service.clear_all_toggles()

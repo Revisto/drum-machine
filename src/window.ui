@@ -155,8 +155,13 @@ compact</setter>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkVolumeButton" id="volume_button">
+                  <object class="GtkScaleButton" id="volume_button">
                     <property name="valign">center</property>
+                    <property name="icons">audio-volume-muted-symbolic
+audio-volume-high-symbolic
+audio-volume-low-symbolic
+audio-volume-medium-symbolic</property>
+                    <property name="tooltip-text" translatable="yes">Adjust volume</property>
                     <property name="adjustment">
                       <object class="GtkAdjustment">
                         <property name="lower">0</property>
