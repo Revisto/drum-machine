@@ -121,7 +121,12 @@ compact</setter>
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="bpm_spin_button">
+                    <property name="tooltip-text" translatable="yes">Adjust tempo in beats per minute (BPM)</property>
                     <property name="valign">center</property>
+                    <accessibility>
+                      <property name="label" translatable="yes">Tempo</property>
+                      <property name="description" translatable="yes">Adjust tempo in beats per minute (BPM)</property>
+                    </accessibility>
                     <property name="adjustment">
                       <object class="GtkAdjustment">
                         <property name="lower">30</property>

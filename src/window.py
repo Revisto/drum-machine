@@ -257,7 +257,13 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.save_changes_service.mark_unsaved_changes(True)
 
     def on_bpm_changed(self, spin_button):
-        self.drum_machine_service.set_bpm(spin_button.get_value())
+        value = spin_button.get_value()
+        self.drum_machine_service.set_bpm(value)
+
+        # Update tooltip and accessibility with current BPM
+        bpm_text = _("{} beats per minute (BPM)").format(int(value))
+        spin_button.set_tooltip_text(bpm_text)
+
         # Mark as unsaved when BPM changes
         self.save_changes_service.mark_unsaved_changes(True)
 
