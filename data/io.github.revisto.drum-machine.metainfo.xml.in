@@ -23,8 +23,8 @@
     </ul>
   </description>
   <branding>
-    <color type="primary" scheme_preference="light">#6b369c</color>
-    <color type="primary" scheme_preference="dark">#D38CFF</color>
+    <color type="primary" scheme_preference="light">#eac8ff</color>
+    <color type="primary" scheme_preference="dark">#9d25ff</color>
   </branding>
   <screenshots>
       <screenshot>
