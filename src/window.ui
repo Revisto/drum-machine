@@ -32,11 +32,11 @@ compact</setter>
               <object class="AdwSplitButton" id="file_preset_button">
                 <property name="label" translatable="yes">Open</property>
                 <property name="use-underline">True</property>
-                <property name="tooltip-text" translatable="yes">Open preset</property>
+                <property name="tooltip-text" translatable="yes">Open Preset</property>
                 <property name="menu-model">preset_menu</property>
                 <accessibility>
                   <property name="label" translatable="yes">Open Preset</property>
-                  <property name="description" translatable="yes">Open saved drum pattern preset</property>
+                  <property name="description" translatable="yes">Open Saved Drum Pattern Preset</property>
                 </accessibility>
               </object>
             </child>
@@ -57,7 +57,7 @@ compact</setter>
                 <property name="tooltip-text" translatable="yes">Main Menu</property>
                 <accessibility>
                   <property name="label" translatable="yes">Main Menu</property>
-                  <property name="description" translatable="yes">Access keyboard shortcuts and application information</property>
+                  <property name="description" translatable="yes">Access Keyboard Shortcuts and Application Information</property>
                 </accessibility>
               </object>
             </child>
@@ -67,7 +67,7 @@ compact</setter>
                 <property name="tooltip-text" translatable="yes">Save Drum Pattern</property>
                 <accessibility>
                   <property name="label" translatable="yes">Save Drum Pattern</property>
-                  <property name="description" translatable="yes">Save current drum pattern as a preset file</property>
+                  <property name="description" translatable="yes">Save Current Drum Pattern as a Preset File</property>
                 </accessibility>
               </object>
             </child>
@@ -116,11 +116,11 @@ compact</setter>
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="bpm_spin_button">
-                    <property name="tooltip-text" translatable="yes">Adjust tempo in beats per minute (BPM)</property>
+                    <property name="tooltip-text" translatable="yes">Adjust Tempo In Beats per Minute (BPM)</property>
                     <property name="valign">center</property>
                     <accessibility>
                       <property name="label" translatable="yes">Tempo</property>
-                      <property name="description" translatable="yes">Adjust tempo in beats per minute (BPM)</property>
+                      <property name="description" translatable="yes">Adjust Tempo In Beats per Minute (BPM)</property>
                     </accessibility>
                     <property name="adjustment">
                       <object class="GtkAdjustment">
@@ -161,7 +161,7 @@ compact</setter>
 audio-volume-high-symbolic
 audio-volume-low-symbolic
 audio-volume-medium-symbolic</property>
-                    <property name="tooltip-text" translatable="yes">Adjust volume</property>
+                    <property name="tooltip-text" translatable="yes">Adjust Volume</property>
                     <property name="adjustment">
                       <object class="GtkAdjustment">
                         <property name="lower">0</property>

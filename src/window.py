@@ -182,7 +182,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         button.add_css_class("drum-part-button")
         button.add_css_class("flat")
         button.set_tooltip_text(
-            f"Click to preview {part.capitalize().replace('-', ' ')}"
+            f"Click to Preview {part.capitalize().replace('-', ' ')}"
         )
         button.set_has_tooltip(True)
 
@@ -261,7 +261,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_machine_service.set_bpm(value)
 
         # Update tooltip and accessibility with current BPM
-        bpm_text = _("{} beats per minute (BPM)").format(int(value))
+        bpm_text = _("{} Beats per Minute (BPM)").format(int(value))
         spin_button.set_tooltip_text(bpm_text)
 
         # Mark as unsaved when BPM changes
@@ -270,7 +270,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def on_volume_changed(self, button, value):
         self.drum_machine_service.set_volume(value)
         # Update button tooltip to show current volume level
-        volume_text = _("{:.0f}% volume").format(value)
+        volume_text = _("{:.0f}% Volume").format(value)
         button.set_tooltip_text(volume_text)
 
     def handle_clear(self, button):
