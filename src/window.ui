@@ -54,9 +54,9 @@ compact</setter>
               <object class="GtkMenuButton" id="menu_button">
                 <property name="icon-name">open-menu-symbolic</property>
                 <property name="menu-model">primary_menu</property>
-                <property name="tooltip-text" translatable="yes">Application Menu</property>
+                <property name="tooltip-text" translatable="yes">Main Menu</property>
                 <accessibility>
-                  <property name="label" translatable="yes">Application Menu</property>
+                  <property name="label" translatable="yes">Main Menu</property>
                   <property name="description" translatable="yes">Access keyboard shortcuts and application information</property>
                 </accessibility>
               </object>
