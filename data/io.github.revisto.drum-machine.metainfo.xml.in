@@ -27,8 +27,8 @@
     <color type="primary" scheme_preference="dark">#9d25ff</color>
   </branding>
   <screenshots>
-      <screenshot>
-          <caption type="default">Drum Pattern Loaded in Light Mode</caption>
+      <screenshot type="default">
+          <caption>Drum Pattern Loaded in Light Mode</caption>
           <image>https://github.com/revisto/drum-machine/raw/master/data/screenshots/drum-machine-light.png</image>
       </screenshot>
       <screenshot>
