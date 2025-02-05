@@ -16,7 +16,7 @@
   [![Flathub][flathub-image]][flathub-url]
   [![Issues][issues-image]][issues-url]
 
-  <img src="data/screenshots/pattern-dark.png">
+  <img src="data/screenshots/drum-machine-dark.png">
 </div>
 
 ## Description
