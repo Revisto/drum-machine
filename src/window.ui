@@ -8,7 +8,7 @@
     </style>
     <property name="default-width">1000</property>
     <property name="default-height">800</property>
-    <property name="width-request">430</property>
+    <property name="width-request">360</property>
     <property name="height-request">420</property>
     <child>
         <object class="AdwBreakpoint">
@@ -23,6 +23,14 @@ medium</setter>
             <setter object="drum_machine_box" property="css-classes">drum-machine-box
 compact</setter>
         </object>
+    </child>
+    <child>
+      <object class="AdwBreakpoint">
+          <condition>max-width: 395px</condition>
+          <setter object="drum_machine_box" property="css-classes">drum-machine-box
+compact</setter>
+          <setter object="bpm_label" property="visible">false</setter>
+      </object>
     </child>
     <property name="content">
       <object class="AdwToolbarView">
@@ -109,7 +117,7 @@ compact</setter>
                 <property name="spacing">6</property>
                 <property name="margin-start">12</property>
                 <child>
-                  <object class="GtkLabel">
+                  <object class="GtkLabel" id="bpm_label">
                     <property name="valign">center</property>
                     <property name="label" translatable="yes">BPM</property>
                   </object>
