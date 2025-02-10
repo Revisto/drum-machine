@@ -281,9 +281,11 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def handle_play_pause(self, button):
         if self.drum_machine_service.playing:
             button.set_icon_name("media-playback-start-symbolic")
+            button.set_tooltip_text(_("Play"))
             self.drum_machine_service.stop()
         else:
             button.set_icon_name("media-playback-pause-symbolic")
+            button.set_tooltip_text(_("Pause"))
             self.drum_machine_service.play()
 
     def setup_preset_menu(self):
