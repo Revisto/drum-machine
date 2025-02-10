@@ -162,13 +162,21 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_machine_box.append(container)
 
     def create_part_container(self, part):
-        part_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+        toggle_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+        num_groups = (NUM_TOGGLES + GROUP_TOGGLE_COUNT - 1) // GROUP_TOGGLE_COUNT
         drum_part_button = self.create_drum_part_button(part)
-        toggle_box = self.create_toggle_box(part)
+        toggle_box.append(drum_part_button)
 
-        part_box.append(drum_part_button)
-        part_box.append(toggle_box)
-        return part_box
+        for group in range(num_groups):
+            group_box = self.create_toggle_button_group(part, group)
+            toggle_box.append(group_box)
+
+            if group == num_groups - 1:
+                group_box.set_margin_end(0)
+            else:
+                group_box.set_margin_end(20)
+
+        return toggle_box
 
     def create_drum_part_button(self, part):
         # Create container box
@@ -193,16 +201,6 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         button_box.append(spacer)
 
         return button_box
-
-    def create_toggle_box(self, part):
-        toggle_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=30)
-        num_groups = (NUM_TOGGLES + GROUP_TOGGLE_COUNT - 1) // GROUP_TOGGLE_COUNT
-
-        for group in range(num_groups):
-            group_box = self.create_toggle_button_group(part, group)
-            toggle_box.append(group_box)
-
-        return toggle_box
 
     def create_toggle_button_group(self, part, group):
         group_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
