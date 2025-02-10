@@ -152,77 +152,85 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self._show_save_dialog(lambda: self.cleanup_and_destroy())
 
     def initialize_drum_machine_interface(self):
-        container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-        container.set_homogeneous(False)
+        drum_rows_container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+        drum_rows_container.set_homogeneous(False)
 
-        for part in DRUM_PARTS:
-            part_box = self.create_part_container(part)
-            container.append(part_box)
+        for drum_part in DRUM_PARTS:
+            drum_row = self.create_drum_row(drum_part)
+            drum_rows_container.append(drum_row)
 
-        self.drum_machine_box.append(container)
+        self.drum_machine_box.append(drum_rows_container)
 
-    def create_part_container(self, part):
-        toggle_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-        num_groups = (NUM_TOGGLES + GROUP_TOGGLE_COUNT - 1) // GROUP_TOGGLE_COUNT
-        drum_part_button = self.create_drum_part_button(part)
-        toggle_box.append(drum_part_button)
+    def create_drum_row(self, drum_part):
+        instrument_container = Gtk.Box(
+            orientation=Gtk.Orientation.HORIZONTAL, spacing=10
+        )
+        num_beat_groups = (NUM_TOGGLES + GROUP_TOGGLE_COUNT - 1) // GROUP_TOGGLE_COUNT
 
-        for group in range(num_groups):
-            group_box = self.create_toggle_button_group(part, group)
-            toggle_box.append(group_box)
+        instrument_button = self.create_instrument_button(drum_part)
+        instrument_container.append(instrument_button)
 
-            if group == num_groups - 1:
-                group_box.set_margin_end(0)
+        for group_index in range(num_beat_groups):
+            beat_group = self.create_single_beat_toggle_group(drum_part, group_index)
+            instrument_container.append(beat_group)
+
+            if group_index != num_beat_groups - 1:
+                beat_group.set_margin_end(20)
             else:
-                group_box.set_margin_end(20)
+                beat_group.set_margin_end(0)
 
-        return toggle_box
+        return instrument_container
 
-    def create_drum_part_button(self, part):
-        # Create container box
-        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        button_box.set_spacing(5)
+    def create_instrument_button(self, drum_part):
+        button_container = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        button_container.set_spacing(5)
 
         # Create button that fits text
-        button = Gtk.Button(label=f"{part.capitalize().replace('-', ' ')}")
-        button.set_halign(Gtk.Align.START)
-        button.connect("clicked", self.on_drum_part_button_clicked, part)
-        button.add_css_class("drum-part-button")
-        button.add_css_class("flat")
-        button.set_tooltip_text(
-            f"Click to Preview {part.capitalize().replace('-', ' ')}"
+        instrument_button = Gtk.Button(
+            label=f"{drum_part.capitalize().replace('-', ' ')}"
         )
-        button.set_has_tooltip(True)
+        instrument_button.set_halign(Gtk.Align.START)
+        instrument_button.connect(
+            "clicked", self.on_drum_part_button_clicked, drum_part
+        )
+        instrument_button.add_css_class("drum-part-button")
+        instrument_button.add_css_class("flat")
+        instrument_button.set_tooltip_text(
+            f"Click to Preview {drum_part.capitalize().replace('-', ' ')}"
+        )
+        instrument_button.set_has_tooltip(True)
 
         # Add button and flexible spacer to box
-        button_box.append(button)
+        button_container.append(instrument_button)
         spacer = Gtk.Label()
         spacer.set_hexpand(True)
-        button_box.append(spacer)
+        button_container.append(spacer)
 
-        return button_box
+        return button_container
 
-    def create_toggle_button_group(self, part, group):
-        group_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+    def create_single_beat_toggle_group(self, drum_part, group_index):
+        beat_group = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
 
-        for i in range(GROUP_TOGGLE_COUNT):
-            toggle_num = group * GROUP_TOGGLE_COUNT + i + 1
-            if toggle_num > NUM_TOGGLES:
+        for position in range(GROUP_TOGGLE_COUNT):
+            beat_number = group_index * GROUP_TOGGLE_COUNT + position + 1
+            if beat_number > NUM_TOGGLES:
                 break
-            toggle_button = self.create_single_toggle_button(part, toggle_num)
-            group_box.append(toggle_button)
+            beat_toggle = self.create_single_beat_toggle(drum_part, beat_number)
+            beat_group.append(beat_toggle)
 
-        return group_box
+        return beat_group
 
-    def create_single_toggle_button(self, part, toggle_num):
-        toggle_button = Gtk.ToggleButton()
-        toggle_button.set_size_request(20, 20)
-        toggle_button.set_name(f"{part}_toggle_{toggle_num}")
-        toggle_button.set_valign(Gtk.Align.CENTER)
-        toggle_button.add_css_class("drum-toggle")
-        toggle_button.connect("toggled", self.on_toggle_changed, part, toggle_num - 1)
-        setattr(self, f"{part}_toggle_{toggle_num}", toggle_button)
-        return toggle_button
+    def create_single_beat_toggle(self, drum_part, beat_number):
+        beat_toggle = Gtk.ToggleButton()
+        beat_toggle.set_size_request(20, 20)
+        beat_toggle.set_name(f"{drum_part}_toggle_{beat_number}")
+        beat_toggle.set_valign(Gtk.Align.CENTER)
+        beat_toggle.add_css_class("drum-toggle")
+        beat_toggle.connect(
+            "toggled", self.on_toggle_changed, drum_part, beat_number - 1
+        )
+        setattr(self, f"{drum_part}_toggle_{beat_number}", beat_toggle)
+        return beat_toggle
 
     def on_drum_part_button_clicked(self, button, part):
         self.drum_machine_service.preview_drum_part(part)
