@@ -41,3 +41,4 @@ jobs:
           manifest-path: "io.github.revisto.drum-machine.json"
           run-tests: "true"
           cache-key: flatpak-builder-${{ github.sha }}
+          upload-artifact: "false"
