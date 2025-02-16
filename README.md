@@ -2,8 +2,12 @@
 [license-image]: https://img.shields.io/github/license/revisto/drum-machine.svg?style=for-the-badge
 [flathub-url]: https://flathub.org/apps/io.github.revisto.drum-machine
 [flathub-image]: https://img.shields.io/flathub/v/io.github.revisto.drum-machine?logo=flathub&style=for-the-badge
+[installs-image]: https://img.shields.io/flathub/downloads/io.github.revisto.drum-machine?style=for-the-badge
 [issues-url]: https://github.com/revisto/drum-machine/issues
 [issues-image]: https://img.shields.io/github/issues/revisto/drum-machine?style=for-the-badge
+
+[circle-url]: https://apps.gnome.org/DrumMachine/
+[circle-image]: https://circle.gnome.org/assets/button/badge.svg
 
 <div align="center">
   <img src="data/icons/hicolor/scalable/apps/io.github.revisto.drum-machine.svg" width="128" height="128">
@@ -12,9 +16,13 @@
 
   **Create and play drum beats**
 
+  [![GNOME Circle][circle-image]][circle-url]
+
   [![License][license-image]][license-url]
   [![Flathub][flathub-image]][flathub-url]
   [![Issues][issues-image]][issues-url]
+  [![Installs][installs-image]][flathub-url]
+
 
   <img src="data/screenshots/drum-machine-dark.png">
 </div>
@@ -41,36 +49,13 @@ Drum Machine is a modern and intuitive application for creating, playing, and ma
 
 You can clone and run from GNOME Builder.
 
-#### Requirements
+## Contribute
+We need your help to make Drum Machine better!
+There are lots of features that can be added, and we would love to see your contributions.
 
-- Python 3 `python`
-- PyGObject `python-gobject`
-- GTK4 `gtk4`
-- libadwaita `libadwaita`
-- pygame `pygame`
-- mido `mido` 
-- Meson `meson`
-- Ninja `ninja`
+If you want to contribute to this project, you can fork the repository and submit a pull request. You can also report a bug or request a feature by opening an issue.
 
-Run these commands to build it with meson:
-```bash
-meson builddir --prefix=/usr/local
-sudo ninja -C builddir install
-```
-
-## Keyboard Shortcuts
-
-| Action | Shortcut |
-|--------|----------|
-| Play/Pause | Space |
-| Clear All | Ctrl+Delete |
-| Increase BPM | Plus/Equal |
-| Decrease BPM | Minus |
-| Increase Volume | Ctrl+Up |
-| Decrease Volume | Ctrl+Down |
-| Load Preset | Ctrl+O |
-| Save Preset | Ctrl+S |
-| Quit | Ctrl+Q |
+Your contributions are extremely welcome and appreciated.
 
 ## Credits
 Developed by **[Revisto](https://github.com/revisto)**
@@ -83,6 +68,9 @@ Developed by **[Revisto](https://github.com/revisto)**
     <img src="https://img.shields.io/badge/Revisto-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
 </p>
+
+## ❤️ Sponsor this project
+Drum Machine is free software. If you like it and would like to support and fund it, you may donate through one of the platforms listed in the GitHub Sponsor section. Any amount will be greatly appreciated 🤩.
 
 ## License
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
