@@ -1,0 +1,364 @@
+# English translations for drum-machine package.
+# Copyright (C) 2025 THE drum-machine'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-15 17:06-0300\n"
+"PO-Revision-Date: 2025-02-15 17:06-0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:3
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+msgid "Drum Machine"
+msgstr "Drum Machine"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "Create and play drum beats"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "Features:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor"
+msgstr "Intuitive grid-based pattern editor"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Adjustable BPM control"
+msgstr "Adjustable BPM control"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Volume control for overall mix"
+msgstr "Volume control for overall mix"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Save and load preset patterns"
+msgstr "Save and load preset patterns"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "Multiple drum sounds including kick, snare, hi-hat, and more"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "Keyboard shortcuts for quick access to all functions"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "Drum Pattern Loaded in Light Mode"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "Drum Pattern Loaded in Dark Mode"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:46
+msgid "drum"
+msgstr "drum"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:47
+msgid "machine"
+msgstr "machine"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:48
+msgid "rhythm"
+msgstr "rhythm"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+msgid "music"
+msgstr "music"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:50
+msgid "pattern"
+msgstr "pattern"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:51
+msgid "beats"
+msgstr "beats"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:60
+msgid "Revisto"
+msgstr "Revisto"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:66
+msgid ""
+"This release of Drum Machine 1.3.1 brings significant UI and functionality "
+"improvements:"
+msgstr ""
+"This release of Drum Machine 1.3.1 brings significant UI and functionality "
+"improvements:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:68
+msgid ""
+"Refactored headerbar and background styling for a flat, integrated visual "
+"experience."
+msgstr ""
+"Refactored headerbar and background styling for a flat, integrated visual "
+"experience."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:69
+msgid ""
+"Enhanced accessibility with improved tooltips and descriptive labels for BPM "
+"and volume controls."
+msgstr ""
+"Enhanced accessibility with improved tooltips and descriptive labels for BPM "
+"and volume controls."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:70
+msgid ""
+"Redesigned app icon and updated text styling for clearer user interface "
+"elements."
+msgstr ""
+"Redesigned app icon and updated text styling for clearer user interface "
+"elements."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:71
+msgid ""
+"Optimized layout breakpoints to improve responsiveness and reduce early "
+"scrolling."
+msgstr ""
+"Optimized layout breakpoints to improve responsiveness and reduce early "
+"scrolling."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:72
+msgid ""
+"Fixed padding, border-radius, and vertical alignment issues across multiple "
+"controls."
+msgstr ""
+"Fixed padding, border-radius, and vertical alignment issues across multiple "
+"controls."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:73
+msgid ""
+"Updated file dialogs to use the Nautilus file chooser for a more modern "
+"approach."
+msgstr ""
+"Updated file dialogs to use the Nautilus file chooser for a more modern "
+"approach."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:74
+msgid ""
+"Improved keyboard navigation focus and updated tooltips, including dedicated "
+"play and pause hints."
+msgstr ""
+"Improved keyboard navigation focus and updated tooltips, including dedicated "
+"play and pause hints."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:75
+msgid ""
+"Transitioned to the Nautilus file chooser for a more contemporary interface."
+msgstr ""
+"Transitioned to the Nautilus file chooser for a more contemporary interface."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:76
+msgid "Now accessible on narrow mobile screens with adaptive UI elements."
+msgstr "Now accessible on narrow mobile screens with adaptive UI elements."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:77
+msgid "Refined app icon, and adjusted brand colors for better contrast."
+msgstr "Refined app icon, and adjusted brand colors for better contrast."
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:270
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} Beats per Minute (BPM)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:279
+msgid "{:.0f}% Volume"
+msgstr "{:.0f}% Volume"
+
+#: src/window.py:290 src/window.ui:158
+msgid "Play"
+msgstr "Play"
+
+#: src/window.py:294
+msgid "Pause"
+msgstr "Pause"
+
+#: src/window.py:309
+msgid "Default Presets"
+msgstr "Default Presets"
+
+#: src/window.py:336
+msgid "MIDI files"
+msgstr "MIDI files"
+
+#: src/window.py:342
+msgid "Open MIDI File"
+msgstr "Open MIDI File"
+
+#: src/window.ui:41
+msgid "Open"
+msgstr "Open"
+
+#: src/window.ui:43 src/window.ui:46
+msgid "Open Preset"
+msgstr "Open Preset"
+
+#: src/window.ui:47
+msgid "Open Saved Drum Pattern Preset"
+msgstr "Open Saved Drum Pattern Preset"
+
+#: src/window.ui:65 src/window.ui:67
+msgid "Main Menu"
+msgstr "Main Menu"
+
+#: src/window.ui:68
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "Access Keyboard Shortcuts and Application Information"
+
+#: src/window.ui:75 src/window.ui:77
+msgid "Save Drum Pattern"
+msgstr "Save Drum Pattern"
+
+#: src/window.ui:78
+msgid "Save Current Drum Pattern as a Preset File"
+msgstr "Save Current Drum Pattern as a Preset File"
+
+#: src/window.ui:122
+msgid "BPM"
+msgstr "BPM"
+
+#: src/window.ui:127 src/window.ui:131
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "Adjust Tempo In Beats per Minute (BPM)"
+
+#: src/window.ui:130
+msgid "Tempo"
+msgstr "Tempo"
+
+#: src/window.ui:172
+msgid "Adjust Volume"
+msgstr "Adjust Volume"
+
+#: src/window.ui:195
+msgid "Reset"
+msgstr "Reset"
+
+#: src/window.ui:208
+msgid "_Keyboard Shortcuts"
+msgstr "_Keyboard Shortcuts"
+
+#: src/window.ui:212
+msgid "_About Drum Machine"
+msgstr "_About Drum Machine"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "General"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Show Shortcuts"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Quit"
+
+#: src/gtk/help-overlay.ui:29
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "Playback Controls"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "Play/Pause"
+
+#: src/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "Clear All"
+
+#: src/gtk/help-overlay.ui:48
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "BPM & Volume Controls"
+
+#: src/gtk/help-overlay.ui:51
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "Increase BPM"
+
+#: src/gtk/help-overlay.ui:58
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "Decrease BPM"
+
+#: src/gtk/help-overlay.ui:65
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "Increase Volume"
+
+#: src/gtk/help-overlay.ui:72
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "Decrease Volume"
+
+#: src/gtk/help-overlay.ui:81
+msgctxt "shortcut window"
+msgid "Preset Management"
+msgstr "Preset Management"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Load Preset"
+msgstr "Load Preset"
+
+#: src/gtk/help-overlay.ui:91
+msgctxt "shortcut window"
+msgid "Save Preset"
+msgstr "Save Preset"
+
+#: src/gtk/save_changes_dialog.ui:6
+msgid "Save Changes?"
+msgstr "Save Changes?"
+
+#: src/gtk/save_changes_dialog.ui:7
+msgid ""
+"Current preset contains unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"Current preset contains unsaved changes. Changes which are not saved will be "
+"permanently lost."
+
+#. Cancel the operation
+#: src/gtk/save_changes_dialog.ui:14
+msgid "_Cancel"
+msgstr "_Cancel"
+
+#. Discard all changes
+#: src/gtk/save_changes_dialog.ui:15
+msgid "_Discard"
+msgstr "_Discard"
+
+#. Save current changes
+#: src/gtk/save_changes_dialog.ui:16
+msgid "_Save"
+msgstr "_Save"
