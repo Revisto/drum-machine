@@ -35,10 +35,9 @@ jobs:
       options: --privileged
     steps:
       - uses: actions/checkout@v4
-      - uses: jochumdev/flatpak-github-actions/flatpak-builder@builder-update-deps
+      - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
         with:
           bundle: "drum-machine-devel.flatpak"
           manifest-path: "io.github.revisto.drum-machine.json"
           run-tests: "true"
           cache-key: flatpak-builder-${{ github.sha }}
-          upload-artifact: "false"
