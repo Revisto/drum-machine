@@ -21,7 +21,7 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Adw, Gio
+from gi.repository import Adw, Gio, Gtk
 from .window import DrumMachineWindow
 
 
@@ -49,6 +49,7 @@ class DrumMachineApplication(Adw.Application):
             version=self.version,
             developers=["Revisto"],
             copyright="© 2024 Revisto",
+            license_type=Gtk.License.GPL_3_0,
             issue_url="https://github.com/Revisto/drum-machine/issues",
             website="https://apps.gnome.org/DrumMachine/",
         )
