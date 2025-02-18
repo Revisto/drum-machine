@@ -49,6 +49,8 @@ class DrumMachineApplication(Adw.Application):
             version=self.version,
             developers=["Revisto"],
             copyright="© 2024 Revisto",
+            issue_url="https://github.com/Revisto/drum-machine/issues",
+            website="https://apps.gnome.org/DrumMachine/",
         )
         about.present()
 
