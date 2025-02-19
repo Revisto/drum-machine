@@ -54,7 +54,7 @@ class DrumMachineApplication(Adw.Application):
         debug_info += (
             f"Adwaita {Adw.MAJOR_VERSION}.{Adw.MINOR_VERSION}.{Adw.MICRO_VERSION}"
         )
-        about = Adw.AboutWindow(
+        about = Adw.AboutDialog(
             transient_for=self.props.active_window,
             application_name="Drum Machine",
             application_icon="io.github.revisto.drum-machine",
@@ -62,12 +62,14 @@ class DrumMachineApplication(Adw.Application):
             version=self.version,
             developers=["Revisto"],
             copyright="© 2024–2025 Revisto",
+            comments="Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns."
             debug_info=debug_info,
             license_type=Gtk.License.GPL_3_0,
+            translator_credits="Portuguese: Tiago Lucas Flach"
             issue_url="https://github.com/Revisto/drum-machine/issues",
             website="https://apps.gnome.org/DrumMachine/",
         )
-        about.present()
+        about.present(self)
 
     def create_action(self, name, callback, shortcuts=None):
         action = Gio.SimpleAction.new(name, None)
