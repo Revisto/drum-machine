@@ -281,8 +281,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def handle_clear(self, button):
         self.drum_machine_service.clear_all_toggles()
-        # Mark as unsaved when clearing
-        self.save_changes_service.mark_unsaved_changes(True)
+        # Mark as saved when clearing
+        self.save_changes_service.mark_unsaved_changes(False)
 
     def handle_play_pause(self, button):
         if self.drum_machine_service.playing:
