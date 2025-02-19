@@ -61,7 +61,7 @@ class DrumMachineApplication(Adw.Application):
             developer_name="Revisto",
             version=self.version,
             developers=["Revisto"],
-            copyright="© 2024 Revisto",
+            copyright="© 2024–2025 Revisto",
             debug_info=debug_info,
             license_type=Gtk.License.GPL_3_0,
             issue_url="https://github.com/Revisto/drum-machine/issues",
