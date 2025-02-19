@@ -68,7 +68,7 @@ class DrumMachineApplication(Adw.Application):
             issue_url="https://github.com/Revisto/drum-machine/issues",
             website="https://apps.gnome.org/DrumMachine/",
         )
-        about.present(self)
+        about.present(self.props.active_window)
 
     def create_action(self, name, callback, shortcuts=None):
         action = Gio.SimpleAction.new(name, None)
