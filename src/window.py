@@ -381,10 +381,10 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         filefilters.append(filefilter)
 
         dialog = Gtk.FileDialog.new()
-        dialog.set_title("Save Preset")
+        dialog.set_title("Save Sequence")
         dialog.set_filters(filefilters)
         dialog.set_modal(True)
-        dialog.set_initial_name("new_preset.mid")
+        dialog.set_initial_name("new_sequence.mid")
 
         def save_callback(dialog, result):
             try:
