@@ -62,7 +62,7 @@ class DrumMachineApplication(Adw.Application):
             version=self.version,
             developers=["Revisto"],
             copyright="© 2024–2025 Revisto",
-            comments="Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns."
+            comments="Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns.",
             debug_info=debug_info,
             license_type=Gtk.License.GPL_3_0,
             translator_credits="Portuguese: Tiago Lucas Flach"
