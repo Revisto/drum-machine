@@ -193,6 +193,7 @@ audio-volume-medium-symbolic</property>
                   <object class="GtkButton" id="clear_button">
                     <property name="valign">center</property>
                     <property name="label" translatable="yes">Reset</property>
+                    <property name="tooltip-text" translatable="yes">Reset the Drum Sequence</property>
                   </object>
                 </child>
               </object>
