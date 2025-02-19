@@ -55,7 +55,6 @@ class DrumMachineApplication(Adw.Application):
             f"Adwaita {Adw.MAJOR_VERSION}.{Adw.MINOR_VERSION}.{Adw.MICRO_VERSION}"
         )
         about = Adw.AboutDialog(
-            transient_for=self.props.active_window,
             application_name="Drum Machine",
             application_icon="io.github.revisto.drum-machine",
             developer_name="Revisto",
