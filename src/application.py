@@ -65,7 +65,7 @@ class DrumMachineApplication(Adw.Application):
             comments="Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns.",
             debug_info=debug_info,
             license_type=Gtk.License.GPL_3_0,
-            translator_credits="Portuguese: Tiago Lucas Flach"
+            translator_credits="Portuguese: Tiago Lucas Flach",
             issue_url="https://github.com/Revisto/drum-machine/issues",
             website="https://apps.gnome.org/DrumMachine/",
         )
