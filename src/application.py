@@ -17,6 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+import platform
 import gi
 
 gi.require_version("Gtk", "4.0")
@@ -41,6 +42,18 @@ class DrumMachineApplication(Adw.Application):
         win.present()
 
     def on_about_action(self, widget, _):
+        debug_info = f"Drum Machine {self.version}\n"
+        debug_info += f"System: {platform.system()}\n"
+        if platform.system() == "Linux":
+            debug_info += f"Dist: {platform.freedesktop_os_release()['PRETTY_NAME']}\n"
+        debug_info += f"Python {platform.python_version()}\n"
+        debug_info += (
+            f"GTK {Gtk.MAJOR_VERSION}.{Gtk.MINOR_VERSION}.{Gtk.MICRO_VERSION}\n"
+        )
+        debug_info += "PyGObject {}.{}.{}\n".format(*gi.version_info)
+        debug_info += (
+            f"Adwaita {Adw.MAJOR_VERSION}.{Adw.MINOR_VERSION}.{Adw.MICRO_VERSION}"
+        )
         about = Adw.AboutWindow(
             transient_for=self.props.active_window,
             application_name="Drum Machine",
@@ -49,6 +62,7 @@ class DrumMachineApplication(Adw.Application):
             version=self.version,
             developers=["Revisto"],
             copyright="© 2024–2025 Revisto",
+            debug_info=debug_info,
             license_type=Gtk.License.GPL_3_0,
             issue_url="https://github.com/Revisto/drum-machine/issues",
             website="https://apps.gnome.org/DrumMachine/",
