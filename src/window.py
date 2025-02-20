@@ -22,7 +22,7 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Adw, Gtk, Gio, GLib
+from gi.repository import Adw, Gtk, Gio, GLib, Gdk
 from gettext import gettext as _
 from .services.sound_service import SoundService
 from .services.drum_machine_service import DrumMachineService
@@ -230,7 +230,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             "toggled", self.on_toggle_changed, drum_part, beat_number - 1
         )
         right_click_gesture = Gtk.GestureClick.new()
-        right_click_gesture.set_button(3)
+        right_click_gesture.set_button(Gdk.BUTTON_SECONDARY)
         right_click_gesture.connect("released", self._on_right_click_released, beat_toggle)
         beat_toggle.add_controller(right_click_gesture)
         setattr(self, f"{drum_part}_toggle_{beat_number}", beat_toggle)
