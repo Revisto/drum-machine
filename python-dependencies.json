@@ -4,16 +4,11 @@
     "build-commands": [
         "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools>=61.0.0\" \"setuptools-scm\" \"packaging>=20\" \"flit_core>=3.3\" \"pygame\" \"mido\""
     ],
-    "build-options": {
-        "env": {
-            "PYGAME_DETECT_AVX2": "1"
-        }
-    },
     "sources": [
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/43/54/292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0/setuptools-75.6.0.tar.gz",
-            "sha256": "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6",
+            "url": "https://files.pythonhosted.org/packages/4c/f4/aa8d364f0dc1f33b2718938648c31202e2db5cd6479a73f0a9ca5a88372d/setuptools-78.0.2.tar.gz",
+            "sha256": "137525e6afb9022f019d6e884a319017f9bf879a0d8783985d32cbc8683cab93",
             "x-checker-data": {
                 "type": "pypi",
                 "name": "setuptools"
@@ -21,8 +16,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/4f/a4/00a9ac1b555294710d4a68d2ce8dfdf39d72aa4d769a7395d05218d88a42/setuptools_scm-8.1.0.tar.gz",
-            "sha256": "42dea1b65771cba93b7a515d65a65d8246e560768a66b9106a592c8e7f26c8a7",
+            "url": "https://files.pythonhosted.org/packages/4b/bd/c5d16dd95900567e09744af92119da7abc5f447320d53ec1d9415ec30263/setuptools_scm-8.2.0.tar.gz",
+            "sha256": "a18396a1bc0219c974d1a74612b11f9dce0d5bd8b1dc55c65f6ac7fd609e8c28",
             "x-checker-data": {
                 "type": "pypi",
                 "name": "setuptools-scm"
@@ -39,8 +34,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/d5/ae/09427bea9227a33ec834ed5461432752fd5d02b14f93dd68406c91684622/flit_core-3.10.1.tar.gz",
-            "sha256": "66e5b87874a0d6e39691f0e22f09306736b633548670ad3c09ec9db03c5662f7",
+            "url": "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz",
+            "sha256": "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2",
             "x-checker-data": {
                 "type": "pypi",
                 "name": "flit-core"
@@ -48,8 +43,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/49/cc/08bba60f00541f62aaa252ce0cfbd60aebd04616c0b9574f755b583e45ae/pygame-2.6.1.tar.gz",
-            "sha256": "56fb02ead529cee00d415c3e007f75e0780c655909aaa8e8bf616ee09c9feb1f",
+            "url": "https://files.pythonhosted.org/packages/b9/f2/d31e6ad42d657af07be2ffd779190353f759a07b51232b9e1d724f2cda46/pygame-2.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+            "sha256": "1206125f14cae22c44565c9d333607f1d9f59487b1f1432945dfc809aeaa3e88",
             "x-checker-data": {
                 "type": "pypi",
                 "name": "pygame"
