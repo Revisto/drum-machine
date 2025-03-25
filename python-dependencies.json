@@ -4,11 +4,6 @@
     "build-commands": [
         "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools>=61.0.0\" \"setuptools-scm\" \"packaging>=20\" \"flit_core>=3.3\" \"pygame\" \"mido\""
     ],
-    "build-options": {
-        "env": {
-            "PYGAME_DETECT_AVX2": "1"
-        }
-    },
     "sources": [
         {
             "type": "file",
@@ -48,8 +43,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/49/cc/08bba60f00541f62aaa252ce0cfbd60aebd04616c0b9574f755b583e45ae/pygame-2.6.1.tar.gz",
-            "sha256": "56fb02ead529cee00d415c3e007f75e0780c655909aaa8e8bf616ee09c9feb1f",
+            "url": "https://files.pythonhosted.org/packages/b9/f2/d31e6ad42d657af07be2ffd779190353f759a07b51232b9e1d724f2cda46/pygame-2.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+            "sha256": "1206125f14cae22c44565c9d333607f1d9f59487b1f1432945dfc809aeaa3e88",
             "x-checker-data": {
                 "type": "pypi",
                 "name": "pygame"
