@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-26 13:12+0000\n"
-"PO-Revision-Date: 2025-03-26 17:18+0330\n"
+"PO-Revision-Date: 2025-03-26 18:08+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "Language: fa\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: data/io.github.revisto.drum-machine.desktop.in:3
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
 msgid "Drum Machine"
-msgstr "دستگاه کوبه‌ای"
+msgstr "ماشین درام"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:7
 msgid "Create and play drum beats"
@@ -28,14 +28,14 @@ msgstr "ایجاد و پخش ضرب‌های کوبه‌ای"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:9
 msgid ""
-"Drum Machine is a modern and intuitive application for creating, playing, "
-"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"Drum Machine is a modern and intuitive application for creating, playing, and "
+"managing drum patterns. Perfect for musicians, producers, and anyone "
 "interested in rhythm creation, this application provides a simple interface "
 "for drum pattern programming. Have fun!"
 msgstr ""
-"دستگاه کوبه‌ای برنامه‌ای نوین و ادراکی برای ایجد، پخش و مدیریت الگوهای کوبه‌ای "
-"است. این برنامه که مناسب آهنگسازان، تهیه‌کنندگان و هرکسی در تولید ضرباهنگ "
-"است، میانایی ساده برای برنامه ریزی الگوهای کوبه‌ای فراهم می‌کند. خوش بگذرانید!"
+"ماشین درام برنامه‌ای نوین و ادراکی برای ایجد، پخش و مدیریت الگوهای کوبه‌ای است. "
+"این برنامه که مناسب آهنگسازان، تهیه‌کنندگان و هرکسی در تولید ضرباهنگ است، "
+"میانایی ساده برای برنامه ریزی الگوهای کوبه‌ای فراهم می‌کند. خوش بگذرانید!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
@@ -81,7 +81,7 @@ msgstr "{} ضرب در دقیقه (ض‌دد)"
 #. Update button tooltip to show current volume level
 #: src/window.py:287
 msgid "{:.0f}% Volume"
-msgstr "{:I.0f}% حجم"
+msgstr "{:I.0f}% حجم صدا"
 
 #: src/window.py:298 src/window.ui:158
 msgid "Play"
@@ -161,7 +161,7 @@ msgstr "_میان‌برهای صفحه‌کلید"
 
 #: src/window.ui:213
 msgid "_About Drum Machine"
-msgstr "_دربارهٔ دستگاه کوبه‌ای"
+msgstr "_دربارهٔ ماشین درام"
 
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -242,8 +242,8 @@ msgid ""
 "Current preset contains unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
-"پیش‌تنظیم کنونی تغییراتی ذخیره نشده دارد. تغییراتی که ذخیره نشده‌اند برای "
-"همیشه از دست خواهند رفت."
+"پیش‌تنظیم کنونی تغییراتی ذخیره نشده دارد. تغییراتی که ذخیره نشده‌اند برای همیشه "
+"از دست خواهند رفت."
 
 #. Cancel the operation
 #: src/gtk/save_changes_dialog.ui:14
