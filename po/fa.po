@@ -1,0 +1,261 @@
+# Persian translation for drum-machine.
+# Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+# Danial Behzadi <dani.behzi@ubuntu.com>,  2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-26 13:12+0000\n"
+"PO-Revision-Date: 2025-03-26 17:18+0330\n"
+"Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
+"Language-Team: Persian <fa@li.org>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:3
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+msgid "Drum Machine"
+msgstr "دستگاه کوبه‌ای"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "ایجاد و پخش ضرب‌های کوبه‌ای"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr ""
+"دستگاه کوبه‌ای برنامه‌ای نوین و ادراکی برای ایجد، پخش و مدیریت الگوهای کوبه‌ای "
+"است. این برنامه که مناسب آهنگسازان، تهیه‌کنندگان و هرکسی در تولید ضرباهنگ "
+"است، میانایی ساده برای برنامه ریزی الگوهای کوبه‌ای فراهم می‌کند. خوش بگذرانید!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "ویژگی‌ها:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor"
+msgstr "ویرایشگر ادراکی الگوی مبتنی بر شبکه"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Adjustable BPM control"
+msgstr "واپایش ض‌د‌د تنظیم‌پذیر"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Volume control for overall mix"
+msgstr "واپایش حجم صدا برای تنظیم کلی"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Save and load preset patterns"
+msgstr "ذخیره و بار کردن الگوهای از پیش تنظیم شده"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "چندین صدای کوبه‌ای از جمله دهل، طبل، سنج و بیش‌تر"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "میان‌برهای صفحه‌کلید برای دسترسی سریع به همهٔ ویژگی‌ها"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "الگوی کوبه‌ای بار شده در حالت روشن"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "الگوی کوبه‌ای بار شده در حالت تیره"
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:278
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} ضرب در دقیقه (ض‌دد)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:287
+msgid "{:.0f}% Volume"
+msgstr "{:I.0f}% حجم"
+
+#: src/window.py:298 src/window.ui:158
+msgid "Play"
+msgstr "پخش"
+
+#: src/window.py:302
+msgid "Pause"
+msgstr "مکث"
+
+#: src/window.py:317
+msgid "Default Presets"
+msgstr "پیش‌تنظیم پیش‌گزیده"
+
+#: src/window.py:344
+msgid "MIDI files"
+msgstr "پرونده‌های MIDI"
+
+#: src/window.py:350
+msgid "Open MIDI File"
+msgstr "گشودن پروندهٔ MIDI"
+
+#: src/window.ui:41
+msgid "Open"
+msgstr "گشودن"
+
+#: src/window.ui:43 src/window.ui:46
+msgid "Open Preset"
+msgstr "گشودن پیش‌تنظیم"
+
+#: src/window.ui:47
+msgid "Open Saved Drum Pattern Preset"
+msgstr "گشودن پیش‌تنظیم الگوی کوبه‌ای ذخیره شده"
+
+#: src/window.ui:65 src/window.ui:67
+msgid "Main Menu"
+msgstr "فهرست اصلی"
+
+#: src/window.ui:68
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "دسترسی به اطّلاعات برنامه و میان‌برهای صفحه‌کلید"
+
+#: src/window.ui:75 src/window.ui:77
+msgid "Save Drum Pattern"
+msgstr "ذخیرهٔ الگوی کوبه‌ای"
+
+#: src/window.ui:78
+msgid "Save Current Drum Pattern as a Preset File"
+msgstr "ذخیرهٔ الگوی کوبه‌ای کنونی به شکل پروندهٔ پیش‌تنظیم"
+
+#: src/window.ui:122
+msgid "BPM"
+msgstr "ض‌دد"
+
+#: src/window.ui:127 src/window.ui:131
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "تنظیم سرعت بر اساس ضرب در دقیقه (ض‌دد)"
+
+#: src/window.ui:130
+msgid "Tempo"
+msgstr "سرعت"
+
+#: src/window.ui:172
+msgid "Adjust Volume"
+msgstr "تنظیم حجم صدا"
+
+#: src/window.ui:195
+msgid "Reset"
+msgstr "بازنشانی"
+
+#: src/window.ui:196
+msgid "Reset the Drum Sequence"
+msgstr "بازنشانی دنبالهٔ کوبه‌ای"
+
+#: src/window.ui:209
+msgid "_Keyboard Shortcuts"
+msgstr "_میان‌برهای صفحه‌کلید"
+
+#: src/window.ui:213
+msgid "_About Drum Machine"
+msgstr "_دربارهٔ دستگاه کوبه‌ای"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "عمومی"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "نمایش میان‌برها"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "خروج"
+
+#: src/gtk/help-overlay.ui:29
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "واپایش‌های پخش"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "پخش/مکث"
+
+#: src/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "پاک‌سازی همه"
+
+#: src/gtk/help-overlay.ui:48
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "واپایش‌های حجم صدا و ض‌د‌د"
+
+#: src/gtk/help-overlay.ui:51
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "افزایش ض‌دد"
+
+#: src/gtk/help-overlay.ui:58
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "کاهش ض‌دد"
+
+#: src/gtk/help-overlay.ui:65
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "افزایش حجم صدا"
+
+#: src/gtk/help-overlay.ui:72
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "کاهش حجم صدا"
+
+#: src/gtk/help-overlay.ui:81
+msgctxt "shortcut window"
+msgid "Preset Management"
+msgstr "مدیریت پیش‌تنظیم‌ها"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Load Preset"
+msgstr "بار کردن پیش‌تنظیم"
+
+#: src/gtk/help-overlay.ui:91
+msgctxt "shortcut window"
+msgid "Save Preset"
+msgstr "ذخیرهٔ پیش‌تنظیم"
+
+#: src/gtk/save_changes_dialog.ui:6
+msgid "Save Changes?"
+msgstr "ذخیرهٔ تغییرات؟"
+
+#: src/gtk/save_changes_dialog.ui:7
+msgid ""
+"Current preset contains unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"پیش‌تنظیم کنونی تغییراتی ذخیره نشده دارد. تغییراتی که ذخیره نشده‌اند برای "
+"همیشه از دست خواهند رفت."
+
+#. Cancel the operation
+#: src/gtk/save_changes_dialog.ui:14
+msgid "_Cancel"
+msgstr "_لغو"
+
+#. Discard all changes
+#: src/gtk/save_changes_dialog.ui:15
+msgid "_Discard"
+msgstr "_دور انداختن"
+
+#. Save current changes
+#: src/gtk/save_changes_dialog.ui:16
+msgid "_Save"
+msgstr "_ذخیره"
