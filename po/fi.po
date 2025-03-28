@@ -1,0 +1,264 @@
+# Finnish translation for drum-machine.
+# Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+# Jiri Grönroos <jiri.gronroos@iki.fi>,  2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-24 13:12+0000\n"
+"PO-Revision-Date: 2025-03-24 19:59+0200\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
+"Language-Team: Finnish <Finnish>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:3
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+msgid "Drum Machine"
+msgstr "Rumpukone"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "Luo ja toista rumpubiittejä"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr ""
+"Drum Machine (Rumpukone) on moderni ja intuitiivinen sovellus rumpukuvioiden "
+"luomiseen, toistamiseen ja hallintaan. Se on täydellinen muusikoille, "
+"tuottajille ja kenelle tahansa rytmien luomisesta kiinnostuneelle. Sovellus "
+"tarjoaa yksinkertaisen käyttöliittymän rumpukuvioiden luomiseen. Pidä "
+"hauskaa!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "Ominaisuudet:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor"
+msgstr "Intuitiivinen ruudukkopohjainen kuviomuokkain"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Adjustable BPM control"
+msgstr "Säädettävä BPM"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Volume control for overall mix"
+msgstr "Äänenvoimakkuuden kokonaisvaltainen säätö"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Save and load preset patterns"
+msgstr "Tallenna ja lataa kuvioiden esiasetuksia"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "Lukuisia rumpuääniä kuten potku, pikkurumpu, hi-hat ja paljon muuta"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "Pikanäppäimet mahdollistavat kaikkien toimintojen käytön"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "Rumpukuvio ladattu, vaalea tila"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "Rumpukuvio ladattu, tumma tila"
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:278
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} iskua minuutissa (BPM)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:287
+msgid "{:.0f}% Volume"
+msgstr "{:.0f}% äänenvoimakkuus"
+
+#: src/window.py:298 src/window.ui:158
+msgid "Play"
+msgstr "Toista"
+
+#: src/window.py:302
+msgid "Pause"
+msgstr "Keskeytä"
+
+#: src/window.py:317
+msgid "Default Presets"
+msgstr "Oletusarvoiset esiasetukset"
+
+#: src/window.py:344
+msgid "MIDI files"
+msgstr "MIDI-tiedostot"
+
+#: src/window.py:350
+msgid "Open MIDI File"
+msgstr "Avaa MIDI-tiedosto"
+
+#: src/window.ui:41
+msgid "Open"
+msgstr "Avaa"
+
+#: src/window.ui:43 src/window.ui:46
+msgid "Open Preset"
+msgstr "Avaa esiasetus"
+
+#: src/window.ui:47
+msgid "Open Saved Drum Pattern Preset"
+msgstr "Avaa tallennettu rumpukuvion esiasetus"
+
+#: src/window.ui:65 src/window.ui:67
+msgid "Main Menu"
+msgstr "Päävalikko"
+
+#: src/window.ui:68
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "Näytä pikanäppäimet ja sovelluksen tiedot"
+
+#: src/window.ui:75 src/window.ui:77
+msgid "Save Drum Pattern"
+msgstr "Tallenna rumpukuvio"
+
+#: src/window.ui:78
+msgid "Save Current Drum Pattern as a Preset File"
+msgstr "Tallenna rumpukuvio esiasetustiedostona"
+
+#: src/window.ui:122
+msgid "BPM"
+msgstr "BPM"
+
+#: src/window.ui:127 src/window.ui:131
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "Määritä tempo iskuina minuutissa (BPM)"
+
+#: src/window.ui:130
+msgid "Tempo"
+msgstr "Tempo"
+
+#: src/window.ui:172
+msgid "Adjust Volume"
+msgstr "Säädä äänenvoimakkuutta"
+
+#: src/window.ui:195
+msgid "Reset"
+msgstr "Nollaa"
+
+#: src/window.ui:196
+msgid "Reset the Drum Sequence"
+msgstr "Nollaa rumpusekvenssi"
+
+#: src/window.ui:209
+msgid "_Keyboard Shortcuts"
+msgstr "_Pikanäppäimet"
+
+#: src/window.ui:213
+msgid "_About Drum Machine"
+msgstr "_Tietoja - Rumpukone"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Yleiset"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Näytä pikanäppäimet"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Lopeta"
+
+#: src/gtk/help-overlay.ui:29
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "Toistosäätimet"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "Toista/keskeytä"
+
+#: src/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "Tyhjennä kaikki"
+
+#: src/gtk/help-overlay.ui:48
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "BPM & äänenvoimakkuuden säätimet"
+
+#: src/gtk/help-overlay.ui:51
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "Lisää BPM:ää"
+
+#: src/gtk/help-overlay.ui:58
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "Vähennä BPM:ää"
+
+#: src/gtk/help-overlay.ui:65
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "Lisää äänenvoimakkuutta"
+
+#: src/gtk/help-overlay.ui:72
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "Vähennä äänenvoimakkuutta"
+
+#: src/gtk/help-overlay.ui:81
+msgctxt "shortcut window"
+msgid "Preset Management"
+msgstr "Esiasetusten hallinta"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Load Preset"
+msgstr "Lataa esiasetus"
+
+#: src/gtk/help-overlay.ui:91
+msgctxt "shortcut window"
+msgid "Save Preset"
+msgstr "Tallenna esiasetus"
+
+#: src/gtk/save_changes_dialog.ui:6
+msgid "Save Changes?"
+msgstr "Tallennetaanko muutokset?"
+
+#: src/gtk/save_changes_dialog.ui:7
+msgid ""
+"Current preset contains unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"Nykyinen esiasetus sisältää tallentamattomia muutoksia. Tallentamattomat "
+"muutokset katoavat."
+
+#. Cancel the operation
+#: src/gtk/save_changes_dialog.ui:14
+msgid "_Cancel"
+msgstr "_Peru"
+
+#. Discard all changes
+#: src/gtk/save_changes_dialog.ui:15
+msgid "_Discard"
+msgstr "_Hylkää"
+
+#. Save current changes
+#: src/gtk/save_changes_dialog.ui:16
+msgid "_Save"
+msgstr "_Tallenna"
