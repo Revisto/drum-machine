@@ -1,0 +1,288 @@
+# Slovenian translation for drum-machine.
+# Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+# Martin <miles@filmsi.net>,  2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-24 13:12+0000\n"
+"PO-Revision-Date: 2025-03-25 10:28+0100\n"
+"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:3
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+#, fuzzy
+msgid "Drum Machine"
+msgstr "Bobnarski stroj"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+#, fuzzy
+msgid "Create and play drum beats"
+msgstr "Ustvarjanje in igranje bobnarskih ritmov"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+#, fuzzy
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr ""
+"Drum Machine je sodobna in intuitivna aplikacija za ustvarjanje, igranje in "
+"upravljanje vzorcev bobnov. Kot nalašč za glasbenike, producente in vse, ki "
+"jih zanima ustvarjanje ritma, ta aplikacija ponuja preprost vmesnik za "
+"programiranje vzorcev bobnov. Zabavaj se!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "Funkcionalnosti:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+#, fuzzy
+msgid "Intuitive grid-based pattern editor"
+msgstr "Intuitiven urejevalnik vzorcev, ki temelji na mreži"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+#, fuzzy
+msgid "Adjustable BPM control"
+msgstr "Nastavljiv nadzor BPM"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+#, fuzzy
+msgid "Volume control for overall mix"
+msgstr "Nadzor glasnosti za celoten miks"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+#, fuzzy
+msgid "Save and load preset patterns"
+msgstr "Shranjevanje in nalaganje prednastavljenih vzorcev"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+#, fuzzy
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "Več zvokov bobnov, vključno z udarcem, zanko, hi-hatom in še več"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+#, fuzzy
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "Bližnjice na tipkovnici za hiter dostop do vseh funkcij"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+#, fuzzy
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "Vzorec bobna naložen v svetlobnem načinu"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+#, fuzzy
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "Vzorec bobna naložen v temnem načinu"
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:278
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} udarcev na minuto (BPM)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:287
+msgid "{:.0f}% Volume"
+msgstr "Glasnost {:.0f} %"
+
+#: src/window.py:298 src/window.ui:158
+msgid "Play"
+msgstr "Predvajaj"
+
+#: src/window.py:302
+msgid "Pause"
+msgstr "Premor"
+
+#: src/window.py:317
+msgid "Default Presets"
+msgstr "Privzete prednastavitve"
+
+#: src/window.py:344
+msgid "MIDI files"
+msgstr "Datoteke MIDI"
+
+#: src/window.py:350
+msgid "Open MIDI File"
+msgstr "Odpri datoteko MIDI"
+
+#: src/window.ui:41
+msgid "Open"
+msgstr "Odpri"
+
+#: src/window.ui:43 src/window.ui:46
+#, fuzzy
+msgid "Open Preset"
+msgstr "Odprite prednastavitev"
+
+#: src/window.ui:47
+#, fuzzy
+msgid "Open Saved Drum Pattern Preset"
+msgstr "Odpiranje prednastavitve shranjenega vzorca bobna"
+
+#: src/window.ui:65 src/window.ui:67
+msgid "Main Menu"
+msgstr "Glavni meni"
+
+#: src/window.ui:68
+#, fuzzy
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "Dostop do bližnjic na tipkovnici in informacij o aplikacijah"
+
+#: src/window.ui:75 src/window.ui:77
+#, fuzzy
+msgid "Save Drum Pattern"
+msgstr "Shrani vzorec bobna"
+
+#: src/window.ui:78
+#, fuzzy
+msgid "Save Current Drum Pattern as a Preset File"
+msgstr "Shranjevanje trenutnega vzorca bobna kot prednastavljene datoteke"
+
+#: src/window.ui:122
+msgid "BPM"
+msgstr "UNM (BPM)"
+
+#: src/window.ui:127 src/window.ui:131
+#, fuzzy
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "Prilagajanje tempa v utripih na minuto (BPM)"
+
+#: src/window.ui:130
+msgid "Tempo"
+msgstr "Tempo"
+
+#: src/window.ui:172
+msgid "Adjust Volume"
+msgstr "Prilagodi glasnost"
+
+#: src/window.ui:195
+msgid "Reset"
+msgstr "Ponastavi"
+
+#: src/window.ui:196
+#, fuzzy
+msgid "Reset the Drum Sequence"
+msgstr "Ponastavitev zaporedja bobna"
+
+#: src/window.ui:209
+msgid "_Keyboard Shortcuts"
+msgstr "_Tipkovne bližnjice"
+
+#: src/window.ui:213
+#, fuzzy
+msgid "_About Drum Machine"
+msgstr "_About bobnarski avtomat"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Splošno"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Pokaži tipkovne bližnjice‫"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Izhod"
+
+#: src/gtk/help-overlay.ui:29
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "Kontrolniki predvajanja"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "Predvajaj / premor"
+
+#: src/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "Počisti vse"
+
+#: src/gtk/help-overlay.ui:48
+#, fuzzy
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "BPM in nadzor glasnosti"
+
+#: src/gtk/help-overlay.ui:51
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "Povečajte BPM"
+
+#: src/gtk/help-overlay.ui:58
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "Zmanjšanje BPM"
+
+#: src/gtk/help-overlay.ui:65
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "Povečaj glasnost"
+
+#: src/gtk/help-overlay.ui:72
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "Zmanjšaj glasnost"
+
+#: src/gtk/help-overlay.ui:81
+msgctxt "shortcut window"
+msgid "Preset Management"
+msgstr "Upravljanje prednastavitev"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Load Preset"
+msgstr "Naloži prednastavitev"
+
+#: src/gtk/help-overlay.ui:91
+msgctxt "shortcut window"
+msgid "Save Preset"
+msgstr "Shrani prednastavitev"
+
+#: src/gtk/save_changes_dialog.ui:6
+msgid "Save Changes?"
+msgstr "Ali želite shraniti spremembe?"
+
+#: src/gtk/save_changes_dialog.ui:7
+#, fuzzy
+msgid ""
+"Current preset contains unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"Trenutna prednastavitev vsebuje neshranjene spremembe. Spremembe, ki niso "
+"shranjene, bodo trajno izgubljene."
+
+#. Cancel the operation
+#: src/gtk/save_changes_dialog.ui:14
+msgid "_Cancel"
+msgstr "Pre_kliči"
+
+#. Discard all changes
+#: src/gtk/save_changes_dialog.ui:15
+msgid "_Discard"
+msgstr "_Zavrzi"
+
+#. Save current changes
+#: src/gtk/save_changes_dialog.ui:16
+msgid "_Save"
+msgstr "_Shrani"
