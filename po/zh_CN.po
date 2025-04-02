@@ -1,0 +1,261 @@
+# Chinese (China) translation for drum-machine.
+# Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+# Luming Zh <lumingzh@qq.com>,  2025.
+# lumingzh <lumingzh@qq.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine master\n"
+"Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
+"POT-Creation-Date: 2025-03-28 13:12+0000\n"
+"PO-Revision-Date: 2025-03-30 08:22+0800\n"
+"Last-Translator: lumingzh <lumingzh@qq.com>\n"
+"Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Gtranslator 48.0\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:3
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+msgid "Drum Machine"
+msgstr "击鼓器"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "创建和播放击鼓节奏"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr ""
+"击鼓器是一个创建、播放和管理击鼓模式的现代且直观的应用程序。完美适用于音乐"
+"家、创作者和对韵律创作感兴趣的任何人，此应用程序提供了一个用于击鼓模式编程的"
+"简单界面。玩的开心！"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "特性："
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor"
+msgstr "直观的基于网格的模式编辑器"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Adjustable BPM control"
+msgstr "可调节的 BPM 控制"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Volume control for overall mix"
+msgstr "整体混音的音量控制"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Save and load preset patterns"
+msgstr "保存和加载预设模式"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "多种击鼓音色，包括底鼓、军鼓、踩镲和其它更多音色"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "用于快速访问所有功能的键盘快捷键"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "以亮色模式加载击鼓模式"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "以暗色模式加载击鼓模式"
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:278
+msgid "{} Beats per Minute (BPM)"
+msgstr "每分钟 {} 节拍（BPM）"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:287
+msgid "{:.0f}% Volume"
+msgstr "{:.0f}% 音量"
+
+#: src/window.py:298 src/window.ui:158
+msgid "Play"
+msgstr "播放"
+
+#: src/window.py:302
+msgid "Pause"
+msgstr "暂停"
+
+#: src/window.py:317
+msgid "Default Presets"
+msgstr "默认预设"
+
+#: src/window.py:344
+msgid "MIDI files"
+msgstr "MIDI 文件"
+
+#: src/window.py:350
+msgid "Open MIDI File"
+msgstr "打开 MIDI 文件"
+
+#: src/window.ui:41
+msgid "Open"
+msgstr "打开"
+
+#: src/window.ui:43 src/window.ui:46
+msgid "Open Preset"
+msgstr "打开预设"
+
+#: src/window.ui:47
+msgid "Open Saved Drum Pattern Preset"
+msgstr "打开保存的击鼓模式预设"
+
+#: src/window.ui:65 src/window.ui:67
+msgid "Main Menu"
+msgstr "主菜单"
+
+#: src/window.ui:68
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "访问键盘快捷键和应用程序信息"
+
+#: src/window.ui:75 src/window.ui:77
+msgid "Save Drum Pattern"
+msgstr "保存击鼓模式"
+
+#: src/window.ui:78
+msgid "Save Current Drum Pattern as a Preset File"
+msgstr "将当前击鼓模式保存为预设文件"
+
+#: src/window.ui:122
+msgid "BPM"
+msgstr "BPM"
+
+#: src/window.ui:127 src/window.ui:131
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "以每分钟节拍为单位调节拍子（BPM）"
+
+#: src/window.ui:130
+msgid "Tempo"
+msgstr "拍子"
+
+#: src/window.ui:172
+msgid "Adjust Volume"
+msgstr "调整音量"
+
+#: src/window.ui:195
+msgid "Reset"
+msgstr "重置"
+
+#: src/window.ui:196
+msgid "Reset the Drum Sequence"
+msgstr "重置击鼓序列"
+
+#: src/window.ui:209
+msgid "_Keyboard Shortcuts"
+msgstr "键盘快捷键(_K)"
+
+#: src/window.ui:213
+msgid "_About Drum Machine"
+msgstr "关于击鼓器(_A)"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "常规"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "显示快捷键"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "退出"
+
+#: src/gtk/help-overlay.ui:29
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "播放控制"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "播放/暂停"
+
+#: src/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "全部清除"
+
+#: src/gtk/help-overlay.ui:48
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "BPM 和音量控制"
+
+#: src/gtk/help-overlay.ui:51
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "增加 BPM"
+
+#: src/gtk/help-overlay.ui:58
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "减少 BPM"
+
+#: src/gtk/help-overlay.ui:65
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "增大音量"
+
+#: src/gtk/help-overlay.ui:72
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "减小音量"
+
+#: src/gtk/help-overlay.ui:81
+msgctxt "shortcut window"
+msgid "Preset Management"
+msgstr "预设管理"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Load Preset"
+msgstr "加载预设"
+
+#: src/gtk/help-overlay.ui:91
+msgctxt "shortcut window"
+msgid "Save Preset"
+msgstr "保存预设"
+
+#: src/gtk/save_changes_dialog.ui:6
+msgid "Save Changes?"
+msgstr "保存更改吗？"
+
+#: src/gtk/save_changes_dialog.ui:7
+msgid ""
+"Current preset contains unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr "当前预设包含未保存更改。未保存的更改将会永久丢失。"
+
+#. Cancel the operation
+#: src/gtk/save_changes_dialog.ui:14
+msgid "_Cancel"
+msgstr "取消(_C)"
+
+#. Discard all changes
+#: src/gtk/save_changes_dialog.ui:15
+msgid "_Discard"
+msgstr "丢弃(_D)"
+
+#. Save current changes
+#: src/gtk/save_changes_dialog.ui:16
+msgid "_Save"
+msgstr "保存(_S)"
