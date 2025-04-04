@@ -1,0 +1,254 @@
+# Basque translation for drum-machine.
+# Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+# Asier Saratsua Garmendia <asiersarasua@ni.eus>,  2025.
+#
+msgid ""
+msgstr "Project-Id-Version: drum-machine master\n"
+"Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
+"POT-Creation-Date: 2025-03-28 13:12+0000\n"
+"PO-Revision-Date: 2025-03-28 13:12+0000\n"
+"Last-Translator: Asier Saratsua Garmendia <asiersarasua@ni.eus>\n"
+"Language-Team: Basque <eu@li.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:3
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+msgid "Drum Machine"
+msgstr "Drum Machine"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "Sortu eta erreproduzitu danbor-hotsak"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr "Drum Machine aplikazioa danbor-ereduak sortu, erreproduzitu eta kudeatzeko aplikazio moderno eta erabilerraza da. Ezin hobea musikari, produktore eta erritmoak sortzeko interesa duen edonorentzat. Aplikazio honek danbor-ereduak programatzeko interfaze sinplea eskaintzen du. Ondo pasa!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "Eginbideak:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor"
+msgstr "Ereduen editore erabilerraza, sareta formakoa"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Adjustable BPM control"
+msgstr "BPM kontrol doigarria"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Volume control for overall mix"
+msgstr "Nahaste osorako bolumen-kontrola"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Save and load preset patterns"
+msgstr "Gorde eta kargatu aurrezarritako ereduak"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "Danbor-hots anitz, dunbala, kaxa, charlestona eta gehiago barne"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "Lasterbideak funtzio guztiak azkar atzitzeko"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "Danbor-eredua modu argian kargatua"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "Danbor-eredua modu ilunean kargatua"
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:278
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} kolpe minutuko (BPM)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:287
+msgid "{:.0f}% Volume"
+msgstr "{:.0f}% bolumena"
+
+#: src/window.py:298 src/window.ui:158
+msgid "Play"
+msgstr "Erreproduzitu"
+
+#: src/window.py:302
+msgid "Pause"
+msgstr "Pausatu"
+
+#: src/window.py:317
+msgid "Default Presets"
+msgstr "Aurrezarpen lehenetsiak"
+
+#: src/window.py:344
+msgid "MIDI files"
+msgstr "MIDI fitxategiak"
+
+#: src/window.py:350
+msgid "Open MIDI File"
+msgstr "Ireki MIDI fitxategia"
+
+#: src/window.ui:41
+msgid "Open"
+msgstr "Ireki"
+
+#: src/window.ui:43 src/window.ui:46
+msgid "Open Preset"
+msgstr "Ireki aurrezarpena"
+
+#: src/window.ui:47
+msgid "Open Saved Drum Pattern Preset"
+msgstr "Ireki gordetako danbor-eredua"
+
+#: src/window.ui:65 src/window.ui:67
+msgid "Main Menu"
+msgstr "Menu nagusia"
+
+#: src/window.ui:68
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "Atzitu laster-teklak eta aplikazioaren informazioa"
+
+#: src/window.ui:75 src/window.ui:77
+msgid "Save Drum Pattern"
+msgstr "Gorde danbor-eredua"
+
+#: src/window.ui:78
+msgid "Save Current Drum Pattern as a Preset File"
+msgstr "Gorde uneko danbor-eredua aurrezarpen-fitxategi gisa"
+
+#: src/window.ui:122
+msgid "BPM"
+msgstr "BMP"
+
+#: src/window.ui:127 src/window.ui:131
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "Doitu tempoa kolpeak minutukotan (BPM)"
+
+#: src/window.ui:130
+msgid "Tempo"
+msgstr "Tempoa"
+
+#: src/window.ui:172
+msgid "Adjust Volume"
+msgstr "Doitu bolumena"
+
+#: src/window.ui:195
+msgid "Reset"
+msgstr "Berrezarri"
+
+#: src/window.ui:196
+msgid "Reset the Drum Sequence"
+msgstr "Berrezarri danbor-sekuentzia"
+
+#: src/window.ui:209
+msgid "_Keyboard Shortcuts"
+msgstr "Las_ter-teklak"
+
+#: src/window.ui:213
+msgid "_About Drum Machine"
+msgstr "Drum Machine aplikazioari _buruz"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Orokorra"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Erakutsi lasterbideak"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Irten"
+
+#: src/gtk/help-overlay.ui:29
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "Erreprodukzio-kontrolak"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "Erreproduzitu/pausarazi"
+
+#: src/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "Garbitu denak"
+
+#: src/gtk/help-overlay.ui:48
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "BPMa eta bolumen-kontrolak"
+
+#: src/gtk/help-overlay.ui:51
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "Handitu BPMa"
+
+#: src/gtk/help-overlay.ui:58
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "Txikitu BMPa"
+
+#: src/gtk/help-overlay.ui:65
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "Igo bolumena"
+
+#: src/gtk/help-overlay.ui:72
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "Jaitsi bolumena"
+
+#: src/gtk/help-overlay.ui:81
+msgctxt "shortcut window"
+msgid "Preset Management"
+msgstr "Aurrezarpen-kudeaketa"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Load Preset"
+msgstr "Kargatu aurrezarpena"
+
+#: src/gtk/help-overlay.ui:91
+msgctxt "shortcut window"
+msgid "Save Preset"
+msgstr "Gorde aurrezarpena"
+
+#: src/gtk/save_changes_dialog.ui:6
+msgid "Save Changes?"
+msgstr "Gorde aldaketak?"
+
+#: src/gtk/save_changes_dialog.ui:7
+msgid ""
+"Current preset contains unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr "Uneko aurrezarpenak gorde gabeko aldaketak ditu. Gorde ez diren aldaketa horiek betiko galduko dira."
+
+#. Cancel the operation
+#: src/gtk/save_changes_dialog.ui:14
+msgid "_Cancel"
+msgstr "_Utzi"
+
+#. Discard all changes
+#: src/gtk/save_changes_dialog.ui:15
+msgid "_Discard"
+msgstr "_Baztertu"
+
+#. Save current changes
+#: src/gtk/save_changes_dialog.ui:16
+msgid "_Save"
+msgstr "_Gorde"
