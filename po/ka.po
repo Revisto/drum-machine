@@ -1,0 +1,263 @@
+# Georgian translation for drum-machine.
+# Copyright (C) 2025 drum-machine's authors
+# This file is distributed under the same license as the drum-machine package.
+# Ekaterine Papava <papava.e@gtu.ge>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-24 13:12+0000\n"
+"PO-Revision-Date: 2025-03-26 03:43+0100\n"
+"Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
+"Language-Team: Georgian <ka@li.org>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:3
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+msgid "Drum Machine"
+msgstr "დრამ-მანქანა"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "შექმენით და დაუკარით დრამის დარტყმები"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr ""
+"Drum Machine თანამედროვე და ინტუიციური აპლიკაციაა დრამის ნიმუშების "
+"შესაქმნელად, დასაკრავად და სამართავად. გადასარევია მუსიკოსებისთვის, "
+"პროდიუსერებისთვის და ყველასთვის, რომელიც რითმის შექმნითაა დაინტერესებული, ეს "
+"აპლიკაცია უმარტივეს ინტერფეისს სთავაზობს დრამის ნიმუშის პროგრამირებისთვის. "
+"აბა, თქვენ იცით!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "თვისებები:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor"
+msgstr "ინტუიციური ბადეზე დაფუძნებული ნიმუშების რედაქტორი"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Adjustable BPM control"
+msgstr "რეგულირებადი BPM კონტროლი"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Volume control for overall mix"
+msgstr "ხმის დონის კონტროლი მთელი მიქსისთვის"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Save and load preset patterns"
+msgstr "პრესეტის ნიმუშების შენახვა და ჩატვირთვა"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "ერთზე მეტი დრამის ხმები თეფშის, დოლის, დიდი დეფშის და ა.შ. ჩათვლით"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "კლავიატურის მალსახმობები ფუნქციებთან სწრაფი წვდომისთვის"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "Drum Pattern ჩატვირთულია ღია რეჟიმში"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "Drum Pattern ჩატვირთულია მუქ რეჟიმში"
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:278
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} დარტყმა წუთში (BPM)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:287
+msgid "{:.0f}% Volume"
+msgstr "{:.0f}% ხმა"
+
+#: src/window.py:298 src/window.ui:158
+msgid "Play"
+msgstr "დაკვრა"
+
+#: src/window.py:302
+msgid "Pause"
+msgstr "შეჩერება"
+
+#: src/window.py:317
+msgid "Default Presets"
+msgstr "ნაგულისხმევი პრესეტები"
+
+#: src/window.py:344
+msgid "MIDI files"
+msgstr "MIDI ფაილები"
+
+#: src/window.py:350
+msgid "Open MIDI File"
+msgstr "MIDI ფაილის გახსნა"
+
+#: src/window.ui:41
+msgid "Open"
+msgstr "გახსნა"
+
+#: src/window.ui:43 src/window.ui:46
+msgid "Open Preset"
+msgstr "პრესეტის გახსნა"
+
+#: src/window.ui:47
+msgid "Open Saved Drum Pattern Preset"
+msgstr "შენახული დრამის ნიმუშის პრესეტის გახსნა"
+
+#: src/window.ui:65 src/window.ui:67
+msgid "Main Menu"
+msgstr "მთავარი მენიუ"
+
+#: src/window.ui:68
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "წვდომა კლავიატურის მალსახმობებთან და აპლიკაციის ინფორმაციასთან"
+
+#: src/window.ui:75 src/window.ui:77
+msgid "Save Drum Pattern"
+msgstr "დრამის ნიმუშის შენახვა"
+
+#: src/window.ui:78
+msgid "Save Current Drum Pattern as a Preset File"
+msgstr "მიმდინარე დრამის ნიმუშის შენახვა პრესეტის ფაილის სახით"
+
+#: src/window.ui:122
+msgid "BPM"
+msgstr "BPM"
+
+#: src/window.ui:127 src/window.ui:131
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "გაასწორეთ ტემპი 'დარტყმა წუთში' ერთეულით (BPM)"
+
+#: src/window.ui:130
+msgid "Tempo"
+msgstr "ტემპი"
+
+#: src/window.ui:172
+msgid "Adjust Volume"
+msgstr "ხმის მორგება"
+
+#: src/window.ui:195
+msgid "Reset"
+msgstr "ჩამოყრა"
+
+#: src/window.ui:196
+msgid "Reset the Drum Sequence"
+msgstr "დრამის მიმდევრობის ჩამოყრა"
+
+#: src/window.ui:209
+msgid "_Keyboard Shortcuts"
+msgstr "_კლავიატურის მალსახმობები"
+
+#: src/window.ui:213
+msgid "_About Drum Machine"
+msgstr "დრამის მანქანის შეს_ახებ"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "ზოგადი"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "მალსახმობების ჩვენება"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "გასვლა"
+
+#: src/gtk/help-overlay.ui:29
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "დაკვრის ელემენტები"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "დაკვრა/პაუზა"
+
+#: src/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "ყველას გასუფთავება"
+
+#: src/gtk/help-overlay.ui:48
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "BPM & ხმის კონტროლი"
+
+#: src/gtk/help-overlay.ui:51
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "BPM-ის გაზრდა"
+
+#: src/gtk/help-overlay.ui:58
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "BPM-ის შემცირება"
+
+#: src/gtk/help-overlay.ui:65
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "ხმის აწევა"
+
+#: src/gtk/help-overlay.ui:72
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "ხმის დაწევა"
+
+#: src/gtk/help-overlay.ui:81
+msgctxt "shortcut window"
+msgid "Preset Management"
+msgstr "პრესეტების მართვა"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Load Preset"
+msgstr "პრესეტის ჩატვირთვა"
+
+#: src/gtk/help-overlay.ui:91
+msgctxt "shortcut window"
+msgid "Save Preset"
+msgstr "პრესეტის შენახვა"
+
+#: src/gtk/save_changes_dialog.ui:6
+msgid "Save Changes?"
+msgstr "შევინახო ცვლილებები?"
+
+#: src/gtk/save_changes_dialog.ui:7
+msgid ""
+"Current preset contains unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"მიმდინარე პრესეტი შეუნახავ ცვლილებს შეიცავს. ცვლილებები, რომლებსაც არ "
+"შეინახავთ, დაიკარგება."
+
+#. Cancel the operation
+#: src/gtk/save_changes_dialog.ui:14
+msgid "_Cancel"
+msgstr "_შეწყვეტა"
+
+#. Discard all changes
+#: src/gtk/save_changes_dialog.ui:15
+msgid "_Discard"
+msgstr "_მოცილება"
+
+#. Save current changes
+#: src/gtk/save_changes_dialog.ui:16
+msgid "_Save"
+msgstr "_შენახვა"
