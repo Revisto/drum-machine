@@ -2,21 +2,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the drum-machine package.
 # Tiago Lucas FLach <tiagolucas9830@gmail.com>, 2025.
+# Álvaro Burns <>, 2025.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-15 17:06-0300\n"
-"PO-Revision-Date: 2025-02-15 17:45-0300\n"
-"Last-Translator: Tiago Lucas Flach <tiagolucas9830@gmail.com>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2025-03-24 13:12+0000\n"
+"PO-Revision-Date: 2025-03-24 17:16-0300\n"
+"Last-Translator: Álvaro Burns <>\n"
+"Language-Team: Brazilian Portuguese\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Gtranslator 47.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:3
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
@@ -75,144 +76,33 @@ msgstr "Padrão de bateria carregado no modo Claro"
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Padrão de bateria carregado no Modo Escuro"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:46
-msgid "drum"
-msgstr "bateria"
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:47
-msgid "machine"
-msgstr "máquina"
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:48
-msgid "rhythm"
-msgstr "ritmo"
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
-msgid "music"
-msgstr "música"
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:50
-msgid "pattern"
-msgstr "padrão"
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:51
-msgid "beats"
-msgstr "batidas"
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:60
-msgid "Revisto"
-msgstr "Revisão"
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:66
-msgid ""
-"This release of Drum Machine 1.3.1 brings significant UI and functionality "
-"improvements:"
-msgstr ""
-"Esta versão do Drum Machine 1.3.1 traz melhorias significativas na interface "
-"do usuário e na funcionalidade:"
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:68
-msgid ""
-"Refactored headerbar and background styling for a flat, integrated visual "
-"experience."
-msgstr ""
-"Barra de cabeçalho e estilo de fundo reformulados para uma experiência "
-"visual plana e integrada."
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:69
-msgid ""
-"Enhanced accessibility with improved tooltips and descriptive labels for BPM "
-"and volume controls."
-msgstr ""
-"Acessibilidade aprimorada com dicas de ferramentas aprimoradas e rótulos "
-"descritivos para controles de BPM e volume."
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:70
-msgid ""
-"Redesigned app icon and updated text styling for clearer user interface "
-"elements."
-msgstr ""
-"Ícone do aplicativo redesenhado e estilo de texto atualizado para elementos "
-"de interface de usuário mais claros."
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:71
-msgid ""
-"Optimized layout breakpoints to improve responsiveness and reduce early "
-"scrolling."
-msgstr ""
-"Pontos de interrupção de layout otimizados para melhorar a capacidade de "
-"resposta e reduzir a rolagem inicial."
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:72
-msgid ""
-"Fixed padding, border-radius, and vertical alignment issues across multiple "
-"controls."
-msgstr ""
-"Problemas corrigidos de preenchimento, raio de borda e alinhamento vertical "
-"em vários controles."
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:73
-msgid ""
-"Updated file dialogs to use the Nautilus file chooser for a more modern "
-"approach."
-msgstr ""
-"Caixas de diálogo de arquivo atualizadas para usar o seletor de arquivos "
-"Nautilus para uma abordagem mais moderna."
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:74
-msgid ""
-"Improved keyboard navigation focus and updated tooltips, including dedicated "
-"play and pause hints."
-msgstr ""
-"Foco de navegação do teclado aprimorado e dicas de ferramentas atualizadas, "
-"incluindo dicas dedicadas de reprodução e pausa."
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:75
-msgid ""
-"Transitioned to the Nautilus file chooser for a more contemporary interface."
-msgstr ""
-"Transição para o seletor de arquivos Nautilus para uma interface mais "
-"contemporânea."
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:76
-msgid "Now accessible on narrow mobile screens with adaptive UI elements."
-msgstr ""
-"Agora acessível em telas estreitas de dispositivos móveis com elementos de "
-"interface de usuário adaptáveis."
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:77
-msgid "Refined app icon, and adjusted brand colors for better contrast."
-msgstr ""
-"Ícone do aplicativo refinado e cores da marca ajustadas para melhor "
-"contraste."
-
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:270
+#: src/window.py:278
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} Batidas por minuto (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:279
+#: src/window.py:287
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% Volume"
 
-#: src/window.py:290 src/window.ui:158
+#: src/window.py:298 src/window.ui:158
 msgid "Play"
 msgstr "Play"
 
-#: src/window.py:294
+#: src/window.py:302
 msgid "Pause"
 msgstr "Pause"
 
-#: src/window.py:309
+#: src/window.py:317
 msgid "Default Presets"
 msgstr "Predefinições Pzadrão"
 
-#: src/window.py:336
+#: src/window.py:344
 msgid "MIDI files"
 msgstr "Arquivos MIDI"
 
-#: src/window.py:342
+#: src/window.py:350
 msgid "Open MIDI File"
 msgstr "Abrir Arquivo MIDI"
 
@@ -264,11 +154,15 @@ msgstr "Ajustar Volume"
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: src/window.ui:208
+#: src/window.ui:196
+msgid "Reset the Drum Sequence"
+msgstr "Reiniciar a Sequência de Bateria"
+
+#: src/window.ui:209
 msgid "_Keyboard Shortcuts"
 msgstr "_Atalhos de Teclado"
 
-#: src/window.ui:212
+#: src/window.ui:213
 msgid "_About Drum Machine"
 msgstr "_Sobre o Drum Machine"
 
@@ -368,3 +262,97 @@ msgstr "_Descartar"
 #: src/gtk/save_changes_dialog.ui:16
 msgid "_Save"
 msgstr "_Salvar"
+
+#~ msgid "drum"
+#~ msgstr "bateria"
+
+#~ msgid "machine"
+#~ msgstr "máquina"
+
+#~ msgid "rhythm"
+#~ msgstr "ritmo"
+
+#~ msgid "music"
+#~ msgstr "música"
+
+#~ msgid "pattern"
+#~ msgstr "padrão"
+
+#~ msgid "beats"
+#~ msgstr "batidas"
+
+#~ msgid "Revisto"
+#~ msgstr "Revisão"
+
+#~ msgid ""
+#~ "This release of Drum Machine 1.3.1 brings significant UI and "
+#~ "functionality improvements:"
+#~ msgstr ""
+#~ "Esta versão do Drum Machine 1.3.1 traz melhorias significativas na "
+#~ "interface do usuário e na funcionalidade:"
+
+#~ msgid ""
+#~ "Refactored headerbar and background styling for a flat, integrated visual "
+#~ "experience."
+#~ msgstr ""
+#~ "Barra de cabeçalho e estilo de fundo reformulados para uma experiência "
+#~ "visual plana e integrada."
+
+#~ msgid ""
+#~ "Enhanced accessibility with improved tooltips and descriptive labels for "
+#~ "BPM and volume controls."
+#~ msgstr ""
+#~ "Acessibilidade aprimorada com dicas de ferramentas aprimoradas e rótulos "
+#~ "descritivos para controles de BPM e volume."
+
+#~ msgid ""
+#~ "Redesigned app icon and updated text styling for clearer user interface "
+#~ "elements."
+#~ msgstr ""
+#~ "Ícone do aplicativo redesenhado e estilo de texto atualizado para "
+#~ "elementos de interface de usuário mais claros."
+
+#~ msgid ""
+#~ "Optimized layout breakpoints to improve responsiveness and reduce early "
+#~ "scrolling."
+#~ msgstr ""
+#~ "Pontos de interrupção de layout otimizados para melhorar a capacidade de "
+#~ "resposta e reduzir a rolagem inicial."
+
+#~ msgid ""
+#~ "Fixed padding, border-radius, and vertical alignment issues across "
+#~ "multiple controls."
+#~ msgstr ""
+#~ "Problemas corrigidos de preenchimento, raio de borda e alinhamento "
+#~ "vertical em vários controles."
+
+#~ msgid ""
+#~ "Updated file dialogs to use the Nautilus file chooser for a more modern "
+#~ "approach."
+#~ msgstr ""
+#~ "Caixas de diálogo de arquivo atualizadas para usar o seletor de arquivos "
+#~ "Nautilus para uma abordagem mais moderna."
+
+#~ msgid ""
+#~ "Improved keyboard navigation focus and updated tooltips, including "
+#~ "dedicated play and pause hints."
+#~ msgstr ""
+#~ "Foco de navegação do teclado aprimorado e dicas de ferramentas "
+#~ "atualizadas, incluindo dicas dedicadas de reprodução e pausa."
+
+#~ msgid ""
+#~ "Transitioned to the Nautilus file chooser for a more contemporary "
+#~ "interface."
+#~ msgstr ""
+#~ "Transição para o seletor de arquivos Nautilus para uma interface mais "
+#~ "contemporânea."
+
+#~ msgid "Now accessible on narrow mobile screens with adaptive UI elements."
+#~ msgstr ""
+#~ "Agora acessível em telas estreitas de dispositivos móveis com elementos "
+#~ "de interface de usuário adaptáveis."
+
+#~ msgid "Refined app icon, and adjusted brand colors for better contrast."
+#~ msgstr ""
+#~ "Ícone do aplicativo refinado e cores da marca ajustadas para melhor "
+#~ "contraste."
