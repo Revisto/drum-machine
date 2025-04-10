@@ -1,0 +1,263 @@
+# Swedish translation for drum-machine.
+# Copyright © 2025 drum-machine's COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>,  2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-26 13:12+0000\n"
+"PO-Revision-Date: 2025-03-28 13:38+0100\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:3
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+msgid "Drum Machine"
+msgstr "Drum Machine"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "Skapa och spela trumslag"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr ""
+"Drum Machine är ett modernt och intuitivt program för att skapa, spela och "
+"hantera trumslingor. Perfekt för musiker, producenter och alla som är "
+"intresserade av att skapa rytmer. Detta program tillhandahåller ett enkelt "
+"gränssnitt för trumslingeprogrammering. Ha så kul!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "Funktioner:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor"
+msgstr "Intuitiv rutnätsbaserad slingredigerare"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Adjustable BPM control"
+msgstr "Justerbar BPM-kontroll"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Volume control for overall mix"
+msgstr "Volymkontroll för generell mix"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Save and load preset patterns"
+msgstr "Spara och läs in förinställda slingor"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "Flera trumljud inkluderande bastrumma, virveltrumma, hi-hat med mera"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "Tangentbordsgenvägar för snabb åtkomst till alla funktioner"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "Trumslinga inläst i ljust läge"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "Trumslinga inläst i mörkt läge"
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:278
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} slag per minut (BPM)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:287
+msgid "{:.0f}% Volume"
+msgstr "{:.0f}% volym"
+
+#: src/window.py:298 src/window.ui:158
+msgid "Play"
+msgstr "Spela"
+
+#: src/window.py:302
+msgid "Pause"
+msgstr "Pausa"
+
+#: src/window.py:317
+msgid "Default Presets"
+msgstr "Standardförinställningar"
+
+#: src/window.py:344
+msgid "MIDI files"
+msgstr "MIDI-filer"
+
+#: src/window.py:350
+msgid "Open MIDI File"
+msgstr "Öppna MIDI-fil"
+
+#: src/window.ui:41
+msgid "Open"
+msgstr "Öppna"
+
+#: src/window.ui:43 src/window.ui:46
+msgid "Open Preset"
+msgstr "Öppna förinställning"
+
+#: src/window.ui:47
+msgid "Open Saved Drum Pattern Preset"
+msgstr "Öppna sparad trumslingeförinställning"
+
+#: src/window.ui:65 src/window.ui:67
+msgid "Main Menu"
+msgstr "Huvudmeny"
+
+#: src/window.ui:68
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "Kom åt tangentbordsgenvägar och programinformation"
+
+#: src/window.ui:75 src/window.ui:77
+msgid "Save Drum Pattern"
+msgstr "Spara trumslinga"
+
+#: src/window.ui:78
+msgid "Save Current Drum Pattern as a Preset File"
+msgstr "Spara aktuell trumslinga som en förinställningsfil"
+
+#: src/window.ui:122
+msgid "BPM"
+msgstr "BPM"
+
+#: src/window.ui:127 src/window.ui:131
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "Justera tempo i slag per minut (BPM)"
+
+#: src/window.ui:130
+msgid "Tempo"
+msgstr "Tempo"
+
+#: src/window.ui:172
+msgid "Adjust Volume"
+msgstr "Justera volym"
+
+#: src/window.ui:195
+msgid "Reset"
+msgstr "Återställ"
+
+#: src/window.ui:196
+msgid "Reset the Drum Sequence"
+msgstr "Återställ trumsekvensen"
+
+#: src/window.ui:209
+msgid "_Keyboard Shortcuts"
+msgstr "_Tangentbordsgenvägar"
+
+#: src/window.ui:213
+msgid "_About Drum Machine"
+msgstr "_Om Drum Machine"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Allmänt"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Visa kortkommandon"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Avsluta"
+
+#: src/gtk/help-overlay.ui:29
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "Uppspelningskontroller"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "Spela/pausa"
+
+#: src/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "Töm alla"
+
+#: src/gtk/help-overlay.ui:48
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "BPM- och volymkontroller"
+
+#: src/gtk/help-overlay.ui:51
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "Öka slag/minut"
+
+#: src/gtk/help-overlay.ui:58
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "Minska slag/minut"
+
+#: src/gtk/help-overlay.ui:65
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "Öka volymen"
+
+#: src/gtk/help-overlay.ui:72
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "Sänk volymen"
+
+#: src/gtk/help-overlay.ui:81
+msgctxt "shortcut window"
+msgid "Preset Management"
+msgstr "Förinställningshantering"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Load Preset"
+msgstr "Läs in förinställning"
+
+#: src/gtk/help-overlay.ui:91
+msgctxt "shortcut window"
+msgid "Save Preset"
+msgstr "Spara förinställning"
+
+#: src/gtk/save_changes_dialog.ui:6
+msgid "Save Changes?"
+msgstr "Spara ändringar?"
+
+#: src/gtk/save_changes_dialog.ui:7
+msgid ""
+"Current preset contains unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"Aktuell förinställning innehåller osparade ändringar. Ändringar som inte "
+"sparas kommer gå permanent förlorade."
+
+#. Cancel the operation
+#: src/gtk/save_changes_dialog.ui:14
+msgid "_Cancel"
+msgstr "A_vbryt"
+
+#. Discard all changes
+#: src/gtk/save_changes_dialog.ui:15
+msgid "_Discard"
+msgstr "_Förkasta"
+
+#. Save current changes
+#: src/gtk/save_changes_dialog.ui:16
+msgid "_Save"
+msgstr "_Spara"
