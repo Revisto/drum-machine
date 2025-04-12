@@ -1,0 +1,265 @@
+# Turkish translation for drum-machine.
+# Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+#
+# Sabri Ünal <yakushabb@gmail.com>,  2025.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine master\n"
+"Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
+"POT-Creation-Date: 2025-04-02 18:12+0000\n"
+"PO-Revision-Date: 2025-04-06 08:00+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"Language-Team: Turkish <takim@gnome.org.tr>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.6\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:3
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+msgid "Drum Machine"
+msgstr "Davul Makinesi"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "Davul ritimleri oluştur ve çal"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr ""
+"Davul Makinesi; davul örüntülerini oluşturmak, oynatmak ve yönetmek için çağdaş "
+"ve sezgisel uygulamadır. Müzisyenler, yapımcılar ve ritim oluşturmayla ilgilenenler "
+"için dört dörtlüktür, bu uygulama davul örüntüsü programlama için basit arayüz "
+"sağlar. İyi eğlenceler!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "Özellikler:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor"
+msgstr "Sezgisel ızgara tabanlı örüntü düzenleyici"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Adjustable BPM control"
+msgstr "Ayarlanabilir BPM denetimi"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Volume control for overall mix"
+msgstr "Genel karışım için ses denetimi"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Save and load preset patterns"
+msgstr "Ön ayar örüntülerini kaydet ve yükle"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "Bas davulu, trampet, hi-hat ve daha çoğunu içeren çoklu davul sesleri"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "Tüm işlevlere hızlı erişim için klavye kısayolları"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "Açık Kipte Yüklenen Davul Örüntüsü"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "Koyu Kipte Yüklenen Davul Örüntüsü"
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:278
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} Dakika Başına Vuruş (BPM)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:287
+msgid "{:.0f}% Volume"
+msgstr "%{:.0f} Ses"
+
+#: src/window.py:298 src/window.ui:158
+msgid "Play"
+msgstr "Oynat"
+
+#: src/window.py:302
+msgid "Pause"
+msgstr "Duraklat"
+
+#: src/window.py:317
+msgid "Default Presets"
+msgstr "Ön Tanımlı Ön Ayarlar"
+
+#: src/window.py:344
+msgid "MIDI files"
+msgstr "MIDI dosyaları"
+
+#: src/window.py:350
+msgid "Open MIDI File"
+msgstr "MIDI Dosyası Aç"
+
+#: src/window.ui:41
+msgid "Open"
+msgstr "Aç"
+
+#: src/window.ui:43 src/window.ui:46
+msgid "Open Preset"
+msgstr "Ön Ayar Aç"
+
+#: src/window.ui:47
+msgid "Open Saved Drum Pattern Preset"
+msgstr "Kaydedilmiş Davul Örüntüsü Ön Ayarını Aç"
+
+#: src/window.ui:65 src/window.ui:67
+msgid "Main Menu"
+msgstr "Ana Menü"
+
+#: src/window.ui:68
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "Klavye Kısayollarına ve Uygulama Bilgilerine Eriş"
+
+#: src/window.ui:75 src/window.ui:77
+msgid "Save Drum Pattern"
+msgstr "Davul Örüntüsünü Kaydet"
+
+#: src/window.ui:78
+msgid "Save Current Drum Pattern as a Preset File"
+msgstr "Geçerli Davul Örüntüsünü Ön Ayar Dosyası Olarak Kaydet"
+
+#: src/window.ui:122
+msgid "BPM"
+msgstr "BPM"
+
+#: src/window.ui:127 src/window.ui:131
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "Tempoyu Dakika Başına Vuruş (BPM) Olarak Ayarla"
+
+#: src/window.ui:130
+msgid "Tempo"
+msgstr "Tempo"
+
+#: src/window.ui:172
+msgid "Adjust Volume"
+msgstr "Sesi Ayarla"
+
+#: src/window.ui:195
+msgid "Reset"
+msgstr "Sıfırla"
+
+#: src/window.ui:196
+msgid "Reset the Drum Sequence"
+msgstr "Davul Sırasını Sıfırla"
+
+#: src/window.ui:209
+msgid "_Keyboard Shortcuts"
+msgstr "_Klavye Kısayolları"
+
+#: src/window.ui:213
+msgid "_About Drum Machine"
+msgstr "Davul Makinesi _Hakkında"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Genel"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Kısayolları Göster"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Çık"
+
+#: src/gtk/help-overlay.ui:29
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "Oynatma Denetimleri"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "Oynat/Duraklat"
+
+#: src/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "Tümünü Temizle"
+
+#: src/gtk/help-overlay.ui:48
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "BPM ve Ses Denetimleri"
+
+#: src/gtk/help-overlay.ui:51
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "BPM Artır"
+
+#: src/gtk/help-overlay.ui:58
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "BPM Azalt"
+
+#: src/gtk/help-overlay.ui:65
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "Sesi Artır"
+
+#: src/gtk/help-overlay.ui:72
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "Sesi Azalt"
+
+#: src/gtk/help-overlay.ui:81
+msgctxt "shortcut window"
+msgid "Preset Management"
+msgstr "Ön Ayar Yönetimi"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Load Preset"
+msgstr "Ön Ayarı Yükle"
+
+#: src/gtk/help-overlay.ui:91
+msgctxt "shortcut window"
+msgid "Save Preset"
+msgstr "Ön Ayarı Kaydet"
+
+#: src/gtk/save_changes_dialog.ui:6
+msgid "Save Changes?"
+msgstr "Değişiklikler Kaydedilsin Mi?"
+
+#: src/gtk/save_changes_dialog.ui:7
+msgid ""
+"Current preset contains unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"Şimdiki ön ayar kaydedilmemiş değişiklikler içeriyor. Kaydedilmemiş "
+"değişiklikler kalıcı olarak yitecek."
+
+#. Cancel the operation
+#: src/gtk/save_changes_dialog.ui:14
+msgid "_Cancel"
+msgstr "İ_ptal"
+
+#. Discard all changes
+#: src/gtk/save_changes_dialog.ui:15
+msgid "_Discard"
+msgstr "_Gözden Çıkar"
+
+#. Save current changes
+#: src/gtk/save_changes_dialog.ui:16
+msgid "_Save"
+msgstr "_Kaydet"
