@@ -6,9 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-24 13:12+0000\n"
-"PO-Revision-Date: 2025-03-25 10:28+0100\n"
+"Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
+"POT-Creation-Date: 2025-04-02 18:12+0000\n"
+"PO-Revision-Date: 2025-04-21 21:53+0200\n"
+"Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 2.2.1\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:3
@@ -28,7 +28,7 @@ msgstr "Bobnarski stroj"
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:7
 #, fuzzy
 msgid "Create and play drum beats"
-msgstr "Ustvarjanje in igranje bobnarskih ritmov"
+msgstr "Ustvarjajte in igrajte bobnarske ritme"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:9
 #, fuzzy
@@ -38,34 +38,30 @@ msgid ""
 "interested in rhythm creation, this application provides a simple interface "
 "for drum pattern programming. Have fun!"
 msgstr ""
-"Drum Machine je sodobna in intuitivna aplikacija za ustvarjanje, igranje in "
+"Bobnarski stroj je sodoben in intuitiven program za ustvarjanje, igranje in "
 "upravljanje vzorcev bobnov. Kot nalašč za glasbenike, producente in vse, ki "
-"jih zanima ustvarjanje ritma, ta aplikacija ponuja preprost vmesnik za "
-"programiranje vzorcev bobnov. Zabavaj se!"
+"jih zanima ustvarjanje ritma. Ta program ponuja preprost vmesnik za "
+"programiranje vzorcev bobnov. Zabavajte se!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
 msgstr "Funkcionalnosti:"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
-#, fuzzy
 msgid "Intuitive grid-based pattern editor"
 msgstr "Intuitiven urejevalnik vzorcev, ki temelji na mreži"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
-#, fuzzy
 msgid "Adjustable BPM control"
 msgstr "Nastavljiv nadzor BPM"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:19
-#, fuzzy
 msgid "Volume control for overall mix"
 msgstr "Nadzor glasnosti za celoten miks"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:20
-#, fuzzy
 msgid "Save and load preset patterns"
-msgstr "Shranjevanje in nalaganje prednastavljenih vzorcev"
+msgstr "Shranite in naložite prednastavljene vzorce"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
 #, fuzzy
@@ -73,17 +69,14 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Več zvokov bobnov, vključno z udarcem, zanko, hi-hatom in še več"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-#, fuzzy
 msgid "Keyboard shortcuts for quick access to all functions"
-msgstr "Bližnjice na tipkovnici za hiter dostop do vseh funkcij"
+msgstr "Tipkovne bližnjice za hiter dostop do vseh funkcij"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:31
-#, fuzzy
 msgid "Drum Pattern Loaded in Light Mode"
-msgstr "Vzorec bobna naložen v svetlobnem načinu"
+msgstr "Vzorec bobna naložen v svetlem načinu"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:35
-#, fuzzy
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Vzorec bobna naložen v temnem načinu"
 
@@ -122,14 +115,12 @@ msgid "Open"
 msgstr "Odpri"
 
 #: src/window.ui:43 src/window.ui:46
-#, fuzzy
 msgid "Open Preset"
-msgstr "Odprite prednastavitev"
+msgstr "Odpri prednastavitev"
 
 #: src/window.ui:47
-#, fuzzy
 msgid "Open Saved Drum Pattern Preset"
-msgstr "Odpiranje prednastavitve shranjenega vzorca bobna"
+msgstr "Odpri shranjeno prednastavitev vzorca bobna"
 
 #: src/window.ui:65 src/window.ui:67
 msgid "Main Menu"
@@ -138,26 +129,23 @@ msgstr "Glavni meni"
 #: src/window.ui:68
 #, fuzzy
 msgid "Access Keyboard Shortcuts and Application Information"
-msgstr "Dostop do bližnjic na tipkovnici in informacij o aplikacijah"
+msgstr "Dostop do tipkovnih bližnjic in informacij o programih"
 
 #: src/window.ui:75 src/window.ui:77
-#, fuzzy
 msgid "Save Drum Pattern"
 msgstr "Shrani vzorec bobna"
 
 #: src/window.ui:78
-#, fuzzy
 msgid "Save Current Drum Pattern as a Preset File"
-msgstr "Shranjevanje trenutnega vzorca bobna kot prednastavljene datoteke"
+msgstr "Shrani trenutni vzorec bobna kot datoteko prednastavitev"
 
 #: src/window.ui:122
 msgid "BPM"
 msgstr "UNM (BPM)"
 
 #: src/window.ui:127 src/window.ui:131
-#, fuzzy
 msgid "Adjust Tempo In Beats per Minute (BPM)"
-msgstr "Prilagajanje tempa v utripih na minuto (BPM)"
+msgstr "Prilagodi tempo v udarcih na minuto (BPM)"
 
 #: src/window.ui:130
 msgid "Tempo"
@@ -172,9 +160,8 @@ msgid "Reset"
 msgstr "Ponastavi"
 
 #: src/window.ui:196
-#, fuzzy
 msgid "Reset the Drum Sequence"
-msgstr "Ponastavitev zaporedja bobna"
+msgstr "Ponastavi zaporedje bobna"
 
 #: src/window.ui:209
 msgid "_Keyboard Shortcuts"
@@ -183,7 +170,7 @@ msgstr "_Tipkovne bližnjice"
 #: src/window.ui:213
 #, fuzzy
 msgid "_About Drum Machine"
-msgstr "_About bobnarski avtomat"
+msgstr "_O programu Bobnarski stroj"
 
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -201,7 +188,6 @@ msgid "Quit"
 msgstr "Izhod"
 
 #: src/gtk/help-overlay.ui:29
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Playback Controls"
 msgstr "Kontrolniki predvajanja"
@@ -217,19 +203,16 @@ msgid "Clear All"
 msgstr "Počisti vse"
 
 #: src/gtk/help-overlay.ui:48
-#, fuzzy
 msgctxt "shortcut window"
 msgid "BPM & Volume Controls"
 msgstr "BPM in nadzor glasnosti"
 
 #: src/gtk/help-overlay.ui:51
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "Povečajte BPM"
 
 #: src/gtk/help-overlay.ui:58
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "Zmanjšanje BPM"
@@ -264,7 +247,6 @@ msgid "Save Changes?"
 msgstr "Ali želite shraniti spremembe?"
 
 #: src/gtk/save_changes_dialog.ui:7
-#, fuzzy
 msgid ""
 "Current preset contains unsaved changes. Changes which are not saved will be "
 "permanently lost."
