@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-04-02 18:12+0000\n"
-"PO-Revision-Date: 2025-04-21 21:53+0200\n"
+"POT-Creation-Date: 2025-04-22 03:25+0000\n"
+"PO-Revision-Date: 2025-04-30 16:47+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -21,27 +21,24 @@ msgstr ""
 
 #: data/io.github.revisto.drum-machine.desktop.in:3
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
-#, fuzzy
 msgid "Drum Machine"
 msgstr "Bobnarski stroj"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:7
-#, fuzzy
 msgid "Create and play drum beats"
 msgstr "Ustvarjajte in igrajte bobnarske ritme"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:9
-#, fuzzy
 msgid ""
 "Drum Machine is a modern and intuitive application for creating, playing, "
 "and managing drum patterns. Perfect for musicians, producers, and anyone "
 "interested in rhythm creation, this application provides a simple interface "
 "for drum pattern programming. Have fun!"
 msgstr ""
-"Bobnarski stroj je sodoben in intuitiven program za ustvarjanje, igranje in "
-"upravljanje vzorcev bobnov. Kot nalašč za glasbenike, producente in vse, ki "
-"jih zanima ustvarjanje ritma. Ta program ponuja preprost vmesnik za "
-"programiranje vzorcev bobnov. Zabavajte se!"
+"To je sodoben in intuitiven program za ustvarjanje, igranje in upravljanje "
+"vzorcev bobnov. Kot nalašč za glasbenike, producente in vse, ki jih zanima "
+"ustvarjanje ritma. Ta program ponuja preprost vmesnik za programiranje "
+"vzorcev bobnov. Zabavajte se!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
@@ -64,9 +61,8 @@ msgid "Save and load preset patterns"
 msgstr "Shranite in naložite prednastavljene vzorce"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
-#, fuzzy
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
-msgstr "Več zvokov bobnov, vključno z udarcem, zanko, hi-hatom in še več"
+msgstr "Več zvokov bobnov, vključno z udarcem, zanko, činelo in še več"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Keyboard shortcuts for quick access to all functions"
@@ -127,7 +123,6 @@ msgid "Main Menu"
 msgstr "Glavni meni"
 
 #: src/window.ui:68
-#, fuzzy
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Dostop do tipkovnih bližnjic in informacij o programih"
 
@@ -168,7 +163,6 @@ msgid "_Keyboard Shortcuts"
 msgstr "_Tipkovne bližnjice"
 
 #: src/window.ui:213
-#, fuzzy
 msgid "_About Drum Machine"
 msgstr "_O programu Bobnarski stroj"
 
