@@ -85,6 +85,7 @@
     <control>touch</control>
   </supports>
   <requires>
+    <display_length compare="ge">360</display_length>
     <internet>offline-only</internet>
   </requires>
   <content_rating type="oars-1.1" />
