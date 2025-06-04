@@ -37,7 +37,9 @@ drum_machine_sources = [
 ]
 
 subdir('interfaces')
+subdir('handlers')
 subdir('services')
 subdir('dialogs')
+subdir('ui')
 
 install_data(drum_machine_sources, install_dir: moduledir)
