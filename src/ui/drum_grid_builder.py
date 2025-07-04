@@ -35,25 +35,25 @@ class DrumGridBuilder:
         """Build the complete drum machine grid interface"""
         main_container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
         main_container.set_name("main_container")
-        
+
         # Create horizontal layout with drum parts on left, carousel on right
         horizontal_layout = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
         horizontal_layout.set_homogeneous(False)
-        
+
         # Create fixed drum parts column
         drum_parts_column = self._create_drum_parts_column()
-        
+
         # Create carousel with drum rows
         carousel = self._create_carousel_drum_rows()
-        
+
         horizontal_layout.append(drum_parts_column)
         horizontal_layout.append(carousel)
         main_container.append(horizontal_layout)
-        
+
         # Add dots indicator
         dots = self._create_dots_indicator(carousel)
         main_container.append(dots)
-        
+
         return main_container
 
     def _create_dots_indicator(self, carousel):
@@ -76,25 +76,29 @@ class DrumGridBuilder:
         carousel = Adw.Carousel()
         self.window.carousel = carousel
         carousel.connect("page-changed", self._on_page_changed)
-        
+
         for i in range(2):
             page = self._create_beat_grid_page(i)
             carousel.append(page)
-        
+
         return carousel
 
     def _on_page_changed(self, carousel, index):
         """Dynamically add/remove pages when the carousel page changes."""
         n_pages = carousel.get_n_pages()
-        
+
         # Add a new page when the user scrolls to the last one
         if index == n_pages - 1:
             new_page = self._create_beat_grid_page(n_pages)
             carousel.append(new_page)
+
         # Remove the last page if it's more than one page ahead of the current one
+        # AND if it's beyond the number of pages that actually have active toggles.
         elif n_pages > index + 2:
-            page_to_remove = carousel.get_nth_page(n_pages - 1)
-            carousel.remove(page_to_remove)
+            active_pages_in_pattern = self.window.drum_machine_service.active_pages
+            if n_pages > active_pages_in_pattern + 1:
+                page_to_remove = carousel.get_nth_page(n_pages - 1)
+                carousel.remove(page_to_remove)
 
     def _create_beat_grid_page(self, page_index):
         """Creates a single page containing a full set of instrument tracks."""
@@ -112,7 +116,9 @@ class DrumGridBuilder:
         num_beat_groups = (NUM_TOGGLES + GROUP_TOGGLE_COUNT - 1) // GROUP_TOGGLE_COUNT
 
         for group_index in range(num_beat_groups):
-            beat_group = self.create_beat_toggle_group(drum_part, group_index, page_index)
+            beat_group = self.create_beat_toggle_group(
+                drum_part, group_index, page_index
+            )
             instrument_container.append(beat_group)
 
             if group_index != num_beat_groups - 1:
@@ -154,7 +160,9 @@ class DrumGridBuilder:
             beat_number_on_page = group_index * GROUP_TOGGLE_COUNT + position + 1
             if beat_number_on_page > NUM_TOGGLES:
                 break
-            beat_toggle = self.create_single_beat_toggle(drum_part, beat_number_on_page, page_index)
+            beat_toggle = self.create_single_beat_toggle(
+                drum_part, beat_number_on_page, page_index
+            )
             beat_group.append(beat_toggle)
 
         return beat_group

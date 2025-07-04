@@ -26,7 +26,7 @@ class UIHelper:
 
     def _set_playhead_highlight_for_beat(self, beat_index, highlight_on):
         """
-        Internal helper to add or remove the 'playhead-active' CSS class 
+        Internal helper to add or remove the 'playhead-active' CSS class
         for a vertical column of toggles at a specific beat index.
         """
         for part in self.toggle_parts:

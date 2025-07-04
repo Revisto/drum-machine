@@ -116,7 +116,15 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     # Event handlers that need to stay in window
     def on_toggle_changed(self, toggle_button, part, index):
         state = toggle_button.get_active()
-        self.drum_machine_service.drum_parts_state[part][index] = state
+
+        if state:
+            self.drum_machine_service.drum_parts_state[part][index] = True
+        else:
+            self.drum_machine_service.drum_parts_state[part].pop(index, None)
+
+        # Tell the service to recalculate the total pattern length
+        self.drum_machine_service.update_total_beats()
+
         # Mark as unsaved when toggles change
         self.save_changes_service.mark_unsaved_changes(True)
 
