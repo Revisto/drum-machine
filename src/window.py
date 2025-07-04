@@ -153,6 +153,10 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def handle_clear(self, button):
         self.drum_machine_service.clear_all_toggles()
+        # After clearing, update the total beats which will reset active_pages to 1
+        self.drum_machine_service.update_total_beats()
+        # Now, reset the carousel UI to its initial state
+        self.drum_grid_builder.reset_carousel_pages()
         # Mark as saved when clearing
         self.save_changes_service.mark_unsaved_changes(False)
 

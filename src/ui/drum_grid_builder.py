@@ -101,6 +101,22 @@ class DrumGridBuilder:
                 page_to_remove = carousel.get_nth_page(n_pages - 1)
                 carousel.remove(page_to_remove)
 
+    def reset_carousel_pages(self):
+        """
+        Removes extra pages from the carousel, keeping all pages up to the
+        current one, plus one empty page at the end.
+        """
+        carousel = self.window.carousel
+        current_page_index = carousel.get_position()
+        desired_pages = current_page_index + 2
+        n_pages = carousel.get_n_pages()
+
+        # Remove pages from the end until the desired number is reached.
+        while n_pages > desired_pages:
+            page_to_remove = carousel.get_nth_page(n_pages - 1)
+            carousel.remove(page_to_remove)
+            n_pages = carousel.get_n_pages()
+
     def _create_beat_grid_page(self, page_index):
         """Creates a single page containing a full set of instrument tracks."""
         page = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
