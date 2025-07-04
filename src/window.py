@@ -86,7 +86,6 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         # Setup other components
         self.file_dialog_handler.setup_preset_menu()
         self._connect_signals()
-        self._init_drum_parts()
         self.action_handler.setup_actions()
 
     def _connect_signals(self):
@@ -114,24 +113,10 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         """Compatibility method"""
         self._on_save_preset_clicked(button)
 
-    # Keep core window logic here
-    def _init_drum_parts(self):
-        """Initialize drum parts state"""
-        self.drum_parts = {
-            part: [False for _ in range(NUM_TOGGLES)] for part in DRUM_PARTS
-        }
-
-        for part in DRUM_PARTS:
-            for i in range(NUM_TOGGLES):
-                toggle = getattr(self, f"{part}_toggle_{i + 1}")
-                self.drum_parts[part][i] = toggle.get_active()
-                toggle.connect("toggled", self.on_toggle_changed, part, i)
-
     # Event handlers that need to stay in window
     def on_toggle_changed(self, toggle_button, part, index):
         state = toggle_button.get_active()
-        self.drum_parts[part][index] = state
-        self.drum_machine_service.drum_parts[part][index] = state
+        self.drum_machine_service.drum_parts_state[part][index] = state
         # Mark as unsaved when toggles change
         self.save_changes_service.mark_unsaved_changes(True)
 

@@ -22,10 +22,11 @@ import time
 from ..interfaces.player import IPlayer
 from ..config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
 from .preset_service import PresetService
+from .ui_helper import UIHelper
 
 
 class DrumMachineService(IPlayer):
-    def __init__(self, sound_service, ui_helper):
+    def __init__(self, sound_service, ui_helper: UIHelper):
         self.sound_service = sound_service
         self.ui_helper = ui_helper
         self.playing = False
@@ -33,8 +34,14 @@ class DrumMachineService(IPlayer):
         self.volume = 0.8
         self.play_thread = None
         self.stop_event = threading.Event()
-        self.drum_parts = {drum_part: [False] * NUM_TOGGLES for drum_part in DRUM_PARTS}
+        self.drum_parts_state = self.create_empty_drum_parts_state()
         self.preset_service = PresetService()
+
+    def create_empty_drum_parts_state(self):
+        drum_parts_state = {
+            part: dict() for part in DRUM_PARTS
+        }
+        return drum_parts_state
 
     def play(self):
         self.playing = True
@@ -45,7 +52,7 @@ class DrumMachineService(IPlayer):
     def stop(self):
         self.playing = False
         self.stop_event.set()
-        self.ui_helper.clear_highlight()
+        self.ui_helper.clear_all_playhead_highlights()
         if self.play_thread:
             self.play_thread.join()
             self.play_thread = None
@@ -58,18 +65,16 @@ class DrumMachineService(IPlayer):
         self.sound_service.set_volume(volume)
 
     def clear_all_toggles(self):
-        for part in self.drum_parts:
-            for i in range(len(self.drum_parts[part])):
-                self.drum_parts[part][i] = False
-        self.ui_helper.clear_all_toggles()
+        self.drum_parts_state = self.create_empty_drum_parts_state()
+        self.ui_helper.deactivate_all_toggles_in_ui()
 
     def save_preset(self, file_path):
-        self.preset_service.save_preset(file_path, self.drum_parts, self.bpm)
+        self.preset_service.save_preset(file_path, self.drum_parts_state, self.bpm)
 
     def load_preset(self, file_path):
-        self.drum_parts, self.bpm = self.preset_service.load_preset(file_path)
-        self.ui_helper.update_ui_from_drum_parts(self.drum_parts)
-        self.ui_helper.update_bpm(self.bpm)
+        self.drum_parts_state, self.bpm = self.preset_service.load_preset(file_path)
+        self.ui_helper.load_pattern_into_ui(self.drum_parts_state)
+        self.ui_helper.set_bpm_in_ui(self.bpm)
 
     def _play_drum_sequence(self):
         while self.playing and not self.stop_event.is_set():
@@ -77,12 +82,12 @@ class DrumMachineService(IPlayer):
             for i in range(NUM_TOGGLES):
                 if self.stop_event.is_set():
                     return
-                self.ui_helper.highlight_playing_bar(i)
+                self.ui_helper.highlight_playhead_at_beat(i)
                 for part in DRUM_PARTS:
-                    if self.drum_parts[part][i]:
+                    if self.drum_parts_state[part].get(i, False):
                         self.sound_service.play_sound(part)
                 time.sleep(delay_per_step)
-        self.ui_helper.clear_highlight()
+                self.ui_helper.remove_playhead_highlight_at_beat(i)
 
     def preview_drum_part(self, part):
         """Preview a drum part sound"""

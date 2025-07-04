@@ -74,7 +74,7 @@ class PresetService:
 
     def load_preset(self, file_path):
         mid = mido.MidiFile(file_path)
-        drum_parts = {part: [False] * NUM_TOGGLES for part in DRUM_PARTS}
+        drum_parts = {part: dict() for part in DRUM_PARTS}
         bpm = 120
 
         for track in mid.tracks:
