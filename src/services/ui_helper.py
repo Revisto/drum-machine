@@ -73,3 +73,7 @@ class UIHelper:
     def set_bpm_in_ui(self, bpm_value):
         """Updates the BPM spin button with a new value."""
         self.window.bpm_spin_button.set_value(bpm_value)
+
+    def scroll_carousel_to_page(self, page_index):
+        """Delegates the request to scroll the carousel to the main window."""
+        self.window.scroll_carousel_to_page(page_index)

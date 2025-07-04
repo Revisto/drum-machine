@@ -113,6 +113,12 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         """Compatibility method"""
         self._on_save_preset_clicked(button)
 
+    def scroll_carousel_to_page(self, page_index):
+        """Scrolls the carousel to a specific page if auto-scroll is enabled."""
+        current_page = self.carousel.get_position()
+        if current_page != page_index:
+            self.carousel.scroll_to(self.carousel.get_nth_page(page_index), True)
+
     # Event handlers that need to stay in window
     def on_toggle_changed(self, toggle_button, part, index):
         state = toggle_button.get_active()

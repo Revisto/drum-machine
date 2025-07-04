@@ -19,6 +19,7 @@
 
 import threading
 import time
+from gi.repository import GLib
 from ..interfaces.player import IPlayer
 from ..config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
 from .preset_service import PresetService
@@ -107,6 +108,10 @@ class DrumMachineService(IPlayer):
 
             # Highlight the current beat (this will also de-highlight the previous one)
             self.ui_helper.highlight_playhead_at_beat(current_beat)
+
+            if current_beat % NUM_TOGGLES == 0 or current_beat == 0:
+                target_page = current_beat // NUM_TOGGLES
+                GLib.idle_add(self.ui_helper.scroll_carousel_to_page, target_page)
 
             # Play sounds for the current beat
             for part in DRUM_PARTS:
