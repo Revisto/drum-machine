@@ -77,11 +77,6 @@ class DrumGridBuilder:
         self.window.carousel = carousel
         carousel.connect("page-changed", self._on_page_changed)
         
-        # Add key controller to intercept arrow keys
-        key_controller = Gtk.EventControllerKey()
-        key_controller.connect("key-pressed", self._on_carousel_key_pressed)
-        carousel.add_controller(key_controller)
-            
         for i in range(2):
             page = self._create_beat_grid_page(i)
             carousel.append(page)
