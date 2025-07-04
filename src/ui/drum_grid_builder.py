@@ -74,6 +74,7 @@ class DrumGridBuilder:
     def _create_carousel_drum_rows(self):
         """Create carousel with drum rows"""
         carousel = Adw.Carousel()
+        carousel.set_spacing(30)
         self.window.carousel = carousel
         carousel.connect("page-changed", self._on_page_changed)
 
