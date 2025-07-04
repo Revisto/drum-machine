@@ -20,7 +20,8 @@
 import gi
 
 gi.require_version("Gtk", "4.0")
-from gi.repository import Gtk, Gdk
+gi.require_version("Adw", "1")
+from gi.repository import Gtk, Gdk, Adw
 from ..config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
 
 
@@ -32,27 +33,91 @@ class DrumGridBuilder:
 
     def build_drum_machine_interface(self):
         """Build the complete drum machine grid interface"""
-        drum_rows_container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-        drum_rows_container.set_homogeneous(False)
+        main_container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+        main_container.set_name("main_container")
+        
+        # Create horizontal layout with drum parts on left, carousel on right
+        horizontal_layout = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+        horizontal_layout.set_homogeneous(False)
+        
+        # Create fixed drum parts column
+        drum_parts_column = self._create_drum_parts_column()
+        
+        # Create carousel with drum rows
+        carousel = self._create_carousel_drum_rows()
+        
+        horizontal_layout.append(drum_parts_column)
+        horizontal_layout.append(carousel)
+        main_container.append(horizontal_layout)
+        
+        # Add dots indicator
+        dots = self._create_dots_indicator(carousel)
+        main_container.append(dots)
+        
+        return main_container
 
+    def _create_dots_indicator(self, carousel):
+        """Create dots indicator for the carousel"""
+        dots = Adw.CarouselIndicatorDots()
+        dots.set_carousel(carousel)
+        dots.set_margin_top(10)
+        return dots
+
+    def _create_drum_parts_column(self):
+        """Create the drum parts buttons column"""
+        drum_parts = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
         for drum_part in DRUM_PARTS:
-            drum_row = self.create_drum_row(drum_part)
-            drum_rows_container.append(drum_row)
+            instrument_button = self.create_instrument_button(drum_part)
+            drum_parts.append(instrument_button)
+        return drum_parts
 
-        return drum_rows_container
+    def _create_carousel_drum_rows(self):
+        """Create carousel with drum rows"""
+        carousel = Adw.Carousel()
+        self.window.carousel = carousel
+        carousel.connect("page-changed", self._on_page_changed)
+        
+        # Add key controller to intercept arrow keys
+        key_controller = Gtk.EventControllerKey()
+        key_controller.connect("key-pressed", self._on_carousel_key_pressed)
+        carousel.add_controller(key_controller)
+            
+        for i in range(2):
+            page = self._create_beat_grid_page(i)
+            carousel.append(page)
+        
+        return carousel
 
-    def create_drum_row(self, drum_part):
+    def _on_page_changed(self, carousel, index):
+        """Dynamically add/remove pages when the carousel page changes."""
+        n_pages = carousel.get_n_pages()
+        
+        # Add a new page when the user scrolls to the last one
+        if index == n_pages - 1:
+            new_page = self._create_beat_grid_page(n_pages)
+            carousel.append(new_page)
+        # Remove the last page if it's more than one page ahead of the current one
+        elif n_pages > index + 2:
+            page_to_remove = carousel.get_nth_page(n_pages - 1)
+            carousel.remove(page_to_remove)
+
+    def _create_beat_grid_page(self, page_index):
+        """Creates a single page containing a full set of instrument tracks."""
+        page = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+        for drum_part in DRUM_PARTS:
+            drum_row = self.create_drum_row(drum_part, page_index)
+            page.append(drum_row)
+        return page
+
+    def create_drum_row(self, drum_part, page_index):
         """Create a complete row for a drum part"""
         instrument_container = Gtk.Box(
             orientation=Gtk.Orientation.HORIZONTAL, spacing=10
         )
         num_beat_groups = (NUM_TOGGLES + GROUP_TOGGLE_COUNT - 1) // GROUP_TOGGLE_COUNT
 
-        instrument_button = self.create_instrument_button(drum_part)
-        instrument_container.append(instrument_button)
-
         for group_index in range(num_beat_groups):
-            beat_group = self.create_beat_toggle_group(drum_part, group_index)
+            beat_group = self.create_beat_toggle_group(drum_part, group_index, page_index)
             instrument_container.append(beat_group)
 
             if group_index != num_beat_groups - 1:
@@ -86,28 +151,31 @@ class DrumGridBuilder:
 
         return button_container
 
-    def create_beat_toggle_group(self, drum_part, group_index):
+    def create_beat_toggle_group(self, drum_part, group_index, page_index):
         """Create a group of beat toggles"""
         beat_group = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
 
         for position in range(GROUP_TOGGLE_COUNT):
-            beat_number = group_index * GROUP_TOGGLE_COUNT + position + 1
-            if beat_number > NUM_TOGGLES:
+            beat_number_on_page = group_index * GROUP_TOGGLE_COUNT + position + 1
+            if beat_number_on_page > NUM_TOGGLES:
                 break
-            beat_toggle = self.create_single_beat_toggle(drum_part, beat_number)
+            beat_toggle = self.create_single_beat_toggle(drum_part, beat_number_on_page, page_index)
             beat_group.append(beat_toggle)
 
         return beat_group
 
-    def create_single_beat_toggle(self, drum_part, beat_number):
+    def create_single_beat_toggle(self, drum_part, beat_number_on_page, page_index):
         """Create a single beat toggle button"""
+        # This will be the unique beat index across all pages
+        global_beat_index = page_index * NUM_TOGGLES + (beat_number_on_page - 1)
+
         beat_toggle = Gtk.ToggleButton()
         beat_toggle.set_size_request(20, 20)
-        beat_toggle.set_name(f"{drum_part}_toggle_{beat_number}")
+        beat_toggle.set_name(f"{drum_part}_toggle_{global_beat_index}")
         beat_toggle.set_valign(Gtk.Align.CENTER)
         beat_toggle.add_css_class("drum-toggle")
         beat_toggle.connect(
-            "toggled", self.window.on_toggle_changed, drum_part, beat_number - 1
+            "toggled", self.window.on_toggle_changed, drum_part, global_beat_index
         )
 
         right_click_gesture = Gtk.GestureClick.new()
@@ -117,5 +185,5 @@ class DrumGridBuilder:
         )
         beat_toggle.add_controller(right_click_gesture)
 
-        setattr(self.window, f"{drum_part}_toggle_{beat_number}", beat_toggle)
+        setattr(self.window, f"{drum_part}_toggle_{global_beat_index}", beat_toggle)
         return beat_toggle
