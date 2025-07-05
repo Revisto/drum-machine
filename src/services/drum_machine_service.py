@@ -92,8 +92,8 @@ class DrumMachineService(IPlayer):
         self.preset_service.save_preset(file_path, self.drum_parts_state, self.bpm)
 
     def load_preset(self, file_path):
+        self.ui_helper.deactivate_all_toggles_in_ui()
         self.drum_parts_state, self.bpm = self.preset_service.load_preset(file_path)
-        self.ui_helper.load_pattern_into_ui(self.drum_parts_state)
         self.ui_helper.set_bpm_in_ui(self.bpm)
 
     def _play_drum_sequence(self):
