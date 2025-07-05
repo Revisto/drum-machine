@@ -78,6 +78,11 @@ class DrumGridBuilder:
         self.window.carousel = carousel
         carousel.connect("page-changed", self._on_page_changed)
 
+        # Add a key controller to intercept and handle arrow keys
+        key_controller = Gtk.EventControllerKey.new()
+        key_controller.connect("key-pressed", self._on_carousel_key_pressed)
+        carousel.add_controller(key_controller)
+
         for i in range(2):
             page = self._create_beat_grid_page(i)
             carousel.append(page)
@@ -103,19 +108,99 @@ class DrumGridBuilder:
 
     def reset_carousel_pages(self):
         """
-        Removes extra pages from the carousel, keeping all pages up to the
-        current one, plus one empty page at the end.
+        Resets the carousel pages to match the number of active pages in the
+        current pattern, plus one empty page at the end.
         """
         carousel = self.window.carousel
-        current_page_index = carousel.get_position()
-        desired_pages = current_page_index + 2
+        # Get the number of pages that have notes from the service.
+        active_pages_in_pattern = self.window.drum_machine_service.active_pages
+        
+        # We want to display all active pages, plus one empty one at the end.
+        # The minimum number of pages should be 2 (one for content, one empty).
+        desired_pages = max(2, active_pages_in_pattern + 1)
+
         n_pages = carousel.get_n_pages()
 
-        # Remove pages from the end until the desired number is reached.
+        # Add pages if we don't have enough to display the loaded pattern
+        while n_pages < desired_pages:
+            new_page = self._create_beat_grid_page(n_pages)
+            carousel.append(new_page)
+            n_pages = carousel.get_n_pages()
+
+        # Remove pages if we have too many
         while n_pages > desired_pages:
             page_to_remove = carousel.get_nth_page(n_pages - 1)
             carousel.remove(page_to_remove)
             n_pages = carousel.get_n_pages()
+
+    def _on_carousel_key_pressed(self, controller, keyval, keycode, state):
+        """
+        Handles key presses on the carousel to prevent page navigation
+        with arrow keys.
+        """
+        # Stop the Left and Right arrow keys from being processed by the carousel
+        if keyval == Gdk.KEY_Left or keyval == Gdk.KEY_Right:
+            return True  # Indicates the event is handled and stops propagation
+        return False # Let other keys be processed normally
+
+    def _on_instrument_button_key_pressed(self, controller, keyval, keycode, state, drum_part):
+        """Handles right arrow key navigation from an instrument button to the grid."""
+        if keyval == Gdk.KEY_Right:
+            # Find the first toggle on the currently visible page for this instrument
+            current_page_index = self.window.carousel.get_position()
+            target_beat_index = int(current_page_index * NUM_TOGGLES)
+            print(f"{drum_part}_toggle_{target_beat_index}")
+            try:
+                target_toggle = getattr(self.window, f"{drum_part}_toggle_{target_beat_index}")
+                target_toggle.grab_focus()
+                return True # Event handled
+            except AttributeError:
+                return True # Target doesn't exist, but we handled the key press
+        return False
+
+    def _on_toggle_key_pressed(self, controller, keyval, keycode, state, drum_part, global_beat_index):
+        """
+        Handles arrow key navigation between individual toggle buttons,
+        scrolling the carousel when moving across pages.
+        """
+        target_beat_index = -1
+        if keyval == Gdk.KEY_Right:
+            target_beat_index = global_beat_index + 1
+        elif keyval == Gdk.KEY_Left:
+            # If on the first beat of a page, navigate to the instrument button
+            if global_beat_index % NUM_TOGGLES == 0:
+                try:
+                    instrument_button = getattr(self.window, f"{drum_part}_instrument_button")
+                    instrument_button.grab_focus()
+                    return True # Event handled
+                except AttributeError:
+                    return True # Should not happen, but good to be safe
+            else:
+                target_beat_index = global_beat_index - 1
+        
+        if target_beat_index != -1:
+            # Check if we are crossing a page boundary
+            current_page_index = global_beat_index // NUM_TOGGLES
+            target_page_index = target_beat_index // NUM_TOGGLES
+
+            if current_page_index != target_page_index:
+                # We need to scroll the carousel
+                carousel = self.window.carousel
+                n_pages = carousel.get_n_pages()
+                # Make sure the target page exists or can be created
+                if 0 <= target_page_index < n_pages:
+                    carousel.scroll_to(carousel.get_nth_page(target_page_index), True)
+
+            try:
+                # Find the target toggle button using the name we assigned it
+                target_toggle = getattr(self.window, f"{drum_part}_toggle_{target_beat_index}")
+                target_toggle.grab_focus()
+                return True # Event handled
+            except AttributeError:
+                # Target toggle doesn't exist (start/end of the line), do nothing
+                return True # Still handle it to prevent other actions
+        
+        return False # Not an arrow key we handle
 
     def _create_beat_grid_page(self, page_index):
         """Creates a single page containing a full set of instrument tracks."""
@@ -162,6 +247,14 @@ class DrumGridBuilder:
         )
         instrument_button.set_has_tooltip(True)
 
+        # Add key controller to navigate back to the grid
+        key_controller = Gtk.EventControllerKey.new()
+        key_controller.connect("key-pressed", self._on_instrument_button_key_pressed, drum_part)
+        instrument_button.add_controller(key_controller)
+
+        # Store the button on the window so we can focus it from the grid
+        setattr(self.window, f"{drum_part}_instrument_button", instrument_button)
+
         button_container.append(instrument_button)
         spacer = Gtk.Label()
         spacer.set_hexpand(True)
@@ -197,6 +290,11 @@ class DrumGridBuilder:
         beat_toggle.connect(
             "toggled", self.window.on_toggle_changed, drum_part, global_beat_index
         )
+
+        # Add a key controller for arrow navigation between toggles
+        toggle_key_controller = Gtk.EventControllerKey.new()
+        toggle_key_controller.connect("key-pressed", self._on_toggle_key_pressed, drum_part, global_beat_index)
+        beat_toggle.add_controller(toggle_key_controller)
 
         right_click_gesture = Gtk.GestureClick.new()
         right_click_gesture.set_button(Gdk.BUTTON_SECONDARY)
