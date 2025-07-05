@@ -114,7 +114,7 @@ class DrumGridBuilder:
         carousel = self.window.carousel
         # Get the number of pages that have notes from the service.
         active_pages_in_pattern = self.window.drum_machine_service.active_pages
-        
+
         # We want to display all active pages, plus one empty one at the end.
         # The minimum number of pages should be 2 (one for content, one empty).
         desired_pages = max(2, active_pages_in_pattern + 1)
@@ -141,9 +141,11 @@ class DrumGridBuilder:
         # Stop the Left and Right arrow keys from being processed by the carousel
         if keyval == Gdk.KEY_Left or keyval == Gdk.KEY_Right:
             return True  # Indicates the event is handled and stops propagation
-        return False # Let other keys be processed normally
+        return False  # Let other keys be processed normally
 
-    def _on_instrument_button_key_pressed(self, controller, keyval, keycode, state, drum_part):
+    def _on_instrument_button_key_pressed(
+        self, controller, keyval, keycode, state, drum_part
+    ):
         """Handles right arrow key navigation from an instrument button to the grid."""
         if keyval == Gdk.KEY_Right:
             # Find the first toggle on the currently visible page for this instrument
@@ -151,14 +153,18 @@ class DrumGridBuilder:
             target_beat_index = int(current_page_index * NUM_TOGGLES)
             print(f"{drum_part}_toggle_{target_beat_index}")
             try:
-                target_toggle = getattr(self.window, f"{drum_part}_toggle_{target_beat_index}")
+                target_toggle = getattr(
+                    self.window, f"{drum_part}_toggle_{target_beat_index}"
+                )
                 target_toggle.grab_focus()
-                return True # Event handled
+                return True  # Event handled
             except AttributeError:
-                return True # Target doesn't exist, but we handled the key press
+                return True  # Target doesn't exist, but we handled the key press
         return False
 
-    def _on_toggle_key_pressed(self, controller, keyval, keycode, state, drum_part, global_beat_index):
+    def _on_toggle_key_pressed(
+        self, controller, keyval, keycode, state, drum_part, global_beat_index
+    ):
         """
         Handles arrow key navigation between individual toggle buttons,
         scrolling the carousel when moving across pages.
@@ -170,14 +176,16 @@ class DrumGridBuilder:
             # If on the first beat of a page, navigate to the instrument button
             if global_beat_index % NUM_TOGGLES == 0:
                 try:
-                    instrument_button = getattr(self.window, f"{drum_part}_instrument_button")
+                    instrument_button = getattr(
+                        self.window, f"{drum_part}_instrument_button"
+                    )
                     instrument_button.grab_focus()
-                    return True # Event handled
+                    return True  # Event handled
                 except AttributeError:
-                    return True # Should not happen, but good to be safe
+                    return True  # Should not happen, but good to be safe
             else:
                 target_beat_index = global_beat_index - 1
-        
+
         if target_beat_index != -1:
             # Check if we are crossing a page boundary
             current_page_index = global_beat_index // NUM_TOGGLES
@@ -193,14 +201,16 @@ class DrumGridBuilder:
 
             try:
                 # Find the target toggle button using the name we assigned it
-                target_toggle = getattr(self.window, f"{drum_part}_toggle_{target_beat_index}")
+                target_toggle = getattr(
+                    self.window, f"{drum_part}_toggle_{target_beat_index}"
+                )
                 target_toggle.grab_focus()
-                return True # Event handled
+                return True  # Event handled
             except AttributeError:
                 # Target toggle doesn't exist (start/end of the line), do nothing
-                return True # Still handle it to prevent other actions
-        
-        return False # Not an arrow key we handle
+                return True  # Still handle it to prevent other actions
+
+        return False  # Not an arrow key we handle
 
     def _create_beat_grid_page(self, page_index):
         """Creates a single page containing a full set of instrument tracks."""
@@ -249,7 +259,9 @@ class DrumGridBuilder:
 
         # Add key controller to navigate back to the grid
         key_controller = Gtk.EventControllerKey.new()
-        key_controller.connect("key-pressed", self._on_instrument_button_key_pressed, drum_part)
+        key_controller.connect(
+            "key-pressed", self._on_instrument_button_key_pressed, drum_part
+        )
         instrument_button.add_controller(key_controller)
 
         # Store the button on the window so we can focus it from the grid
@@ -293,7 +305,9 @@ class DrumGridBuilder:
 
         # Add a key controller for arrow navigation between toggles
         toggle_key_controller = Gtk.EventControllerKey.new()
-        toggle_key_controller.connect("key-pressed", self._on_toggle_key_pressed, drum_part, global_beat_index)
+        toggle_key_controller.connect(
+            "key-pressed", self._on_toggle_key_pressed, drum_part, global_beat_index
+        )
         beat_toggle.add_controller(toggle_key_controller)
 
         right_click_gesture = Gtk.GestureClick.new()
