@@ -60,7 +60,8 @@ class DrumMachineService(IPlayer):
 
     def update_total_beats(self):
         """
-        Calculates the total number of beats and active pages based on the highest active toggle.
+        Calculates the total number of beats and active pages
+        based on the highest active toggle.
         """
         max_beat = 0
         for part_state in self.drum_parts_state.values():

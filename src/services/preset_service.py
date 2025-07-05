@@ -19,7 +19,7 @@
 
 import mido
 import itertools
-from ..config import DRUM_PARTS, NUM_TOGGLES
+from ..config import DRUM_PARTS
 
 
 class PresetService:
@@ -129,7 +129,8 @@ class PresetService:
                 elif msg.type == "note_on" and msg.velocity > 0:
                     part = self._get_part_for_midi_note(msg.note)
                     if part is not None:
-                        # Convert absolute time in ticks back to a beat index (assuming 16th notes)
+                        # Convert absolute time in ticks back to a beat index
+                        # assuming 16th notes
                         ticks_per_16th_note = ticks_per_beat / 4.0
                         beat_index = int(
                             round(absolute_time_in_ticks / ticks_per_16th_note)
