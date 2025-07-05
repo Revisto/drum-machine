@@ -18,6 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import mido
+import itertools
 from ..config import DRUM_PARTS, NUM_TOGGLES
 
 
@@ -74,30 +75,38 @@ class PresetService:
 
         ticks_per_beat = mid.ticks_per_beat
         last_time_in_ticks = 0
+        note_duration_ticks = ticks_per_beat // 4  # 16th note duration
 
-        # 3. Process sorted events and write to MIDI with correct delta times
-        for event in events:
-            beat = event["beat"]
-            note = event["note"]
+        # 3. Group events by beat to handle chords correctly
+        for beat, group in itertools.groupby(events, key=lambda e: e["beat"]):
+            notes_in_chord = [event["note"] for event in group]
 
-            # Calculate absolute time in ticks for the current note (assuming 16th notes)
+            # Calculate time for this beat/chord
             absolute_time_in_ticks = int(beat * ticks_per_beat / 4)
-
-            # Calculate delta time (time since last event)
             delta_time = absolute_time_in_ticks - last_time_in_ticks
 
-            # Add note_on and a short note_off message
-            track.append(
-                mido.Message("note_on", note=note, velocity=100, time=delta_time)
-            )
-            track.append(
-                mido.Message(
-                    "note_off", note=note, velocity=0, time=ticks_per_beat // 4
+            # Add all note_on messages for the chord
+            # The first note carries the delta_time, subsequent notes have time=0
+            is_first_note = True
+            for note in notes_in_chord:
+                d_time = delta_time if is_first_note else 0
+                track.append(
+                    mido.Message("note_on", note=note, velocity=100, time=d_time)
                 )
-            )
+                is_first_note = False
+
+            # Add all note_off messages for the chord
+            # The first note_off has the duration, subsequent ones have time=0
+            is_first_note = True
+            for note in notes_in_chord:
+                d_time = note_duration_ticks if is_first_note else 0
+                track.append(
+                    mido.Message("note_off", note=note, velocity=0, time=d_time)
+                )
+                is_first_note = False
 
             # Update the time of the last event
-            last_time_in_ticks = absolute_time_in_ticks + (ticks_per_beat // 4)
+            last_time_in_ticks = absolute_time_in_ticks + note_duration_ticks
 
         mid.save(file_path)
 
