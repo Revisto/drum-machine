@@ -90,38 +90,31 @@ class DrumGridBuilder:
         return carousel
 
     def _on_page_changed(self, carousel, index):
-        """Dynamically add/remove pages when the carousel page changes."""
-        n_pages = carousel.get_n_pages()
-
-        # Add a new page when the user scrolls to the last one
-        if index == n_pages - 1:
-            new_page = self._create_beat_grid_page(n_pages)
-            carousel.append(new_page)
-
-        # Remove the last page if it's more than one page ahead of the current one
-        # AND if it's beyond the number of pages that actually have active toggles.
-        elif n_pages > index + 2:
-            active_pages_in_pattern = self.window.drum_machine_service.active_pages
-            if n_pages > active_pages_in_pattern + 1:
-                page_to_remove = carousel.get_nth_page(n_pages - 1)
-                carousel.remove(page_to_remove)
+        self.reset_carousel_pages()
 
     def reset_carousel_pages(self):
         """
         Resets the carousel pages to match the number of active pages in the
-        current pattern, plus one empty page at the end.
+        current pattern, plus one empty page at the end, while also ensuring
+        the user's currently viewed page is not removed.
         """
         carousel = self.window.carousel
-        # Get the number of pages that have notes from the service.
-        active_pages_in_pattern = self.window.drum_machine_service.active_pages
 
-        # We want to display all active pages, plus one empty one at the end.
-        # The minimum number of pages should be 2 (one for content, one empty).
-        desired_pages = max(2, active_pages_in_pattern + 1)
+        # Get the number of pages required by the pattern.
+        active_pages_in_pattern = self.window.drum_machine_service.active_pages
+        pages_for_pattern = active_pages_in_pattern + 1
+
+        # Get the number of pages required by the user's current view.
+        current_page_index = carousel.get_position()
+        pages_for_view = current_page_index + 2  # Current page, plus one extra
+
+        # The desired number of pages is the greater of the two requirements.
+        # Also ensure a minimum of 2 pages.
+        desired_pages = max(2, pages_for_pattern, pages_for_view)
 
         n_pages = carousel.get_n_pages()
 
-        # Add pages if we don't have enough to display the loaded pattern
+        # Add pages if we don't have enough
         while n_pages < desired_pages:
             new_page = self._create_beat_grid_page(n_pages)
             carousel.append(new_page)
