@@ -21,8 +21,8 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Gtk, Gdk, Adw
-from ..config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
+from gi.repository import Gtk, Gdk, Adw, GLib
+from ..config import DRUM_PARTS, GROUP_TOGGLE_COUNT
 
 
 class DrumGridBuilder:
@@ -30,31 +30,87 @@ class DrumGridBuilder:
 
     def __init__(self, window):
         self.window = window
+        self.main_container = None
+
+    @property
+    def beats_per_page(self):
+        """Get the current number of beats per page from the grid builder."""
+        return self.window.drum_machine_service.beats_per_page
 
     def build_drum_machine_interface(self):
-        """Build the complete drum machine grid interface"""
-        main_container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-        main_container.set_name("main_container")
+        """Build the static drum machine interface and placeholders."""
+        self.main_container = Gtk.Box(
+            orientation=Gtk.Orientation.VERTICAL, spacing=10
+        )
+        self.main_container.set_name("main_container")
 
-        # Create horizontal layout with drum parts on left, carousel on right
         horizontal_layout = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
         horizontal_layout.set_homogeneous(False)
 
-        # Create fixed drum parts column
         drum_parts_column = self._create_drum_parts_column()
-
-        # Create carousel with drum rows
-        carousel = self._create_carousel_drum_rows()
-
         horizontal_layout.append(drum_parts_column)
-        horizontal_layout.append(carousel)
-        main_container.append(horizontal_layout)
 
-        # Add dots indicator
+        # Create a container to hold the rebuildable carousel
+        self.carousel_container = Gtk.Box()
+        self.carousel_container.set_hexpand(True)
+        horizontal_layout.append(self.carousel_container)
+
+        self.main_container.append(horizontal_layout)
+
+        # Create a container for the dots indicator
+        self.dots_container = Gtk.Box()
+        self.dots_container.set_halign(Gtk.Align.CENTER)
+        self.main_container.append(self.dots_container)
+
+        # Build the carousel for the first time
+        self.rebuild_carousel()
+
+        return self.main_container
+
+    def rebuild_carousel(self, focus_beat_index=0):
+        """
+        Builds or rebuilds only the carousel and its indicator dots.
+        """
+        # Clear only the dynamic parts by removing them from their containers
+        if self.carousel_container.get_first_child():
+            self.carousel_container.remove(self.carousel_container.get_first_child())
+        if self.dots_container.get_first_child():
+            self.dots_container.remove(self.dots_container.get_first_child())
+
+        # Create the new carousel and dots
+        carousel = self._create_carousel_drum_rows()
         dots = self._create_dots_indicator(carousel)
-        main_container.append(dots)
 
-        return main_container
+        # Add the new widgets to their containers
+        self.carousel_container.append(carousel)
+        self.dots_container.append(dots)
+
+        # Update state and scroll to the correct page
+        self.window.drum_machine_service.update_total_beats()
+        new_target_page = (
+            focus_beat_index // self.beats_per_page
+        )
+        self.window.drum_machine_service.active_pages = new_target_page + 1
+        self.reset_carousel_pages()
+        self.window.ui_helper.load_pattern_into_ui(
+            self.window.drum_machine_service.drum_parts_state
+        )
+        GLib.timeout_add(50, self._scroll_carousel_to_page_safely, new_target_page)
+
+    def _scroll_carousel_to_page_safely(self, page_index):
+        """
+        Scrolls the carousel to a specific page, ensuring it exists.
+        This is intended to be called via GLib.idle_add.
+        """
+        if hasattr(self.window, "carousel"):
+            n_pages = self.window.carousel.get_n_pages()
+            # Clamp the index to be within valid bounds
+            target_page = max(0, min(page_index, n_pages - 1))
+            if n_pages > 0:
+                self.window.carousel.scroll_to(
+                    self.window.carousel.get_nth_page(target_page), True
+                )
+        return GLib.SOURCE_REMOVE  # Ensures the function is called only once
 
     def _create_dots_indicator(self, carousel):
         """Create dots indicator for the carousel"""
@@ -143,7 +199,9 @@ class DrumGridBuilder:
         if keyval == Gdk.KEY_Right:
             # Find the first toggle on the currently visible page for this instrument
             current_page_index = self.window.carousel.get_position()
-            target_beat_index = int(current_page_index * NUM_TOGGLES)
+            target_beat_index = int(
+                current_page_index * self.beats_per_page
+            )
             print(f"{drum_part}_toggle_{target_beat_index}")
             try:
                 target_toggle = getattr(
@@ -167,7 +225,7 @@ class DrumGridBuilder:
             target_beat_index = global_beat_index + 1
         elif keyval == Gdk.KEY_Left:
             # If on the first beat of a page, navigate to the instrument button
-            if global_beat_index % NUM_TOGGLES == 0:
+            if global_beat_index % self.beats_per_page == 0:
                 try:
                     instrument_button = getattr(
                         self.window, f"{drum_part}_instrument_button"
@@ -181,8 +239,12 @@ class DrumGridBuilder:
 
         if target_beat_index != -1:
             # Check if we are crossing a page boundary
-            current_page_index = global_beat_index // NUM_TOGGLES
-            target_page_index = target_beat_index // NUM_TOGGLES
+            current_page_index = (
+                global_beat_index // self.beats_per_page
+            )
+            target_page_index = (
+                target_beat_index // self.beats_per_page
+            )
 
             if current_page_index != target_page_index:
                 # We need to scroll the carousel
@@ -218,7 +280,9 @@ class DrumGridBuilder:
         instrument_container = Gtk.Box(
             orientation=Gtk.Orientation.HORIZONTAL, spacing=10
         )
-        num_beat_groups = (NUM_TOGGLES + GROUP_TOGGLE_COUNT - 1) // GROUP_TOGGLE_COUNT
+        num_beat_groups = (
+            self.beats_per_page + GROUP_TOGGLE_COUNT - 1
+        ) // GROUP_TOGGLE_COUNT
 
         for group_index in range(num_beat_groups):
             beat_group = self.create_beat_toggle_group(
@@ -273,7 +337,7 @@ class DrumGridBuilder:
 
         for position in range(GROUP_TOGGLE_COUNT):
             beat_number_on_page = group_index * GROUP_TOGGLE_COUNT + position + 1
-            if beat_number_on_page > NUM_TOGGLES:
+            if beat_number_on_page > self.beats_per_page:
                 break
             beat_toggle = self.create_single_beat_toggle(
                 drum_part, beat_number_on_page, page_index
@@ -285,7 +349,10 @@ class DrumGridBuilder:
     def create_single_beat_toggle(self, drum_part, beat_number_on_page, page_index):
         """Create a single beat toggle button"""
         # This will be the unique beat index across all pages
-        global_beat_index = page_index * NUM_TOGGLES + (beat_number_on_page - 1)
+        global_beat_index = (
+            page_index * self.beats_per_page
+            + (beat_number_on_page - 1)
+        )
 
         beat_toggle = Gtk.ToggleButton()
         beat_toggle.set_size_request(20, 20)

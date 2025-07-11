@@ -19,10 +19,14 @@
 
 
 class UIHelper:
-    def __init__(self, window, toggle_parts, num_toggles):
+    def __init__(self, window, toggle_parts):
         self.window = window
         self.toggle_parts = toggle_parts
-        self.num_toggles = num_toggles
+
+    @property
+    def beats_per_page(self):
+        """Get the current number of beats per page from the grid builder."""
+        return self.window.drum_machine_service.beats_per_page
 
     def _set_playhead_highlight_for_beat(self, beat_index, highlight_on):
         """
@@ -30,11 +34,14 @@ class UIHelper:
         for a vertical column of toggles at a specific beat index.
         """
         for part in self.toggle_parts:
-            toggle = getattr(self.window, f"{part}_toggle_{beat_index}")
-            if highlight_on:
-                toggle.get_style_context().add_class("toggle-active")
-            else:
-                toggle.get_style_context().remove_class("toggle-active")
+            try:
+                toggle = getattr(self.window, f"{part}_toggle_{beat_index}")
+                if highlight_on:
+                    toggle.get_style_context().add_class("toggle-active")
+                else:
+                    toggle.get_style_context().remove_class("toggle-active")
+            except AttributeError:
+                continue
 
     def highlight_playhead_at_beat(self, beat_index):
         self._set_playhead_highlight_for_beat(beat_index, highlight_on=True)
@@ -46,16 +53,18 @@ class UIHelper:
         """Removes all playhead highlights from the currently visible toggles."""
         # This is inefficient and will be slow with many pages.
         # It should ideally track the last highlighted beat and only clear that one.
-        for i in range(self.num_toggles):
+        for i in range(self.beats_per_page * self.window.carousel.get_n_pages()):
             self._set_playhead_highlight_for_beat(i, highlight_on=False)
 
     def deactivate_all_toggles_in_ui(self):
         """Sets the state of all currently rendered toggles to inactive (OFF)."""
+        total_toggles = self.beats_per_page * self.window.carousel.get_n_pages()
         for part in self.toggle_parts:
-            for i in range(self.num_toggles * self.window.carousel.get_n_pages()):
+            for i in range(total_toggles):
                 try:
                     toggle = getattr(self.window, f"{part}_toggle_{i}")
-                    toggle.set_active(False)
+                    if toggle.get_active():
+                        toggle.set_active(False)
                 except AttributeError:
                     continue
 

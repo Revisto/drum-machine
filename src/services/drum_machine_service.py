@@ -38,7 +38,9 @@ class DrumMachineService(IPlayer):
         self.drum_parts_state = self.create_empty_drum_parts_state()
         self.preset_service = PresetService()
         self.total_beats = NUM_TOGGLES
+        self.beats_per_page = NUM_TOGGLES
         self.active_pages = 1
+        self.playing_beat = -1
 
     def create_empty_drum_parts_state(self):
         drum_parts_state = {part: dict() for part in DRUM_PARTS}
@@ -54,6 +56,7 @@ class DrumMachineService(IPlayer):
         self.playing = False
         self.stop_event.set()
         self.ui_helper.clear_all_playhead_highlights()
+        self.playing_beat = -1
         if self.play_thread:
             self.play_thread.join()
             self.play_thread = None
@@ -73,10 +76,10 @@ class DrumMachineService(IPlayer):
             num_pages = 1
         else:
             # Calculate pages needed for the highest beat.
-            num_pages = (max_beat // NUM_TOGGLES) + 1
+            num_pages = (max_beat // self.beats_per_page) + 1
 
         self.active_pages = num_pages
-        self.total_beats = self.active_pages * NUM_TOGGLES
+        self.total_beats = self.active_pages * self.beats_per_page
 
     def set_bpm(self, bpm):
         self.bpm = bpm
@@ -109,9 +112,10 @@ class DrumMachineService(IPlayer):
 
             # Highlight the current beat (this will also de-highlight the previous one)
             self.ui_helper.highlight_playhead_at_beat(current_beat)
+            self.playing_beat = current_beat
 
-            if current_beat % NUM_TOGGLES == 0 or current_beat == 0:
-                target_page = current_beat // NUM_TOGGLES
+            if current_beat % self.beats_per_page == 0 or current_beat == 0:
+                target_page = current_beat // self.beats_per_page
                 GLib.idle_add(self.ui_helper.scroll_carousel_to_page, target_page)
 
             # Play sounds for the current beat

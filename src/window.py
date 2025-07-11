@@ -65,7 +65,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.sound_service = SoundService(drumkit_dir)
         self.sound_service.load_sounds()
 
-        self.ui_helper = UIHelper(self, DRUM_PARTS, NUM_TOGGLES)
+        self.ui_helper = UIHelper(self, DRUM_PARTS)
         self.drum_machine_service = DrumMachineService(
             self.sound_service, self.ui_helper
         )
@@ -97,6 +97,48 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.play_pause_button.connect("clicked", self.handle_play_pause)
         self.file_preset_button.connect("clicked", self._on_open_file_clicked)
         self.save_preset_button.connect("clicked", self._on_save_preset_clicked)
+        self.drum_machine_box.connect(
+            "notify::css-classes", self._on_breakpoint_changed
+        )
+
+    def _on_breakpoint_changed(self, box, gparam):
+        """
+        Called when the css-classes property of the drum_machine_box changes.
+        """
+        css_classes = box.get_css_classes()
+
+        is_tiny = "half-view" in css_classes
+        self.handle_layout_change(is_tiny=is_tiny)
+
+    def handle_layout_change(self, is_tiny):
+        """
+        Rebuilds the drum grid when the layout size changes.
+        """
+        focus_beat_index = 0
+        old_beats_per_page = self.drum_machine_service.beats_per_page
+
+        if is_tiny:
+            # For smaller views, use half the number of toggles
+            beats_per_page = NUM_TOGGLES // 2
+        else:
+            beats_per_page = NUM_TOGGLES
+
+        # Avoid rebuilding if the layout hasn't actually changed
+        if self.drum_machine_service.beats_per_page == beats_per_page:
+            return
+
+        # Determine the correct beat to focus on
+        if self.drum_machine_service.playing:
+            focus_beat_index = self.drum_machine_service.playing_beat
+        else:
+            current_page = self.carousel.get_position()
+            focus_beat_index = current_page * old_beats_per_page
+
+        self.drum_machine_service.beats_per_page = beats_per_page
+        self.drum_machine_service.update_total_beats()
+
+        # Rebuild the grid with the new size. The builder will handle loading the pattern.
+        self.drum_grid_builder.rebuild_carousel(focus_beat_index=focus_beat_index)
 
     # Delegate methods to handlers
     def _on_open_file_clicked(self, button):
