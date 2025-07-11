@@ -31,6 +31,7 @@ class DrumGridBuilder:
     def __init__(self, window):
         self.window = window
         self.main_container = None
+        self.drum_parts_column = None
 
     @property
     def beats_per_page(self):
@@ -46,6 +47,7 @@ class DrumGridBuilder:
         horizontal_layout.set_homogeneous(False)
 
         drum_parts_column = self._create_drum_parts_column()
+        self.drum_parts_column = drum_parts_column
         horizontal_layout.append(drum_parts_column)
 
         # Create a container to hold the rebuildable carousel
@@ -69,15 +71,16 @@ class DrumGridBuilder:
         """
         Builds or rebuilds only the carousel and its indicator dots.
         """
+
+        # Create the new carousel and dots
+        carousel = self._create_carousel_drum_rows()
+        dots = self._create_dots_indicator(carousel)
+
         # Clear only the dynamic parts by removing them from their containers
         if self.carousel_container.get_first_child():
             self.carousel_container.remove(self.carousel_container.get_first_child())
         if self.dots_container.get_first_child():
             self.dots_container.remove(self.dots_container.get_first_child())
-
-        # Create the new carousel and dots
-        carousel = self._create_carousel_drum_rows()
-        dots = self._create_dots_indicator(carousel)
 
         # Add the new widgets to their containers
         self.carousel_container.append(carousel)
@@ -86,8 +89,7 @@ class DrumGridBuilder:
         # Update state and scroll to the correct page
         self.window.drum_machine_service.update_total_beats()
         new_target_page = focus_beat_index // self.beats_per_page
-        self.window.drum_machine_service.active_pages = new_target_page + 1
-        self.reset_carousel_pages()
+        self.reset_carousel_pages(new_target_page)
         self.window.ui_helper.load_pattern_into_ui(
             self.window.drum_machine_service.drum_parts_state
         )
@@ -144,7 +146,7 @@ class DrumGridBuilder:
     def _on_page_changed(self, carousel, index):
         self.reset_carousel_pages()
 
-    def reset_carousel_pages(self):
+    def reset_carousel_pages(self, current_page_index=-1):
         """
         Resets the carousel pages to match the number of active pages in the
         current pattern, plus one empty page at the end, while also ensuring
@@ -157,7 +159,8 @@ class DrumGridBuilder:
         pages_for_pattern = active_pages_in_pattern + 1
 
         # Get the number of pages required by the user's current view.
-        current_page_index = carousel.get_position()
+        if current_page_index == -1:
+            current_page_index = carousel.get_position()
         pages_for_view = current_page_index + 2  # Current page, plus one extra
 
         # The desired number of pages is the greater of the two requirements.
@@ -366,3 +369,9 @@ class DrumGridBuilder:
 
         setattr(self.window, f"{drum_part}_toggle_{global_beat_index}", beat_toggle)
         return beat_toggle
+
+    def update_drum_parts_spacing(self, is_compact):
+        """Updates the spacing of the drum parts column."""
+        if self.drum_parts_column:
+            new_spacing = 12 if is_compact else 10
+            self.drum_parts_column.set_spacing(new_spacing)

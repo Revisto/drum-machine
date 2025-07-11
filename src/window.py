@@ -107,8 +107,13 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         """
         css_classes = box.get_css_classes()
 
+        # Handle responsive layout for toggles (half-view)
         is_tiny = "half-view" in css_classes
         self.handle_layout_change(is_tiny=is_tiny)
+
+        # Handle compact spacing for instrument list
+        is_compact = "compact" in css_classes
+        self.drum_grid_builder.update_drum_parts_spacing(is_compact=is_compact)
 
     def handle_layout_change(self, is_tiny):
         """
