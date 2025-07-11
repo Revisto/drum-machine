@@ -39,9 +39,7 @@ class DrumGridBuilder:
 
     def build_drum_machine_interface(self):
         """Build the static drum machine interface and placeholders."""
-        self.main_container = Gtk.Box(
-            orientation=Gtk.Orientation.VERTICAL, spacing=10
-        )
+        self.main_container = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
         self.main_container.set_name("main_container")
 
         horizontal_layout = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
@@ -87,9 +85,7 @@ class DrumGridBuilder:
 
         # Update state and scroll to the correct page
         self.window.drum_machine_service.update_total_beats()
-        new_target_page = (
-            focus_beat_index // self.beats_per_page
-        )
+        new_target_page = focus_beat_index // self.beats_per_page
         self.window.drum_machine_service.active_pages = new_target_page + 1
         self.reset_carousel_pages()
         self.window.ui_helper.load_pattern_into_ui(
@@ -199,9 +195,7 @@ class DrumGridBuilder:
         if keyval == Gdk.KEY_Right:
             # Find the first toggle on the currently visible page for this instrument
             current_page_index = self.window.carousel.get_position()
-            target_beat_index = int(
-                current_page_index * self.beats_per_page
-            )
+            target_beat_index = int(current_page_index * self.beats_per_page)
             print(f"{drum_part}_toggle_{target_beat_index}")
             try:
                 target_toggle = getattr(
@@ -239,12 +233,8 @@ class DrumGridBuilder:
 
         if target_beat_index != -1:
             # Check if we are crossing a page boundary
-            current_page_index = (
-                global_beat_index // self.beats_per_page
-            )
-            target_page_index = (
-                target_beat_index // self.beats_per_page
-            )
+            current_page_index = global_beat_index // self.beats_per_page
+            target_page_index = target_beat_index // self.beats_per_page
 
             if current_page_index != target_page_index:
                 # We need to scroll the carousel
@@ -349,10 +339,7 @@ class DrumGridBuilder:
     def create_single_beat_toggle(self, drum_part, beat_number_on_page, page_index):
         """Create a single beat toggle button"""
         # This will be the unique beat index across all pages
-        global_beat_index = (
-            page_index * self.beats_per_page
-            + (beat_number_on_page - 1)
-        )
+        global_beat_index = page_index * self.beats_per_page + (beat_number_on_page - 1)
 
         beat_toggle = Gtk.ToggleButton()
         beat_toggle.set_size_request(20, 20)
