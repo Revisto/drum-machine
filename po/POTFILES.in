@@ -5,3 +5,4 @@ src/window.py
 src/window.ui
 src/gtk/help-overlay.ui
 src/gtk/save_changes_dialog.ui
+src/handlers/file_dialog_handler.py
