@@ -122,13 +122,13 @@ class FileDialogHandler:
         """Show save file dialog"""
         filefilter = Gtk.FileFilter.new()
         filefilter.add_pattern("*.mid")
-        filefilter.set_name("MIDI files")
+        filefilter.set_name(_("MIDI files"))
 
         filefilters = Gio.ListStore.new(Gtk.FileFilter)
         filefilters.append(filefilter)
 
         dialog = Gtk.FileDialog.new()
-        dialog.set_title("Save Sequence")
+        dialog.set_title(_("Save Sequence"))
         dialog.set_filters(filefilters)
         dialog.set_modal(True)
         dialog.set_initial_name("new_sequence.mid")
