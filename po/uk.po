@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-24 13:12+0000\n"
-"PO-Revision-Date: 2025-03-24 15:33+0200\n"
+"Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
+"POT-Creation-Date: 2025-07-31 18:19+0000\n"
+"PO-Revision-Date: 2025-07-31 21:20+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -19,7 +19,7 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: data/io.github.revisto.drum-machine.desktop.in:3
+#: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
 msgid "Drum Machine"
 msgstr "Драм-машина"
@@ -35,11 +35,11 @@ msgid ""
 "interested in rhythm creation, this application provides a simple interface "
 "for drum pattern programming. Have fun!"
 msgstr ""
-"«Драм-машина» — це сучасна та інтуїтивно зрозуміла програма для створення,"
-" відтворення та керування барабанними партитурами. Ідеально підходить для"
-" музикантів, продюсерів і всіх, хто цікавиться створенням ритму, ця програма"
-" має простий інтерфейс для програмування барабанних партитур. Приємного"
-" користування!"
+"«Драм-машина» — це сучасна та інтуїтивно зрозуміла програма для створення, "
+"відтворення та керування барабанними партитурами. Ідеально підходить для "
+"музикантів, продюсерів і всіх, хто цікавиться створенням ритму, ця програма "
+"має простий інтерфейс для програмування барабанних партитур. Приємного "
+"користування!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
@@ -78,34 +78,22 @@ msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Партитуру ударних завантажено у темному режимі"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:278
+#: src/window.py:143
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} тактів на хвилину (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:287
+#: src/window.py:152
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% гучності"
 
-#: src/window.py:298 src/window.ui:158
+#: src/window.py:163 src/window.ui:158
 msgid "Play"
 msgstr "Пуск"
 
-#: src/window.py:302
+#: src/window.py:167
 msgid "Pause"
 msgstr "Пауза"
-
-#: src/window.py:317
-msgid "Default Presets"
-msgstr "Типові партитури"
-
-#: src/window.py:344
-msgid "MIDI files"
-msgstr "файли MIDI"
-
-#: src/window.py:350
-msgid "Open MIDI File"
-msgstr "Відкрити файл MIDI"
 
 #: src/window.ui:41
 msgid "Open"
@@ -246,9 +234,8 @@ msgid ""
 "Current preset contains unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
-"До поточного шаблону внесено незбережені зміни. Зміни, які не було"
-" збережено, "
-"буде назавжди втрачено."
+"До поточного шаблону внесено незбережені зміни. Зміни, які не було "
+"збережено, буде назавжди втрачено."
 
 #. Cancel the operation
 #: src/gtk/save_changes_dialog.ui:14
@@ -264,3 +251,20 @@ msgstr "_Відкинути"
 #: src/gtk/save_changes_dialog.ui:16
 msgid "_Save"
 msgstr "З_берегти"
+
+#: src/handlers/file_dialog_handler.py:48
+msgid "Default Presets"
+msgstr "Типові партитури"
+
+#: src/handlers/file_dialog_handler.py:76
+#: src/handlers/file_dialog_handler.py:125
+msgid "MIDI files"
+msgstr "файли MIDI"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "Open MIDI File"
+msgstr "Відкрити файл MIDI"
+
+#: src/handlers/file_dialog_handler.py:131
+msgid "Save Sequence"
+msgstr "Зберегти послідовність"
