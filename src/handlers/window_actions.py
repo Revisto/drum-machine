@@ -45,6 +45,9 @@ class WindowActionHandler:
             ("save_preset", self.on_save_preset_action, ["<primary>s"]),
             ("quit", self.on_quit_action, ["<primary>q"]),
             ("close_window", self.on_quit_action, ["<primary>w"]),
+            ("go_to_instrument", self.handle_go_to_instrument_action, ["<primary>i"]),
+            ("previous_page", self.handle_previous_page_action, ["Page_Up"]),
+            ("next_page", self.handle_next_page_action, ["Page_Down"]),
         ]
 
         for action_name, callback, shortcuts in actions:
@@ -101,3 +104,37 @@ class WindowActionHandler:
             )
         else:
             self.window.cleanup_and_destroy()
+
+    def handle_go_to_instrument_action(self, action, param):
+        """Go to the currently focused instrument button."""
+        if hasattr(self.window, "carousel"):
+            # Find which drum part is currently focused
+            focused_widget = self.window.get_focus()
+            if focused_widget:
+                widget_name = focused_widget.get_name()
+                if widget_name and "_toggle_" in widget_name:
+                    drum_part = widget_name.split("_toggle_")[0]
+                    try:
+                        instrument_button = getattr(
+                            self.window, f"{drum_part}_instrument_button"
+                        )
+                        instrument_button.grab_focus()
+                    except AttributeError:
+                        pass
+
+    def handle_previous_page_action(self, action, param):
+        """Go to the previous page."""
+        if hasattr(self.window, "carousel"):
+            carousel = self.window.carousel
+            current_page = carousel.get_position()
+            if current_page > 0:
+                carousel.scroll_to(carousel.get_nth_page(current_page - 1), True)
+
+    def handle_next_page_action(self, action, param):
+        """Go to the next page."""
+        if hasattr(self.window, "carousel"):
+            carousel = self.window.carousel
+            current_page = carousel.get_position()
+            n_pages = carousel.get_n_pages()
+            if current_page < n_pages - 1:
+                carousel.scroll_to(carousel.get_nth_page(current_page + 1), True)

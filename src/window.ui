@@ -26,9 +26,18 @@ compact</setter>
     </child>
     <child>
       <object class="AdwBreakpoint">
+        <condition>max-width: 500px</condition>
+        <setter object="drum_machine_box" property="css-classes">drum-machine-box
+compact
+half-view</setter>
+      </object>
+    </child>
+    <child>
+      <object class="AdwBreakpoint">
           <condition>max-width: 395px</condition>
           <setter object="drum_machine_box" property="css-classes">drum-machine-box
-compact</setter>
+compact
+half-view</setter>
           <setter object="bpm_label" property="visible">false</setter>
       </object>
     </child>

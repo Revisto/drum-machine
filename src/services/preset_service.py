@@ -18,7 +18,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import mido
-from ..config import DRUM_PARTS, NUM_TOGGLES
+import itertools
+from ..config import DRUM_PARTS
 
 
 class PresetService:
@@ -59,31 +60,81 @@ class PresetService:
 
         track.append(mido.MetaMessage("set_tempo", tempo=mido.bpm2tempo(bpm)))
 
-        for i in range(NUM_TOGGLES):
-            for part, notes in drum_parts.items():
-                if notes[i]:
+        # 1. Collect all active notes from all pages into a list
+        events = []
+        for part, notes in drum_parts.items():
+            for beat_index, is_active in notes.items():
+                if is_active:
                     note = self._get_midi_note_for_part(part)
-                    track.append(
-                        mido.Message("note_on", note=note, velocity=64, time=i)
-                    )
-                    track.append(
-                        mido.Message("note_off", note=note, velocity=64, time=0)
-                    )
+                    if note != 0:
+                        # Store the note and its absolute beat index
+                        events.append({"note": note, "beat": beat_index})
+
+        # 2. Sort events by beat to process them in chronological order
+        events.sort(key=lambda e: e["beat"])
+
+        ticks_per_beat = mid.ticks_per_beat
+        last_time_in_ticks = 0
+        note_duration_ticks = ticks_per_beat // 4  # 16th note duration
+
+        # 3. Group events by beat to handle chords correctly
+        for beat, group in itertools.groupby(events, key=lambda e: e["beat"]):
+            notes_in_chord = [event["note"] for event in group]
+
+            # Calculate time for this beat/chord
+            absolute_time_in_ticks = int(beat * ticks_per_beat / 4)
+            delta_time = absolute_time_in_ticks - last_time_in_ticks
+
+            # Add all note_on messages for the chord
+            # The first note carries the delta_time, subsequent notes have time=0
+            is_first_note = True
+            for note in notes_in_chord:
+                d_time = delta_time if is_first_note else 0
+                track.append(
+                    mido.Message("note_on", note=note, velocity=100, time=d_time)
+                )
+                is_first_note = False
+
+            # Add all note_off messages for the chord
+            # The first note_off has the duration, subsequent ones have time=0
+            is_first_note = True
+            for note in notes_in_chord:
+                d_time = note_duration_ticks if is_first_note else 0
+                track.append(
+                    mido.Message("note_off", note=note, velocity=0, time=d_time)
+                )
+                is_first_note = False
+
+            # Update the time of the last event
+            last_time_in_ticks = absolute_time_in_ticks + note_duration_ticks
 
         mid.save(file_path)
 
     def load_preset(self, file_path):
         mid = mido.MidiFile(file_path)
-        drum_parts = {part: [False] * NUM_TOGGLES for part in DRUM_PARTS}
+        drum_parts = {part: dict() for part in DRUM_PARTS}
         bpm = 120
 
+        ticks_per_beat = mid.ticks_per_beat
+        if ticks_per_beat is None:
+            ticks_per_beat = 480  # A common default
+
         for track in mid.tracks:
+            absolute_time_in_ticks = 0
             for msg in track:
+                # Keep a running total of the absolute time by adding the delta times
+                absolute_time_in_ticks += msg.time
                 if msg.type == "set_tempo":
                     bpm = mido.tempo2bpm(msg.tempo)
-                elif msg.type == "note_on":
+                elif msg.type == "note_on" and msg.velocity > 0:
                     part = self._get_part_for_midi_note(msg.note)
                     if part is not None:
-                        drum_parts[part][msg.time] = True
+                        # Convert absolute time in ticks back to a beat index
+                        # assuming 16th notes
+                        ticks_per_16th_note = ticks_per_beat / 4.0
+                        beat_index = int(
+                            round(absolute_time_in_ticks / ticks_per_16th_note)
+                        )
+                        drum_parts[part][beat_index] = True
 
         return drum_parts, bpm

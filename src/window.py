@@ -65,7 +65,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.sound_service = SoundService(drumkit_dir)
         self.sound_service.load_sounds()
 
-        self.ui_helper = UIHelper(self, DRUM_PARTS, NUM_TOGGLES)
+        self.ui_helper = UIHelper(self, DRUM_PARTS)
         self.drum_machine_service = DrumMachineService(
             self.sound_service, self.ui_helper
         )
@@ -86,7 +86,6 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         # Setup other components
         self.file_dialog_handler.setup_preset_menu()
         self._connect_signals()
-        self._init_drum_parts()
         self.action_handler.setup_actions()
 
     def _connect_signals(self):
@@ -98,6 +97,54 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.play_pause_button.connect("clicked", self.handle_play_pause)
         self.file_preset_button.connect("clicked", self._on_open_file_clicked)
         self.save_preset_button.connect("clicked", self._on_save_preset_clicked)
+        self.drum_machine_box.connect(
+            "notify::css-classes", self._on_breakpoint_changed
+        )
+
+    def _on_breakpoint_changed(self, box, gparam):
+        """
+        Called when the css-classes property of the drum_machine_box changes.
+        """
+        css_classes = box.get_css_classes()
+
+        # Handle responsive layout for toggles (half-view)
+        is_tiny = "half-view" in css_classes
+        self.handle_layout_change(is_tiny=is_tiny)
+
+        # Handle compact spacing for instrument list
+        is_compact = "compact" in css_classes
+        self.drum_grid_builder.update_drum_parts_spacing(is_compact=is_compact)
+
+    def handle_layout_change(self, is_tiny):
+        """
+        Rebuilds the drum grid when the layout size changes.
+        """
+        focus_beat_index = 0
+        old_beats_per_page = self.drum_machine_service.beats_per_page
+
+        if is_tiny:
+            # For smaller views, use half the number of toggles
+            beats_per_page = NUM_TOGGLES // 2
+        else:
+            beats_per_page = NUM_TOGGLES
+
+        # Avoid rebuilding if the layout hasn't actually changed
+        if self.drum_machine_service.beats_per_page == beats_per_page:
+            return
+
+        # Determine the correct beat to focus on
+        if self.drum_machine_service.playing:
+            focus_beat_index = self.drum_machine_service.playing_beat
+        else:
+            current_page = self.carousel.get_position()
+            focus_beat_index = current_page * old_beats_per_page
+
+        self.drum_machine_service.beats_per_page = beats_per_page
+        self.drum_machine_service.update_total_beats()
+
+        # Rebuild the grid with the new size. The builder will handle loading
+        # the pattern.
+        self.drum_grid_builder.rebuild_carousel(focus_beat_index=focus_beat_index)
 
     # Delegate methods to handlers
     def _on_open_file_clicked(self, button):
@@ -114,24 +161,24 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         """Compatibility method"""
         self._on_save_preset_clicked(button)
 
-    # Keep core window logic here
-    def _init_drum_parts(self):
-        """Initialize drum parts state"""
-        self.drum_parts = {
-            part: [False for _ in range(NUM_TOGGLES)] for part in DRUM_PARTS
-        }
-
-        for part in DRUM_PARTS:
-            for i in range(NUM_TOGGLES):
-                toggle = getattr(self, f"{part}_toggle_{i + 1}")
-                self.drum_parts[part][i] = toggle.get_active()
-                toggle.connect("toggled", self.on_toggle_changed, part, i)
+    def scroll_carousel_to_page(self, page_index):
+        """Scrolls the carousel to a specific page if auto-scroll is enabled."""
+        current_page = self.carousel.get_position()
+        if current_page != page_index:
+            self.carousel.scroll_to(self.carousel.get_nth_page(page_index), True)
 
     # Event handlers that need to stay in window
     def on_toggle_changed(self, toggle_button, part, index):
         state = toggle_button.get_active()
-        self.drum_parts[part][index] = state
-        self.drum_machine_service.drum_parts[part][index] = state
+
+        if state:
+            self.drum_machine_service.drum_parts_state[part][index] = True
+        else:
+            self.drum_machine_service.drum_parts_state[part].pop(index, None)
+
+        # Tell the service to recalculate the total pattern length
+        self.drum_machine_service.update_total_beats()
+
         # Mark as unsaved when toggles change
         self.save_changes_service.mark_unsaved_changes(True)
 
@@ -154,6 +201,10 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def handle_clear(self, button):
         self.drum_machine_service.clear_all_toggles()
+        # After clearing, update the total beats which will reset active_pages to 1
+        self.drum_machine_service.update_total_beats()
+        # Now, reset the carousel UI to its initial state
+        self.drum_grid_builder.reset_carousel_pages()
         # Mark as saved when clearing
         self.save_changes_service.mark_unsaved_changes(False)
 

@@ -95,6 +95,32 @@
             </child>
           </object>
         </child>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="title" translatable="yes" context="shortcut window">Navigation</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Go to Instrument</property>
+                <property name="action-name">win.go_to_instrument</property>
+                <property name="accelerator">&lt;Primary&gt;i</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Previous Page</property>
+                <property name="action-name">win.previous_page</property>
+                <property name="accelerator">Page_Up</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Next Page</property>
+                <property name="action-name">win.next_page</property>
+                <property name="accelerator">Page_Down</property>
+              </object>
+            </child>
+          </object>
+        </child>
       </object>
     </child>
   </object>

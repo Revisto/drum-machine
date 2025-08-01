@@ -90,7 +90,15 @@ class FileDialogHandler:
         try:
             file = dialog.open_finish(response)
             if file:
+                # Load the preset data into the service
                 self.window.drum_machine_service.load_preset(file.get_path())
+                # Update the UI to reflect the new pattern structure
+                self.window.drum_machine_service.update_total_beats()
+                self.window.drum_grid_builder.reset_carousel_pages()
+                self.window.ui_helper.load_pattern_into_ui(
+                    self.window.drum_machine_service.drum_parts_state
+                )
+
                 self.window.save_changes_service.mark_unsaved_changes(False)
         except GLib.Error:
             return
@@ -115,7 +123,16 @@ class FileDialogHandler:
             os.path.dirname(__file__), "..", "..", "data", "presets"
         )
         file_path = os.path.join(preset_dir, f"{preset_name}.mid")
+
+        # Load the preset data into the service
         self.window.drum_machine_service.load_preset(file_path)
+        # Update the UI to reflect the new pattern structure
+        self.window.drum_machine_service.update_total_beats()
+        self.window.drum_grid_builder.reset_carousel_pages()
+        self.window.ui_helper.load_pattern_into_ui(
+            self.window.drum_machine_service.drum_parts_state
+        )
+
         self.window.save_changes_service.mark_unsaved_changes(False)
 
     def _show_save_dialog(self, after_save_callback=None):
