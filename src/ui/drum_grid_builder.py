@@ -122,7 +122,9 @@ class DrumGridBuilder:
         carousel.connect("page-changed", self._on_page_changed)
 
         key_controller = Gtk.EventControllerKey.new()
-        key_controller.connect("key-pressed", self._on_carousel_key_pressed)
+        key_controller.connect(
+            "key-pressed", self._on_carousel_key_pressed
+        )
         carousel.add_controller(key_controller)
 
         for i in range(2):
@@ -135,7 +137,8 @@ class DrumGridBuilder:
         self.reset_carousel_pages()
 
     def reset_carousel_pages(self, current_page_index=-1):
-        """Resets the carousel pages to match the number of active pages in the current pattern."""
+        """Resets the carousel pages to match the number of active pages in the current
+        pattern."""
         carousel = self.window.carousel
 
         active_pages_in_pattern = self.window.drum_machine_service.active_pages
@@ -160,7 +163,8 @@ class DrumGridBuilder:
             n_pages = carousel.get_n_pages()
 
     def _on_carousel_key_pressed(self, controller, keyval, keycode, state):
-        """Handles key presses on the carousel to prevent page navigation with arrow keys."""
+        """Handles key presses on the carousel to prevent page navigation with arrow
+        keys."""
         if keyval == Gdk.KEY_Left or keyval == Gdk.KEY_Right:
             return True
         return False
@@ -172,7 +176,6 @@ class DrumGridBuilder:
         if keyval == Gdk.KEY_Right:
             current_page_index = self.window.carousel.get_position()
             target_beat_index = int(current_page_index * self.beats_per_page)
-            print(f"{drum_part}_toggle_{target_beat_index}")
             try:
                 target_toggle = getattr(
                     self.window, f"{drum_part}_toggle_{target_beat_index}"
@@ -187,42 +190,96 @@ class DrumGridBuilder:
         self, controller, keyval, keycode, state, drum_part, global_beat_index
     ):
         """Handles arrow key navigation between toggle buttons."""
-        target_beat_index = -1
         if keyval == Gdk.KEY_Right:
-            target_beat_index = global_beat_index + 1
+            return self._handle_right_arrow(drum_part, global_beat_index)
         elif keyval == Gdk.KEY_Left:
-            if global_beat_index % self.beats_per_page == 0:
-                try:
-                    instrument_button = getattr(
-                        self.window, f"{drum_part}_instrument_button"
-                    )
-                    instrument_button.grab_focus()
-                    return True
-                except AttributeError:
-                    return True
-            else:
-                target_beat_index = global_beat_index - 1
-
-        if target_beat_index != -1:
-            current_page_index = global_beat_index // self.beats_per_page
-            target_page_index = target_beat_index // self.beats_per_page
-
-            if current_page_index != target_page_index:
-                carousel = self.window.carousel
-                n_pages = carousel.get_n_pages()
-                if 0 <= target_page_index < n_pages:
-                    carousel.scroll_to(carousel.get_nth_page(target_page_index), True)
-
-            try:
-                target_toggle = getattr(
-                    self.window, f"{drum_part}_toggle_{target_beat_index}"
-                )
-                target_toggle.grab_focus()
-                return True
-            except AttributeError:
-                return True
-
+            return self._handle_left_arrow(drum_part, global_beat_index)
         return False
+
+    def _handle_right_arrow(self, drum_part, global_beat_index):
+        """Handle right arrow key navigation."""
+        # Check if we're at the rightmost position of the current page
+        if (global_beat_index + 1) % self.beats_per_page == 0:
+            return self._scroll_to_next_page(drum_part, global_beat_index)
+        target_beat_index = global_beat_index + 1
+        return self._navigate_to_target(drum_part, global_beat_index, target_beat_index)
+
+    def _scroll_to_next_page(self, drum_part, global_beat_index):
+        """Scroll to next page and focus the leftmost toggle."""
+        carousel = self.window.carousel
+        current_page = global_beat_index // self.beats_per_page
+        n_pages = carousel.get_n_pages()
+
+        if current_page < n_pages - 1:
+            carousel.scroll_to(carousel.get_nth_page(current_page + 1), True)
+            # Focus the leftmost toggle on the next page
+            target_beat_index = (current_page + 1) * self.beats_per_page
+            return self._focus_target_toggle(drum_part, target_beat_index)
+
+        # If we're on the last page, stay where we are
+        return True
+
+    def _handle_left_arrow(self, drum_part, global_beat_index):
+        """Handle left arrow key navigation."""
+        if global_beat_index % self.beats_per_page == 0:
+            # At the leftmost position, scroll to previous page instead of jumping to
+            # instrument
+            return self._scroll_to_previous_page(drum_part, global_beat_index)
+        target_beat_index = global_beat_index - 1
+        return self._navigate_to_target(drum_part, global_beat_index, target_beat_index)
+
+    def _scroll_to_previous_page(self, drum_part, global_beat_index):
+        """Scroll to previous page and focus the rightmost toggle."""
+        carousel = self.window.carousel
+        current_page = global_beat_index // self.beats_per_page
+
+        if current_page > 0:
+            carousel.scroll_to(carousel.get_nth_page(current_page - 1), True)
+            # Focus the rightmost toggle on the previous page
+            target_beat_index = (
+                (current_page - 1) * self.beats_per_page
+                + (self.beats_per_page - 1)
+            )
+            return self._focus_target_toggle(drum_part, target_beat_index)
+
+        # If we're on the first page, go to instrument button
+        return self._navigate_to_instrument_button(drum_part)
+
+    def _navigate_to_instrument_button(self, drum_part):
+        """Navigate to the instrument button."""
+        try:
+            instrument_button = getattr(self.window, f"{drum_part}_instrument_button")
+            instrument_button.grab_focus()
+            return True
+        except AttributeError:
+            return True
+
+    def _navigate_to_target(self, drum_part, global_beat_index, target_beat_index):
+        """Navigate to target toggle button."""
+        self._scroll_if_needed(global_beat_index, target_beat_index)
+        return self._focus_target_toggle(drum_part, target_beat_index)
+
+    def _scroll_if_needed(self, global_beat_index, target_beat_index):
+        """Scroll carousel if crossing page boundary."""
+        current_page_index = global_beat_index // self.beats_per_page
+        target_page_index = target_beat_index // self.beats_per_page
+
+        if current_page_index != target_page_index:
+            carousel = self.window.carousel
+            n_pages = carousel.get_n_pages()
+            if 0 <= target_page_index < n_pages:
+                carousel.scroll_to(carousel.get_nth_page(target_page_index), True)
+
+    def _focus_target_toggle(self, drum_part, target_beat_index):
+        """Focus the target toggle button."""
+        try:
+            target_toggle = getattr(
+                self.window, f"{drum_part}_toggle_{target_beat_index}"
+            )
+            target_toggle.grab_focus()
+            return True
+        except AttributeError:
+            return True
 
     def _create_beat_grid_page(self, page_index):
         """Creates a single page containing a full set of instrument tracks."""
