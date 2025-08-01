@@ -142,7 +142,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_machine_service.beats_per_page = beats_per_page
         self.drum_machine_service.update_total_beats()
 
-        # Rebuild the grid with the new size. The builder will handle loading the pattern.
+        # Rebuild the grid with the new size. The builder will handle loading
+        # the pattern.
         self.drum_grid_builder.rebuild_carousel(focus_beat_index=focus_beat_index)
 
     # Delegate methods to handlers
