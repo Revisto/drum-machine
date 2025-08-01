@@ -1,15 +1,14 @@
 # Chinese (China) translation for drum-machine.
 # Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
 # This file is distributed under the same license as the drum-machine package.
-# Luming Zh <lumingzh@qq.com>,  2025.
 # lumingzh <lumingzh@qq.com>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-03-28 13:12+0000\n"
-"PO-Revision-Date: 2025-03-30 08:22+0800\n"
+"POT-Creation-Date: 2025-08-01 15:25+0000\n"
+"PO-Revision-Date: 2025-08-02 07:51+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -19,8 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Gtranslator 48.0\n"
 
-#: data/io.github.revisto.drum-machine.desktop.in:3
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
 msgid "Drum Machine"
 msgstr "击鼓器"
 
@@ -76,92 +75,80 @@ msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "以暗色模式加载击鼓模式"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:278
+#: src/window.py:190
 msgid "{} Beats per Minute (BPM)"
 msgstr "每分钟 {} 节拍（BPM）"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:287
+#: src/window.py:199
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% 音量"
 
-#: src/window.py:298 src/window.ui:158
+#: src/window.py:214 src/window.ui:167
 msgid "Play"
 msgstr "播放"
 
-#: src/window.py:302
+#: src/window.py:218
 msgid "Pause"
 msgstr "暂停"
 
-#: src/window.py:317
-msgid "Default Presets"
-msgstr "默认预设"
-
-#: src/window.py:344
-msgid "MIDI files"
-msgstr "MIDI 文件"
-
-#: src/window.py:350
-msgid "Open MIDI File"
-msgstr "打开 MIDI 文件"
-
-#: src/window.ui:41
+#: src/window.ui:50
 msgid "Open"
 msgstr "打开"
 
-#: src/window.ui:43 src/window.ui:46
+#: src/window.ui:52 src/window.ui:55
 msgid "Open Preset"
 msgstr "打开预设"
 
-#: src/window.ui:47
+#: src/window.ui:56
 msgid "Open Saved Drum Pattern Preset"
 msgstr "打开保存的击鼓模式预设"
 
-#: src/window.ui:65 src/window.ui:67
+#: src/window.ui:74 src/window.ui:76
 msgid "Main Menu"
 msgstr "主菜单"
 
-#: src/window.ui:68
+#: src/window.ui:77
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "访问键盘快捷键和应用程序信息"
 
-#: src/window.ui:75 src/window.ui:77
+#: src/window.ui:84 src/window.ui:86
 msgid "Save Drum Pattern"
 msgstr "保存击鼓模式"
 
-#: src/window.ui:78
+#: src/window.ui:87
 msgid "Save Current Drum Pattern as a Preset File"
 msgstr "将当前击鼓模式保存为预设文件"
 
-#: src/window.ui:122
+#: src/window.ui:131
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:127 src/window.ui:131
+#: src/window.ui:136 src/window.ui:140
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "以每分钟节拍为单位调节拍子（BPM）"
 
-#: src/window.ui:130
+#: src/window.ui:139
 msgid "Tempo"
 msgstr "拍子"
 
-#: src/window.ui:172
+#: src/window.ui:181
 msgid "Adjust Volume"
 msgstr "调整音量"
 
-#: src/window.ui:195
+#: src/window.ui:204
 msgid "Reset"
 msgstr "重置"
 
-#: src/window.ui:196
+#: src/window.ui:205
 msgid "Reset the Drum Sequence"
 msgstr "重置击鼓序列"
 
-#: src/window.ui:209
+#: src/window.ui:218
 msgid "_Keyboard Shortcuts"
 msgstr "键盘快捷键(_K)"
 
-#: src/window.ui:213
+#: src/window.ui:222
 msgid "_About Drum Machine"
 msgstr "关于击鼓器(_A)"
 
@@ -235,6 +222,26 @@ msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "保存预设"
 
+#: src/gtk/help-overlay.ui:100
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "导航"
+
+#: src/gtk/help-overlay.ui:103
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr "前往乐器"
+
+#: src/gtk/help-overlay.ui:110
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr "上一页"
+
+#: src/gtk/help-overlay.ui:117
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr "下一页"
+
 #: src/gtk/save_changes_dialog.ui:6
 msgid "Save Changes?"
 msgstr "保存更改吗？"
@@ -259,3 +266,20 @@ msgstr "丢弃(_D)"
 #: src/gtk/save_changes_dialog.ui:16
 msgid "_Save"
 msgstr "保存(_S)"
+
+#: src/handlers/file_dialog_handler.py:48
+msgid "Default Presets"
+msgstr "默认预设"
+
+#: src/handlers/file_dialog_handler.py:76
+#: src/handlers/file_dialog_handler.py:142
+msgid "MIDI files"
+msgstr "MIDI 文件"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "Open MIDI File"
+msgstr "打开 MIDI 文件"
+
+#: src/handlers/file_dialog_handler.py:148
+msgid "Save Sequence"
+msgstr "保存序列"
