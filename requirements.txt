@@ -1,0 +1,6 @@
+pygame
+mido
+setuptools
+setuptools-scm
+packaging
+flit-core
