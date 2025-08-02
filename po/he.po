@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-03-30 13:12+0000\n"
-"PO-Revision-Date: 2025-03-30 20:37+0300\n"
+"POT-Creation-Date: 2025-08-02 15:26+0000\n"
+"PO-Revision-Date: 2025-08-02 23:57+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "Language: he\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
-#: data/io.github.revisto.drum-machine.desktop.in:3
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
 msgid "Drum Machine"
 msgstr "מכונת תופים"
 
@@ -75,92 +75,80 @@ msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "תבנית תיפוף טעונה במצב כהה"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:278
+#: src/window.py:190
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} פעימות בדקה (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:287
+#: src/window.py:199
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% עוצמת שמע"
 
-#: src/window.py:298 src/window.ui:158
+#: src/window.py:214 src/window.ui:167
 msgid "Play"
 msgstr "נגינה"
 
-#: src/window.py:302
+#: src/window.py:218
 msgid "Pause"
 msgstr "השהיה"
 
-#: src/window.py:317
-msgid "Default Presets"
-msgstr "ערכות ברירת מחדל"
-
-#: src/window.py:344
-msgid "MIDI files"
-msgstr "קובצי MIDI"
-
-#: src/window.py:350
-msgid "Open MIDI File"
-msgstr "פתיחת קובץ MIDI"
-
-#: src/window.ui:41
+#: src/window.ui:50
 msgid "Open"
 msgstr "פתיחה"
 
-#: src/window.ui:43 src/window.ui:46
+#: src/window.ui:52 src/window.ui:55
 msgid "Open Preset"
 msgstr "פתיחת ערכה"
 
-#: src/window.ui:47
+#: src/window.ui:56
 msgid "Open Saved Drum Pattern Preset"
 msgstr "פתיחת ערכת תבנית תיפוף שמורה"
 
-#: src/window.ui:65 src/window.ui:67
+#: src/window.ui:74 src/window.ui:76
 msgid "Main Menu"
 msgstr "תפריט ראשי"
 
-#: src/window.ui:68
+#: src/window.ui:77
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "גישה לקיצורי מקלדת ולפרטים על היישום"
 
-#: src/window.ui:75 src/window.ui:77
+#: src/window.ui:84 src/window.ui:86
 msgid "Save Drum Pattern"
 msgstr "שמירת תבנית תיפוף"
 
-#: src/window.ui:78
+#: src/window.ui:87
 msgid "Save Current Drum Pattern as a Preset File"
 msgstr "שמירת תבנית התיפוף הנוכחית כקובץ ערכה"
 
-#: src/window.ui:122
+#: src/window.ui:131
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:127 src/window.ui:131
+#: src/window.ui:136 src/window.ui:140
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "כיוון הקצב בפעימות לדקה (BPM)"
 
-#: src/window.ui:130
+#: src/window.ui:139
 msgid "Tempo"
 msgstr "קצב"
 
-#: src/window.ui:172
+#: src/window.ui:181
 msgid "Adjust Volume"
 msgstr "כיוון עוצמת שמע"
 
-#: src/window.ui:195
+#: src/window.ui:204
 msgid "Reset"
 msgstr "איפוס"
 
-#: src/window.ui:196
+#: src/window.ui:205
 msgid "Reset the Drum Sequence"
 msgstr "איפוס רצף התיפוף"
 
-#: src/window.ui:209
+#: src/window.ui:218
 msgid "_Keyboard Shortcuts"
 msgstr "_קיצורי מקלדת"
 
-#: src/window.ui:213
+#: src/window.ui:222
 msgid "_About Drum Machine"
 msgstr "על מכונת _תופים"
 
@@ -234,6 +222,26 @@ msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "שמירת ערכה"
 
+#: src/gtk/help-overlay.ui:100
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "ניווט"
+
+#: src/gtk/help-overlay.ui:103
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr "מעבר לכלי"
+
+#: src/gtk/help-overlay.ui:110
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr "העמוד הקודם"
+
+#: src/gtk/help-overlay.ui:117
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr "העמוד הבא"
+
 #: src/gtk/save_changes_dialog.ui:6
 msgid "Save Changes?"
 msgstr "לשמור את השינויים?"
@@ -259,3 +267,20 @@ msgstr "הת_עלמות"
 #: src/gtk/save_changes_dialog.ui:16
 msgid "_Save"
 msgstr "_שמירה"
+
+#: src/handlers/file_dialog_handler.py:48
+msgid "Default Presets"
+msgstr "ערכות ברירת מחדל"
+
+#: src/handlers/file_dialog_handler.py:76
+#: src/handlers/file_dialog_handler.py:142
+msgid "MIDI files"
+msgstr "קובצי MIDI"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "Open MIDI File"
+msgstr "פתיחת קובץ MIDI"
+
+#: src/handlers/file_dialog_handler.py:148
+msgid "Save Sequence"
+msgstr "שמירת הרצף"
