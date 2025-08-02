@@ -1,26 +1,27 @@
 # Brazilian Portuguese translations for drum-machine package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2025 drum-machine'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the drum-machine package.
 # Tiago Lucas FLach <tiagolucas9830@gmail.com>, 2025.
 # Álvaro Burns <>, 2025.
+# Rafael Fontenelle <rafaelff@gnome.org>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-24 13:12+0000\n"
-"PO-Revision-Date: 2025-03-24 17:16-0300\n"
-"Last-Translator: Álvaro Burns <>\n"
-"Language-Team: Brazilian Portuguese\n"
+"Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
+"POT-Creation-Date: 2025-08-02 03:26+0000\n"
+"PO-Revision-Date: 2025-08-02 11:17-0300\n"
+"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
+"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 47.1\n"
+"X-Generator: Gtranslator 48.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: data/io.github.revisto.drum-machine.desktop.in:3
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
 msgid "Drum Machine"
 msgstr "Drum Machine"
 
@@ -70,99 +71,87 @@ msgstr "Atalhos de teclado para acesso rápido a todas as funções"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:31
 msgid "Drum Pattern Loaded in Light Mode"
-msgstr "Padrão de bateria carregado no modo Claro"
+msgstr "Padrão de bateria carregado no modo claro"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:35
 msgid "Drum Pattern Loaded in Dark Mode"
-msgstr "Padrão de bateria carregado no Modo Escuro"
+msgstr "Padrão de bateria carregado no modo escuro"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:278
+#: src/window.py:190
 msgid "{} Beats per Minute (BPM)"
-msgstr "{} Batidas por minuto (BPM)"
+msgstr "{} batidas por minuto (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:287
+#: src/window.py:199
 msgid "{:.0f}% Volume"
-msgstr "{:.0f}% Volume"
+msgstr "{:.0f}% volume"
 
-#: src/window.py:298 src/window.ui:158
+#: src/window.py:214 src/window.ui:167
 msgid "Play"
-msgstr "Play"
+msgstr "Reproduz"
 
-#: src/window.py:302
+#: src/window.py:218
 msgid "Pause"
-msgstr "Pause"
+msgstr "Pausa"
 
-#: src/window.py:317
-msgid "Default Presets"
-msgstr "Predefinições Pzadrão"
-
-#: src/window.py:344
-msgid "MIDI files"
-msgstr "Arquivos MIDI"
-
-#: src/window.py:350
-msgid "Open MIDI File"
-msgstr "Abrir Arquivo MIDI"
-
-#: src/window.ui:41
+#: src/window.ui:50
 msgid "Open"
 msgstr "Abrir"
 
-#: src/window.ui:43 src/window.ui:46
+#: src/window.ui:52 src/window.ui:55
 msgid "Open Preset"
-msgstr "Abrir Predefinição"
+msgstr "Abrir predefinição"
 
-#: src/window.ui:47
+#: src/window.ui:56
 msgid "Open Saved Drum Pattern Preset"
-msgstr "Abrir Predefinição de Padrão de Bateria Salva"
+msgstr "Abrir predefinição padrão de bateria salva"
 
-#: src/window.ui:65 src/window.ui:67
+#: src/window.ui:74 src/window.ui:76
 msgid "Main Menu"
-msgstr "Menu Principal"
+msgstr "Menu principal"
 
-#: src/window.ui:68
+#: src/window.ui:77
 msgid "Access Keyboard Shortcuts and Application Information"
-msgstr "Acesse Atalhos de Teclado e Informações do Aplicativo"
+msgstr "Acesse atalhos de teclado e informações do aplicativo"
 
-#: src/window.ui:75 src/window.ui:77
+#: src/window.ui:84 src/window.ui:86
 msgid "Save Drum Pattern"
-msgstr "Salvar Padrão de Bateria"
+msgstr "Salvar padrão de bateria"
 
-#: src/window.ui:78
+#: src/window.ui:87
 msgid "Save Current Drum Pattern as a Preset File"
-msgstr "Salvar o Padrão de Bateria Atual Como um Arquivo Predefinido"
+msgstr "Salva o atual padrão de bateria como um arquivo de predefinição"
 
-#: src/window.ui:122
+#: src/window.ui:131
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:127 src/window.ui:131
+#: src/window.ui:136 src/window.ui:140
 msgid "Adjust Tempo In Beats per Minute (BPM)"
-msgstr "Ajuste o Tempo em Batidas por Minuto (BPM)"
+msgstr "Ajusta o tempo em batidas por minuto (BPM)"
 
-#: src/window.ui:130
+#: src/window.ui:139
 msgid "Tempo"
 msgstr "Tempo"
 
-#: src/window.ui:172
+#: src/window.ui:181
 msgid "Adjust Volume"
-msgstr "Ajustar Volume"
+msgstr "Ajusta o volume"
 
-#: src/window.ui:195
+#: src/window.ui:204
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: src/window.ui:196
+#: src/window.ui:205
 msgid "Reset the Drum Sequence"
-msgstr "Reiniciar a Sequência de Bateria"
+msgstr "Reinicia a sequência de bateria"
 
-#: src/window.ui:209
+#: src/window.ui:218
 msgid "_Keyboard Shortcuts"
-msgstr "_Atalhos de Teclado"
+msgstr "Atalhos de _teclado"
 
-#: src/window.ui:213
+#: src/window.ui:222
 msgid "_About Drum Machine"
 msgstr "_Sobre o Drum Machine"
 
@@ -174,71 +163,91 @@ msgstr "Geral"
 #: src/gtk/help-overlay.ui:14
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr "Mostrar Atalhos"
+msgstr "Mostra os atalhos"
 
 #: src/gtk/help-overlay.ui:20
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr "Sair"
+msgstr "Sai"
 
 #: src/gtk/help-overlay.ui:29
 msgctxt "shortcut window"
 msgid "Playback Controls"
-msgstr "Controles de Reprodução"
+msgstr "Controles de reprodução"
 
 #: src/gtk/help-overlay.ui:32
 msgctxt "shortcut window"
 msgid "Play/Pause"
-msgstr "Play/Pause"
+msgstr "Reproduzir/Pausar"
 
 #: src/gtk/help-overlay.ui:39
 msgctxt "shortcut window"
 msgid "Clear All"
-msgstr "Limpar Tudo"
+msgstr "Limpa tudo"
 
 #: src/gtk/help-overlay.ui:48
 msgctxt "shortcut window"
 msgid "BPM & Volume Controls"
-msgstr "Controles de BPM e Volume"
+msgstr "Controles de BPM e volume"
 
 #: src/gtk/help-overlay.ui:51
 msgctxt "shortcut window"
 msgid "Increase BPM"
-msgstr "Aumentar BPM"
+msgstr "Aumenta o BPM"
 
 #: src/gtk/help-overlay.ui:58
 msgctxt "shortcut window"
 msgid "Decrease BPM"
-msgstr "Diminuir BPM"
+msgstr "Diminui o BPM"
 
 #: src/gtk/help-overlay.ui:65
 msgctxt "shortcut window"
 msgid "Increase Volume"
-msgstr "Aumentar Volume"
+msgstr "Aumenta o volume"
 
 #: src/gtk/help-overlay.ui:72
 msgctxt "shortcut window"
 msgid "Decrease Volume"
-msgstr "Diminuir Volume"
+msgstr "Diminui o volume"
 
 #: src/gtk/help-overlay.ui:81
 msgctxt "shortcut window"
 msgid "Preset Management"
-msgstr "Gerenciamento de Predefinições"
+msgstr "Gerenciamento de predefinições"
 
 #: src/gtk/help-overlay.ui:84
 msgctxt "shortcut window"
 msgid "Load Preset"
-msgstr "Carregar Predefinição"
+msgstr "Carrega a predefinição"
 
 #: src/gtk/help-overlay.ui:91
 msgctxt "shortcut window"
 msgid "Save Preset"
-msgstr "Salvar Predefinição"
+msgstr "Salva a predefinição"
+
+#: src/gtk/help-overlay.ui:100
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "Navegação"
+
+#: src/gtk/help-overlay.ui:103
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr "Vai para o instrumento"
+
+#: src/gtk/help-overlay.ui:110
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr "Página anterior"
+
+#: src/gtk/help-overlay.ui:117
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr "Próxima página"
 
 #: src/gtk/save_changes_dialog.ui:6
 msgid "Save Changes?"
-msgstr "Salvar Alterações?"
+msgstr "Salvar alterações?"
 
 #: src/gtk/save_changes_dialog.ui:7
 msgid ""
@@ -262,6 +271,23 @@ msgstr "_Descartar"
 #: src/gtk/save_changes_dialog.ui:16
 msgid "_Save"
 msgstr "_Salvar"
+
+#: src/handlers/file_dialog_handler.py:48
+msgid "Default Presets"
+msgstr "Predefinições padrão"
+
+#: src/handlers/file_dialog_handler.py:76
+#: src/handlers/file_dialog_handler.py:142
+msgid "MIDI files"
+msgstr "Arquivos MIDI"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "Open MIDI File"
+msgstr "Abrir arquivo MIDI"
+
+#: src/handlers/file_dialog_handler.py:148
+msgid "Save Sequence"
+msgstr "Salvar sequência"
 
 #~ msgid "drum"
 #~ msgstr "bateria"
