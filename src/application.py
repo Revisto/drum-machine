@@ -54,6 +54,18 @@ class DrumMachineApplication(Adw.Application):
         debug_info += (
             f"Adwaita {Adw.MAJOR_VERSION}.{Adw.MINOR_VERSION}.{Adw.MICRO_VERSION}"
         )
+        translators = "\n".join([
+            "Finnish: Jiri Grönroos",
+            "French: Thomas Silvestre",
+            "Hebrew: Yaron Shahrabani",
+            "Georgian: Ekaterine Papava",
+            "Persian: Danial Behzadi",
+            "Portuguese: Tiago Lucas Flach",
+            "Slovenian: Martin",
+            "Swedish: Anders Jonsson",
+            "Turkish: Sabri Ünal & Emin Tufan Çetin",
+            "Ukrainian: Yuri Chornoivan"
+        ])
         about = Adw.AboutDialog(
             application_name="Drum Machine",
             application_icon="io.github.revisto.drum-machine",
@@ -65,7 +77,7 @@ class DrumMachineApplication(Adw.Application):
             "playing, and managing drum patterns.",
             debug_info=debug_info,
             license_type=Gtk.License.GPL_3_0,
-            translator_credits="Portuguese: Tiago Lucas Flach",
+            translator_credits=translators,
             issue_url="https://github.com/Revisto/drum-machine/issues",
             website="https://apps.gnome.org/DrumMachine/",
         )
