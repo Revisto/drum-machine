@@ -1,0 +1,263 @@
+# Dutch translation for drum-machine.
+# Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+# Gert-dev,  2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-26 13:12+0000\n"
+"PO-Revision-Date: 2025-08-02 20:36+0200\n"
+"Last-Translator: Gert-dev\n"
+"Language-Team: Gert-dev\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 48.0\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:3
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+msgid "Drum Machine"
+msgstr "Drum Machine"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "Creëer en speel drum beats af"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr ""
+"Drum Machine is een moderne en intuïtieve applicatie om drumpatronen op te "
+"stellen, af te spelen en te beheren. Handig voor muzikanten, producers en "
+"anderen geïnteresseerd in ritmes, mede dankzij een eenvoudige interface. "
+"Veel plezier ermee!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "Functies:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor"
+msgstr "Intuïtieve tabelgebaseerde patronenbewerker"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Adjustable BPM control"
+msgstr "Aanpasbare BPM"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Volume control for overall mix"
+msgstr "Volumebeheer van de algemene mix"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Save and load preset patterns"
+msgstr "Laad en sla patronen op via presets"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "Meerdere drumgeluiden inclusief de kick, snare, en hi-hat"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "Sneltoetsen voor vlotte toegang tot alle functies"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "Drumpatroon geladen in lichte modus"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "Drumpatroon geladen in donkere modus"
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:278
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} slagen per minuut (BPM)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:287
+msgid "{:.0f}% Volume"
+msgstr "{:.0f}% Volume"
+
+#: src/window.py:298 src/window.ui:158
+msgid "Play"
+msgstr "Afspelen"
+
+#: src/window.py:302
+msgid "Pause"
+msgstr "Pauzeren"
+
+#: src/window.py:317
+msgid "Default Presets"
+msgstr "Ingebouwde presets"
+
+#: src/window.py:344
+msgid "MIDI files"
+msgstr "MIDI-bestanden"
+
+#: src/window.py:350
+msgid "Open MIDI File"
+msgstr "MIDI-bestand openen"
+
+#: src/window.ui:41
+msgid "Open"
+msgstr "Openen"
+
+#: src/window.ui:43 src/window.ui:46
+msgid "Open Preset"
+msgstr "Preset openen"
+
+#: src/window.ui:47
+msgid "Open Saved Drum Pattern Preset"
+msgstr "Opgeslagen preset met drumpatroon openen"
+
+#: src/window.ui:65 src/window.ui:67
+msgid "Main Menu"
+msgstr "Hoofdmenu"
+
+#: src/window.ui:68
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "Sneltoetsen en applicatieinformatie bekijken"
+
+#: src/window.ui:75 src/window.ui:77
+msgid "Save Drum Pattern"
+msgstr "Drumpatroon opslaan"
+
+#: src/window.ui:78
+msgid "Save Current Drum Pattern as a Preset File"
+msgstr "Huidig drumpatroon opslaan als preset-bestand"
+
+#: src/window.ui:122
+msgid "BPM"
+msgstr "BPM"
+
+#: src/window.ui:127 src/window.ui:131
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "Slagen per minuut anpassen (BPM)"
+
+#: src/window.ui:130
+msgid "Tempo"
+msgstr "Tempo"
+
+#: src/window.ui:172
+msgid "Adjust Volume"
+msgstr "Volume aanpassen"
+
+#: src/window.ui:195
+msgid "Reset"
+msgstr "Opnieuw instellen"
+
+#: src/window.ui:196
+msgid "Reset the Drum Sequence"
+msgstr "De drumsequentie opnieuw instellen"
+
+#: src/window.ui:209
+msgid "_Keyboard Shortcuts"
+msgstr "_Sneltoetsen"
+
+#: src/window.ui:213
+msgid "_About Drum Machine"
+msgstr "_Over Drum Machine"
+
+#: src/gtk/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Algemeen"
+
+#: src/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Sneltoetsen tonen"
+
+#: src/gtk/help-overlay.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Afsluiten"
+
+#: src/gtk/help-overlay.ui:29
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "Afspeelbeheer"
+
+#: src/gtk/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "Afspelen/Pauzeren"
+
+#: src/gtk/help-overlay.ui:39
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "Alles wissen"
+
+#: src/gtk/help-overlay.ui:48
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "BPM & Volumebeheer"
+
+#: src/gtk/help-overlay.ui:51
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "BPM verhogen"
+
+#: src/gtk/help-overlay.ui:58
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "BPM verlagen"
+
+#: src/gtk/help-overlay.ui:65
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "Volume verhogen"
+
+#: src/gtk/help-overlay.ui:72
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "Volume verlagen"
+
+#: src/gtk/help-overlay.ui:81
+msgctxt "shortcut window"
+msgid "Preset Management"
+msgstr "Preset-beheer"
+
+#: src/gtk/help-overlay.ui:84
+msgctxt "shortcut window"
+msgid "Load Preset"
+msgstr "Preset laden"
+
+#: src/gtk/help-overlay.ui:91
+msgctxt "shortcut window"
+msgid "Save Preset"
+msgstr "Preset opslaan"
+
+#: src/gtk/save_changes_dialog.ui:6
+msgid "Save Changes?"
+msgstr "Wijzigingen bewaren?"
+
+#: src/gtk/save_changes_dialog.ui:7
+msgid ""
+"Current preset contains unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"De huidige preset bevat wijzigingen die niet opgeslagen werden en die anders "
+"verloren zullen gaan."
+
+#. Cancel the operation
+#: src/gtk/save_changes_dialog.ui:14
+msgid "_Cancel"
+msgstr "_Annuleren"
+
+#. Discard all changes
+#: src/gtk/save_changes_dialog.ui:15
+msgid "_Discard"
+msgstr "_Verwerpen"
+
+#. Save current changes
+#: src/gtk/save_changes_dialog.ui:16
+msgid "_Save"
+msgstr "_Opslaan"
