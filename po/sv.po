@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-26 13:12+0000\n"
-"PO-Revision-Date: 2025-03-28 13:38+0100\n"
+"Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
+"POT-Creation-Date: 2025-08-01 13:00+0000\n"
+"PO-Revision-Date: 2025-07-31 20:16+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
-#: data/io.github.revisto.drum-machine.desktop.in:3
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
 msgid "Drum Machine"
 msgstr "Drum Machine"
 
@@ -76,92 +76,80 @@ msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Trumslinga inläst i mörkt läge"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:278
+#: src/window.py:190
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} slag per minut (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:287
+#: src/window.py:199
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% volym"
 
-#: src/window.py:298 src/window.ui:158
+#: src/window.py:214 src/window.ui:167
 msgid "Play"
 msgstr "Spela"
 
-#: src/window.py:302
+#: src/window.py:218
 msgid "Pause"
 msgstr "Pausa"
 
-#: src/window.py:317
-msgid "Default Presets"
-msgstr "Standardförinställningar"
-
-#: src/window.py:344
-msgid "MIDI files"
-msgstr "MIDI-filer"
-
-#: src/window.py:350
-msgid "Open MIDI File"
-msgstr "Öppna MIDI-fil"
-
-#: src/window.ui:41
+#: src/window.ui:50
 msgid "Open"
 msgstr "Öppna"
 
-#: src/window.ui:43 src/window.ui:46
+#: src/window.ui:52 src/window.ui:55
 msgid "Open Preset"
 msgstr "Öppna förinställning"
 
-#: src/window.ui:47
+#: src/window.ui:56
 msgid "Open Saved Drum Pattern Preset"
 msgstr "Öppna sparad trumslingeförinställning"
 
-#: src/window.ui:65 src/window.ui:67
+#: src/window.ui:74 src/window.ui:76
 msgid "Main Menu"
 msgstr "Huvudmeny"
 
-#: src/window.ui:68
+#: src/window.ui:77
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Kom åt tangentbordsgenvägar och programinformation"
 
-#: src/window.ui:75 src/window.ui:77
+#: src/window.ui:84 src/window.ui:86
 msgid "Save Drum Pattern"
 msgstr "Spara trumslinga"
 
-#: src/window.ui:78
+#: src/window.ui:87
 msgid "Save Current Drum Pattern as a Preset File"
 msgstr "Spara aktuell trumslinga som en förinställningsfil"
 
-#: src/window.ui:122
+#: src/window.ui:131
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:127 src/window.ui:131
+#: src/window.ui:136 src/window.ui:140
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Justera tempo i slag per minut (BPM)"
 
-#: src/window.ui:130
+#: src/window.ui:139
 msgid "Tempo"
 msgstr "Tempo"
 
-#: src/window.ui:172
+#: src/window.ui:181
 msgid "Adjust Volume"
 msgstr "Justera volym"
 
-#: src/window.ui:195
+#: src/window.ui:204
 msgid "Reset"
 msgstr "Återställ"
 
-#: src/window.ui:196
+#: src/window.ui:205
 msgid "Reset the Drum Sequence"
 msgstr "Återställ trumsekvensen"
 
-#: src/window.ui:209
+#: src/window.ui:218
 msgid "_Keyboard Shortcuts"
 msgstr "_Tangentbordsgenvägar"
 
-#: src/window.ui:213
+#: src/window.ui:222
 msgid "_About Drum Machine"
 msgstr "_Om Drum Machine"
 
@@ -235,6 +223,26 @@ msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "Spara förinställning"
 
+#: src/gtk/help-overlay.ui:100
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "Navigering"
+
+#: src/gtk/help-overlay.ui:103
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr "Gå till instrument"
+
+#: src/gtk/help-overlay.ui:110
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr "Föregående sida"
+
+#: src/gtk/help-overlay.ui:117
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr "Nästa sida"
+
 #: src/gtk/save_changes_dialog.ui:6
 msgid "Save Changes?"
 msgstr "Spara ändringar?"
@@ -261,3 +269,20 @@ msgstr "_Förkasta"
 #: src/gtk/save_changes_dialog.ui:16
 msgid "_Save"
 msgstr "_Spara"
+
+#: src/handlers/file_dialog_handler.py:48
+msgid "Default Presets"
+msgstr "Standardförinställningar"
+
+#: src/handlers/file_dialog_handler.py:76
+#: src/handlers/file_dialog_handler.py:142
+msgid "MIDI files"
+msgstr "MIDI-filer"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "Open MIDI File"
+msgstr "Öppna MIDI-fil"
+
+#: src/handlers/file_dialog_handler.py:148
+msgid "Save Sequence"
+msgstr "Spara sekvens"
