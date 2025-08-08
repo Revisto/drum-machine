@@ -72,8 +72,8 @@ Thanks to all contributors who help improve Drum Machine through code, bug repor
 Thanks to everyone contributing translations on [GNOME Damned Lies](https://l10n.gnome.org/module/drum-machine/), your work makes Drum Machine accessible to users worldwide.
 
 <p>
-  <a href="https://youtube.com/@theRevisto" title="YouTube">
-    <img src="https://img.shields.io/badge/Revisto-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
+  <a href="https://mastodon.social/@revisto" title="Mastodon">
+    <img src="https://img.shields.io/badge/Revisto-6364FF?style=for-the-badge&logo=mastodon&logoColor=white" />
   </a>
   <a href="https://linkedin.com/in/revisto" title="LinkedIn">
     <img src="https://img.shields.io/badge/Revisto-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
