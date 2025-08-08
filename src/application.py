@@ -19,6 +19,7 @@
 
 import platform
 import gi
+from gettext import gettext as _
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
@@ -41,7 +42,7 @@ class DrumMachineApplication(Adw.Application):
             win = DrumMachineWindow(application=self)
         win.present()
 
-    def on_about_action(self, widget, _):
+    def on_about_action(self, *_args):
         debug_info = f"Drum Machine {self.version}\n"
         debug_info += f"System: {platform.system()}\n"
         if platform.system() == "Linux":
