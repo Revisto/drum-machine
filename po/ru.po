@@ -8,10 +8,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-26 13:12+0000\n"
-"PO-Revision-Date: 2025-03-29 10:36+1000\n"
-"Last-Translator: Анатолий Богомолов (wineT) <tolya.bogomolov2019@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
+"POT-Creation-Date: 2025-08-06 03:25+0000\n"
+"PO-Revision-Date: 2025-08-06 10:58+0300\n"
+"Last-Translator: Artur S0 <arturios2005@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -19,10 +19,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Gtranslator 48.0\n"
+"X-Generator: Poedit 3.6\n"
 
-#: data/io.github.revisto.drum-machine.desktop.in:3
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
 msgid "Drum Machine"
 msgstr "Ритм-машина"
 
@@ -61,7 +61,7 @@ msgstr "Управление громкостью для всего микса"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:20
 msgid "Save and load preset patterns"
-msgstr "Сохраняйте и загружайте преднастроенные ритмы"
+msgstr "Сохранение и загрузка предустановленных рисунков"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
@@ -69,7 +69,7 @@ msgstr "Множество звуков ударных, включая бочк�
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Keyboard shortcuts for quick access to all functions"
-msgstr "Горячие клавиши для быстрого доступа ко всем функциям"
+msgstr "Комбинации клавиш для быстрого доступа ко всем функциям"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:31
 msgid "Drum Pattern Loaded in Light Mode"
@@ -80,104 +80,92 @@ msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Барабанный рисунок загружен в тёмном режиме"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:278
+#: src/window.py:190
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} Ударов в минуту (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:287
+#: src/window.py:199
 msgid "{:.0f}% Volume"
-msgstr "{:.0f}% Громкость"
+msgstr "Громкость {:.0f}%"
 
-#: src/window.py:298 src/window.ui:158
+#: src/window.py:214 src/window.ui:167
 msgid "Play"
 msgstr "Проиграть"
 
-#: src/window.py:302
+#: src/window.py:218
 msgid "Pause"
 msgstr "Пауза"
 
-#: src/window.py:317
-msgid "Default Presets"
-msgstr "Рисунок по умолчанию"
-
-#: src/window.py:344
-msgid "MIDI files"
-msgstr "MIDI Файлы"
-
-#: src/window.py:350
-msgid "Open MIDI File"
-msgstr "Открыть MIDI Файл"
-
-#: src/window.ui:41
+#: src/window.ui:50
 msgid "Open"
 msgstr "Открыть"
 
-#: src/window.ui:43 src/window.ui:46
+#: src/window.ui:52 src/window.ui:55
 msgid "Open Preset"
 msgstr "Открыть рисунок"
 
-#: src/window.ui:47
+#: src/window.ui:56
 msgid "Open Saved Drum Pattern Preset"
 msgstr "Открыть сохранённый барабанный рисунок"
 
-#: src/window.ui:65 src/window.ui:67
+#: src/window.ui:74 src/window.ui:76
 msgid "Main Menu"
 msgstr "Главное меню"
 
-#: src/window.ui:68
+#: src/window.ui:77
 msgid "Access Keyboard Shortcuts and Application Information"
-msgstr "Доступ к сочетаниям клавиш и информации о приложении"
+msgstr "Доступ к комбинациям клавиш и информации о приложении"
 
-#: src/window.ui:75 src/window.ui:77
+#: src/window.ui:84 src/window.ui:86
 msgid "Save Drum Pattern"
 msgstr "Сохранить барабанный рисунок"
 
-#: src/window.ui:78
+#: src/window.ui:87
 msgid "Save Current Drum Pattern as a Preset File"
 msgstr "Сохранить текущий барабанный рисунок как файл"
 
-#: src/window.ui:122
+#: src/window.ui:131
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:127 src/window.ui:131
+#: src/window.ui:136 src/window.ui:140
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Настройка темпа в ударах в минуту (BPM)"
 
-#: src/window.ui:130
+#: src/window.ui:139
 msgid "Tempo"
 msgstr "Темп"
 
-#: src/window.ui:172
+#: src/window.ui:181
 msgid "Adjust Volume"
 msgstr "Изменить громкость"
 
-#: src/window.ui:195
+#: src/window.ui:204
 msgid "Reset"
 msgstr "Сбросить"
 
-#: src/window.ui:196
+#: src/window.ui:205
 msgid "Reset the Drum Sequence"
 msgstr "Сбросить барабанный ритм"
 
-#: src/window.ui:209
+#: src/window.ui:218
 msgid "_Keyboard Shortcuts"
-msgstr "_Горячие клавиши"
+msgstr "_Комбинации клавиш"
 
-#: src/window.ui:213
+#: src/window.ui:222
 msgid "_About Drum Machine"
-msgstr "_О ритм машине"
+msgstr "_О приложении"
 
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr "Основные"
+msgstr "Общие"
 
 #: src/gtk/help-overlay.ui:14
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr "Показать горячие клавиши"
+msgstr "Показать комбинации клавиш"
 
 #: src/gtk/help-overlay.ui:20
 msgctxt "shortcut window"
@@ -239,6 +227,26 @@ msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "Сохранить рисунок"
 
+#: src/gtk/help-overlay.ui:100
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "Навигация"
+
+#: src/gtk/help-overlay.ui:103
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr "Перейти к инструменту"
+
+#: src/gtk/help-overlay.ui:110
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr "Предыдущая страница"
+
+#: src/gtk/help-overlay.ui:117
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr "Следующая страница"
+
 #: src/gtk/save_changes_dialog.ui:6
 msgid "Save Changes?"
 msgstr "Сохранить изменения?"
@@ -265,3 +273,20 @@ msgstr "_Не сохранять"
 #: src/gtk/save_changes_dialog.ui:16
 msgid "_Save"
 msgstr "_Сохранить"
+
+#: src/handlers/file_dialog_handler.py:48
+msgid "Default Presets"
+msgstr "Рисунок по умолчанию"
+
+#: src/handlers/file_dialog_handler.py:76
+#: src/handlers/file_dialog_handler.py:142
+msgid "MIDI files"
+msgstr "MIDI-файлы"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "Open MIDI File"
+msgstr "Открыть MIDI-файл"
+
+#: src/handlers/file_dialog_handler.py:148
+msgid "Save Sequence"
+msgstr "Сохранить последовательность"
