@@ -19,6 +19,7 @@
 
 import platform
 import gi
+from gettext import gettext as _
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
@@ -41,7 +42,7 @@ class DrumMachineApplication(Adw.Application):
             win = DrumMachineWindow(application=self)
         win.present()
 
-    def on_about_action(self, widget, _):
+    def on_about_action(self, *_args):
         debug_info = f"Drum Machine {self.version}\n"
         debug_info += f"System: {platform.system()}\n"
         if platform.system() == "Linux":
@@ -65,7 +66,7 @@ class DrumMachineApplication(Adw.Application):
             "playing, and managing drum patterns.",
             debug_info=debug_info,
             license_type=Gtk.License.GPL_3_0,
-            translator_credits="Portuguese: Tiago Lucas Flach",
+            translator_credits=_("translator-credits"),
             issue_url="https://github.com/Revisto/drum-machine/issues",
             website="https://apps.gnome.org/DrumMachine/",
         )

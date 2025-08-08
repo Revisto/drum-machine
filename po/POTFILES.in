@@ -1,6 +1,7 @@
 data/io.github.revisto.drum-machine.desktop.in
 data/io.github.revisto.drum-machine.metainfo.xml.in
 data/io.github.revisto.drum-machine.gschema.xml
+src/application.py
 src/window.py
 src/window.ui
 src/gtk/help-overlay.ui
