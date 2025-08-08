@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-01 13:00+0000\n"
-"PO-Revision-Date: 2025-08-01 17:05+0200\n"
+"POT-Creation-Date: 2025-08-08 15:25+0000\n"
+"PO-Revision-Date: 2025-08-08 23:56+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -75,6 +75,10 @@ msgstr "Vzorec bobna naložen v svetlem načinu"
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:35
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Vzorec bobna naložen v temnem načinu"
+
+#: src/application.py:69
+msgid "translator-credits"
+msgstr "Martin Srebotnjak <miles@filmsi.net>"
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:190
