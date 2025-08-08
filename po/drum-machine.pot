@@ -8,17 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-15 17:06-0300\n"
+"POT-Creation-Date: 2025-08-08 13:04+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/io.github.revisto.drum-machine.desktop.in:3
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
 msgid "Drum Machine"
 msgstr ""
 
@@ -99,149 +99,167 @@ msgid "Revisto"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:66
+msgid "Drum Machine 1.4.0 is here with some good updates! 🥁"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:68
+msgid ""
+"More pages for longer, more complex beats, because sometimes you need more "
+"than 16 steps!"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:69
+msgid ""
+"Mobile-friendly improvements, now your drum machine works better on phones "
+"(with showing half of the grid)"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:70
+msgid ""
+"Goes global! Now translated into 17 languages including Chinese, Russian, "
+"Arabic, Hebrew, and many more"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:76
 msgid ""
 "This release of Drum Machine 1.3.1 brings significant UI and functionality "
 "improvements:"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:68
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:78
 msgid ""
 "Refactored headerbar and background styling for a flat, integrated visual "
 "experience."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:69
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:79
 msgid ""
 "Enhanced accessibility with improved tooltips and descriptive labels for BPM "
 "and volume controls."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:70
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:80
 msgid ""
 "Redesigned app icon and updated text styling for clearer user interface "
 "elements."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:71
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:81
 msgid ""
 "Optimized layout breakpoints to improve responsiveness and reduce early "
 "scrolling."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:72
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:82
 msgid ""
 "Fixed padding, border-radius, and vertical alignment issues across multiple "
 "controls."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:73
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:83
 msgid ""
 "Updated file dialogs to use the Nautilus file chooser for a more modern "
 "approach."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:74
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:84
 msgid ""
 "Improved keyboard navigation focus and updated tooltips, including dedicated "
 "play and pause hints."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:75
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:85
 msgid ""
 "Transitioned to the Nautilus file chooser for a more contemporary interface."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:76
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:86
 msgid "Now accessible on narrow mobile screens with adaptive UI elements."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:77
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:87
 msgid "Refined app icon, and adjusted brand colors for better contrast."
 msgstr ""
 
+#: src/application.py:68
+msgid "translator-credits"
+msgstr ""
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:270
+#: src/window.py:190
 msgid "{} Beats per Minute (BPM)"
 msgstr ""
 
 #. Update button tooltip to show current volume level
-#: src/window.py:279
+#: src/window.py:199
 msgid "{:.0f}% Volume"
 msgstr ""
 
-#: src/window.py:290 src/window.ui:158
+#: src/window.py:214 src/window.ui:167
 msgid "Play"
 msgstr ""
 
-#: src/window.py:294
+#: src/window.py:218
 msgid "Pause"
 msgstr ""
 
-#: src/window.py:309
-msgid "Default Presets"
-msgstr ""
-
-#: src/window.py:336
-msgid "MIDI files"
-msgstr ""
-
-#: src/window.py:342
-msgid "Open MIDI File"
-msgstr ""
-
-#: src/window.ui:41
+#: src/window.ui:50
 msgid "Open"
 msgstr ""
 
-#: src/window.ui:43 src/window.ui:46
+#: src/window.ui:52 src/window.ui:55
 msgid "Open Preset"
 msgstr ""
 
-#: src/window.ui:47
+#: src/window.ui:56
 msgid "Open Saved Drum Pattern Preset"
 msgstr ""
 
-#: src/window.ui:65 src/window.ui:67
+#: src/window.ui:74 src/window.ui:76
 msgid "Main Menu"
 msgstr ""
 
-#: src/window.ui:68
+#: src/window.ui:77
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr ""
 
-#: src/window.ui:75 src/window.ui:77
+#: src/window.ui:84 src/window.ui:86
 msgid "Save Drum Pattern"
 msgstr ""
 
-#: src/window.ui:78
+#: src/window.ui:87
 msgid "Save Current Drum Pattern as a Preset File"
 msgstr ""
 
-#: src/window.ui:122
+#: src/window.ui:131
 msgid "BPM"
 msgstr ""
 
-#: src/window.ui:127 src/window.ui:131
+#: src/window.ui:136 src/window.ui:140
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr ""
 
-#: src/window.ui:130
+#: src/window.ui:139
 msgid "Tempo"
 msgstr ""
 
-#: src/window.ui:172
+#: src/window.ui:181
 msgid "Adjust Volume"
 msgstr ""
 
-#: src/window.ui:195
+#: src/window.ui:204
 msgid "Reset"
 msgstr ""
 
-#: src/window.ui:208
+#: src/window.ui:205
+msgid "Reset the Drum Sequence"
+msgstr ""
+
+#: src/window.ui:218
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/window.ui:212
+#: src/window.ui:222
 msgid "_About Drum Machine"
 msgstr ""
 
@@ -315,6 +333,26 @@ msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr ""
 
+#: src/gtk/help-overlay.ui:100
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr ""
+
+#: src/gtk/help-overlay.ui:103
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr ""
+
+#: src/gtk/help-overlay.ui:110
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr ""
+
+#: src/gtk/help-overlay.ui:117
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr ""
+
 #: src/gtk/save_changes_dialog.ui:6
 msgid "Save Changes?"
 msgstr ""
@@ -338,4 +376,21 @@ msgstr ""
 #. Save current changes
 #: src/gtk/save_changes_dialog.ui:16
 msgid "_Save"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:48
+msgid "Default Presets"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:76
+#: src/handlers/file_dialog_handler.py:142
+msgid "MIDI files"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "Open MIDI File"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:148
+msgid "Save Sequence"
 msgstr ""
