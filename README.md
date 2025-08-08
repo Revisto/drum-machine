@@ -57,6 +57,9 @@ If you want to contribute to this project, you can fork the repository and submi
 
 Your contributions are extremely welcome and appreciated.
 
+## Translations
+Drum Machine uses [GNOME Damned Lies](https://l10n.gnome.org/) for translation management. If you'd like to contribute translations, please visit the [Drum Machine translation page](https://l10n.gnome.org/module/drum-machine/) on GNOME Damned Lies rather than submitting pull requests with translation files.
+
 ## Credits
 Developed by **[Revisto](https://github.com/revisto)**
 
