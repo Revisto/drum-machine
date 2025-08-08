@@ -63,6 +63,14 @@ Drum Machine uses [GNOME Damned Lies](https://l10n.gnome.org/) for translation m
 ## Credits
 Developed by **[Revisto](https://github.com/revisto)**
 
+Special thanks to **[Sepehr](https://github.com/sepehr-rs)** for triaging issues and helping maintain the project.
+
+Special thanks to **[Tobias Bernard](https://tobiasbernard.com)** from the GNOME Circle Committee for helping Drum Machine look the way it does now and for all his valuable contributions.
+
+Thanks to all contributors who help improve Drum Machine through code, bug reports, and feature requests.
+
+Thanks to everyone contributing translations on [GNOME Damned Lies](https://l10n.gnome.org/module/drum-machine/), your work makes Drum Machine accessible to users worldwide.
+
 <p>
   <a href="https://youtube.com/@theRevisto" title="YouTube">
     <img src="https://img.shields.io/badge/Revisto-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
