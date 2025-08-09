@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-01 15:25+0000\n"
-"PO-Revision-Date: 2025-08-01 22:05+0300\n"
+"POT-Creation-Date: 2025-08-09 15:25+0000\n"
+"PO-Revision-Date: 2025-08-09 21:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -76,6 +76,10 @@ msgstr "Партитуру ударних завантажено у світло
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:35
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Партитуру ударних завантажено у темному режимі"
+
+#: src/application.py:69
+msgid "translator-credits"
+msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2025"
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:190
