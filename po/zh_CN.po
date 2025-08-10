@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-01 15:25+0000\n"
-"PO-Revision-Date: 2025-08-02 07:51+0800\n"
+"POT-Creation-Date: 2025-08-10 03:25+0000\n"
+"PO-Revision-Date: 2025-08-10 18:34+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -73,6 +73,10 @@ msgstr "以亮色模式加载击鼓模式"
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:35
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "以暗色模式加载击鼓模式"
+
+#: src/application.py:69
+msgid "translator-credits"
+msgstr "lumingzh <lumingzh@qq.com>, 2025."
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:190
