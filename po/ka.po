@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-02 15:26+0000\n"
-"PO-Revision-Date: 2025-08-03 03:08+0200\n"
+"POT-Creation-Date: 2025-08-10 11:49+0000\n"
+"PO-Revision-Date: 2025-08-10 14:46+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
@@ -74,6 +74,10 @@ msgstr "Drum Pattern ჩატვირთულია ღია რეჟიმ
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:35
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Drum Pattern ჩატვირთულია მუქ რეჟიმში"
+
+#: src/application.py:69
+msgid "translator-credits"
+msgstr "თემური დოღონაძე"
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:190
