@@ -72,7 +72,7 @@ class DrumMachineApplication(Adw.Application):
         )
         about.add_legal_section(
             "Sounds",
-            "The drum samples used in this application are from 99Sounds.",
+            "The drum samples used in this application are from <a href='https://99sounds.org/drum-samples/'>99Sounds</a>.",
             Gtk.License.UNKNOWN,
         )
         about.present(self.props.active_window)
