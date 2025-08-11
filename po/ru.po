@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-06 03:25+0000\n"
-"PO-Revision-Date: 2025-08-06 10:58+0300\n"
+"POT-Creation-Date: 2025-08-08 15:25+0000\n"
+"PO-Revision-Date: 2025-08-08 20:08+0300\n"
 "Last-Translator: Artur S0 <arturios2005@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -78,6 +78,10 @@ msgstr "Барабанный рисунок загружен в светлом �
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:35
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Барабанный рисунок загружен в тёмном режиме"
+
+#: src/application.py:69
+msgid "translator-credits"
+msgstr "Анатолий Богомолов (wineT) <tolya.bogomolov2019@gmail.com>"
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:190
