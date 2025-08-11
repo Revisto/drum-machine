@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-08 13:04+0330\n"
+"POT-Creation-Date: 2025-08-11 20:13+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -181,7 +181,7 @@ msgstr ""
 msgid "Refined app icon, and adjusted brand colors for better contrast."
 msgstr ""
 
-#: src/application.py:68
+#: src/application.py:69
 msgid "translator-credits"
 msgstr ""
 
@@ -207,7 +207,12 @@ msgstr ""
 msgid "Open"
 msgstr ""
 
-#: src/window.ui:52 src/window.ui:55
+#: src/window.ui:52
+msgid "Open Preset"
+msgstr ""
+
+#: src/window.ui:55
+msgctxt "accessibility"
 msgid "Open Preset"
 msgstr ""
 
@@ -215,7 +220,12 @@ msgstr ""
 msgid "Open Saved Drum Pattern Preset"
 msgstr ""
 
-#: src/window.ui:74 src/window.ui:76
+#: src/window.ui:74
+msgid "Main Menu"
+msgstr ""
+
+#: src/window.ui:76
+msgctxt "accessibility"
 msgid "Main Menu"
 msgstr ""
 
@@ -223,7 +233,12 @@ msgstr ""
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr ""
 
-#: src/window.ui:84 src/window.ui:86
+#: src/window.ui:84
+msgid "Save Drum Pattern"
+msgstr ""
+
+#: src/window.ui:86
+msgctxt "accessibility"
 msgid "Save Drum Pattern"
 msgstr ""
 

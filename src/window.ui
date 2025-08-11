@@ -52,7 +52,7 @@ half-view</setter>
                 <property name="tooltip-text" translatable="yes">Open Preset</property>
                 <property name="menu-model">preset_menu</property>
                 <accessibility>
-                  <property name="label" translatable="yes">Open Preset</property>
+                  <property name="label" translatable="yes" context="accessibility">Open Preset</property>
                   <property name="description" translatable="yes">Open Saved Drum Pattern Preset</property>
                 </accessibility>
               </object>
@@ -73,7 +73,7 @@ half-view</setter>
                 <property name="menu-model">primary_menu</property>
                 <property name="tooltip-text" translatable="yes">Main Menu</property>
                 <accessibility>
-                  <property name="label" translatable="yes">Main Menu</property>
+                  <property name="label" translatable="yes" context="accessibility">Main Menu</property>
                   <property name="description" translatable="yes">Access Keyboard Shortcuts and Application Information</property>
                 </accessibility>
               </object>
@@ -83,7 +83,7 @@ half-view</setter>
                 <property name="icon-name">document-save-symbolic</property>
                 <property name="tooltip-text" translatable="yes">Save Drum Pattern</property>
                 <accessibility>
-                  <property name="label" translatable="yes">Save Drum Pattern</property>
+                  <property name="label" translatable="yes" context="accessibility">Save Drum Pattern</property>
                   <property name="description" translatable="yes">Save Current Drum Pattern as a Preset File</property>
                 </accessibility>
               </object>
