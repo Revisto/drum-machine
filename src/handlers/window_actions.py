@@ -145,4 +145,5 @@ class WindowActionHandler:
         if current_volume != 0:
             self.window.volume_button.set_value(0)
         else:
-            self.window.volume_button.set_value(50)
+            last_volume = window.drum_machine_service.last_volume
+            self.window.volume_button.set_value(last_volume)
