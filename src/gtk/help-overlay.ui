@@ -74,6 +74,13 @@
                 <property name="accelerator">&lt;Primary&gt;Down</property>
               </object>
             </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">mute Volume</property>
+                <property name="action-name">win.mute_volume</property>
+                <property name="accelerator">&lt;Primary&gt;m</property>
+              </object>
+            </child>
           </object>
         </child>
         <child>
