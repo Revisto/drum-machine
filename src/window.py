@@ -53,6 +53,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.clear_button.set_sensitive(False)
         self._setup_services()
         self._setup_handlers()
         self._initialize_interface()
@@ -169,6 +170,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     # Event handlers that need to stay in window
     def on_toggle_changed(self, toggle_button, part, index):
+        self.clear_button.set_sensitive(True)
         state = toggle_button.get_active()
 
         if state:
@@ -207,6 +209,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_grid_builder.reset_carousel_pages()
         # Mark as saved when clearing
         self.save_changes_service.mark_unsaved_changes(False)
+        self.clear_button.set_sensitive(False)
 
     def handle_play_pause(self, button):
         if self.drum_machine_service.playing:
@@ -241,3 +244,4 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def cleanup_and_destroy(self):
         self.cleanup()
         self.destroy()
+
