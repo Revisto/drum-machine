@@ -244,4 +244,3 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def cleanup_and_destroy(self):
         self.cleanup()
         self.destroy()
-
