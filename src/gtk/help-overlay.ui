@@ -76,7 +76,7 @@
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="title" translatable="yes" context="shortcut window">mute</property>
+                <property name="title" translatable="yes" context="shortcut window">Mute</property>
                 <property name="action-name">win.mute</property>
                 <property name="accelerator">&lt;Primary&gt;m</property>
               </object>
