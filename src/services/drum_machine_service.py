@@ -33,6 +33,7 @@ class DrumMachineService(IPlayer):
         self.playing = False
         self.bpm = 120
         self.volume = 0.8
+        self.last_volume = 0.8
         self.play_thread = None
         self.stop_event = threading.Event()
         self.drum_parts_state = self.create_empty_drum_parts_state()
@@ -87,6 +88,10 @@ class DrumMachineService(IPlayer):
     def set_volume(self, volume):
         self.volume = volume
         self.sound_service.set_volume(volume)
+        if volume != 0:
+            self.last_volume = volume
+        else:
+            pass
 
     def clear_all_toggles(self):
         self.drum_parts_state = self.create_empty_drum_parts_state()
