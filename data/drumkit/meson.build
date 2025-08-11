@@ -2,15 +2,15 @@ drumkit_dir = meson.current_source_dir()
 
 drumkit_files = [
   'kick.wav',
-  'kick-2.wav',
-  'kick-3.wav',
   'snare.wav',
-  'snare-2.wav',
-  'hihat.wav',
+  'hihat-1.wav',
   'hihat-2.wav',
-  'clap.wav',
-  'tom.wav',
-  'crash.wav',
+  'hihat-3.wav',
+  'tom-1.wav',
+  'tom-2.wav',
+  'tom-3.wav',
+  'crash-1.wav',
+  'crash-2.wav',
 ]
 
 install_data(drumkit_files, install_dir: get_option('datadir') / 'drum-machine' / 'data' / 'drumkit')
