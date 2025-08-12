@@ -48,6 +48,7 @@ class WindowActionHandler:
             ("go_to_instrument", self.handle_go_to_instrument_action, ["<primary>i"]),
             ("previous_page", self.handle_previous_page_action, ["Page_Up"]),
             ("next_page", self.handle_next_page_action, ["Page_Down"]),
+            ("mute", self.handle_mute, ["<primary>m"]),
         ]
 
         for action_name, callback, shortcuts in actions:
@@ -138,3 +139,11 @@ class WindowActionHandler:
             n_pages = carousel.get_n_pages()
             if current_page < n_pages - 1:
                 carousel.scroll_to(carousel.get_nth_page(current_page + 1), True)
+
+    def handle_mute(self, action, param):
+        current_volume = self.window.volume_button.get_value()
+        last_volume = self.window.drum_machine_service.last_volume
+        if current_volume == 0:
+            self.window.volume_button.set_value(last_volume)
+        else:
+            self.window.volume_button.set_value(0)
