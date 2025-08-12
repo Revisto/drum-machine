@@ -33,7 +33,7 @@ class DrumMachineService(IPlayer):
         self.playing = False
         self.bpm = 120
         self.volume = 0.8
-        self.last_volume = 0.8
+        self.last_volume = 100
         self.play_thread = None
         self.stop_event = threading.Event()
         self.drum_parts_state = self.create_empty_drum_parts_state()
