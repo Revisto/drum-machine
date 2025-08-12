@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-10 11:49+0000\n"
-"PO-Revision-Date: 2025-08-10 14:46+0200\n"
+"POT-Creation-Date: 2025-08-12 03:26+0000\n"
+"PO-Revision-Date: 2025-08-12 13:13+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
@@ -101,7 +101,12 @@ msgstr "შეჩერება"
 msgid "Open"
 msgstr "გახსნა"
 
-#: src/window.ui:52 src/window.ui:55
+#: src/window.ui:52
+msgid "Open Preset"
+msgstr "პრესეტის გახსნა"
+
+#: src/window.ui:55
+msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "პრესეტის გახსნა"
 
@@ -109,7 +114,12 @@ msgstr "პრესეტის გახსნა"
 msgid "Open Saved Drum Pattern Preset"
 msgstr "შენახული დრამის ნიმუშის პრესეტის გახსნა"
 
-#: src/window.ui:74 src/window.ui:76
+#: src/window.ui:74
+msgid "Main Menu"
+msgstr "მთავარი მენიუ"
+
+#: src/window.ui:76
+msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "მთავარი მენიუ"
 
@@ -117,7 +127,12 @@ msgstr "მთავარი მენიუ"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "წვდომა კლავიატურის მალსახმობებთან და აპლიკაციის ინფორმაციასთან"
 
-#: src/window.ui:84 src/window.ui:86
+#: src/window.ui:84
+msgid "Save Drum Pattern"
+msgstr "დრამის ნიმუშის შენახვა"
+
+#: src/window.ui:86
+msgctxt "accessibility"
 msgid "Save Drum Pattern"
 msgstr "დრამის ნიმუშის შენახვა"
 
