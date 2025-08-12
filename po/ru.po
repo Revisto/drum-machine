@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-08 15:25+0000\n"
-"PO-Revision-Date: 2025-08-08 20:08+0300\n"
+"POT-Creation-Date: 2025-08-12 03:26+0000\n"
+"PO-Revision-Date: 2025-08-12 13:43+0300\n"
 "Last-Translator: Artur S0 <arturios2005@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -65,7 +65,7 @@ msgstr "Сохранение и загрузка предустановленн�
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
-msgstr "Множество звуков ударных, включая бочку, малый, хай-хэт и другие."
+msgstr "Множество звуков ударных, включая бочку, малый, хай-хэт и прочее"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Keyboard shortcuts for quick access to all functions"
@@ -105,7 +105,12 @@ msgstr "Пауза"
 msgid "Open"
 msgstr "Открыть"
 
-#: src/window.ui:52 src/window.ui:55
+#: src/window.ui:52
+msgid "Open Preset"
+msgstr "Открыть рисунок"
+
+#: src/window.ui:55
+msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "Открыть рисунок"
 
@@ -113,7 +118,12 @@ msgstr "Открыть рисунок"
 msgid "Open Saved Drum Pattern Preset"
 msgstr "Открыть сохранённый барабанный рисунок"
 
-#: src/window.ui:74 src/window.ui:76
+#: src/window.ui:74
+msgid "Main Menu"
+msgstr "Главное меню"
+
+#: src/window.ui:76
+msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "Главное меню"
 
@@ -121,7 +131,12 @@ msgstr "Главное меню"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Доступ к комбинациям клавиш и информации о приложении"
 
-#: src/window.ui:84 src/window.ui:86
+#: src/window.ui:84
+msgid "Save Drum Pattern"
+msgstr "Сохранить барабанный рисунок"
+
+#: src/window.ui:86
+msgctxt "accessibility"
 msgid "Save Drum Pattern"
 msgstr "Сохранить барабанный рисунок"
 
