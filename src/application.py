@@ -70,6 +70,9 @@ class DrumMachineApplication(Adw.Application):
             issue_url="https://github.com/Revisto/drum-machine/issues",
             website="https://apps.gnome.org/DrumMachine/",
         )
+        about.add_acknowledgement_section(
+            "Special thanks", ["Sepehr Rasouli", "Tobias Bernard"]
+        )
         about.add_legal_section(
             "Sounds",
             "The drum samples used in this application are from "
