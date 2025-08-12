@@ -143,6 +143,7 @@ class WindowActionHandler:
     def handle_mute(self, action, param):
         current_volume = self.window.volume_button.get_value()
         last_volume = self.window.drum_machine_service.last_volume
-        set_volume_to = 0 if current_volume != 0 else last_volume
-        self.window.volume_button.set_value(set_volume_to)
-
+        if current_volume == 0:
+            self.window.volume_button.set_value(last_volume)
+        else :
+            self.window.volume_button.set_value(0)
