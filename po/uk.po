@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-09 15:25+0000\n"
-"PO-Revision-Date: 2025-08-09 21:39+0300\n"
+"POT-Creation-Date: 2025-08-12 03:26+0000\n"
+"PO-Revision-Date: 2025-08-12 15:36+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -103,7 +103,13 @@ msgstr "Пауза"
 msgid "Open"
 msgstr "Відкрити"
 
-#: src/window.ui:52 src/window.ui:55
+#: src/window.ui:52
+msgid "Open Preset"
+msgstr "Відкрити шаблон"
+
+#: src/window.ui:55
+#| msgid "Open Preset"
+msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "Відкрити шаблон"
 
@@ -111,7 +117,13 @@ msgstr "Відкрити шаблон"
 msgid "Open Saved Drum Pattern Preset"
 msgstr "Відкрити збережений шаблон партитури ударних"
 
-#: src/window.ui:74 src/window.ui:76
+#: src/window.ui:74
+msgid "Main Menu"
+msgstr "Головне меню"
+
+#: src/window.ui:76
+#| msgid "Main Menu"
+msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "Головне меню"
 
@@ -119,7 +131,13 @@ msgstr "Головне меню"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Доступ до клавіатурних скорочень та відомостей про програму"
 
-#: src/window.ui:84 src/window.ui:86
+#: src/window.ui:84
+msgid "Save Drum Pattern"
+msgstr "Зберегти партитуру ударних"
+
+#: src/window.ui:86
+#| msgid "Save Drum Pattern"
+msgctxt "accessibility"
 msgid "Save Drum Pattern"
 msgstr "Зберегти партитуру ударних"
 
