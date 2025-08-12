@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-08 15:25+0000\n"
-"PO-Revision-Date: 2025-08-08 23:56+0200\n"
+"POT-Creation-Date: 2025-08-12 15:25+0000\n"
+"PO-Revision-Date: 2025-08-12 22:15+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -102,7 +102,12 @@ msgstr "Premor"
 msgid "Open"
 msgstr "Odpri"
 
-#: src/window.ui:52 src/window.ui:55
+#: src/window.ui:52
+msgid "Open Preset"
+msgstr "Odpri prednastavitev"
+
+#: src/window.ui:55
+msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "Odpri prednastavitev"
 
@@ -110,7 +115,12 @@ msgstr "Odpri prednastavitev"
 msgid "Open Saved Drum Pattern Preset"
 msgstr "Odpri shranjeno prednastavitev vzorca bobna"
 
-#: src/window.ui:74 src/window.ui:76
+#: src/window.ui:74
+msgid "Main Menu"
+msgstr "Glavni meni"
+
+#: src/window.ui:76
+msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "Glavni meni"
 
@@ -118,7 +128,12 @@ msgstr "Glavni meni"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Dostop do tipkovnih bližnjic in informacij o programih"
 
-#: src/window.ui:84 src/window.ui:86
+#: src/window.ui:84
+msgid "Save Drum Pattern"
+msgstr "Shrani vzorec bobna"
+
+#: src/window.ui:86
+msgctxt "accessibility"
 msgid "Save Drum Pattern"
 msgstr "Shrani vzorec bobna"
 
@@ -213,37 +228,42 @@ msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Zmanjšaj glasnost"
 
-#: src/gtk/help-overlay.ui:81
+#: src/gtk/help-overlay.ui:79
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "Utišaj"
+
+#: src/gtk/help-overlay.ui:88
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr "Upravljanje prednastavitev"
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.ui:91
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr "Naloži prednastavitev"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "Shrani prednastavitev"
 
-#: src/gtk/help-overlay.ui:100
+#: src/gtk/help-overlay.ui:107
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Krmarjenje"
 
-#: src/gtk/help-overlay.ui:103
+#: src/gtk/help-overlay.ui:110
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Pojdi na inštrument"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Skoči na predhodno stran"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Skoči na naslednjo stran"
