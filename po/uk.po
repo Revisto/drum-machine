@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-12 03:26+0000\n"
-"PO-Revision-Date: 2025-08-12 15:36+0300\n"
+"POT-Creation-Date: 2025-08-12 15:25+0000\n"
+"PO-Revision-Date: 2025-08-12 22:50+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -108,7 +108,6 @@ msgid "Open Preset"
 msgstr "Відкрити шаблон"
 
 #: src/window.ui:55
-#| msgid "Open Preset"
 msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "Відкрити шаблон"
@@ -122,7 +121,6 @@ msgid "Main Menu"
 msgstr "Головне меню"
 
 #: src/window.ui:76
-#| msgid "Main Menu"
 msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "Головне меню"
@@ -136,7 +134,6 @@ msgid "Save Drum Pattern"
 msgstr "Зберегти партитуру ударних"
 
 #: src/window.ui:86
-#| msgid "Save Drum Pattern"
 msgctxt "accessibility"
 msgid "Save Drum Pattern"
 msgstr "Зберегти партитуру ударних"
@@ -232,37 +229,42 @@ msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Зменшити гучність"
 
-#: src/gtk/help-overlay.ui:81
+#: src/gtk/help-overlay.ui:79
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "Вимкнути звук"
+
+#: src/gtk/help-overlay.ui:88
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr "Керування шаблонами"
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.ui:91
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr "Завантажити шаблон"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "Зберегти шаблон"
 
-#: src/gtk/help-overlay.ui:100
+#: src/gtk/help-overlay.ui:107
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Навігація"
 
-#: src/gtk/help-overlay.ui:103
+#: src/gtk/help-overlay.ui:110
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Перейти до інструмента"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Попередня сторінка"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Наступна сторінка"
