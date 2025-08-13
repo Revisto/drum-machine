@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-09 15:25+0000\n"
-"PO-Revision-Date: 2025-08-09 21:44+0330\n"
+"POT-Creation-Date: 2025-08-13 03:26+0000\n"
+"PO-Revision-Date: 2025-08-13 15:43+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <fa@li.org>\n"
 "Language: fa\n"
@@ -99,7 +99,12 @@ msgstr "مکث"
 msgid "Open"
 msgstr "گشودن"
 
-#: src/window.ui:52 src/window.ui:55
+#: src/window.ui:52
+msgid "Open Preset"
+msgstr "گشودن پیش‌تنظیم"
+
+#: src/window.ui:55
+msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "گشودن پیش‌تنظیم"
 
@@ -107,7 +112,12 @@ msgstr "گشودن پیش‌تنظیم"
 msgid "Open Saved Drum Pattern Preset"
 msgstr "گشودن پیش‌تنظیم الگوی کوبه‌ای ذخیره شده"
 
-#: src/window.ui:74 src/window.ui:76
+#: src/window.ui:74
+msgid "Main Menu"
+msgstr "فهرست اصلی"
+
+#: src/window.ui:76
+msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "فهرست اصلی"
 
@@ -115,7 +125,12 @@ msgstr "فهرست اصلی"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "دسترسی به اطّلاعات برنامه و میان‌برهای صفحه‌کلید"
 
-#: src/window.ui:84 src/window.ui:86
+#: src/window.ui:84
+msgid "Save Drum Pattern"
+msgstr "ذخیرهٔ الگوی کوبه‌ای"
+
+#: src/window.ui:86
+msgctxt "accessibility"
 msgid "Save Drum Pattern"
 msgstr "ذخیرهٔ الگوی کوبه‌ای"
 
@@ -210,37 +225,42 @@ msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "کاهش حجم صدا"
 
-#: src/gtk/help-overlay.ui:81
+#: src/gtk/help-overlay.ui:79
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "خموش"
+
+#: src/gtk/help-overlay.ui:88
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr "مدیریت پیش‌تنظیم‌ها"
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.ui:91
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr "بار کردن پیش‌تنظیم"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "ذخیرهٔ پیش‌تنظیم"
 
-#: src/gtk/help-overlay.ui:100
+#: src/gtk/help-overlay.ui:107
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "پیمایش"
 
-#: src/gtk/help-overlay.ui:103
+#: src/gtk/help-overlay.ui:110
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "رفتن به ساز"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "صفحهٔ پیشین"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "صفحهٔ بعدی"
