@@ -2,17 +2,17 @@
 # Copyright (C) 2025 drum-machine'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the drum-machine package.
 # Tiago Lucas FLach <tiagolucas9830@gmail.com>, 2025.
-# Álvaro Burns <>, 2025.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2025.
+# Álvaro Burns <>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-02 03:26+0000\n"
-"PO-Revision-Date: 2025-08-02 11:17-0300\n"
-"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
-"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao>\n"
+"POT-Creation-Date: 2025-08-14 03:26+0000\n"
+"PO-Revision-Date: 2025-08-14 08:48-0300\n"
+"Last-Translator: Álvaro Burns <>\n"
+"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -77,6 +77,13 @@ msgstr "Padrão de bateria carregado no modo claro"
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Padrão de bateria carregado no modo escuro"
 
+#: src/application.py:69
+msgid "translator-credits"
+msgstr ""
+"Álvaro Burns\n"
+"Rafael Fontenelle <rafaelff@gnome.org>\n"
+"Tiago Lucas FLach <tiagolucas9830@gmail.com>"
+
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:190
 msgid "{} Beats per Minute (BPM)"
@@ -99,7 +106,12 @@ msgstr "Pausa"
 msgid "Open"
 msgstr "Abrir"
 
-#: src/window.ui:52 src/window.ui:55
+#: src/window.ui:52
+msgid "Open Preset"
+msgstr "Abrir predefinição"
+
+#: src/window.ui:55
+msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "Abrir predefinição"
 
@@ -107,7 +119,12 @@ msgstr "Abrir predefinição"
 msgid "Open Saved Drum Pattern Preset"
 msgstr "Abrir predefinição padrão de bateria salva"
 
-#: src/window.ui:74 src/window.ui:76
+#: src/window.ui:74
+msgid "Main Menu"
+msgstr "Menu principal"
+
+#: src/window.ui:76
+msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "Menu principal"
 
@@ -115,7 +132,12 @@ msgstr "Menu principal"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Acesse atalhos de teclado e informações do aplicativo"
 
-#: src/window.ui:84 src/window.ui:86
+#: src/window.ui:84
+msgid "Save Drum Pattern"
+msgstr "Salvar padrão de bateria"
+
+#: src/window.ui:86
+msgctxt "accessibility"
 msgid "Save Drum Pattern"
 msgstr "Salvar padrão de bateria"
 
@@ -210,37 +232,42 @@ msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Diminui o volume"
 
-#: src/gtk/help-overlay.ui:81
+#: src/gtk/help-overlay.ui:79
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "Mudo"
+
+#: src/gtk/help-overlay.ui:88
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr "Gerenciamento de predefinições"
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.ui:91
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr "Carrega a predefinição"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "Salva a predefinição"
 
-#: src/gtk/help-overlay.ui:100
+#: src/gtk/help-overlay.ui:107
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Navegação"
 
-#: src/gtk/help-overlay.ui:103
+#: src/gtk/help-overlay.ui:110
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Vai para o instrumento"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Página anterior"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Próxima página"
