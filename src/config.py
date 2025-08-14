@@ -19,15 +19,15 @@
 
 DRUM_PARTS = [
     "kick",
-    "kick-2",
-    "kick-3",
     "snare",
-    "snare-2",
-    "hihat",
+    "hihat-1",
     "hihat-2",
-    "clap",
-    "tom",
-    "crash",
+    "hihat-3",
+    "tom-1",
+    "tom-2",
+    "tom-3",
+    "crash-1",
+    "crash-2",
 ]
 DEFAULT_PRESETS = [
     "Shoot",
