@@ -5,6 +5,8 @@
 [installs-image]: https://img.shields.io/flathub/downloads/io.github.revisto.drum-machine?style=for-the-badge
 [issues-url]: https://github.com/revisto/drum-machine/issues
 [issues-image]: https://img.shields.io/github/issues/revisto/drum-machine?style=for-the-badge
+[persian-gnome-badge]: https://gnome-fa.github.io/assets/badges/persian-gnome.svg
+[persian-gnome-url]: https://gnome_fa.t.me/
 
 [circle-url]: https://apps.gnome.org/DrumMachine/
 [circle-image]: https://circle.gnome.org/assets/button/badge.svg
@@ -16,7 +18,7 @@
 
   **Create and play drum beats**
 
-  [![GNOME Circle][circle-image]][circle-url]
+  [![GNOME Circle][circle-image]][circle-url] [![Persian GNOME][persian-gnome-badge]][persian-gnome-url]
 
   [![License][license-image]][license-url]
   [![Flathub][flathub-image]][flathub-url]
