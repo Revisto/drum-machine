@@ -33,6 +33,7 @@ from .handlers.window_actions import WindowActionHandler
 from .services.drum_machine_service import DrumMachineService
 from .services.save_changes_service import SaveChangesService
 from .services.sound_service import SoundService
+from .services.audio_export_service import AudioExportService
 from .services.ui_helper import UIHelper
 from .ui.drum_grid_builder import DrumGridBuilder
 
@@ -50,6 +51,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     drum_machine_box = Gtk.Template.Child()
     file_preset_button = Gtk.Template.Child()
     save_preset_button = Gtk.Template.Child()
+    export_audio_button = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -64,6 +66,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
         self.sound_service = SoundService(drumkit_dir)
         self.sound_service.load_sounds()
+
+        self.audio_export_service = AudioExportService(self, drumkit_dir)
 
         self.ui_helper = UIHelper(self, DRUM_PARTS)
         self.drum_machine_service = DrumMachineService(
@@ -97,6 +101,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.play_pause_button.connect("clicked", self.handle_play_pause)
         self.file_preset_button.connect("clicked", self._on_open_file_clicked)
         self.save_preset_button.connect("clicked", self._on_save_preset_clicked)
+        self.export_audio_button.connect("clicked", self._on_export_audio_clicked)
         self.drum_machine_box.connect(
             "notify::css-classes", self._on_breakpoint_changed
         )
@@ -152,6 +157,10 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def _on_save_preset_clicked(self, button):
         self.file_dialog_handler.handle_save_preset()
+
+    def _on_export_audio_clicked(self, button):
+        """Handle export audio button click"""
+        self.file_dialog_handler.handle_export_audio()
 
     def on_open_file(self, button):
         """Compatibility method"""

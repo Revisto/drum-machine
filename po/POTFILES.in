@@ -6,4 +6,6 @@ src/window.py
 src/window.ui
 src/gtk/help-overlay.ui
 src/gtk/save_changes_dialog.ui
+src/gtk/audio-export-dialog.ui
 src/handlers/file_dialog_handler.py
+src/dialog/audio_export_dialog.py

@@ -100,6 +100,13 @@
                 <property name="accelerator">&lt;Primary&gt;s</property>
               </object>
             </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Export Audio</property>
+                <property name="action-name">win.export_audio</property>
+                <property name="accelerator">&lt;Primary&gt;e</property>
+              </object>
+            </child>
           </object>
         </child>
         <child>

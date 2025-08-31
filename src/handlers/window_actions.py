@@ -21,6 +21,7 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Gio", "2.0")
+gi.require_version("Adw", "1")
 from gi.repository import Gio
 
 
@@ -43,6 +44,7 @@ class WindowActionHandler:
             ("decrease_volume", self.decrease_volume_action, ["<primary>Down"]),
             ("load_preset", self.on_open_file_action, ["<primary>o"]),
             ("save_preset", self.on_save_preset_action, ["<primary>s"]),
+            ("export_audio", self.on_export_audio_action, ["<primary>e"]),
             ("quit", self.on_quit_action, ["<primary>q"]),
             ("close_window", self.on_quit_action, ["<primary>w"]),
             ("go_to_instrument", self.handle_go_to_instrument_action, ["<primary>i"]),
@@ -96,6 +98,9 @@ class WindowActionHandler:
 
     def on_save_preset_action(self, action, param):
         self.window.on_save_preset(self.window.save_preset_button)
+
+    def on_export_audio_action(self, action, param):
+        self.window._on_export_audio_clicked(None)
 
     def on_quit_action(self, action, param):
         if self.window.save_changes_service.has_unsaved_changes():

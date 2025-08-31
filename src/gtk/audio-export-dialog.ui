@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="AudioExportDialog" parent="AdwDialog">
+    <property name="title" translatable="yes">Export Audio</property>
+    <property name="child">
+      <object class="AdwToastOverlay" id="toast_overlay">
+        <child>
+          <object class="AdwToolbarView" id="toolbar_view">
+            <child type="top">
+              <object class="AdwHeaderBar" id="header_bar">
+                <property name="show-title">true</property>
+              </object>
+            </child>
+            <property name="content">
+              <object class="AdwClamp">
+                <property name="maximum-size">600</property>
+                <property name="tightening-threshold">400</property>
+                <child>
+                  <object class="GtkBox" id="content_box">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">24</property>
+                    <property name="margin-top">24</property>
+                    <property name="margin-bottom">24</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <child>
+                      <object class="AdwPreferencesGroup" id="export_group">
+                        <property name="title" translatable="yes">Export Settings</property>
+                        <property name="description" translatable="yes">Configure your audio export options</property>
+                        <child>
+                          <object class="AdwActionRow" id="file_row">
+                            <property name="title" translatable="yes">Output File</property>
+                            <property name="subtitle" translatable="yes">Choose where to save the exported audio</property>
+                            <child type="suffix">
+                              <object class="GtkBox" id="file_suffix_box">
+                                <property name="orientation">horizontal</property>
+                                <property name="spacing">6</property>
+                                <child>
+                                  <object class="GtkEntry" id="file_entry">
+                                    <property name="width-chars">20</property>
+                                    <property name="text">drum_pattern.wav</property>
+                                    <property name="valign">center</property>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="browse_button">
+                                    <property name="icon-name">folder-symbolic</property>
+                                    <property name="tooltip-text" translatable="yes">Browse for location</property>
+                                    <property name="valign">center</property>
+                                    <style>
+                                      <class name="flat"/>
+                                    </style>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwComboRow" id="format_row">
+                            <property name="title" translatable="yes">Audio Format</property>
+                            <property name="subtitle" translatable="yes">Select the output audio format</property>
+                            <property name="model">
+                              <object class="GtkStringList">
+                                <items>
+                                  <item translatable="yes">WAV (Uncompressed)</item>
+                                  <item translatable="yes">FLAC (Lossless)</item>
+                                  <item translatable="yes">OGG Vorbis</item>
+                                  <item translatable="yes">MP3</item>
+                                </items>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwPreferencesGroup" id="progress_group">
+                        <property name="visible">false</property>
+                        <property name="title" translatable="yes">Export Progress</property>
+                        <child>
+                          <object class="GtkBox" id="progress_container">
+                            <property name="orientation">vertical</property>
+                            <property name="spacing">16</property>
+                            <property name="margin-top">16</property>
+                            <property name="margin-bottom">16</property>
+                            <property name="margin-start">24</property>
+                            <property name="margin-end">24</property>
+                            <child>
+                              <object class="GtkBox" id="progress_info_box">
+                                <property name="orientation">horizontal</property>
+                                <property name="spacing">12</property>
+                                <property name="halign">center</property>
+                                <child>
+                                  <object class="GtkSpinner" id="progress_spinner">
+                                    <property name="spinning">true</property>
+                                    <property name="width-request">24</property>
+                                    <property name="height-request">24</property>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="progress_phase_label">
+                                    <property name="label" translatable="yes">Preparing export...</property>
+                                    <style>
+                                      <class name="heading"/>
+                                    </style>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkBox" id="progress_bar_container">
+                                <property name="orientation">vertical</property>
+                                <property name="spacing">8</property>
+                                <child>
+                                  <object class="GtkProgressBar" id="progress_bar">
+                                    <property name="hexpand">true</property>
+                                    <property name="height-request">12</property>
+                                    <property name="show-text">false</property>
+                                    <style>
+                                      <class name="accent"/>
+                                    </style>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkBox" id="progress_text_box">
+                                    <property name="orientation">horizontal</property>
+                                    <property name="homogeneous">true</property>
+                                    <child>
+                                      <object class="GtkLabel" id="progress_label">
+                                        <property name="label" translatable="yes">0%</property>
+                                        <property name="halign">start</property>
+                                        <style>
+                                          <class name="caption"/>
+                                          <class name="dim-label"/>
+                                        </style>
+                                      </object>
+                                    </child>
+                                    <child>
+                                      <object class="GtkLabel" id="progress_status_label">
+                                        <property name="label" translatable="yes">Starting...</property>
+                                        <property name="halign">end</property>
+                                        <style>
+                                          <class name="caption"/>
+                                          <class name="dim-label"/>
+                                        </style>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </property>
+            <child type="bottom">
+              <object class="GtkBox" id="button_box">
+                <property name="orientation">horizontal</property>
+                <property name="halign">center</property>
+                <property name="margin-start">12</property>
+                <property name="margin-end">12</property>
+                <property name="margin-top">12</property>
+                <property name="margin-bottom">24</property>
+                <child>
+                  <object class="GtkButton" id="export_button">
+                    <property name="label" translatable="yes">Export Audio</property>
+                    <style>
+                      <class name="suggested-action"/>
+                      <class name="pill"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+</interface>

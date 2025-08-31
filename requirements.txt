@@ -4,3 +4,5 @@ setuptools
 setuptools-scm
 packaging
 flit-core
+numpy
+soundfile
