@@ -37,6 +37,7 @@ class AudioExportDialog(Adw.Dialog):
     file_entry = Gtk.Template.Child()
     browse_button = Gtk.Template.Child()
     format_row = Gtk.Template.Child()
+    repeat_row = Gtk.Template.Child()
     progress_group = Gtk.Template.Child()
     progress_label = Gtk.Template.Child()
     progress_bar = Gtk.Template.Child()
@@ -219,10 +220,12 @@ class AudioExportDialog(Adw.Dialog):
     def _export_worker(self, filename):
         """Background worker for audio export"""
         try:
+            repeat_count = int(self.repeat_row.get_value())
             success = self.audio_export_service.export_audio(
                 self.drum_parts_state,
                 self.bpm,
                 filename,
+                repeat_count=repeat_count,
                 progress_callback=self._on_progress_update,
             )
 
