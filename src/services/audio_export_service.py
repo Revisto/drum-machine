@@ -95,7 +95,7 @@ class AudioExportService:
                     latest_sample_end_time = max(latest_sample_end_time, end_time)
 
             # Use the longer of pattern duration or latest sample end time, then multiply by repeats
-            extra_time_to_add = latest_sample_end_time - pattern_duration_seconds
+            extra_time_to_add = max(latest_sample_end_time, pattern_duration_seconds) - pattern_duration_seconds
             duration_seconds = (
                 pattern_duration_seconds * repeat_count
             ) + extra_time_to_add

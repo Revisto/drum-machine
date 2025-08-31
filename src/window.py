@@ -44,6 +44,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     menu_button = Gtk.Template.Child()
     outer_box = Gtk.Template.Child()
+    toast_overlay = Gtk.Template.Child()
     bpm_spin_button = Gtk.Template.Child()
     volume_button = Gtk.Template.Child()
     clear_button = Gtk.Template.Child()
@@ -250,3 +251,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def cleanup_and_destroy(self):
         self.cleanup()
         self.destroy()
+
+    def show_toast(self, message):
+        """Show a toast notification"""
+        toast = Adw.Toast(title=message, timeout=3)
+        self.toast_overlay.add_toast(toast)

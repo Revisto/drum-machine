@@ -42,177 +42,181 @@ half-view</setter>
       </object>
     </child>
     <property name="content">
-      <object class="AdwToolbarView">
-        <child type="top">
-          <object class="AdwHeaderBar" id="header_bar">
-            <child type="start">
-              <object class="AdwSplitButton" id="file_preset_button">
-                <property name="label" translatable="yes">Open</property>
-                <property name="use-underline">True</property>
-                <property name="tooltip-text" translatable="yes">Open Preset</property>
-                <property name="menu-model">preset_menu</property>
-                <accessibility>
-                  <property name="label" translatable="yes" context="accessibility">Open Preset</property>
-                  <property name="description" translatable="yes">Open Saved Drum Pattern Preset</property>
-                </accessibility>
-              </object>
-            </child>
-            <menu id="preset_menu">
-              <section>
-                <!-- Presets will be added here programmatically -->
-              </section>
-            </menu>
-            <child type="title">
-              <object class="AdwWindowTitle">
-                <property name="title" translatable="yes">Drum Machine</property>
-              </object>
-            </child>
-            <child type="end">
-              <object class="GtkMenuButton" id="menu_button">
-                <property name="icon-name">open-menu-symbolic</property>
-                <property name="menu-model">primary_menu</property>
-                <property name="tooltip-text" translatable="yes">Main Menu</property>
-                <accessibility>
-                  <property name="label" translatable="yes" context="accessibility">Main Menu</property>
-                  <property name="description" translatable="yes">Access Keyboard Shortcuts and Application Information</property>
-                </accessibility>
-              </object>
-            </child>
-            <child type="end">
-              <object class="GtkButton" id="export_audio_button">
-                <property name="icon-name">audio-x-generic-symbolic</property>
-                <property name="tooltip-text" translatable="yes">Export Audio</property>
-                <accessibility>
-                  <property name="label" translatable="yes" context="accessibility">Export Audio</property>
-                  <property name="description" translatable="yes">Export Current Drum Pattern as Audio File</property>
-                </accessibility>
-              </object>
-            </child>
-            <child type="end">
-              <object class="GtkButton" id="save_preset_button">
-                <property name="icon-name">document-save-symbolic</property>
-                <property name="tooltip-text" translatable="yes">Save Drum Pattern</property>
-                <accessibility>
-                  <property name="label" translatable="yes" context="accessibility">Save Drum Pattern</property>
-                  <property name="description" translatable="yes">Save Current Drum Pattern as a Preset File</property>
-                </accessibility>
-              </object>
-            </child>
-          </object>
-        </child>
-        <property name="content">
-          <object class="GtkBox" id="outer_box">
-            <property name="orientation">vertical</property>
-            <child>
-              <object class="GtkScrolledWindow">
-                <property name="vexpand">true</property>
-                <property name="hexpand">true</property>
-                <child>
-                  <object class="GtkBox" id="drum_machine_box">
-                      <property name="orientation">vertical</property>
-                      <property name="spacing">12</property>
-                      <property name="halign">center</property>
-                      <property name="valign">center</property>
-                      <property name="margin-start">12</property>
-                      <property name="margin-end">12</property>
-                      <property name="margin-top">12</property>
-                      <property name="margin-bottom">12</property>
-                      <property name="css-classes">drum-machine-box</property>
-                  </object>
-                </child>
-              </object>
-            </child>
-          </object>
-        </property>
-        <child type="bottom">
-          <object class="GtkBox" id="bottom_wrapper">
-            <property name="css-classes">bottom-wrapper</property>
-            <property name="hexpand">true</property>
-            <child>
-              <!-- Left aligned BPM controls -->
-              <object class="GtkBox" id="bpm_box">
-                <property name="halign">start</property>
-                <property name="valign">center</property>
-                <property name="spacing">6</property>
-                <property name="margin-start">12</property>
-                <child>
-                  <object class="GtkLabel" id="bpm_label">
-                    <property name="valign">center</property>
-                    <property name="label" translatable="yes">BPM</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkSpinButton" id="bpm_spin_button">
-                    <property name="tooltip-text" translatable="yes">Adjust Tempo In Beats per Minute (BPM)</property>
-                    <property name="valign">center</property>
+      <object class="AdwToastOverlay" id="toast_overlay">
+        <child>
+          <object class="AdwToolbarView">
+            <child type="top">
+              <object class="AdwHeaderBar" id="header_bar">
+                <child type="start">
+                  <object class="AdwSplitButton" id="file_preset_button">
+                    <property name="label" translatable="yes">Open</property>
+                    <property name="use-underline">True</property>
+                    <property name="tooltip-text" translatable="yes">Open Preset</property>
+                    <property name="menu-model">preset_menu</property>
                     <accessibility>
-                      <property name="label" translatable="yes">Tempo</property>
-                      <property name="description" translatable="yes">Adjust Tempo In Beats per Minute (BPM)</property>
+                      <property name="label" translatable="yes" context="accessibility">Open Preset</property>
+                      <property name="description" translatable="yes">Open Saved Drum Pattern Preset</property>
                     </accessibility>
-                    <property name="adjustment">
-                      <object class="GtkAdjustment">
-                        <property name="lower">30</property>
-                        <property name="upper">300</property>
-                        <property name="step-increment">1</property>
-                        <property name="page-increment">10</property>
-                        <property name="value">120</property>
-                      </object>
-                    </property>
+                  </object>
+                </child>
+                <menu id="preset_menu">
+                  <section>
+                    <!-- Presets will be added here programmatically -->
+                  </section>
+                </menu>
+                <child type="title">
+                  <object class="AdwWindowTitle">
+                    <property name="title" translatable="yes">Drum Machine</property>
+                  </object>
+                </child>
+                <child type="end">
+                  <object class="GtkMenuButton" id="menu_button">
+                    <property name="icon-name">open-menu-symbolic</property>
+                    <property name="menu-model">primary_menu</property>
+                    <property name="tooltip-text" translatable="yes">Main Menu</property>
+                    <accessibility>
+                      <property name="label" translatable="yes" context="accessibility">Main Menu</property>
+                      <property name="description" translatable="yes">Access Keyboard Shortcuts and Application Information</property>
+                    </accessibility>
+                  </object>
+                </child>
+                <child type="end">
+                  <object class="GtkButton" id="export_audio_button">
+                    <property name="icon-name">audio-x-generic-symbolic</property>
+                    <property name="tooltip-text" translatable="yes">Export Audio</property>
+                    <accessibility>
+                      <property name="label" translatable="yes" context="accessibility">Export Audio</property>
+                      <property name="description" translatable="yes">Export Current Drum Pattern as Audio File</property>
+                    </accessibility>
+                  </object>
+                </child>
+                <child type="end">
+                  <object class="GtkButton" id="save_preset_button">
+                    <property name="icon-name">document-save-symbolic</property>
+                    <property name="tooltip-text" translatable="yes">Save Drum Pattern</property>
+                    <accessibility>
+                      <property name="label" translatable="yes" context="accessibility">Save Drum Pattern</property>
+                      <property name="description" translatable="yes">Save Current Drum Pattern as a Preset File</property>
+                    </accessibility>
                   </object>
                 </child>
               </object>
             </child>
-            <child>
-              <!-- Center box for play/pause and volume -->
-              <object class="GtkBox">
+            <property name="content">
+              <object class="GtkBox" id="outer_box">
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkScrolledWindow">
+                    <property name="vexpand">true</property>
+                    <property name="hexpand">true</property>
+                    <child>
+                      <object class="GtkBox" id="drum_machine_box">
+                          <property name="orientation">vertical</property>
+                          <property name="spacing">12</property>
+                          <property name="halign">center</property>
+                          <property name="valign">center</property>
+                          <property name="margin-start">12</property>
+                          <property name="margin-end">12</property>
+                          <property name="margin-top">12</property>
+                          <property name="margin-bottom">12</property>
+                          <property name="css-classes">drum-machine-box</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </property>
+            <child type="bottom">
+              <object class="GtkBox" id="bottom_wrapper">
+                <property name="css-classes">bottom-wrapper</property>
                 <property name="hexpand">true</property>
-                <property name="halign">center</property>
-                <property name="valign">center</property>
-                <property name="spacing">12</property>
                 <child>
-                  <object class="GtkButton" id="play_pause_button">
-                    <property name="width-request">60</property>
-                    <property name="height-request">60</property>
-                    <property name="icon-name">media-playback-start-symbolic</property>
-                    <property name="tooltip-text" translatable="yes">Play</property>
+                  <!-- Left aligned BPM controls -->
+                  <object class="GtkBox" id="bpm_box">
+                    <property name="halign">start</property>
                     <property name="valign">center</property>
-                    <style>
-                      <class name="circular"/>
-                    </style>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkScaleButton" id="volume_button">
-                    <property name="valign">center</property>
-                    <property name="icons">audio-volume-muted-symbolic
-audio-volume-high-symbolic
-audio-volume-low-symbolic
-audio-volume-medium-symbolic</property>
-                    <property name="tooltip-text" translatable="yes">Adjust Volume</property>
-                    <property name="adjustment">
-                      <object class="GtkAdjustment">
-                        <property name="lower">0</property>
-                        <property name="upper">100</property>
-                        <property name="step-increment">1</property>
-                        <property name="page-increment">5</property>
-                        <property name="value">100</property>
+                    <property name="spacing">6</property>
+                    <property name="margin-start">12</property>
+                    <child>
+                      <object class="GtkLabel" id="bpm_label">
+                        <property name="valign">center</property>
+                        <property name="label" translatable="yes">BPM</property>
                       </object>
-                    </property>
+                    </child>
+                    <child>
+                      <object class="GtkSpinButton" id="bpm_spin_button">
+                        <property name="tooltip-text" translatable="yes">Adjust Tempo In Beats per Minute (BPM)</property>
+                        <property name="valign">center</property>
+                        <accessibility>
+                          <property name="label" translatable="yes">Tempo</property>
+                          <property name="description" translatable="yes">Adjust Tempo In Beats per Minute (BPM)</property>
+                        </accessibility>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="lower">30</property>
+                            <property name="upper">300</property>
+                            <property name="step-increment">1</property>
+                            <property name="page-increment">10</property>
+                            <property name="value">120</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
                   </object>
                 </child>
-              </object>
-            </child>
-            <child>
-              <!-- Right aligned reset button -->
-              <object class="GtkBox" id="reset_box">
-                <property name="halign">end</property>
-                <property name="valign">center</property>
-                <property name="margin-end">12</property>
                 <child>
-                  <object class="GtkButton" id="clear_button">
+                  <!-- Center box for play/pause and volume -->
+                  <object class="GtkBox">
+                    <property name="hexpand">true</property>
+                    <property name="halign">center</property>
                     <property name="valign">center</property>
-                    <property name="label" translatable="yes">Reset</property>
-                    <property name="tooltip-text" translatable="yes">Reset the Drum Sequence</property>
+                    <property name="spacing">12</property>
+                    <child>
+                      <object class="GtkButton" id="play_pause_button">
+                        <property name="width-request">60</property>
+                        <property name="height-request">60</property>
+                        <property name="icon-name">media-playback-start-symbolic</property>
+                        <property name="tooltip-text" translatable="yes">Play</property>
+                        <property name="valign">center</property>
+                        <style>
+                          <class name="circular"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkScaleButton" id="volume_button">
+                        <property name="valign">center</property>
+                        <property name="icons">audio-volume-muted-symbolic
+    audio-volume-high-symbolic
+    audio-volume-low-symbolic
+    audio-volume-medium-symbolic</property>
+                        <property name="tooltip-text" translatable="yes">Adjust Volume</property>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="lower">0</property>
+                            <property name="upper">100</property>
+                            <property name="step-increment">1</property>
+                            <property name="page-increment">5</property>
+                            <property name="value">100</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <!-- Right aligned reset button -->
+                  <object class="GtkBox" id="reset_box">
+                    <property name="halign">end</property>
+                    <property name="valign">center</property>
+                    <property name="margin-end">12</property>
+                    <child>
+                      <object class="GtkButton" id="clear_button">
+                        <property name="valign">center</property>
+                        <property name="label" translatable="yes">Reset</property>
+                        <property name="tooltip-text" translatable="yes">Reset the Drum Sequence</property>
+                      </object>
+                    </child>
                   </object>
                 </child>
               </object>

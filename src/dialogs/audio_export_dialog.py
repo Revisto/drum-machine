@@ -32,7 +32,6 @@ class AudioExportDialog(Adw.Dialog):
     __gtype_name__ = "AudioExportDialog"
 
     # Template children
-    toast_overlay = Gtk.Template.Child()
     export_button = Gtk.Template.Child()
     file_entry = Gtk.Template.Child()
     browse_button = Gtk.Template.Child()
@@ -55,6 +54,7 @@ class AudioExportDialog(Adw.Dialog):
         self.export_thread = None
         self.export_success = False
         self.suggested_filename = "drum_pattern"
+        self.selected_file_path = None
 
         self._setup_ui()
         self._connect_signals()
@@ -131,7 +131,7 @@ class AudioExportDialog(Adw.Dialog):
         dialog.set_modal(True)
         dialog.set_initial_name(self.file_entry.get_text())
 
-        dialog.save(parent=self, callback=self._on_file_selected)
+        dialog.save(parent=self.parent_window, callback=self._on_file_selected)
 
     def _on_file_selected(self, dialog, result):
         """Handle file selection"""
@@ -139,16 +139,22 @@ class AudioExportDialog(Adw.Dialog):
             file = dialog.save_finish(result)
             if file:
                 file_path = file.get_path()
-                self.file_entry.set_text(file_path)
+                # Store full path but show only filename in UI
+                self.selected_file_path = file_path
+                self.file_entry.set_text(os.path.basename(file_path))
         except GLib.Error:
             pass
 
     def _on_export_clicked(self, button):
         """Handle export button click"""
-        filename = self.file_entry.get_text().strip()
+        # Use selected file path if available, otherwise construct from entry text
+        if self.selected_file_path:
+            filename = self.selected_file_path
+        else:
+            filename = self.file_entry.get_text().strip()
 
         if not filename:
-            self._show_toast(_("Please enter a filename"))
+            self._show_parent_toast(_("Please enter a filename"))
             return
 
         # Check if pattern has any active beats
@@ -159,7 +165,7 @@ class AudioExportDialog(Adw.Dialog):
                 break
 
         if not has_beats:
-            self._show_toast(_("Pattern is empty - nothing to export"))
+            self._show_parent_toast(_("Pattern is empty - nothing to export"))
             return
 
         # Ensure file has correct extension
@@ -259,15 +265,14 @@ class AudioExportDialog(Adw.Dialog):
         self.export_button.set_sensitive(True)
 
         if success:
-            self._show_toast(_("Audio exported successfully"))
+            self._show_parent_toast(_("Audio exported to {}").format(os.path.basename(filename)))
             self.close()
         else:
-            self._show_toast(_("Export failed"))
+            self._show_parent_toast(_("Export failed - check file permissions and format support"))
 
-    def _show_toast(self, message):
-        """Show a toast notification"""
-        toast = Adw.Toast(title=message, timeout=3)
-        self.toast_overlay.add_toast(toast)
+    def _show_parent_toast(self, message):
+        """Show a toast notification on the parent window"""
+        self.parent_window.show_toast(message)
 
     def present(self, parent_window=None):
         """Present the dialog"""
