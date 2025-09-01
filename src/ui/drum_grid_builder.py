@@ -122,9 +122,7 @@ class DrumGridBuilder:
         carousel.connect("page-changed", self._on_page_changed)
 
         key_controller = Gtk.EventControllerKey.new()
-        key_controller.connect(
-            "key-pressed", self._on_carousel_key_pressed
-        )
+        key_controller.connect("key-pressed", self._on_carousel_key_pressed)
         carousel.add_controller(key_controller)
 
         for i in range(2):
@@ -236,9 +234,8 @@ class DrumGridBuilder:
         if current_page > 0:
             carousel.scroll_to(carousel.get_nth_page(current_page - 1), True)
             # Focus the rightmost toggle on the previous page
-            target_beat_index = (
-                (current_page - 1) * self.beats_per_page
-                + (self.beats_per_page - 1)
+            target_beat_index = (current_page - 1) * self.beats_per_page + (
+                self.beats_per_page - 1
             )
             return self._focus_target_toggle(drum_part, target_beat_index)
 
