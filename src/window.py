@@ -23,7 +23,7 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Adw, Gtk
+from gi.repository import Adw, Gtk, GLib, Gio
 
 from gettext import gettext as _
 
@@ -252,7 +252,32 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.cleanup()
         self.destroy()
 
-    def show_toast(self, message):
-        """Show a toast notification"""
-        toast = Adw.Toast(title=message, timeout=3)
+    def show_toast(self, message, open_file=False, file_path=None):
+        """Show a toast notification with optional action button"""
+        toast = Adw.Toast(title=message, timeout=5)
+
+        if open_file and file_path:
+            # Setup action if not already done
+            self._setup_toast_actions()
+
+            # Set action
+            toast.set_action_name("win.open-file")
+            toast.set_action_target_value(GLib.Variant.new_string(file_path))
+            toast.set_button_label(_("Open"))
+
         self.toast_overlay.add_toast(toast)
+
+    def _setup_toast_actions(self, *args):
+        """Setup toast action handlers"""
+        if not hasattr(self, "_open_action"):
+            action = Gio.SimpleAction.new("open-file", GLib.VariantType.new("s"))
+            action.connect("activate", self._open_file)
+            self.add_action(action)
+            self._open_action = action
+
+    def _open_file(self, action, parameter):
+        """Open file with default app"""
+        file_path = parameter.get_string()
+        import subprocess
+
+        subprocess.run(["xdg-open", file_path])

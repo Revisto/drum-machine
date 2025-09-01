@@ -265,14 +265,23 @@ class AudioExportDialog(Adw.Dialog):
         self.export_button.set_sensitive(True)
 
         if success:
-            self._show_parent_toast(_("Audio exported to {}").format(os.path.basename(filename)))
+            # Show advanced toast with Open button
+            self._show_parent_toast_with_action(
+                _("Audio exported to {}").format(os.path.basename(filename)), filename
+            )
             self.close()
         else:
-            self._show_parent_toast(_("Export failed - check file permissions and format support"))
+            self._show_parent_toast(
+                _("Export failed - check file permissions and format support")
+            )
 
     def _show_parent_toast(self, message):
         """Show a toast notification on the parent window"""
         self.parent_window.show_toast(message)
+
+    def _show_parent_toast_with_action(self, message, file_path):
+        """Show a toast with open action on the parent window"""
+        self.parent_window.show_toast(message, open_file=True, file_path=file_path)
 
     def present(self, parent_window=None):
         """Present the dialog"""
