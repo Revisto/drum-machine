@@ -63,122 +63,150 @@ class AudioExportService:
             progress_callback: Callback function(progress: float) for progress updates
         """
         try:
-            # Check if pattern has any active beats
-            has_beats = any(
-                any(part_state.values()) for part_state in drum_parts_state.values()
-            )
-            if not has_beats:
-                raise ValueError("No active beats in pattern")
-
-            # Calculate export duration including repeats
+            self._validate_pattern(drum_parts_state)
+            duration_seconds = self._calculate_duration(drum_parts_state, bpm, repeat_count)
+            output_buffer = self._create_output_buffer(duration_seconds)
+            
             subdivisions_per_second = (bpm / 60) * GROUP_TOGGLE_COUNT
             total_beats = self.parent_window.drum_machine_service.total_beats
-
-            # Calculate minimum pattern duration
-            pattern_duration_seconds = total_beats / subdivisions_per_second
-
-            # Find the latest time any sample will finish playing
-            latest_sample_end_time = 0
-            for part in DRUM_PARTS:
-                part_state = drum_parts_state[part]
-                if part_state:
-                    # Find last subdivision where this instrument is played
-                    last_subdivision = max(
-                        sub for sub, active in part_state.items() if active
-                    )
-                    # Calculate when this sample would finish
-                    trigger_time = last_subdivision / subdivisions_per_second
-                    sample_length_seconds = (
-                        len(self.samples.get(part, [])) / self.sample_rate
-                    )
-                    end_time = trigger_time + sample_length_seconds
-                    latest_sample_end_time = max(latest_sample_end_time, end_time)
-
-            # Use the longer of pattern duration or latest sample end time,
-            # then multiply by repeats
-            extra_time_to_add = (
-                max(latest_sample_end_time, pattern_duration_seconds)
-                - pattern_duration_seconds
+            
+            self._render_pattern(
+                drum_parts_state, output_buffer, subdivisions_per_second,
+                total_beats, repeat_count, progress_callback
             )
-            duration_seconds = (
-                pattern_duration_seconds * repeat_count
-            ) + extra_time_to_add
-
-            # Create output buffer
-            total_samples = int(duration_seconds * self.sample_rate)
-            output_buffer = np.zeros(total_samples, dtype="float32")
-
-            # Calculate samples per subdivision (16th note)
-            samples_per_subdivision = int(self.sample_rate / subdivisions_per_second)
-
-            if progress_callback:
-                GLib.idle_add(progress_callback, 0.1)
-
-            # Render pattern for each repeat
-            total_subdivisions = total_beats * repeat_count
-            for repeat in range(repeat_count):
-                repeat_offset = repeat * int(
-                    pattern_duration_seconds * self.sample_rate
-                )
-
-                for subdivision in range(total_beats):
-                    # Update progress every 10% of total subdivisions
-                    current_subdivision = repeat * total_beats + subdivision
-                    if progress_callback and current_subdivision:
-                        progress = (
-                            0.1 + (current_subdivision / total_subdivisions) * 0.8
-                        )
-                        GLib.idle_add(progress_callback, progress)
-
-                    start_sample = repeat_offset + (
-                        subdivision * samples_per_subdivision
-                    )
-
-                    # Add samples for each active drum part
-                    for part in DRUM_PARTS:
-                        if drum_parts_state[part].get(subdivision, False):
-                            sample_data = self.samples.get(part, np.zeros(1000))
-                            end_sample = min(
-                                start_sample + len(sample_data), len(output_buffer)
-                            )
-                            output_buffer[start_sample:end_sample] += sample_data[
-                                : end_sample - start_sample
-                            ]
-
-            if progress_callback:
-                GLib.idle_add(progress_callback, 0.9)
-
-            # Normalize audio
-            max_amplitude = np.max(np.abs(output_buffer))
-            if max_amplitude > 0:
-                output_buffer = output_buffer / max_amplitude * 0.95  # Leave headroom
-
-            # Determine file format and export
-            file_ext = os.path.splitext(file_path)[1].lower()
-
-            if file_ext == ".wav":
-                sf.write(file_path, output_buffer, self.sample_rate)
-            elif file_ext == ".flac":
-                self._export_flac(file_path, output_buffer)
-            elif file_ext == ".ogg":
-                self._export_ogg(file_path, output_buffer)
-            elif file_ext == ".mp3":
-                self._export_mp3(file_path, output_buffer)
-            else:
-                # Default to WAV
-                if not file_path.endswith(".wav"):
-                    file_path += ".wav"
-                sf.write(file_path, output_buffer, self.sample_rate)
-
-            # Final progress update
-            if progress_callback:
-                GLib.idle_add(progress_callback, 1.0)
-
+            
+            self._normalize_audio(output_buffer)
+            self._export_to_file(file_path, output_buffer, progress_callback)
+            
             return True
 
         except Exception as e:
             print(f"Export error: {e}")
             return False
+
+    def _validate_pattern(self, drum_parts_state):
+        """Check if pattern has any active beats"""
+        has_beats = any(
+            any(part_state.values()) for part_state in drum_parts_state.values()
+        )
+        if not has_beats:
+            raise ValueError("No active beats in pattern")
+
+    def _calculate_duration(self, drum_parts_state, bpm, repeat_count):
+        """Calculate total export duration including repeats"""
+        subdivisions_per_second = (bpm / 60) * GROUP_TOGGLE_COUNT
+        total_beats = self.parent_window.drum_machine_service.total_beats
+        pattern_duration_seconds = total_beats / subdivisions_per_second
+        
+        latest_sample_end_time = self._find_latest_sample_end_time(
+            drum_parts_state, subdivisions_per_second
+        )
+        
+        extra_time_to_add = (
+            max(latest_sample_end_time, pattern_duration_seconds)
+            - pattern_duration_seconds
+        )
+        return (pattern_duration_seconds * repeat_count) + extra_time_to_add
+
+    def _find_latest_sample_end_time(self, drum_parts_state, subdivisions_per_second):
+        """Find the latest time any sample will finish playing"""
+        latest_sample_end_time = 0
+        for part in DRUM_PARTS:
+            part_state = drum_parts_state[part]
+            if part_state:
+                last_subdivision = max(
+                    sub for sub, active in part_state.items() if active
+                )
+                trigger_time = last_subdivision / subdivisions_per_second
+                sample_length_seconds = (
+                    len(self.samples.get(part, [])) / self.sample_rate
+                )
+                end_time = trigger_time + sample_length_seconds
+                latest_sample_end_time = max(latest_sample_end_time, end_time)
+        return latest_sample_end_time
+
+    def _create_output_buffer(self, duration_seconds):
+        """Create output buffer with calculated duration"""
+        total_samples = int(duration_seconds * self.sample_rate)
+        return np.zeros(total_samples, dtype="float32")
+
+    def _render_pattern(self, drum_parts_state, output_buffer, subdivisions_per_second,
+                       total_beats, repeat_count, progress_callback):
+        """Render drum pattern into output buffer"""
+        samples_per_subdivision = int(self.sample_rate / subdivisions_per_second)
+        pattern_duration_seconds = total_beats / subdivisions_per_second
+        total_subdivisions = total_beats * repeat_count
+
+        if progress_callback:
+            GLib.idle_add(progress_callback, 0.1)
+
+        for repeat in range(repeat_count):
+            repeat_offset = repeat * int(pattern_duration_seconds * self.sample_rate)
+            self._render_repeat(
+                drum_parts_state, output_buffer, repeat, repeat_offset,
+                samples_per_subdivision, total_beats, total_subdivisions,
+                progress_callback
+            )
+
+    def _render_repeat(self, drum_parts_state, output_buffer, repeat, repeat_offset,
+                      samples_per_subdivision, total_beats, total_subdivisions,
+                      progress_callback):
+        """Render a single repeat of the pattern"""
+        for subdivision in range(total_beats):
+            self._update_progress(
+                repeat, subdivision, total_beats, total_subdivisions, progress_callback
+            )
+            
+            start_sample = repeat_offset + (subdivision * samples_per_subdivision)
+            self._add_subdivision_samples(
+                drum_parts_state, output_buffer, subdivision, start_sample
+            )
+
+    def _update_progress(self, repeat, subdivision, total_beats, total_subdivisions, progress_callback):
+        """Update progress callback during rendering"""
+        current_subdivision = repeat * total_beats + subdivision
+        if progress_callback and current_subdivision:
+            progress = 0.1 + (current_subdivision / total_subdivisions) * 0.8
+            GLib.idle_add(progress_callback, progress)
+
+    def _add_subdivision_samples(self, drum_parts_state, output_buffer, subdivision, start_sample):
+        """Add samples for all active drum parts at this subdivision"""
+        for part in DRUM_PARTS:
+            if drum_parts_state[part].get(subdivision, False):
+                sample_data = self.samples.get(part, np.zeros(1000))
+                end_sample = min(start_sample + len(sample_data), len(output_buffer))
+                output_buffer[start_sample:end_sample] += sample_data[
+                    : end_sample - start_sample
+                ]
+
+    def _normalize_audio(self, output_buffer):
+        """Normalize audio buffer"""
+        max_amplitude = np.max(np.abs(output_buffer))
+        if max_amplitude > 0:
+            output_buffer[:] = output_buffer / max_amplitude * 0.95
+
+    def _export_to_file(self, file_path, output_buffer, progress_callback):
+        """Export buffer to appropriate file format"""
+        if progress_callback:
+            GLib.idle_add(progress_callback, 0.9)
+
+        file_ext = os.path.splitext(file_path)[1].lower()
+
+        if file_ext == ".wav":
+            sf.write(file_path, output_buffer, self.sample_rate)
+        elif file_ext == ".flac":
+            self._export_flac(file_path, output_buffer)
+        elif file_ext == ".ogg":
+            self._export_ogg(file_path, output_buffer)
+        elif file_ext == ".mp3":
+            self._export_mp3(file_path, output_buffer)
+        else:
+            if not file_path.endswith(".wav"):
+                file_path += ".wav"
+            sf.write(file_path, output_buffer, self.sample_rate)
+
+        if progress_callback:
+            GLib.idle_add(progress_callback, 1.0)
 
     def _export_flac(self, file_path, audio_data):
         """Export to FLAC format"""
