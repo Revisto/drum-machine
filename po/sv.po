@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-01 13:00+0000\n"
-"PO-Revision-Date: 2025-07-31 20:16+0200\n"
+"POT-Creation-Date: 2025-08-12 15:25+0000\n"
+"PO-Revision-Date: 2025-08-26 01:20+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
@@ -75,6 +75,10 @@ msgstr "Trumslinga inläst i ljust läge"
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Trumslinga inläst i mörkt läge"
 
+#: src/application.py:69
+msgid "translator-credits"
+msgstr "Anders Jonsson <anders.jonsson@norsjovallen.se>"
+
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:190
 msgid "{} Beats per Minute (BPM)"
@@ -97,7 +101,12 @@ msgstr "Pausa"
 msgid "Open"
 msgstr "Öppna"
 
-#: src/window.ui:52 src/window.ui:55
+#: src/window.ui:52
+msgid "Open Preset"
+msgstr "Öppna förinställning"
+
+#: src/window.ui:55
+msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "Öppna förinställning"
 
@@ -105,7 +114,12 @@ msgstr "Öppna förinställning"
 msgid "Open Saved Drum Pattern Preset"
 msgstr "Öppna sparad trumslingeförinställning"
 
-#: src/window.ui:74 src/window.ui:76
+#: src/window.ui:74
+msgid "Main Menu"
+msgstr "Huvudmeny"
+
+#: src/window.ui:76
+msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "Huvudmeny"
 
@@ -113,7 +127,12 @@ msgstr "Huvudmeny"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Kom åt tangentbordsgenvägar och programinformation"
 
-#: src/window.ui:84 src/window.ui:86
+#: src/window.ui:84
+msgid "Save Drum Pattern"
+msgstr "Spara trumslinga"
+
+#: src/window.ui:86
+msgctxt "accessibility"
 msgid "Save Drum Pattern"
 msgstr "Spara trumslinga"
 
@@ -208,37 +227,42 @@ msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Sänk volymen"
 
-#: src/gtk/help-overlay.ui:81
+#: src/gtk/help-overlay.ui:79
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "Tysta"
+
+#: src/gtk/help-overlay.ui:88
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr "Förinställningshantering"
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.ui:91
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr "Läs in förinställning"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "Spara förinställning"
 
-#: src/gtk/help-overlay.ui:100
+#: src/gtk/help-overlay.ui:107
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Navigering"
 
-#: src/gtk/help-overlay.ui:103
+#: src/gtk/help-overlay.ui:110
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Gå till instrument"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Föregående sida"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Nästa sida"
