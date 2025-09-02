@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-10 03:25+0000\n"
-"PO-Revision-Date: 2025-08-10 18:34+0800\n"
+"POT-Creation-Date: 2025-08-14 15:26+0000\n"
+"PO-Revision-Date: 2025-08-15 08:00+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -100,7 +100,12 @@ msgstr "暂停"
 msgid "Open"
 msgstr "打开"
 
-#: src/window.ui:52 src/window.ui:55
+#: src/window.ui:52
+msgid "Open Preset"
+msgstr "打开预设"
+
+#: src/window.ui:55
+msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "打开预设"
 
@@ -108,7 +113,12 @@ msgstr "打开预设"
 msgid "Open Saved Drum Pattern Preset"
 msgstr "打开保存的击鼓模式预设"
 
-#: src/window.ui:74 src/window.ui:76
+#: src/window.ui:74
+msgid "Main Menu"
+msgstr "主菜单"
+
+#: src/window.ui:76
+msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "主菜单"
 
@@ -116,7 +126,12 @@ msgstr "主菜单"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "访问键盘快捷键和应用程序信息"
 
-#: src/window.ui:84 src/window.ui:86
+#: src/window.ui:84
+msgid "Save Drum Pattern"
+msgstr "保存击鼓模式"
+
+#: src/window.ui:86
+msgctxt "accessibility"
 msgid "Save Drum Pattern"
 msgstr "保存击鼓模式"
 
@@ -211,37 +226,42 @@ msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "减小音量"
 
-#: src/gtk/help-overlay.ui:81
+#: src/gtk/help-overlay.ui:79
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "静音"
+
+#: src/gtk/help-overlay.ui:88
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr "预设管理"
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.ui:91
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr "加载预设"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "保存预设"
 
-#: src/gtk/help-overlay.ui:100
+#: src/gtk/help-overlay.ui:107
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "导航"
 
-#: src/gtk/help-overlay.ui:103
+#: src/gtk/help-overlay.ui:110
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "前往乐器"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "上一页"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "下一页"
