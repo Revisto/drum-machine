@@ -33,8 +33,6 @@ class AudioExportDialog(Adw.Dialog):
 
     # Template children
     export_button = Gtk.Template.Child()
-    file_entry = Gtk.Template.Child()
-    browse_button = Gtk.Template.Child()
     format_row = Gtk.Template.Child()
     repeat_row = Gtk.Template.Child()
     progress_group = Gtk.Template.Child()
@@ -53,110 +51,42 @@ class AudioExportDialog(Adw.Dialog):
         self.bpm = bpm
         self.export_thread = None
         self.export_success = False
-        self.suggested_filename = "drum_pattern"
-        self.selected_file_path = None
+        self.suggested_filename = "new_beat"
 
-        self._setup_ui()
         self._connect_signals()
-
-    def _setup_ui(self):
-        """Setup the user interface"""
-        # Set default filename based on format
-        self._update_filename_extension()
 
     def _connect_signals(self):
         """Connect UI signals"""
         self.export_button.connect("clicked", self._on_export_clicked)
-        self.browse_button.connect("clicked", self._on_browse_clicked)
-        self.format_row.connect("notify::selected", self._on_format_changed)
 
-    def _on_format_changed(self, combo_row, pspec):
-        """Handle format selection change"""
-        self._update_filename_extension()
-
-    def _update_filename_extension(self):
-        """Update filename extension based on selected format"""
-        current_text = self.file_entry.get_text()
-        base_name = os.path.splitext(current_text)[0] or self.suggested_filename
-
-        format_extensions = {
-            0: ".wav",  # WAV (Uncompressed)
-            1: ".flac",  # FLAC (Lossless)
-            2: ".ogg",  # OGG Vorbis
-            3: ".mp3",  # MP3
+    def _create_file_dialog_with_format(self, selected_format):
+        """Create file dialog with format-specific filter"""
+        format_info = {
+            0: {"ext": ".wav", "pattern": "*.wav", "name": _("WAV files")},
+            1: {"ext": ".flac", "pattern": "*.flac", "name": _("FLAC files")},
+            2: {"ext": ".ogg", "pattern": "*.ogg", "name": _("OGG files")},
+            3: {"ext": ".mp3", "pattern": "*.mp3", "name": _("MP3 files")},
         }
 
-        selected = self.format_row.get_selected()
-        extension = format_extensions.get(selected, ".wav")
-        new_filename = base_name + extension
-
-        self.file_entry.set_text(new_filename)
-
-    def _on_browse_clicked(self, button):
-        """Handle browse button click"""
-        # Create file filters
-        wav_filter = Gtk.FileFilter.new()
-        wav_filter.add_pattern("*.wav")
-        wav_filter.set_name(_("WAV files"))
-
-        flac_filter = Gtk.FileFilter.new()
-        flac_filter.add_pattern("*.flac")
-        flac_filter.set_name(_("FLAC files"))
-
-        ogg_filter = Gtk.FileFilter.new()
-        ogg_filter.add_pattern("*.ogg")
-        ogg_filter.set_name(_("OGG files"))
-
-        mp3_filter = Gtk.FileFilter.new()
-        mp3_filter.add_pattern("*.mp3")
-        mp3_filter.set_name(_("MP3 files"))
-
-        all_audio_filter = Gtk.FileFilter.new()
-        all_audio_filter.add_pattern("*.wav")
-        all_audio_filter.add_pattern("*.flac")
-        all_audio_filter.add_pattern("*.ogg")
-        all_audio_filter.add_pattern("*.mp3")
-        all_audio_filter.set_name(_("All audio files"))
+        info = format_info.get(selected_format, format_info[0])
+        
+        file_filter = Gtk.FileFilter.new()
+        file_filter.add_pattern(info["pattern"])
+        file_filter.set_name(info["name"])
 
         filefilters = Gio.ListStore.new(Gtk.FileFilter)
-        filefilters.append(all_audio_filter)
-        filefilters.append(wav_filter)
-        filefilters.append(flac_filter)
-        filefilters.append(ogg_filter)
-        filefilters.append(mp3_filter)
+        filefilters.append(file_filter)
 
         dialog = Gtk.FileDialog.new()
         dialog.set_title(_("Save Audio File"))
         dialog.set_filters(filefilters)
         dialog.set_modal(True)
-        dialog.set_initial_name(self.file_entry.get_text())
+        dialog.set_initial_name(self.suggested_filename + info["ext"])
 
-        dialog.save(parent=self.parent_window, callback=self._on_file_selected)
-
-    def _on_file_selected(self, dialog, result):
-        """Handle file selection"""
-        try:
-            file = dialog.save_finish(result)
-            if file:
-                file_path = file.get_path()
-                # Store full path but show only filename in UI
-                self.selected_file_path = file_path
-                self.file_entry.set_text(os.path.basename(file_path))
-        except GLib.Error:
-            pass
+        return dialog, info["ext"]
 
     def _on_export_clicked(self, button):
         """Handle export button click"""
-        # Use selected file path if available, otherwise construct from entry text
-        if self.selected_file_path:
-            filename = self.selected_file_path
-        else:
-            filename = self.file_entry.get_text().strip()
-
-        if not filename:
-            self._show_parent_toast(_("Please enter a filename"))
-            return
-
         # Check if pattern has any active beats
         has_beats = False
         for part_state in self.drum_parts_state.values():
@@ -168,20 +98,26 @@ class AudioExportDialog(Adw.Dialog):
             self._show_parent_toast(_("Pattern is empty - nothing to export"))
             return
 
-        # Ensure file has correct extension
+        # Get selected format and create file dialog with format-specific filter
         selected_format = self.format_row.get_selected()
-        format_extensions = [".wav", ".flac", ".ogg", ".mp3"]
-        expected_ext = format_extensions[selected_format]
+        dialog, expected_ext = self._create_file_dialog_with_format(selected_format)
+        
+        dialog.save(parent=self.parent_window, callback=self._on_file_selected)
 
-        if not filename.lower().endswith(expected_ext):
-            filename += expected_ext
-            self.file_entry.set_text(filename)
-
-        # Check if file exists
-        if os.path.exists(filename):
-            self._confirm_overwrite(filename)
-        else:
-            self._start_export(filename)
+    def _on_file_selected(self, dialog, result):
+        """Handle file selection from save dialog"""
+        try:
+            file = dialog.save_finish(result)
+            if file:
+                filename = file.get_path()
+                
+                # Check if file exists
+                if os.path.exists(filename):
+                    self._confirm_overwrite(filename)
+                else:
+                    self._start_export(filename)
+        except GLib.Error:
+            pass
 
     def _confirm_overwrite(self, filename):
         """Show confirmation dialog for file overwrite"""
