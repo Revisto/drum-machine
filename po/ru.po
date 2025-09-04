@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-12 03:26+0000\n"
-"PO-Revision-Date: 2025-08-12 13:43+0300\n"
-"Last-Translator: Artur S0 <arturios2005@mail.ru>\n"
+"POT-Creation-Date: 2025-08-13 03:26+0000\n"
+"PO-Revision-Date: 2025-08-13 14:20+0300\n"
+"Last-Translator: Artur So <arturios2005@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -231,37 +231,42 @@ msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Уменьшить громкость"
 
-#: src/gtk/help-overlay.ui:81
+#: src/gtk/help-overlay.ui:79
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "Отключить звук"
+
+#: src/gtk/help-overlay.ui:88
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr "Управление рисунками"
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.ui:91
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr "Загрузить рисунок"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "Сохранить рисунок"
 
-#: src/gtk/help-overlay.ui:100
+#: src/gtk/help-overlay.ui:107
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Навигация"
 
-#: src/gtk/help-overlay.ui:103
+#: src/gtk/help-overlay.ui:110
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Перейти к инструменту"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Предыдущая страница"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Следующая страница"
