@@ -6,3 +6,4 @@ packaging
 flit-core
 numpy
 soundfile
+mutagen

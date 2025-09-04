@@ -22,8 +22,8 @@
                 <property name="spacing">24</property>
                 <property name="margin-top">24</property>
                 <property name="margin-bottom">24</property>
-                <property name="margin-start">12</property>
-                <property name="margin-end">12</property>
+                <property name="margin-start">24</property>
+                <property name="margin-end">24</property>
                 <child>
                   <object class="AdwPreferencesGroup" id="export_group">
                     <property name="title" translatable="yes">Export Settings</property>
@@ -34,13 +34,7 @@
                         <property name="title" translatable="yes">Audio Format</property>
                         <property name="subtitle" translatable="yes">Select the output audio format</property>
                         <property name="model">
-                          <object class="GtkStringList">
-                            <items>
-                              <item translatable="yes">WAV (Uncompressed)</item>
-                              <item translatable="yes">FLAC (Lossless)</item>
-                              <item translatable="yes">OGG Vorbis</item>
-                              <item translatable="yes">MP3</item>
-                            </items>
+                          <object class="GtkStringList" id="format_list">
                           </object>
                         </property>
                       </object>
@@ -58,6 +52,38 @@
                             <property name="page-increment">5</property>
                           </object>
                         </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwPreferencesGroup" id="metadata_group">
+                    <property name="title" translatable="yes">Metadata</property>
+                    <property name="description" translatable="yes">Add metadata to your exported audio</property>
+
+                    <child>
+                      <object class="AdwEntryRow" id="artist_row">
+                        <property name="title" translatable="yes">Artist Name</property>
+                        <property name="show-apply-button">false</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwEntryRow" id="song_row">
+                        <property name="title" translatable="yes">Song Name</property>
+                        <property name="show-apply-button">false</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwActionRow" id="cover_row">
+                        <property name="title" translatable="yes">Cover Art</property>
+                        <property name="subtitle" translatable="yes">Select an image file for the cover art</property>
+                        <property name="activatable-widget">cover_button</property>
+                        <child>
+                          <object class="GtkButton" id="cover_button">
+                            <property name="label" translatable="yes">Choose File</property>
+                            <property name="valign">center</property>
+                          </object>
+                        </child>
                       </object>
                     </child>
                   </object>
@@ -150,10 +176,10 @@
           <object class="GtkBox" id="button_box">
             <property name="orientation">horizontal</property>
             <property name="halign">center</property>
-            <property name="margin-start">12</property>
-            <property name="margin-end">12</property>
-            <property name="margin-top">12</property>
-            <property name="margin-bottom">24</property>
+            <property name="margin-start">24</property>
+            <property name="margin-end">24</property>
+            <property name="margin-top">16</property>
+            <property name="margin-bottom">32</property>
             <child>
               <object class="GtkButton" id="export_button">
                 <property name="label" translatable="yes">Export Audio</property>
