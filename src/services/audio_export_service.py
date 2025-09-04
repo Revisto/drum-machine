@@ -243,7 +243,7 @@ class AudioExportService:
         if file_ext == ".wav":
             metadata = None
 
-        self._write_with_ffmpeg(output_buffer, self.sample_rate, file_path, metadata)
+        self._write_with_encoder(output_buffer, self.sample_rate, file_path, metadata)
 
         if progress_callback:
             GLib.idle_add(progress_callback, 1.0)
@@ -258,7 +258,7 @@ class AudioExportService:
         else:
             return "image/jpeg"
 
-    def _write_with_ffmpeg(self, audio_data, sample_rate, file_path, metadata=None):
+    def _write_with_encoder(self, audio_data, sample_rate, file_path, metadata=None):
         cmd = [
             'ffmpeg', '-f', 'f32le',
             '-ar', str(sample_rate),
