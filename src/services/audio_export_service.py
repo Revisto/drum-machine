@@ -49,11 +49,16 @@ class AudioExportService:
     def _load_sample(self, sample_path):
         """Load audio sample using ffmpeg"""
         cmd = [
-            'ffmpeg', '-i', sample_path,
-            '-f', 'f32le',
-            '-ac', '2',  # Convert to stereo
-            '-ar', str(self.sample_rate),
-            '-'
+            "ffmpeg",
+            "-i",
+            sample_path,
+            "-f",
+            "f32le",
+            "-ac",
+            "2",  # Convert to stereo
+            "-ar",
+            str(self.sample_rate),
+            "-",
         ]
         result = subprocess.run(cmd, capture_output=True, check=True)
         audio_data = np.frombuffer(result.stdout, dtype=np.float32)
@@ -260,25 +265,36 @@ class AudioExportService:
 
     def _write_with_encoder(self, audio_data, sample_rate, file_path, metadata=None):
         cmd = [
-            'ffmpeg', '-f', 'f32le',
-            '-ar', str(sample_rate),
-            '-ac', '2',     # stereo
-            '-i', '-',      # read from stdin
+            "ffmpeg",
+            "-f",
+            "f32le",
+            "-ar",
+            str(sample_rate),
+            "-ac",
+            "2",  # stereo
+            "-i",
+            "-",  # read from stdin
         ]
-        
-        has_cover = metadata and metadata.get('cover_art') and os.path.exists(metadata['cover_art'])
+
+        has_cover = (
+            metadata
+            and metadata.get("cover_art")
+            and os.path.exists(metadata["cover_art"])
+        )
         if has_cover:
-            cmd.extend(['-i', metadata['cover_art']])
-        
-        cmd.extend(['-map', '0:a'])  # map audio from stdin
+            cmd.extend(["-i", metadata["cover_art"]])
+
+        cmd.extend(["-map", "0:a"])  # map audio from stdin
         if has_cover:
-            cmd.extend(['-map', '1:v', '-disposition:v:0', 'attached_pic'])
-        
+            cmd.extend(["-map", "1:v", "-disposition:v:0", "attached_pic"])
+
         # Add metadata
         if metadata:
-            if metadata.get('title'): cmd.extend(['-metadata', f'title={metadata["title"]}'])
-            if metadata.get('artist'): cmd.extend(['-metadata', f'artist={metadata["artist"]}'])
-        
+            if metadata.get("title"):
+                cmd.extend(["-metadata", f'title={metadata["title"]}'])
+            if metadata.get("artist"):
+                cmd.extend(["-metadata", f'artist={metadata["artist"]}'])
+
         cmd.append(file_path)
-        
+
         subprocess.run(cmd, input=audio_data.tobytes(), check=True)

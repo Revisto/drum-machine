@@ -39,39 +39,62 @@ class AudioExportProgressDialog(Adw.Dialog):
         self.parent_window = parent_window
         self.export_cancelled = False
         self.export_thread = None
-        
+
         # Connect close signal to handle cancellation
         self.connect("closed", self._on_dialog_closed)
-        
-    def start_export(self, audio_export_service, drum_parts_state, bpm, filename, repeat_count=1, metadata=None):
+
+    def start_export(
+        self,
+        audio_export_service,
+        drum_parts_state,
+        bpm,
+        filename,
+        repeat_count=1,
+        metadata=None,
+    ):
         """Start the export process"""
         self.progress_bar.set_fraction(0.0)
         self.status_label.set_label(_("Preparing export..."))
         self.detail_label.set_label(_("This may take a few moments..."))
-        
+
         # Start export in background thread
         self.export_thread = threading.Thread(
-            target=self._export_worker, 
-            args=(audio_export_service, drum_parts_state, bpm, filename, repeat_count, metadata), 
-            daemon=True
+            target=self._export_worker,
+            args=(
+                audio_export_service,
+                drum_parts_state,
+                bpm,
+                filename,
+                repeat_count,
+                metadata,
+            ),
+            daemon=True,
         )
         self.export_thread.start()
 
-    def _export_worker(self, audio_export_service, drum_parts_state, bpm, filename, repeat_count, metadata):
+    def _export_worker(
+        self,
+        audio_export_service,
+        drum_parts_state,
+        bpm,
+        filename,
+        repeat_count,
+        metadata,
+    ):
         """Background worker for audio export"""
         try:
             if self.export_cancelled:
                 return
-                
+
             success = audio_export_service.export_audio(
                 drum_parts_state,
                 bpm,
                 filename,
                 repeat_count=repeat_count,
                 progress_callback=self._on_progress_update,
-                metadata=metadata
+                metadata=metadata,
             )
-            
+
             if not self.export_cancelled:
                 GLib.idle_add(self._on_export_complete, success, filename)
         except Exception as e:
@@ -87,7 +110,7 @@ class AudioExportProgressDialog(Adw.Dialog):
         """Update progress UI elements"""
         if self.export_cancelled:
             return
-            
+
         self.progress_bar.set_fraction(progress)
         percentage = int(progress * 100)
         self.progress_bar.set_text(f"{percentage}%")
@@ -110,23 +133,25 @@ class AudioExportProgressDialog(Adw.Dialog):
                 _("Audio exported to {}").format(os.path.basename(filename)), filename
             )
         else:
-            self._show_parent_toast(
-                _("Export failed")
-            )
+            self._show_parent_toast(_("Export failed"))
         self.close()
 
     def _show_parent_toast(self, message):
         """Show a toast notification on the parent window"""
-        if hasattr(self.parent_window, 'show_toast'):
+        if hasattr(self.parent_window, "show_toast"):
             self.parent_window.show_toast(message)
 
     def _show_parent_toast_with_action(self, message, file_path):
         """Show a toast with open action on the parent window"""
-        if hasattr(self.parent_window, 'show_toast'):
+        if hasattr(self.parent_window, "show_toast"):
             self.parent_window.show_toast(message, open_file=True, file_path=file_path)
 
     def _on_dialog_closed(self, dialog):
         """Handle dialog close - cancel export if still running"""
-        if not self.export_cancelled and self.export_thread and self.export_thread.is_alive():
+        if (
+            not self.export_cancelled
+            and self.export_thread
+            and self.export_thread.is_alive()
+        ):
             self.export_cancelled = True
             self._show_parent_toast(_("Export cancelled"))

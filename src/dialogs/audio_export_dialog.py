@@ -55,10 +55,34 @@ class AudioExportDialog(Adw.Dialog):
 
         # Define format configuration
         self.format_config = {
-            0: {"ext": ".ogg", "pattern": "*.ogg", "name": _("OGG files"), "display": _("OGG Vorbis"), "supports_metadata": True},
-            1: {"ext": ".mp3", "pattern": "*.mp3", "name": _("MP3 files"), "display": _("MP3"), "supports_metadata": True},
-            2: {"ext": ".flac", "pattern": "*.flac", "name": _("FLAC files"), "display": _("FLAC (Lossless)"), "supports_metadata": True},
-            3: {"ext": ".wav", "pattern": "*.wav", "name": _("WAV files"), "display": _("WAV (Uncompressed)"), "supports_metadata": False},
+            0: {
+                "ext": ".ogg",
+                "pattern": "*.ogg",
+                "name": _("OGG files"),
+                "display": _("OGG Vorbis"),
+                "supports_metadata": True,
+            },
+            1: {
+                "ext": ".mp3",
+                "pattern": "*.mp3",
+                "name": _("MP3 files"),
+                "display": _("MP3"),
+                "supports_metadata": True,
+            },
+            2: {
+                "ext": ".flac",
+                "pattern": "*.flac",
+                "name": _("FLAC files"),
+                "display": _("FLAC (Lossless)"),
+                "supports_metadata": True,
+            },
+            3: {
+                "ext": ".wav",
+                "pattern": "*.wav",
+                "name": _("WAV files"),
+                "display": _("WAV (Uncompressed)"),
+                "supports_metadata": False,
+            },
         }
 
         self._populate_format_list()
@@ -90,7 +114,7 @@ class AudioExportDialog(Adw.Dialog):
     def _create_file_dialog_with_format(self, selected_format):
         """Create file dialog with format-specific filter"""
         info = self.format_config.get(selected_format, self.format_config[0])
-        
+
         file_filter = Gtk.FileFilter.new()
         file_filter.add_pattern(info["pattern"])
         file_filter.set_name(info["name"])
@@ -114,7 +138,7 @@ class AudioExportDialog(Adw.Dialog):
         """Update metadata fields sensitivity based on selected format"""
         selected_format = self.format_row.get_selected()
         metadata_enabled = self._format_supports_metadata(selected_format)
-        
+
         self.artist_row.set_sensitive(metadata_enabled)
         self.song_row.set_sensitive(metadata_enabled)
         self.cover_row.set_sensitive(metadata_enabled)
@@ -139,7 +163,7 @@ class AudioExportDialog(Adw.Dialog):
         dialog.set_title(_("Select Cover Art"))
         dialog.set_filters(filefilters)
         dialog.set_modal(True)
-        
+
         dialog.open(parent=self.parent_window, callback=self._on_cover_selected)
 
     def _on_cover_selected(self, dialog, result):
@@ -149,7 +173,9 @@ class AudioExportDialog(Adw.Dialog):
             if file:
                 self.cover_art_path = file.get_path()
                 filename = os.path.basename(self.cover_art_path)
-                self.cover_button.set_label(filename[:20] + "..." if len(filename) > 20 else filename)
+                self.cover_button.set_label(
+                    filename[:20] + "..." if len(filename) > 20 else filename
+                )
         except GLib.Error:
             pass
 
@@ -169,7 +195,7 @@ class AudioExportDialog(Adw.Dialog):
         # Get selected format and create file dialog with format-specific filter
         selected_format = self.format_row.get_selected()
         dialog, expected_ext = self._create_file_dialog_with_format(selected_format)
-        
+
         dialog.save(parent=self.parent_window, callback=self._on_file_selected)
 
     def _on_file_selected(self, dialog, result):
@@ -178,7 +204,7 @@ class AudioExportDialog(Adw.Dialog):
             file = dialog.save_finish(result)
             if file:
                 filename = file.get_path()
-                
+
                 self._start_export(filename)
         except GLib.Error:
             pass
@@ -186,21 +212,21 @@ class AudioExportDialog(Adw.Dialog):
     def _start_export(self, filename):
         """Start the export process"""
         repeat_count = int(self.repeat_row.get_value())
-        
+
         # Get metadata from fields
         metadata = {
             "artist": self.artist_row.get_text().strip() or None,
             "title": self.song_row.get_text().strip() or None,
-            "cover_art": self.cover_art_path
+            "cover_art": self.cover_art_path,
         }
-        
+
         # Close export dialog
         self.close()
-        
+
         # Create and show progress dialog
         self.progress_dialog = AudioExportProgressDialog(self.parent_window)
         self.progress_dialog.present(self.parent_window)
-        
+
         # Start export process
         self.progress_dialog.start_export(
             self.audio_export_service,
@@ -208,10 +234,8 @@ class AudioExportDialog(Adw.Dialog):
             self.bpm,
             filename,
             repeat_count,
-            metadata
+            metadata,
         )
-
-
 
     def present(self, parent_window=None):
         """Present the dialog"""
