@@ -70,20 +70,6 @@
             ]
         },
         {
-            "name": "python3-flit-core",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"flit-core\""
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/f2/65/b6ba90634c984a4fcc02c7e3afe523fef500c4980fec67cc27536ee50acf/flit_core-3.12.0-py3-none-any.whl",
-                    "sha256": "e7a0304069ea895172e3c7bb703292e992c5d1555dd1233ab7b5621b5b69e62c"
-                }
-            ]
-        },
-        {
             "name": "python3-numpy",
             "buildsystem": "simple",
             "build-commands": [
@@ -94,62 +80,6 @@
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/59/ef/f96536f1df42c668cbacb727a8c6da7afc9c05ece6d558927fb1722693e1/numpy-2.3.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
                     "sha256": "8145dd6d10df13c559d1e4314df29695613575183fa2e2d11fac4c208c8a1f73"
-                }
-            ]
-        },
-        {
-            "name": "python3-pycparser",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pycparser\""
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl",
-                    "sha256": "c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc"
-                }
-            ]
-        },
-        {   
-            "name": "python3-cffi",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cffi\""
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b2/d5/da47df7004cb17e4955df6a43d14b3b4ae77737dff8bf7f8f333196717bf/cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-                    "sha256": "b62ce867176a75d03a665bad002af8e6d54644fad99a3c70905c543130e39d93"
-                }
-            ]
-        },
-        {
-            "name": "python3-soundfile",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"soundfile\""
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/57/5e/70bdd9579b35003a489fc850b5047beeda26328053ebadc1fb60f320f7db/soundfile-0.13.1-py2.py3-none-manylinux_2_28_x86_64.whl",
-                    "sha256": "03267c4e493315294834a0870f31dbb3b28a95561b80b134f0bd3cf2d5f0e618"
-                }
-            ]
-        },
-        {
-            "name": "python3-mutagen",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"mutagen\""
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b0/7a/620f945b96be1f6ee357d211d5bf74ab1b7fe72a9f1525aafbfe3aee6875/mutagen-1.47.0-py3-none-any.whl",
-                    "sha256": "edd96f50c5907a9539d8e5bba7245f62c9f520aef333d13392a79a4f70aca719"
                 }
             ]
         }

@@ -3,7 +3,4 @@ mido
 setuptools
 setuptools-scm
 packaging
-flit-core
 numpy
-soundfile
-mutagen

@@ -18,14 +18,9 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import os
-import base64
 import numpy as np
-import soundfile as sf
 from gi.repository import GLib
-from mutagen.mp3 import MP3
-from mutagen.id3 import TIT2, TPE1, APIC
-from mutagen.flac import FLAC, Picture
-from mutagen.oggvorbis import OggVorbis
+import subprocess
 from ..config import DRUM_PARTS, GROUP_TOGGLE_COUNT
 
 
@@ -45,14 +40,24 @@ class AudioExportService:
             sample_path = os.path.join(self.drumkit_dir, f"{part}.wav")
             if os.path.exists(sample_path):
                 try:
-                    audio_data, _ = sf.read(sample_path, dtype="float32")
-                    # Convert to mono if needed
-                    if audio_data.ndim > 1:
-                        audio_data = audio_data[:, 0]
+                    audio_data = self._load_sample(sample_path)
                     self.samples[part] = audio_data
                 except Exception as e:
                     print(f"Warning: Could not load {part}.wav: {e}")
-                    self.samples[part] = np.zeros(1000, dtype="float32")
+                    self.samples[part] = np.zeros((1000, 2), dtype="float32")
+
+    def _load_sample(self, sample_path):
+        """Load audio sample using ffmpeg"""
+        cmd = [
+            'ffmpeg', '-i', sample_path,
+            '-f', 'f32le',
+            '-ac', '2',  # Convert to stereo
+            '-ar', str(self.sample_rate),
+            '-'
+        ]
+        result = subprocess.run(cmd, capture_output=True, check=True)
+        audio_data = np.frombuffer(result.stdout, dtype=np.float32)
+        return audio_data.reshape(-1, 2)
 
     def export_audio(
         self,
@@ -148,7 +153,7 @@ class AudioExportService:
     def _create_output_buffer(self, duration_seconds):
         """Create output buffer with calculated duration"""
         total_samples = int(duration_seconds * self.sample_rate)
-        return np.zeros(total_samples, dtype="float32")
+        return np.zeros((total_samples, 2), dtype="float32")
 
     def _render_pattern(
         self,
@@ -217,7 +222,7 @@ class AudioExportService:
         """Add samples for all active drum parts at this subdivision"""
         for part in DRUM_PARTS:
             if drum_parts_state[part].get(subdivision, False):
-                sample_data = self.samples.get(part, np.zeros(1000))
+                sample_data = self.samples.get(part, np.zeros((1000, 2)))
                 end_sample = min(start_sample + len(sample_data), len(output_buffer))
                 output_buffer[start_sample:end_sample] += sample_data[
                     : end_sample - start_sample
@@ -235,19 +240,10 @@ class AudioExportService:
             GLib.idle_add(progress_callback, 0.9)
 
         file_ext = os.path.splitext(file_path)[1].lower()
-
         if file_ext == ".wav":
-            self._export_wav(file_path, output_buffer, metadata)
-        elif file_ext == ".flac":
-            self._export_flac(file_path, output_buffer, metadata)
-        elif file_ext == ".ogg":
-            self._export_ogg(file_path, output_buffer, metadata)
-        elif file_ext == ".mp3":
-            self._export_mp3(file_path, output_buffer, metadata)
-        else:
-            if not file_path.endswith(".wav"):
-                file_path += ".wav"
-            self._export_wav(file_path, output_buffer, metadata)
+            metadata = None
+
+        self._write_with_ffmpeg(output_buffer, self.sample_rate, file_path, metadata)
 
         if progress_callback:
             GLib.idle_add(progress_callback, 1.0)
@@ -262,164 +258,27 @@ class AudioExportService:
         else:
             return "image/jpeg"
 
-    def _export_wav(self, file_path, audio_data, metadata):
-        """Export to WAV format with metadata"""
-        try:
-            # WAV format doesn't support metadata through soundfile
-            # Export WAV
-            sf.write(file_path, audio_data, self.sample_rate)
-
-        except Exception as e:
-            print(f"WAV export error: {e}")
-            # Fallback to basic WAV export
-            sf.write(file_path, audio_data, self.sample_rate)
-
-    def _export_flac(self, file_path, audio_data, metadata):
-        """Export to FLAC format with metadata"""
-        try:
-            # Export basic FLAC first
-            sf.write(file_path, audio_data, self.sample_rate, format="FLAC")
-
-            # Try to add metadata using mutagen
-            if (
-                metadata.get("artist")
-                or metadata.get("title")
-                or metadata.get("cover_art")
-            ):
-                self._add_flac_metadata(file_path, metadata)
-
-        except Exception as e:
-            print(f"FLAC export error: {e}")
-            # Fallback to basic FLAC
-            try:
-                sf.write(file_path, audio_data, self.sample_rate, format="FLAC")
-            except Exception:
-                # Final fallback to WAV
-                sf.write(
-                    file_path.replace(".flac", ".wav"), audio_data, self.sample_rate
-                )
-
-    def _export_ogg(self, file_path, audio_data, metadata):
-        """Export to OGG format with metadata"""
-        try:
-            # Export basic OGG first
-            sf.write(file_path, audio_data, self.sample_rate, format="OGG")
-
-            # Try to add metadata using mutagen
-            if (
-                metadata.get("artist")
-                or metadata.get("title")
-                or metadata.get("cover_art")
-            ):
-                self._add_ogg_metadata(file_path, metadata)
-
-        except Exception as e:
-            print(f"OGG export error: {e}")
-            # Fallback to basic OGG
-            try:
-                sf.write(file_path, audio_data, self.sample_rate, format="OGG")
-            except Exception:
-                # Final fallback to WAV
-                sf.write(
-                    file_path.replace(".ogg", ".wav"), audio_data, self.sample_rate
-                )
-
-    def _export_mp3(self, file_path, audio_data, metadata):
-        """Export to MP3 format with metadata"""
-        try:
-            # Try to use mutagen for MP3 metadata support
-            # First export as basic MP3
-            sf.write(file_path, audio_data, self.sample_rate, format="MP3")
-
-            # Then add metadata using mutagen
-            if (
-                metadata.get("artist")
-                or metadata.get("title")
-                or metadata.get("cover_art")
-            ):
-                self._add_mp3_metadata(file_path, metadata)
-
-        except Exception as e:
-            print(f"MP3 export error: {e}")
-            # Fallback to WAV
-            sf.write(file_path.replace(".mp3", ".wav"), audio_data, self.sample_rate)
-
-    def _add_mp3_metadata(self, file_path, metadata):
-        """Add metadata to MP3 file using mutagen"""
-        try:
-            audio = MP3(file_path)
-            if audio.tags is None:
-                audio.add_tags()
-
-            if metadata.get("title"):
-                audio.tags.add(TIT2(encoding=3, text=metadata["title"]))
-            if metadata.get("artist"):
-                audio.tags.add(TPE1(encoding=3, text=metadata["artist"]))
-
-            # Add cover art if provided
-            if metadata.get("cover_art") and os.path.exists(metadata["cover_art"]):
-                with open(metadata["cover_art"], "rb") as albumart:
-                    audio.tags.add(
-                        APIC(
-                            encoding=3,
-                            mime=self._get_image_mime_type(metadata["cover_art"]),
-                            type=3,
-                            desc="Cover",
-                            data=albumart.read(),
-                        )
-                    )
-
-            audio.save()
-        except Exception as e:
-            print(f"MP3 metadata error: {e}")
-
-    def _add_flac_metadata(self, file_path, metadata):
-        """Add metadata to FLAC file using mutagen"""
-        try:
-            audio = FLAC(file_path)
-
-            if metadata.get("title"):
-                audio["TITLE"] = metadata["title"]
-            if metadata.get("artist"):
-                audio["ARTIST"] = metadata["artist"]
-
-            # Add cover art if provided
-            if metadata.get("cover_art") and os.path.exists(metadata["cover_art"]):
-                with open(metadata["cover_art"], "rb") as albumart:
-                    picture = Picture()
-                    picture.data = albumart.read()
-                    picture.type = 3  # Cover (front)
-                    picture.mime = self._get_image_mime_type(metadata["cover_art"])
-                    picture.desc = "Cover"
-                    audio.add_picture(picture)
-
-            audio.save()
-        except Exception as e:
-            print(f"FLAC metadata error: {e}")
-
-    def _add_ogg_metadata(self, file_path, metadata):
-        """Add metadata to OGG file using mutagen"""
-        try:
-            audio = OggVorbis(file_path)
-
-            if metadata.get("title"):
-                audio["TITLE"] = metadata["title"]
-            if metadata.get("artist"):
-                audio["ARTIST"] = metadata["artist"]
-
-            # Add cover art if provided
-            if metadata.get("cover_art") and os.path.exists(metadata["cover_art"]):
-                with open(metadata["cover_art"], "rb") as albumart:
-                    picture = Picture()
-                    picture.data = albumart.read()
-                    picture.type = 3  # Cover (front)
-
-                    picture.mime = self._get_image_mime_type(metadata["cover_art"])
-
-                    picture.desc = "Cover"
-                    # OGG Vorbis uses base64 encoded METADATA_BLOCK_PICTURE for embedded images
-                    audio["METADATA_BLOCK_PICTURE"] = base64.b64encode(picture.write()).decode('ascii')
-
-            audio.save()
-        except Exception as e:
-            print(f"OGG metadata error: {e}")
+    def _write_with_ffmpeg(self, audio_data, sample_rate, file_path, metadata=None):
+        cmd = [
+            'ffmpeg', '-f', 'f32le',
+            '-ar', str(sample_rate),
+            '-ac', '2',     # stereo
+            '-i', '-',      # read from stdin
+        ]
+        
+        has_cover = metadata and metadata.get('cover_art') and os.path.exists(metadata['cover_art'])
+        if has_cover:
+            cmd.extend(['-i', metadata['cover_art']])
+        
+        cmd.extend(['-map', '0:a'])  # map audio from stdin
+        if has_cover:
+            cmd.extend(['-map', '1:v', '-disposition:v:0', 'attached_pic'])
+        
+        # Add metadata
+        if metadata:
+            if metadata.get('title'): cmd.extend(['-metadata', f'title={metadata["title"]}'])
+            if metadata.get('artist'): cmd.extend(['-metadata', f'artist={metadata["artist"]}'])
+        
+        cmd.append(file_path)
+        
+        subprocess.run(cmd, input=audio_data.tobytes(), check=True)
