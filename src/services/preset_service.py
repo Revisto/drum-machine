@@ -26,30 +26,30 @@ class PresetService:
     def _get_midi_note_for_part(self, part):
         mapping = {
             "kick": 36,
-            "kick-2": 35,
-            "kick-3": 34,
-            "snare": 38,
-            "snare-2": 37,
-            "hihat": 42,
-            "hihat-2": 44,
-            "clap": 39,
-            "tom": 41,
-            "crash": 49,
+            "snare": 35,
+            "hihat": 34,
+            "hihat-2": 38,
+            "hihat-3": 37,
+            "tom-1": 42,
+            "tom-2": 44,
+            "tom-3": 39,
+            "crash-1": 41,
+            "crash-2": 49,
         }
         return mapping.get(part, 0)
 
     def _get_part_for_midi_note(self, note):
         mapping = {
             36: "kick",
-            35: "kick-2",
-            34: "kick-3",
-            38: "snare",
-            37: "snare-2",
-            42: "hihat",
-            44: "hihat-2",
-            39: "clap",
-            41: "tom",
-            49: "crash",
+            35: "snare",
+            34: "hihat-1",
+            38: "hihat-2",
+            37: "hihat-3",
+            42: "tom-1",
+            44: "tom-2",
+            39: "tom-3",
+            41: "crash-1",
+            49: "crash-2",
         }
         return mapping.get(note, None)
 
