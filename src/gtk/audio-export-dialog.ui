@@ -89,81 +89,12 @@
                   </object>
                 </child>
                 <child>
-                  <object class="AdwPreferencesGroup" id="progress_group">
-                    <property name="visible">false</property>
-                    <property name="title" translatable="yes">Export Progress</property>
+                  <object class="AdwPreferencesGroup" id="warning_group">
+                    <property name="title" translatable="yes">Warning</property>
                     <child>
-                      <object class="GtkBox" id="progress_container">
-                        <property name="orientation">vertical</property>
-                        <property name="spacing">16</property>
-                        <property name="margin-top">16</property>
-                        <property name="margin-bottom">16</property>
-                        <property name="margin-start">24</property>
-                        <property name="margin-end">24</property>
-                        <child>
-                          <object class="GtkBox" id="progress_info_box">
-                            <property name="orientation">horizontal</property>
-                            <property name="spacing">12</property>
-                            <property name="halign">center</property>
-                            <child>
-                              <object class="GtkSpinner" id="progress_spinner">
-                                <property name="spinning">true</property>
-                                <property name="width-request">24</property>
-                                <property name="height-request">24</property>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="progress_phase_label">
-                                <property name="label" translatable="yes">Preparing export...</property>
-                                <style>
-                                  <class name="heading"/>
-                                </style>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkBox" id="progress_bar_container">
-                            <property name="orientation">vertical</property>
-                            <property name="spacing">8</property>
-                            <child>
-                              <object class="GtkProgressBar" id="progress_bar">
-                                <property name="hexpand">true</property>
-                                <property name="height-request">12</property>
-                                <property name="show-text">false</property>
-                                <style>
-                                  <class name="accent"/>
-                                </style>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkBox" id="progress_text_box">
-                                <property name="orientation">horizontal</property>
-                                <property name="homogeneous">true</property>
-                                <child>
-                                  <object class="GtkLabel" id="progress_label">
-                                    <property name="label" translatable="yes">0%</property>
-                                    <property name="halign">start</property>
-                                    <style>
-                                      <class name="caption"/>
-                                      <class name="dim-label"/>
-                                    </style>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel" id="progress_status_label">
-                                    <property name="label" translatable="yes">Starting...</property>
-                                    <property name="halign">end</property>
-                                    <style>
-                                      <class name="caption"/>
-                                      <class name="dim-label"/>
-                                    </style>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
+                      <object class="AdwActionRow">
+                        <property name="title" translatable="yes">Save Your Work Before Exporting</property>
+                        <property name="subtitle" translatable="yes">Large OGG exports may cause app instability due to soundfile library issues. Please save your pattern first.</property>
                       </object>
                     </child>
                   </object>

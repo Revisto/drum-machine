@@ -19,9 +19,9 @@
 
 import os
 import getpass
-import threading
 from gi.repository import Adw, Gtk, GLib, Gio
 from gettext import gettext as _
+from .audio_export_progress_dialog import AudioExportProgressDialog
 
 
 @Gtk.Template(
@@ -41,12 +41,6 @@ class AudioExportDialog(Adw.Dialog):
     song_row = Gtk.Template.Child()
     cover_row = Gtk.Template.Child()
     cover_button = Gtk.Template.Child()
-    progress_group = Gtk.Template.Child()
-    progress_label = Gtk.Template.Child()
-    progress_bar = Gtk.Template.Child()
-    progress_spinner = Gtk.Template.Child()
-    progress_phase_label = Gtk.Template.Child()
-    progress_status_label = Gtk.Template.Child()
 
     def __init__(self, parent_window, audio_export_service, drum_parts_state, bpm):
         super().__init__()
@@ -55,10 +49,9 @@ class AudioExportDialog(Adw.Dialog):
         self.audio_export_service = audio_export_service
         self.drum_parts_state = drum_parts_state
         self.bpm = bpm
-        self.export_thread = None
-        self.export_success = False
         self.suggested_filename = "new_beat"
         self.cover_art_path = None
+        self.progress_dialog = None
 
         # Define format configuration
         self.format_config = {
@@ -192,89 +185,33 @@ class AudioExportDialog(Adw.Dialog):
 
     def _start_export(self, filename):
         """Start the export process"""
-        # Show progress UI
-        self.progress_group.set_visible(True)
-        self.export_button.set_sensitive(False)
-        self.progress_bar.set_fraction(0.0)
-        self.progress_label.set_text("0%")
-        self.progress_phase_label.set_text(_("Preparing export..."))
-        self.progress_status_label.set_text(_("Initializing..."))
-        self.progress_spinner.set_spinning(True)
-
-        # Start export in background thread
-        self.export_thread = threading.Thread(
-            target=self._export_worker, args=(filename,), daemon=True
+        repeat_count = int(self.repeat_row.get_value())
+        
+        # Get metadata from fields
+        metadata = {
+            "artist": self.artist_row.get_text().strip() or None,
+            "title": self.song_row.get_text().strip() or None,
+            "cover_art": self.cover_art_path
+        }
+        
+        # Close export dialog
+        self.close()
+        
+        # Create and show progress dialog
+        self.progress_dialog = AudioExportProgressDialog(self.parent_window)
+        self.progress_dialog.present(self.parent_window)
+        
+        # Start export process
+        self.progress_dialog.start_export(
+            self.audio_export_service,
+            self.drum_parts_state,
+            self.bpm,
+            filename,
+            repeat_count,
+            metadata
         )
-        self.export_thread.start()
 
-    def _export_worker(self, filename):
-        """Background worker for audio export"""
-        try:
-            repeat_count = int(self.repeat_row.get_value())
-            
-            # Get metadata from fields
-            metadata = {
-                "artist": self.artist_row.get_text().strip() or None,
-                "title": self.song_row.get_text().strip() or None,
-                "cover_art": self.cover_art_path
-            }
-            
-            success = self.audio_export_service.export_audio(
-                self.drum_parts_state,
-                self.bpm,
-                filename,
-                repeat_count=repeat_count,
-                progress_callback=self._on_progress_update,
-                metadata=metadata
-            )
 
-            GLib.idle_add(self._on_export_complete, success, filename)
-
-        except Exception as e:
-            print(f"Export error: {e}")
-            GLib.idle_add(self._on_export_complete, False, filename)
-
-    def _on_progress_update(self, progress):
-        """Update progress bar"""
-        self.progress_bar.set_fraction(progress)
-        percentage = int(progress * 100)
-        self.progress_label.set_text(f"{percentage}%")
-
-        # Update phase label and status based on progress
-        if progress < 0.1:
-            self.progress_phase_label.set_text(_("Preparing export..."))
-            self.progress_status_label.set_text(_("Initializing..."))
-        elif progress < 0.9:
-            self.progress_phase_label.set_text(_("Rendering audio..."))
-            self.progress_status_label.set_text(_("Processing beats..."))
-        else:
-            self.progress_phase_label.set_text(_("Saving file..."))
-            self.progress_status_label.set_text(_("Writing to disk..."))
-
-    def _on_export_complete(self, success, filename):
-        """Handle export completion"""
-        self.progress_spinner.set_spinning(False)
-        self.progress_group.set_visible(False)
-        self.export_button.set_sensitive(True)
-
-        if success:
-            # Show advanced toast with Open button
-            self._show_parent_toast_with_action(
-                _("Audio exported to {}").format(os.path.basename(filename)), filename
-            )
-            self.close()
-        else:
-            self._show_parent_toast(
-                _("Export failed - check file permissions and format support")
-            )
-
-    def _show_parent_toast(self, message):
-        """Show a toast notification on the parent window"""
-        self.parent_window.show_toast(message)
-
-    def _show_parent_toast_with_action(self, message, file_path):
-        """Show a toast with open action on the parent window"""
-        self.parent_window.show_toast(message, open_file=True, file_path=file_path)
 
     def present(self, parent_window=None):
         """Present the dialog"""
