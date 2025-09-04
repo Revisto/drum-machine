@@ -178,9 +178,9 @@ half-view</setter>
                       <object class="GtkScaleButton" id="volume_button">
                         <property name="valign">center</property>
                         <property name="icons">audio-volume-muted-symbolic
-    audio-volume-high-symbolic
-    audio-volume-low-symbolic
-    audio-volume-medium-symbolic</property>
+audio-volume-high-symbolic
+audio-volume-low-symbolic
+audio-volume-medium-symbolic</property>
                         <property name="tooltip-text" translatable="yes">Adjust Volume</property>
                         <property name="adjustment">
                           <object class="GtkAdjustment">
