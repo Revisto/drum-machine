@@ -266,6 +266,7 @@ class AudioExportService:
     def _write_with_encoder(self, audio_data, sample_rate, file_path, metadata=None):
         cmd = [
             "ffmpeg",
+            "-y",
             "-f",
             "f32le",
             "-ar",
