@@ -86,17 +86,6 @@
                     </child>
                   </object>
                 </child>
-                <child>
-                  <object class="AdwPreferencesGroup" id="warning_group">
-                    <property name="title" translatable="yes">Warning</property>
-                    <child>
-                      <object class="AdwActionRow">
-                        <property name="title" translatable="yes">Save Your Work Before Exporting</property>
-                        <property name="subtitle" translatable="yes">Large OGG exports may cause app instability due to soundfile library issues. Please save your pattern first.</property>
-                      </object>
-                    </child>
-                  </object>
-                </child>
               </object>
             </child>
           </object>
