@@ -90,16 +90,7 @@ half-view</setter>
                     </accessibility>
                   </object>
                 </child>
-                <child type="end">
-                  <object class="GtkButton" id="save_preset_button">
-                    <property name="icon-name">document-save-symbolic</property>
-                    <property name="tooltip-text" translatable="yes">Save Drum Pattern</property>
-                    <accessibility>
-                      <property name="label" translatable="yes" context="accessibility">Save Drum Pattern</property>
-                      <property name="description" translatable="yes">Save Current Drum Pattern as a Preset File</property>
-                    </accessibility>
-                  </object>
-                </child>
+
               </object>
             </child>
             <property name="content">
@@ -227,6 +218,12 @@ half-view</setter>
     </property>
   </template>
   <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Save Pattern</attribute>
+        <attribute name="action">win.save_preset</attribute>
+      </item>
+    </section>
     <section>
       <item>
         <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>

@@ -51,7 +51,6 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     play_pause_button = Gtk.Template.Child()
     drum_machine_box = Gtk.Template.Child()
     file_preset_button = Gtk.Template.Child()
-    save_preset_button = Gtk.Template.Child()
     export_audio_button = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
@@ -101,7 +100,6 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.clear_button.connect("clicked", self.handle_clear)
         self.play_pause_button.connect("clicked", self.handle_play_pause)
         self.file_preset_button.connect("clicked", self._on_open_file_clicked)
-        self.save_preset_button.connect("clicked", self._on_save_preset_clicked)
         self.export_audio_button.connect("clicked", self._on_export_audio_clicked)
         self.drum_machine_box.connect(
             "notify::css-classes", self._on_breakpoint_changed
