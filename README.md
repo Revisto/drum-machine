@@ -38,6 +38,9 @@ Drum Machine is a modern and intuitive application for creating, playing, and ma
 - Volume control for overall mix
 - Save and load preset patterns 
 - Multiple drum sounds including kick, snare, hi-hat, and more
+- **Audio export with metadata support**
+  - Export patterns in WAV, FLAC, OGG Vorbis, and MP3 formats
+  - Add artist name, song title, and cover art metadata
 - Keyboard shortcuts for quick access to all functions
 - Modern GTK4 and libadwaita interface
 
