@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-31 03:25+0000\n"
-"PO-Revision-Date: 2025-08-31 12:51+0200\n"
+"POT-Creation-Date: 2025-09-05 03:26+0000\n"
+"PO-Revision-Date: 2025-09-05 13:22+0200\n"
 "Last-Translator: Julián Villodre <jvillodrede@gmail.com>\n"
 "Language-Team: es_ES\n"
 "Language: es_ES\n"
@@ -113,7 +113,7 @@ msgstr "Abrir preajuste"
 
 #: src/window.ui:56
 msgid "Open Saved Drum Pattern Preset"
-msgstr ""
+msgstr "Abrir preajuste guardado de modelo de ritmo de batería"
 
 #: src/window.ui:74
 msgid "Main Menu"
@@ -127,185 +127,188 @@ msgstr "Menú principal"
 #: src/window.ui:77
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr ""
+"Acceder a las combinaciones de teclas y a la información de la aplicación"
 
 #: src/window.ui:84
 msgid "Save Drum Pattern"
-msgstr ""
+msgstr "Guardar modelo de ritmo de batería"
 
 #: src/window.ui:86
 msgctxt "accessibility"
 msgid "Save Drum Pattern"
-msgstr ""
+msgstr "Guardar modelo de ritmo de batería"
 
 #: src/window.ui:87
 msgid "Save Current Drum Pattern as a Preset File"
-msgstr ""
+msgstr "Guardar el modelo de ritmo de batería actual como archivo de preajuste"
 
 #: src/window.ui:131
 msgid "BPM"
-msgstr ""
+msgstr "BPM"
 
 #: src/window.ui:136 src/window.ui:140
 msgid "Adjust Tempo In Beats per Minute (BPM)"
-msgstr ""
+msgstr "Ajustar tempo en ritmos por minuto (BPM)"
 
 #: src/window.ui:139
 msgid "Tempo"
-msgstr ""
+msgstr "Tempo"
 
 #: src/window.ui:181
 msgid "Adjust Volume"
-msgstr ""
+msgstr "Ajustar volumen"
 
 #: src/window.ui:204
 msgid "Reset"
-msgstr ""
+msgstr "Reiniciar"
 
 #: src/window.ui:205
 msgid "Reset the Drum Sequence"
-msgstr ""
+msgstr "Reiniciar la secuencia de la batería"
 
 #: src/window.ui:218
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Combinación de teclas"
 
 #: src/window.ui:222
 msgid "_About Drum Machine"
-msgstr ""
+msgstr "_Acerca de Drum Machine"
 
 #: src/gtk/help-overlay.ui:11
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: src/gtk/help-overlay.ui:14
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Mostrar combinaciones de teclas"
 
 #: src/gtk/help-overlay.ui:20
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Salir"
 
 #: src/gtk/help-overlay.ui:29
 msgctxt "shortcut window"
 msgid "Playback Controls"
-msgstr ""
+msgstr "Controles de reproducción"
 
 #: src/gtk/help-overlay.ui:32
 msgctxt "shortcut window"
 msgid "Play/Pause"
-msgstr ""
+msgstr "Reproducir/Pausar"
 
 #: src/gtk/help-overlay.ui:39
 msgctxt "shortcut window"
 msgid "Clear All"
-msgstr ""
+msgstr "Vaciar todo"
 
 #: src/gtk/help-overlay.ui:48
 msgctxt "shortcut window"
 msgid "BPM & Volume Controls"
-msgstr ""
+msgstr "BPM y controles de volumen"
 
 #: src/gtk/help-overlay.ui:51
 msgctxt "shortcut window"
 msgid "Increase BPM"
-msgstr ""
+msgstr "Aumentar BPM"
 
 #: src/gtk/help-overlay.ui:58
 msgctxt "shortcut window"
 msgid "Decrease BPM"
-msgstr ""
+msgstr "Disminuir BPM"
 
 #: src/gtk/help-overlay.ui:65
 msgctxt "shortcut window"
 msgid "Increase Volume"
-msgstr ""
+msgstr "Aumentar volumen"
 
 #: src/gtk/help-overlay.ui:72
 msgctxt "shortcut window"
 msgid "Decrease Volume"
-msgstr ""
+msgstr "Disminuir volumen"
 
 #: src/gtk/help-overlay.ui:79
 msgctxt "shortcut window"
 msgid "Mute"
-msgstr ""
+msgstr "Silenciar"
 
 #: src/gtk/help-overlay.ui:88
 msgctxt "shortcut window"
 msgid "Preset Management"
-msgstr ""
+msgstr "Gestión de preajuste"
 
 #: src/gtk/help-overlay.ui:91
 msgctxt "shortcut window"
 msgid "Load Preset"
-msgstr ""
+msgstr "Cargar preajuste"
 
 #: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
 msgid "Save Preset"
-msgstr ""
+msgstr "Guardar preajuste"
 
 #: src/gtk/help-overlay.ui:107
 msgctxt "shortcut window"
 msgid "Navigation"
-msgstr ""
+msgstr "Navegación"
 
 #: src/gtk/help-overlay.ui:110
 msgctxt "shortcut window"
 msgid "Go to Instrument"
-msgstr ""
+msgstr "Ir al instrumento"
 
 #: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Previous Page"
-msgstr ""
+msgstr "Página anterior"
 
 #: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Next Page"
-msgstr ""
+msgstr "Página siguiente"
 
 #: src/gtk/save_changes_dialog.ui:6
 msgid "Save Changes?"
-msgstr ""
+msgstr "¿Guardar cambios?"
 
 #: src/gtk/save_changes_dialog.ui:7
 msgid ""
 "Current preset contains unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
+"El preajuste actual contiene cambios sin guardar. Los cambios que no se "
+"guarden se perderán permanentemente."
 
 #. Cancel the operation
 #: src/gtk/save_changes_dialog.ui:14
 msgid "_Cancel"
-msgstr ""
+msgstr "_Cancelar"
 
 #. Discard all changes
 #: src/gtk/save_changes_dialog.ui:15
 msgid "_Discard"
-msgstr ""
+msgstr "_Descartar"
 
 #. Save current changes
 #: src/gtk/save_changes_dialog.ui:16
 msgid "_Save"
-msgstr ""
+msgstr "_Guardar"
 
 #: src/handlers/file_dialog_handler.py:48
 msgid "Default Presets"
-msgstr ""
+msgstr "Preajustes predeterminados"
 
 #: src/handlers/file_dialog_handler.py:76
 #: src/handlers/file_dialog_handler.py:142
 msgid "MIDI files"
-msgstr ""
+msgstr "Archivos MIDI"
 
 #: src/handlers/file_dialog_handler.py:82
 msgid "Open MIDI File"
-msgstr ""
+msgstr "Abrir archivo MIDI"
 
 #: src/handlers/file_dialog_handler.py:148
 msgid "Save Sequence"
-msgstr ""
+msgstr "Guardar secuencia"
