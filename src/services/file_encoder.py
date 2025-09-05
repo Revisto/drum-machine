@@ -28,7 +28,7 @@ class AudioEncoder:
     def __init__(self, format_registry: ExportFormatRegistry):
         self.format_registry = format_registry
 
-    def encode_to_file(self, audio_data, sample_rate, file_path, metadata=None):
+    def encode_to_file(self, audio_data, sample_rate, file_path, metadata=None, export_task=None):
         """Encode audio data to the specified file format"""
         file_ext = os.path.splitext(file_path)[1].lower()
         format_info = self.format_registry.get_format_by_extension(file_ext)
@@ -37,9 +37,9 @@ class AudioEncoder:
         if not format_info.supports_metadata:
             metadata = None
 
-        self._encode_with_ffmpeg(audio_data, sample_rate, file_path, metadata)
+        self._encode_with_ffmpeg(audio_data, sample_rate, file_path, metadata, export_task)
 
-    def _encode_with_ffmpeg(self, audio_data, sample_rate, file_path, metadata=None):
+    def _encode_with_ffmpeg(self, audio_data, sample_rate, file_path, metadata=None, export_task=None):
         """Use ffmpeg to encode audio data"""
         cmd = [
             "ffmpeg",
@@ -71,7 +71,24 @@ class AudioEncoder:
 
         cmd.append(file_path)
 
-        subprocess.run(cmd, input=audio_data.tobytes(), check=True)
+        # Start the subprocess and store reference in export_task
+        process = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        
+        if export_task:
+            export_task.current_process = process
+            
+        # Check for cancellation before starting
+        if export_task and export_task.is_cancelled:
+            process.terminate()
+            return
+            
+        try:
+            stdout, stderr = process.communicate(input=audio_data.tobytes())
+            if process.returncode != 0:
+                raise subprocess.CalledProcessError(process.returncode, cmd, stdout, stderr)
+        finally:
+            if export_task:
+                export_task.current_process = None
 
     def _has_valid_cover_art(self, metadata):
         """Check if metadata contains valid cover art"""

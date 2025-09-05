@@ -19,6 +19,7 @@
 
 import threading
 import time
+import subprocess
 from enum import Enum
 from gi.repository import GLib
 from gettext import gettext as _
@@ -109,6 +110,7 @@ class ExportTask:
         self.progress_handler = progress_handler
         self.export_thread = None
         self.is_cancelled = False
+        self.current_process = None
 
     def start_export(
         self,
@@ -144,6 +146,14 @@ class ExportTask:
     def cancel_export(self):
         """Cancel the ongoing export"""
         self.is_cancelled = True
+        
+        # Kill running process immediately
+        if self.current_process and self.current_process.poll() is None:
+            try:
+                self.current_process.kill()
+            except Exception:
+                pass
+        
         self.progress_handler.stop_progress_tracking()
 
     def _export_worker(
@@ -167,6 +177,7 @@ class ExportTask:
                 progress_callback=self.progress_handler.update_phase,
                 repeat_count=repeat_count,
                 metadata=metadata,
+                export_task=self,
             )
 
             if not self.is_cancelled:

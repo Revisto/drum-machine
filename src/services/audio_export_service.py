@@ -95,6 +95,7 @@ class AudioExportService:
         progress_callback,
         repeat_count=1,
         metadata=None,
+        export_task=None,
     ):
         """
         Export drum pattern to audio file
@@ -119,7 +120,7 @@ class AudioExportService:
 
             progress_callback(ExportPhase.SAVING)
             self.audio_encoder.encode_to_file(
-                audio_buffer.buffer, self.sample_rate, file_path, metadata
+                audio_buffer.buffer, self.sample_rate, file_path, metadata, export_task
             )
 
             return True

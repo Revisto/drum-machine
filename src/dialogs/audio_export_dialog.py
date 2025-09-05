@@ -39,6 +39,7 @@ class AudioExportDialog(Adw.Dialog):
     status_label = Gtk.Template.Child()
     detail_label = Gtk.Template.Child()
     export_button = Gtk.Template.Child()
+    cancel_button = Gtk.Template.Child()
     format_row = Gtk.Template.Child()
     format_list = Gtk.Template.Child()
     repeat_row = Gtk.Template.Child()
@@ -83,6 +84,7 @@ class AudioExportDialog(Adw.Dialog):
     def _connect_signals(self):
         """Connect UI signals"""
         self.export_button.connect("clicked", self._on_export_clicked)
+        self.cancel_button.connect("clicked", self._on_cancel_clicked)
         self.cover_button.connect("clicked", self._on_cover_button_clicked)
         self.format_row.connect("notify::selected", self._on_format_changed)
         self.connect("closed", self._on_dialog_closed)
@@ -179,7 +181,8 @@ class AudioExportDialog(Adw.Dialog):
         self.format_row.set_sensitive(False)
         self.repeat_row.set_sensitive(False)
         self.metadata_manager.set_sensitivity(False)
-        self.export_button.set_sensitive(False)
+        self.export_button.set_visible(False)
+        self.cancel_button.set_visible(True)
 
     def _on_export_complete(self, success, filename):
         """Handle export completion"""
@@ -192,6 +195,12 @@ class AudioExportDialog(Adw.Dialog):
         else:
             self.parent_window.show_toast(_("Export failed"))
 
+        self.close()
+
+    def _on_cancel_clicked(self, button):
+        """Handle cancel button click"""
+        self.export_task.cancel_export()
+        self.parent_window.show_toast(_("Export cancelled successfully"))
         self.close()
 
     def _on_dialog_closed(self, dialog):

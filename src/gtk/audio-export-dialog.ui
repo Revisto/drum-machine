@@ -122,6 +122,16 @@
               </object>
             </child>
             <child>
+              <object class="GtkButton" id="cancel_button">
+                <property name="label" translatable="yes">Cancel Export</property>
+                <property name="visible">false</property>
+                <style>
+                  <class name="destructive-action"/>
+                  <class name="pill"/>
+                </style>
+              </object>
+            </child>
+            <child>
               <object class="GtkBox" id="status_overlay">
                 <property name="orientation">vertical</property>
                 <property name="halign">center</property>
