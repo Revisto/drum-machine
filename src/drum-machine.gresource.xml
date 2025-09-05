@@ -6,5 +6,10 @@
     <file preprocess="xml-stripblanks">window.ui</file>
     <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
     <file preprocess="xml-stripblanks">gtk/save_changes_dialog.ui</file>
+    <file preprocess="xml-stripblanks">gtk/audio-export-dialog.ui</file>
+  </gresource>
+
+  <gresource prefix="/io/github/revisto/drum-machine/icons/scalable/actions/">
+    <file preprocess="xml-stripblanks" alias="audio-x-generic-symbolic.svg">../data/icons/hicolor/scalable/actions/audio-x-generic-symbolic.svg</file>
   </gresource>
 </gresources>

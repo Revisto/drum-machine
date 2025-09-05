@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="AudioExportDialog" parent="AdwDialog">
+    <property name="content-width">450</property>
+    <property name="title" translatable="yes">Export Audio</property>
+    <property name="child">
+      <object class="AdwToolbarView" id="toolbar_view">
+        <child type="top">
+          <object class="AdwHeaderBar" id="header_bar">
+            <property name="show-title">true</property>
+          </object>
+        </child>
+        <property name="content">
+          <object class="GtkOverlay" id="main_overlay">
+            <child type="overlay">
+              <object class="GtkProgressBar" id="progress_bar">
+                <property name="valign">1</property>
+                <property name="visible">false</property>
+                <style>
+                  <class name="osd"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="hscrollbar-policy">never</property>
+                <property name="propagate-natural-height">true</property>
+                <child>
+                  <object class="GtkBox" id="content_box">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">24</property>
+                    <property name="margin-top">24</property>
+                    <property name="margin-bottom">24</property>
+                    <property name="margin-start">24</property>
+                    <property name="margin-end">24</property>
+                    <child>
+                      <object class="AdwPreferencesGroup" id="export_group">
+                        <property name="title" translatable="yes">Export Settings</property>
+                        <property name="description" translatable="yes">Configure your audio export options</property>
+                        <child>
+                          <object class="AdwComboRow" id="format_row">
+                            <property name="title" translatable="yes">Audio Format</property>
+                            <property name="subtitle" translatable="yes">Select the output audio format</property>
+                            <property name="model">
+                              <object class="GtkStringList" id="format_list">
+                          </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwSpinRow" id="repeat_row">
+                            <property name="title" translatable="yes">Repeat Count</property>
+                            <property name="subtitle" translatable="yes">How many times to repeat the pattern</property>
+                            <property name="adjustment">
+                              <object class="GtkAdjustment">
+                                <property name="lower">1</property>
+                                <property name="upper">100</property>
+                                <property name="value">5</property>
+                                <property name="step-increment">1</property>
+                                <property name="page-increment">5</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwPreferencesGroup" id="metadata_group">
+                        <property name="title" translatable="yes">Metadata</property>
+                        <property name="description" translatable="yes">Add metadata to your exported audio</property>
+                        <child>
+                          <object class="AdwEntryRow" id="artist_row">
+                            <property name="title" translatable="yes">Artist Name</property>
+                            <property name="show-apply-button">false</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwEntryRow" id="song_row">
+                            <property name="title" translatable="yes">Song Name</property>
+                            <property name="show-apply-button">false</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="cover_row">
+                            <property name="title" translatable="yes">Cover Art</property>
+                            <property name="subtitle" translatable="yes">Select an image file for the cover art</property>
+                            <property name="activatable-widget">cover_button</property>
+                            <child>
+                              <object class="GtkButton" id="cover_button">
+                                <property name="label" translatable="yes">Choose File</property>
+                                <property name="valign">center</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+        <child type="bottom">
+          <object class="GtkBox" id="button_box">
+            <property name="orientation">vertical</property>
+            <property name="halign">center</property>
+            <property name="margin-start">24</property>
+            <property name="margin-end">24</property>
+            <property name="margin-top">16</property>
+            <property name="margin-bottom">32</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkButton" id="export_button">
+                <property name="label" translatable="yes">Export Audio</property>
+                <style>
+                  <class name="suggested-action"/>
+                  <class name="pill"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="cancel_button">
+                <property name="label" translatable="yes">Cancel Export</property>
+                <property name="visible">false</property>
+                <style>
+                  <class name="destructive-action"/>
+                  <class name="pill"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="status_overlay">
+                <property name="orientation">vertical</property>
+                <property name="halign">center</property>
+                <property name="spacing">6</property>
+                <property name="visible">false</property>
+                <child>
+                  <object class="GtkLabel" id="status_label">
+                    <property name="halign">center</property>
+                    <property name="label">Exporting...</property>
+                    <style>
+                      <class name="heading"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="detail_label">
+                    <property name="halign">center</property>
+                    <property name="label">Processing...</property>
+                    <style>
+                      <class name="caption"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+</interface>

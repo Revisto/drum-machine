@@ -21,7 +21,7 @@ import threading
 import time
 from gi.repository import GLib
 from ..interfaces.player import IPlayer
-from ..config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
+from ..config.constants import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
 from .preset_service import PresetService
 from .ui_helper import UIHelper
 

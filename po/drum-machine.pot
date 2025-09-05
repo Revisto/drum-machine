@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 20:13+0330\n"
+"POT-Creation-Date: 2025-09-05 19:36+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
 msgid "Drum Machine"
 msgstr ""
 
@@ -185,96 +185,218 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 
+#: src/config/export_formats.py:43
+msgid "MP3 files"
+msgstr ""
+
+#: src/config/export_formats.py:44
+msgid "MP3"
+msgstr ""
+
+#: src/config/export_formats.py:50
+msgid "FLAC files"
+msgstr ""
+
+#: src/config/export_formats.py:51
+msgid "FLAC (Lossless)"
+msgstr ""
+
+#: src/config/export_formats.py:57
+msgid "OGG files"
+msgstr ""
+
+#: src/config/export_formats.py:58
+msgid "OGG Vorbis"
+msgstr ""
+
+#: src/config/export_formats.py:64
+msgid "WAV files"
+msgstr ""
+
+#: src/config/export_formats.py:65
+msgid "WAV (Uncompressed)"
+msgstr ""
+
+#: src/dialogs/audio_export_dialog.py:104
+msgid "Save Audio File"
+msgstr ""
+
+#: src/dialogs/audio_export_dialog.py:128
+msgid "Image files"
+msgstr ""
+
+#: src/dialogs/audio_export_dialog.py:134
+msgid "Select Cover Art"
+msgstr ""
+
+#: src/dialogs/audio_export_dialog.py:191
+msgid "Audio exported to {}"
+msgstr ""
+
+#: src/dialogs/audio_export_dialog.py:196
+msgid "Export failed"
+msgstr ""
+
+#: src/dialogs/audio_export_dialog.py:203
+msgid "Export cancelled successfully"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:50
+msgid "Default Presets"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "No Pattern"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:83
+msgid "Please create a drum pattern before exporting audio."
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:85
+msgid "_OK"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:107
+#: src/handlers/file_dialog_handler.py:173
+msgid "MIDI files"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:113
+msgid "Open MIDI File"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr ""
+
+#: src/utils/export_progress.py:67
+msgid "Preparing..."
+msgstr ""
+
+#: src/utils/export_progress.py:68
+msgid "Initializing..."
+msgstr ""
+
+#: src/utils/export_progress.py:70
+msgid "Rendering audio..."
+msgstr ""
+
+#: src/utils/export_progress.py:71
+msgid "Processing beats..."
+msgstr ""
+
+#: src/utils/export_progress.py:73
+msgid "Saving file..."
+msgstr ""
+
+#: src/utils/export_progress.py:74
+msgid "Writing to disk..."
+msgstr ""
+
+#: src/utils/export_progress.py:76
+msgid "Exporting..."
+msgstr ""
+
+#: src/utils/export_progress.py:77
+msgid "Processing..."
+msgstr ""
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:190
+#: src/window.py:198
 msgid "{} Beats per Minute (BPM)"
 msgstr ""
 
 #. Update button tooltip to show current volume level
-#: src/window.py:199
+#: src/window.py:207
 msgid "{:.0f}% Volume"
 msgstr ""
 
-#: src/window.py:214 src/window.ui:167
+#: src/window.py:222 src/window.ui:170
 msgid "Play"
 msgstr ""
 
-#: src/window.py:218
+#: src/window.py:226
 msgid "Pause"
 msgstr ""
 
-#: src/window.ui:50
+#: src/window.py:264 src/window.ui:52
 msgid "Open"
 msgstr ""
 
-#: src/window.ui:52
+#: src/window.ui:54
 msgid "Open Preset"
 msgstr ""
 
-#: src/window.ui:55
+#: src/window.ui:57
 msgctxt "accessibility"
 msgid "Open Preset"
 msgstr ""
 
-#: src/window.ui:56
+#: src/window.ui:58
 msgid "Open Saved Drum Pattern Preset"
 msgstr ""
 
-#: src/window.ui:74
+#: src/window.ui:76
 msgid "Main Menu"
 msgstr ""
 
-#: src/window.ui:76
+#: src/window.ui:78
 msgctxt "accessibility"
 msgid "Main Menu"
 msgstr ""
 
-#: src/window.ui:77
+#: src/window.ui:79
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr ""
 
-#: src/window.ui:84
-msgid "Save Drum Pattern"
+#: src/window.ui:86 src/gtk/audio-export-dialog.ui:7
+#: src/gtk/audio-export-dialog.ui:117
+msgid "Export Audio"
 msgstr ""
 
-#: src/window.ui:86
+#: src/window.ui:88
 msgctxt "accessibility"
-msgid "Save Drum Pattern"
+msgid "Export Audio"
 msgstr ""
 
-#: src/window.ui:87
-msgid "Save Current Drum Pattern as a Preset File"
+#: src/window.ui:89
+msgid "Export Current Drum Pattern as Audio File"
 msgstr ""
 
-#: src/window.ui:131
+#: src/window.ui:134
 msgid "BPM"
 msgstr ""
 
-#: src/window.ui:136 src/window.ui:140
+#: src/window.ui:139 src/window.ui:143
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr ""
 
-#: src/window.ui:139
+#: src/window.ui:142
 msgid "Tempo"
 msgstr ""
 
-#: src/window.ui:181
+#: src/window.ui:184
 msgid "Adjust Volume"
 msgstr ""
 
-#: src/window.ui:204
+#: src/window.ui:207
 msgid "Reset"
 msgstr ""
 
-#: src/window.ui:205
+#: src/window.ui:208
 msgid "Reset the Drum Sequence"
 msgstr ""
 
-#: src/window.ui:218
+#: src/window.ui:223
+msgid "_Save Pattern"
+msgstr ""
+
+#: src/window.ui:229
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/window.ui:222
+#: src/window.ui:233
 msgid "_About Drum Machine"
 msgstr ""
 
@@ -333,37 +455,47 @@ msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:81
+#: src/gtk/help-overlay.ui:79
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr ""
+
+#: src/gtk/help-overlay.ui:88
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.ui:91
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:100
+#: src/gtk/help-overlay.ui:105
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr ""
+
+#: src/gtk/help-overlay.ui:114
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:103
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:131
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr ""
@@ -393,19 +525,58 @@ msgstr ""
 msgid "_Save"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:48
-msgid "Default Presets"
+#: src/gtk/audio-export-dialog.ui:40
+msgid "Export Settings"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:76
-#: src/handlers/file_dialog_handler.py:142
-msgid "MIDI files"
+#: src/gtk/audio-export-dialog.ui:41
+msgid "Configure your audio export options"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:82
-msgid "Open MIDI File"
+#: src/gtk/audio-export-dialog.ui:44
+msgid "Audio Format"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:148
-msgid "Save Sequence"
+#: src/gtk/audio-export-dialog.ui:45
+msgid "Select the output audio format"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.ui:54
+msgid "Repeat Count"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.ui:55
+msgid "How many times to repeat the pattern"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.ui:71
+msgid "Metadata"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.ui:72
+msgid "Add metadata to your exported audio"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.ui:75
+msgid "Artist Name"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.ui:81
+msgid "Song Name"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.ui:87
+msgid "Cover Art"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.ui:88
+msgid "Select an image file for the cover art"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.ui:92
+msgid "Choose File"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.ui:126
+msgid "Cancel Export"
 msgstr ""

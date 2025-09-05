@@ -3,4 +3,4 @@ mido
 setuptools
 setuptools-scm
 packaging
-flit-core
+numpy

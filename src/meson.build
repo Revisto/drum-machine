@@ -31,11 +31,12 @@ drum_machine_sources = [
   'main.py',
   'window.py',
   'application.py',
-  'config.py',
   'style.css',
   'style-dark.css',
 ]
 
+subdir('config')
+subdir('utils')
 subdir('interfaces')
 subdir('handlers')
 subdir('services')
