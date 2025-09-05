@@ -97,7 +97,7 @@ class WindowActionHandler:
         self.window.on_open_file(self.window.file_preset_button)
 
     def on_save_preset_action(self, action, param):
-        self.window.on_save_preset(None)
+        self.window.on_save_preset()
 
     def on_export_audio_action(self, action, param):
         self.window._on_export_audio_clicked(self.window.export_audio_button)

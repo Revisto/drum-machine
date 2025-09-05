@@ -154,7 +154,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def _on_open_file_clicked(self, button):
         self.file_dialog_handler.handle_open_file()
 
-    def _on_save_preset_clicked(self, button):
+    def _on_save_preset_clicked(self):
         self.file_dialog_handler.handle_save_preset()
 
     def _on_export_audio_clicked(self, button):
@@ -165,9 +165,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         """Compatibility method"""
         self._on_open_file_clicked(button)
 
-    def on_save_preset(self, button):
+    def on_save_preset(self):
         """Compatibility method"""
-        self._on_save_preset_clicked(button)
+        self._on_save_preset_clicked()
 
     def scroll_carousel_to_page(self, page_index):
         """Scrolls the carousel to a specific page if auto-scroll is enabled."""
