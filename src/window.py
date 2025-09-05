@@ -276,6 +276,4 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def _open_file(self, action, parameter):
         """Open file with default app"""
         file_path = parameter.get_string()
-        import subprocess
-
-        subprocess.run(["xdg-open", file_path])
+        Gio.AppInfo.launch_default_for_uri(f"file://{file_path}", None)
