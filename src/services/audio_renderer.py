@@ -18,7 +18,11 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import numpy as np
-from ..config.constants import DRUM_PARTS, GROUP_TOGGLE_COUNT
+from ..config.constants import (
+    DRUM_PARTS,
+    GROUP_TOGGLE_COUNT,
+    DEFAULT_FALLBACK_SAMPLE_SIZE,
+)
 
 
 class AudioBuffer:
@@ -153,5 +157,7 @@ class AudioRenderer:
         for part in DRUM_PARTS:
             part_state = drum_parts_state.get(part, {})
             if part_state.get(subdivision, False):
-                sample_data = self.samples.get(part, np.zeros((1000, 2)))
+                sample_data = self.samples.get(
+                    part, np.zeros(DEFAULT_FALLBACK_SAMPLE_SIZE)
+                )
                 audio_buffer.add_sample(sample_data, start_sample)

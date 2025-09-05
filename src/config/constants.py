@@ -32,3 +32,9 @@ DRUM_PARTS = [
 DEFAULT_PRESETS = ["Shoot", "Maybe Rock", "Boom Boom", "Night", "Slow", "Chill"]
 NUM_TOGGLES = 16
 GROUP_TOGGLE_COUNT = 4
+
+# Audio rendering constants
+DEFAULT_FALLBACK_SAMPLE_SIZE = (1000, 2)
+
+# Progress bar constants
+PULSE_INTERVAL_SECONDS = 1.0

@@ -22,6 +22,7 @@ import time
 from enum import Enum
 from gi.repository import GLib
 from gettext import gettext as _
+from ..config.constants import PULSE_INTERVAL_SECONDS
 
 
 class ExportPhase(Enum):
@@ -88,7 +89,7 @@ class ExportProgressHandler:
         def pulse_worker():
             while not self.pulse_stop_event.is_set() and self.is_active:
                 GLib.idle_add(self.progress_bar.pulse)
-                time.sleep(1.0)
+                time.sleep(PULSE_INTERVAL_SECONDS)
 
         self.pulse_thread = threading.Thread(target=pulse_worker, daemon=True)
         self.pulse_thread.start()
