@@ -59,7 +59,7 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Audio export feature with support for WAV, FLAC, OGG, and MP3 formats"
+msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
@@ -112,7 +112,7 @@ msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:70
 msgid ""
-"Audio Export Feature: Export your drum patterns to WAV, FLAC, OGG Vorbis, "
+"Audio Export Feature: Export your drum patterns to WAV, FLAC, Ogg Vorbis, "
 "and MP3 formats"
 msgstr ""
 
@@ -243,11 +243,11 @@ msgid "FLAC (Lossless)"
 msgstr ""
 
 #: src/config/export_formats.py:57
-msgid "OGG files"
+msgid "Ogg files"
 msgstr ""
 
 #: src/config/export_formats.py:58
-msgid "OGG Vorbis"
+msgid "Ogg Vorbis"
 msgstr ""
 
 #: src/config/export_formats.py:64

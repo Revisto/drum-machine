@@ -41,7 +41,7 @@ Drum Machine is a modern and intuitive application for creating, playing, and ma
 - Save and load preset patterns 
 - Multiple drum sounds including kick, snare, hi-hat, and more
 - **Audio export with metadata support**
-  - Export patterns in WAV, FLAC, OGG Vorbis, and MP3 formats
+  - Export patterns in WAV, FLAC, Ogg Vorbis, and MP3 formats
   - Add artist name, song title, and cover art metadata
   - Configurable pattern repeat count for longer exports
 - Keyboard shortcuts for quick access to all functions
