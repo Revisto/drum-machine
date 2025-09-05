@@ -19,7 +19,6 @@
 
 import threading
 import time
-import subprocess
 from enum import Enum
 from gi.repository import GLib
 from gettext import gettext as _
