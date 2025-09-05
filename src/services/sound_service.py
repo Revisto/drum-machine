@@ -26,6 +26,7 @@ from ..config.constants import DRUM_PARTS
 class SoundService(ISoundService):
     def __init__(self, drumkit_dir):
         pygame.init()
+        pygame.mixer.set_num_channels(32)
         self.drumkit_dir = drumkit_dir
         self.sounds = {}
 
