@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-05 19:36+0330\n"
+"POT-Creation-Date: 2025-09-05 23:00+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,125 +59,166 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Audio export feature with support for WAV, FLAC, OGG, and MP3 formats"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:46
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:48
 msgid "drum"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:47
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
 msgid "machine"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:48
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:50
 msgid "rhythm"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:51
 msgid "music"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:50
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:52
 msgid "pattern"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:51
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:53
 msgid "beats"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:60
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:62
 msgid "Revisto"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:66
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:68
+msgid "Drum Machine 1.5.0 introduces major audio export capabilities! 🎵"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:70
+msgid ""
+"Audio Export Feature: Export your drum patterns to WAV, FLAC, OGG Vorbis, "
+"and MP3 formats"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:71
+msgid ""
+"Metadata Support: Embed artist name, song title, and cover art in exported "
+"files"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:72
+msgid ""
+"Repeat Pattern: Set how many times your beat repeats in the exported audio"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:73
+msgid ""
+"Bug Fix: Fixed issue where multiple drum sounds weren't playing "
+"simultaneously"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:74
+msgid ""
+"Translation Updates: Updated Spanish, Russian, Georgian, Chinese, Hungarian, "
+"Swedish, and more"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:80
 msgid "Drum Machine 1.4.0 is here with some good updates! 🥁"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:68
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:82
 msgid ""
 "More pages for longer, more complex beats, because sometimes you need more "
 "than 16 steps!"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:69
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:83
 msgid ""
 "Mobile-friendly improvements, now your drum machine works better on phones "
 "(with showing half of the grid)"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:70
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:84
 msgid ""
 "Goes global! Now translated into 17 languages including Chinese, Russian, "
 "Arabic, Hebrew, and many more"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:76
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:90
 msgid ""
 "This release of Drum Machine 1.3.1 brings significant UI and functionality "
 "improvements:"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:78
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:92
 msgid ""
 "Refactored headerbar and background styling for a flat, integrated visual "
 "experience."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:79
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:93
 msgid ""
 "Enhanced accessibility with improved tooltips and descriptive labels for BPM "
 "and volume controls."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:80
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:94
 msgid ""
 "Redesigned app icon and updated text styling for clearer user interface "
 "elements."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:81
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:95
 msgid ""
 "Optimized layout breakpoints to improve responsiveness and reduce early "
 "scrolling."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:82
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:96
 msgid ""
 "Fixed padding, border-radius, and vertical alignment issues across multiple "
 "controls."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:83
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:97
 msgid ""
 "Updated file dialogs to use the Nautilus file chooser for a more modern "
 "approach."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:84
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:98
 msgid ""
 "Improved keyboard navigation focus and updated tooltips, including dedicated "
 "play and pause hints."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:85
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:99
 msgid ""
 "Transitioned to the Nautilus file chooser for a more contemporary interface."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:86
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:100
 msgid "Now accessible on narrow mobile screens with adaptive UI elements."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:87
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:101
 msgid "Refined app icon, and adjusted brand colors for better contrast."
 msgstr ""
 
@@ -270,35 +311,35 @@ msgstr ""
 msgid "Save Sequence"
 msgstr ""
 
-#: src/utils/export_progress.py:67
+#: src/utils/export_progress.py:68
 msgid "Preparing..."
 msgstr ""
 
-#: src/utils/export_progress.py:68
+#: src/utils/export_progress.py:69
 msgid "Initializing..."
 msgstr ""
 
-#: src/utils/export_progress.py:70
+#: src/utils/export_progress.py:71
 msgid "Rendering audio..."
 msgstr ""
 
-#: src/utils/export_progress.py:71
+#: src/utils/export_progress.py:72
 msgid "Processing beats..."
 msgstr ""
 
-#: src/utils/export_progress.py:73
+#: src/utils/export_progress.py:74
 msgid "Saving file..."
 msgstr ""
 
-#: src/utils/export_progress.py:74
+#: src/utils/export_progress.py:75
 msgid "Writing to disk..."
 msgstr ""
 
-#: src/utils/export_progress.py:76
+#: src/utils/export_progress.py:77
 msgid "Exporting..."
 msgstr ""
 
-#: src/utils/export_progress.py:77
+#: src/utils/export_progress.py:78
 msgid "Processing..."
 msgstr ""
 
@@ -350,8 +391,8 @@ msgstr ""
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr ""
 
-#: src/window.ui:86 src/gtk/audio-export-dialog.ui:7
-#: src/gtk/audio-export-dialog.ui:117
+#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6
+#: src/gtk/audio-export-dialog.blp:102
 msgid "Export Audio"
 msgstr ""
 
@@ -400,183 +441,183 @@ msgstr ""
 msgid "_About Drum Machine"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:11
+#: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:14
+#: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:20
+#: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:29
+#: src/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Playback Controls"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:32
+#: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:39
+#: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:48
+#: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
 msgid "BPM & Volume Controls"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:51
+#: src/gtk/help-overlay.blp:45
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:58
+#: src/gtk/help-overlay.blp:51
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:65
+#: src/gtk/help-overlay.blp:57
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:72
+#: src/gtk/help-overlay.blp:63
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:79
+#: src/gtk/help-overlay.blp:69
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:88
+#: src/gtk/help-overlay.blp:76
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.blp:79
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:98
+#: src/gtk/help-overlay.blp:85
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:105
+#: src/gtk/help-overlay.blp:91
 msgctxt "shortcut window"
 msgid "Export Audio"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:114
+#: src/gtk/help-overlay.blp:98
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.blp:101
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:124
+#: src/gtk/help-overlay.blp:107
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:131
+#: src/gtk/help-overlay.blp:113
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr ""
 
-#: src/gtk/save_changes_dialog.ui:6
+#: src/gtk/save-changes-dialog.blp:5
 msgid "Save Changes?"
 msgstr ""
 
-#: src/gtk/save_changes_dialog.ui:7
+#: src/gtk/save-changes-dialog.blp:6
 msgid ""
 "Current preset contains unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
 
-#. Cancel the operation
-#: src/gtk/save_changes_dialog.ui:14
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14
 msgid "_Cancel"
 msgstr ""
 
-#. Discard all changes
-#: src/gtk/save_changes_dialog.ui:15
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
 msgid "_Discard"
 msgstr ""
 
-#. Save current changes
-#: src/gtk/save_changes_dialog.ui:16
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
 msgid "_Save"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:40
+#: src/gtk/audio-export-dialog.blp:38
 msgid "Export Settings"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:41
+#: src/gtk/audio-export-dialog.blp:39
 msgid "Configure your audio export options"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:44
+#: src/gtk/audio-export-dialog.blp:42
 msgid "Audio Format"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:45
+#: src/gtk/audio-export-dialog.blp:43
 msgid "Select the output audio format"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:54
+#: src/gtk/audio-export-dialog.blp:49
 msgid "Repeat Count"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:55
+#: src/gtk/audio-export-dialog.blp:50
 msgid "How many times to repeat the pattern"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:71
+#: src/gtk/audio-export-dialog.blp:63
 msgid "Metadata"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:72
+#: src/gtk/audio-export-dialog.blp:64
 msgid "Add metadata to your exported audio"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:75
+#: src/gtk/audio-export-dialog.blp:67
 msgid "Artist Name"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:81
+#: src/gtk/audio-export-dialog.blp:72
 msgid "Song Name"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:87
+#: src/gtk/audio-export-dialog.blp:77
 msgid "Cover Art"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:88
+#: src/gtk/audio-export-dialog.blp:78
 msgid "Select an image file for the cover art"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:92
+#: src/gtk/audio-export-dialog.blp:82
 msgid "Choose File"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:126
+#: src/gtk/audio-export-dialog.blp:111
 msgid "Cancel Export"
 msgstr ""
