@@ -1,0 +1,119 @@
+using Gtk 4.0;
+
+ShortcutsWindow help_overlay {
+  modal: true;
+
+  ShortcutsSection {
+    section-name: "shortcuts";
+    max-height: 12;
+
+    ShortcutsGroup {
+      title: C_("shortcut window", "General");
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Show Shortcuts");
+        action-name: "win.show-help-overlay";
+      }
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Quit");
+        action-name: "win.quit";
+        accelerator: "<Primary>q";
+      }
+    }
+
+    ShortcutsGroup {
+      title: C_("shortcut window", "Playback Controls");
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Play/Pause");
+        action-name: "win.play_pause";
+        accelerator: "space";
+      }
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Clear All");
+        action-name: "win.clear_toggles";
+        accelerator: "<Primary>Delete";
+      }
+    }
+
+    ShortcutsGroup {
+      title: C_("shortcut window", "BPM & Volume Controls");
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Increase BPM");
+        action-name: "win.increase_bpm";
+        accelerator: "plus equal";
+      }
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Decrease BPM");
+        action-name: "win.decrease_bpm";
+        accelerator: "minus";
+      }
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Increase Volume");
+        action-name: "win.increase_volume";
+        accelerator: "<Primary>Up";
+      }
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Decrease Volume");
+        action-name: "win.decrease_volume";
+        accelerator: "<Primary>Down";
+      }
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Mute");
+        action-name: "win.mute";
+        accelerator: "<Primary>m";
+      }
+    }
+
+    ShortcutsGroup {
+      title: C_("shortcut window", "Preset Management");
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Load Preset");
+        action-name: "win.load_preset";
+        accelerator: "<Primary>o";
+      }
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Save Preset");
+        action-name: "win.save_preset";
+        accelerator: "<Primary>s";
+      }
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Export Audio");
+        action-name: "win.export_audio";
+        accelerator: "<Primary>e";
+      }
+    }
+
+    ShortcutsGroup {
+      title: C_("shortcut window", "Navigation");
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Go to Instrument");
+        action-name: "win.go_to_instrument";
+        accelerator: "<Primary>i";
+      }
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Previous Page");
+        action-name: "win.previous_page";
+        accelerator: "Page_Up";
+      }
+
+      ShortcutsShortcut {
+        title: C_("shortcut window", "Next Page");
+        action-name: "win.next_page";
+        accelerator: "Page_Down";
+      }
+    }
+  }
+}

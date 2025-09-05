@@ -1,0 +1,18 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $SaveChangesDialog: Adw.AlertDialog {
+  heading: _("Save Changes?");
+  body: _("Current preset contains unsaved changes. Changes which are not saved will be permanently lost.");
+  close-response: "cancel";
+  default-response: "save";
+  response::save => $_on_save();
+  response::discard => $_on_discard();
+  response::cancel => $_on_cancel();
+
+  responses [
+    /* Translators: Cancel the operation */cancel: _("_Cancel"),
+    /* Translators: Discard all changes */discard: _("_Discard") destructive,
+    /* Translators: Save current changes */save: _("_Save") suggested,
+  ]
+}
