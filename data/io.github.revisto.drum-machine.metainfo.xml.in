@@ -19,6 +19,8 @@
       <li>Volume control for overall mix</li>
       <li>Save and load preset patterns</li>
       <li>Multiple drum sounds including kick, snare, hi-hat, and more</li>
+      <li>Audio export feature with support for WAV, FLAC, OGG, and MP3 formats</li>
+      <li>Metadata support for embedding artist name, song title, and cover art</li>
       <li>Keyboard shortcuts for quick access to all functions</li>
     </ul>
   </description>
@@ -61,6 +63,18 @@
     <email>therevisto@gmail.com</email>
   </developer>
   <releases>
+    <release version="1.5.0" date="2025-09-05">
+      <description>
+        <p>Drum Machine 1.5.0 introduces major audio export capabilities! 🎵</p>
+        <ul>
+          <li>Audio Export Feature: Export your drum patterns to WAV, FLAC, OGG Vorbis, and MP3 formats</li>
+          <li>Metadata Support: Embed artist name, song title, and cover art in exported files</li>
+          <li>Repeat Pattern: Set how many times your beat repeats in the exported audio</li>
+          <li>Bug Fix: Fixed issue where multiple drum sounds weren't playing simultaneously</li>
+          <li>Translation Updates: Updated Spanish, Russian, Georgian, Chinese, Hungarian, Swedish, and more</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.4.0" date="2025-08-01">
       <description>
         <p>Drum Machine 1.4.0 is here with some good updates! 🥁</p>
