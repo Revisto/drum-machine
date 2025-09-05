@@ -54,8 +54,8 @@ class ExportFormatRegistry:
             2: ExportFormat(
                 ext=".ogg",
                 pattern="*.ogg",
-                name=_("OGG files"),
-                display=_("OGG Vorbis"),
+                name=_("Ogg files"),
+                display=_("Ogg Vorbis"),
                 supports_metadata=True,
             ),
             3: ExportFormat(
