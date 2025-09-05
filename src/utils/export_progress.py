@@ -146,14 +146,14 @@ class ExportTask:
     def cancel_export(self):
         """Cancel the ongoing export"""
         self.is_cancelled = True
-        
+
         # Kill running process immediately
         if self.current_process and self.current_process.poll() is None:
             try:
                 self.current_process.kill()
             except Exception:
                 pass
-        
+
         self.progress_handler.stop_progress_tracking()
 
     def _export_worker(
