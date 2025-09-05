@@ -22,7 +22,7 @@ import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Gdk, Adw, GLib
-from ..config import DRUM_PARTS, GROUP_TOGGLE_COUNT
+from ..config.constants import DRUM_PARTS, GROUP_TOGGLE_COUNT
 
 
 class DrumGridBuilder:

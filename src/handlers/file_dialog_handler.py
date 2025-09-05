@@ -25,7 +25,7 @@ gi.require_version("Gio", "2.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Gio, GLib, Adw
 from gettext import gettext as _
-from ..config import DEFAULT_PRESETS
+from ..config.constants import DEFAULT_PRESETS
 from ..dialogs.audio_export_dialog import AudioExportDialog
 
 
@@ -95,7 +95,7 @@ class FileDialogHandler:
             self.window.drum_machine_service.drum_parts_state,
             self.window.drum_machine_service.bpm,
         )
-        export_dialog.present()
+        export_dialog.present(self.window)
 
     def _save_and_open_file(self):
         self._show_save_dialog(self._open_file_directly)

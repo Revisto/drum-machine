@@ -19,7 +19,7 @@
 
 import mido
 import itertools
-from ..config import DRUM_PARTS
+from ..config.constants import DRUM_PARTS
 
 
 class PresetService:

@@ -20,7 +20,7 @@
 import os
 import pygame
 from ..interfaces.sound import ISoundService
-from ..config import DRUM_PARTS
+from ..config.constants import DRUM_PARTS
 
 
 class SoundService(ISoundService):

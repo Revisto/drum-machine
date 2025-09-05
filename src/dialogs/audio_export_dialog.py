@@ -9,7 +9,7 @@
 #
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR ANY PURPOSE.  See the
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
@@ -21,7 +21,8 @@ import os
 import getpass
 from gi.repository import Adw, Gtk, GLib, Gio
 from gettext import gettext as _
-from .audio_export_progress_dialog import AudioExportProgressDialog
+
+from ..utils.export_progress import ExportProgressHandler, ExportTask
 
 
 @Gtk.Template(
@@ -33,6 +34,10 @@ class AudioExportDialog(Adw.Dialog):
     __gtype_name__ = "AudioExportDialog"
 
     # Template children
+    progress_bar = Gtk.Template.Child()
+    status_overlay = Gtk.Template.Child()
+    status_label = Gtk.Template.Child()
+    detail_label = Gtk.Template.Child()
     export_button = Gtk.Template.Child()
     format_row = Gtk.Template.Child()
     format_list = Gtk.Template.Child()
@@ -50,74 +55,45 @@ class AudioExportDialog(Adw.Dialog):
         self.drum_parts_state = drum_parts_state
         self.bpm = bpm
         self.suggested_filename = "new_beat"
-        self.cover_art_path = None
-        self.progress_dialog = None
 
-        # Define format configuration
-        self.format_config = {
-            0: {
-                "ext": ".ogg",
-                "pattern": "*.ogg",
-                "name": _("OGG files"),
-                "display": _("OGG Vorbis"),
-                "supports_metadata": True,
-            },
-            1: {
-                "ext": ".mp3",
-                "pattern": "*.mp3",
-                "name": _("MP3 files"),
-                "display": _("MP3"),
-                "supports_metadata": True,
-            },
-            2: {
-                "ext": ".flac",
-                "pattern": "*.flac",
-                "name": _("FLAC files"),
-                "display": _("FLAC (Lossless)"),
-                "supports_metadata": True,
-            },
-            3: {
-                "ext": ".wav",
-                "pattern": "*.wav",
-                "name": _("WAV files"),
-                "display": _("WAV (Uncompressed)"),
-                "supports_metadata": False,
-            },
-        }
+        # Initialize components
+        self.metadata_manager = ExportMetadata(
+            self.artist_row, self.song_row, self.cover_row, self.cover_button
+        )
+        self.progress_handler = ExportProgressHandler(
+            self.progress_bar, self.status_overlay, self.status_label, self.detail_label
+        )
+        self.export_task = ExportTask(audio_export_service, self.progress_handler)
 
-        self._populate_format_list()
-        self._setup_defaults()
+        self._setup_ui()
         self._connect_signals()
+
+    def _setup_ui(self):
+        """Initialize the UI components"""
+        self._populate_format_list()
         self._update_metadata_sensitivity()
 
     def _populate_format_list(self):
         """Populate the format dropdown with available formats"""
-        for index in sorted(self.format_config.keys()):
-            format_info = self.format_config[index]
-            self.format_list.append(format_info["display"])
-
-    def _setup_defaults(self):
-        """Set up default values for metadata fields"""
-        # Set default artist name to system username
-        try:
-            system_username = getpass.getuser()
-            self.artist_row.set_text(system_username)
-        except Exception:
-            pass  # Keep field empty if unable to get username
+        formats = self.audio_export_service.format_registry.get_all_formats()
+        for format_id in sorted(formats.keys()):
+            format_info = formats[format_id]
+            self.format_list.append(format_info.display)
 
     def _connect_signals(self):
         """Connect UI signals"""
         self.export_button.connect("clicked", self._on_export_clicked)
         self.cover_button.connect("clicked", self._on_cover_button_clicked)
         self.format_row.connect("notify::selected", self._on_format_changed)
+        self.connect("closed", self._on_dialog_closed)
 
     def _create_file_dialog_with_format(self, selected_format):
         """Create file dialog with format-specific filter"""
-        info = self.format_config.get(selected_format, self.format_config[0])
+        info = self.audio_export_service.format_registry.get_format(selected_format)
 
         file_filter = Gtk.FileFilter.new()
-        file_filter.add_pattern(info["pattern"])
-        file_filter.set_name(info["name"])
+        file_filter.add_pattern(info.pattern)
+        file_filter.set_name(info.name)
 
         filefilters = Gio.ListStore.new(Gtk.FileFilter)
         filefilters.append(file_filter)
@@ -125,27 +101,20 @@ class AudioExportDialog(Adw.Dialog):
         dialog = Gtk.FileDialog.new()
         dialog.set_title(_("Save Audio File"))
         dialog.set_filters(filefilters)
-        dialog.set_modal(True)
-        dialog.set_initial_name(self.suggested_filename + info["ext"])
+        dialog.set_initial_name(self.suggested_filename + info.ext)
 
-        return dialog, info["ext"]
-
-    def _format_supports_metadata(self, format_index):
-        """Check if the selected format supports metadata"""
-        return self.format_config.get(format_index, {}).get("supports_metadata", False)
+        return dialog
 
     def _update_metadata_sensitivity(self):
         """Update metadata fields sensitivity based on selected format"""
         selected_format = self.format_row.get_selected()
-        metadata_enabled = self._format_supports_metadata(selected_format)
-
-        self.artist_row.set_sensitive(metadata_enabled)
-        self.song_row.set_sensitive(metadata_enabled)
-        self.cover_row.set_sensitive(metadata_enabled)
-        self.cover_button.set_sensitive(metadata_enabled)
+        format_info = self.audio_export_service.format_registry.get_format(
+            selected_format
+        )
+        self.metadata_manager.set_sensitivity(format_info.supports_metadata)
 
     def _on_format_changed(self, combo_row, pspec):
-        """Handle format selection change to enable/disable metadata fields"""
+        """Handle format selection change"""
         self._update_metadata_sensitivity()
 
     def _on_cover_button_clicked(self, button):
@@ -162,40 +131,22 @@ class AudioExportDialog(Adw.Dialog):
         dialog = Gtk.FileDialog.new()
         dialog.set_title(_("Select Cover Art"))
         dialog.set_filters(filefilters)
-        dialog.set_modal(True)
 
         dialog.open(parent=self.parent_window, callback=self._on_cover_selected)
 
     def _on_cover_selected(self, dialog, result):
-        """Handle cover art file selection"""
+        """Handle cover art file selection result"""
         try:
             file = dialog.open_finish(result)
             if file:
-                self.cover_art_path = file.get_path()
-                filename = os.path.basename(self.cover_art_path)
-                self.cover_button.set_label(
-                    filename[:20] + "..." if len(filename) > 20 else filename
-                )
+                self.metadata_manager.set_cover_art(file.get_path())
         except GLib.Error:
             pass
 
     def _on_export_clicked(self, button):
         """Handle export button click"""
-        # Check if pattern has any active beats
-        has_beats = False
-        for part_state in self.drum_parts_state.values():
-            if any(part_state.values()):
-                has_beats = True
-                break
-
-        if not has_beats:
-            self._show_parent_toast(_("Pattern is empty - nothing to export"))
-            return
-
-        # Get selected format and create file dialog with format-specific filter
         selected_format = self.format_row.get_selected()
-        dialog, expected_ext = self._create_file_dialog_with_format(selected_format)
-
+        dialog = self._create_file_dialog_with_format(selected_format)
         dialog.save(parent=self.parent_window, callback=self._on_file_selected)
 
     def _on_file_selected(self, dialog, result):
@@ -203,42 +154,91 @@ class AudioExportDialog(Adw.Dialog):
         try:
             file = dialog.save_finish(result)
             if file:
-                filename = file.get_path()
-
-                self._start_export(filename)
+                self._start_export(file.get_path())
         except GLib.Error:
             pass
 
     def _start_export(self, filename):
         """Start the export process"""
         repeat_count = int(self.repeat_row.get_value())
+        metadata = self.metadata_manager.get_metadata()
 
-        # Get metadata from fields
-        metadata = {
-            "artist": self.artist_row.get_text().strip() or None,
-            "title": self.song_row.get_text().strip() or None,
-            "cover_art": self.cover_art_path,
-        }
+        self._disable_export_controls()
 
-        # Close export dialog
-        self.close()
-
-        # Create and show progress dialog
-        self.progress_dialog = AudioExportProgressDialog(self.parent_window)
-        self.progress_dialog.present(self.parent_window)
-
-        # Start export process
-        self.progress_dialog.start_export(
-            self.audio_export_service,
+        self.export_task.start_export(
             self.drum_parts_state,
             self.bpm,
             filename,
             repeat_count,
             metadata,
+            self._on_export_complete,
         )
 
-    def present(self, parent_window=None):
-        """Present the dialog"""
-        if parent_window:
-            self.parent_window = parent_window
-        super().present(parent_window or self.parent_window)
+    def _disable_export_controls(self):
+        """Disable export controls during export"""
+        self.format_row.set_sensitive(False)
+        self.repeat_row.set_sensitive(False)
+        self.metadata_manager.set_sensitivity(False)
+        self.export_button.set_sensitive(False)
+
+    def _on_export_complete(self, success, filename):
+        """Handle export completion"""
+        if success:
+            self.parent_window.show_toast(
+                _("Audio exported to {}").format(os.path.basename(filename)),
+                open_file=True,
+                file_path=filename,
+            )
+        else:
+            self.parent_window.show_toast(_("Export failed"))
+
+        self.close()
+
+    def _on_dialog_closed(self, dialog):
+        """Handle dialog close - cancel export if still running"""
+        self.export_task.cancel_export()
+        self.progress_handler.stop_progress_tracking()
+
+
+class ExportMetadata:
+    """Manages export metadata fields"""
+
+    def __init__(self, artist_row, song_row, cover_row, cover_button):
+        self.artist_row = artist_row
+        self.song_row = song_row
+        self.cover_row = cover_row
+        self.cover_button = cover_button
+        self.cover_art_path = None
+
+        self._setup_defaults()
+
+    def _setup_defaults(self):
+        """Set up default values for metadata fields"""
+        try:
+            system_username = getpass.getuser()
+            self.artist_row.set_text(system_username)
+        except Exception:
+            pass
+
+    def get_metadata(self):
+        """Get the current metadata as a dictionary"""
+        return {
+            "artist": self.artist_row.get_text().strip() or None,
+            "title": self.song_row.get_text().strip() or None,
+            "cover_art": self.cover_art_path,
+        }
+
+    def set_cover_art(self, file_path):
+        """Set the cover art path and update UI"""
+        self.cover_art_path = file_path
+        if file_path:
+            filename = os.path.basename(file_path)
+            display_name = filename[:20] + "..." if len(filename) > 20 else filename
+            self.cover_button.set_label(display_name)
+
+    def set_sensitivity(self, sensitive: bool):
+        """Enable or disable metadata fields"""
+        self.artist_row.set_sensitive(sensitive)
+        self.song_row.set_sensitive(sensitive)
+        self.cover_row.set_sensitive(sensitive)
+        self.cover_button.set_sensitive(sensitive)

@@ -1,4 +1,4 @@
-# config.py
+# config/constants.py
 #
 # Copyright 2025 revisto
 #
@@ -29,13 +29,6 @@ DRUM_PARTS = [
     "tom",
     "crash",
 ]
-DEFAULT_PRESETS = [
-    "Shoot",
-    "Maybe Rock",
-    "Boom Boom",
-    "Night",
-    "Slow",
-    "Chill"
-]
+DEFAULT_PRESETS = ["Shoot", "Maybe Rock", "Boom Boom", "Night", "Slow", "Chill"]
 NUM_TOGGLES = 16
 GROUP_TOGGLE_COUNT = 4
