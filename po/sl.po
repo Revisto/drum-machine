@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-12 15:25+0000\n"
-"PO-Revision-Date: 2025-08-12 22:15+0200\n"
+"POT-Creation-Date: 2025-09-06 15:26+0000\n"
+"PO-Revision-Date: 2025-09-06 19:15+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Poedit 2.2.1\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
 msgid "Drum Machine"
 msgstr "Bobnarski stroj"
 
@@ -65,14 +65,24 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Več zvokov bobnov, vključno z udarcem, zanko, činelo in še več"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Audio export feature with support for WAV, FLAC, OGG, and MP3 formats"
+msgstr "Funkcija izvoza zvoka s podporo za zapise WAV, FLAC, OGG in MP3"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr ""
+"Podpora za metapodatke za vdelavo imen izvajalcev, naslova pesmi in "
+"naslovnice"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "Tipkovne bližnjice za hiter dostop do vseh funkcij"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "Vzorec bobna naložen v svetlem načinu"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Vzorec bobna naložen v temnem načinu"
 
@@ -80,96 +90,218 @@ msgstr "Vzorec bobna naložen v temnem načinu"
 msgid "translator-credits"
 msgstr "Martin Srebotnjak <miles@filmsi.net>"
 
+#: src/config/export_formats.py:43
+msgid "MP3 files"
+msgstr "Datoteke MP3"
+
+#: src/config/export_formats.py:44
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:50
+msgid "FLAC files"
+msgstr "Datoteke FLAC"
+
+#: src/config/export_formats.py:51
+msgid "FLAC (Lossless)"
+msgstr "FLAC (brez izgub)"
+
+#: src/config/export_formats.py:57
+msgid "OGG files"
+msgstr "Datoteke OGG"
+
+#: src/config/export_formats.py:58
+msgid "OGG Vorbis"
+msgstr "OGG Vorbis"
+
+#: src/config/export_formats.py:64
+msgid "WAV files"
+msgstr "Datoteke WAV"
+
+#: src/config/export_formats.py:65
+msgid "WAV (Uncompressed)"
+msgstr "WAV (nestisnjeno)"
+
+#: src/dialogs/audio_export_dialog.py:104
+msgid "Save Audio File"
+msgstr "Shrani zvočno datoteko"
+
+#: src/dialogs/audio_export_dialog.py:128
+msgid "Image files"
+msgstr "Slikovne datoteke"
+
+#: src/dialogs/audio_export_dialog.py:134
+msgid "Select Cover Art"
+msgstr "Izberi naslovnico"
+
+#: src/dialogs/audio_export_dialog.py:191
+msgid "Audio exported to {}"
+msgstr "Zvok, izvožen v {}"
+
+#: src/dialogs/audio_export_dialog.py:196
+msgid "Export failed"
+msgstr "Izvoz ni uspel"
+
+#: src/dialogs/audio_export_dialog.py:203
+msgid "Export cancelled successfully"
+msgstr "Izvoz je bil uspešno preklican"
+
+#: src/handlers/file_dialog_handler.py:50
+msgid "Default Presets"
+msgstr "Privzete prednastavitve"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "No Pattern"
+msgstr "Brez vzorca"
+
+#: src/handlers/file_dialog_handler.py:83
+msgid "Please create a drum pattern before exporting audio."
+msgstr "Pred izvozom zvoka ustvarite vzorec bobna."
+
+#: src/handlers/file_dialog_handler.py:85
+msgid "_OK"
+msgstr "V _redu"
+
+#: src/handlers/file_dialog_handler.py:107
+#: src/handlers/file_dialog_handler.py:173
+msgid "MIDI files"
+msgstr "Datoteke MIDI"
+
+#: src/handlers/file_dialog_handler.py:113
+msgid "Open MIDI File"
+msgstr "Odpri datoteko MIDI"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "Shrani zaporedje"
+
+#: src/utils/export_progress.py:68
+msgid "Preparing..."
+msgstr "Poteka priprava …"
+
+#: src/utils/export_progress.py:69
+msgid "Initializing..."
+msgstr "Inicializacija ..."
+
+#: src/utils/export_progress.py:71
+msgid "Rendering audio..."
+msgstr "Izdelovanje zvoka …"
+
+#: src/utils/export_progress.py:72
+msgid "Processing beats..."
+msgstr "Obdelovanje udarcev ..."
+
+#: src/utils/export_progress.py:74
+msgid "Saving file..."
+msgstr "Shranjevanje datoteke ..."
+
+#: src/utils/export_progress.py:75
+msgid "Writing to disk..."
+msgstr "Pisanje na disk ..."
+
+#: src/utils/export_progress.py:77
+msgid "Exporting..."
+msgstr "Izvažanje …"
+
+#: src/utils/export_progress.py:78
+msgid "Processing..."
+msgstr "Obdelovanje ..."
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:190
+#: src/window.py:198
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} udarcev na minuto (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:199
+#: src/window.py:207
 msgid "{:.0f}% Volume"
 msgstr "Glasnost {:.0f} %"
 
-#: src/window.py:214 src/window.ui:167
+#: src/window.py:222 src/window.ui:170
 msgid "Play"
 msgstr "Predvajaj"
 
-#: src/window.py:218
+#: src/window.py:226
 msgid "Pause"
 msgstr "Premor"
 
-#: src/window.ui:50
+#: src/window.py:264 src/window.ui:52
 msgid "Open"
 msgstr "Odpri"
 
-#: src/window.ui:52
+#: src/window.ui:54
 msgid "Open Preset"
 msgstr "Odpri prednastavitev"
 
-#: src/window.ui:55
+#: src/window.ui:57
 msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "Odpri prednastavitev"
 
-#: src/window.ui:56
+#: src/window.ui:58
 msgid "Open Saved Drum Pattern Preset"
 msgstr "Odpri shranjeno prednastavitev vzorca bobna"
 
-#: src/window.ui:74
+#: src/window.ui:76
 msgid "Main Menu"
 msgstr "Glavni meni"
 
-#: src/window.ui:76
+#: src/window.ui:78
 msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "Glavni meni"
 
-#: src/window.ui:77
+#: src/window.ui:79
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Dostop do tipkovnih bližnjic in informacij o programih"
 
-#: src/window.ui:84
-msgid "Save Drum Pattern"
-msgstr "Shrani vzorec bobna"
+#: src/window.ui:86 src/gtk/audio-export-dialog.ui:7
+#: src/gtk/audio-export-dialog.ui:117
+msgid "Export Audio"
+msgstr "Izvozi zvok"
 
-#: src/window.ui:86
+#: src/window.ui:88
 msgctxt "accessibility"
-msgid "Save Drum Pattern"
-msgstr "Shrani vzorec bobna"
+msgid "Export Audio"
+msgstr "Izvozi zvok"
 
-#: src/window.ui:87
-msgid "Save Current Drum Pattern as a Preset File"
-msgstr "Shrani trenutni vzorec bobna kot datoteko prednastavitev"
+#: src/window.ui:89
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "Shrani trenutni vzorec bobna kot zvočno datoteko"
 
-#: src/window.ui:131
+#: src/window.ui:134
 msgid "BPM"
 msgstr "UNM (BPM)"
 
-#: src/window.ui:136 src/window.ui:140
+#: src/window.ui:139 src/window.ui:143
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Prilagodi tempo v udarcih na minuto (BPM)"
 
-#: src/window.ui:139
+#: src/window.ui:142
 msgid "Tempo"
 msgstr "Tempo"
 
-#: src/window.ui:181
+#: src/window.ui:184
 msgid "Adjust Volume"
 msgstr "Prilagodi glasnost"
 
-#: src/window.ui:204
+#: src/window.ui:207
 msgid "Reset"
 msgstr "Ponastavi"
 
-#: src/window.ui:205
+#: src/window.ui:208
 msgid "Reset the Drum Sequence"
 msgstr "Ponastavi zaporedje bobna"
 
-#: src/window.ui:218
+#: src/window.ui:223
+msgid "_Save Pattern"
+msgstr "_Shrani vzorec"
+
+#: src/window.ui:229
 msgid "_Keyboard Shortcuts"
 msgstr "_Tipkovne bližnjice"
 
-#: src/window.ui:222
+#: src/window.ui:233
 msgid "_About Drum Machine"
 msgstr "_O programu Bobnarski stroj"
 
@@ -248,22 +380,27 @@ msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "Shrani prednastavitev"
 
-#: src/gtk/help-overlay.ui:107
+#: src/gtk/help-overlay.ui:105
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "Izvozi zvok"
+
+#: src/gtk/help-overlay.ui:114
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Krmarjenje"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Pojdi na inštrument"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Skoči na predhodno stran"
 
-#: src/gtk/help-overlay.ui:124
+#: src/gtk/help-overlay.ui:131
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Skoči na naslednjo stran"
@@ -295,19 +432,58 @@ msgstr "_Zavrzi"
 msgid "_Save"
 msgstr "_Shrani"
 
-#: src/handlers/file_dialog_handler.py:48
-msgid "Default Presets"
-msgstr "Privzete prednastavitve"
+#: src/gtk/audio-export-dialog.ui:40
+msgid "Export Settings"
+msgstr "Nastavitve izvoza"
 
-#: src/handlers/file_dialog_handler.py:76
-#: src/handlers/file_dialog_handler.py:142
-msgid "MIDI files"
-msgstr "Datoteke MIDI"
+#: src/gtk/audio-export-dialog.ui:41
+msgid "Configure your audio export options"
+msgstr "Prilagodite možnosti izvoza zvoka"
 
-#: src/handlers/file_dialog_handler.py:82
-msgid "Open MIDI File"
-msgstr "Odpri datoteko MIDI"
+#: src/gtk/audio-export-dialog.ui:44
+msgid "Audio Format"
+msgstr "Zvočni zapis"
 
-#: src/handlers/file_dialog_handler.py:148
-msgid "Save Sequence"
-msgstr "Shrani zaporedje"
+#: src/gtk/audio-export-dialog.ui:45
+msgid "Select the output audio format"
+msgstr "Izberite izhodno vrsto datoteke zvoka"
+
+#: src/gtk/audio-export-dialog.ui:54
+msgid "Repeat Count"
+msgstr "Število ponovitev"
+
+#: src/gtk/audio-export-dialog.ui:55
+msgid "How many times to repeat the pattern"
+msgstr "Kolikokrat želite ponoviti vzorec"
+
+#: src/gtk/audio-export-dialog.ui:71
+msgid "Metadata"
+msgstr "Metapodatki"
+
+#: src/gtk/audio-export-dialog.ui:72
+msgid "Add metadata to your exported audio"
+msgstr "Dodajte metapodatke v izvoženi zvok"
+
+#: src/gtk/audio-export-dialog.ui:75
+msgid "Artist Name"
+msgstr "Ime izvajalca"
+
+#: src/gtk/audio-export-dialog.ui:81
+msgid "Song Name"
+msgstr "Ime pesmi"
+
+#: src/gtk/audio-export-dialog.ui:87
+msgid "Cover Art"
+msgstr "Naslovnica"
+
+#: src/gtk/audio-export-dialog.ui:88
+msgid "Select an image file for the cover art"
+msgstr "Izberite slikovno datoteko za naslovnico"
+
+#: src/gtk/audio-export-dialog.ui:92
+msgid "Choose File"
+msgstr "Izbor datoteke"
+
+#: src/gtk/audio-export-dialog.ui:126
+msgid "Cancel Export"
+msgstr "Prekliči izvoz"
