@@ -5,5 +5,6 @@ Icon=io.github.revisto.drum-machine
 Terminal=false
 Type=Application
 Categories=AudioVideo;Audio;Music;
+Keywords=drum;machine;rhythm;music;pattern;beats;
 StartupNotify=true
 X-Purism-FormFactor=Workstation;Mobile;
