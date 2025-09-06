@@ -5,5 +5,7 @@ Icon=io.github.revisto.drum-machine
 Terminal=false
 Type=Application
 Categories=AudioVideo;Audio;Music;
+# Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+Keywords=drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;
 StartupNotify=true
 X-Purism-FormFactor=Workstation;Mobile;
