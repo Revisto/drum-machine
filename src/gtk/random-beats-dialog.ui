@@ -63,6 +63,465 @@
               <object class="AdwPreferencesGroup" id="per_part_group">
                 <property name="title" translatable="yes">Per-instrument density</property>
                 <property name="description" translatable="yes">Override density per drum part</property>
+                <!-- Kick -->
+                <child>
+                  <object class="AdwActionRow" id="kick_row">
+                    <property name="title" translatable="yes">Kick</property>
+                    <property name="activatable-widget">kick_override_switch</property>
+                    <child>
+                      <object class="GtkSwitch" id="kick_override_switch">
+                        <property name="valign">center</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="kick_box">
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">8</property>
+                        <child>
+                          <object class="GtkScale" id="kick_scale">
+                            <property name="hexpand">true</property>
+                            <property name="width-request">260</property>
+                            <property name="valign">center</property>
+                            <property name="draw-value">false</property>
+                            <property name="sensitive">false</property>
+                            <property name="adjustment">
+                              <object class="GtkAdjustment">
+                                <property name="lower">0</property>
+                                <property name="upper">100</property>
+                                <property name="step-increment">1</property>
+                                <property name="page-increment">10</property>
+                                <property name="value">50</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="kick_value_label">
+                            <property name="label">50%</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="dim-label"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- Kick 2 -->
+                <child>
+                  <object class="AdwActionRow" id="kick_2_row">
+                    <property name="title" translatable="yes">Kick 2</property>
+                    <property name="activatable-widget">kick_2_override_switch</property>
+                    <child>
+                      <object class="GtkSwitch" id="kick_2_override_switch">
+                        <property name="valign">center</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="kick_2_box">
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">8</property>
+                        <child>
+                          <object class="GtkScale" id="kick_2_scale">
+                            <property name="hexpand">true</property>
+                            <property name="width-request">260</property>
+                            <property name="valign">center</property>
+                            <property name="draw-value">false</property>
+                            <property name="sensitive">false</property>
+                            <property name="adjustment">
+                              <object class="GtkAdjustment">
+                                <property name="lower">0</property>
+                                <property name="upper">100</property>
+                                <property name="step-increment">1</property>
+                                <property name="page-increment">10</property>
+                                <property name="value">50</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="kick_2_value_label">
+                            <property name="label">50%</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="dim-label"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- Kick 3 -->
+                <child>
+                  <object class="AdwActionRow" id="kick_3_row">
+                    <property name="title" translatable="yes">Kick 3</property>
+                    <property name="activatable-widget">kick_3_override_switch</property>
+                    <child>
+                      <object class="GtkSwitch" id="kick_3_override_switch">
+                        <property name="valign">center</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="kick_3_box">
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">8</property>
+                        <child>
+                          <object class="GtkScale" id="kick_3_scale">
+                            <property name="hexpand">true</property>
+                            <property name="width-request">260</property>
+                            <property name="valign">center</property>
+                            <property name="draw-value">false</property>
+                            <property name="sensitive">false</property>
+                            <property name="adjustment">
+                              <object class="GtkAdjustment">
+                                <property name="lower">0</property>
+                                <property name="upper">100</property>
+                                <property name="step-increment">1</property>
+                                <property name="page-increment">10</property>
+                                <property name="value">50</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="kick_3_value_label">
+                            <property name="label">50%</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="dim-label"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- Snare -->
+                <child>
+                  <object class="AdwActionRow" id="snare_row">
+                    <property name="title" translatable="yes">Snare</property>
+                    <property name="activatable-widget">snare_override_switch</property>
+                    <child>
+                      <object class="GtkSwitch" id="snare_override_switch">
+                        <property name="valign">center</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="snare_box">
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">8</property>
+                        <child>
+                          <object class="GtkScale" id="snare_scale">
+                            <property name="hexpand">true</property>
+                            <property name="width-request">260</property>
+                            <property name="valign">center</property>
+                            <property name="draw-value">false</property>
+                            <property name="sensitive">false</property>
+                            <property name="adjustment">
+                              <object class="GtkAdjustment">
+                                <property name="lower">0</property>
+                                <property name="upper">100</property>
+                                <property name="step-increment">1</property>
+                                <property name="page-increment">10</property>
+                                <property name="value">50</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="snare_value_label">
+                            <property name="label">50%</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="dim-label"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- Snare 2 -->
+                <child>
+                  <object class="AdwActionRow" id="snare_2_row">
+                    <property name="title" translatable="yes">Snare  2</property>
+                    <property name="activatable-widget">snare_2_override_switch</property>
+                    <child>
+                      <object class="GtkSwitch" id="snare_2_override_switch">
+                        <property name="valign">center</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="snare_2_box">
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">8</property>
+                        <child>
+                          <object class="GtkScale" id="snare_2_scale">
+                            <property name="hexpand">true</property>
+                            <property name="width-request">260</property>
+                            <property name="valign">center</property>
+                            <property name="draw-value">false</property>
+                            <property name="sensitive">false</property>
+                            <property name="adjustment">
+                              <object class="GtkAdjustment">
+                                <property name="lower">0</property>
+                                <property name="upper">100</property>
+                                <property name="step-increment">1</property>
+                                <property name="page-increment">10</property>
+                                <property name="value">50</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="snare_2_value_label">
+                            <property name="label">50%</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="dim-label"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- Hihat -->
+                <child>
+                  <object class="AdwActionRow" id="hihat_row">
+                    <property name="title" translatable="yes">Hihat</property>
+                    <property name="activatable-widget">hihat_override_switch</property>
+                    <child>
+                      <object class="GtkSwitch" id="hihat_override_switch">
+                        <property name="valign">center</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="hihat_box">
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">8</property>
+                        <child>
+                          <object class="GtkScale" id="hihat_scale">
+                            <property name="hexpand">true</property>
+                            <property name="width-request">260</property>
+                            <property name="valign">center</property>
+                            <property name="draw-value">false</property>
+                            <property name="sensitive">false</property>
+                            <property name="adjustment">
+                              <object class="GtkAdjustment">
+                                <property name="lower">0</property>
+                                <property name="upper">100</property>
+                                <property name="step-increment">1</property>
+                                <property name="page-increment">10</property>
+                                <property name="value">50</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="hihat_value_label">
+                            <property name="label">50%</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="dim-label"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- Hihat 2 -->
+                <child>
+                  <object class="AdwActionRow" id="hihat_2_row">
+                    <property name="title" translatable="yes">Hihat 2</property>
+                    <property name="activatable-widget">hihat_2_override_switch</property>
+                    <child>
+                      <object class="GtkSwitch" id="hihat_2_override_switch">
+                        <property name="valign">center</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="hihat_2_box">
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">8</property>
+                        <child>
+                          <object class="GtkScale" id="hihat_2_scale">
+                            <property name="hexpand">true</property>
+                            <property name="width-request">260</property>
+                            <property name="valign">center</property>
+                            <property name="draw-value">false</property>
+                            <property name="sensitive">false</property>
+                            <property name="adjustment">
+                              <object class="GtkAdjustment">
+                                <property name="lower">0</property>
+                                <property name="upper">100</property>
+                                <property name="step-increment">1</property>
+                                <property name="page-increment">10</property>
+                                <property name="value">50</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="hihat_2_value_label">
+                            <property name="label">50%</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="dim-label"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- Clap -->
+                <child>
+                  <object class="AdwActionRow" id="clap_row">
+                    <property name="title" translatable="yes">Clap</property>
+                    <property name="activatable-widget">clap_override_switch</property>
+                    <child>
+                      <object class="GtkSwitch" id="clap_override_switch">
+                        <property name="valign">center</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="clap_box">
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">8</property>
+                        <child>
+                          <object class="GtkScale" id="clap_scale">
+                            <property name="hexpand">true</property>
+                            <property name="width-request">260</property>
+                            <property name="valign">center</property>
+                            <property name="draw-value">false</property>
+                            <property name="sensitive">false</property>
+                            <property name="adjustment">
+                              <object class="GtkAdjustment">
+                                <property name="lower">0</property>
+                                <property name="upper">100</property>
+                                <property name="step-increment">1</property>
+                                <property name="page-increment">10</property>
+                                <property name="value">50</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="clap_value_label">
+                            <property name="label">50%</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="dim-label"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- Tom -->
+                <child>
+                  <object class="AdwActionRow" id="tom_row">
+                    <property name="title" translatable="yes">Tom</property>
+                    <property name="activatable-widget">tom_override_switch</property>
+                    <child>
+                      <object class="GtkSwitch" id="tom_override_switch">
+                        <property name="valign">center</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="tom_box">
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">8</property>
+                        <child>
+                          <object class="GtkScale" id="tom_scale">
+                            <property name="hexpand">true</property>
+                            <property name="width-request">260</property>
+                            <property name="valign">center</property>
+                            <property name="draw-value">false</property>
+                            <property name="sensitive">false</property>
+                            <property name="adjustment">
+                              <object class="GtkAdjustment">
+                                <property name="lower">0</property>
+                                <property name="upper">100</property>
+                                <property name="step-increment">1</property>
+                                <property name="page-increment">10</property>
+                                <property name="value">50</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="tom_value_label">
+                            <property name="label">50%</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="dim-label"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- Crash -->
+                <child>
+                  <object class="AdwActionRow" id="crash_row">
+                    <property name="title" translatable="yes">Crash</property>
+                    <property name="activatable-widget">crash_override_switch</property>
+                    <child>
+                      <object class="GtkSwitch" id="crash_override_switch">
+                        <property name="valign">center</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="crash_box">
+                        <property name="orientation">horizontal</property>
+                        <property name="spacing">8</property>
+                        <child>
+                          <object class="GtkScale" id="crash_scale">
+                            <property name="hexpand">true</property>
+                            <property name="width-request">260</property>
+                            <property name="valign">center</property>
+                            <property name="draw-value">false</property>
+                            <property name="sensitive">false</property>
+                            <property name="adjustment">
+                              <object class="GtkAdjustment">
+                                <property name="lower">0</property>
+                                <property name="upper">100</property>
+                                <property name="step-increment">1</property>
+                                <property name="page-increment">10</property>
+                                <property name="value">50</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="crash_value_label">
+                            <property name="label">50%</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="dim-label"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
               </object>
             </child>
           </object>
