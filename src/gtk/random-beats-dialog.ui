@@ -70,12 +70,6 @@
                 <child>
                   <object class="AdwActionRow" id="kick_row">
                     <property name="title" translatable="yes">Kick</property>
-                    <property name="activatable-widget">kick_override_switch</property>
-                    <child>
-                      <object class="GtkSwitch" id="kick_override_switch">
-                        <property name="valign">center</property>
-                      </object>
-                    </child>
                     <child>
                       <object class="GtkBox" id="kick_box">
                         <property name="orientation">horizontal</property>
@@ -86,7 +80,6 @@
                             <property name="hexpand">true</property>
                             <property name="valign">center</property>
                             <property name="draw-value">false</property>
-                            <property name="sensitive">false</property>
                             <property name="adjustment">
                               <object class="GtkAdjustment">
                                 <property name="lower">0</property>
@@ -116,12 +109,6 @@
                 <child>
                   <object class="AdwActionRow" id="kick_2_row">
                     <property name="title" translatable="yes">Kick 2</property>
-                    <property name="activatable-widget">kick_2_override_switch</property>
-                    <child>
-                      <object class="GtkSwitch" id="kick_2_override_switch">
-                        <property name="valign">center</property>
-                      </object>
-                    </child>
                     <child>
                       <object class="GtkBox" id="kick_2_box">
                         <property name="orientation">horizontal</property>
@@ -132,7 +119,6 @@
                             <property name="hexpand">true</property>
                             <property name="valign">center</property>
                             <property name="draw-value">false</property>
-                            <property name="sensitive">false</property>
                             <property name="adjustment">
                               <object class="GtkAdjustment">
                                 <property name="lower">0</property>
@@ -162,12 +148,6 @@
                 <child>
                   <object class="AdwActionRow" id="kick_3_row">
                     <property name="title" translatable="yes">Kick 3</property>
-                    <property name="activatable-widget">kick_3_override_switch</property>
-                    <child>
-                      <object class="GtkSwitch" id="kick_3_override_switch">
-                        <property name="valign">center</property>
-                      </object>
-                    </child>
                     <child>
                       <object class="GtkBox" id="kick_3_box">
                         <property name="orientation">horizontal</property>
@@ -178,7 +158,6 @@
                             <property name="hexpand">true</property>
                             <property name="valign">center</property>
                             <property name="draw-value">false</property>
-                            <property name="sensitive">false</property>
                             <property name="adjustment">
                               <object class="GtkAdjustment">
                                 <property name="lower">0</property>
@@ -208,12 +187,6 @@
                 <child>
                   <object class="AdwActionRow" id="snare_row">
                     <property name="title" translatable="yes">Snare</property>
-                    <property name="activatable-widget">snare_override_switch</property>
-                    <child>
-                      <object class="GtkSwitch" id="snare_override_switch">
-                        <property name="valign">center</property>
-                      </object>
-                    </child>
                     <child>
                       <object class="GtkBox" id="snare_box">
                         <property name="orientation">horizontal</property>
@@ -224,7 +197,6 @@
                             <property name="hexpand">true</property>
                             <property name="valign">center</property>
                             <property name="draw-value">false</property>
-                            <property name="sensitive">false</property>
                             <property name="adjustment">
                               <object class="GtkAdjustment">
                                 <property name="lower">0</property>
@@ -254,12 +226,6 @@
                 <child>
                   <object class="AdwActionRow" id="snare_2_row">
                     <property name="title" translatable="yes">Snare  2</property>
-                    <property name="activatable-widget">snare_2_override_switch</property>
-                    <child>
-                      <object class="GtkSwitch" id="snare_2_override_switch">
-                        <property name="valign">center</property>
-                      </object>
-                    </child>
                     <child>
                       <object class="GtkBox" id="snare_2_box">
                         <property name="orientation">horizontal</property>
@@ -270,7 +236,6 @@
                             <property name="hexpand">true</property>
                             <property name="valign">center</property>
                             <property name="draw-value">false</property>
-                            <property name="sensitive">false</property>
                             <property name="adjustment">
                               <object class="GtkAdjustment">
                                 <property name="lower">0</property>
@@ -300,12 +265,6 @@
                 <child>
                   <object class="AdwActionRow" id="hihat_row">
                     <property name="title" translatable="yes">Hihat</property>
-                    <property name="activatable-widget">hihat_override_switch</property>
-                    <child>
-                      <object class="GtkSwitch" id="hihat_override_switch">
-                        <property name="valign">center</property>
-                      </object>
-                    </child>
                     <child>
                       <object class="GtkBox" id="hihat_box">
                         <property name="orientation">horizontal</property>
@@ -316,7 +275,6 @@
                             <property name="hexpand">true</property>
                             <property name="valign">center</property>
                             <property name="draw-value">false</property>
-                            <property name="sensitive">false</property>
                             <property name="adjustment">
                               <object class="GtkAdjustment">
                                 <property name="lower">0</property>
@@ -346,12 +304,6 @@
                 <child>
                   <object class="AdwActionRow" id="hihat_2_row">
                     <property name="title" translatable="yes">Hihat 2</property>
-                    <property name="activatable-widget">hihat_2_override_switch</property>
-                    <child>
-                      <object class="GtkSwitch" id="hihat_2_override_switch">
-                        <property name="valign">center</property>
-                      </object>
-                    </child>
                     <child>
                       <object class="GtkBox" id="hihat_2_box">
                         <property name="orientation">horizontal</property>
@@ -362,7 +314,6 @@
                             <property name="hexpand">true</property>
                             <property name="valign">center</property>
                             <property name="draw-value">false</property>
-                            <property name="sensitive">false</property>
                             <property name="adjustment">
                               <object class="GtkAdjustment">
                                 <property name="lower">0</property>
@@ -392,12 +343,6 @@
                 <child>
                   <object class="AdwActionRow" id="clap_row">
                     <property name="title" translatable="yes">Clap</property>
-                    <property name="activatable-widget">clap_override_switch</property>
-                    <child>
-                      <object class="GtkSwitch" id="clap_override_switch">
-                        <property name="valign">center</property>
-                      </object>
-                    </child>
                     <child>
                       <object class="GtkBox" id="clap_box">
                         <property name="orientation">horizontal</property>
@@ -408,7 +353,6 @@
                             <property name="hexpand">true</property>
                             <property name="valign">center</property>
                             <property name="draw-value">false</property>
-                            <property name="sensitive">false</property>
                             <property name="adjustment">
                               <object class="GtkAdjustment">
                                 <property name="lower">0</property>
@@ -438,12 +382,6 @@
                 <child>
                   <object class="AdwActionRow" id="tom_row">
                     <property name="title" translatable="yes">Tom</property>
-                    <property name="activatable-widget">tom_override_switch</property>
-                    <child>
-                      <object class="GtkSwitch" id="tom_override_switch">
-                        <property name="valign">center</property>
-                      </object>
-                    </child>
                     <child>
                       <object class="GtkBox" id="tom_box">
                         <property name="orientation">horizontal</property>
@@ -454,7 +392,6 @@
                             <property name="hexpand">true</property>
                             <property name="valign">center</property>
                             <property name="draw-value">false</property>
-                            <property name="sensitive">false</property>
                             <property name="adjustment">
                               <object class="GtkAdjustment">
                                 <property name="lower">0</property>
@@ -484,12 +421,6 @@
                 <child>
                   <object class="AdwActionRow" id="crash_row">
                     <property name="title" translatable="yes">Crash</property>
-                    <property name="activatable-widget">crash_override_switch</property>
-                    <child>
-                      <object class="GtkSwitch" id="crash_override_switch">
-                        <property name="valign">center</property>
-                      </object>
-                    </child>
                     <child>
                       <object class="GtkBox" id="crash_box">
                         <property name="orientation">horizontal</property>
@@ -500,7 +431,6 @@
                             <property name="hexpand">true</property>
                             <property name="valign">center</property>
                             <property name="draw-value">false</property>
-                            <property name="sensitive">false</property>
                             <property name="adjustment">
                               <object class="GtkAdjustment">
                                 <property name="lower">0</property>
