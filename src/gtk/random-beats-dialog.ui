@@ -527,6 +527,9 @@
                 </child>
               </object>
             </child>
+            <!-- Close content_box and scrolled window child -->
+            </object>
+          </child>
           </object>
         </property>
         <child type="bottom">
