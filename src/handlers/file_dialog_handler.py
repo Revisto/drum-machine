@@ -38,16 +38,25 @@ class FileDialogHandler:
     def setup_preset_menu(self):
         """Setup the preset menu with default presets"""
         menu = Gio.Menu.new()
-        section = Gio.Menu.new()
+        default_section = Gio.Menu.new()
 
         for preset in DEFAULT_PRESETS:
             item = Gio.MenuItem.new(preset, "win.load-preset")
             item.set_action_and_target_value(
                 "win.load-preset", GLib.Variant.new_string(preset)
             )
-            section.append_item(item)
+            default_section.append_item(item)
 
-        menu.append_section(_("Default Presets"), section)
+        menu.append_section(_("Default Presets"), default_section)
+
+        # Divider and Magic section
+        magic_section = Gio.Menu.new()
+        magic_item = Gio.MenuItem.new("Magic", "win.load-preset")
+        magic_item.set_action_and_target_value(
+            "win.load-preset", GLib.Variant.new_string("Magic")
+        )
+        magic_section.append_item(magic_item)
+        menu.append_section("", magic_section)
 
         preset_action = Gio.SimpleAction.new("load-preset", GLib.VariantType.new("s"))
         preset_action.connect("activate", self.on_preset_selected)
@@ -150,6 +159,28 @@ class FileDialogHandler:
     def _open_preset_directly(self, parameter):
         """Load a preset directly"""
         preset_name = parameter.get_string()
+        # Special built-in preset that generates a random pattern.
+        # If the user used the Random Beats dialog before, reuse the same settings.
+        # Otherwise, generate with a random density between 20 and 50.
+        if preset_name == "Magic":
+            svc = self.window.drum_machine_service
+            density = svc.last_randomization_density_percent
+            per_part = svc.last_randomization_per_part_density
+            pages = svc.last_randomization_pages if svc.last_randomization_pages else 1
+            if density is None:
+                import random as _r
+                density = _r.randint(20, 50)
+                per_part = None
+                pages = 1
+            svc.randomize_pattern(density, per_part, pages)
+            # Reflect the new pattern structure in the UI
+            self.window.drum_grid_builder.reset_carousel_pages()
+            self.window.ui_helper.load_pattern_into_ui(
+                self.window.drum_machine_service.drum_parts_state
+            )
+            # Consider default presets as not unsaved
+            self.window.save_changes_service.mark_unsaved_changes(False)
+            return
         preset_dir = os.path.join(
             os.path.dirname(__file__), "..", "..", "data", "presets"
         )

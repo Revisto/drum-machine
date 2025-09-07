@@ -44,6 +44,10 @@ class DrumMachineService(IPlayer):
         self.beats_per_page = NUM_TOGGLES
         self.active_pages = 1
         self.playing_beat = -1
+        # Remember last-used randomization options
+        self.last_randomization_density_percent: int | None = None
+        self.last_randomization_per_part_density: dict[str, int] | None = None
+        self.last_randomization_pages: int = 1
 
     def create_empty_drum_parts_state(self):
         drum_parts_state = {part: dict() for part in DRUM_PARTS}
@@ -96,19 +100,37 @@ class DrumMachineService(IPlayer):
         self.drum_parts_state = self.create_empty_drum_parts_state()
         self.ui_helper.deactivate_all_toggles_in_ui()
 
-    def randomize_pattern(self, density_percent: int, per_part_density: dict | None = None):
-        """Randomly activate beats across all parts based on density via service."""
+    def randomize_pattern(
+        self,
+        density_percent: int,
+        per_part_density: dict | None = None,
+        num_pages: int = 1,
+    ):
+        """Randomly activate beats across all parts based on density via service.
+
+        num_pages controls how many pages worth of beats are generated.
+        """
         per_part_density = per_part_density or {}
         # Reset state and UI
         self.clear_all_toggles()
+        # Determine total beats across requested pages
+        pages = max(1, int(num_pages))
+        total_beats = self.beats_per_page * pages
         # Generate new pattern
         pattern = self.randomization_service.generate_pattern(
             density_percent,
             per_part_density,
-            self.beats_per_page,
+            total_beats,
             DRUM_PARTS,
         )
         self.drum_parts_state = pattern
+        # Explicitly set active pages to the requested amount
+        self.active_pages = pages
+        self.total_beats = self.active_pages * self.beats_per_page
+        # Store last-used randomization settings
+        self.last_randomization_density_percent = int(density_percent)
+        self.last_randomization_per_part_density = dict(per_part_density) if per_part_density else {}
+        self.last_randomization_pages = pages
 
     def save_preset(self, file_path):
         self.preset_service.save_preset(file_path, self.drum_parts_state, self.bpm)

@@ -37,6 +37,7 @@ class RandomBeatsDialog(Adw.Dialog):
     # Template children
     density_scale = Gtk.Template.Child()
     density_value_label = Gtk.Template.Child()
+    pages_spin_button = Gtk.Template.Child()
     # Buttons are bound via template signals; no direct children needed
     per_part_group = Gtk.Template.Child()
     # Per-part widgets from UI
@@ -85,6 +86,7 @@ class RandomBeatsDialog(Adw.Dialog):
     @Gtk.Template.Callback()
     def _on_generate_clicked(self, _button):
         density_percent = int(self.density_scale.get_value())
+        pages_to_generate = int(self.pages_spin_button.get_value())
 
         # Generate random pattern via service
         service = self.parent_window.drum_machine_service
@@ -95,10 +97,13 @@ class RandomBeatsDialog(Adw.Dialog):
             val = int(scale.get_value())
             if val != density_percent:
                 per_part_density[part] = val
-        service.randomize_pattern(density_percent, per_part_density if per_part_density else None)
+        service.randomize_pattern(
+            density_percent,
+            per_part_density if per_part_density else None,
+            pages_to_generate,
+        )
 
         # Update UI to reflect new pattern length and toggles
-        service.update_total_beats()
         self.parent_window.drum_grid_builder.reset_carousel_pages()
         # Clear all toggles first, then apply
         self.parent_window.ui_helper.deactivate_all_toggles_in_ui()

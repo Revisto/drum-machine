@@ -61,6 +61,27 @@
                     </child>
                   </object>
                 </child>
+                <child>
+                  <object class="AdwActionRow" id="pages_row">
+                    <property name="title" translatable="yes">Pages</property>
+                    <property name="subtitle" translatable="yes">Number of pages to fill</property>
+                    <child>
+                      <object class="GtkSpinButton" id="pages_spin_button">
+                        <property name="valign">center</property>
+                        <property name="tooltip-text" translatable="yes">Pages to generate</property>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="lower">1</property>
+                            <property name="upper">16</property>
+                            <property name="step-increment">1</property>
+                            <property name="page-increment">1</property>
+                            <property name="value">1</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
               </object>
             </child>
             <child>
