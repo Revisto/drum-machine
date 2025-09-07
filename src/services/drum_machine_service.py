@@ -25,6 +25,7 @@ from ..interfaces.player import IPlayer
 from ..config.constants import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
 from .preset_service import PresetService
 from .ui_helper import UIHelper
+from .randomization_service import RandomizationService
 
 
 class DrumMachineService(IPlayer):
@@ -38,6 +39,7 @@ class DrumMachineService(IPlayer):
         self.stop_event = threading.Event()
         self.drum_parts_state = self.create_empty_drum_parts_state()
         self.preset_service = PresetService()
+        self.randomization_service = RandomizationService()
         self.total_beats = NUM_TOGGLES
         self.beats_per_page = NUM_TOGGLES
         self.active_pages = 1
@@ -95,27 +97,18 @@ class DrumMachineService(IPlayer):
         self.ui_helper.deactivate_all_toggles_in_ui()
 
     def randomize_pattern(self, density_percent: int, per_part_density: dict | None = None):
-        """Randomly activate beats across all parts based on density.
-
-        - density_percent: 0-100 global default density.
-        - per_part_density: optional mapping of part -> 0-100 to override density per part.
-        """
-        density_percent = max(0, min(100, int(density_percent)))
-        if per_part_density is None:
-            per_part_density = {}
-
-        # Reset current state and UI
+        """Randomly activate beats across all parts based on density via service."""
+        per_part_density = per_part_density or {}
+        # Reset state and UI
         self.clear_all_toggles()
-
-        total_beats = self.beats_per_page  # limit to current view width
-
-        for part in DRUM_PARTS:
-            part_density = per_part_density.get(part, density_percent)
-            part_density = max(0, min(100, int(part_density)))
-            probability = part_density / 100.0
-            for beat_index in range(total_beats):
-                if random.random() < probability:
-                    self.drum_parts_state[part][beat_index] = True
+        # Generate new pattern
+        pattern = self.randomization_service.generate_pattern(
+            density_percent,
+            per_part_density,
+            self.beats_per_page,
+            DRUM_PARTS,
+        )
+        self.drum_parts_state = pattern
 
     def save_preset(self, file_path):
         self.preset_service.save_preset(file_path, self.drum_parts_state, self.bpm)
