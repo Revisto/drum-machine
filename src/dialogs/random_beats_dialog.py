@@ -155,7 +155,7 @@ class RandomBeatsDialog(Adw.Dialog):
                 _pl.set_text(f"{int(scale.get_value())}%")
             scale.connect("value-changed", on_value_changed)
             # Enable/disable slider based on switch
-            def on_override_toggled(switch, _scale=scale):
+            def on_override_toggled(switch, _pspec, _scale=scale):
                 _scale.set_sensitive(switch.get_active())
             override_switch.connect("notify::active", on_override_toggled)
             # Ensure disabled by default matches UI
