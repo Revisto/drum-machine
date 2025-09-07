@@ -73,13 +73,10 @@ class RandomBeatsDialog(Adw.Dialog):
     def _sync_density_label(self):
         value = int(self.density_scale.get_value())
         self.density_value_label.set_text(f"{value}%")
-
-        # When global density changes, update any disabled part sliders to match
-        for part, controls in self._part_controls.items():
-            _override_switch, scale, value_label = controls
-            # No override switch anymore; keep value label in sync with scale only
-            if False:
-                pass
+        # Update all unlocked part sliders to match global density
+        for part, (scale, _label) in self._mapping.items():
+            if part not in self._locked_parts:
+                scale.set_value(value)
 
     @Gtk.Template.Callback()
     def _on_density_changed(self, scale):
@@ -116,13 +113,11 @@ class RandomBeatsDialog(Adw.Dialog):
         )
         self.close()
 
-    @Gtk.Template.Callback()
-    def _on_cancel_clicked(self, _button):
-        self.close()
+    # No cancel button anymore
 
     def _wire_per_part_controls_from_ui(self):
         """Hook up per-instrument widgets defined in the .ui and wire events."""
-        mapping = {
+        self._mapping = {
             "kick": (self.kick_scale, self.kick_value_label),
             "kick-2": (self.kick_2_scale, self.kick_2_value_label),
             "kick-3": (self.kick_3_scale, self.kick_3_value_label),
@@ -134,13 +129,17 @@ class RandomBeatsDialog(Adw.Dialog):
             "tom": (self.tom_scale, self.tom_value_label),
             "crash": (self.crash_scale, self.crash_value_label),
         }
-
-        for part, (scale, value_label) in mapping.items():
+        self._locked_parts = set()
+        for part, (scale, value_label) in self._mapping.items():
             # Initial label text
             value_label.set_text(f"{int(scale.get_value())}%")
             # Keep label in sync with slider
             def on_value_changed(scale, _pl=value_label):
                 _pl.set_text(f"{int(scale.get_value())}%")
             scale.connect("value-changed", on_value_changed)
+            # Mark this part as 'locked' after user adjusts it
+            def on_user_change(scale, _part=part):
+                self._locked_parts.add(_part)
+            scale.connect("change-value", lambda s, sc, val, _p=part: (self._locked_parts.add(_p), False)[1])
             # Store
             self._part_controls[part] = (None, scale, value_label)

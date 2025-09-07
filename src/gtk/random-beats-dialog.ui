@@ -482,12 +482,6 @@
                 </style>
               </object>
             </child>
-            <child>
-              <object class="GtkButton" id="cancel_button">
-                <property name="label" translatable="yes">Cancel</property>
-                <signal name="clicked" handler="_on_cancel_clicked"/>
-              </object>
-            </child>
           </object>
         </child>
       </object>
