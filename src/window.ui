@@ -223,6 +223,10 @@ audio-volume-medium-symbolic</property>
         <attribute name="label" translatable="yes">_Save Pattern</attribute>
         <attribute name="action">win.save_preset</attribute>
       </item>
+      <item>
+        <attribute name="label" translatable="yes">_Random Beats…</attribute>
+        <attribute name="action">win.random_beats</attribute>
+      </item>
     </section>
     <section>
       <item>

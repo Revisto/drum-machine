@@ -38,6 +38,7 @@ class WindowActionHandler:
             ("show-help-overlay", self.on_show_help_overlay, ["<primary>question"]),
             ("play_pause", self.handle_play_pause_action, ["space"]),
             ("clear_toggles", self.handle_clear_action, ["<primary>Delete"]),
+            ("random_beats", self.on_random_beats_action, ["<primary>r"]),
             ("increase_bpm", self.increase_bpm_action, ["plus", "equal"]),
             ("decrease_bpm", self.decrease_bpm_action, ["minus"]),
             ("increase_volume", self.increase_volume_action, ["<primary>Up"]),
@@ -101,6 +102,11 @@ class WindowActionHandler:
 
     def on_export_audio_action(self, action, param):
         self.window._on_export_audio_clicked(self.window.export_audio_button)
+
+    def on_random_beats_action(self, action, param):
+        from ..dialogs.random_beats_dialog import RandomBeatsDialog
+        dialog = RandomBeatsDialog(self.window)
+        dialog.present(self.window)
 
     def on_quit_action(self, action, param):
         if self.window.save_changes_service.has_unsaved_changes():

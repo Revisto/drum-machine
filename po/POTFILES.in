@@ -4,6 +4,7 @@ data/io.github.revisto.drum-machine.gschema.xml
 src/application.py
 src/config/export_formats.py
 src/dialogs/audio_export_dialog.py
+src/dialogs/random_beats_dialog.py
 src/handlers/file_dialog_handler.py
 src/utils/export_progress.py
 src/window.py
@@ -11,3 +12,4 @@ src/window.ui
 src/gtk/help-overlay.ui
 src/gtk/save_changes_dialog.ui
 src/gtk/audio-export-dialog.ui
+src/gtk/random-beats-dialog.ui

@@ -19,6 +19,7 @@
 
 import threading
 import time
+import random
 from gi.repository import GLib
 from ..interfaces.player import IPlayer
 from ..config.constants import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
@@ -92,6 +93,25 @@ class DrumMachineService(IPlayer):
     def clear_all_toggles(self):
         self.drum_parts_state = self.create_empty_drum_parts_state()
         self.ui_helper.deactivate_all_toggles_in_ui()
+
+    def randomize_pattern(self, density_percent: int):
+        """Randomly activate beats across all parts based on density percentage.
+
+        density_percent: 0-100 indicating how many beats should be active on average.
+        Resets existing pattern before applying new random pattern.
+        """
+        density_percent = max(0, min(100, int(density_percent)))
+
+        # Reset current state and UI
+        self.clear_all_toggles()
+
+        total_beats = self.beats_per_page  # limit to current view width
+        probability = density_percent / 100.0
+
+        for part in DRUM_PARTS:
+            for beat_index in range(total_beats):
+                if random.random() < probability:
+                    self.drum_parts_state[part][beat_index] = True
 
     def save_preset(self, file_path):
         self.preset_service.save_preset(file_path, self.drum_parts_state, self.bpm)
