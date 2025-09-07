@@ -56,6 +56,7 @@
                             <property name="value">50</property>
                           </object>
                         </property>
+                        <signal name="value-changed" handler="_on_density_changed"/>
                       </object>
                     </child>
                   </object>
@@ -474,10 +475,17 @@
             <child>
               <object class="GtkButton" id="generate_button">
                 <property name="label" translatable="yes">Generate</property>
+                <signal name="clicked" handler="_on_generate_clicked"/>
                 <style>
                   <class name="suggested-action"/>
                   <class name="pill"/>
                 </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="cancel_button">
+                <property name="label" translatable="yes">Cancel</property>
+                <signal name="clicked" handler="_on_cancel_clicked"/>
               </object>
             </child>
           </object>

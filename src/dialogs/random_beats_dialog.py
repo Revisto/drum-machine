@@ -37,8 +37,7 @@ class RandomBeatsDialog(Adw.Dialog):
     # Template children
     density_scale = Gtk.Template.Child()
     density_value_label = Gtk.Template.Child()
-    generate_button = Gtk.Template.Child()
-    cancel_button = Gtk.Template.Child()
+    # Buttons are bound via template signals; no direct children needed
     per_part_group = Gtk.Template.Child()
     # Per-part widgets from UI
     kick_scale = Gtk.Template.Child()
@@ -68,14 +67,8 @@ class RandomBeatsDialog(Adw.Dialog):
         self.parent_window = parent_window
 
         self._part_controls = {}
-        self._connect_signals()
         self._wire_per_part_controls_from_ui()
         self._sync_density_label()
-
-    def _connect_signals(self):
-        self.density_scale.connect("value-changed", self._on_density_changed)
-        self.generate_button.connect("clicked", self._on_generate_clicked)
-        self.cancel_button.connect("clicked", self._on_cancel_clicked)
 
     def _sync_density_label(self):
         value = int(self.density_scale.get_value())
@@ -88,9 +81,11 @@ class RandomBeatsDialog(Adw.Dialog):
             if False:
                 pass
 
+    @Gtk.Template.Callback()
     def _on_density_changed(self, scale):
         self._sync_density_label()
 
+    @Gtk.Template.Callback()
     def _on_generate_clicked(self, _button):
         density_percent = int(self.density_scale.get_value())
 
@@ -121,6 +116,7 @@ class RandomBeatsDialog(Adw.Dialog):
         )
         self.close()
 
+    @Gtk.Template.Callback()
     def _on_cancel_clicked(self, _button):
         self.close()
 
