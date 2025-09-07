@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-24 03:25+0000\n"
-"PO-Revision-Date: 2025-08-24 14:13+0300\n"
+"POT-Creation-Date: 2025-09-07 03:25+0000\n"
+"PO-Revision-Date: 2025-09-07 16:29+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: Finnish <Finnish>\n"
 "Language: fi\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
 msgid "Drum Machine"
 msgstr "Rumpukone"
 
@@ -65,14 +65,24 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Lukuisia rumpuääniä kuten potku, pikkurumpu, hi-hat ja paljon muuta"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Audio export feature with support for WAV, FLAC, OGG, and MP3 formats"
+msgstr "Äänen vientitoiminto, tuetut muodot ovat WAV, FLAC, OGG ja MP3"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr ""
+"Tuki metatiedoille, kuten esittäjän nimen, kappaleen nimen ja kansikuvan "
+"upottaminen"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "Pikanäppäimet mahdollistavat kaikkien toimintojen käytön"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "Rumpukuvio ladattu, vaalea tila"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Rumpukuvio ladattu, tumma tila"
 
@@ -80,96 +90,221 @@ msgstr "Rumpukuvio ladattu, tumma tila"
 msgid "translator-credits"
 msgstr "Jiri Grönroos"
 
+#: src/config/export_formats.py:43
+msgid "MP3 files"
+msgstr "MP3-tiedostot"
+
+#: src/config/export_formats.py:44
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:50
+#| msgid "MIDI files"
+msgid "FLAC files"
+msgstr "FLAC-tiedostot"
+
+#: src/config/export_formats.py:51
+msgid "FLAC (Lossless)"
+msgstr "FLAC (häviötön)"
+
+#: src/config/export_formats.py:57
+#| msgid "MIDI files"
+msgid "OGG files"
+msgstr "OGG-tiedostot"
+
+#: src/config/export_formats.py:58
+msgid "OGG Vorbis"
+msgstr "OGG Vorbis"
+
+#: src/config/export_formats.py:64
+#| msgid "MIDI files"
+msgid "WAV files"
+msgstr "WAV-tiedostot"
+
+#: src/config/export_formats.py:65
+msgid "WAV (Uncompressed)"
+msgstr "WAV (pakkaamaton)"
+
+#: src/dialogs/audio_export_dialog.py:104
+msgid "Save Audio File"
+msgstr "Tallenna äänitiedosto"
+
+#: src/dialogs/audio_export_dialog.py:128
+msgid "Image files"
+msgstr "Kuvatiedostot"
+
+#: src/dialogs/audio_export_dialog.py:134
+msgid "Select Cover Art"
+msgstr "Valitse kansikuva"
+
+#: src/dialogs/audio_export_dialog.py:191
+msgid "Audio exported to {}"
+msgstr "Ääni viety tiedostoon {}"
+
+#: src/dialogs/audio_export_dialog.py:196
+msgid "Export failed"
+msgstr "Vienti epäonnistui"
+
+#: src/dialogs/audio_export_dialog.py:203
+msgid "Export cancelled successfully"
+msgstr "Vienti peruttu"
+
+#: src/handlers/file_dialog_handler.py:50
+msgid "Default Presets"
+msgstr "Oletusarvoiset esiasetukset"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "No Pattern"
+msgstr "Ei kuviota"
+
+#: src/handlers/file_dialog_handler.py:83
+msgid "Please create a drum pattern before exporting audio."
+msgstr "Luo rumpukuvio ennen äänen vientiä."
+
+#: src/handlers/file_dialog_handler.py:85
+msgid "_OK"
+msgstr "_OK"
+
+#: src/handlers/file_dialog_handler.py:107
+#: src/handlers/file_dialog_handler.py:173
+msgid "MIDI files"
+msgstr "MIDI-tiedostot"
+
+#: src/handlers/file_dialog_handler.py:113
+msgid "Open MIDI File"
+msgstr "Avaa MIDI-tiedosto"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "Tallenna sekvenssi"
+
+#: src/utils/export_progress.py:68
+msgid "Preparing..."
+msgstr "Valmistellaan…"
+
+#: src/utils/export_progress.py:69
+msgid "Initializing..."
+msgstr "Alustetaan…"
+
+#: src/utils/export_progress.py:71
+msgid "Rendering audio..."
+msgstr "Renderöidään ääntä…"
+
+#: src/utils/export_progress.py:72
+msgid "Processing beats..."
+msgstr "Käsitellään iskuja…"
+
+#: src/utils/export_progress.py:74
+msgid "Saving file..."
+msgstr "Tallennetaan tiedostoa…"
+
+#: src/utils/export_progress.py:75
+msgid "Writing to disk..."
+msgstr "Kirjoitetaan levylle…"
+
+#: src/utils/export_progress.py:77
+msgid "Exporting..."
+msgstr "Viedään…"
+
+#: src/utils/export_progress.py:78
+msgid "Processing..."
+msgstr "Käsitellään…"
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:190
+#: src/window.py:198
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} iskua minuutissa (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:199
+#: src/window.py:207
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% äänenvoimakkuus"
 
-#: src/window.py:214 src/window.ui:167
+#: src/window.py:222 src/window.ui:170
 msgid "Play"
 msgstr "Toista"
 
-#: src/window.py:218
+#: src/window.py:226
 msgid "Pause"
 msgstr "Keskeytä"
 
-#: src/window.ui:50
+#: src/window.py:264 src/window.ui:52
 msgid "Open"
 msgstr "Avaa"
 
-#: src/window.ui:52
+#: src/window.ui:54
 msgid "Open Preset"
 msgstr "Avaa esiasetus"
 
-#: src/window.ui:55
+#: src/window.ui:57
 msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "Avaa esiasetus"
 
-#: src/window.ui:56
+#: src/window.ui:58
 msgid "Open Saved Drum Pattern Preset"
 msgstr "Avaa tallennettu rumpukuvion esiasetus"
 
-#: src/window.ui:74
+#: src/window.ui:76
 msgid "Main Menu"
 msgstr "Päävalikko"
 
-#: src/window.ui:76
+#: src/window.ui:78
 msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "Päävalikko"
 
-#: src/window.ui:77
+#: src/window.ui:79
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Näytä pikanäppäimet ja sovelluksen tiedot"
 
-#: src/window.ui:84
-msgid "Save Drum Pattern"
-msgstr "Tallenna rumpukuvio"
+#: src/window.ui:86 src/gtk/audio-export-dialog.ui:7
+#: src/gtk/audio-export-dialog.ui:117
+msgid "Export Audio"
+msgstr "Vie ääni"
 
-#: src/window.ui:86
+#: src/window.ui:88
 msgctxt "accessibility"
-msgid "Save Drum Pattern"
-msgstr "Tallenna rumpukuvio"
+msgid "Export Audio"
+msgstr "Vie ääni"
 
-#: src/window.ui:87
-msgid "Save Current Drum Pattern as a Preset File"
-msgstr "Tallenna rumpukuvio esiasetustiedostona"
+#: src/window.ui:89
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "Tallenna rumpukuvio äänitiedostona"
 
-#: src/window.ui:131
+#: src/window.ui:134
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:136 src/window.ui:140
+#: src/window.ui:139 src/window.ui:143
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Määritä tempo iskuina minuutissa (BPM)"
 
-#: src/window.ui:139
+#: src/window.ui:142
 msgid "Tempo"
 msgstr "Tempo"
 
-#: src/window.ui:181
+#: src/window.ui:184
 msgid "Adjust Volume"
 msgstr "Säädä äänenvoimakkuutta"
 
-#: src/window.ui:204
+#: src/window.ui:207
 msgid "Reset"
 msgstr "Nollaa"
 
-#: src/window.ui:205
+#: src/window.ui:208
 msgid "Reset the Drum Sequence"
 msgstr "Nollaa rumpusekvenssi"
 
-#: src/window.ui:218
+#: src/window.ui:223
+msgid "_Save Pattern"
+msgstr "_Tallenna kuvio"
+
+#: src/window.ui:229
 msgid "_Keyboard Shortcuts"
 msgstr "_Pikanäppäimet"
 
-#: src/window.ui:222
+#: src/window.ui:233
 msgid "_About Drum Machine"
 msgstr "_Tietoja - Rumpukone"
 
@@ -248,22 +383,27 @@ msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "Tallenna esiasetus"
 
-#: src/gtk/help-overlay.ui:107
+#: src/gtk/help-overlay.ui:105
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "Vie ääni"
+
+#: src/gtk/help-overlay.ui:114
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Liikkuminen"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Siirry instrumenttiin"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Edellinen sivu"
 
-#: src/gtk/help-overlay.ui:124
+#: src/gtk/help-overlay.ui:131
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Seuraava sivu"
@@ -295,19 +435,58 @@ msgstr "_Hylkää"
 msgid "_Save"
 msgstr "_Tallenna"
 
-#: src/handlers/file_dialog_handler.py:48
-msgid "Default Presets"
-msgstr "Oletusarvoiset esiasetukset"
+#: src/gtk/audio-export-dialog.ui:40
+msgid "Export Settings"
+msgstr "Viennin asetukset"
 
-#: src/handlers/file_dialog_handler.py:76
-#: src/handlers/file_dialog_handler.py:142
-msgid "MIDI files"
-msgstr "MIDI-tiedostot"
+#: src/gtk/audio-export-dialog.ui:41
+msgid "Configure your audio export options"
+msgstr "Määrit äänen viennin asetukset"
 
-#: src/handlers/file_dialog_handler.py:82
-msgid "Open MIDI File"
-msgstr "Avaa MIDI-tiedosto"
+#: src/gtk/audio-export-dialog.ui:44
+msgid "Audio Format"
+msgstr "Äänimuoto"
 
-#: src/handlers/file_dialog_handler.py:148
-msgid "Save Sequence"
-msgstr "Tallenna sekvenssi"
+#: src/gtk/audio-export-dialog.ui:45
+msgid "Select the output audio format"
+msgstr "Valitse valmiin tiedoston äänimuoto"
+
+#: src/gtk/audio-export-dialog.ui:54
+msgid "Repeat Count"
+msgstr "Toistakerrat"
+
+#: src/gtk/audio-export-dialog.ui:55
+msgid "How many times to repeat the pattern"
+msgstr "Kuinka monta kertaa kuvio toistetaan"
+
+#: src/gtk/audio-export-dialog.ui:71
+msgid "Metadata"
+msgstr "Metatiedot"
+
+#: src/gtk/audio-export-dialog.ui:72
+msgid "Add metadata to your exported audio"
+msgstr "Lisää metatiedot vietäviin äänitiedostoihin"
+
+#: src/gtk/audio-export-dialog.ui:75
+msgid "Artist Name"
+msgstr "Esittäjän nimi"
+
+#: src/gtk/audio-export-dialog.ui:81
+msgid "Song Name"
+msgstr "Kappaleen nimi"
+
+#: src/gtk/audio-export-dialog.ui:87
+msgid "Cover Art"
+msgstr "Kansikuva"
+
+#: src/gtk/audio-export-dialog.ui:88
+msgid "Select an image file for the cover art"
+msgstr "Valitse kansikuvaksi asetettava kuva"
+
+#: src/gtk/audio-export-dialog.ui:92
+msgid "Choose File"
+msgstr "Valitse tiedosto"
+
+#: src/gtk/audio-export-dialog.ui:126
+msgid "Cancel Export"
+msgstr "Peru vienti"
