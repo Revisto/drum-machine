@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-24 13:12+0000\n"
-"PO-Revision-Date: 2025-03-24 19:59+0200\n"
+"Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
+"POT-Creation-Date: 2025-08-24 03:25+0000\n"
+"PO-Revision-Date: 2025-08-24 14:13+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: Finnish <Finnish>\n"
 "Language: fi\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.6\n"
 
-#: data/io.github.revisto.drum-machine.desktop.in:3
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
 msgid "Drum Machine"
 msgstr "Rumpukone"
 
@@ -76,93 +76,100 @@ msgstr "Rumpukuvio ladattu, vaalea tila"
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Rumpukuvio ladattu, tumma tila"
 
+#: src/application.py:69
+msgid "translator-credits"
+msgstr "Jiri Grönroos"
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:278
+#: src/window.py:190
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} iskua minuutissa (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:287
+#: src/window.py:199
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% äänenvoimakkuus"
 
-#: src/window.py:298 src/window.ui:158
+#: src/window.py:214 src/window.ui:167
 msgid "Play"
 msgstr "Toista"
 
-#: src/window.py:302
+#: src/window.py:218
 msgid "Pause"
 msgstr "Keskeytä"
 
-#: src/window.py:317
-msgid "Default Presets"
-msgstr "Oletusarvoiset esiasetukset"
-
-#: src/window.py:344
-msgid "MIDI files"
-msgstr "MIDI-tiedostot"
-
-#: src/window.py:350
-msgid "Open MIDI File"
-msgstr "Avaa MIDI-tiedosto"
-
-#: src/window.ui:41
+#: src/window.ui:50
 msgid "Open"
 msgstr "Avaa"
 
-#: src/window.ui:43 src/window.ui:46
+#: src/window.ui:52
 msgid "Open Preset"
 msgstr "Avaa esiasetus"
 
-#: src/window.ui:47
+#: src/window.ui:55
+msgctxt "accessibility"
+msgid "Open Preset"
+msgstr "Avaa esiasetus"
+
+#: src/window.ui:56
 msgid "Open Saved Drum Pattern Preset"
 msgstr "Avaa tallennettu rumpukuvion esiasetus"
 
-#: src/window.ui:65 src/window.ui:67
+#: src/window.ui:74
 msgid "Main Menu"
 msgstr "Päävalikko"
 
-#: src/window.ui:68
+#: src/window.ui:76
+msgctxt "accessibility"
+msgid "Main Menu"
+msgstr "Päävalikko"
+
+#: src/window.ui:77
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Näytä pikanäppäimet ja sovelluksen tiedot"
 
-#: src/window.ui:75 src/window.ui:77
+#: src/window.ui:84
 msgid "Save Drum Pattern"
 msgstr "Tallenna rumpukuvio"
 
-#: src/window.ui:78
+#: src/window.ui:86
+msgctxt "accessibility"
+msgid "Save Drum Pattern"
+msgstr "Tallenna rumpukuvio"
+
+#: src/window.ui:87
 msgid "Save Current Drum Pattern as a Preset File"
 msgstr "Tallenna rumpukuvio esiasetustiedostona"
 
-#: src/window.ui:122
+#: src/window.ui:131
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:127 src/window.ui:131
+#: src/window.ui:136 src/window.ui:140
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Määritä tempo iskuina minuutissa (BPM)"
 
-#: src/window.ui:130
+#: src/window.ui:139
 msgid "Tempo"
 msgstr "Tempo"
 
-#: src/window.ui:172
+#: src/window.ui:181
 msgid "Adjust Volume"
 msgstr "Säädä äänenvoimakkuutta"
 
-#: src/window.ui:195
+#: src/window.ui:204
 msgid "Reset"
 msgstr "Nollaa"
 
-#: src/window.ui:196
+#: src/window.ui:205
 msgid "Reset the Drum Sequence"
 msgstr "Nollaa rumpusekvenssi"
 
-#: src/window.ui:209
+#: src/window.ui:218
 msgid "_Keyboard Shortcuts"
 msgstr "_Pikanäppäimet"
 
-#: src/window.ui:213
+#: src/window.ui:222
 msgid "_About Drum Machine"
 msgstr "_Tietoja - Rumpukone"
 
@@ -221,20 +228,45 @@ msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Vähennä äänenvoimakkuutta"
 
-#: src/gtk/help-overlay.ui:81
+#: src/gtk/help-overlay.ui:79
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "Vaimenna"
+
+#: src/gtk/help-overlay.ui:88
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr "Esiasetusten hallinta"
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.ui:91
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr "Lataa esiasetus"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "Tallenna esiasetus"
+
+#: src/gtk/help-overlay.ui:107
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "Liikkuminen"
+
+#: src/gtk/help-overlay.ui:110
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr "Siirry instrumenttiin"
+
+#: src/gtk/help-overlay.ui:117
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr "Edellinen sivu"
+
+#: src/gtk/help-overlay.ui:124
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr "Seuraava sivu"
 
 #: src/gtk/save_changes_dialog.ui:6
 msgid "Save Changes?"
@@ -262,3 +294,20 @@ msgstr "_Hylkää"
 #: src/gtk/save_changes_dialog.ui:16
 msgid "_Save"
 msgstr "_Tallenna"
+
+#: src/handlers/file_dialog_handler.py:48
+msgid "Default Presets"
+msgstr "Oletusarvoiset esiasetukset"
+
+#: src/handlers/file_dialog_handler.py:76
+#: src/handlers/file_dialog_handler.py:142
+msgid "MIDI files"
+msgstr "MIDI-tiedostot"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "Open MIDI File"
+msgstr "Avaa MIDI-tiedosto"
+
+#: src/handlers/file_dialog_handler.py:148
+msgid "Save Sequence"
+msgstr "Tallenna sekvenssi"
