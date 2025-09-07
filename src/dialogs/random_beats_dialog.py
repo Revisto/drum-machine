@@ -23,6 +23,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, Gtk
 from gettext import gettext as _
+from ..config.constants import DRUM_PARTS
 
 
 @Gtk.Template(
@@ -38,13 +39,16 @@ class RandomBeatsDialog(Adw.Dialog):
     density_value_label = Gtk.Template.Child()
     generate_button = Gtk.Template.Child()
     cancel_button = Gtk.Template.Child()
+    per_part_group = Gtk.Template.Child()
 
     def __init__(self, parent_window):
         super().__init__()
 
         self.parent_window = parent_window
 
+        self._part_controls = {}
         self._connect_signals()
+        self._build_per_part_controls()
         self._sync_density_label()
 
     def _connect_signals(self):
@@ -56,6 +60,13 @@ class RandomBeatsDialog(Adw.Dialog):
         value = int(self.density_scale.get_value())
         self.density_value_label.set_text(f"{value}%")
 
+        # When global density changes, update any disabled part sliders to match
+        for part, controls in self._part_controls.items():
+            override_switch, scale, value_label = controls
+            if not override_switch.get_active():
+                scale.set_value(value)
+                value_label.set_text(f"{int(scale.get_value())}%")
+
     def _on_density_changed(self, scale):
         self._sync_density_label()
 
@@ -64,7 +75,12 @@ class RandomBeatsDialog(Adw.Dialog):
 
         # Generate random pattern via service
         service = self.parent_window.drum_machine_service
-        service.randomize_pattern(density_percent)
+        per_part_density = {}
+        for part, controls in self._part_controls.items():
+            override_switch, scale, _label = controls
+            if override_switch.get_active():
+                per_part_density[part] = int(scale.get_value())
+        service.randomize_pattern(density_percent, per_part_density if per_part_density else None)
 
         # Update UI to reflect new pattern length and toggles
         service.update_total_beats()
@@ -84,3 +100,52 @@ class RandomBeatsDialog(Adw.Dialog):
 
     def _on_cancel_clicked(self, _button):
         self.close()
+
+    def _build_per_part_controls(self):
+        """Create per-instrument override sliders inside the preferences group."""
+        global_default = int(self.density_scale.get_value())
+        for part in DRUM_PARTS:
+            nice_name = part.capitalize().replace('-', ' ')
+
+            row = Adw.ActionRow(title=nice_name)
+
+            # Override switch
+            override_switch = Gtk.Switch()
+            override_switch.set_valign(Gtk.Align.CENTER)
+            row.add_suffix(override_switch)
+            row.set_activatable_widget(override_switch)
+
+            # Value label
+            value_label = Gtk.Label(label=f"{global_default}%")
+            value_label.add_css_class("dim-label")
+            value_label.set_valign(Gtk.Align.CENTER)
+
+            # Slider
+            adjustment = Gtk.Adjustment(lower=0, upper=100, step_increment=1, page_increment=10, value=global_default)
+            scale = Gtk.Scale(adjustment=adjustment)
+            scale.set_valign(Gtk.Align.CENTER)
+            scale.set_hexpand(True)
+            scale.set_draw_value(False)
+            scale.set_width_request(260)
+
+            # Keep label in sync
+            def on_value_changed(scale, _pl=value_label):
+                _pl.set_text(f"{int(scale.get_value())}%")
+            scale.connect("value-changed", on_value_changed)
+
+            # Enable/disable slider based on switch
+            def on_override_toggled(switch, _scale=scale):
+                _scale.set_sensitive(switch.get_active())
+            override_switch.connect("notify::active", on_override_toggled)
+            scale.set_sensitive(False)
+
+            # Place slider and label as suffix widgets
+            box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
+            box.append(scale)
+            box.append(value_label)
+            row.add_suffix(box)
+
+            self.per_part_group.add(row)
+
+            # Store controls
+            self._part_controls[part] = (override_switch, scale, value_label)

@@ -41,6 +41,7 @@
                     <child>
                       <object class="GtkScale" id="density_scale">
                         <property name="hexpand">true</property>
+                        <property name="width-request">420</property>
                         <property name="valign">center</property>
                         <property name="draw-value">false</property>
                         <property name="adjustment">
@@ -56,6 +57,12 @@
                     </child>
                   </object>
                 </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwPreferencesGroup" id="per_part_group">
+                <property name="title" translatable="yes">Per-instrument density</property>
+                <property name="description" translatable="yes">Override density per drum part</property>
               </object>
             </child>
           </object>
