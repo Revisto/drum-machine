@@ -1,16 +1,16 @@
 # Persian translation for drum-machine.
 # Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
 # This file is distributed under the same license as the drum-machine package.
-# Danial Behzadi <dani.behzi@ubuntu.com>,  2025.
 # میر سبحان <me@mirsobhan.ir>, 2025.
+# Danial Behzadi <dani.behzi@ubuntu.com>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-09-06 03:26+0000\n"
-"PO-Revision-Date: 2025-09-06 08:33+0330\n"
-"Last-Translator: میر سبحان <me@mirsobhan.ir>\n"
+"POT-Creation-Date: 2025-09-07 03:25+0000\n"
+"PO-Revision-Date: 2025-09-07 14:18+0330\n"
+"Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-DL-Module: drum-machine\n"
 "X-DL-Branch: master\n"
 "X-DL-Domain: po\n"
-"X-DL-State: Translating\n"
+"X-DL-State: None\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
@@ -93,40 +93,32 @@ msgid "translator-credits"
 msgstr "دانیال بهزادی <dani.behzi@ubuntu.com>"
 
 #: src/config/export_formats.py:43
-#, fuzzy
-#| msgid "MIDI files"
 msgid "MP3 files"
-msgstr "پرونده‌های MIDI"
+msgstr "پرونده‌های MP3"
 
 #: src/config/export_formats.py:44
 msgid "MP3"
 msgstr "MP3"
 
 #: src/config/export_formats.py:50
-#, fuzzy
-#| msgid "MIDI files"
 msgid "FLAC files"
-msgstr "پرونده‌های MIDI"
+msgstr "پرونده‌های FLAC"
 
 #: src/config/export_formats.py:51
 msgid "FLAC (Lossless)"
 msgstr "FLAC (بی‌کاهش)"
 
 #: src/config/export_formats.py:57
-#, fuzzy
-#| msgid "MIDI files"
 msgid "OGG files"
-msgstr "پرونده‌های MIDI"
+msgstr "پرونده‌های OGG"
 
 #: src/config/export_formats.py:58
 msgid "OGG Vorbis"
 msgstr "Ogg Vorbis"
 
 #: src/config/export_formats.py:64
-#, fuzzy
-#| msgid "MIDI files"
 msgid "WAV files"
-msgstr "پرونده‌های MIDI"
+msgstr "پرونده‌های WAV"
 
 #: src/config/export_formats.py:65
 msgid "WAV (Uncompressed)"
@@ -137,10 +129,8 @@ msgid "Save Audio File"
 msgstr "ذخیره پرونده صدا"
 
 #: src/dialogs/audio_export_dialog.py:128
-#, fuzzy
-#| msgid "MIDI files"
 msgid "Image files"
-msgstr "پرونده‌های MIDI"
+msgstr "پرونده‌های تصویر"
 
 #: src/dialogs/audio_export_dialog.py:134
 msgid "Select Cover Art"
@@ -189,31 +179,31 @@ msgstr "ذخیرهٔ دنباله"
 
 #: src/utils/export_progress.py:68
 msgid "Preparing..."
-msgstr "آماده سازی…"
+msgstr "آماده کردن…"
 
 #: src/utils/export_progress.py:69
 msgid "Initializing..."
-msgstr "مقدار دهی نخستین"
+msgstr "مقدار دادن نخستین…"
 
 #: src/utils/export_progress.py:71
 msgid "Rendering audio..."
-msgstr "پرداخت صدا..."
+msgstr "پرداخت کردن صدا…"
 
 #: src/utils/export_progress.py:72
 msgid "Processing beats..."
-msgstr "پردازش ضرب‌ها..."
+msgstr "پردازش کردن ضرب‌ها…"
 
 #: src/utils/export_progress.py:74
 msgid "Saving file..."
-msgstr "ذخیره پرونده..."
+msgstr "ذخیره کردن پرونده…"
 
 #: src/utils/export_progress.py:75
 msgid "Writing to disk..."
-msgstr "نوشتن به دیسک..."
+msgstr "نوشتن روی دیسک…"
 
 #: src/utils/export_progress.py:77
 msgid "Exporting..."
-msgstr "در حال برون‌ریزی…"
+msgstr "برون ریختن…"
 
 #: src/utils/export_progress.py:78
 msgid "Processing..."
@@ -278,10 +268,8 @@ msgid "Export Audio"
 msgstr "برون‌ریزی صدا"
 
 #: src/window.ui:89
-#, fuzzy
-#| msgid "Save Current Drum Pattern as a Preset File"
 msgid "Export Current Drum Pattern as Audio File"
-msgstr "ذخیرهٔ الگوی کوبه‌ای کنونی به شکل پروندهٔ پیش‌تنظیم"
+msgstr "ذخیرهٔ الگوی کوبه‌ای کنونی به شکل پروندهٔ صوتی"
 
 #: src/window.ui:134
 msgid "BPM"
@@ -308,10 +296,8 @@ msgid "Reset the Drum Sequence"
 msgstr "بازنشانی دنبالهٔ کوبه‌ای"
 
 #: src/window.ui:223
-#, fuzzy
-#| msgid "Save Drum Pattern"
 msgid "_Save Pattern"
-msgstr "ذخیرهٔ الگوی کوبه‌ای"
+msgstr "_ذخیرهٔ الگو"
 
 #: src/window.ui:229
 msgid "_Keyboard Shortcuts"
@@ -501,11 +487,5 @@ msgid "Choose File"
 msgstr "گزینش پرونده"
 
 #: src/gtk/audio-export-dialog.ui:126
-#, fuzzy
-#| msgid "_Cancel"
 msgid "Cancel Export"
-msgstr "_لغو"
-
-#~ msgctxt "accessibility"
-#~ msgid "Save Drum Pattern"
-#~ msgstr "ذخیرهٔ الگوی کوبه‌ای"
+msgstr "لغو برون‌ریزی"
