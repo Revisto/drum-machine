@@ -41,7 +41,6 @@
                     <child>
                       <object class="GtkScale" id="density_scale">
                         <property name="hexpand">true</property>
-                        <property name="width-request">420</property>
                         <property name="valign">center</property>
                         <property name="draw-value">false</property>
                         <property name="adjustment">
