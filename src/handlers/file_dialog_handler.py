@@ -39,15 +39,6 @@ class FileDialogHandler:
         """Setup the preset menu with default presets"""
         menu = Gio.Menu.new()
 
-        # Magic section on top
-        magic_section = Gio.Menu.new()
-        magic_item = Gio.MenuItem.new(_("Magic"), "win.load-preset")
-        magic_item.set_action_and_target_value(
-            "win.load-preset", GLib.Variant.new_string("Magic")
-        )
-        magic_section.append_item(magic_item)
-        menu.append_section(_("Magic Preset"), magic_section)
-
         # Default presets section
         default_section = Gio.Menu.new()
 
@@ -59,6 +50,15 @@ class FileDialogHandler:
             default_section.append_item(item)
 
         menu.append_section(_("Default Presets"), default_section)
+
+        # Magic section with divider
+        magic_section = Gio.Menu.new()
+        magic_item = Gio.MenuItem.new("Magic", "win.load-preset")
+        magic_item.set_action_and_target_value(
+            "win.load-preset", GLib.Variant.new_string("Magic")
+        )
+        magic_section.append_item(magic_item)
+        menu.append_section(None, magic_section)
 
         preset_action = Gio.SimpleAction.new("load-preset", GLib.VariantType.new("s"))
         preset_action.connect("activate", self.on_preset_selected)
