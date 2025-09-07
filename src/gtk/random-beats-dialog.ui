@@ -13,15 +13,19 @@
           </object>
         </child>
         <property name="content">
-          <object class="GtkBox" id="content_box">
-            <property name="orientation">vertical</property>
-            <property name="spacing">24</property>
-            <property name="margin-top">24</property>
-            <property name="margin-bottom">24</property>
-            <property name="margin-start">24</property>
-            <property name="margin-end">24</property>
+          <object class="GtkScrolledWindow">
+            <property name="hscrollbar-policy">never</property>
+            <property name="propagate-natural-height">true</property>
             <child>
-              <object class="AdwPreferencesGroup" id="settings_group">
+              <object class="GtkBox" id="content_box">
+                <property name="orientation">vertical</property>
+                <property name="spacing">24</property>
+                <property name="margin-top">24</property>
+                <property name="margin-bottom">24</property>
+                <property name="margin-start">24</property>
+                <property name="margin-end">24</property>
+                <child>
+                  <object class="AdwPreferencesGroup" id="settings_group">
                 <property name="title" translatable="yes">Randomization</property>
                 <property name="description" translatable="yes">Choose how dense you want the beats</property>
                 <child>
