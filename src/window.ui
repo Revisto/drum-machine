@@ -82,7 +82,7 @@ half-view</setter>
                 </child>
                 <child type="end">
                   <object class="GtkButton" id="export_audio_button">
-                    <property name="icon-name">audio-x-generic-symbolic</property>
+                    <property name="icon-name">share-symbolic</property>
                     <property name="tooltip-text" translatable="yes">Export Audio</property>
                     <accessibility>
                       <property name="label" translatable="yes" context="accessibility">Export Audio</property>
