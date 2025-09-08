@@ -202,11 +202,11 @@ msgid "FLAC (Lossless)"
 msgstr ""
 
 #: src/config/export_formats.py:57
-msgid "OGG files"
+msgid "Ogg files"
 msgstr ""
 
 #: src/config/export_formats.py:58
-msgid "OGG Vorbis"
+msgid "Ogg Vorbis"
 msgstr ""
 
 #: src/config/export_formats.py:64
