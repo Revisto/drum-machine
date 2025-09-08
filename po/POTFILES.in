@@ -8,6 +8,6 @@ src/handlers/file_dialog_handler.py
 src/utils/export_progress.py
 src/window.py
 src/window.ui
-src/gtk/help-overlay.blp
-src/gtk/save-changes-dialog.blp
-src/gtk/audio-export-dialog.blp
+src/gtk/help-overlay.ui
+src/gtk/save_changes_dialog.ui
+src/gtk/audio-export-dialog.ui

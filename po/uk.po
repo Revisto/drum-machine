@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-12 15:25+0000\n"
-"PO-Revision-Date: 2025-08-12 22:50+0300\n"
+"POT-Creation-Date: 2025-09-06 03:26+0000\n"
+"PO-Revision-Date: 2025-09-06 17:12+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Lokalize 23.04.3\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
 msgid "Drum Machine"
 msgstr "Драм-машина"
 
@@ -66,14 +66,26 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Кілька звуків барабанів, зокрема удар, малий барабан, хай-хет тощо"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Audio export feature with support for WAV, FLAC, OGG, and MP3 formats"
+msgstr ""
+"Можливість експортування звукових даних з підтримкою форматів WAV, FLAC, OGG"
+" та MP3"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr ""
+"Підтримка метаданих для вбудовування імені виконавця, назви композиції та"
+" зображення обкладинки"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "Клавіатурні скорочення для доступу до усіх можливостей"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "Партитуру ударних завантажено у світлому режимі"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Партитуру ударних завантажено у темному режимі"
 
@@ -81,96 +93,226 @@ msgstr "Партитуру ударних завантажено у темном
 msgid "translator-credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2025"
 
+#: src/config/export_formats.py:43
+#| msgid "MIDI files"
+msgid "MP3 files"
+msgstr "файли MP3"
+
+#: src/config/export_formats.py:44
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:50
+#| msgid "MIDI files"
+msgid "FLAC files"
+msgstr "файли FLAC"
+
+#: src/config/export_formats.py:51
+msgid "FLAC (Lossless)"
+msgstr "FLAC (без втрат)"
+
+#: src/config/export_formats.py:57
+#| msgid "MIDI files"
+msgid "OGG files"
+msgstr "файли OGG"
+
+#: src/config/export_formats.py:58
+msgid "OGG Vorbis"
+msgstr "OGG Vorbis"
+
+#: src/config/export_formats.py:64
+#| msgid "MIDI files"
+msgid "WAV files"
+msgstr "файли WAV"
+
+#: src/config/export_formats.py:65
+msgid "WAV (Uncompressed)"
+msgstr "WAV (без стискання)"
+
+#: src/dialogs/audio_export_dialog.py:104
+msgid "Save Audio File"
+msgstr "Зберегти звуковий файл"
+
+#: src/dialogs/audio_export_dialog.py:128
+#| msgid "MIDI files"
+msgid "Image files"
+msgstr "файли зображень"
+
+#: src/dialogs/audio_export_dialog.py:134
+msgid "Select Cover Art"
+msgstr "Виберіть обкладинку"
+
+#: src/dialogs/audio_export_dialog.py:191
+msgid "Audio exported to {}"
+msgstr "Звукові дані експортовано до {}"
+
+#: src/dialogs/audio_export_dialog.py:196
+msgid "Export failed"
+msgstr "Не вдалося експортувати"
+
+#: src/dialogs/audio_export_dialog.py:203
+msgid "Export cancelled successfully"
+msgstr "Експортування успішно скасовано"
+
+#: src/handlers/file_dialog_handler.py:50
+msgid "Default Presets"
+msgstr "Типові партитури"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "No Pattern"
+msgstr "Без візерунка"
+
+#: src/handlers/file_dialog_handler.py:83
+msgid "Please create a drum pattern before exporting audio."
+msgstr ""
+"Будь ласка, створіть партитуру уданих, перш ніж експортувати звукові дані."
+
+#: src/handlers/file_dialog_handler.py:85
+msgid "_OK"
+msgstr "_Гаразд"
+
+#: src/handlers/file_dialog_handler.py:107
+#: src/handlers/file_dialog_handler.py:173
+msgid "MIDI files"
+msgstr "файли MIDI"
+
+#: src/handlers/file_dialog_handler.py:113
+msgid "Open MIDI File"
+msgstr "Відкрити файл MIDI"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "Зберегти послідовність"
+
+#: src/utils/export_progress.py:68
+msgid "Preparing..."
+msgstr "Приготування…"
+
+#: src/utils/export_progress.py:69
+msgid "Initializing..."
+msgstr "Ініціалізація…"
+
+#: src/utils/export_progress.py:71
+msgid "Rendering audio..."
+msgstr "Обробка звукових даних…"
+
+#: src/utils/export_progress.py:72
+msgid "Processing beats..."
+msgstr "Обробка тактів…"
+
+#: src/utils/export_progress.py:74
+msgid "Saving file..."
+msgstr "Збереження файла…"
+
+#: src/utils/export_progress.py:75
+msgid "Writing to disk..."
+msgstr "Запис на диск…"
+
+#: src/utils/export_progress.py:77
+msgid "Exporting..."
+msgstr "Експортування…"
+
+#: src/utils/export_progress.py:78
+msgid "Processing..."
+msgstr "Обробка…"
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:190
+#: src/window.py:198
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} тактів на хвилину (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:199
+#: src/window.py:207
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% гучності"
 
-#: src/window.py:214 src/window.ui:167
+#: src/window.py:222 src/window.ui:170
 msgid "Play"
 msgstr "Пуск"
 
-#: src/window.py:218
+#: src/window.py:226
 msgid "Pause"
 msgstr "Пауза"
 
-#: src/window.ui:50
+#: src/window.py:264 src/window.ui:52
 msgid "Open"
 msgstr "Відкрити"
 
-#: src/window.ui:52
+#: src/window.ui:54
 msgid "Open Preset"
 msgstr "Відкрити шаблон"
 
-#: src/window.ui:55
+#: src/window.ui:57
 msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "Відкрити шаблон"
 
-#: src/window.ui:56
+#: src/window.ui:58
 msgid "Open Saved Drum Pattern Preset"
 msgstr "Відкрити збережений шаблон партитури ударних"
 
-#: src/window.ui:74
+#: src/window.ui:76
 msgid "Main Menu"
 msgstr "Головне меню"
 
-#: src/window.ui:76
+#: src/window.ui:78
 msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "Головне меню"
 
-#: src/window.ui:77
+#: src/window.ui:79
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Доступ до клавіатурних скорочень та відомостей про програму"
 
-#: src/window.ui:84
-msgid "Save Drum Pattern"
-msgstr "Зберегти партитуру ударних"
+#: src/window.ui:86 src/gtk/audio-export-dialog.ui:7
+#: src/gtk/audio-export-dialog.ui:117
+msgid "Export Audio"
+msgstr "Експорт звукових даних"
 
-#: src/window.ui:86
+#: src/window.ui:88
 msgctxt "accessibility"
-msgid "Save Drum Pattern"
-msgstr "Зберегти партитуру ударних"
+msgid "Export Audio"
+msgstr "Експорт звукових даних"
 
-#: src/window.ui:87
-msgid "Save Current Drum Pattern as a Preset File"
-msgstr "Зберегти поточну партитуру ударних як файл шаблону"
+#: src/window.ui:89
+#| msgid "Save Current Drum Pattern as a Preset File"
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "Експортувати поточну партитуру ударних як файл звукових даних"
 
-#: src/window.ui:131
+#: src/window.ui:134
 msgid "BPM"
 msgstr "Музичний розмір"
 
-#: src/window.ui:136 src/window.ui:140
+#: src/window.ui:139 src/window.ui:143
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Скоригувати темп у тактах на хвилину (BPM)"
 
-#: src/window.ui:139
+#: src/window.ui:142
 msgid "Tempo"
 msgstr "Темп"
 
-#: src/window.ui:181
+#: src/window.ui:184
 msgid "Adjust Volume"
 msgstr "Регулювання гучності"
 
-#: src/window.ui:204
+#: src/window.ui:207
 msgid "Reset"
 msgstr "Скинути"
 
-#: src/window.ui:205
+#: src/window.ui:208
 msgid "Reset the Drum Sequence"
 msgstr "Скинути послідовністю ударних"
 
-#: src/window.ui:218
+#: src/window.ui:223
+#| msgid "Save Drum Pattern"
+msgid "_Save Pattern"
+msgstr "_Зберегти партитуру"
+
+#: src/window.ui:229
 msgid "_Keyboard Shortcuts"
 msgstr "_Клавіатурні скорочення"
 
-#: src/window.ui:222
+#: src/window.ui:233
 msgid "_About Drum Machine"
 msgstr "_Про «Драм-машину»"
 
@@ -249,22 +391,27 @@ msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "Зберегти шаблон"
 
-#: src/gtk/help-overlay.ui:107
+#: src/gtk/help-overlay.ui:105
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "Експорт звукових даних"
+
+#: src/gtk/help-overlay.ui:114
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Навігація"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Перейти до інструмента"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Попередня сторінка"
 
-#: src/gtk/help-overlay.ui:124
+#: src/gtk/help-overlay.ui:131
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Наступна сторінка"
@@ -296,19 +443,63 @@ msgstr "_Відкинути"
 msgid "_Save"
 msgstr "З_берегти"
 
-#: src/handlers/file_dialog_handler.py:48
-msgid "Default Presets"
-msgstr "Типові партитури"
+#: src/gtk/audio-export-dialog.ui:40
+msgid "Export Settings"
+msgstr "Параметри експортування"
 
-#: src/handlers/file_dialog_handler.py:76
-#: src/handlers/file_dialog_handler.py:142
-msgid "MIDI files"
-msgstr "файли MIDI"
+#: src/gtk/audio-export-dialog.ui:41
+msgid "Configure your audio export options"
+msgstr "Налаштувати параметри експортування звукових даних"
 
-#: src/handlers/file_dialog_handler.py:82
-msgid "Open MIDI File"
-msgstr "Відкрити файл MIDI"
+#: src/gtk/audio-export-dialog.ui:44
+msgid "Audio Format"
+msgstr "Формат звукових даних"
 
-#: src/handlers/file_dialog_handler.py:148
-msgid "Save Sequence"
-msgstr "Зберегти послідовність"
+#: src/gtk/audio-export-dialog.ui:45
+msgid "Select the output audio format"
+msgstr "Виберіть формат виведення звукових даних"
+
+#: src/gtk/audio-export-dialog.ui:54
+msgid "Repeat Count"
+msgstr "Кількість повторів"
+
+#: src/gtk/audio-export-dialog.ui:55
+msgid "How many times to repeat the pattern"
+msgstr "Кількість разів повторення партитури"
+
+#: src/gtk/audio-export-dialog.ui:71
+msgid "Metadata"
+msgstr "Метадані"
+
+#: src/gtk/audio-export-dialog.ui:72
+msgid "Add metadata to your exported audio"
+msgstr "Додайте метадані до експортованих вами звукових даних"
+
+#: src/gtk/audio-export-dialog.ui:75
+msgid "Artist Name"
+msgstr "Ім'я виконавця"
+
+#: src/gtk/audio-export-dialog.ui:81
+msgid "Song Name"
+msgstr "Назва композиції"
+
+#: src/gtk/audio-export-dialog.ui:87
+msgid "Cover Art"
+msgstr "Обкладинка"
+
+#: src/gtk/audio-export-dialog.ui:88
+msgid "Select an image file for the cover art"
+msgstr "Виберіть файл зображення для обкладинки"
+
+#: src/gtk/audio-export-dialog.ui:92
+msgid "Choose File"
+msgstr "Виберіть файл"
+
+#: src/gtk/audio-export-dialog.ui:126
+#| msgid "_Cancel"
+msgid "Cancel Export"
+msgstr "Скасувати експортування"
+
+#~ msgctxt "accessibility"
+#~ msgid "Save Drum Pattern"
+#~ msgstr "Зберегти партитуру ударних"

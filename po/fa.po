@@ -1,24 +1,31 @@
 # Persian translation for drum-machine.
 # Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
 # This file is distributed under the same license as the drum-machine package.
-# Danial Behzadi <dani.behzi@ubuntu.com>,  2025.
+# میر سبحان <me@mirsobhan.ir>, 2025.
+# Danial Behzadi <dani.behzi@ubuntu.com>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-13 03:26+0000\n"
-"PO-Revision-Date: 2025-08-13 15:43+0330\n"
+"POT-Creation-Date: 2025-09-07 03:25+0000\n"
+"PO-Revision-Date: 2025-09-07 14:18+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
-"Language-Team: Persian <fa@li.org>\n"
+"Language-Team: Persian\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Gtranslator 48.0\n"
+"X-DL-Lang: fa\n"
+"X-DL-Module: drum-machine\n"
+"X-DL-Branch: master\n"
+"X-DL-Domain: po\n"
+"X-DL-State: None\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
 msgid "Drum Machine"
 msgstr "ماشین درام"
 
@@ -28,14 +35,14 @@ msgstr "ایجاد و پخش ضرب‌های کوبه‌ای"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:9
 msgid ""
-"Drum Machine is a modern and intuitive application for creating, playing, and "
-"managing drum patterns. Perfect for musicians, producers, and anyone "
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
 "interested in rhythm creation, this application provides a simple interface "
 "for drum pattern programming. Have fun!"
 msgstr ""
 "ماشین درام برنامه‌ای نوین و ادراکی برای ایجاد، پخش و مدیریت الگوهای کوبه‌ای "
-"است. این برنامه که مناسب آهنگسازان، تهیه‌کنندگان و هرکسی در تولید ضرباهنگ است، "
-"میانایی ساده برای برنامه ریزی الگوهای کوبه‌ای فراهم می‌کند. خوش بگذرانید!"
+"است. این برنامه که مناسب آهنگسازان، تهیه‌کنندگان و هرکسی در تولید ضرباهنگ "
+"است، میانایی ساده برای برنامه ریزی الگوهای کوبه‌ای فراهم می‌کند. خوش بگذرانید!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
@@ -62,14 +69,22 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "چندین صدای کوبه‌ای از جمله دهل، طبل، سنج و بیش‌تر"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Audio export feature with support for WAV, FLAC, OGG, and MP3 formats"
+msgstr "قابلیت خروجی صوتی با پشتیبانی از قالب‌های WAV، FLAC، OGG و MP3"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr "پشتیبانی از فراداده برای جاسازی نام هنرمند، عنوان آهنگ و طرح جلد"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "میان‌برهای صفحه‌کلید برای دسترسی سریع به همهٔ ویژگی‌ها"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "الگوی کوبه‌ای بار شده در حالت روشن"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "الگوی کوبه‌ای بار شده در حالت تیره"
 
@@ -77,96 +92,218 @@ msgstr "الگوی کوبه‌ای بار شده در حالت تیره"
 msgid "translator-credits"
 msgstr "دانیال بهزادی <dani.behzi@ubuntu.com>"
 
+#: src/config/export_formats.py:43
+msgid "MP3 files"
+msgstr "پرونده‌های MP3"
+
+#: src/config/export_formats.py:44
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:50
+msgid "FLAC files"
+msgstr "پرونده‌های FLAC"
+
+#: src/config/export_formats.py:51
+msgid "FLAC (Lossless)"
+msgstr "FLAC (بی‌کاهش)"
+
+#: src/config/export_formats.py:57
+msgid "OGG files"
+msgstr "پرونده‌های OGG"
+
+#: src/config/export_formats.py:58
+msgid "OGG Vorbis"
+msgstr "Ogg Vorbis"
+
+#: src/config/export_formats.py:64
+msgid "WAV files"
+msgstr "پرونده‌های WAV"
+
+#: src/config/export_formats.py:65
+msgid "WAV (Uncompressed)"
+msgstr "WAV (فشرده نشده)"
+
+#: src/dialogs/audio_export_dialog.py:104
+msgid "Save Audio File"
+msgstr "ذخیره پرونده صدا"
+
+#: src/dialogs/audio_export_dialog.py:128
+msgid "Image files"
+msgstr "پرونده‌های تصویر"
+
+#: src/dialogs/audio_export_dialog.py:134
+msgid "Select Cover Art"
+msgstr "گزینش طرح جلد"
+
+#: src/dialogs/audio_export_dialog.py:191
+msgid "Audio exported to {}"
+msgstr "صدا برون‌ریزی شد به {}"
+
+#: src/dialogs/audio_export_dialog.py:196
+msgid "Export failed"
+msgstr "برون‌ریزی شکست خورد"
+
+#: src/dialogs/audio_export_dialog.py:203
+msgid "Export cancelled successfully"
+msgstr "برون‌ریزی به طور موفق لغو شد"
+
+#: src/handlers/file_dialog_handler.py:50
+msgid "Default Presets"
+msgstr "پیش‌تنظیم پیش‌گزیده"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "No Pattern"
+msgstr "بدون الگو"
+
+#: src/handlers/file_dialog_handler.py:83
+msgid "Please create a drum pattern before exporting audio."
+msgstr "لطفا "
+
+#: src/handlers/file_dialog_handler.py:85
+msgid "_OK"
+msgstr "_تأیید"
+
+#: src/handlers/file_dialog_handler.py:107
+#: src/handlers/file_dialog_handler.py:173
+msgid "MIDI files"
+msgstr "پرونده‌های MIDI"
+
+#: src/handlers/file_dialog_handler.py:113
+msgid "Open MIDI File"
+msgstr "گشودن پروندهٔ MIDI"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "ذخیرهٔ دنباله"
+
+#: src/utils/export_progress.py:68
+msgid "Preparing..."
+msgstr "آماده کردن…"
+
+#: src/utils/export_progress.py:69
+msgid "Initializing..."
+msgstr "مقدار دادن نخستین…"
+
+#: src/utils/export_progress.py:71
+msgid "Rendering audio..."
+msgstr "پرداخت کردن صدا…"
+
+#: src/utils/export_progress.py:72
+msgid "Processing beats..."
+msgstr "پردازش کردن ضرب‌ها…"
+
+#: src/utils/export_progress.py:74
+msgid "Saving file..."
+msgstr "ذخیره کردن پرونده…"
+
+#: src/utils/export_progress.py:75
+msgid "Writing to disk..."
+msgstr "نوشتن روی دیسک…"
+
+#: src/utils/export_progress.py:77
+msgid "Exporting..."
+msgstr "برون ریختن…"
+
+#: src/utils/export_progress.py:78
+msgid "Processing..."
+msgstr "پردازش کردن…"
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:190
+#: src/window.py:198
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} ضرب در دقیقه (ض‌دد)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:199
+#: src/window.py:207
 msgid "{:.0f}% Volume"
 msgstr "{:I.0f}% حجم صدا"
 
-#: src/window.py:214 src/window.ui:167
+#: src/window.py:222 src/window.ui:170
 msgid "Play"
 msgstr "پخش"
 
-#: src/window.py:218
+#: src/window.py:226
 msgid "Pause"
 msgstr "مکث"
 
-#: src/window.ui:50
+#: src/window.py:264 src/window.ui:52
 msgid "Open"
 msgstr "گشودن"
 
-#: src/window.ui:52
+#: src/window.ui:54
 msgid "Open Preset"
 msgstr "گشودن پیش‌تنظیم"
 
-#: src/window.ui:55
+#: src/window.ui:57
 msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "گشودن پیش‌تنظیم"
 
-#: src/window.ui:56
+#: src/window.ui:58
 msgid "Open Saved Drum Pattern Preset"
 msgstr "گشودن پیش‌تنظیم الگوی کوبه‌ای ذخیره شده"
 
-#: src/window.ui:74
+#: src/window.ui:76
 msgid "Main Menu"
 msgstr "فهرست اصلی"
 
-#: src/window.ui:76
+#: src/window.ui:78
 msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "فهرست اصلی"
 
-#: src/window.ui:77
+#: src/window.ui:79
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "دسترسی به اطّلاعات برنامه و میان‌برهای صفحه‌کلید"
 
-#: src/window.ui:84
-msgid "Save Drum Pattern"
-msgstr "ذخیرهٔ الگوی کوبه‌ای"
+#: src/window.ui:86 src/gtk/audio-export-dialog.ui:7
+#: src/gtk/audio-export-dialog.ui:117
+msgid "Export Audio"
+msgstr "برون‌ریزی صدا"
 
-#: src/window.ui:86
+#: src/window.ui:88
 msgctxt "accessibility"
-msgid "Save Drum Pattern"
-msgstr "ذخیرهٔ الگوی کوبه‌ای"
+msgid "Export Audio"
+msgstr "برون‌ریزی صدا"
 
-#: src/window.ui:87
-msgid "Save Current Drum Pattern as a Preset File"
-msgstr "ذخیرهٔ الگوی کوبه‌ای کنونی به شکل پروندهٔ پیش‌تنظیم"
+#: src/window.ui:89
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "ذخیرهٔ الگوی کوبه‌ای کنونی به شکل پروندهٔ صوتی"
 
-#: src/window.ui:131
+#: src/window.ui:134
 msgid "BPM"
 msgstr "ض‌دد"
 
-#: src/window.ui:136 src/window.ui:140
+#: src/window.ui:139 src/window.ui:143
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "تنظیم سرعت بر اساس ضرب در دقیقه (ض‌دد)"
 
-#: src/window.ui:139
+#: src/window.ui:142
 msgid "Tempo"
 msgstr "سرعت"
 
-#: src/window.ui:181
+#: src/window.ui:184
 msgid "Adjust Volume"
 msgstr "تنظیم حجم صدا"
 
-#: src/window.ui:204
+#: src/window.ui:207
 msgid "Reset"
 msgstr "بازنشانی"
 
-#: src/window.ui:205
+#: src/window.ui:208
 msgid "Reset the Drum Sequence"
 msgstr "بازنشانی دنبالهٔ کوبه‌ای"
 
-#: src/window.ui:218
+#: src/window.ui:223
+msgid "_Save Pattern"
+msgstr "_ذخیرهٔ الگو"
+
+#: src/window.ui:229
 msgid "_Keyboard Shortcuts"
 msgstr "_میان‌برهای صفحه‌کلید"
 
-#: src/window.ui:222
+#: src/window.ui:233
 msgid "_About Drum Machine"
 msgstr "_دربارهٔ ماشین درام"
 
@@ -245,22 +382,27 @@ msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "ذخیرهٔ پیش‌تنظیم"
 
-#: src/gtk/help-overlay.ui:107
+#: src/gtk/help-overlay.ui:105
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "برون‌ریزی صدا"
+
+#: src/gtk/help-overlay.ui:114
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "پیمایش"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "رفتن به ساز"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "صفحهٔ پیشین"
 
-#: src/gtk/help-overlay.ui:124
+#: src/gtk/help-overlay.ui:131
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "صفحهٔ بعدی"
@@ -274,8 +416,8 @@ msgid ""
 "Current preset contains unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
-"پیش‌تنظیم کنونی تغییراتی ذخیره نشده دارد. تغییراتی که ذخیره نشده‌اند برای همیشه "
-"از دست خواهند رفت."
+"پیش‌تنظیم کنونی تغییراتی ذخیره نشده دارد. تغییراتی که ذخیره نشده‌اند برای "
+"همیشه از دست خواهند رفت."
 
 #. Cancel the operation
 #: src/gtk/save_changes_dialog.ui:14
@@ -292,19 +434,58 @@ msgstr "_دور انداختن"
 msgid "_Save"
 msgstr "_ذخیره"
 
-#: src/handlers/file_dialog_handler.py:48
-msgid "Default Presets"
-msgstr "پیش‌تنظیم پیش‌گزیده"
+#: src/gtk/audio-export-dialog.ui:40
+msgid "Export Settings"
+msgstr "برون‌ریزی تنظیمات"
 
-#: src/handlers/file_dialog_handler.py:76
-#: src/handlers/file_dialog_handler.py:142
-msgid "MIDI files"
-msgstr "پرونده‌های MIDI"
+#: src/gtk/audio-export-dialog.ui:41
+msgid "Configure your audio export options"
+msgstr "گزینه‌های برون‌ریزی صداتان را پیکربندی کنید"
 
-#: src/handlers/file_dialog_handler.py:82
-msgid "Open MIDI File"
-msgstr "گشودن پروندهٔ MIDI"
+#: src/gtk/audio-export-dialog.ui:44
+msgid "Audio Format"
+msgstr "قالب صدا"
 
-#: src/handlers/file_dialog_handler.py:148
-msgid "Save Sequence"
-msgstr "ذخیرهٔ دنباله"
+#: src/gtk/audio-export-dialog.ui:45
+msgid "Select the output audio format"
+msgstr "قالب خروجی صدا را بگزینید"
+
+#: src/gtk/audio-export-dialog.ui:54
+msgid "Repeat Count"
+msgstr "تعداد تکرار"
+
+#: src/gtk/audio-export-dialog.ui:55
+msgid "How many times to repeat the pattern"
+msgstr "چند دفعه الگو تکرار شود"
+
+#: src/gtk/audio-export-dialog.ui:71
+msgid "Metadata"
+msgstr "فراداده"
+
+#: src/gtk/audio-export-dialog.ui:72
+msgid "Add metadata to your exported audio"
+msgstr "افزودن فراداده به صدای برون‌ریزی شده‌تان"
+
+#: src/gtk/audio-export-dialog.ui:75
+msgid "Artist Name"
+msgstr "نام هنرمند"
+
+#: src/gtk/audio-export-dialog.ui:81
+msgid "Song Name"
+msgstr "نام آهنگ"
+
+#: src/gtk/audio-export-dialog.ui:87
+msgid "Cover Art"
+msgstr "طرح جلد"
+
+#: src/gtk/audio-export-dialog.ui:88
+msgid "Select an image file for the cover art"
+msgstr "یک نگاره را برای طرح جلد بگزینید"
+
+#: src/gtk/audio-export-dialog.ui:92
+msgid "Choose File"
+msgstr "گزینش پرونده"
+
+#: src/gtk/audio-export-dialog.ui:126
+msgid "Cancel Export"
+msgstr "لغو برون‌ریزی"
