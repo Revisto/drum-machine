@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-14 15:26+0000\n"
-"PO-Revision-Date: 2025-08-15 08:00+0800\n"
+"POT-Creation-Date: 2025-09-07 15:25+0000\n"
+"PO-Revision-Date: 2025-09-08 09:53+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Gtranslator 48.0\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
 msgid "Drum Machine"
 msgstr "击鼓器"
 
@@ -63,14 +63,22 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "多种击鼓音色，包括底鼓、军鼓、踩镲和其它更多音色"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Audio export feature with support for WAV, FLAC, OGG, and MP3 formats"
+msgstr "音频导出功能支持 WAV、FLAC、OGG 和 MP3 格式"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr "支持嵌入艺人姓名、曲目标题和封面的元数据"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "用于快速访问所有功能的键盘快捷键"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "以亮色模式加载击鼓模式"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "以暗色模式加载击鼓模式"
 
@@ -78,96 +86,218 @@ msgstr "以暗色模式加载击鼓模式"
 msgid "translator-credits"
 msgstr "lumingzh <lumingzh@qq.com>, 2025."
 
+#: src/config/export_formats.py:43
+msgid "MP3 files"
+msgstr "MP3 文件"
+
+#: src/config/export_formats.py:44
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:50
+msgid "FLAC files"
+msgstr "FLAC 文件"
+
+#: src/config/export_formats.py:51
+msgid "FLAC (Lossless)"
+msgstr "FLAC（无损）"
+
+#: src/config/export_formats.py:57
+msgid "OGG files"
+msgstr "OGG 文件"
+
+#: src/config/export_formats.py:58
+msgid "OGG Vorbis"
+msgstr "OGG Vorbis"
+
+#: src/config/export_formats.py:64
+msgid "WAV files"
+msgstr "WAV 文件"
+
+#: src/config/export_formats.py:65
+msgid "WAV (Uncompressed)"
+msgstr "WAV（未压缩）"
+
+#: src/dialogs/audio_export_dialog.py:104
+msgid "Save Audio File"
+msgstr "保存音频文件"
+
+#: src/dialogs/audio_export_dialog.py:128
+msgid "Image files"
+msgstr "图像文件"
+
+#: src/dialogs/audio_export_dialog.py:134
+msgid "Select Cover Art"
+msgstr "选择封面"
+
+#: src/dialogs/audio_export_dialog.py:191
+msgid "Audio exported to {}"
+msgstr "音频已导出至 {}"
+
+#: src/dialogs/audio_export_dialog.py:196
+msgid "Export failed"
+msgstr "导出失败"
+
+#: src/dialogs/audio_export_dialog.py:203
+msgid "Export cancelled successfully"
+msgstr "导出已成功取消"
+
+#: src/handlers/file_dialog_handler.py:50
+msgid "Default Presets"
+msgstr "默认预设"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "No Pattern"
+msgstr "无模式"
+
+#: src/handlers/file_dialog_handler.py:83
+msgid "Please create a drum pattern before exporting audio."
+msgstr "请在导出音频前创建击鼓模式。"
+
+#: src/handlers/file_dialog_handler.py:85
+msgid "_OK"
+msgstr "确定(_O)"
+
+#: src/handlers/file_dialog_handler.py:107
+#: src/handlers/file_dialog_handler.py:173
+msgid "MIDI files"
+msgstr "MIDI 文件"
+
+#: src/handlers/file_dialog_handler.py:113
+msgid "Open MIDI File"
+msgstr "打开 MIDI 文件"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "保存序列"
+
+#: src/utils/export_progress.py:68
+msgid "Preparing..."
+msgstr "正在准备…"
+
+#: src/utils/export_progress.py:69
+msgid "Initializing..."
+msgstr "正在初始化…"
+
+#: src/utils/export_progress.py:71
+msgid "Rendering audio..."
+msgstr "正在渲染音频…"
+
+#: src/utils/export_progress.py:72
+msgid "Processing beats..."
+msgstr "正在处理节拍…"
+
+#: src/utils/export_progress.py:74
+msgid "Saving file..."
+msgstr "正在保存文件…"
+
+#: src/utils/export_progress.py:75
+msgid "Writing to disk..."
+msgstr "正在写入磁盘…"
+
+#: src/utils/export_progress.py:77
+msgid "Exporting..."
+msgstr "正在导出…"
+
+#: src/utils/export_progress.py:78
+msgid "Processing..."
+msgstr "正在处理…"
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:190
+#: src/window.py:198
 msgid "{} Beats per Minute (BPM)"
 msgstr "每分钟 {} 节拍（BPM）"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:199
+#: src/window.py:207
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% 音量"
 
-#: src/window.py:214 src/window.ui:167
+#: src/window.py:222 src/window.ui:170
 msgid "Play"
 msgstr "播放"
 
-#: src/window.py:218
+#: src/window.py:226
 msgid "Pause"
 msgstr "暂停"
 
-#: src/window.ui:50
+#: src/window.py:264 src/window.ui:52
 msgid "Open"
 msgstr "打开"
 
-#: src/window.ui:52
+#: src/window.ui:54
 msgid "Open Preset"
 msgstr "打开预设"
 
-#: src/window.ui:55
+#: src/window.ui:57
 msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "打开预设"
 
-#: src/window.ui:56
+#: src/window.ui:58
 msgid "Open Saved Drum Pattern Preset"
 msgstr "打开保存的击鼓模式预设"
 
-#: src/window.ui:74
+#: src/window.ui:76
 msgid "Main Menu"
 msgstr "主菜单"
 
-#: src/window.ui:76
+#: src/window.ui:78
 msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "主菜单"
 
-#: src/window.ui:77
+#: src/window.ui:79
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "访问键盘快捷键和应用程序信息"
 
-#: src/window.ui:84
-msgid "Save Drum Pattern"
-msgstr "保存击鼓模式"
+#: src/window.ui:86 src/gtk/audio-export-dialog.ui:7
+#: src/gtk/audio-export-dialog.ui:117
+msgid "Export Audio"
+msgstr "导出音频"
 
-#: src/window.ui:86
+#: src/window.ui:88
 msgctxt "accessibility"
-msgid "Save Drum Pattern"
-msgstr "保存击鼓模式"
+msgid "Export Audio"
+msgstr "导出音频"
 
-#: src/window.ui:87
-msgid "Save Current Drum Pattern as a Preset File"
-msgstr "将当前击鼓模式保存为预设文件"
+#: src/window.ui:89
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "将当前击鼓模式导出为音频文件"
 
-#: src/window.ui:131
+#: src/window.ui:134
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:136 src/window.ui:140
+#: src/window.ui:139 src/window.ui:143
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "以每分钟节拍为单位调节拍子（BPM）"
 
-#: src/window.ui:139
+#: src/window.ui:142
 msgid "Tempo"
 msgstr "拍子"
 
-#: src/window.ui:181
+#: src/window.ui:184
 msgid "Adjust Volume"
 msgstr "调整音量"
 
-#: src/window.ui:204
+#: src/window.ui:207
 msgid "Reset"
 msgstr "重置"
 
-#: src/window.ui:205
+#: src/window.ui:208
 msgid "Reset the Drum Sequence"
 msgstr "重置击鼓序列"
 
-#: src/window.ui:218
+#: src/window.ui:223
+msgid "_Save Pattern"
+msgstr "保存模式(_S)"
+
+#: src/window.ui:229
 msgid "_Keyboard Shortcuts"
 msgstr "键盘快捷键(_K)"
 
-#: src/window.ui:222
+#: src/window.ui:233
 msgid "_About Drum Machine"
 msgstr "关于击鼓器(_A)"
 
@@ -246,22 +376,27 @@ msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "保存预设"
 
-#: src/gtk/help-overlay.ui:107
+#: src/gtk/help-overlay.ui:105
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "导出音频"
+
+#: src/gtk/help-overlay.ui:114
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "导航"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "前往乐器"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "上一页"
 
-#: src/gtk/help-overlay.ui:124
+#: src/gtk/help-overlay.ui:131
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "下一页"
@@ -291,19 +426,62 @@ msgstr "丢弃(_D)"
 msgid "_Save"
 msgstr "保存(_S)"
 
-#: src/handlers/file_dialog_handler.py:48
-msgid "Default Presets"
-msgstr "默认预设"
+#: src/gtk/audio-export-dialog.ui:40
+msgid "Export Settings"
+msgstr "导出设置"
 
-#: src/handlers/file_dialog_handler.py:76
-#: src/handlers/file_dialog_handler.py:142
-msgid "MIDI files"
-msgstr "MIDI 文件"
+#: src/gtk/audio-export-dialog.ui:41
+msgid "Configure your audio export options"
+msgstr "配置您的音频导出选项"
 
-#: src/handlers/file_dialog_handler.py:82
-msgid "Open MIDI File"
-msgstr "打开 MIDI 文件"
+#: src/gtk/audio-export-dialog.ui:44
+msgid "Audio Format"
+msgstr "音频格式"
 
-#: src/handlers/file_dialog_handler.py:148
-msgid "Save Sequence"
-msgstr "保存序列"
+#: src/gtk/audio-export-dialog.ui:45
+msgid "Select the output audio format"
+msgstr "选择输出的音频格式"
+
+#: src/gtk/audio-export-dialog.ui:54
+msgid "Repeat Count"
+msgstr "重复计数"
+
+#: src/gtk/audio-export-dialog.ui:55
+msgid "How many times to repeat the pattern"
+msgstr "重复击鼓模式的次数"
+
+#: src/gtk/audio-export-dialog.ui:71
+msgid "Metadata"
+msgstr "元数据"
+
+#: src/gtk/audio-export-dialog.ui:72
+msgid "Add metadata to your exported audio"
+msgstr "添加元数据至您导出的音频"
+
+#: src/gtk/audio-export-dialog.ui:75
+msgid "Artist Name"
+msgstr "艺人姓名"
+
+#: src/gtk/audio-export-dialog.ui:81
+msgid "Song Name"
+msgstr "曲目名称"
+
+#: src/gtk/audio-export-dialog.ui:87
+msgid "Cover Art"
+msgstr "封面"
+
+#: src/gtk/audio-export-dialog.ui:88
+msgid "Select an image file for the cover art"
+msgstr "选择用于封面的图像文件"
+
+#: src/gtk/audio-export-dialog.ui:92
+msgid "Choose File"
+msgstr "选择文件"
+
+#: src/gtk/audio-export-dialog.ui:126
+msgid "Cancel Export"
+msgstr "取消导出"
+
+#~ msgctxt "accessibility"
+#~ msgid "Save Drum Pattern"
+#~ msgstr "保存击鼓模式"
