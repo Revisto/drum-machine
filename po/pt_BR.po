@@ -4,15 +4,16 @@
 # Tiago Lucas FLach <tiagolucas9830@gmail.com>, 2025.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2025.
 # Álvaro Burns <>, 2025.
+# Juliano de Souza Camargo <julianosc@pm.me>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-14 03:26+0000\n"
-"PO-Revision-Date: 2025-08-14 08:48-0300\n"
-"Last-Translator: Álvaro Burns <>\n"
-"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao/>\n"
+"POT-Creation-Date: 2025-09-08 15:26+0000\n"
+"PO-Revision-Date: 2025-09-09 13:17-0300\n"
+"Last-Translator: Juliano de Souza Camargo <julianosc@pm.me>\n"
+"Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
 msgid "Drum Machine"
 msgstr "Drum Machine"
 
@@ -66,14 +67,26 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Vários sons de bateria, incluindo bumbo, caixa, chimbau e muito mais"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Audio export feature with support for WAV, FLAC, OGG, and MP3 formats"
+msgstr ""
+"Funcionalidade de exportar áudio com suporte para os formatos WAV, FLAC, OGG "
+"e MP3"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr ""
+"Suporte de metadados para embutir nome de artista, título da música, e arte "
+"da capa"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "Atalhos de teclado para acesso rápido a todas as funções"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "Padrão de bateria carregado no modo claro"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Padrão de bateria carregado no modo escuro"
 
@@ -82,98 +95,221 @@ msgid "translator-credits"
 msgstr ""
 "Álvaro Burns\n"
 "Rafael Fontenelle <rafaelff@gnome.org>\n"
-"Tiago Lucas FLach <tiagolucas9830@gmail.com>"
+"Tiago Lucas FLach <tiagolucas9830@gmail.com>\n"
+"Juliano de Souza Camargo <julianosc@pm.me>"
+
+#: src/config/export_formats.py:43
+msgid "MP3 files"
+msgstr "Arquivos MP3"
+
+#: src/config/export_formats.py:44
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:50
+msgid "FLAC files"
+msgstr "Arquivos FLAC"
+
+#: src/config/export_formats.py:51
+msgid "FLAC (Lossless)"
+msgstr "FLAC (sem perdas)"
+
+#: src/config/export_formats.py:57
+msgid "OGG files"
+msgstr "Arquivos OGG"
+
+#: src/config/export_formats.py:58
+msgid "OGG Vorbis"
+msgstr "OGG Vorbis"
+
+#: src/config/export_formats.py:64
+msgid "WAV files"
+msgstr "Arquivos WAV"
+
+#: src/config/export_formats.py:65
+msgid "WAV (Uncompressed)"
+msgstr "WAV (sem compressão)"
+
+#: src/dialogs/audio_export_dialog.py:104
+msgid "Save Audio File"
+msgstr "Salvar arquivo de áudio"
+
+#: src/dialogs/audio_export_dialog.py:128
+msgid "Image files"
+msgstr "Arquivos de imagem"
+
+#: src/dialogs/audio_export_dialog.py:134
+msgid "Select Cover Art"
+msgstr "Selecione a arte da capa"
+
+#: src/dialogs/audio_export_dialog.py:191
+msgid "Audio exported to {}"
+msgstr "Áudio exportado para {}"
+
+#: src/dialogs/audio_export_dialog.py:196
+msgid "Export failed"
+msgstr "Falha ao exportar"
+
+#: src/dialogs/audio_export_dialog.py:203
+msgid "Export cancelled successfully"
+msgstr "Exportar cancelado com sucesso"
+
+#: src/handlers/file_dialog_handler.py:50
+msgid "Default Presets"
+msgstr "Predefinições padrão"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "No Pattern"
+msgstr "Sem padrão"
+
+#: src/handlers/file_dialog_handler.py:83
+msgid "Please create a drum pattern before exporting audio."
+msgstr "Favor criar um padrão de bateria antes de exportar o áudio."
+
+#: src/handlers/file_dialog_handler.py:85
+msgid "_OK"
+msgstr "_OK"
+
+#: src/handlers/file_dialog_handler.py:107
+#: src/handlers/file_dialog_handler.py:173
+msgid "MIDI files"
+msgstr "Arquivos MIDI"
+
+#: src/handlers/file_dialog_handler.py:113
+msgid "Open MIDI File"
+msgstr "Abrir arquivo MIDI"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "Salvar sequência"
+
+#: src/utils/export_progress.py:68
+msgid "Preparing..."
+msgstr "Preparando..."
+
+#: src/utils/export_progress.py:69
+msgid "Initializing..."
+msgstr "Inicializando..."
+
+#: src/utils/export_progress.py:71
+msgid "Rendering audio..."
+msgstr "Renderizando áudio..."
+
+#: src/utils/export_progress.py:72
+msgid "Processing beats..."
+msgstr "Processando batidas..."
+
+#: src/utils/export_progress.py:74
+msgid "Saving file..."
+msgstr "Guardando o arquivo..."
+
+#: src/utils/export_progress.py:75
+msgid "Writing to disk..."
+msgstr "Escrevendo no disco..."
+
+#: src/utils/export_progress.py:77
+msgid "Exporting..."
+msgstr "Exportando..."
+
+#: src/utils/export_progress.py:78
+msgid "Processing..."
+msgstr "Processando..."
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:190
+#: src/window.py:198
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} batidas por minuto (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:199
+#: src/window.py:207
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% volume"
 
-#: src/window.py:214 src/window.ui:167
+#: src/window.py:222 src/window.ui:170
 msgid "Play"
 msgstr "Reproduz"
 
-#: src/window.py:218
+#: src/window.py:226
 msgid "Pause"
 msgstr "Pausa"
 
-#: src/window.ui:50
+#: src/window.py:264 src/window.ui:52
 msgid "Open"
 msgstr "Abrir"
 
-#: src/window.ui:52
+#: src/window.ui:54
 msgid "Open Preset"
 msgstr "Abrir predefinição"
 
-#: src/window.ui:55
+#: src/window.ui:57
 msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "Abrir predefinição"
 
-#: src/window.ui:56
+#: src/window.ui:58
 msgid "Open Saved Drum Pattern Preset"
 msgstr "Abrir predefinição padrão de bateria salva"
 
-#: src/window.ui:74
+#: src/window.ui:76
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: src/window.ui:76
+#: src/window.ui:78
 msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "Menu principal"
 
-#: src/window.ui:77
+#: src/window.ui:79
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Acesse atalhos de teclado e informações do aplicativo"
 
-#: src/window.ui:84
-msgid "Save Drum Pattern"
-msgstr "Salvar padrão de bateria"
+#: src/window.ui:86 src/gtk/audio-export-dialog.ui:7
+#: src/gtk/audio-export-dialog.ui:117
+msgid "Export Audio"
+msgstr "Exportar áudio"
 
-#: src/window.ui:86
+#: src/window.ui:88
 msgctxt "accessibility"
-msgid "Save Drum Pattern"
-msgstr "Salvar padrão de bateria"
+msgid "Export Audio"
+msgstr "Exportar áudio"
 
-#: src/window.ui:87
-msgid "Save Current Drum Pattern as a Preset File"
-msgstr "Salva o atual padrão de bateria como um arquivo de predefinição"
+#: src/window.ui:89
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "Exporta o atual padrão de bateria como um arquivo de áudio"
 
-#: src/window.ui:131
+#: src/window.ui:134
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:136 src/window.ui:140
+#: src/window.ui:139 src/window.ui:143
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Ajusta o tempo em batidas por minuto (BPM)"
 
-#: src/window.ui:139
+#: src/window.ui:142
 msgid "Tempo"
 msgstr "Tempo"
 
-#: src/window.ui:181
+#: src/window.ui:184
 msgid "Adjust Volume"
 msgstr "Ajusta o volume"
 
-#: src/window.ui:204
+#: src/window.ui:207
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: src/window.ui:205
+#: src/window.ui:208
 msgid "Reset the Drum Sequence"
 msgstr "Reinicia a sequência de bateria"
 
-#: src/window.ui:218
+#: src/window.ui:223
+msgid "_Save Pattern"
+msgstr "_Salvar padrão"
+
+#: src/window.ui:229
 msgid "_Keyboard Shortcuts"
 msgstr "Atalhos de _teclado"
 
-#: src/window.ui:222
+#: src/window.ui:233
 msgid "_About Drum Machine"
 msgstr "_Sobre o Drum Machine"
 
@@ -252,22 +388,27 @@ msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "Salva a predefinição"
 
-#: src/gtk/help-overlay.ui:107
+#: src/gtk/help-overlay.ui:105
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "Exporta áudio"
+
+#: src/gtk/help-overlay.ui:114
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Navegação"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Vai para o instrumento"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Página anterior"
 
-#: src/gtk/help-overlay.ui:124
+#: src/gtk/help-overlay.ui:131
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Próxima página"
@@ -299,22 +440,65 @@ msgstr "_Descartar"
 msgid "_Save"
 msgstr "_Salvar"
 
-#: src/handlers/file_dialog_handler.py:48
-msgid "Default Presets"
-msgstr "Predefinições padrão"
+#: src/gtk/audio-export-dialog.ui:40
+msgid "Export Settings"
+msgstr "Exportar configurações"
 
-#: src/handlers/file_dialog_handler.py:76
-#: src/handlers/file_dialog_handler.py:142
-msgid "MIDI files"
-msgstr "Arquivos MIDI"
+#: src/gtk/audio-export-dialog.ui:41
+msgid "Configure your audio export options"
+msgstr "Configure as opções de exportação de áudio"
 
-#: src/handlers/file_dialog_handler.py:82
-msgid "Open MIDI File"
-msgstr "Abrir arquivo MIDI"
+#: src/gtk/audio-export-dialog.ui:44
+msgid "Audio Format"
+msgstr "Formato de áudio"
 
-#: src/handlers/file_dialog_handler.py:148
-msgid "Save Sequence"
-msgstr "Salvar sequência"
+#: src/gtk/audio-export-dialog.ui:45
+msgid "Select the output audio format"
+msgstr "Selecionar o formato de áudio da saída"
+
+#: src/gtk/audio-export-dialog.ui:54
+msgid "Repeat Count"
+msgstr "Contagem de repetições"
+
+#: src/gtk/audio-export-dialog.ui:55
+msgid "How many times to repeat the pattern"
+msgstr "Quantas vezes para se repetir o padrão"
+
+#: src/gtk/audio-export-dialog.ui:71
+msgid "Metadata"
+msgstr "Metadados"
+
+#: src/gtk/audio-export-dialog.ui:72
+msgid "Add metadata to your exported audio"
+msgstr "Adicionar metadados no seu áudio exportado"
+
+#: src/gtk/audio-export-dialog.ui:75
+msgid "Artist Name"
+msgstr "Nome do artista"
+
+#: src/gtk/audio-export-dialog.ui:81
+msgid "Song Name"
+msgstr "Nome da música"
+
+#: src/gtk/audio-export-dialog.ui:87
+msgid "Cover Art"
+msgstr "Arte da capa"
+
+#: src/gtk/audio-export-dialog.ui:88
+msgid "Select an image file for the cover art"
+msgstr "Selecionar um arquivo de imagem para a arte da capa"
+
+#: src/gtk/audio-export-dialog.ui:92
+msgid "Choose File"
+msgstr "Escolher arquivo"
+
+#: src/gtk/audio-export-dialog.ui:126
+msgid "Cancel Export"
+msgstr "Cancelar exportação"
+
+#~ msgctxt "accessibility"
+#~ msgid "Save Drum Pattern"
+#~ msgstr "Salvar padrão de bateria"
 
 #~ msgid "drum"
 #~ msgstr "bateria"
@@ -327,9 +511,6 @@ msgstr "Salvar sequência"
 
 #~ msgid "music"
 #~ msgstr "música"
-
-#~ msgid "pattern"
-#~ msgstr "padrão"
 
 #~ msgid "beats"
 #~ msgstr "batidas"
