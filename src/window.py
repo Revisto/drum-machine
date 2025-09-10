@@ -195,7 +195,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def on_bpm_changed(self, spin_button):
         value = spin_button.get_value()
         self.change_bpm(value, spin_button)
-        has_bpm_changed = True if value != 120 else False
+        has_bpm_changed = value != 120
         self.save_changes_service.mark_unsaved_changes(
             has_bpm_changed, self.clear_button
         )
