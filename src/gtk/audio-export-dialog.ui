@@ -37,12 +37,9 @@
                     <property name="margin-end">24</property>
                     <child>
                       <object class="AdwPreferencesGroup" id="export_group">
-                        <property name="title" translatable="yes">Export Settings</property>
-                        <property name="description" translatable="yes">Configure your audio export options</property>
                         <child>
                           <object class="AdwComboRow" id="format_row">
                             <property name="title" translatable="yes">Audio Format</property>
-                            <property name="subtitle" translatable="yes">Select the output audio format</property>
                             <property name="model">
                               <object class="GtkStringList" id="format_list">
                           </object>
@@ -69,7 +66,6 @@
                     <child>
                       <object class="AdwPreferencesGroup" id="metadata_group">
                         <property name="title" translatable="yes">Metadata</property>
-                        <property name="description" translatable="yes">Add metadata to your exported audio</property>
                         <child>
                           <object class="AdwEntryRow" id="artist_row">
                             <property name="title" translatable="yes">Artist Name</property>
@@ -85,7 +81,6 @@
                         <child>
                           <object class="AdwActionRow" id="cover_row">
                             <property name="title" translatable="yes">Cover Art</property>
-                            <property name="subtitle" translatable="yes">Select an image file for the cover art</property>
                             <property name="activatable-widget">cover_button</property>
                             <child>
                               <object class="GtkButton" id="cover_button">
