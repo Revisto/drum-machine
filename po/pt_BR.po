@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-09-08 15:26+0000\n"
+"POT-Creation-Date: 2025-09-10 03:26+0000\n"
 "PO-Revision-Date: 2025-09-09 13:17-0300\n"
 "Last-Translator: Juliano de Souza Camargo <julianosc@pm.me>\n"
 "Language-Team: Brazilian Portuguese <https://br.gnome.org/traducao>\n"
@@ -67,9 +67,9 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Vários sons de bateria, incluindo bumbo, caixa, chimbau e muito mais"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Audio export feature with support for WAV, FLAC, OGG, and MP3 formats"
+msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
 msgstr ""
-"Funcionalidade de exportar áudio com suporte para os formatos WAV, FLAC, OGG "
+"Funcionalidade de exportar áudio com suporte para os formatos WAV, FLAC, Ogg "
 "e MP3"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
@@ -115,12 +115,12 @@ msgid "FLAC (Lossless)"
 msgstr "FLAC (sem perdas)"
 
 #: src/config/export_formats.py:57
-msgid "OGG files"
-msgstr "Arquivos OGG"
+msgid "Ogg files"
+msgstr "Arquivos Ogg"
 
 #: src/config/export_formats.py:58
-msgid "OGG Vorbis"
-msgstr "OGG Vorbis"
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
 
 #: src/config/export_formats.py:64
 msgid "WAV files"
