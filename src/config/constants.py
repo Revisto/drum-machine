@@ -17,7 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-DRUM_PARTS = [
+DEFAULT_DRUM_PARTS = [
     "kick",
     "kick-2",
     "kick-3",

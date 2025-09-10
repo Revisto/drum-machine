@@ -21,7 +21,6 @@ import os
 import numpy as np
 import subprocess
 
-from ..config.constants import DRUM_PARTS
 from ..utils.export_progress import ExportPhase
 from ..config.export_formats import ExportFormatRegistry
 from ..services.audio_renderer import AudioRenderer
@@ -31,23 +30,22 @@ from ..services.file_encoder import AudioEncoder
 class SampleLoader:
     """Handles loading and caching of drum samples"""
 
-    def __init__(self, drumkit_dir, sample_rate=44100):
-        self.drumkit_dir = drumkit_dir
+    def __init__(self, drum_parts, sample_rate=44100):
+        self.drum_parts = drum_parts
         self.sample_rate = sample_rate
         self.samples = {}
         self._load_samples()
 
     def _load_samples(self):
         """Load all drum samples into memory"""
-        for part in DRUM_PARTS:
-            sample_path = os.path.join(self.drumkit_dir, f"{part}.wav")
-            if os.path.exists(sample_path):
+        for part in self.drum_parts:
+            if os.path.exists(part.file_path):
                 try:
-                    audio_data = self._load_sample(sample_path)
-                    self.samples[part] = audio_data
+                    audio_data = self._load_sample(part.file_path)
+                    self.samples[part.id] = audio_data
                 except Exception as e:
-                    print(f"Warning: Could not load {part}.wav: {e}")
-                    self.samples[part] = np.zeros((1000, 2), dtype="float32")
+                    print(f"Warning: Could not load {part.file_path}.wav: {e}")
+                    self.samples[part.id] = np.zeros((1000, 2), dtype="float32")
 
     def _load_sample(self, sample_path):
         """Load a single audio sample using ffmpeg"""
@@ -75,12 +73,12 @@ class SampleLoader:
 class AudioExportService:
     """Handles audio export functionality with progress tracking"""
 
-    def __init__(self, parent_window, drumkit_dir):
-        self.parent_window = parent_window
+    def __init__(self, window):
+        self.window = window
         self.sample_rate = 44100
 
         # Initialize components
-        self.sample_loader = SampleLoader(drumkit_dir, self.sample_rate)
+        self.sample_loader = SampleLoader(self.window.sound_service.drum_part_manager.get_all_parts(), self.sample_rate)
         self.audio_renderer = AudioRenderer(
             self.sample_loader.get_samples(), self.sample_rate
         )
@@ -113,7 +111,7 @@ class AudioExportService:
             self._validate_pattern(drum_parts_state)
 
             progress_callback(ExportPhase.RENDERING)
-            total_beats = self.parent_window.drum_machine_service.total_beats
+            total_beats = self.window.drum_machine_service.total_beats
             audio_buffer = self.audio_renderer.render_pattern(
                 drum_parts_state, bpm, total_beats, repeat_count
             )

@@ -19,9 +19,8 @@
 
 
 class UIHelper:
-    def __init__(self, window, toggle_parts):
+    def __init__(self, window):
         self.window = window
-        self.toggle_parts = toggle_parts
 
     @property
     def beats_per_page(self):
@@ -33,9 +32,9 @@ class UIHelper:
         Internal helper to add or remove the 'playhead-active' CSS class
         for a vertical column of toggles at a specific beat index.
         """
-        for part in self.toggle_parts:
+        for part in self.window.sound_service.drum_part_manager.get_all_parts():
             try:
-                toggle = getattr(self.window, f"{part}_toggle_{beat_index}")
+                toggle = getattr(self.window, f"{part.id}_toggle_{beat_index}")
                 if highlight_on:
                     toggle.get_style_context().add_class("toggle-active")
                 else:
@@ -59,24 +58,24 @@ class UIHelper:
     def deactivate_all_toggles_in_ui(self):
         """Sets the state of all currently rendered toggles to inactive (OFF)."""
         total_toggles = self.beats_per_page * self.window.carousel.get_n_pages()
-        for part in self.toggle_parts:
+        for part in self.window.sound_service.drum_part_manager.get_all_parts():
             for i in range(total_toggles):
                 try:
-                    toggle = getattr(self.window, f"{part}_toggle_{i}")
+                    toggle = getattr(self.window, f"{part.id}_toggle_{i}")
                     if toggle.get_active():
                         toggle.set_active(False)
                 except AttributeError:
                     continue
 
-    def load_pattern_into_ui(self, pattern_data):
+    def load_pattern_into_ui(self, drum_parts_state):
         """
         Updates the UI to reflect a new pattern.
         This is fundamentally broken with the dynamic grid and needs a redesign.
         The UI should pull data when it's created, not have data pushed to it.
         """
-        for part, active_beats in pattern_data.items():
-            for beat_index in active_beats.keys():
-                toggle = getattr(self.window, f"{part}_toggle_{beat_index}")
+        for part_id in drum_parts_state:
+            for beat_index in drum_parts_state[part_id].keys():
+                toggle = getattr(self.window, f"{part_id}_toggle_{beat_index}")
                 toggle.set_active(True)
 
     def set_bpm_in_ui(self, bpm_value):

@@ -56,6 +56,7 @@ drum_machine_sources = [
 subdir('config')
 subdir('utils')
 subdir('interfaces')
+subdir('models')
 subdir('handlers')
 subdir('services')
 subdir('dialogs')

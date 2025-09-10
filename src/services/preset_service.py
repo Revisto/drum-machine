@@ -19,37 +19,39 @@
 
 import mido
 import itertools
-from ..config.constants import DRUM_PARTS
 
 
 class PresetService:
+    def __init__(self, window):
+        self.window = window
+
     def _get_midi_note_for_part(self, part):
         mapping = {
-            "kick": 36,
-            "kick-2": 35,
-            "kick-3": 34,
-            "snare": 38,
-            "snare-2": 37,
-            "hihat": 42,
-            "hihat-2": 44,
-            "clap": 39,
-            "tom": 41,
-            "crash": 49,
+            "default_kick": 36,
+            "default_kick-2": 35,
+            "default_kick-3": 34,
+            "default_snare": 38,
+            "default_snare-2": 37,
+            "default_hihat": 42,
+            "default_hihat-2": 44,
+            "default_clap": 39,
+            "default_tom": 41,
+            "default_crash": 49,
         }
         return mapping.get(part, 0)
 
     def _get_part_for_midi_note(self, note):
         mapping = {
-            36: "kick",
-            35: "kick-2",
-            34: "kick-3",
-            38: "snare",
-            37: "snare-2",
-            42: "hihat",
-            44: "hihat-2",
-            39: "clap",
-            41: "tom",
-            49: "crash",
+            36: "default_kick",
+            35: "default_kick-2",
+            34: "default_kick-3",
+            38: "default_snare",
+            37: "default_snare-2",
+            42: "default_hihat",
+            44: "default_hihat-2",
+            39: "default_clap",
+            41: "default_tom",
+            49: "default_crash",
         }
         return mapping.get(note, None)
 
@@ -112,7 +114,7 @@ class PresetService:
 
     def load_preset(self, file_path):
         mid = mido.MidiFile(file_path)
-        drum_parts = {part: dict() for part in DRUM_PARTS}
+        drum_parts_state = self.window.drum_machine_service.create_empty_drum_parts_state()
         bpm = 120
 
         ticks_per_beat = mid.ticks_per_beat
@@ -135,6 +137,6 @@ class PresetService:
                         beat_index = int(
                             round(absolute_time_in_ticks / ticks_per_16th_note)
                         )
-                        drum_parts[part][beat_index] = True
+                        drum_parts_state[part][beat_index] = True
 
-        return drum_parts, bpm
+        return drum_parts_state, bpm

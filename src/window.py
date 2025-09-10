@@ -27,9 +27,10 @@ from gi.repository import Adw, Gtk, GLib, Gio
 
 from gettext import gettext as _
 
-from .config.constants import DRUM_PARTS, NUM_TOGGLES
+from .config.constants import NUM_TOGGLES
 from .handlers.file_dialog_handler import FileDialogHandler
 from .handlers.window_actions import WindowActionHandler
+from .handlers.drag_drop_handler import DragDropHandler
 from .services.drum_machine_service import DrumMachineService
 from .services.save_changes_service import SaveChangesService
 from .services.sound_service import SoundService
@@ -67,11 +68,11 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.sound_service = SoundService(drumkit_dir)
         self.sound_service.load_sounds()
 
-        self.audio_export_service = AudioExportService(self, drumkit_dir)
+        self.audio_export_service = AudioExportService(self)
 
-        self.ui_helper = UIHelper(self, DRUM_PARTS)
+        self.ui_helper = UIHelper(self)
         self.drum_machine_service = DrumMachineService(
-            self.sound_service, self.ui_helper
+            self, self.sound_service, self.ui_helper
         )
         self.save_changes_service = SaveChangesService(self, self.drum_machine_service)
 
@@ -80,6 +81,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_grid_builder = DrumGridBuilder(self)
         self.action_handler = WindowActionHandler(self)
         self.file_dialog_handler = FileDialogHandler(self)
+        self.drag_drop_handler = DragDropHandler(self)
 
     def _initialize_interface(self):
         """Initialize the complete interface"""
@@ -91,6 +93,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.file_dialog_handler.setup_preset_menu()
         self._connect_signals()
         self.action_handler.setup_actions()
+        
+        # Setup drag and drop
+        self.drag_drop_handler.setup_drag_drop()
 
     def _connect_signals(self):
         """Connect UI signals"""
@@ -277,3 +282,11 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         """Open file with default app"""
         file_path = parameter.get_string()
         Gio.AppInfo.launch_default_for_uri(f"file://{file_path}", None)
+
+    def on_custom_sound_added(self, new_part, name):
+        """Handle when a custom sound is added via drag and drop"""
+        # Reload sounds and add the new drum part
+        self.sound_service.reload_sounds()
+        self.drum_machine_service.add_drum_part_state(new_part.id)
+        self.drum_grid_builder.add_drum_part(new_part)
+        self.show_toast(f"Added custom sound: {name}")

@@ -20,7 +20,7 @@
 import os
 import pygame
 from ..interfaces.sound import ISoundService
-from ..config.constants import DRUM_PARTS
+from .drum_part_manager import DrumPartManager
 
 
 class SoundService(ISoundService):
@@ -28,24 +28,32 @@ class SoundService(ISoundService):
         pygame.init()
         pygame.mixer.set_num_channels(32)
         self.drumkit_dir = drumkit_dir
+        self.drum_part_manager = DrumPartManager(drumkit_dir)
         self.sounds = {}
 
     def load_sounds(self):
+        self.sounds = {}
+        for part in self.drum_part_manager.get_all_parts():
+            try:
+                self.sounds[part.id] = pygame.mixer.Sound(part.file_path)
+            except Exception as e:
+                print(f"Error loading sound {part.name}: {e}")
 
-        self.sounds = {
-            drum_part: pygame.mixer.Sound(
-                os.path.join(self.drumkit_dir, f"{drum_part}.wav")
-            )
-            for drum_part in DRUM_PARTS
-        }
+    def reload_sounds(self):
+        self.drum_part_manager._load_drum_parts()
+        self.load_sounds()
 
-    def play_sound(self, sound_name):
-        self.sounds[sound_name].play()
+    def play_sound(self, part_id):
+        if part_id in self.sounds:
+            self.sounds[part_id].play()
 
     def set_volume(self, volume):
         for sound in self.sounds.values():
             sound.set_volume(volume / 100)
 
-    def preview_sound(self, sound_name):
-        if sound_name in self.sounds:
-            self.play_sound(sound_name)
+    def preview_sound(self, part_id):
+        if part_id in self.sounds:
+            self.play_sound(part_id)
+    
+    def get_drum_part_manager(self):
+        return self.drum_part_manager

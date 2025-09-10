@@ -22,7 +22,8 @@ import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Gdk, Adw, GLib
-from ..config.constants import DRUM_PARTS, GROUP_TOGGLE_COUNT
+from ..config.constants import GROUP_TOGGLE_COUNT
+from ..services.ui_helper import UIHelper
 
 
 class DrumGridBuilder:
@@ -109,7 +110,10 @@ class DrumGridBuilder:
     def _create_drum_parts_column(self):
         """Create the drum parts buttons column"""
         drum_parts = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-        for drum_part in DRUM_PARTS:
+        
+        # Get drum parts from the sound service
+        drum_part_manager = self.window.sound_service.get_drum_part_manager()
+        for drum_part in drum_part_manager.get_all_parts():
             instrument_button = self.create_instrument_button(drum_part)
             drum_parts.append(instrument_button)
         return drum_parts
@@ -281,8 +285,11 @@ class DrumGridBuilder:
     def _create_beat_grid_page(self, page_index):
         """Creates a single page containing a full set of instrument tracks."""
         page = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-        for drum_part in DRUM_PARTS:
-            drum_row = self.create_drum_row(drum_part, page_index)
+        
+        # Get drum parts from the sound service
+        drum_part_manager = self.window.sound_service.get_drum_part_manager()
+        for drum_part in drum_part_manager.get_all_parts():
+            drum_row = self.create_drum_row(drum_part.id, page_index)
             page.append(drum_row)
         return page
 
@@ -311,27 +318,27 @@ class DrumGridBuilder:
         button_container = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         button_container.set_spacing(5)
 
-        instrument_button = Gtk.Button(
-            label=f"{drum_part.capitalize().replace('-', ' ')}"
-        )
+        # Truncate long names to keep UI clean
+        max_length = 8
+        display_name = drum_part.name[:max_length - 3] + "..." if len(drum_part.name) > max_length else drum_part.name
+        
+        instrument_button = Gtk.Button(label=display_name)
         instrument_button.set_halign(Gtk.Align.START)
         instrument_button.connect(
-            "clicked", self.window.on_drum_part_button_clicked, drum_part
+            "clicked", self.window.on_drum_part_button_clicked, drum_part.id
         )
         instrument_button.add_css_class("drum-part-button")
         instrument_button.add_css_class("flat")
-        instrument_button.set_tooltip_text(
-            f"Click to Preview {drum_part.capitalize().replace('-', ' ')}"
-        )
+        instrument_button.set_tooltip_text(f"Click to Preview {drum_part.name}")
         instrument_button.set_has_tooltip(True)
 
         key_controller = Gtk.EventControllerKey.new()
         key_controller.connect(
-            "key-pressed", self._on_instrument_button_key_pressed, drum_part
+            "key-pressed", self._on_instrument_button_key_pressed, drum_part.id
         )
         instrument_button.add_controller(key_controller)
 
-        setattr(self.window, f"{drum_part}_instrument_button", instrument_button)
+        setattr(self.window, f"{drum_part.id}_instrument_button", instrument_button)
 
         button_container.append(instrument_button)
         spacer = Gtk.Label()
@@ -389,3 +396,18 @@ class DrumGridBuilder:
         if self.drum_parts_column:
             new_spacing = 12 if is_compact else 10
             self.drum_parts_column.set_spacing(new_spacing)
+
+    def add_drum_part(self, drum_part):
+        """Add a new drum part to the existing interface"""
+        # Add new instrument button to drum parts column
+        if self.drum_parts_column:
+            instrument_button = self.create_instrument_button(drum_part)
+            self.drum_parts_column.append(instrument_button)
+        
+        # Add new drum row to each carousel page
+        if hasattr(self.window, 'carousel'):
+            n_pages = self.window.carousel.get_n_pages()
+            for page_index in range(n_pages):
+                page = self.window.carousel.get_nth_page(page_index)
+                drum_row = self.create_drum_row(drum_part.id, page_index)
+                page.append(drum_row)
