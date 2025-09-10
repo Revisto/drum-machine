@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-10 13:10+0330\n"
+"POT-Creation-Date: 2025-09-10 13:57+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,7 +59,7 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Audio export feature with support for WAV, FLAC, OGG, and MP3 formats"
+msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
@@ -112,7 +112,7 @@ msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:70
 msgid ""
-"Audio Export Feature: Export your drum patterns to WAV, FLAC, OGG Vorbis, "
+"Audio Export Feature: Export your drum patterns to WAV, FLAC, Ogg Vorbis, "
 "and MP3 formats"
 msgstr ""
 
@@ -391,8 +391,8 @@ msgstr ""
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr ""
 
-#: src/window.ui:86 src/gtk/audio-export-dialog.ui:7
-#: src/gtk/audio-export-dialog.ui:112
+#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6
+#: src/gtk/audio-export-dialog.blp:96
 msgid "Export Audio"
 msgstr ""
 
@@ -566,38 +566,38 @@ msgstr ""
 msgid "_Save"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:42
+#: src/gtk/audio-export-dialog.blp:39
 msgid "Audio Format"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:51
+#: src/gtk/audio-export-dialog.blp:45
 msgid "Repeat Count"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:52
+#: src/gtk/audio-export-dialog.blp:46
 msgid "How many times to repeat the pattern"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:68
+#: src/gtk/audio-export-dialog.blp:59
 msgid "Metadata"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:71
+#: src/gtk/audio-export-dialog.blp:62
 msgid "Artist Name"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:77
+#: src/gtk/audio-export-dialog.blp:67
 msgid "Song Name"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:83
+#: src/gtk/audio-export-dialog.blp:72
 msgid "Cover Art"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:87
+#: src/gtk/audio-export-dialog.blp:76
 msgid "Choose File"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:121
+#: src/gtk/audio-export-dialog.blp:105
 msgid "Cancel Export"
 msgstr ""
