@@ -8,21 +8,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-09-07 03:25+0000\n"
-"PO-Revision-Date: 2025-09-07 14:18+0330\n"
+"POT-Creation-Date: 2025-09-10 11:54+0000\n"
+"PO-Revision-Date: 2025-09-10 15:34+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 48.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.7\n"
 "X-DL-Lang: fa\n"
 "X-DL-Module: drum-machine\n"
 "X-DL-Branch: master\n"
 "X-DL-Domain: po\n"
 "X-DL-State: None\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
@@ -35,14 +35,14 @@ msgstr "ایجاد و پخش ضرب‌های کوبه‌ای"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:9
 msgid ""
-"Drum Machine is a modern and intuitive application for creating, playing, "
-"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"Drum Machine is a modern and intuitive application for creating, playing, and "
+"managing drum patterns. Perfect for musicians, producers, and anyone "
 "interested in rhythm creation, this application provides a simple interface "
 "for drum pattern programming. Have fun!"
 msgstr ""
 "ماشین درام برنامه‌ای نوین و ادراکی برای ایجاد، پخش و مدیریت الگوهای کوبه‌ای "
-"است. این برنامه که مناسب آهنگسازان، تهیه‌کنندگان و هرکسی در تولید ضرباهنگ "
-"است، میانایی ساده برای برنامه ریزی الگوهای کوبه‌ای فراهم می‌کند. خوش بگذرانید!"
+"است. این برنامه که مناسب آهنگسازان، تهیه‌کنندگان و هرکسی در تولید ضرباهنگ است، "
+"میانایی ساده برای برنامه ریزی الگوهای کوبه‌ای فراهم می‌کند. خوش بگذرانید!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
@@ -69,8 +69,8 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "چندین صدای کوبه‌ای از جمله دهل، طبل، سنج و بیش‌تر"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Audio export feature with support for WAV, FLAC, OGG, and MP3 formats"
-msgstr "قابلیت خروجی صوتی با پشتیبانی از قالب‌های WAV، FLAC، OGG و MP3"
+msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
+msgstr "قابلیت خروجی صوتی با پشتیبانی از قالب‌های WAV، ‏FLAC، ‏Ogg و MP3"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
 msgid "Metadata support for embedding artist name, song title, and cover art"
@@ -98,7 +98,7 @@ msgstr "پرونده‌های MP3"
 
 #: src/config/export_formats.py:44
 msgid "MP3"
-msgstr "MP3"
+msgstr "ام‌پی‌تری"
 
 #: src/config/export_formats.py:50
 msgid "FLAC files"
@@ -106,15 +106,15 @@ msgstr "پرونده‌های FLAC"
 
 #: src/config/export_formats.py:51
 msgid "FLAC (Lossless)"
-msgstr "FLAC (بی‌کاهش)"
+msgstr "فلک (بدون کاهش کیفیت)"
 
 #: src/config/export_formats.py:57
-msgid "OGG files"
-msgstr "پرونده‌های OGG"
+msgid "Ogg files"
+msgstr "پرونده‌های Ogg"
 
 #: src/config/export_formats.py:58
-msgid "OGG Vorbis"
-msgstr "Ogg Vorbis"
+msgid "Ogg Vorbis"
+msgstr "وربیس اوگ"
 
 #: src/config/export_formats.py:64
 msgid "WAV files"
@@ -122,7 +122,7 @@ msgstr "پرونده‌های WAV"
 
 #: src/config/export_formats.py:65
 msgid "WAV (Uncompressed)"
-msgstr "WAV (فشرده نشده)"
+msgstr "ویو (فشرده نشده)"
 
 #: src/dialogs/audio_export_dialog.py:104
 msgid "Save Audio File"
@@ -158,7 +158,7 @@ msgstr "بدون الگو"
 
 #: src/handlers/file_dialog_handler.py:83
 msgid "Please create a drum pattern before exporting audio."
-msgstr "لطفا "
+msgstr "ایجاد الگوی کوبه‌ای پیش از برون‌ریزی صدا."
 
 #: src/handlers/file_dialog_handler.py:85
 msgid "_OK"
@@ -257,8 +257,8 @@ msgstr "فهرست اصلی"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "دسترسی به اطّلاعات برنامه و میان‌برهای صفحه‌کلید"
 
-#: src/window.ui:86 src/gtk/audio-export-dialog.ui:7
-#: src/gtk/audio-export-dialog.ui:117
+#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6
+#: src/gtk/audio-export-dialog.blp:96
 msgid "Export Audio"
 msgstr "برون‌ریزی صدا"
 
@@ -307,185 +307,180 @@ msgstr "_میان‌برهای صفحه‌کلید"
 msgid "_About Drum Machine"
 msgstr "_دربارهٔ ماشین درام"
 
-#: src/gtk/help-overlay.ui:11
+#: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "عمومی"
 
-#: src/gtk/help-overlay.ui:14
+#: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "نمایش میان‌برها"
 
-#: src/gtk/help-overlay.ui:20
+#: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "خروج"
 
-#: src/gtk/help-overlay.ui:29
+#: src/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Playback Controls"
 msgstr "واپایش‌های پخش"
 
-#: src/gtk/help-overlay.ui:32
+#: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr "پخش/مکث"
 
-#: src/gtk/help-overlay.ui:39
+#: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "پاک‌سازی همه"
 
-#: src/gtk/help-overlay.ui:48
+#: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
 msgid "BPM & Volume Controls"
 msgstr "واپایش‌های حجم صدا و ض‌د‌د"
 
-#: src/gtk/help-overlay.ui:51
+#: src/gtk/help-overlay.blp:45
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "افزایش ض‌دد"
 
-#: src/gtk/help-overlay.ui:58
+#: src/gtk/help-overlay.blp:51
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "کاهش ض‌دد"
 
-#: src/gtk/help-overlay.ui:65
+#: src/gtk/help-overlay.blp:57
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "افزایش حجم صدا"
 
-#: src/gtk/help-overlay.ui:72
+#: src/gtk/help-overlay.blp:63
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "کاهش حجم صدا"
 
-#: src/gtk/help-overlay.ui:79
+#: src/gtk/help-overlay.blp:69
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr "خموش"
 
-#: src/gtk/help-overlay.ui:88
+#: src/gtk/help-overlay.blp:76
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr "مدیریت پیش‌تنظیم‌ها"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.blp:79
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr "بار کردن پیش‌تنظیم"
 
-#: src/gtk/help-overlay.ui:98
+#: src/gtk/help-overlay.blp:85
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "ذخیرهٔ پیش‌تنظیم"
 
-#: src/gtk/help-overlay.ui:105
+#: src/gtk/help-overlay.blp:91
 msgctxt "shortcut window"
 msgid "Export Audio"
 msgstr "برون‌ریزی صدا"
 
-#: src/gtk/help-overlay.ui:114
+#: src/gtk/help-overlay.blp:98
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "پیمایش"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.blp:101
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "رفتن به ساز"
 
-#: src/gtk/help-overlay.ui:124
+#: src/gtk/help-overlay.blp:107
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "صفحهٔ پیشین"
 
-#: src/gtk/help-overlay.ui:131
+#: src/gtk/help-overlay.blp:113
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "صفحهٔ بعدی"
 
-#: src/gtk/save_changes_dialog.ui:6
+#: src/gtk/save-changes-dialog.blp:5
 msgid "Save Changes?"
 msgstr "ذخیرهٔ تغییرات؟"
 
-#: src/gtk/save_changes_dialog.ui:7
+#: src/gtk/save-changes-dialog.blp:6
 msgid ""
 "Current preset contains unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
-"پیش‌تنظیم کنونی تغییراتی ذخیره نشده دارد. تغییراتی که ذخیره نشده‌اند برای "
-"همیشه از دست خواهند رفت."
+"پیش‌تنظیم کنونی تغییراتی ذخیره نشده دارد. تغییراتی که ذخیره نشده‌اند برای همیشه "
+"از دست خواهند رفت."
 
-#. Cancel the operation
-#: src/gtk/save_changes_dialog.ui:14
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14
 msgid "_Cancel"
 msgstr "_لغو"
 
-#. Discard all changes
-#: src/gtk/save_changes_dialog.ui:15
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
 msgid "_Discard"
 msgstr "_دور انداختن"
 
-#. Save current changes
-#: src/gtk/save_changes_dialog.ui:16
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
 msgid "_Save"
 msgstr "_ذخیره"
 
-#: src/gtk/audio-export-dialog.ui:40
-msgid "Export Settings"
-msgstr "برون‌ریزی تنظیمات"
-
-#: src/gtk/audio-export-dialog.ui:41
-msgid "Configure your audio export options"
-msgstr "گزینه‌های برون‌ریزی صداتان را پیکربندی کنید"
-
-#: src/gtk/audio-export-dialog.ui:44
+#: src/gtk/audio-export-dialog.blp:39
 msgid "Audio Format"
 msgstr "قالب صدا"
 
-#: src/gtk/audio-export-dialog.ui:45
-msgid "Select the output audio format"
-msgstr "قالب خروجی صدا را بگزینید"
-
-#: src/gtk/audio-export-dialog.ui:54
+#: src/gtk/audio-export-dialog.blp:45
 msgid "Repeat Count"
 msgstr "تعداد تکرار"
 
-#: src/gtk/audio-export-dialog.ui:55
+#: src/gtk/audio-export-dialog.blp:46
 msgid "How many times to repeat the pattern"
 msgstr "چند دفعه الگو تکرار شود"
 
-#: src/gtk/audio-export-dialog.ui:71
+#: src/gtk/audio-export-dialog.blp:59
 msgid "Metadata"
 msgstr "فراداده"
 
-#: src/gtk/audio-export-dialog.ui:72
-msgid "Add metadata to your exported audio"
-msgstr "افزودن فراداده به صدای برون‌ریزی شده‌تان"
-
-#: src/gtk/audio-export-dialog.ui:75
+#: src/gtk/audio-export-dialog.blp:62
 msgid "Artist Name"
 msgstr "نام هنرمند"
 
-#: src/gtk/audio-export-dialog.ui:81
+#: src/gtk/audio-export-dialog.blp:67
 msgid "Song Name"
 msgstr "نام آهنگ"
 
-#: src/gtk/audio-export-dialog.ui:87
+#: src/gtk/audio-export-dialog.blp:72
 msgid "Cover Art"
 msgstr "طرح جلد"
 
-#: src/gtk/audio-export-dialog.ui:88
-msgid "Select an image file for the cover art"
-msgstr "یک نگاره را برای طرح جلد بگزینید"
-
-#: src/gtk/audio-export-dialog.ui:92
+#: src/gtk/audio-export-dialog.blp:76
 msgid "Choose File"
 msgstr "گزینش پرونده"
 
-#: src/gtk/audio-export-dialog.ui:126
+#: src/gtk/audio-export-dialog.blp:105
 msgid "Cancel Export"
 msgstr "لغو برون‌ریزی"
+
+#~ msgid "Export Settings"
+#~ msgstr "برون‌ریزی تنظیمات"
+
+#~ msgid "Configure your audio export options"
+#~ msgstr "گزینه‌های برون‌ریزی صداتان را پیکربندی کنید"
+
+#~ msgid "Select the output audio format"
+#~ msgstr "قالب خروجی صدا را بگزینید"
+
+#~ msgid "Add metadata to your exported audio"
+#~ msgstr "افزودن فراداده به صدای برون‌ریزی شده‌تان"
+
+#~ msgid "Select an image file for the cover art"
+#~ msgstr "یک نگاره را برای طرح جلد بگزینید"
