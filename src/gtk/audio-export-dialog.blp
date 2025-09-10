@@ -35,12 +35,8 @@ template $AudioExportDialog: Adw.Dialog {
           margin-end: 24;
 
           Adw.PreferencesGroup export_group {
-            title: _("Export Settings");
-            description: _("Configure your audio export options");
-
             Adw.ComboRow format_row {
               title: _("Audio Format");
-              subtitle: _("Select the output audio format");
 
               model: StringList format_list {};
             }
@@ -61,7 +57,6 @@ template $AudioExportDialog: Adw.Dialog {
 
           Adw.PreferencesGroup metadata_group {
             title: _("Metadata");
-            description: _("Add metadata to your exported audio");
 
             Adw.EntryRow artist_row {
               title: _("Artist Name");
@@ -75,7 +70,6 @@ template $AudioExportDialog: Adw.Dialog {
 
             Adw.ActionRow cover_row {
               title: _("Cover Art");
-              subtitle: _("Select an image file for the cover art");
               activatable-widget: cover_button;
 
               Button cover_button {
