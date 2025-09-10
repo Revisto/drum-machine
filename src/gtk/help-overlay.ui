@@ -107,6 +107,13 @@
                 <property name="accelerator">&lt;Primary&gt;e</property>
               </object>
             </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Random Beats</property>
+                <property name="action-name">win.random_beats</property>
+                <property name="accelerator">&lt;Primary&gt;r</property>
+              </object>
+            </child>
           </object>
         </child>
         <child>

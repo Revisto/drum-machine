@@ -52,6 +52,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     drum_machine_box = Gtk.Template.Child()
     file_preset_button = Gtk.Template.Child()
     export_audio_button = Gtk.Template.Child()
+    # No template child for random beats; triggered via action/menu
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

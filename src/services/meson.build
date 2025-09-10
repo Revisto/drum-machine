@@ -9,6 +9,7 @@ services_sources = [
     'ui_helper.py',
     'preset_service.py',
     'save_changes_service.py',
+    'randomization_service.py',
 ]
 
 install_data(services_sources, install_dir: modulesubdir)
