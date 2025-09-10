@@ -27,7 +27,7 @@ from gi.repository import Adw, Gtk, GLib, Gio
 
 from gettext import gettext as _
 
-from .config.constants import DRUM_PARTS, NUM_TOGGLES
+from .config.constants import DRUM_PARTS, NUM_TOGGLES, BPM_DEFAULT
 from .handlers.file_dialog_handler import FileDialogHandler
 from .handlers.window_actions import WindowActionHandler
 from .services.drum_machine_service import DrumMachineService
@@ -207,7 +207,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def on_bpm_changed(self, spin_button):
         value = spin_button.get_value()
         self.change_bpm(value, spin_button)
-        has_bpm_changed = value != 120
+        has_bpm_changed = value != BPM_DEFAULT
         self.has_bpm_changed = has_bpm_changed
         self.clear_button.set_sensitive(
             any((self.has_pattern_changed, self.has_bpm_changed))
