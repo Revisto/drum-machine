@@ -13,10 +13,8 @@ class SaveChangesService:
         self.drum_machine_service = drum_machine_service
         self._unsaved_changes = False
 
-    def mark_unsaved_changes(self, value: bool, clear_button=None):
+    def mark_unsaved_changes(self, value: bool):
         self._unsaved_changes = value
-        if clear_button:
-            clear_button.set_sensitive(value)
 
     def has_unsaved_changes(self):
         return self._unsaved_changes

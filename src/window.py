@@ -57,6 +57,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self._setup_services()
         self._setup_handlers()
         self._initialize_interface()
+        self.has_bpm_changed = False
+        self.has_pattern_changed = False
 
     def _setup_services(self):
         """Initialize all services"""
@@ -175,15 +177,17 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             self.drum_machine_service.drum_parts_state[part][index] = True
         else:
             self.drum_machine_service.drum_parts_state[part].pop(index, None)
-        has_unsaved_changes = any(
-            (len(i) for i in self.drum_machine_service.drum_parts_state.values())
+        self.has_pattern_changed = any(
+            self.drum_machine_service.drum_parts_state.values()
         )
         # Tell the service to recalculate the total pattern length
         self.drum_machine_service.update_total_beats()
-
+        self.clear_button.set_sensitive(
+            any((self.has_pattern_changed, self.has_bpm_changed))
+        )
         # Mark as unsaved when toggles change
         self.save_changes_service.mark_unsaved_changes(
-            has_unsaved_changes, self.clear_button
+            any((self.has_pattern_changed, self.has_bpm_changed))
         )
 
     def change_bpm(self, new_value, spin_button):
@@ -196,8 +200,12 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         value = spin_button.get_value()
         self.change_bpm(value, spin_button)
         has_bpm_changed = value != 120
+        self.has_bpm_changed = has_bpm_changed
+        self.clear_button.set_sensitive(
+            any((self.has_pattern_changed, self.has_bpm_changed))
+        )
         self.save_changes_service.mark_unsaved_changes(
-            has_bpm_changed, self.clear_button
+            any((self.has_pattern_changed, self.has_bpm_changed))
         )
 
     def on_volume_changed(self, button, value):
