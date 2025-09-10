@@ -23,16 +23,17 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Adw, Gtk
+from gi.repository import Adw, Gtk, GLib, Gio
 
 from gettext import gettext as _
 
-from .config import DRUM_PARTS, NUM_TOGGLES
+from .config.constants import DRUM_PARTS, NUM_TOGGLES
 from .handlers.file_dialog_handler import FileDialogHandler
 from .handlers.window_actions import WindowActionHandler
 from .services.drum_machine_service import DrumMachineService
 from .services.save_changes_service import SaveChangesService
 from .services.sound_service import SoundService
+from .services.audio_export_service import AudioExportService
 from .services.ui_helper import UIHelper
 from .ui.drum_grid_builder import DrumGridBuilder
 
@@ -43,13 +44,14 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     menu_button = Gtk.Template.Child()
     outer_box = Gtk.Template.Child()
+    toast_overlay = Gtk.Template.Child()
     bpm_spin_button = Gtk.Template.Child()
     volume_button = Gtk.Template.Child()
     clear_button = Gtk.Template.Child()
     play_pause_button = Gtk.Template.Child()
     drum_machine_box = Gtk.Template.Child()
     file_preset_button = Gtk.Template.Child()
-    save_preset_button = Gtk.Template.Child()
+    export_audio_button = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -67,6 +69,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
         self.sound_service = SoundService(drumkit_dir)
         self.sound_service.load_sounds()
+
+        self.audio_export_service = AudioExportService(self, drumkit_dir)
 
         self.ui_helper = UIHelper(self, DRUM_PARTS)
         self.drum_machine_service = DrumMachineService(
@@ -99,7 +103,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.clear_button.connect("clicked", self.handle_clear)
         self.play_pause_button.connect("clicked", self.handle_play_pause)
         self.file_preset_button.connect("clicked", self._on_open_file_clicked)
-        self.save_preset_button.connect("clicked", self._on_save_preset_clicked)
+        self.export_audio_button.connect("clicked", self._on_export_audio_clicked)
         self.drum_machine_box.connect(
             "notify::css-classes", self._on_breakpoint_changed
         )
@@ -153,16 +157,20 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def _on_open_file_clicked(self, button):
         self.file_dialog_handler.handle_open_file()
 
-    def _on_save_preset_clicked(self, button):
+    def _on_save_preset_clicked(self):
         self.file_dialog_handler.handle_save_preset()
+
+    def _on_export_audio_clicked(self, button):
+        """Handle export audio button click"""
+        self.file_dialog_handler.handle_export_audio()
 
     def on_open_file(self, button):
         """Compatibility method"""
         self._on_open_file_clicked(button)
 
-    def on_save_preset(self, button):
+    def on_save_preset(self):
         """Compatibility method"""
-        self._on_save_preset_clicked(button)
+        self._on_save_preset_clicked()
 
     def scroll_carousel_to_page(self, page_index):
         """Scrolls the carousel to a specific page if auto-scroll is enabled."""
@@ -257,3 +265,31 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def cleanup_and_destroy(self):
         self.cleanup()
         self.destroy()
+
+    def show_toast(self, message, open_file=False, file_path=None):
+        """Show a toast notification with optional action button"""
+        toast = Adw.Toast(title=message, timeout=5)
+
+        if open_file and file_path:
+            # Setup action if not already done
+            self._setup_toast_actions()
+
+            # Set action
+            toast.set_action_name("win.open-file")
+            toast.set_action_target_value(GLib.Variant.new_string(file_path))
+            toast.set_button_label(_("Open"))
+
+        self.toast_overlay.add_toast(toast)
+
+    def _setup_toast_actions(self):
+        """Setup toast action handlers"""
+        if not hasattr(self, "_open_action"):
+            action = Gio.SimpleAction.new("open-file", GLib.VariantType.new("s"))
+            action.connect("activate", self._open_file)
+            self.add_action(action)
+            self._open_action = action
+
+    def _open_file(self, action, parameter):
+        """Open file with default app"""
+        file_path = parameter.get_string()
+        Gio.AppInfo.launch_default_for_uri(f"file://{file_path}", None)

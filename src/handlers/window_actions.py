@@ -21,6 +21,7 @@ import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Gio", "2.0")
+gi.require_version("Adw", "1")
 from gi.repository import Gio
 
 
@@ -43,11 +44,13 @@ class WindowActionHandler:
             ("decrease_volume", self.decrease_volume_action, ["<primary>Down"]),
             ("load_preset", self.on_open_file_action, ["<primary>o"]),
             ("save_preset", self.on_save_preset_action, ["<primary>s"]),
+            ("export_audio", self.on_export_audio_action, ["<primary>e"]),
             ("quit", self.on_quit_action, ["<primary>q"]),
             ("close_window", self.on_quit_action, ["<primary>w"]),
             ("go_to_instrument", self.handle_go_to_instrument_action, ["<primary>i"]),
             ("previous_page", self.handle_previous_page_action, ["Page_Up"]),
             ("next_page", self.handle_next_page_action, ["Page_Down"]),
+            ("mute", self.handle_mute, ["<primary>m"]),
         ]
 
         for action_name, callback, shortcuts in actions:
@@ -94,7 +97,10 @@ class WindowActionHandler:
         self.window.on_open_file(self.window.file_preset_button)
 
     def on_save_preset_action(self, action, param):
-        self.window.on_save_preset(self.window.save_preset_button)
+        self.window.on_save_preset()
+
+    def on_export_audio_action(self, action, param):
+        self.window._on_export_audio_clicked(self.window.export_audio_button)
 
     def on_quit_action(self, action, param):
         if self.window.save_changes_service.has_unsaved_changes():
@@ -138,3 +144,11 @@ class WindowActionHandler:
             n_pages = carousel.get_n_pages()
             if current_page < n_pages - 1:
                 carousel.scroll_to(carousel.get_nth_page(current_page + 1), True)
+
+    def handle_mute(self, action, param):
+        current_volume = self.window.volume_button.get_value()
+        last_volume = self.window.drum_machine_service.last_volume
+        if current_volume == 0:
+            self.window.volume_button.set_value(last_volume)
+        else:
+            self.window.volume_button.set_value(0)

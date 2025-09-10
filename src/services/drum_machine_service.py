@@ -21,7 +21,7 @@ import threading
 import time
 from gi.repository import GLib
 from ..interfaces.player import IPlayer
-from ..config import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
+from ..config.constants import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
 from .preset_service import PresetService
 from .ui_helper import UIHelper
 
@@ -32,7 +32,7 @@ class DrumMachineService(IPlayer):
         self.ui_helper = ui_helper
         self.playing = False
         self.bpm = 120
-        self.volume = 0.8
+        self.last_volume = 100
         self.play_thread = None
         self.stop_event = threading.Event()
         self.drum_parts_state = self.create_empty_drum_parts_state()
@@ -85,8 +85,9 @@ class DrumMachineService(IPlayer):
         self.bpm = bpm
 
     def set_volume(self, volume):
-        self.volume = volume
         self.sound_service.set_volume(volume)
+        if volume != 0:
+            self.last_volume = volume
 
     def clear_all_toggles(self):
         self.drum_parts_state = self.create_empty_drum_parts_state()

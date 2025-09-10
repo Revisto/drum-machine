@@ -5,6 +5,8 @@
 [installs-image]: https://img.shields.io/flathub/downloads/io.github.revisto.drum-machine?style=for-the-badge
 [issues-url]: https://github.com/revisto/drum-machine/issues
 [issues-image]: https://img.shields.io/github/issues/revisto/drum-machine?style=for-the-badge
+[persian-gnome-badge]: https://gnome-fa.github.io/assets/badges/persian-gnome.svg
+[persian-gnome-url]: https://gnome_fa.t.me/
 
 [circle-url]: https://apps.gnome.org/DrumMachine/
 [circle-image]: https://circle.gnome.org/assets/button/badge.svg
@@ -16,7 +18,7 @@
 
   **Create and play drum beats**
 
-  [![GNOME Circle][circle-image]][circle-url]
+  [![GNOME Circle][circle-image]][circle-url] [![Persian GNOME][persian-gnome-badge]][persian-gnome-url]
 
   [![License][license-image]][license-url]
   [![Flathub][flathub-image]][flathub-url]
@@ -31,11 +33,17 @@
 Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns. Perfect for musicians, producers, and anyone interested in rhythm creation, this application provides a simple interface for drum pattern programming.
 
 ## Features
-- Intuitive grid-based pattern editor
+- Intuitive grid-based pattern editor with **infinite pages**
+  - Navigate through unlimited pattern pages using carousel interface
+  - Create complex drum sequences across multiple pages
 - Adjustable BPM control
 - Volume control for overall mix
 - Save and load preset patterns 
 - Multiple drum sounds including kick, snare, hi-hat, and more
+- **Audio export with metadata support**
+  - Export patterns in WAV, FLAC, Ogg Vorbis, and MP3 formats
+  - Add artist name, song title, and cover art metadata
+  - Configurable pattern repeat count for longer exports
 - Keyboard shortcuts for quick access to all functions
 - Modern GTK4 and libadwaita interface
 

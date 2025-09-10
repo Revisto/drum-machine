@@ -70,6 +70,17 @@ class DrumMachineApplication(Adw.Application):
             issue_url="https://github.com/Revisto/drum-machine/issues",
             website="https://apps.gnome.org/DrumMachine/",
         )
+        about.add_acknowledgement_section(
+            "Special thanks", ["Sepehr Rasouli", "Tobias Bernard"]
+        )
+        about.add_legal_section(
+            "Sounds",
+            "The drum samples used in this application are from "
+            + "<a href='https://99sounds.org/drum-samples/'>99Sounds</a>.",
+            Gtk.License.UNKNOWN,
+        )
+        about.add_legal_section("Mido", None, Gtk.License.MIT_X11)
+        about.add_legal_section("Pygame", None, Gtk.License.LGPL_2_1)
         about.present(self.props.active_window)
 
     def create_action(self, name, callback, shortcuts=None):

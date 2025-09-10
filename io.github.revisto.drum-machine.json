@@ -1,7 +1,7 @@
 {
     "id" : "io.github.revisto.drum-machine",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "master",
+    "runtime-version" : "48",
     "sdk" : "org.gnome.Sdk",
     "command" : "drum-machine",
     "finish-args" : [
@@ -25,7 +25,19 @@
     "modules" : [
         "python-dependencies.json",
         {
-            "name" : "Drum Machine",
+            "name": "blueprint-compiler",
+            "buildsystem": "meson",
+            "cleanup": ["*"],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/blueprint-compiler",
+                    "tag": "0.18.0"
+                }
+            ]
+        },
+        {
+            "name" : "drum-machine",
             "builddir" : true,
             "buildsystem" : "meson",
             "sources" : [

@@ -5,6 +5,11 @@
     <file alias="style-dark.css">style-dark.css</file>
     <file preprocess="xml-stripblanks">window.ui</file>
     <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
-    <file preprocess="xml-stripblanks">gtk/save_changes_dialog.ui</file>
+    <file preprocess="xml-stripblanks">gtk/save-changes-dialog.ui</file>
+    <file preprocess="xml-stripblanks">gtk/audio-export-dialog.ui</file>
+  </gresource>
+
+  <gresource prefix="/io/github/revisto/drum-machine/icons/scalable/actions/">
+    <file preprocess="xml-stripblanks" alias="share-symbolic.svg">../data/icons/hicolor/scalable/actions/share-symbolic.svg</file>
   </gresource>
 </gresources>
