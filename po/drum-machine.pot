@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-10 13:10+0330\n"
+"POT-Creation-Date: 2025-09-10 13:57+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,7 +59,7 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Audio export feature with support for WAV, FLAC, OGG, and MP3 formats"
+msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
@@ -112,7 +112,7 @@ msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:70
 msgid ""
-"Audio Export Feature: Export your drum patterns to WAV, FLAC, OGG Vorbis, "
+"Audio Export Feature: Export your drum patterns to WAV, FLAC, Ogg Vorbis, "
 "and MP3 formats"
 msgstr ""
 
@@ -391,8 +391,8 @@ msgstr ""
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr ""
 
-#: src/window.ui:86 src/gtk/audio-export-dialog.ui:7
-#: src/gtk/audio-export-dialog.ui:112
+#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6
+#: src/gtk/audio-export-dialog.blp:96
 msgid "Export Audio"
 msgstr ""
 
@@ -441,163 +441,163 @@ msgstr ""
 msgid "_About Drum Machine"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:11
+#: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:14
+#: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:20
+#: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:29
+#: src/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Playback Controls"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:32
+#: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:39
+#: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:48
+#: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
 msgid "BPM & Volume Controls"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:51
+#: src/gtk/help-overlay.blp:45
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:58
+#: src/gtk/help-overlay.blp:51
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:65
+#: src/gtk/help-overlay.blp:57
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:72
+#: src/gtk/help-overlay.blp:63
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:79
+#: src/gtk/help-overlay.blp:69
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:88
+#: src/gtk/help-overlay.blp:76
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.blp:79
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:98
+#: src/gtk/help-overlay.blp:85
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:105
+#: src/gtk/help-overlay.blp:91
 msgctxt "shortcut window"
 msgid "Export Audio"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:114
+#: src/gtk/help-overlay.blp:98
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.blp:101
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:124
+#: src/gtk/help-overlay.blp:107
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr ""
 
-#: src/gtk/help-overlay.ui:131
+#: src/gtk/help-overlay.blp:113
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr ""
 
-#: src/gtk/save_changes_dialog.ui:6
+#: src/gtk/save-changes-dialog.blp:5
 msgid "Save Changes?"
 msgstr ""
 
-#: src/gtk/save_changes_dialog.ui:7
+#: src/gtk/save-changes-dialog.blp:6
 msgid ""
 "Current preset contains unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
 
-#. Cancel the operation
-#: src/gtk/save_changes_dialog.ui:14
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14
 msgid "_Cancel"
 msgstr ""
 
-#. Discard all changes
-#: src/gtk/save_changes_dialog.ui:15
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
 msgid "_Discard"
 msgstr ""
 
-#. Save current changes
-#: src/gtk/save_changes_dialog.ui:16
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
 msgid "_Save"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:42
+#: src/gtk/audio-export-dialog.blp:39
 msgid "Audio Format"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:51
+#: src/gtk/audio-export-dialog.blp:45
 msgid "Repeat Count"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:52
+#: src/gtk/audio-export-dialog.blp:46
 msgid "How many times to repeat the pattern"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:68
+#: src/gtk/audio-export-dialog.blp:59
 msgid "Metadata"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:71
+#: src/gtk/audio-export-dialog.blp:62
 msgid "Artist Name"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:77
+#: src/gtk/audio-export-dialog.blp:67
 msgid "Song Name"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:83
+#: src/gtk/audio-export-dialog.blp:72
 msgid "Cover Art"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:87
+#: src/gtk/audio-export-dialog.blp:76
 msgid "Choose File"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.ui:121
+#: src/gtk/audio-export-dialog.blp:105
 msgid "Cancel Export"
 msgstr ""

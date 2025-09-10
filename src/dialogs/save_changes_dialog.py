@@ -21,7 +21,7 @@ from gi.repository import Adw, Gtk
 
 
 @Gtk.Template(
-    resource_path="/io/github/revisto/drum-machine/gtk/save_changes_dialog.ui"
+    resource_path="/io/github/revisto/drum-machine/gtk/save-changes-dialog.ui"
 )
 class SaveChangesDialog(Adw.AlertDialog):
     __gtype_name__ = "SaveChangesDialog"
