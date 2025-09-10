@@ -176,7 +176,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         else:
             self.drum_machine_service.drum_parts_state[part].pop(index, None)
         has_unsaved_changes = any(
-            [len(i) for i in self.drum_machine_service.drum_parts_state.values()]
+            (len(i) for i in self.drum_machine_service.drum_parts_state.values())
         )
         # Tell the service to recalculate the total pattern length
         self.drum_machine_service.update_total_beats()
