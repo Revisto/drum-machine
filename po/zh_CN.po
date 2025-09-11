@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-09-07 15:25+0000\n"
-"PO-Revision-Date: 2025-09-08 09:53+0800\n"
+"POT-Creation-Date: 2025-09-10 15:26+0000\n"
+"PO-Revision-Date: 2025-09-11 09:38+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -63,8 +63,8 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "多种击鼓音色，包括底鼓、军鼓、踩镲和其它更多音色"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Audio export feature with support for WAV, FLAC, OGG, and MP3 formats"
-msgstr "音频导出功能支持 WAV、FLAC、OGG 和 MP3 格式"
+msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
+msgstr "音频导出功能支持 WAV、FLAC、Ogg 和 MP3 格式"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
 msgid "Metadata support for embedding artist name, song title, and cover art"
@@ -103,12 +103,12 @@ msgid "FLAC (Lossless)"
 msgstr "FLAC（无损）"
 
 #: src/config/export_formats.py:57
-msgid "OGG files"
-msgstr "OGG 文件"
+msgid "Ogg files"
+msgstr "Ogg 文件"
 
 #: src/config/export_formats.py:58
-msgid "OGG Vorbis"
-msgstr "OGG Vorbis"
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
 
 #: src/config/export_formats.py:64
 msgid "WAV files"
@@ -251,8 +251,8 @@ msgstr "主菜单"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "访问键盘快捷键和应用程序信息"
 
-#: src/window.ui:86 src/gtk/audio-export-dialog.ui:7
-#: src/gtk/audio-export-dialog.ui:117
+#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6
+#: src/gtk/audio-export-dialog.blp:96
 msgid "Export Audio"
 msgstr "导出音频"
 
@@ -301,186 +301,181 @@ msgstr "键盘快捷键(_K)"
 msgid "_About Drum Machine"
 msgstr "关于击鼓器(_A)"
 
-#: src/gtk/help-overlay.ui:11
+#: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "常规"
 
-#: src/gtk/help-overlay.ui:14
+#: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "显示快捷键"
 
-#: src/gtk/help-overlay.ui:20
+#: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "退出"
 
-#: src/gtk/help-overlay.ui:29
+#: src/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Playback Controls"
 msgstr "播放控制"
 
-#: src/gtk/help-overlay.ui:32
+#: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr "播放/暂停"
 
-#: src/gtk/help-overlay.ui:39
+#: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "全部清除"
 
-#: src/gtk/help-overlay.ui:48
+#: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
 msgid "BPM & Volume Controls"
 msgstr "BPM 和音量控制"
 
-#: src/gtk/help-overlay.ui:51
+#: src/gtk/help-overlay.blp:45
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "增加 BPM"
 
-#: src/gtk/help-overlay.ui:58
+#: src/gtk/help-overlay.blp:51
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "减少 BPM"
 
-#: src/gtk/help-overlay.ui:65
+#: src/gtk/help-overlay.blp:57
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "增大音量"
 
-#: src/gtk/help-overlay.ui:72
+#: src/gtk/help-overlay.blp:63
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "减小音量"
 
-#: src/gtk/help-overlay.ui:79
+#: src/gtk/help-overlay.blp:69
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr "静音"
 
-#: src/gtk/help-overlay.ui:88
+#: src/gtk/help-overlay.blp:76
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr "预设管理"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.blp:79
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr "加载预设"
 
-#: src/gtk/help-overlay.ui:98
+#: src/gtk/help-overlay.blp:85
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "保存预设"
 
-#: src/gtk/help-overlay.ui:105
+#: src/gtk/help-overlay.blp:91
 msgctxt "shortcut window"
 msgid "Export Audio"
 msgstr "导出音频"
 
-#: src/gtk/help-overlay.ui:114
+#: src/gtk/help-overlay.blp:98
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "导航"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.blp:101
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "前往乐器"
 
-#: src/gtk/help-overlay.ui:124
+#: src/gtk/help-overlay.blp:107
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "上一页"
 
-#: src/gtk/help-overlay.ui:131
+#: src/gtk/help-overlay.blp:113
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "下一页"
 
-#: src/gtk/save_changes_dialog.ui:6
+#: src/gtk/save-changes-dialog.blp:5
 msgid "Save Changes?"
 msgstr "保存更改吗？"
 
-#: src/gtk/save_changes_dialog.ui:7
+#: src/gtk/save-changes-dialog.blp:6
 msgid ""
 "Current preset contains unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr "当前预设包含未保存更改。未保存的更改将会永久丢失。"
 
-#. Cancel the operation
-#: src/gtk/save_changes_dialog.ui:14
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14
 msgid "_Cancel"
 msgstr "取消(_C)"
 
-#. Discard all changes
-#: src/gtk/save_changes_dialog.ui:15
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
 msgid "_Discard"
 msgstr "丢弃(_D)"
 
-#. Save current changes
-#: src/gtk/save_changes_dialog.ui:16
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
 msgid "_Save"
 msgstr "保存(_S)"
 
-#: src/gtk/audio-export-dialog.ui:40
-msgid "Export Settings"
-msgstr "导出设置"
-
-#: src/gtk/audio-export-dialog.ui:41
-msgid "Configure your audio export options"
-msgstr "配置您的音频导出选项"
-
-#: src/gtk/audio-export-dialog.ui:44
+#: src/gtk/audio-export-dialog.blp:39
 msgid "Audio Format"
 msgstr "音频格式"
 
-#: src/gtk/audio-export-dialog.ui:45
-msgid "Select the output audio format"
-msgstr "选择输出的音频格式"
-
-#: src/gtk/audio-export-dialog.ui:54
+#: src/gtk/audio-export-dialog.blp:45
 msgid "Repeat Count"
 msgstr "重复计数"
 
-#: src/gtk/audio-export-dialog.ui:55
+#: src/gtk/audio-export-dialog.blp:46
 msgid "How many times to repeat the pattern"
 msgstr "重复击鼓模式的次数"
 
-#: src/gtk/audio-export-dialog.ui:71
+#: src/gtk/audio-export-dialog.blp:59
 msgid "Metadata"
 msgstr "元数据"
 
-#: src/gtk/audio-export-dialog.ui:72
-msgid "Add metadata to your exported audio"
-msgstr "添加元数据至您导出的音频"
-
-#: src/gtk/audio-export-dialog.ui:75
+#: src/gtk/audio-export-dialog.blp:62
 msgid "Artist Name"
 msgstr "艺人姓名"
 
-#: src/gtk/audio-export-dialog.ui:81
+#: src/gtk/audio-export-dialog.blp:67
 msgid "Song Name"
 msgstr "曲目名称"
 
-#: src/gtk/audio-export-dialog.ui:87
+#: src/gtk/audio-export-dialog.blp:72
 msgid "Cover Art"
 msgstr "封面"
 
-#: src/gtk/audio-export-dialog.ui:88
-msgid "Select an image file for the cover art"
-msgstr "选择用于封面的图像文件"
-
-#: src/gtk/audio-export-dialog.ui:92
+#: src/gtk/audio-export-dialog.blp:76
 msgid "Choose File"
 msgstr "选择文件"
 
-#: src/gtk/audio-export-dialog.ui:126
+#: src/gtk/audio-export-dialog.blp:105
 msgid "Cancel Export"
 msgstr "取消导出"
+
+#~ msgid "Export Settings"
+#~ msgstr "导出设置"
+
+#~ msgid "Configure your audio export options"
+#~ msgstr "配置您的音频导出选项"
+
+#~ msgid "Select the output audio format"
+#~ msgstr "选择输出的音频格式"
+
+#~ msgid "Add metadata to your exported audio"
+#~ msgstr "添加元数据至您导出的音频"
+
+#~ msgid "Select an image file for the cover art"
+#~ msgstr "选择用于封面的图像文件"
 
 #~ msgctxt "accessibility"
 #~ msgid "Save Drum Pattern"
