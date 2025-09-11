@@ -27,7 +27,7 @@ from gi.repository import Adw, Gtk, GLib, Gio
 
 from gettext import gettext as _
 
-from .config.constants import DRUM_PARTS, NUM_TOGGLES
+from .config.constants import DRUM_PARTS, NUM_TOGGLES, BPM_DEFAULT
 from .handlers.file_dialog_handler import FileDialogHandler
 from .handlers.window_actions import WindowActionHandler
 from .services.drum_machine_service import DrumMachineService
@@ -55,9 +55,12 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.clear_button.set_sensitive(False)
         self._setup_services()
         self._setup_handlers()
         self._initialize_interface()
+        self.has_bpm_changed = False
+        self.has_pattern_changed = False
 
     def _setup_services(self):
         """Initialize all services"""
@@ -178,28 +181,40 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     # Event handlers that need to stay in window
     def on_toggle_changed(self, toggle_button, part, index):
         state = toggle_button.get_active()
-
         if state:
             self.drum_machine_service.drum_parts_state[part][index] = True
         else:
             self.drum_machine_service.drum_parts_state[part].pop(index, None)
-
+        self.has_pattern_changed = any(
+            self.drum_machine_service.drum_parts_state.values()
+        )
         # Tell the service to recalculate the total pattern length
         self.drum_machine_service.update_total_beats()
-
+        self.clear_button.set_sensitive(
+            any((self.has_pattern_changed, self.has_bpm_changed))
+        )
         # Mark as unsaved when toggles change
-        self.save_changes_service.mark_unsaved_changes(True)
+        self.save_changes_service.mark_unsaved_changes(
+            any((self.has_pattern_changed, self.has_bpm_changed))
+        )
+
+    def change_bpm(self, new_value, spin_button):
+        self.drum_machine_service.set_bpm(new_value)
+        spin_button.set_value(new_value)
+        bpm_text = _("{} Beats per Minute (BPM)").format(int(new_value))
+        spin_button.set_tooltip_text(bpm_text)
 
     def on_bpm_changed(self, spin_button):
         value = spin_button.get_value()
-        self.drum_machine_service.set_bpm(value)
-
-        # Update tooltip and accessibility with current BPM
-        bpm_text = _("{} Beats per Minute (BPM)").format(int(value))
-        spin_button.set_tooltip_text(bpm_text)
-
-        # Mark as unsaved when BPM changes
-        self.save_changes_service.mark_unsaved_changes(True)
+        self.change_bpm(value, spin_button)
+        has_bpm_changed = value != BPM_DEFAULT
+        self.has_bpm_changed = has_bpm_changed
+        self.clear_button.set_sensitive(
+            any((self.has_pattern_changed, self.has_bpm_changed))
+        )
+        self.save_changes_service.mark_unsaved_changes(
+            any((self.has_pattern_changed, self.has_bpm_changed))
+        )
 
     def on_volume_changed(self, button, value):
         self.drum_machine_service.set_volume(value)
@@ -213,6 +228,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_machine_service.update_total_beats()
         # Now, reset the carousel UI to its initial state
         self.drum_grid_builder.reset_carousel_pages()
+        self.change_bpm(120, self.bpm_spin_button)
         # Mark as saved when clearing
         self.save_changes_service.mark_unsaved_changes(False)
 
