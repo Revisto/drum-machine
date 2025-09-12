@@ -21,6 +21,7 @@ import os
 import json
 from pathlib import Path
 from typing import List, Optional, Dict
+from gettext import gettext as _
 from ..models.drum_part import DrumPart
 from ..config.constants import DEFAULT_DRUM_PARTS, DRUM_PARTS_CONFIG_FILE
 
@@ -183,7 +184,7 @@ class DrumPartManager:
                     Path(source_file).stem.replace("_", " ").replace("-", " ").title()
                 )
                 if not new_name.strip():
-                    new_name = "Custom Sound"
+                    new_name = _("Custom Sound")
 
             # Update the part
             part.name = new_name

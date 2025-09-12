@@ -71,11 +71,11 @@ class DrumMachineApplication(Adw.Application):
             website="https://apps.gnome.org/DrumMachine/",
         )
         about.add_acknowledgement_section(
-            "Special thanks", ["Sepehr Rasouli", "Tobias Bernard"]
+            _("Special thanks"), ["Sepehr Rasouli", "Tobias Bernard"]
         )
         about.add_legal_section(
-            "Sounds",
-            "The drum samples used in this application are from "
+            _("Sounds"),
+            _("The drum samples used in this application are from ")
             + "<a href='https://99sounds.org/drum-samples/'>99Sounds</a>.",
             Gtk.License.UNKNOWN,
         )

@@ -279,20 +279,20 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         """Add a new drum part"""
         result = self.drum_machine_service.add_new_drum_part(file_path, name)
         if result:
-            self.show_toast(f"Added custom sound: {name}")
+            self.show_toast(_("Added custom sound: {}").format(name))
             return True
         else:
-            self.show_toast("Failed to add custom sound")
+            self.show_toast(_("Failed to add custom sound"))
             return False
 
     def replace_drum_part(self, drum_id, file_path, name):
         """Replace an existing drum part"""
         result = self.drum_machine_service.replace_drum_part(drum_id, file_path, name)
         if result:
-            self.show_toast(f"Replaced drum with: {name}")
+            self.show_toast(_("Replaced drum with: {}").format(name))
             # Update button state to reflect new file availability
             self.drum_grid_builder.update_drum_button(drum_id)
             return True
         else:
-            self.show_toast("Failed to replace drum sound")
+            self.show_toast(_("Failed to replace drum sound"))
             return False

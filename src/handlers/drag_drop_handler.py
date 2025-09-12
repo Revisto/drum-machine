@@ -19,6 +19,7 @@
 
 from pathlib import Path
 from gi.repository import Gtk, Gdk, Gio
+from gettext import gettext as _
 
 
 class DragDropHandler:
@@ -89,23 +90,23 @@ class DragDropHandler:
     def _validate_file_format(self, path):
         """Validate file format is supported"""
         if path.suffix.lower() not in self.supported_formats:
-            self.window.show_toast("Not a supported audio file")
+            self.window.show_toast(_("Not a supported audio file"))
             return False
         return True
 
     def _validate_file_access(self, path):
         """Validate file exists, is accessible, and reasonable size"""
         if not path.exists():
-            self.window.show_toast("File not found")
+            self.window.show_toast(_("File not found"))
             return False
 
         if not path.is_file():
-            self.window.show_toast("Selected item is not a file")
+            self.window.show_toast(_("Selected item is not a file"))
             return False
 
         file_size_mb = path.stat().st_size / (1024 * 1024)
         if file_size_mb > 50:
-            self.window.show_toast(f"File too large: {file_size_mb:.1f}MB (max 50MB)")
+            self.window.show_toast(_("File too large: {:.1f}MB (max 50MB)").format(file_size_mb))
             return False
 
         return True
@@ -113,7 +114,7 @@ class DragDropHandler:
     def _extract_name_from_path(self, path):
         """Extract display name from file path"""
         name = path.stem.replace("_", " ").replace("-", " ").title()
-        return name if name.strip() else "Custom Sound"
+        return name if name.strip() else _("Custom Sound")
 
     def _handle_file_drop(self, file_path, drum_id):
         """Handle file drop - validate file and delegate to window methods"""
@@ -134,13 +135,13 @@ class DragDropHandler:
                 return self.window.add_new_drum_part(str(path), name)
 
         except PermissionError:
-            self.window.show_toast("Permission denied accessing file")
+            self.window.show_toast(_("Permission denied accessing file"))
             return False
         except OSError as e:
-            self.window.show_toast(f"File system error: {str(e)}")
+            self.window.show_toast(_("File system error: {}").format(str(e)))
             return False
         except Exception as e:
-            self.window.show_toast(f"Error processing file: {str(e)}")
+            self.window.show_toast(_("Error processing file: {}").format(str(e)))
             return False
 
     def _clear_drag_feedback(self):

@@ -141,7 +141,7 @@ class DrumMachineService(IPlayer):
 
     def preview_drum_part(self, part_id):
         """Preview a drum part sound"""
-        drum_part_manager = self.sound_service.get_drum_part_manager()
+        drum_part_manager = self.sound_service.drum_part_manager
         if drum_part_manager.get_part_by_id(part_id):
             self.sound_service.preview_sound(part_id)
 
