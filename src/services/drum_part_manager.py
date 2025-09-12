@@ -33,29 +33,31 @@ class DrumPartManager:
         self._drum_parts: List[DrumPart] = []
         self._ensure_directories()
         self._load_drum_parts()
-    
+
     def _ensure_directories(self):
         try:
             os.makedirs(self.custom_dir, exist_ok=True)
         except Exception as e:
             print(f"Error creating custom directory {self.custom_dir}: {e}")
             raise
-    
+
     def _load_drum_parts(self):
         self._drum_parts = []
-        
+
         # Check if config exists, if so load from it
         if os.path.exists(self.config_file):
             try:
-                with open(self.config_file, 'r', encoding='utf-8') as f:
+                with open(self.config_file, "r", encoding="utf-8") as f:
                     data = json.load(f)
-                    for part_data in data.get('drum_parts', []):
-                        if 'file_path' in part_data:
+                    for part_data in data.get("drum_parts", []):
+                        if "file_path" in part_data:
                             # Check if file exists and log if missing
-                            file_exists = os.path.exists(part_data['file_path'])
+                            file_exists = os.path.exists(part_data["file_path"])
                             if not file_exists:
-                                print(f"Missing file for drum part '{part_data.get('name', 'Unknown')}': {part_data['file_path']}")
-                            
+                                print(
+                                    f"Missing file for drum part '{part_data.get('name', 'Unknown')}': {part_data['file_path']}"
+                                )
+
                             # Load drum part regardless of file existence
                             drum_part = DrumPart.from_dict(part_data)
                             self._drum_parts.append(drum_part)
@@ -69,7 +71,7 @@ class DrumPartManager:
             print("No drum parts config found, loading defaults and saving...")
             self._load_default_parts()
             self._save_drum_parts()
-    
+
     def _load_default_parts(self):
         """Load the default drum parts from the drumkit directory"""
         for name in DEFAULT_DRUM_PARTS:
@@ -77,118 +79,122 @@ class DrumPartManager:
             if os.path.exists(file_path):
                 drum_part = DrumPart.create_default(name, file_path)
                 self._drum_parts.append(drum_part)
-    
+
     def _save_drum_parts(self):
         try:
             all_parts = [part.to_dict() for part in self._drum_parts]
-            data = {'drum_parts': all_parts}
-            
+            data = {"drum_parts": all_parts}
+
             # Ensure directory exists before writing
             self._ensure_directories()
-            
+
             # Write to a temp file first, then rename to avoid corruption
-            temp_file = self.config_file + '.tmp'
-            with open(temp_file, 'w', encoding='utf-8') as f:
+            temp_file = self.config_file + ".tmp"
+            with open(temp_file, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2)
-            
+
             # Atomic rename
             os.replace(temp_file, self.config_file)
-            
+
         except Exception as e:
             print(f"Error saving drum parts: {e}")
             # Clean up temp file if it exists
-            temp_file = self.config_file + '.tmp'
+            temp_file = self.config_file + ".tmp"
             if os.path.exists(temp_file):
                 try:
                     os.remove(temp_file)
                 except Exception:
                     pass
-    
+
     def get_all_parts(self) -> List[DrumPart]:
         return self._drum_parts.copy()
-    
+
     def get_part_by_id(self, part_id: str) -> Optional[DrumPart]:
         for part in self._drum_parts:
             if part.id == part_id:
                 return part
         return None
-    
+
     def get_parts_dict(self) -> Dict[str, DrumPart]:
         return {part.id: part for part in self._drum_parts}
-    
+
     def add_custom_part(self, name: str, source_file: str) -> Optional[DrumPart]:
         """Add a new custom drum part from an audio file"""
         # Validate inputs
         if not name or not source_file:
             print(f"Invalid input: name='{name}', source_file='{source_file}'")
             return None
-            
+
         if not os.path.exists(source_file):
             print(f"Source file does not exist: {source_file}")
             return None
-        
+
         try:
             # Create drum part directly with the source file path
             drum_part = DrumPart.create_custom(name, source_file)
             self._drum_parts.append(drum_part)
-            
+
             # Save config
             self._save_drum_parts()
-            
+
             return drum_part
-            
+
         except Exception as e:
             print(f"Error adding drum part '{name}': {e}")
             return None
-    
+
     def remove_part(self, part_id: str) -> bool:
         """Remove a drum part"""
         part = self.get_part_by_id(part_id)
         if not part:
             return False
-        
+
         try:
             # Remove from list
             self._drum_parts = [p for p in self._drum_parts if p.id != part_id]
-            
+
             # Save config
             self._save_drum_parts()
-            
+
             return True
-            
+
         except Exception as e:
             print(f"Error removing drum part: {e}")
             return False
-    
-    def replace_part(self, part_id: str, source_file: str, new_name: str = None) -> Optional[DrumPart]:
+
+    def replace_part(
+        self, part_id: str, source_file: str, new_name: str = None
+    ) -> Optional[DrumPart]:
         """Update an existing drum part with a new audio file path and name"""
         # Validate inputs
         if not part_id or not source_file:
             print(f"Invalid input: part_id='{part_id}', source_file='{source_file}'")
             return None
-        
+
         part = self.get_part_by_id(part_id)
         if not part:
             print(f"Drum part not found: {part_id}")
             return None
-        
+
         try:
             # Extract name from filename if not provided
             if not new_name:
-                new_name = Path(source_file).stem.replace("_", " ").replace("-", " ").title()
+                new_name = (
+                    Path(source_file).stem.replace("_", " ").replace("-", " ").title()
+                )
                 if not new_name.strip():
                     new_name = "Custom Sound"
-            
+
             # Update the part
             part.name = new_name
             part.file_path = source_file
             part.is_custom = True  # Mark as custom since it's using external file
-            
+
             # Save config
             self._save_drum_parts()
-            
+
             return part
-            
+
         except Exception as e:
             print(f"Error updating drum part: {e}")
             return None
@@ -198,7 +204,7 @@ class DrumPartManager:
         part = self.get_part_by_id(part_id)
         if not part:
             return False
-        
+
         return os.path.exists(part.file_path)
 
     def reload(self):

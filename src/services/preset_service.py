@@ -114,7 +114,9 @@ class PresetService:
 
     def load_preset(self, file_path):
         mid = mido.MidiFile(file_path)
-        drum_parts_state = self.window.drum_machine_service.create_empty_drum_parts_state()
+        drum_parts_state = (
+            self.window.drum_machine_service.create_empty_drum_parts_state()
+        )
         bpm = 120
 
         ticks_per_beat = mid.ticks_per_beat

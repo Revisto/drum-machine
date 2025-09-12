@@ -67,4 +67,3 @@ class SoundService(ISoundService):
     def preview_sound(self, part_id):
         if part_id in self.sounds:
             self.play_sound(part_id)
-

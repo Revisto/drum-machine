@@ -50,7 +50,9 @@ class DragDropHandler:
 
     def _on_drag_enter(self, _drop_target, _x, _y):
         self.window.add_css_class("drag-hover")
-        self.new_drum_placeholder = self.window.drum_grid_builder.create_new_drum_placeholder()
+        self.new_drum_placeholder = (
+            self.window.drum_grid_builder.create_new_drum_placeholder()
+        )
         return Gdk.DragAction.COPY
 
     def _on_button_drag_enter(self, _drop_target, _x, _y, button):
@@ -96,7 +98,7 @@ class DragDropHandler:
         if not path.exists():
             self.window.show_toast("File not found")
             return False
-        
+
         if not path.is_file():
             self.window.show_toast("Selected item is not a file")
             return False
@@ -105,7 +107,7 @@ class DragDropHandler:
         if file_size_mb > 50:
             self.window.show_toast(f"File too large: {file_size_mb:.1f}MB (max 50MB)")
             return False
-        
+
         return True
 
     def _extract_name_from_path(self, path):
@@ -117,10 +119,10 @@ class DragDropHandler:
         """Handle file drop - validate file and delegate to window methods"""
         try:
             path = Path(file_path)
-            
+
             if not self._validate_file_format(path):
                 return False
-            
+
             if not self._validate_file_access(path):
                 return False
 
@@ -141,13 +143,13 @@ class DragDropHandler:
             self.window.show_toast(f"Error processing file: {str(e)}")
             return False
 
-
-
     def _clear_drag_feedback(self):
         """Clear all drag feedback visuals"""
         self.window.remove_css_class("drag-hover")
-        
+
         # Remove placeholder
         if self.new_drum_placeholder:
-            self.window.drum_grid_builder.remove_new_drum_placeholder(self.new_drum_placeholder)
+            self.window.drum_grid_builder.remove_new_drum_placeholder(
+                self.new_drum_placeholder
+            )
             self.new_drum_placeholder = None

@@ -28,33 +28,28 @@ class DrumPart:
     name: str
     file_path: str
     is_custom: bool = False
-    
+
     @classmethod
     def create_default(cls, name: str, file_path: str):
         return cls(
             id=f"default_{name}",
             name=name.replace("-", " ").title(),
             file_path=file_path,
-            is_custom=False
+            is_custom=False,
         )
-    
+
     @classmethod
     def create_custom(cls, name: str, file_path: str):
-        return cls(
-            id=str(uuid.uuid4()),
-            name=name,
-            file_path=file_path,
-            is_custom=True
-        )
-    
+        return cls(id=str(uuid.uuid4()), name=name, file_path=file_path, is_custom=True)
+
     def to_dict(self):
         return {
             "id": self.id,
             "name": self.name,
             "file_path": self.file_path,
-            "is_custom": self.is_custom
+            "is_custom": self.is_custom,
         }
-    
+
     @classmethod
     def from_dict(cls, data):
         return cls(**data)

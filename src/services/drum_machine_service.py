@@ -132,7 +132,9 @@ class DrumMachineService(IPlayer):
             delay_per_step = 60 / self.bpm / GROUP_TOGGLE_COUNT
             time.sleep(delay_per_step)
 
-            GLib.idle_add(self.ui_helper.remove_playhead_highlight_at_beat, current_beat)
+            GLib.idle_add(
+                self.ui_helper.remove_playhead_highlight_at_beat, current_beat
+            )
 
             # Advance the playhead
             current_beat += 1
@@ -162,7 +164,9 @@ class DrumMachineService(IPlayer):
 
     def replace_drum_part(self, drum_id, file_path, name):
         """Replace an existing drum part with a new audio file"""
-        result = self.sound_service.drum_part_manager.replace_part(drum_id, file_path, name)
+        result = self.sound_service.drum_part_manager.replace_part(
+            drum_id, file_path, name
+        )
         if result:
             # Reload the specific sound for this drum part
             self.sound_service.reload_specific_sound(drum_id)

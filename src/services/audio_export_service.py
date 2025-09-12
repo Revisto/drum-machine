@@ -78,7 +78,10 @@ class AudioExportService:
         self.sample_rate = 44100
 
         # Initialize components
-        self.sample_loader = SampleLoader(self.window.sound_service.drum_part_manager.get_all_parts(), self.sample_rate)
+        self.sample_loader = SampleLoader(
+            self.window.sound_service.drum_part_manager.get_all_parts(),
+            self.sample_rate,
+        )
         self.audio_renderer = AudioRenderer(
             self.sample_loader.get_samples(), self.sample_rate
         )

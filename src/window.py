@@ -93,7 +93,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.file_dialog_handler.setup_preset_menu()
         self._connect_signals()
         self.action_handler.setup_actions()
-        
+
         # Setup drag and drop
         self.drag_drop_handler.setup_drag_drop()
 
@@ -165,8 +165,6 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def _on_export_audio_clicked(self, button):
         """Handle export audio button click"""
         self.file_dialog_handler.handle_export_audio()
-
-
 
     def scroll_carousel_to_page(self, page_index):
         """Scrolls the carousel to a specific page if auto-scroll is enabled."""
@@ -298,4 +296,3 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         else:
             self.show_toast("Failed to replace drum sound")
             return False
-

@@ -124,7 +124,9 @@ class AudioRenderer:
 
             last_subdivision = max(active_subdivisions)
             trigger_time = last_subdivision / subdivisions_per_second
-            sample_length_seconds = len(self.samples.get(part_id, [])) / self.sample_rate
+            sample_length_seconds = (
+                len(self.samples.get(part_id, [])) / self.sample_rate
+            )
             end_time = trigger_time + sample_length_seconds
             latest_sample_end_time = max(latest_sample_end_time, end_time)
 
