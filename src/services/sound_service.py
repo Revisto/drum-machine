@@ -17,50 +17,54 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import os
 import pygame
 from ..interfaces.sound import ISoundService
 from .drum_part_manager import DrumPartManager
+from ..config.constants import MIXER_CHANNELS
 
 
 class SoundService(ISoundService):
     def __init__(self, drumkit_dir):
         pygame.init()
-        pygame.mixer.set_num_channels(32)
+        pygame.mixer.set_num_channels(MIXER_CHANNELS)
         self.drumkit_dir = drumkit_dir
         self.drum_part_manager = DrumPartManager(drumkit_dir)
         self.sounds = {}
+        self._current_volume = 1.0
 
     def load_sounds(self):
         self.sounds = {}
         for part in self.drum_part_manager.get_all_parts():
             try:
-                self.sounds[part.id] = pygame.mixer.Sound(part.file_path)
+                sound = pygame.mixer.Sound(part.file_path)
+                sound.set_volume(self._current_volume)
+                self.sounds[part.id] = sound
             except Exception as e:
                 print(f"Error loading sound {part.name}: {e}")
 
     def reload_sounds(self):
-        self.drum_part_manager._load_drum_parts()
+        self.drum_part_manager.reload()
         self.load_sounds()
 
     def reload_specific_sound(self, part_id):
         """Reload a specific sound after drum part replacement"""
-        self.drum_part_manager._load_drum_parts()
+        self.drum_part_manager.reload()
         part = self.drum_part_manager.get_part_by_id(part_id)
         if part:
-            self.sounds[part_id] = pygame.mixer.Sound(part.file_path)
+            sound = pygame.mixer.Sound(part.file_path)
+            sound.set_volume(self._current_volume)
+            self.sounds[part_id] = sound
 
     def play_sound(self, part_id):
         if part_id in self.sounds:
             self.sounds[part_id].play()
 
     def set_volume(self, volume):
+        self._current_volume = volume / 100
         for sound in self.sounds.values():
-            sound.set_volume(volume / 100)
+            sound.set_volume(self._current_volume)
 
     def preview_sound(self, part_id):
         if part_id in self.sounds:
             self.play_sound(part_id)
-    
-    def get_drum_part_manager(self):
-        return self.drum_part_manager
+

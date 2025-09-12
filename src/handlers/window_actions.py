@@ -94,10 +94,10 @@ class WindowActionHandler:
         self.window.volume_button.set_value(max(current_volume - 5, 0))
 
     def on_open_file_action(self, action, param):
-        self.window.on_open_file(self.window.file_preset_button)
+        self.window._on_open_file_clicked(self.window.file_preset_button)
 
     def on_save_preset_action(self, action, param):
-        self.window.on_save_preset()
+        self.window._on_save_preset_clicked()
 
     def on_export_audio_action(self, action, param):
         self.window._on_export_audio_clicked(self.window.export_audio_button)

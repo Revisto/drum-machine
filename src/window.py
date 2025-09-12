@@ -166,13 +166,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         """Handle export audio button click"""
         self.file_dialog_handler.handle_export_audio()
 
-    def on_open_file(self, button):
-        """Compatibility method"""
-        self._on_open_file_clicked(button)
 
-    def on_save_preset(self):
-        """Compatibility method"""
-        self._on_save_preset_clicked()
 
     def scroll_carousel_to_page(self, page_index):
         """Scrolls the carousel to a specific page if auto-scroll is enabled."""
@@ -243,7 +237,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         return True
 
     def _save_and_close(self):
-        self.file_dialog_handler._show_save_dialog(lambda: self.cleanup_and_destroy())  # pylint: disable=protected-access
+        self.file_dialog_handler.show_save_dialog(lambda: self.cleanup_and_destroy())
 
     def cleanup(self):
         """Stop playback and cleanup resources"""
@@ -305,23 +299,3 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             self.show_toast("Failed to replace drum sound")
             return False
 
-    def _rebuild_drum_parts_column(self):
-        """Rebuild the drum parts column to reflect current drum parts"""
-        try:
-            # Get the current drum parts column
-            drum_parts_column = self.drum_grid_builder.drum_parts_column
-            if not drum_parts_column:
-                return
-            
-            # Clear existing children
-            while drum_parts_column.get_first_child():
-                drum_parts_column.remove(drum_parts_column.get_first_child())
-            
-            # Rebuild with current drum parts
-            drum_part_manager = self.sound_service.get_drum_part_manager()
-            for drum_part in drum_part_manager.get_all_parts():
-                instrument_button = self.drum_grid_builder.create_instrument_button(drum_part)
-                drum_parts_column.append(instrument_button)
-                
-        except Exception as e:
-            print(f"Error rebuilding drum parts column: {e}")

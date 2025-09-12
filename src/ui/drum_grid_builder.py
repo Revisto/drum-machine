@@ -112,7 +112,7 @@ class DrumGridBuilder:
         drum_parts = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
         
         # Get drum parts from the sound service
-        drum_part_manager = self.window.sound_service.get_drum_part_manager()
+        drum_part_manager = self.window.sound_service.drum_part_manager
         for drum_part in drum_part_manager.get_all_parts():
             instrument_button = self.create_instrument_button(drum_part)
             drum_parts.append(instrument_button)
@@ -287,7 +287,7 @@ class DrumGridBuilder:
         page = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
         
         # Get drum parts from the sound service
-        drum_part_manager = self.window.sound_service.get_drum_part_manager()
+        drum_part_manager = self.window.sound_service.drum_part_manager
         for drum_part in drum_part_manager.get_all_parts():
             drum_row = self.create_drum_row(drum_part.id, page_index)
             page.append(drum_row)
@@ -382,7 +382,7 @@ class DrumGridBuilder:
         display_name = drum_part.name[:max_length - 3] + "..." if len(drum_part.name) > max_length else drum_part.name
         
         # Check if the file is available
-        drum_part_manager = self.window.sound_service.get_drum_part_manager()
+        drum_part_manager = self.window.sound_service.drum_part_manager
         file_available = drum_part_manager.is_file_available(drum_part.id)
         
         # Create tooltip text based on file availability
@@ -395,7 +395,7 @@ class DrumGridBuilder:
     
     def _apply_button_styling(self, button, drum_part):
         """Apply styling to a button based on file availability"""
-        drum_part_manager = self.window.sound_service.get_drum_part_manager()
+        drum_part_manager = self.window.sound_service.drum_part_manager
         file_available = drum_part_manager.is_file_available(drum_part.id)
         
         if file_available:
@@ -415,10 +415,10 @@ class DrumGridBuilder:
         """Update an existing drum button's state"""
         try:
             # Get the drum part
-            drum_part_manager = self.window.sound_service.get_drum_part_manager()
+            drum_part_manager = self.window.sound_service.drum_part_manager
             drum_part = drum_part_manager.get_part_by_id(drum_id)
             if not drum_part:
-                print(f"Drum part not found: {drum_id}")
+                logging.warning(f"Drum part not found: {drum_id}")
                 return
             
             # Find and update the button
@@ -429,11 +429,11 @@ class DrumGridBuilder:
                 self.update_button_content(button, drum_part)
             else:
                 # Button doesn't exist, rebuild the drum parts column
-                self.window._rebuild_drum_parts_column()
+                self.rebuild_drum_parts_column()
         except Exception as e:
             print(f"Error updating button state: {e}")
             # Fallback: rebuild the drum parts column
-            self.window._rebuild_drum_parts_column()
+            self.rebuild_drum_parts_column()
 
     def create_beat_toggle_group(self, drum_part, group_index, page_index):
         """Create a group of beat toggles"""
@@ -449,6 +449,26 @@ class DrumGridBuilder:
             beat_group.append(beat_toggle)
 
         return beat_group
+
+    def rebuild_drum_parts_column(self):
+        """Rebuild the drum parts column to reflect current drum parts"""
+        try:
+            # Get the current drum parts column
+            if not self.drum_parts_column:
+                return
+            
+            # Clear existing children
+            while self.drum_parts_column.get_first_child():
+                self.drum_parts_column.remove(self.drum_parts_column.get_first_child())
+            
+            # Rebuild with current drum parts
+            drum_part_manager = self.window.sound_service.drum_part_manager
+            for drum_part in drum_part_manager.get_all_parts():
+                instrument_button = self.create_instrument_button(drum_part)
+                self.drum_parts_column.append(instrument_button)
+                
+        except Exception as e:
+            print(f"Error rebuilding drum parts column: {e}")
 
     def create_single_beat_toggle(self, drum_part, beat_number_on_page, page_index):
         """Create a single beat toggle button"""

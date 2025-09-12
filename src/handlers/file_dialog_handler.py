@@ -66,7 +66,7 @@ class FileDialogHandler:
 
     def handle_save_preset(self):
         """Handle saving a preset"""
-        self._show_save_dialog()
+        self.show_save_dialog()
 
     def handle_export_audio(self):
         """Handle audio export"""
@@ -98,7 +98,7 @@ class FileDialogHandler:
         export_dialog.present(self.window)
 
     def _save_and_open_file(self):
-        self._show_save_dialog(self._open_file_directly)
+        self.show_save_dialog(self._open_file_directly)
 
     def _open_file_directly(self):
         """Show file open dialog"""
@@ -145,7 +145,7 @@ class FileDialogHandler:
             self._open_preset_directly(parameter)
 
     def _save_and_open_preset(self, parameter):
-        self._show_save_dialog(lambda: self._open_preset_directly(parameter))
+        self.show_save_dialog(lambda: self._open_preset_directly(parameter))
 
     def _open_preset_directly(self, parameter):
         """Load a preset directly"""
@@ -166,7 +166,7 @@ class FileDialogHandler:
 
         self.window.save_changes_service.mark_unsaved_changes(False)
 
-    def _show_save_dialog(self, after_save_callback=None):
+    def show_save_dialog(self, after_save_callback=None):
         """Show save file dialog"""
         filefilter = Gtk.FileFilter.new()
         filefilter.add_pattern("*.mid")

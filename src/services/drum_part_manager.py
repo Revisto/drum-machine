@@ -19,18 +19,17 @@
 
 import os
 import json
-import shutil
 from pathlib import Path
 from typing import List, Optional, Dict
 from ..models.drum_part import DrumPart
-from ..config.constants import DEFAULT_DRUM_PARTS
+from ..config.constants import DEFAULT_DRUM_PARTS, DRUM_PARTS_CONFIG_FILE
 
 
 class DrumPartManager:
     def __init__(self, drumkit_dir: str):
         self.drumkit_dir = drumkit_dir
         self.custom_dir = os.path.join(drumkit_dir, "config")
-        self.config_file = os.path.join(self.custom_dir, "drum_parts2.json")
+        self.config_file = os.path.join(self.custom_dir, DRUM_PARTS_CONFIG_FILE)
         self._drum_parts: List[DrumPart] = []
         self._ensure_directories()
         self._load_drum_parts()
@@ -64,6 +63,7 @@ class DrumPartManager:
                 print(f"Error loading drum parts config: {e}")
                 # Fall back to defaults if config is corrupted
                 self._load_default_parts()
+                self._save_drum_parts()
         else:
             # No config exists, load defaults and save them
             print("No drum parts config found, loading defaults and saving...")
@@ -92,7 +92,7 @@ class DrumPartManager:
                 json.dump(data, f, indent=2)
             
             # Atomic rename
-            os.rename(temp_file, self.config_file)
+            os.replace(temp_file, self.config_file)
             
         except Exception as e:
             print(f"Error saving drum parts: {e}")
@@ -192,7 +192,7 @@ class DrumPartManager:
         except Exception as e:
             print(f"Error updating drum part: {e}")
             return None
-    
+
     def is_file_available(self, part_id: str) -> bool:
         """Check if a drum part's file is currently available"""
         part = self.get_part_by_id(part_id)
@@ -200,3 +200,7 @@ class DrumPartManager:
             return False
         
         return os.path.exists(part.file_path)
+
+    def reload(self):
+        """Public method to reload drum parts from configuration"""
+        self._load_drum_parts()

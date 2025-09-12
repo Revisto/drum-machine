@@ -38,3 +38,9 @@ DEFAULT_FALLBACK_SAMPLE_SIZE = (1000, 2)
 
 # Progress bar constants
 PULSE_INTERVAL_SECONDS = 1.0
+
+# Audio constants
+MIXER_CHANNELS = 32
+
+# DrumPartManager constants
+DRUM_PARTS_CONFIG_FILE = "drum_parts.json"
