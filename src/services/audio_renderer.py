@@ -19,7 +19,6 @@
 
 import numpy as np
 from ..config.constants import (
-    DEFAULT_DRUM_PARTS,
     GROUP_TOGGLE_COUNT,
     DEFAULT_FALLBACK_SAMPLE_SIZE,
 )

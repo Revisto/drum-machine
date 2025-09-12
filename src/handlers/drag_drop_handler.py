@@ -106,7 +106,9 @@ class DragDropHandler:
 
         file_size_mb = path.stat().st_size / (1024 * 1024)
         if file_size_mb > 50:
-            self.window.show_toast(_("File too large: {:.1f}MB (max 50MB)").format(file_size_mb))
+            self.window.show_toast(
+                _("File too large: {:.1f}MB (max 50MB)").format(file_size_mb)
+            )
             return False
 
         return True

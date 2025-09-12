@@ -56,7 +56,9 @@ class DrumPartManager:
                             file_exists = os.path.exists(part_data["file_path"])
                             if not file_exists:
                                 print(
-                                    f"Missing file for drum part '{part_data.get('name', 'Unknown')}': {part_data['file_path']}"
+                                    "Missing file for drum part "
+                                    f"'{part_data.get('name', 'Unknown')}': "
+                                    f"{part_data['file_path']}"
                                 )
 
                             # Load drum part regardless of file existence

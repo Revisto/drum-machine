@@ -23,7 +23,6 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Gdk, Adw, GLib
 from ..config.constants import GROUP_TOGGLE_COUNT
-from ..services.ui_helper import UIHelper
 
 
 class DrumGridBuilder:
@@ -419,7 +418,7 @@ class DrumGridBuilder:
             drum_part_manager = self.window.sound_service.drum_part_manager
             drum_part = drum_part_manager.get_part_by_id(drum_id)
             if not drum_part:
-                logging.warning(f"Drum part not found: {drum_id}")
+                print(f"Drum part not found: {drum_id}")
                 return
 
             # Find and update the button
@@ -522,7 +521,7 @@ class DrumGridBuilder:
                 page.append(drum_row)
 
     def _create_placeholder_button_container(self):
-        """Create a placeholder button container that matches drum part button structure"""
+        """Create a placeholder button container"""
         placeholder_button = self._create_drum_button(
             "+ New", "Drop audio files here to add new drum", clickable=True
         )
