@@ -461,7 +461,7 @@ class DrumGridBuilder:
     def _get_button_content(self, drum_part):
         """Get the label and tooltip for a drum part button"""
         # Truncate long names to keep UI clean
-        max_length = 8
+        max_length = 11
         display_name = (
             drum_part.name[: max_length - 3] + "..."
             if len(drum_part.name) > max_length

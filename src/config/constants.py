@@ -44,3 +44,6 @@ MIXER_CHANNELS = 32
 
 # DrumPartManager constants
 DRUM_PARTS_CONFIG_FILE = "drum_parts.json"
+
+# Supported audio file formats for input/import
+SUPPORTED_INPUT_AUDIO_FORMATS = {".wav", ".mp3", ".ogg", ".flac"}

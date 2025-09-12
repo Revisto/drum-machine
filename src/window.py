@@ -275,11 +275,15 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         file_path = parameter.get_string()
         Gio.AppInfo.launch_default_for_uri(f"file://{file_path}", None)
 
-    def add_new_drum_part(self, file_path, name):
+    def show_added_toast(self, name):
+        self.show_toast(_("Added: {}").format(name))
+
+    def add_new_drum_part(self, file_path, name, show_success_toast=True):
         """Add a new drum part"""
         result = self.drum_machine_service.add_new_drum_part(file_path, name)
         if result:
-            self.show_toast(_("Added custom sound: {}").format(name))
+            if show_success_toast:
+                self.show_added_toast(name)
             return True
         else:
             self.show_toast(_("Failed to add custom sound"))

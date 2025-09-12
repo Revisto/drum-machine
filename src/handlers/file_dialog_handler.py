@@ -25,7 +25,7 @@ gi.require_version("Gio", "2.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Gio, GLib, Adw
 from gettext import gettext as _
-from ..config.constants import DEFAULT_PRESETS
+from ..config.constants import DEFAULT_PRESETS, SUPPORTED_INPUT_AUDIO_FORMATS
 from ..dialogs.audio_export_dialog import AudioExportDialog
 
 
@@ -196,3 +196,41 @@ class FileDialogHandler:
                 return
 
         dialog.save(parent=self.window, callback=save_callback)
+
+    def handle_add_samples(self):
+        """Handle adding multiple audio samples via file dialog"""
+        # Create file filter for supported audio formats
+        audio_filter = Gtk.FileFilter.new()
+        audio_filter.set_name(_("Audio files"))
+
+        # Add supported formats from drag drop handler
+        for fmt in SUPPORTED_INPUT_AUDIO_FORMATS:
+            audio_filter.add_pattern(f"*{fmt}")
+
+        # Create filter list
+        filefilters = Gio.ListStore.new(Gtk.FileFilter)
+        filefilters.append(audio_filter)
+
+        # Create and configure dialog
+        dialog = Gtk.FileDialog.new()
+        dialog.set_title(_("Add Audio Samples"))
+        dialog.set_filters(filefilters)
+        dialog.set_modal(True)
+
+        # Open multiple selection dialog
+        dialog.open_multiple(parent=self.window, callback=self._handle_samples_response)
+
+    def _handle_samples_response(self, dialog, response):
+        """Handle multiple audio files selection response"""
+        try:
+            files = dialog.open_multiple_finish(response)
+            if files and files.get_n_items() > 0:
+                # Convert to list of file objects
+                file_list = [files.get_item(i) for i in range(files.get_n_items())]
+                # Use existing multiple files handler
+                self.window.drag_drop_handler.handle_multiple_files_drop(
+                    file_list, None
+                )
+        except GLib.Error:
+            # User cancelled or error occurred
+            return

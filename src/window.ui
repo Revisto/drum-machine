@@ -220,6 +220,10 @@ audio-volume-medium-symbolic</property>
   <menu id="primary_menu">
     <section>
       <item>
+        <attribute name="label" translatable="yes">_Add Samples</attribute>
+        <attribute name="action">win.add_samples</attribute>
+      </item>
+      <item>
         <attribute name="label" translatable="yes">_Save Pattern</attribute>
         <attribute name="action">win.save_preset</attribute>
       </item>
