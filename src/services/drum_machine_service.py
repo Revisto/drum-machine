@@ -176,3 +176,17 @@ class DrumMachineService(IPlayer):
             self.update_total_beats()
             return result
         return None
+
+    def remove_drum_part(self, drum_id):
+        """Remove a drum part from the service"""
+        result = self.sound_service.drum_part_manager.remove_part(drum_id)
+        if result:
+            # Remove from drum machine state
+            self.drum_parts_state.pop(drum_id, None)
+            # Rebuild the UI to reflect the removal
+            self.window.drum_grid_builder.rebuild_drum_parts_column()
+            self.window.drum_grid_builder.rebuild_carousel()
+            # Update total beats in case pattern changed
+            self.update_total_beats()
+            return True
+        return False

@@ -22,6 +22,7 @@ import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Gdk, Adw, GLib
+from gettext import gettext as _
 from ..config.constants import GROUP_TOGGLE_COUNT
 
 
@@ -281,6 +282,89 @@ class DrumGridBuilder:
         except AttributeError:
             return True
 
+    def _setup_instrument_button_right_click(self, button, drum_part):
+        """Setup right-click gesture for instrument button to remove drum part"""
+        right_click_gesture = Gtk.GestureClick.new()
+        right_click_gesture.set_button(Gdk.BUTTON_SECONDARY)
+        right_click_gesture.connect(
+            "released", self._on_drum_part_button_right_clicked, drum_part.id
+        )
+        button.add_controller(right_click_gesture)
+
+    def _on_drum_part_button_right_clicked(self, gesture_click, n_press, x, y, drum_id):
+        """Handle right-click on instrument buttons to show context menu"""
+        self._show_drum_part_context_menu(gesture_click.get_widget(), drum_id)
+
+    def _show_drum_part_context_menu(self, button, drum_id):
+        """Show context menu for drum part button"""
+        popover = Gtk.Popover()
+        popover.set_parent(button)
+
+        menu_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
+
+        # Build menu items
+        can_remove = (
+            len(self.window.sound_service.drum_part_manager.get_all_parts()) > 1
+        )
+
+        menu_items = [
+            ("Preview", self._on_preview_clicked, True, None),
+            (
+                "Remove",
+                self._on_remove_clicked,
+                can_remove,
+                None if can_remove else _("Cannot remove the last drum part"),
+            ),
+        ]
+
+        # Create buttons
+        for label, callback, enabled, tooltip in menu_items:
+            btn = self._create_menu_button(
+                _(label), callback, drum_id, popover, enabled, tooltip
+            )
+            menu_box.append(btn)
+
+        popover.set_child(menu_box)
+        popover.popup()
+
+    def _create_menu_button(
+        self, label, callback, drum_id, popover, enabled=True, tooltip=None
+    ):
+        """Create a menu button with consistent styling"""
+        btn = Gtk.Button(label=label)
+        btn.add_css_class("flat")
+        btn.set_sensitive(enabled)
+
+        if enabled:
+            btn.connect("clicked", callback, drum_id, popover)
+
+        if tooltip:
+            btn.set_tooltip_text(tooltip)
+
+        return btn
+
+    def _on_preview_clicked(self, button, drum_id, popover):
+        """Handle preview button click"""
+        self.window.drum_machine_service.preview_drum_part(drum_id)
+        popover.popdown()
+
+    def _on_remove_clicked(self, button, drum_id, popover):
+        """Handle remove button click"""
+        # Get drum part name before removing it
+        drum_part_manager = self.window.sound_service.drum_part_manager
+        drum_part = drum_part_manager.get_part_by_id(drum_id)
+        drum_name = drum_part.name if drum_part else drum_id
+
+        result = self.window.drum_machine_service.remove_drum_part(drum_id)
+        if result:
+            self.window.show_toast(_("Removed drum part: {}").format(drum_name))
+            # Mark as unsaved when removing drum parts
+            self.window.save_changes_service.mark_unsaved_changes(True)
+        else:
+            self.window.show_toast(_("Failed to remove drum part"))
+
+        popover.popdown()
+
     def _create_beat_grid_page(self, page_index):
         """Creates a single page containing a full set of instrument tracks."""
         page = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
@@ -334,6 +418,9 @@ class DrumGridBuilder:
                 "key-pressed", self._on_instrument_button_key_pressed, drum_part.id
             )
             button.add_controller(key_controller)
+
+            # Add right-click gesture for removing drum parts
+            self._setup_instrument_button_right_click(button, drum_part)
 
             setattr(self.window, f"{drum_part.id}_instrument_button", button)
 
