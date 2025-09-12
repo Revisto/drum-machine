@@ -48,10 +48,10 @@ class AudioExportDialog(Adw.Dialog):
     cover_row = Gtk.Template.Child()
     cover_button = Gtk.Template.Child()
 
-    def __init__(self, parent_window, audio_export_service, drum_parts_state, bpm):
+    def __init__(self, window, audio_export_service, drum_parts_state, bpm):
         super().__init__()
 
-        self.parent_window = parent_window
+        self.window = window
         self.audio_export_service = audio_export_service
         self.drum_parts_state = drum_parts_state
         self.bpm = bpm
@@ -134,7 +134,7 @@ class AudioExportDialog(Adw.Dialog):
         dialog.set_title(_("Select Cover Art"))
         dialog.set_filters(filefilters)
 
-        dialog.open(parent=self.parent_window, callback=self._on_cover_selected)
+        dialog.open(parent=self.window, callback=self._on_cover_selected)
 
     def _on_cover_selected(self, dialog, result):
         """Handle cover art file selection result"""
@@ -149,7 +149,7 @@ class AudioExportDialog(Adw.Dialog):
         """Handle export button click"""
         selected_format = self.format_row.get_selected()
         dialog = self._create_file_dialog_with_format(selected_format)
-        dialog.save(parent=self.parent_window, callback=self._on_file_selected)
+        dialog.save(parent=self.window, callback=self._on_file_selected)
 
     def _on_file_selected(self, dialog, result):
         """Handle file selection from save dialog"""
@@ -187,20 +187,20 @@ class AudioExportDialog(Adw.Dialog):
     def _on_export_complete(self, success, filename):
         """Handle export completion"""
         if success:
-            self.parent_window.show_toast(
+            self.window.show_toast(
                 _("Audio exported to {}").format(os.path.basename(filename)),
                 open_file=True,
                 file_path=filename,
             )
         else:
-            self.parent_window.show_toast(_("Export failed"))
+            self.window.show_toast(_("Export failed"))
 
         self.close()
 
     def _on_cancel_clicked(self, button):
         """Handle cancel button click"""
         self.export_task.cancel_export()
-        self.parent_window.show_toast(_("Export cancelled successfully"))
+        self.window.show_toast(_("Export cancelled successfully"))
         self.close()
 
     def _on_dialog_closed(self, dialog):
