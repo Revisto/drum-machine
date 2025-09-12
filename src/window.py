@@ -243,7 +243,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         return True
 
     def _save_and_close(self):
-        self.file_dialog_handler._show_save_dialog(lambda: self.cleanup_and_destroy())
+        self.file_dialog_handler._show_save_dialog(lambda: self.cleanup_and_destroy())  # pylint: disable=protected-access
 
     def cleanup(self):
         """Stop playback and cleanup resources"""
@@ -283,10 +283,45 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         file_path = parameter.get_string()
         Gio.AppInfo.launch_default_for_uri(f"file://{file_path}", None)
 
-    def on_custom_sound_added(self, new_part, name):
-        """Handle when a custom sound is added via drag and drop"""
-        # Reload sounds and add the new drum part
-        self.sound_service.reload_sounds()
-        self.drum_machine_service.add_drum_part_state(new_part.id)
-        self.drum_grid_builder.add_drum_part(new_part)
-        self.show_toast(f"Added custom sound: {name}")
+    def add_new_drum_part(self, file_path, name):
+        """Add a new drum part"""
+        result = self.drum_machine_service.add_new_drum_part(file_path, name)
+        if result:
+            self.show_toast(f"Added custom sound: {name}")
+            return True
+        else:
+            self.show_toast("Failed to add custom sound")
+            return False
+
+    def replace_drum_part(self, drum_id, file_path, name):
+        """Replace an existing drum part"""
+        result = self.drum_machine_service.replace_drum_part(drum_id, file_path, name)
+        if result:
+            self.show_toast(f"Replaced drum with: {name}")
+            # Update button state to reflect new file availability
+            self.drum_grid_builder.update_drum_button(drum_id)
+            return True
+        else:
+            self.show_toast("Failed to replace drum sound")
+            return False
+
+    def _rebuild_drum_parts_column(self):
+        """Rebuild the drum parts column to reflect current drum parts"""
+        try:
+            # Get the current drum parts column
+            drum_parts_column = self.drum_grid_builder.drum_parts_column
+            if not drum_parts_column:
+                return
+            
+            # Clear existing children
+            while drum_parts_column.get_first_child():
+                drum_parts_column.remove(drum_parts_column.get_first_child())
+            
+            # Rebuild with current drum parts
+            drum_part_manager = self.sound_service.get_drum_part_manager()
+            for drum_part in drum_part_manager.get_all_parts():
+                instrument_button = self.drum_grid_builder.create_instrument_button(drum_part)
+                drum_parts_column.append(instrument_button)
+                
+        except Exception as e:
+            print(f"Error rebuilding drum parts column: {e}")

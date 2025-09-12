@@ -72,7 +72,7 @@ class DrumMachineService(IPlayer):
         max_beat = 0
         for part_state in self.drum_parts_state.values():
             if part_state:  # Check if the instrument has any active toggles
-                max_beat = max(max_beat, max(part_state.keys()))
+                max_beat = max(max_beat, *part_state.keys())
 
         # If the pattern is completely empty, default to one page.
         if max_beat == 0 and not any(self.drum_parts_state.values()):
@@ -146,3 +146,31 @@ class DrumMachineService(IPlayer):
     def add_drum_part_state(self, part_id):
         """Add a new drum part to the state"""
         self.drum_parts_state[part_id] = {}
+
+    def add_new_drum_part(self, file_path, name):
+        """Add a new drum part from an audio file"""
+        drum_part_manager = self.sound_service.get_drum_part_manager()
+        new_part = drum_part_manager.add_custom_part(name, file_path)
+        if new_part:
+            # Reload sounds
+            self.sound_service.reload_sounds()
+            # Add to drum machine state
+            self.add_drum_part_state(new_part.id)
+            # Update UI
+            self.window.drum_grid_builder.add_drum_part(new_part)
+            return new_part
+        return None
+
+    def replace_drum_part(self, drum_id, file_path, name):
+        """Replace an existing drum part with a new audio file"""
+        drum_part_manager = self.sound_service.get_drum_part_manager()
+        result = drum_part_manager.replace_part(drum_id, file_path, name)
+        if result:
+            # Reload the specific sound for this drum part
+            self.sound_service.reload_specific_sound(drum_id)
+            # Update UI button label
+            self.window.drum_grid_builder.update_drum_button(drum_id)
+            # Update total beats in case pattern changed
+            self.update_total_beats()
+            return result
+        return None

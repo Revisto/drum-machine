@@ -24,69 +24,130 @@ from gi.repository import Gtk, Gdk, Gio
 class DragDropHandler:
     def __init__(self, window):
         self.window = window
-        self.supported_formats = {".wav", ".mp3", ".ogg", ".flac", ".aiff", ".aif"}
+        self.supported_formats = {".wav", ".mp3", ".ogg", ".flac"}
+        self.new_drum_placeholder = None
 
     def setup_drag_drop(self, target_widget=None):
         if target_widget is None:
             target_widget = self.window
 
-        # Create drop target for file drops
+        # Create drop target for file drops on window (for general drag detection)
         drop_target = Gtk.DropTarget.new(Gio.File, Gdk.DragAction.COPY)
-        drop_target.connect("drop", self._on_drop)
+        drop_target.connect("drop", self._on_window_drop)
         drop_target.connect("enter", self._on_drag_enter)
         drop_target.connect("leave", self._on_drag_leave)
 
         target_widget.add_controller(drop_target)
-
         return drop_target
 
-    def _on_drag_enter(self, drop_target, x, y):
+    def setup_button_drop_target(self, button, drum_id=None):
+        """Setup drop target on individual drum button for replacement"""
+        drop_target = Gtk.DropTarget.new(Gio.File, Gdk.DragAction.COPY)
+        drop_target.connect("drop", self._on_button_drop, drum_id)
+        drop_target.connect("enter", self._on_button_drag_enter, button)
+        drop_target.connect("leave", self._on_button_drag_leave, button)
+        button.add_controller(drop_target)
+
+    def _on_drag_enter(self, _drop_target, _x, _y):
         self.window.add_css_class("drag-hover")
+        self.new_drum_placeholder = self.window.drum_grid_builder.create_new_drum_placeholder()
         return Gdk.DragAction.COPY
 
-    def _on_drag_leave(self, drop_target):
-        self.window.remove_css_class("drag-hover")
+    def _on_button_drag_enter(self, _drop_target, _x, _y, button):
+        """Handle drag enter on drum button - highlight for replacement"""
+        button.add_css_class("drag-over-replace")
+        return Gdk.DragAction.COPY
 
-    def _on_drop(self, drop_target, value, x, y):
-        self.window.remove_css_class("drag-hover")
+    def _on_button_drag_leave(self, _drop_target, button):
+        """Handle drag leave on drum button - remove highlight"""
+        button.remove_css_class("drag-over-replace")
 
+    def _on_drag_leave(self, _drop_target):
+        self._clear_drag_feedback()
+
+    def _on_window_drop(self, _drop_target, value, _x, _y):
+        """Handle drop on window - add new drum"""
+        self._clear_drag_feedback()
         if not isinstance(value, Gio.File):
             return False
-
         file_path = value.get_path()
         if not file_path:
             return False
+        return self._handle_file_drop(file_path, None)  # None = add new
 
-        return self._handle_file_drop(file_path)
+    def _on_button_drop(self, _drop_target, value, _x, _y, drum_id):
+        """Handle drop on drum button - replace drum"""
+        if not isinstance(value, Gio.File):
+            return False
+        file_path = value.get_path()
+        if not file_path:
+            return False
+        return self._handle_file_drop(file_path, drum_id)  # drum_id = replace
 
-    def _handle_file_drop(self, file_path):
+    def _validate_file_format(self, path):
+        """Validate file format is supported"""
+        if path.suffix.lower() not in self.supported_formats:
+            self.window.show_toast("Not a supported audio file")
+            return False
+        return True
+
+    def _validate_file_access(self, path):
+        """Validate file exists, is accessible, and reasonable size"""
+        if not path.exists():
+            self.window.show_toast("File not found")
+            return False
+        
+        if not path.is_file():
+            self.window.show_toast("Selected item is not a file")
+            return False
+
+        file_size_mb = path.stat().st_size / (1024 * 1024)
+        if file_size_mb > 50:
+            self.window.show_toast(f"File too large: {file_size_mb:.1f}MB (max 50MB)")
+            return False
+        
+        return True
+
+    def _extract_name_from_path(self, path):
+        """Extract display name from file path"""
+        name = path.stem.replace("_", " ").replace("-", " ").title()
+        return name if name.strip() else "Custom Sound"
+
+    def _handle_file_drop(self, file_path, drum_id):
+        """Handle file drop - validate file and delegate to window methods"""
         try:
             path = Path(file_path)
-
-            # Check if it's a supported audio format
-            if path.suffix.lower() not in self.supported_formats:
-                self.window.show_toast(f"Unsupported file format: {path.suffix}")
+            
+            if not self._validate_file_format(path):
+                return False
+            
+            if not self._validate_file_access(path):
                 return False
 
-            # Check if file exists and is readable
-            if not path.exists() or not path.is_file():
-                self.window.show_toast("File not found or not accessible")
-                return False
+            name = self._extract_name_from_path(path)
 
-            # Extract name from filename
-            name = path.stem.replace("_", " ").replace("-", " ").title()
+            if drum_id:
+                return self.window.replace_drum_part(drum_id, str(path), name)
+            else:
+                return self.window.add_new_drum_part(str(path), name)
 
-            # Add the sound
-            drum_part_manager = self.window.sound_service.get_drum_part_manager()
-            new_part = drum_part_manager.add_custom_part(name, str(path))
-
-            if new_part:
-                self.window.on_custom_sound_added(new_part, name)
-            elif not new_part:
-                self.window.show_toast("Failed to add custom sound")
-
-            return True
-
+        except PermissionError:
+            self.window.show_toast("Permission denied accessing file")
+            return False
+        except OSError as e:
+            self.window.show_toast(f"File system error: {str(e)}")
+            return False
         except Exception as e:
             self.window.show_toast(f"Error processing file: {str(e)}")
             return False
+
+
+
+    def _clear_drag_feedback(self):
+        """Clear all drag feedback visuals"""
+        self.window.remove_css_class("drag-hover")
+        
+        # Remove placeholder
+        if self.new_drum_placeholder:
+            self.window.drum_grid_builder.remove_new_drum_placeholder(self.new_drum_placeholder)
+            self.new_drum_placeholder = None

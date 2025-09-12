@@ -313,39 +313,127 @@ class DrumGridBuilder:
 
         return instrument_container
 
-    def create_instrument_button(self, drum_part):
-        """Create the instrument preview button"""
+    def _create_drum_button(self, label, tooltip_text, clickable=True, drum_part=None):
+        """Create a drum button with consistent styling"""
+        button = Gtk.Button(label=label)
+        button.set_halign(Gtk.Align.START)
+        button.add_css_class("drum-part-button")
+        button.add_css_class("flat")
+        button.set_tooltip_text(tooltip_text)
+        button.set_has_tooltip(True)
+        
+        if not clickable:
+            button.set_sensitive(False)
+        
+        if drum_part and clickable:
+            button.connect(
+                "clicked", self.window.on_drum_part_button_clicked, drum_part.id
+            )
+            
+            key_controller = Gtk.EventControllerKey.new()
+            key_controller.connect(
+                "key-pressed", self._on_instrument_button_key_pressed, drum_part.id
+            )
+            button.add_controller(key_controller)
+            
+            setattr(self.window, f"{drum_part.id}_instrument_button", button)
+            
+            # Setup drag and drop for replacement
+        
+        if drum_part:
+            self.window.drag_drop_handler.setup_button_drop_target(button, drum_part.id)
+        else:
+            self.window.drag_drop_handler.setup_button_drop_target(button)
+        return button
+
+    def _create_button_container(self, button):
+        """Create button container with consistent layout"""
         button_container = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         button_container.set_spacing(5)
+        button_container.append(button)
+        
+        spacer = Gtk.Label()
+        spacer.set_hexpand(True)
+        button_container.append(spacer)
+        
+        return button_container
 
+    def create_instrument_button(self, drum_part):
+        """Create the instrument preview button"""
+        # Calculate button content first
+        label, tooltip = self._get_button_content(drum_part)
+        
+        button = self._create_drum_button(
+            label,
+            tooltip,
+            clickable=True, 
+            drum_part=drum_part
+        )
+        
+        # Apply styling based on file availability
+        self._apply_button_styling(button, drum_part)
+        
+        return self._create_button_container(button)
+    
+    def _get_button_content(self, drum_part):
+        """Get the label and tooltip for a drum part button"""
         # Truncate long names to keep UI clean
         max_length = 8
         display_name = drum_part.name[:max_length - 3] + "..." if len(drum_part.name) > max_length else drum_part.name
         
-        instrument_button = Gtk.Button(label=display_name)
-        instrument_button.set_halign(Gtk.Align.START)
-        instrument_button.connect(
-            "clicked", self.window.on_drum_part_button_clicked, drum_part.id
-        )
-        instrument_button.add_css_class("drum-part-button")
-        instrument_button.add_css_class("flat")
-        instrument_button.set_tooltip_text(f"Click to Preview {drum_part.name}")
-        instrument_button.set_has_tooltip(True)
-
-        key_controller = Gtk.EventControllerKey.new()
-        key_controller.connect(
-            "key-pressed", self._on_instrument_button_key_pressed, drum_part.id
-        )
-        instrument_button.add_controller(key_controller)
-
-        setattr(self.window, f"{drum_part.id}_instrument_button", instrument_button)
-
-        button_container.append(instrument_button)
-        spacer = Gtk.Label()
-        spacer.set_hexpand(True)
-        button_container.append(spacer)
-
-        return button_container
+        # Check if the file is available
+        drum_part_manager = self.window.sound_service.get_drum_part_manager()
+        file_available = drum_part_manager.is_file_available(drum_part.id)
+        
+        # Create tooltip text based on file availability
+        if file_available:
+            tooltip_text = f"Click to Preview {drum_part.name}"
+        else:
+            tooltip_text = f"Missing file: {drum_part.file_path}"
+            
+        return display_name, tooltip_text
+    
+    def _apply_button_styling(self, button, drum_part):
+        """Apply styling to a button based on file availability"""
+        drum_part_manager = self.window.sound_service.get_drum_part_manager()
+        file_available = drum_part_manager.is_file_available(drum_part.id)
+        
+        if file_available:
+            button.remove_css_class("disabled")
+        else:
+            button.add_css_class("disabled")
+    
+    def update_button_content(self, button, drum_part):
+        """Update button content (label, tooltip, disabled state) for a drum part"""
+        label, tooltip = self._get_button_content(drum_part)
+        
+        button.set_label(label)
+        button.set_tooltip_text(tooltip)
+        self._apply_button_styling(button, drum_part)
+    
+    def update_drum_button(self, drum_id):
+        """Update an existing drum button's state"""
+        try:
+            # Get the drum part
+            drum_part_manager = self.window.sound_service.get_drum_part_manager()
+            drum_part = drum_part_manager.get_part_by_id(drum_id)
+            if not drum_part:
+                print(f"Drum part not found: {drum_id}")
+                return
+            
+            # Find and update the button
+            button_attr = f"{drum_id}_instrument_button"
+            if hasattr(self.window, button_attr):
+                button = getattr(self.window, button_attr)
+                # Use the shared logic
+                self.update_button_content(button, drum_part)
+            else:
+                # Button doesn't exist, rebuild the drum parts column
+                self.window._rebuild_drum_parts_column()
+        except Exception as e:
+            print(f"Error updating button state: {e}")
+            # Fallback: rebuild the drum parts column
+            self.window._rebuild_drum_parts_column()
 
     def create_beat_toggle_group(self, drum_part, group_index, page_index):
         """Create a group of beat toggles"""
@@ -411,3 +499,30 @@ class DrumGridBuilder:
                 page = self.window.carousel.get_nth_page(page_index)
                 drum_row = self.create_drum_row(drum_part.id, page_index)
                 page.append(drum_row)
+
+    def _create_placeholder_button_container(self):
+        """Create a placeholder button container that matches drum part button structure"""
+        placeholder_button = self._create_drum_button(
+            "+ New", 
+            "Drop audio files here to add new drum", 
+            clickable=True
+        )
+        return self._create_button_container(placeholder_button)
+
+    def create_new_drum_placeholder(self):
+        """Create the 'New Drum' placeholder at the end of the drum parts column"""
+        if not self.drum_parts_column:
+            return None
+        
+        placeholder_container = self._create_placeholder_button_container()
+        placeholder_container.add_css_class("new-drum-placeholder")
+        
+        self.drum_parts_column.append(placeholder_container)
+        
+        placeholder_container.queue_allocate()
+        return placeholder_container
+
+    def remove_new_drum_placeholder(self, placeholder):
+        """Remove the new drum placeholder from the drum parts column"""
+        if placeholder and self.drum_parts_column and placeholder.get_parent() == self.drum_parts_column:
+            self.drum_parts_column.remove(placeholder)

@@ -49,3 +49,27 @@
     padding-left: 6px;
     padding-right: 6px;
 }
+
+.disabled {
+    opacity: 0.5;
+}
+
+.drag-over-replace {
+    background-color: @accent_bg_color !important;
+    box-shadow: 0 0 15px @accent_bg_color !important;
+    border: 3px solid @accent_bg_color !important;
+    border-radius: 6px;
+}
+
+
+/* New drum placeholder - styled exactly like drum-part-button but with different opacity */
+.new-drum-placeholder button {
+    opacity: 0.6;
+    color: @accent_color;
+}
+
+.new-drum-placeholder.highlight button {
+    opacity: 1;
+    box-shadow: 0 0 10px @accent_color;
+    border: 2px solid @accent_color;
+}

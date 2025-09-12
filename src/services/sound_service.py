@@ -43,6 +43,13 @@ class SoundService(ISoundService):
         self.drum_part_manager._load_drum_parts()
         self.load_sounds()
 
+    def reload_specific_sound(self, part_id):
+        """Reload a specific sound after drum part replacement"""
+        self.drum_part_manager._load_drum_parts()
+        part = self.drum_part_manager.get_part_by_id(part_id)
+        if part:
+            self.sounds[part_id] = pygame.mixer.Sound(part.file_path)
+
     def play_sound(self, part_id):
         if part_id in self.sounds:
             self.sounds[part_id].play()
