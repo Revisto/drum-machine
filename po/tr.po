@@ -9,19 +9,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-04-02 18:12+0000\n"
-"PO-Revision-Date: 2025-04-06 08:00+0300\n"
-"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"POT-Creation-Date: 2025-09-10 11:54+0000\n"
+"PO-Revision-Date: 2025-09-06 14:19+0300\n"
+"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
-#: data/io.github.revisto.drum-machine.desktop.in:3
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
 msgid "Drum Machine"
 msgstr "Davul Makinesi"
 
@@ -36,10 +36,10 @@ msgid ""
 "interested in rhythm creation, this application provides a simple interface "
 "for drum pattern programming. Have fun!"
 msgstr ""
-"Davul Makinesi; davul örüntülerini oluşturmak, oynatmak ve yönetmek için çağdaş "
-"ve sezgisel uygulamadır. Müzisyenler, yapımcılar ve ritim oluşturmayla ilgilenenler "
-"için dört dörtlüktür, bu uygulama davul örüntüsü programlama için basit arayüz "
-"sağlar. İyi eğlenceler!"
+"Davul Makinesi; davul örüntülerini oluşturmak, oynatmak ve yönetmek için "
+"çağdaş ve sezgisel uygulamadır. Müzisyenler, yapımcılar ve ritim "
+"oluşturmayla ilgilenenler için dört dörtlüktür, bu uygulama davul örüntüsü "
+"programlama için basit arayüz sağlar. İyi eğlenceler!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
@@ -66,182 +66,352 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Bas davulu, trampet, hi-hat ve daha çoğunu içeren çoklu davul sesleri"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
+msgstr ""
+"WAV, FLAC, Ogg ve MP3 biçimlerini destekleyen ses dışa aktarma özelliği"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr "Sanatçı adı, şarkı adı ve kapak resmi gömmek için üst veri desteği"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "Tüm işlevlere hızlı erişim için klavye kısayolları"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "Açık Kipte Yüklenen Davul Örüntüsü"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Koyu Kipte Yüklenen Davul Örüntüsü"
 
+#: src/application.py:69
+msgid "translator-credits"
+msgstr ""
+"Sabri Ünal <yakushabb@gmail.com>\n"
+"Emin Tufan Çetin <etcetin@gmail.com>"
+
+#: src/config/export_formats.py:43
+msgid "MP3 files"
+msgstr "MP3 dosyaları"
+
+#: src/config/export_formats.py:44
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:50
+msgid "FLAC files"
+msgstr "FLAC dosyaları"
+
+#: src/config/export_formats.py:51
+msgid "FLAC (Lossless)"
+msgstr "FLAC (Kayıpsız)"
+
+#: src/config/export_formats.py:57
+msgid "Ogg files"
+msgstr "Ogg dosyaları"
+
+#: src/config/export_formats.py:58
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+#: src/config/export_formats.py:64
+msgid "WAV files"
+msgstr "WAV dosyaları"
+
+#: src/config/export_formats.py:65
+msgid "WAV (Uncompressed)"
+msgstr "WAV (Sıkıştırılmamış)"
+
+#: src/dialogs/audio_export_dialog.py:104
+msgid "Save Audio File"
+msgstr "Ses Dosyasını Kaydet"
+
+#: src/dialogs/audio_export_dialog.py:128
+msgid "Image files"
+msgstr "Görüntü dosyaları"
+
+#: src/dialogs/audio_export_dialog.py:134
+msgid "Select Cover Art"
+msgstr "Kapak Resmi Seç"
+
+#: src/dialogs/audio_export_dialog.py:191
+msgid "Audio exported to {}"
+msgstr "Ses {} konumuna dışa aktarıldı"
+
+#: src/dialogs/audio_export_dialog.py:196
+msgid "Export failed"
+msgstr "Dışa aktarılamadı"
+
+#: src/dialogs/audio_export_dialog.py:203
+msgid "Export cancelled successfully"
+msgstr "Dışa aktarma iptal edildi"
+
+#: src/handlers/file_dialog_handler.py:50
+msgid "Default Presets"
+msgstr "Ön Tanımlı Ön Ayarlar"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "No Pattern"
+msgstr "Örüntü Yok"
+
+#: src/handlers/file_dialog_handler.py:83
+msgid "Please create a drum pattern before exporting audio."
+msgstr "Sesi dışa aktarmadan önce davul örüntüsü oluşturun."
+
+#: src/handlers/file_dialog_handler.py:85
+msgid "_OK"
+msgstr "_Tamam"
+
+#: src/handlers/file_dialog_handler.py:107
+#: src/handlers/file_dialog_handler.py:173
+msgid "MIDI files"
+msgstr "MIDI dosyaları"
+
+#: src/handlers/file_dialog_handler.py:113
+msgid "Open MIDI File"
+msgstr "MIDI Dosyası Aç"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "Sırayı Kaydet"
+
+#: src/utils/export_progress.py:68
+msgid "Preparing..."
+msgstr "Hazırlanıyor..."
+
+#: src/utils/export_progress.py:69
+msgid "Initializing..."
+msgstr "Başlatılıyor..."
+
+#: src/utils/export_progress.py:71
+msgid "Rendering audio..."
+msgstr "Ses oluşturuluyor..."
+
+#: src/utils/export_progress.py:72
+msgid "Processing beats..."
+msgstr "Ritimler işleniyor..."
+
+#: src/utils/export_progress.py:74
+msgid "Saving file..."
+msgstr "Dosya kaydediliyor..."
+
+#: src/utils/export_progress.py:75
+msgid "Writing to disk..."
+msgstr "Diske yazılıyor..."
+
+#: src/utils/export_progress.py:77
+msgid "Exporting..."
+msgstr "Dışa aktarılıyor..."
+
+#: src/utils/export_progress.py:78
+msgid "Processing..."
+msgstr "İşleniyor..."
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:278
+#: src/window.py:198
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} Dakika Başına Vuruş (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:287
+#: src/window.py:207
 msgid "{:.0f}% Volume"
 msgstr "%{:.0f} Ses"
 
-#: src/window.py:298 src/window.ui:158
+#: src/window.py:222 src/window.ui:170
 msgid "Play"
 msgstr "Oynat"
 
-#: src/window.py:302
+#: src/window.py:226
 msgid "Pause"
 msgstr "Duraklat"
 
-#: src/window.py:317
-msgid "Default Presets"
-msgstr "Ön Tanımlı Ön Ayarlar"
-
-#: src/window.py:344
-msgid "MIDI files"
-msgstr "MIDI dosyaları"
-
-#: src/window.py:350
-msgid "Open MIDI File"
-msgstr "MIDI Dosyası Aç"
-
-#: src/window.ui:41
+#: src/window.py:264 src/window.ui:52
 msgid "Open"
 msgstr "Aç"
 
-#: src/window.ui:43 src/window.ui:46
+#: src/window.ui:54
 msgid "Open Preset"
 msgstr "Ön Ayar Aç"
 
-#: src/window.ui:47
+#: src/window.ui:57
+msgctxt "accessibility"
+msgid "Open Preset"
+msgstr "Ön Ayar Aç"
+
+#: src/window.ui:58
 msgid "Open Saved Drum Pattern Preset"
 msgstr "Kaydedilmiş Davul Örüntüsü Ön Ayarını Aç"
 
-#: src/window.ui:65 src/window.ui:67
+#: src/window.ui:76
 msgid "Main Menu"
 msgstr "Ana Menü"
 
-#: src/window.ui:68
+#: src/window.ui:78
+msgctxt "accessibility"
+msgid "Main Menu"
+msgstr "Ana Menü"
+
+#: src/window.ui:79
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Klavye Kısayollarına ve Uygulama Bilgilerine Eriş"
 
-#: src/window.ui:75 src/window.ui:77
-msgid "Save Drum Pattern"
-msgstr "Davul Örüntüsünü Kaydet"
+#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6
+#: src/gtk/audio-export-dialog.blp:96
+msgid "Export Audio"
+msgstr "Sesi Dışa Aktar"
 
-#: src/window.ui:78
-msgid "Save Current Drum Pattern as a Preset File"
-msgstr "Geçerli Davul Örüntüsünü Ön Ayar Dosyası Olarak Kaydet"
+#: src/window.ui:88
+msgctxt "accessibility"
+msgid "Export Audio"
+msgstr "Sesi Dışa Aktar"
 
-#: src/window.ui:122
+#: src/window.ui:89
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "Geçerli Davul Örüntüsünü Ses Dosyası Olarak Dışa Aktar"
+
+#: src/window.ui:134
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:127 src/window.ui:131
+#: src/window.ui:139 src/window.ui:143
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Tempoyu Dakika Başına Vuruş (BPM) Olarak Ayarla"
 
-#: src/window.ui:130
+#: src/window.ui:142
 msgid "Tempo"
 msgstr "Tempo"
 
-#: src/window.ui:172
+#: src/window.ui:184
 msgid "Adjust Volume"
 msgstr "Sesi Ayarla"
 
-#: src/window.ui:195
+#: src/window.ui:207
 msgid "Reset"
 msgstr "Sıfırla"
 
-#: src/window.ui:196
+#: src/window.ui:208
 msgid "Reset the Drum Sequence"
 msgstr "Davul Sırasını Sıfırla"
 
-#: src/window.ui:209
+#: src/window.ui:223
+msgid "_Save Pattern"
+msgstr "Örüntüsüyü _Kaydet"
+
+#: src/window.ui:229
 msgid "_Keyboard Shortcuts"
 msgstr "_Klavye Kısayolları"
 
-#: src/window.ui:213
+#: src/window.ui:233
 msgid "_About Drum Machine"
 msgstr "Davul Makinesi _Hakkında"
 
-#: src/gtk/help-overlay.ui:11
+#: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Genel"
 
-#: src/gtk/help-overlay.ui:14
+#: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Kısayolları Göster"
 
-#: src/gtk/help-overlay.ui:20
+#: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Çık"
 
-#: src/gtk/help-overlay.ui:29
+#: src/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Playback Controls"
 msgstr "Oynatma Denetimleri"
 
-#: src/gtk/help-overlay.ui:32
+#: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr "Oynat/Duraklat"
 
-#: src/gtk/help-overlay.ui:39
+#: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "Tümünü Temizle"
 
-#: src/gtk/help-overlay.ui:48
+#: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
 msgid "BPM & Volume Controls"
 msgstr "BPM ve Ses Denetimleri"
 
-#: src/gtk/help-overlay.ui:51
+#: src/gtk/help-overlay.blp:45
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "BPM Artır"
 
-#: src/gtk/help-overlay.ui:58
+#: src/gtk/help-overlay.blp:51
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "BPM Azalt"
 
-#: src/gtk/help-overlay.ui:65
+#: src/gtk/help-overlay.blp:57
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "Sesi Artır"
 
-#: src/gtk/help-overlay.ui:72
+#: src/gtk/help-overlay.blp:63
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Sesi Azalt"
 
-#: src/gtk/help-overlay.ui:81
+#: src/gtk/help-overlay.blp:69
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "Sesi Kapat"
+
+#: src/gtk/help-overlay.blp:76
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr "Ön Ayar Yönetimi"
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.blp:79
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr "Ön Ayarı Yükle"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.blp:85
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "Ön Ayarı Kaydet"
 
-#: src/gtk/save_changes_dialog.ui:6
+#: src/gtk/help-overlay.blp:91
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "Sesi Dışa Aktar"
+
+#: src/gtk/help-overlay.blp:98
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "Gezinti"
+
+#: src/gtk/help-overlay.blp:101
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr "Enstrümana Git"
+
+#: src/gtk/help-overlay.blp:107
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr "Önceki Sayfa"
+
+#: src/gtk/help-overlay.blp:113
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr "Sonraki Sayfa"
+
+#: src/gtk/save-changes-dialog.blp:5
 msgid "Save Changes?"
 msgstr "Değişiklikler Kaydedilsin Mi?"
 
-#: src/gtk/save_changes_dialog.ui:7
+#: src/gtk/save-changes-dialog.blp:6
 msgid ""
 "Current preset contains unsaved changes. Changes which are not saved will be "
 "permanently lost."
@@ -249,17 +419,68 @@ msgstr ""
 "Şimdiki ön ayar kaydedilmemiş değişiklikler içeriyor. Kaydedilmemiş "
 "değişiklikler kalıcı olarak yitecek."
 
-#. Cancel the operation
-#: src/gtk/save_changes_dialog.ui:14
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14
 msgid "_Cancel"
 msgstr "İ_ptal"
 
-#. Discard all changes
-#: src/gtk/save_changes_dialog.ui:15
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
 msgid "_Discard"
 msgstr "_Gözden Çıkar"
 
-#. Save current changes
-#: src/gtk/save_changes_dialog.ui:16
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
 msgid "_Save"
 msgstr "_Kaydet"
+
+#: src/gtk/audio-export-dialog.blp:39
+msgid "Audio Format"
+msgstr "Ses Biçimi"
+
+#: src/gtk/audio-export-dialog.blp:45
+msgid "Repeat Count"
+msgstr "Yineleme Sayısı"
+
+#: src/gtk/audio-export-dialog.blp:46
+msgid "How many times to repeat the pattern"
+msgstr "Örüntünün yinelenme sayısı"
+
+#: src/gtk/audio-export-dialog.blp:59
+msgid "Metadata"
+msgstr "Üst Veri"
+
+#: src/gtk/audio-export-dialog.blp:62
+msgid "Artist Name"
+msgstr "Sanatçı Adı"
+
+#: src/gtk/audio-export-dialog.blp:67
+msgid "Song Name"
+msgstr "Şarkı Adı"
+
+#: src/gtk/audio-export-dialog.blp:72
+msgid "Cover Art"
+msgstr "Kapak Resmi"
+
+#: src/gtk/audio-export-dialog.blp:76
+msgid "Choose File"
+msgstr "Dosya Seç"
+
+#: src/gtk/audio-export-dialog.blp:105
+msgid "Cancel Export"
+msgstr "Dışa Aktarmayı İptal Et"
+
+#~ msgid "Export Settings"
+#~ msgstr "Dışa Aktarma Ayarları"
+
+#~ msgid "Configure your audio export options"
+#~ msgstr "Ses dışa aktarma seçeneklerini yapılandır"
+
+#~ msgid "Select the output audio format"
+#~ msgstr "Çıkış ses biçimini seç"
+
+#~ msgid "Add metadata to your exported audio"
+#~ msgstr "Dışa aktarılan sese üst veri ekle"
+
+#~ msgid "Select an image file for the cover art"
+#~ msgstr "Kapak resmi için görüntü dosyası seç"
