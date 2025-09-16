@@ -6,6 +6,7 @@ src/config/export_formats.py
 src/dialogs/audio_export_dialog.py
 src/handlers/file_dialog_handler.py
 src/utils/export_progress.py
+src/ui/drum_grid_builder.py
 src/window.py
 src/window.ui
 src/gtk/help-overlay.blp

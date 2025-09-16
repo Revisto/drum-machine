@@ -308,19 +308,19 @@ class DrumGridBuilder:
         )
 
         menu_items = [
-            ("Preview", self._on_preview_clicked, True, None),
+            (_("Preview"), self._on_preview_clicked, True, None),
             (
-                "Remove",
+                _("Remove"),
                 self._on_remove_clicked,
                 can_remove,
-                None if can_remove else _("Cannot remove the last drum part"),
+                None if can_remove else _("At least one drum part must remain")
             ),
         ]
 
         # Create buttons
         for label, callback, enabled, tooltip in menu_items:
             btn = self._create_menu_button(
-                _(label), callback, drum_id, popover, enabled, tooltip
+                label, callback, drum_id, popover, enabled, tooltip
             )
             menu_box.append(btn)
 
