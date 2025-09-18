@@ -100,10 +100,13 @@ class AudioExportDialog(Adw.Dialog):
         filefilters = Gio.ListStore.new(Gtk.FileFilter)
         filefilters.append(file_filter)
 
+        title = self.metadata_manager.get_title()
+        initial_name = (title or self.suggested_filename) + info.ext
+
         dialog = Gtk.FileDialog.new()
         dialog.set_title(_("Save Audio File"))
         dialog.set_filters(filefilters)
-        dialog.set_initial_name(self.suggested_filename + info.ext)
+        dialog.set_initial_name(initial_name)
 
         return dialog
 
@@ -233,9 +236,13 @@ class ExportMetadata:
         """Get the current metadata as a dictionary"""
         return {
             "artist": self.artist_row.get_text().strip() or None,
-            "title": self.song_row.get_text().strip() or None,
+            "title": self.get_title(),
             "cover_art": self.cover_art_path,
         }
+
+    def get_title(self):
+        """Get the song title"""
+        return self.song_row.get_text().strip() or None
 
     def set_cover_art(self, file_path):
         """Set the cover art path and update UI"""
