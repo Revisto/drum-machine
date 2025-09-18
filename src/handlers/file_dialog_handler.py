@@ -179,11 +179,13 @@ class FileDialogHandler:
         filefilters = Gio.ListStore.new(Gtk.FileFilter)
         filefilters.append(filefilter)
 
+        initial_name = f"{self.filename or 'new_sequence'}.mid"
+
         dialog = Gtk.FileDialog.new()
         dialog.set_title(_("Save Sequence"))
         dialog.set_filters(filefilters)
         dialog.set_modal(True)
-        dialog.set_initial_name("new_sequence.mid")
+        dialog.set_initial_name(initial_name)
 
         def save_callback(dialog, result):
             try:
