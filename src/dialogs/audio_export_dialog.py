@@ -48,14 +48,14 @@ class AudioExportDialog(Adw.Dialog):
     cover_row = Gtk.Template.Child()
     cover_button = Gtk.Template.Child()
 
-    def __init__(self, parent_window, audio_export_service, drum_parts_state, bpm):
+    def __init__(self, parent_window, audio_export_service, drum_parts_state, bpm, suggested_filename):
         super().__init__()
 
         self.parent_window = parent_window
         self.audio_export_service = audio_export_service
         self.drum_parts_state = drum_parts_state
         self.bpm = bpm
-        self.suggested_filename = "new_beat"
+        self.suggested_filename = "new_beat" if suggested_filename is None else suggested_filename
 
         # Initialize components
         self.metadata_manager = ExportMetadata(
