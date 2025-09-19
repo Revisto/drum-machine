@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-09-10 15:26+0000\n"
-"PO-Revision-Date: 2025-09-11 09:38+0800\n"
+"POT-Creation-Date: 2025-09-19 15:26+0000\n"
+"PO-Revision-Date: 2025-09-20 07:39+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -16,12 +16,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 48.0\n"
+"X-Generator: Gtranslator 49.0\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
 msgid "Drum Machine"
 msgstr "击鼓器"
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgstr ""
+"drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;击鼓;"
+"敲鼓;序列器;节奏;音乐;模式;方案;节拍;拍子;打击乐器;循环;律动;"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:7
 msgid "Create and play drum beats"
@@ -118,56 +125,56 @@ msgstr "WAV 文件"
 msgid "WAV (Uncompressed)"
 msgstr "WAV（未压缩）"
 
-#: src/dialogs/audio_export_dialog.py:104
+#: src/dialogs/audio_export_dialog.py:115
 msgid "Save Audio File"
 msgstr "保存音频文件"
 
-#: src/dialogs/audio_export_dialog.py:128
+#: src/dialogs/audio_export_dialog.py:139
 msgid "Image files"
 msgstr "图像文件"
 
-#: src/dialogs/audio_export_dialog.py:134
+#: src/dialogs/audio_export_dialog.py:145
 msgid "Select Cover Art"
 msgstr "选择封面"
 
-#: src/dialogs/audio_export_dialog.py:191
+#: src/dialogs/audio_export_dialog.py:202
 msgid "Audio exported to {}"
 msgstr "音频已导出至 {}"
 
-#: src/dialogs/audio_export_dialog.py:196
+#: src/dialogs/audio_export_dialog.py:207
 msgid "Export failed"
 msgstr "导出失败"
 
-#: src/dialogs/audio_export_dialog.py:203
+#: src/dialogs/audio_export_dialog.py:214
 msgid "Export cancelled successfully"
 msgstr "导出已成功取消"
 
-#: src/handlers/file_dialog_handler.py:50
+#: src/handlers/file_dialog_handler.py:51
 msgid "Default Presets"
 msgstr "默认预设"
 
-#: src/handlers/file_dialog_handler.py:82
+#: src/handlers/file_dialog_handler.py:83
 msgid "No Pattern"
 msgstr "无模式"
 
-#: src/handlers/file_dialog_handler.py:83
+#: src/handlers/file_dialog_handler.py:84
 msgid "Please create a drum pattern before exporting audio."
 msgstr "请在导出音频前创建击鼓模式。"
 
-#: src/handlers/file_dialog_handler.py:85
+#: src/handlers/file_dialog_handler.py:86
 msgid "_OK"
 msgstr "确定(_O)"
 
-#: src/handlers/file_dialog_handler.py:107
-#: src/handlers/file_dialog_handler.py:173
+#: src/handlers/file_dialog_handler.py:109
+#: src/handlers/file_dialog_handler.py:177
 msgid "MIDI files"
 msgstr "MIDI 文件"
 
-#: src/handlers/file_dialog_handler.py:113
+#: src/handlers/file_dialog_handler.py:115
 msgid "Open MIDI File"
 msgstr "打开 MIDI 文件"
 
-#: src/handlers/file_dialog_handler.py:179
+#: src/handlers/file_dialog_handler.py:185
 msgid "Save Sequence"
 msgstr "保存序列"
 
