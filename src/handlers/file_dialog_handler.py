@@ -207,4 +207,4 @@ class FileDialogHandler:
     def _get_filename_without_extension(self, file):
         """Extract filename without extension from Gio.File"""
         base_name = file.get_basename()
-        return ".".join(base_name.split(".")[:-1])
+        return os.path.splitext(base_name)[0]
