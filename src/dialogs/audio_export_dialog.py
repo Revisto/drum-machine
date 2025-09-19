@@ -48,14 +48,22 @@ class AudioExportDialog(Adw.Dialog):
     cover_row = Gtk.Template.Child()
     cover_button = Gtk.Template.Child()
 
-    def __init__(self, parent_window, audio_export_service, drum_parts_state, bpm):
+    def __init__(
+        self, parent_window,
+        audio_export_service,
+        drum_parts_state,
+        bpm,
+        suggested_filename
+    ):
         super().__init__()
 
         self.parent_window = parent_window
         self.audio_export_service = audio_export_service
         self.drum_parts_state = drum_parts_state
         self.bpm = bpm
-        self.suggested_filename = "new_beat"
+        self.suggested_filename = (
+            "new_beat" if suggested_filename is None else suggested_filename
+        )
 
         # Initialize components
         self.metadata_manager = ExportMetadata(
@@ -100,10 +108,13 @@ class AudioExportDialog(Adw.Dialog):
         filefilters = Gio.ListStore.new(Gtk.FileFilter)
         filefilters.append(file_filter)
 
+        title = self.metadata_manager.get_title()
+        initial_name = (title or self.suggested_filename) + info.ext
+
         dialog = Gtk.FileDialog.new()
         dialog.set_title(_("Save Audio File"))
         dialog.set_filters(filefilters)
-        dialog.set_initial_name(self.suggested_filename + info.ext)
+        dialog.set_initial_name(initial_name)
 
         return dialog
 
@@ -233,9 +244,13 @@ class ExportMetadata:
         """Get the current metadata as a dictionary"""
         return {
             "artist": self.artist_row.get_text().strip() or None,
-            "title": self.song_row.get_text().strip() or None,
+            "title": self.get_title(),
             "cover_art": self.cover_art_path,
         }
+
+    def get_title(self):
+        """Get the song title"""
+        return self.song_row.get_text().strip() or None
 
     def set_cover_art(self, file_path):
         """Set the cover art path and update UI"""

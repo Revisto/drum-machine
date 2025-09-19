@@ -34,6 +34,7 @@ class FileDialogHandler:
 
     def __init__(self, window):
         self.window = window
+        self.filename = None
 
     def setup_preset_menu(self):
         """Setup the preset menu with default presets"""
@@ -94,6 +95,7 @@ class FileDialogHandler:
             self.window.audio_export_service,
             self.window.drum_machine_service.drum_parts_state,
             self.window.drum_machine_service.bpm,
+            self.filename,
         )
         export_dialog.present(self.window)
 
@@ -129,6 +131,7 @@ class FileDialogHandler:
                 self.window.ui_helper.load_pattern_into_ui(
                     self.window.drum_machine_service.drum_parts_state
                 )
+                self.filename = self._get_filename_without_extension(file)
 
                 self.window.save_changes_service.mark_unsaved_changes(False)
         except GLib.Error:
@@ -163,6 +166,7 @@ class FileDialogHandler:
         self.window.ui_helper.load_pattern_into_ui(
             self.window.drum_machine_service.drum_parts_state
         )
+        self.filename = None
 
         self.window.save_changes_service.mark_unsaved_changes(False)
 
@@ -175,11 +179,13 @@ class FileDialogHandler:
         filefilters = Gio.ListStore.new(Gtk.FileFilter)
         filefilters.append(filefilter)
 
+        initial_name = f"{self.filename or 'new_sequence'}.mid"
+
         dialog = Gtk.FileDialog.new()
         dialog.set_title(_("Save Sequence"))
         dialog.set_filters(filefilters)
         dialog.set_modal(True)
-        dialog.set_initial_name("new_sequence.mid")
+        dialog.set_initial_name(initial_name)
 
         def save_callback(dialog, result):
             try:
@@ -190,9 +196,15 @@ class FileDialogHandler:
                         file_path += ".mid"
                     self.window.drum_machine_service.save_preset(file_path)
                     self.window.save_changes_service.mark_unsaved_changes(False)
+                    self.filename = self._get_filename_without_extension(file)
                     if after_save_callback:
                         after_save_callback()
             except GLib.Error:
                 return
 
         dialog.save(parent=self.window, callback=save_callback)
+
+    def _get_filename_without_extension(self, file):
+        """Extract filename without extension from Gio.File"""
+        base_name = file.get_basename()
+        return os.path.splitext(base_name)[0]
