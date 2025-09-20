@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-09-11 03:26+0000\n"
-"PO-Revision-Date: 2025-09-11 12:52+0200\n"
+"POT-Creation-Date: 2025-09-20 03:26+0000\n"
+"PO-Revision-Date: 2025-09-20 08:05+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
@@ -21,6 +21,11 @@ msgstr ""
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
 msgid "Drum Machine"
 msgstr "დრამ-მანქანა"
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgstr "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;ბარაბანი;"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:7
 msgid "Create and play drum beats"
@@ -121,56 +126,56 @@ msgstr "WAV ფაილები"
 msgid "WAV (Uncompressed)"
 msgstr "WAV (შეუკუმშავი)"
 
-#: src/dialogs/audio_export_dialog.py:104
+#: src/dialogs/audio_export_dialog.py:115
 msgid "Save Audio File"
 msgstr "აუდიოფაილის შენახვა"
 
-#: src/dialogs/audio_export_dialog.py:128
+#: src/dialogs/audio_export_dialog.py:139
 msgid "Image files"
 msgstr "გამოსახულების ფაილები"
 
-#: src/dialogs/audio_export_dialog.py:134
+#: src/dialogs/audio_export_dialog.py:145
 msgid "Select Cover Art"
 msgstr "აირჩიეთ ყდის სურათი"
 
-#: src/dialogs/audio_export_dialog.py:191
+#: src/dialogs/audio_export_dialog.py:202
 msgid "Audio exported to {}"
 msgstr "აუდიო გატანილია ფაილში {}"
 
-#: src/dialogs/audio_export_dialog.py:196
+#: src/dialogs/audio_export_dialog.py:207
 msgid "Export failed"
 msgstr "გატანის შეცდომა"
 
-#: src/dialogs/audio_export_dialog.py:203
+#: src/dialogs/audio_export_dialog.py:214
 msgid "Export cancelled successfully"
 msgstr "გატანა წარმატებით გაუქმდა"
 
-#: src/handlers/file_dialog_handler.py:50
+#: src/handlers/file_dialog_handler.py:51
 msgid "Default Presets"
 msgstr "ნაგულისხმევი პრესეტები"
 
-#: src/handlers/file_dialog_handler.py:82
+#: src/handlers/file_dialog_handler.py:83
 msgid "No Pattern"
 msgstr "შაბლონის გარეშე"
 
-#: src/handlers/file_dialog_handler.py:83
+#: src/handlers/file_dialog_handler.py:84
 msgid "Please create a drum pattern before exporting audio."
 msgstr "აირჩიეთ დრამის ნიმუში აუდიოს გატანამდე."
 
-#: src/handlers/file_dialog_handler.py:85
+#: src/handlers/file_dialog_handler.py:86
 msgid "_OK"
 msgstr "_დიახ"
 
-#: src/handlers/file_dialog_handler.py:107
-#: src/handlers/file_dialog_handler.py:173
+#: src/handlers/file_dialog_handler.py:109
+#: src/handlers/file_dialog_handler.py:177
 msgid "MIDI files"
 msgstr "MIDI ფაილები"
 
-#: src/handlers/file_dialog_handler.py:113
+#: src/handlers/file_dialog_handler.py:115
 msgid "Open MIDI File"
 msgstr "MIDI ფაილის გახსნა"
 
-#: src/handlers/file_dialog_handler.py:179
+#: src/handlers/file_dialog_handler.py:185
 msgid "Save Sequence"
 msgstr "მიმდევრობის შენახვა"
 
