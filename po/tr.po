@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-09-10 11:54+0000\n"
+"POT-Creation-Date: 2025-09-17 15:26+0000\n"
 "PO-Revision-Date: 2025-09-06 14:19+0300\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
@@ -469,18 +469,3 @@ msgstr "Dosya Seç"
 #: src/gtk/audio-export-dialog.blp:105
 msgid "Cancel Export"
 msgstr "Dışa Aktarmayı İptal Et"
-
-#~ msgid "Export Settings"
-#~ msgstr "Dışa Aktarma Ayarları"
-
-#~ msgid "Configure your audio export options"
-#~ msgstr "Ses dışa aktarma seçeneklerini yapılandır"
-
-#~ msgid "Select the output audio format"
-#~ msgstr "Çıkış ses biçimini seç"
-
-#~ msgid "Add metadata to your exported audio"
-#~ msgstr "Dışa aktarılan sese üst veri ekle"
-
-#~ msgid "Select an image file for the cover art"
-#~ msgstr "Kapak resmi için görüntü dosyası seç"
