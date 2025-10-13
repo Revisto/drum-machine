@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-09-18 03:26+0000\n"
-"PO-Revision-Date: 2025-09-18 14:18+0200\n"
+"POT-Creation-Date: 2025-10-12 15:26+0000\n"
+"PO-Revision-Date: 2025-10-12 19:36+0200\n"
 "Last-Translator: Julián Villodre <jvillodrede@gmail.com>\n"
 "Language-Team: es_ES\n"
 "Language: es_ES\n"
@@ -22,6 +22,11 @@ msgstr ""
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
 msgid "Drum Machine"
 msgstr "Drum Machine"
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgstr "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;batería;secuenciador;ritmo;música;patrón;percusión;bucle;"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:7
 msgid "Create and play drum beats"
@@ -124,56 +129,56 @@ msgstr "Archivos WAV"
 msgid "WAV (Uncompressed)"
 msgstr "WAV (sin comprimir)"
 
-#: src/dialogs/audio_export_dialog.py:104
+#: src/dialogs/audio_export_dialog.py:115
 msgid "Save Audio File"
 msgstr "Guardar archivo de sonido"
 
-#: src/dialogs/audio_export_dialog.py:128
+#: src/dialogs/audio_export_dialog.py:139
 msgid "Image files"
 msgstr "Archivos de imagen"
 
-#: src/dialogs/audio_export_dialog.py:134
+#: src/dialogs/audio_export_dialog.py:145
 msgid "Select Cover Art"
 msgstr "Seleccionar carátula"
 
-#: src/dialogs/audio_export_dialog.py:191
+#: src/dialogs/audio_export_dialog.py:202
 msgid "Audio exported to {}"
 msgstr "Se exportó el sonido a {}"
 
-#: src/dialogs/audio_export_dialog.py:196
+#: src/dialogs/audio_export_dialog.py:207
 msgid "Export failed"
 msgstr "Falló al exportar"
 
-#: src/dialogs/audio_export_dialog.py:203
+#: src/dialogs/audio_export_dialog.py:214
 msgid "Export cancelled successfully"
 msgstr "Se canceló con éxito la exportación"
 
-#: src/handlers/file_dialog_handler.py:50
+#: src/handlers/file_dialog_handler.py:51
 msgid "Default Presets"
 msgstr "Preajustes predeterminados"
 
-#: src/handlers/file_dialog_handler.py:82
+#: src/handlers/file_dialog_handler.py:83
 msgid "No Pattern"
 msgstr "Sin modelo de ritmo"
 
-#: src/handlers/file_dialog_handler.py:83
+#: src/handlers/file_dialog_handler.py:84
 msgid "Please create a drum pattern before exporting audio."
 msgstr "Cree un modelo de ritmo de batería antes de exportar el sonido."
 
-#: src/handlers/file_dialog_handler.py:85
+#: src/handlers/file_dialog_handler.py:86
 msgid "_OK"
 msgstr "_Aceptar"
 
-#: src/handlers/file_dialog_handler.py:107
-#: src/handlers/file_dialog_handler.py:173
+#: src/handlers/file_dialog_handler.py:109
+#: src/handlers/file_dialog_handler.py:177
 msgid "MIDI files"
 msgstr "Archivos MIDI"
 
-#: src/handlers/file_dialog_handler.py:113
+#: src/handlers/file_dialog_handler.py:115
 msgid "Open MIDI File"
 msgstr "Abrir archivo MIDI"
 
-#: src/handlers/file_dialog_handler.py:179
+#: src/handlers/file_dialog_handler.py:185
 msgid "Save Sequence"
 msgstr "Guardar secuencia"
 
