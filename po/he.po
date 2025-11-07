@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-02 15:26+0000\n"
-"PO-Revision-Date: 2025-08-02 23:57+0300\n"
+"POT-Creation-Date: 2025-08-15 03:26+0000\n"
+"PO-Revision-Date: 2025-08-15 14:39+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "Language: he\n"
@@ -74,6 +74,10 @@ msgstr "תבנית תיפוף טעונה במצב בהיר"
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "תבנית תיפוף טעונה במצב כהה"
 
+#: src/application.py:69
+msgid "translator-credits"
+msgstr "ירון שהרבני <sh.yaron@gmail.com>"
+
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:190
 msgid "{} Beats per Minute (BPM)"
@@ -96,7 +100,12 @@ msgstr "השהיה"
 msgid "Open"
 msgstr "פתיחה"
 
-#: src/window.ui:52 src/window.ui:55
+#: src/window.ui:52
+msgid "Open Preset"
+msgstr "פתיחת ערכה"
+
+#: src/window.ui:55
+msgctxt "accessibility"
 msgid "Open Preset"
 msgstr "פתיחת ערכה"
 
@@ -104,7 +113,12 @@ msgstr "פתיחת ערכה"
 msgid "Open Saved Drum Pattern Preset"
 msgstr "פתיחת ערכת תבנית תיפוף שמורה"
 
-#: src/window.ui:74 src/window.ui:76
+#: src/window.ui:74
+msgid "Main Menu"
+msgstr "תפריט ראשי"
+
+#: src/window.ui:76
+msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "תפריט ראשי"
 
@@ -112,7 +126,12 @@ msgstr "תפריט ראשי"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "גישה לקיצורי מקלדת ולפרטים על היישום"
 
-#: src/window.ui:84 src/window.ui:86
+#: src/window.ui:84
+msgid "Save Drum Pattern"
+msgstr "שמירת תבנית תיפוף"
+
+#: src/window.ui:86
+msgctxt "accessibility"
 msgid "Save Drum Pattern"
 msgstr "שמירת תבנית תיפוף"
 
@@ -207,37 +226,42 @@ msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "הנמכת עוצמת שמע"
 
-#: src/gtk/help-overlay.ui:81
+#: src/gtk/help-overlay.ui:79
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "השתקה"
+
+#: src/gtk/help-overlay.ui:88
 msgctxt "shortcut window"
 msgid "Preset Management"
 msgstr "ניהול ערכות"
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.ui:91
 msgctxt "shortcut window"
 msgid "Load Preset"
 msgstr "טעינת ערכה"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.ui:98
 msgctxt "shortcut window"
 msgid "Save Preset"
 msgstr "שמירת ערכה"
 
-#: src/gtk/help-overlay.ui:100
+#: src/gtk/help-overlay.ui:107
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "ניווט"
 
-#: src/gtk/help-overlay.ui:103
+#: src/gtk/help-overlay.ui:110
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "מעבר לכלי"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.ui:117
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "העמוד הקודם"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.ui:124
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "העמוד הבא"
