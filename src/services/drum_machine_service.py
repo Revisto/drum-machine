@@ -102,6 +102,11 @@ class DrumMachineService(IPlayer):
     def load_preset(self, file_path):
         self.ui_helper.deactivate_all_toggles_in_ui()
         self.drum_parts_state, self.bpm = self.preset_service.load_preset(file_path)
+
+        # Refresh UI to show new temporary parts
+        self.window.drum_grid_builder.rebuild_drum_parts_column()
+        self.window.drum_grid_builder.rebuild_carousel()
+        
         self.ui_helper.set_bpm_in_ui(self.bpm)
 
     def _play_drum_sequence(self):

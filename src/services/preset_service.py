@@ -25,35 +25,17 @@ class PresetService:
     def __init__(self, window):
         self.window = window
 
-    def _get_midi_note_for_part(self, part):
-        mapping = {
-            "default_kick": 36,
-            "default_kick-2": 35,
-            "default_kick-3": 34,
-            "default_snare": 38,
-            "default_snare-2": 37,
-            "default_hihat": 42,
-            "default_hihat-2": 44,
-            "default_clap": 39,
-            "default_tom": 41,
-            "default_crash": 49,
-        }
-        return mapping.get(part, 0)
+    def _get_midi_note_for_part(self, part_id):
+        """Get MIDI note ID for a drum part"""
+        drum_part = self.window.sound_service.drum_part_manager.get_part_by_id(part_id)
+        if drum_part and drum_part.midi_note_id is not None:
+            return drum_part.midi_note_id
+        return 0
 
-    def _get_part_for_midi_note(self, note):
-        mapping = {
-            36: "default_kick",
-            35: "default_kick-2",
-            34: "default_kick-3",
-            38: "default_snare",
-            37: "default_snare-2",
-            42: "default_hihat",
-            44: "default_hihat-2",
-            39: "default_clap",
-            41: "default_tom",
-            49: "default_crash",
-        }
-        return mapping.get(note, None)
+    def _get_part_id_for_midi_note(self, note):
+        """Get drum part ID for a MIDI note, creating a temporary part if needed"""
+        drum_part = self.window.sound_service.drum_part_manager.get_or_create_part_for_midi_note(note)
+        return drum_part.id
 
     def save_preset(self, file_path, drum_parts, bpm):
         mid = mido.MidiFile()
@@ -131,14 +113,18 @@ class PresetService:
                 if msg.type == "set_tempo":
                     bpm = mido.tempo2bpm(msg.tempo)
                 elif msg.type == "note_on" and msg.velocity > 0:
-                    part = self._get_part_for_midi_note(msg.note)
-                    if part is not None:
-                        # Convert absolute time in ticks back to a beat index
-                        # assuming 16th notes
-                        ticks_per_16th_note = ticks_per_beat / 4.0
-                        beat_index = int(
-                            round(absolute_time_in_ticks / ticks_per_16th_note)
-                        )
-                        drum_parts_state[part][beat_index] = True
+                    part_id = self._get_part_id_for_midi_note(msg.note)
+                    
+                    # Initialize part in state if not already present
+                    if part_id not in drum_parts_state:
+                        drum_parts_state[part_id] = {}
+                    
+                    # Convert absolute time in ticks back to a beat index
+                    # assuming 16th notes
+                    ticks_per_16th_note = ticks_per_beat / 4.0
+                    beat_index = int(
+                        round(absolute_time_in_ticks / ticks_per_16th_note)
+                    )
+                    drum_parts_state[part_id][beat_index] = True
 
         return drum_parts_state, bpm

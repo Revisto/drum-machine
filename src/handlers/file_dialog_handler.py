@@ -199,38 +199,61 @@ class FileDialogHandler:
 
     def handle_add_samples(self):
         """Handle adding multiple audio samples via file dialog"""
+        self.open_audio_file_chooser(
+            _("Add Audio Samples"),
+            self._handle_samples_response_callback,
+            multiple=True
+        )
+
+    def _handle_samples_response_callback(self, files, *args):
+        """Handle multiple audio files selection response"""
+        if files and len(files) > 0:
+            # Use existing multiple files handler
+            self.window.drag_drop_handler.handle_multiple_files_drop(
+                files, None
+            )
+
+    def open_audio_file_chooser(self, title, callback, *args, multiple=False):
+        """Open a file chooser for audio files
+        
+        Args:
+            title (str): Dialog title
+            callback (callable): Function to call with selected file(s)
+            *args: Additional arguments to pass to callback
+            multiple (bool): Whether to allow multiple file selection
+        """
         # Create file filter for supported audio formats
         audio_filter = Gtk.FileFilter.new()
         audio_filter.set_name(_("Audio files"))
-
-        # Add supported formats from drag drop handler
+        
+        # Add supported formats
         for fmt in SUPPORTED_INPUT_AUDIO_FORMATS:
             audio_filter.add_pattern(f"*{fmt}")
-
-        # Create filter list
+            
         filefilters = Gio.ListStore.new(Gtk.FileFilter)
         filefilters.append(audio_filter)
-
-        # Create and configure dialog
+        
         dialog = Gtk.FileDialog.new()
-        dialog.set_title(_("Add Audio Samples"))
+        dialog.set_title(title)
         dialog.set_filters(filefilters)
         dialog.set_modal(True)
-
-        # Open multiple selection dialog
-        dialog.open_multiple(parent=self.window, callback=self._handle_samples_response)
-
-    def _handle_samples_response(self, dialog, response):
-        """Handle multiple audio files selection response"""
-        try:
-            files = dialog.open_multiple_finish(response)
-            if files and files.get_n_items() > 0:
-                # Convert to list of file objects
-                file_list = [files.get_item(i) for i in range(files.get_n_items())]
-                # Use existing multiple files handler
-                self.window.drag_drop_handler.handle_multiple_files_drop(
-                    file_list, None
-                )
-        except GLib.Error:
-            # User cancelled or error occurred
-            return
+        
+        def internal_callback(dialog, result):
+            try:
+                if multiple:
+                    files = dialog.open_multiple_finish(result)
+                    if files and files.get_n_items() > 0:
+                        # Convert to list of Gio.File objects
+                        file_list = [files.get_item(i) for i in range(files.get_n_items())]
+                        callback(file_list, *args)
+                else:
+                    file = dialog.open_finish(result)
+                    if file:
+                        callback(file.get_path(), *args)
+            except GLib.Error:
+                return
+        
+        if multiple:
+            dialog.open_multiple(parent=self.window, callback=internal_callback)
+        else:
+            dialog.open(parent=self.window, callback=internal_callback)

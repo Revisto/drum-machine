@@ -24,6 +24,7 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Gdk, Adw, GLib
 from gettext import gettext as _
 from ..config.constants import GROUP_TOGGLE_COUNT
+from ..dialogs.midi_mapping_dialog import MidiMappingDialog
 
 
 class DrumGridBuilder:
@@ -309,16 +310,24 @@ class DrumGridBuilder:
 
         menu_items = [
             (_("Preview"), self._on_preview_clicked, True, None),
+            (_("Replace"), self._on_replace_clicked, True, _("Replace with new sound")),
             (
                 _("Remove"),
                 self._on_remove_clicked,
                 can_remove,
                 None if can_remove else _("At least one drum part must remain")
             ),
+            None,
+            (_("MIDI Map"), self._on_midi_mapping_clicked, True, _("Configure MIDI note for export")),
         ]
 
         # Create buttons
-        for label, callback, enabled, tooltip in menu_items:
+        for item in menu_items:
+            if item is None:
+                menu_box.append(Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL))
+                continue
+
+            label, callback, enabled, tooltip = item
             btn = self._create_menu_button(
                 label, callback, drum_id, popover, enabled, tooltip
             )
@@ -347,6 +356,53 @@ class DrumGridBuilder:
         """Handle preview button click"""
         self.window.drum_machine_service.preview_drum_part(drum_id)
         popover.popdown()
+
+    def _on_midi_mapping_clicked(self, button, drum_id, popover):
+        """Handle MIDI mapping button click"""
+        popover.popdown()
+        
+        drum_part_manager = self.window.sound_service.drum_part_manager
+        drum_part = drum_part_manager.get_part_by_id(drum_id)
+        
+        if not drum_part:
+            return
+
+        dialog = MidiMappingDialog(self.window, drum_part, self._on_midi_mapping_save)
+        dialog.present(self.window)
+
+    def _on_midi_mapping_save(self, drum_id, note):
+        """Callback for saving MIDI mapping"""
+        drum_part_manager = self.window.sound_service.drum_part_manager
+        if drum_part_manager.update_part_midi_note(drum_id, note):
+            self.window.show_toast(_("MIDI note updated"))
+            self.update_drum_button(drum_id)
+
+    def _on_replace_clicked(self, button, drum_id, popover):
+        """Handle replace button click"""
+        popover.popdown()
+        # Open file chooser
+        self.window.file_dialog_handler.open_audio_file_chooser(
+            _("Select New Sound"),
+            self._on_replacement_file_selected,
+            drum_id
+        )
+
+    def _on_replacement_file_selected(self, file_path, drum_id):
+        """Callback for when a replacement file is selected"""
+        if not file_path:
+            return
+            
+        # Pass None for name so it keeps existing name or derives from filename
+        result = self.window.drum_machine_service.replace_drum_part(
+            drum_id, file_path, None
+        )
+        
+        if result:
+            self.window.show_toast(_("Sound replaced"))
+            # Mark as unsaved
+            self.window.save_changes_service.mark_unsaved_changes(True)
+        else:
+            self.window.show_toast(_("Failed to replace sound"))
 
     def _on_remove_clicked(self, button, drum_id, popover):
         """Handle remove button click"""
@@ -467,6 +523,11 @@ class DrumGridBuilder:
             if len(drum_part.name) > max_length
             else drum_part.name
         )
+
+        # Handle temporary parts
+        if not drum_part.file_path:
+            tooltip_text = f"Temporary part: {drum_part.name} (MIDI Note {drum_part.midi_note_id})"
+            return display_name, tooltip_text
 
         # Check if the file is available
         drum_part_manager = self.window.sound_service.drum_part_manager

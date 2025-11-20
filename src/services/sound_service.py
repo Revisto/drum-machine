@@ -36,6 +36,10 @@ class SoundService(ISoundService):
         self.sounds = {}
         for part in self.drum_part_manager.get_all_parts():
             try:
+                # Skip temporary parts without file paths
+                if not part.file_path:
+                    continue
+                    
                 sound = pygame.mixer.Sound(part.file_path)
                 sound.set_volume(self._current_volume)
                 self.sounds[part.id] = sound

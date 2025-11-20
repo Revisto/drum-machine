@@ -27,19 +27,21 @@ class DrumPart:
     name: str
     file_path: str
     is_custom: bool = False
+    midi_note_id: int = None
 
     @classmethod
-    def create_default(cls, name: str, file_path: str):
+    def create_default(cls, name: str, file_path: str, midi_note_id: int):
         return cls(
             id=f"default_{name}",
             name=name.replace("-", " ").title(),
             file_path=file_path,
             is_custom=False,
+            midi_note_id=midi_note_id,
         )
 
     @classmethod
-    def create_custom(cls, name: str, file_path: str):
-        return cls(id=str(uuid.uuid4()), name=name, file_path=file_path, is_custom=True)
+    def create_custom(cls, name: str, file_path: str, midi_note_id: int):
+        return cls(id=str(uuid.uuid4()), name=name, file_path=file_path, is_custom=True, midi_note_id=midi_note_id)
 
     def to_dict(self):
         return {
@@ -47,8 +49,11 @@ class DrumPart:
             "name": self.name,
             "file_path": self.file_path,
             "is_custom": self.is_custom,
+            "midi_note_id": self.midi_note_id,
         }
 
     @classmethod
     def from_dict(cls, data):
+        if "midi_note_id" not in data:
+            data["midi_note_id"] = None
         return cls(**data)

@@ -19,11 +19,26 @@
 
 import os
 import json
+import uuid
 from pathlib import Path
 from typing import List, Optional, Dict
 from gettext import gettext as _
 from ..models.drum_part import DrumPart
 from ..config.constants import DEFAULT_DRUM_PARTS, DRUM_PARTS_CONFIG_FILE
+
+# Default MIDI note mapping for default drum parts
+DEFAULT_MIDI_NOTES = {
+    "kick": 36,
+    "kick-2": 35,
+    "kick-3": 34,
+    "snare": 38,
+    "snare-2": 37,
+    "hihat": 42,
+    "hihat-2": 44,
+    "clap": 39,
+    "tom": 41,
+    "crash": 49,
+}
 
 
 class DrumPartManager:
@@ -64,6 +79,9 @@ class DrumPartManager:
                             # Load drum part regardless of file existence
                             drum_part = DrumPart.from_dict(part_data)
                             self._drum_parts.append(drum_part)
+                        
+                        # Assign MIDI note IDs to parts that don't have them (migration)
+                        self._assign_midi_note_ids()
             except Exception as e:
                 print(f"Error loading drum parts config: {e}")
                 # Fall back to defaults if config is corrupted
@@ -80,7 +98,8 @@ class DrumPartManager:
         for name in DEFAULT_DRUM_PARTS:
             file_path = os.path.join(self.drumkit_dir, f"{name}.wav")
             if os.path.exists(file_path):
-                drum_part = DrumPart.create_default(name, file_path)
+                midi_note_id = DEFAULT_MIDI_NOTES.get(name)
+                drum_part = DrumPart.create_default(name, file_path, midi_note_id)
                 self._drum_parts.append(drum_part)
 
     def _save_drum_parts(self):
@@ -121,6 +140,34 @@ class DrumPartManager:
     def get_parts_dict(self) -> Dict[str, DrumPart]:
         return {part.id: part for part in self._drum_parts}
 
+    def get_part_by_midi_note(self, midi_note: int) -> Optional[DrumPart]:
+        """Get a drum part by its MIDI note ID"""
+        for part in self._drum_parts:
+            if part.midi_note_id == midi_note:
+                return part
+        return None
+
+    def get_or_create_part_for_midi_note(self, midi_note: int) -> DrumPart:
+        """Get an existing drum part for a MIDI note, or create a temporary one if it doesn't exist"""
+        part = self.get_part_by_midi_note(midi_note)
+        if part:
+            return part
+        
+        # Create a temporary part for unknown MIDI note
+        temp_part = DrumPart(
+            id=str(uuid.uuid4()),
+            name=f"Note {midi_note}",
+            file_path="",
+            is_custom=True,
+            midi_note_id=midi_note
+        )
+        self._drum_parts.append(temp_part)
+        return temp_part
+
+    def add_temporary_part(self, drum_part: DrumPart):
+        """Add a temporary drum part (for Note X parts from presets)"""
+        self._drum_parts.append(drum_part)
+
     def add_custom_part(self, name: str, source_file: str) -> Optional[DrumPart]:
         """Add a new custom drum part from an audio file"""
         # Validate inputs
@@ -134,7 +181,8 @@ class DrumPartManager:
 
         try:
             # Create drum part directly with the source file path
-            drum_part = DrumPart.create_custom(name, source_file)
+            midi_note_id = self._get_next_available_midi_note()
+            drum_part = DrumPart.create_custom(name, source_file, midi_note_id)
             self._drum_parts.append(drum_part)
 
             # Save config
@@ -202,6 +250,16 @@ class DrumPartManager:
             print(f"Error updating drum part: {e}")
             return None
 
+    def update_part_midi_note(self, part_id: str, midi_note: int) -> bool:
+        """Update the MIDI note for a drum part"""
+        part = self.get_part_by_id(part_id)
+        if not part:
+            return False
+        
+        part.midi_note_id = midi_note
+        self._save_drum_parts()
+        return True
+
     def is_file_available(self, part_id: str) -> bool:
         """Check if a drum part's file is currently available"""
         part = self.get_part_by_id(part_id)
@@ -213,3 +271,37 @@ class DrumPartManager:
     def reload(self):
         """Public method to reload drum parts from configuration"""
         self._load_drum_parts()
+
+    def _get_next_available_midi_note(self) -> int:
+        """Get the next available MIDI note ID for custom parts"""
+        used_notes = set()
+        
+        # Collect all used MIDI note IDs
+        for part in self._drum_parts:
+            if part.midi_note_id is not None:
+                used_notes.add(part.midi_note_id)
+        
+        # Start from 35 (GM percussion range start) for better compatibility
+        # GM percussion standard is 35-81, but we check up to 127 for flexibility
+        for note in range(35, 128):
+            if note not in used_notes:
+                return note
+        
+        # If we run out of standard percussion notes, check lower range (0-34)
+        for note in range(0, 35):
+            if note not in used_notes:
+                return note
+        
+        return None
+
+    def _assign_midi_note_ids(self):
+        """Assign MIDI note IDs to parts that don't have them (migration)"""
+        for part in self._drum_parts:
+            if part.midi_note_id is None:
+                if part.is_custom:
+                    # Assign next available note for custom parts
+                    part.midi_note_id = self._get_next_available_midi_note()
+                else:
+                    # Assign default note for default parts
+                    part_name = part.id.replace("default_", "")
+                    part.midi_note_id = DEFAULT_MIDI_NOTES.get(part_name)
