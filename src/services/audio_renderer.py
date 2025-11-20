@@ -62,6 +62,14 @@ class AudioRenderer:
         self.samples = samples
         self.sample_rate = sample_rate
 
+    def update_samples(self, samples):
+        """Update the samples dictionary"""
+        self.samples = samples
+
+    def clear_samples(self):
+        """Clear all samples from memory"""
+        self.samples = {}
+
     def calculate_pattern_duration(
         self, drum_parts_state, bpm: int, repeat_count: int, total_beats: int
     ) -> float:
