@@ -242,7 +242,7 @@ class ExportMetadata:
         self.cover_art_path = file_path
         if file_path:
             filename = os.path.basename(file_path)
-            display_name = filename[:20] + "..." if len(filename) > 20 else filename
+            display_name = filename[:20] + "…" if len(filename) > 20 else filename
             self.cover_button.set_label(display_name)
 
     def set_sensitivity(self, sensitive: bool):

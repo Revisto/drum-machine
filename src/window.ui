@@ -49,7 +49,7 @@ half-view</setter>
               <object class="AdwHeaderBar" id="header_bar">
                 <child type="start">
                   <object class="AdwSplitButton" id="file_preset_button">
-                    <property name="label" translatable="yes">Open</property>
+                    <property name="label" translatable="yes">Open…</property>
                     <property name="use-underline">True</property>
                     <property name="tooltip-text" translatable="yes">Open Preset</property>
                     <property name="menu-model">preset_menu</property>
@@ -83,9 +83,9 @@ half-view</setter>
                 <child type="end">
                   <object class="GtkButton" id="export_audio_button">
                     <property name="icon-name">share-symbolic</property>
-                    <property name="tooltip-text" translatable="yes">Export Audio</property>
+                    <property name="tooltip-text" translatable="yes">Export Audio…</property>
                     <accessibility>
-                      <property name="label" translatable="yes" context="accessibility">Export Audio</property>
+                      <property name="label" translatable="yes" context="accessibility">Export Audio…</property>
                       <property name="description" translatable="yes">Export Current Drum Pattern as Audio File</property>
                     </accessibility>
                   </object>
@@ -220,11 +220,11 @@ audio-volume-medium-symbolic</property>
   <menu id="primary_menu">
     <section>
       <item>
-        <attribute name="label" translatable="yes">_Add Samples</attribute>
+        <attribute name="label" translatable="yes">_Add Samples…</attribute>
         <attribute name="action">win.add_samples</attribute>
       </item>
       <item>
-        <attribute name="label" translatable="yes">_Save Pattern</attribute>
+        <attribute name="label" translatable="yes">_Save Pattern…</attribute>
         <attribute name="action">win.save_preset</attribute>
       </item>
     </section>

@@ -65,17 +65,17 @@ class ExportProgressHandler:
             self.progress_bar.pulse()
 
             if phase == ExportPhase.PREPARING:
-                self.status_label.set_label(_("Preparing..."))
-                self.detail_label.set_label(_("Initializing..."))
+                self.status_label.set_label(_("Preparing…"))
+                self.detail_label.set_label(_("Initializing…"))
             elif phase == ExportPhase.RENDERING:
-                self.status_label.set_label(_("Rendering audio..."))
-                self.detail_label.set_label(_("Processing beats..."))
+                self.status_label.set_label(_("Rendering audio…"))
+                self.detail_label.set_label(_("Processing beats…"))
             elif phase == ExportPhase.SAVING:
-                self.status_label.set_label(_("Saving file..."))
-                self.detail_label.set_label(_("Writing to disk..."))
+                self.status_label.set_label(_("Saving file…"))
+                self.detail_label.set_label(_("Writing to disk…"))
             else:
-                self.status_label.set_label(_("Exporting..."))
-                self.detail_label.set_label(_("Processing..."))
+                self.status_label.set_label(_("Exporting…"))
+                self.detail_label.set_label(_("Processing…"))
 
         GLib.idle_add(update_ui)
 
