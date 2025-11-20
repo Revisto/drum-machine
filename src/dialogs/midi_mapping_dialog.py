@@ -73,32 +73,32 @@ class MidiMappingDialog(Adw.Dialog):
         super().__init__()
         self.drum_part = drum_part
         self.on_save_callback = on_save_callback
-        
+
         self.set_title(_("MIDI Mapping"))
         self.set_content_width(450)
-        
+
         # Toolbar View to hold HeaderBar + Content
         toolbar_view = Adw.ToolbarView()
         self.set_child(toolbar_view)
-        
+
         # Header Bar
         header_bar = Adw.HeaderBar()
         header_bar.set_show_title(True)
-        
+
         toolbar_view.add_top_bar(header_bar)
-        
+
         # Content Area - Match export dialog structure with margins
         scrolled = Gtk.ScrolledWindow()
         scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         scrolled.set_propagate_natural_height(True)
-        
+
         content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=24)
         content_box.set_margin_start(24)
         content_box.set_margin_end(24)
-        
+
         scrolled.set_child(content_box)
         toolbar_view.set_content(scrolled)
-        
+
         # Use PreferencesPage for nice grouping
         page = Adw.PreferencesPage()
         content_box.append(page)
@@ -106,14 +106,17 @@ class MidiMappingDialog(Adw.Dialog):
         # Group 1: Note Assignment
         note_group = Adw.PreferencesGroup(title=_("Note Assignment"))
         note_group.set_description(
-            _("Assign a MIDI note for '{}'. This ensures correct playback when exporting.").format(drum_part.name)
+            _(
+                "Assign a MIDI note for '{}'. "
+                "This ensures correct playback when exporting."
+            ).format(drum_part.name)
         )
         page.add(note_group)
 
         # Action Row for Note
         self.note_row = Adw.ActionRow(title=_("MIDI Note"))
         self.note_row.set_subtitle(_("The note number to trigger"))
-        
+
         # Spin Button for Note Number
         adjustment = Gtk.Adjustment(
             value=drum_part.midi_note_id or 36,
@@ -125,27 +128,29 @@ class MidiMappingDialog(Adw.Dialog):
         self.spin_button = Gtk.SpinButton(adjustment=adjustment)
         self.spin_button.set_valign(Gtk.Align.CENTER)
         self.spin_button.connect("value-changed", self._on_value_changed)
-        
+
         self.note_row.add_suffix(self.spin_button)
         note_group.add(self.note_row)
 
         # Group 2: Standard Instruments
         preset_group = Adw.PreferencesGroup(title=_("Standard Instruments"))
-        preset_group.set_description(_("Select a General MIDI instrument to automatically set the note."))
+        preset_group.set_description(
+            _("Select a General MIDI instrument to automatically set the note.")
+        )
         page.add(preset_group)
-        
+
         preset_row = Adw.ActionRow(title=_("Instrument Preset"))
-        
+
         # Dropdown for presets
         model = Gtk.StringList()
-        self.note_map = [] # List of (note, string_item)
-        
+        self.note_map = []  # List of (note, string_item)
+
         # Sort by note number
         sorted_map = sorted(GM_PERCUSSION_MAP.items())
-        
+
         current_note = int(adjustment.get_value())
         selected_idx = -1
-        
+
         idx = 0
         for note, name in sorted_map:
             display_str = f"{note} - {name}"
@@ -158,9 +163,9 @@ class MidiMappingDialog(Adw.Dialog):
         self.dropdown = Gtk.DropDown(model=model)
         self.dropdown.set_enable_search(True)
         self.dropdown.set_valign(Gtk.Align.CENTER)
-        
+
         self.dropdown.connect("notify::selected", self._on_preset_selected)
-        
+
         if selected_idx != -1:
             self.dropdown.set_selected(selected_idx)
         else:
@@ -168,7 +173,7 @@ class MidiMappingDialog(Adw.Dialog):
 
         preset_row.add_suffix(self.dropdown)
         preset_group.add(preset_row)
-        
+
         # Update subtitle of note row to match initial state
         self._update_gm_subtitle(int(adjustment.get_value()))
 
@@ -176,19 +181,19 @@ class MidiMappingDialog(Adw.Dialog):
         button_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
         button_box.set_halign(Gtk.Align.CENTER)
         button_box.set_margin_bottom(32)
-        
+
         save_btn = Gtk.Button(label=_("Save"))
         save_btn.add_css_class("pill")
         save_btn.add_css_class("suggested-action")
         save_btn.connect("clicked", self._on_save_clicked)
         button_box.append(save_btn)
-        
+
         toolbar_view.add_bottom_bar(button_box)
 
     def _on_value_changed(self, button):
         val = int(button.get_value())
         self._update_gm_subtitle(val)
-        
+
         # Update dropdown if matches
         found = False
         try:
@@ -199,13 +204,15 @@ class MidiMappingDialog(Adw.Dialog):
                 found = True
         except ValueError:
             pass
-        
+
         if not found:
             self.dropdown.set_selected(Gtk.INVALID_LIST_POSITION)
 
     def _on_preset_selected(self, dropdown, pspec):
         selected_idx = dropdown.get_selected()
-        if selected_idx != Gtk.INVALID_LIST_POSITION and selected_idx < len(self.note_map):
+        if selected_idx != Gtk.INVALID_LIST_POSITION and selected_idx < len(
+            self.note_map
+        ):
             note = self.note_map[selected_idx]
             if int(self.spin_button.get_value()) != note:
                 self.spin_button.set_value(note)

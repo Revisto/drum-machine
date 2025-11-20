@@ -41,7 +41,13 @@ class DrumPart:
 
     @classmethod
     def create_custom(cls, name: str, file_path: str, midi_note_id: int):
-        return cls(id=str(uuid.uuid4()), name=name, file_path=file_path, is_custom=True, midi_note_id=midi_note_id)
+        return cls(
+            id=str(uuid.uuid4()),
+            name=name,
+            file_path=file_path,
+            is_custom=True,
+            midi_note_id=midi_note_id,
+        )
 
     def to_dict(self):
         return {

@@ -310,15 +310,25 @@ class DrumGridBuilder:
 
         menu_items = [
             (_("Preview"), self._on_preview_clicked, True, None),
-            (_("Replace…"), self._on_replace_clicked, True, _("Replace with new sound")),
+            (
+                _("Replace…"),
+                self._on_replace_clicked,
+                True,
+                _("Replace with new sound"),
+            ),
             (
                 _("Remove"),
                 self._on_remove_clicked,
                 can_remove,
-                None if can_remove else _("At least one drum part must remain")
+                None if can_remove else _("At least one drum part must remain"),
             ),
             None,
-            (_("MIDI Mapping"), self._on_midi_mapping_clicked, True, _("Configure MIDI note for export")),
+            (
+                _("MIDI Mapping"),
+                self._on_midi_mapping_clicked,
+                True,
+                _("Configure MIDI note for export"),
+            ),
         ]
 
         # Create buttons
@@ -360,10 +370,10 @@ class DrumGridBuilder:
     def _on_midi_mapping_clicked(self, button, drum_id, popover):
         """Handle MIDI mapping button click"""
         popover.popdown()
-        
+
         drum_part_manager = self.window.sound_service.drum_part_manager
         drum_part = drum_part_manager.get_part_by_id(drum_id)
-        
+
         if not drum_part:
             return
 
@@ -382,21 +392,19 @@ class DrumGridBuilder:
         popover.popdown()
         # Open file chooser
         self.window.file_dialog_handler.open_audio_file_chooser(
-            _("Select New Sound"),
-            self._on_replacement_file_selected,
-            drum_id
+            _("Select New Sound"), self._on_replacement_file_selected, drum_id
         )
 
     def _on_replacement_file_selected(self, file_path, drum_id):
         """Callback for when a replacement file is selected"""
         if not file_path:
             return
-            
+
         # Pass None for name so it keeps existing name or derives from filename
         result = self.window.drum_machine_service.replace_drum_part(
             drum_id, file_path, None
         )
-        
+
         if result:
             self.window.show_toast(_("Sound replaced"))
             # Mark as unsaved
@@ -526,7 +534,9 @@ class DrumGridBuilder:
 
         # Handle temporary parts
         if not drum_part.file_path:
-            tooltip_text = f"Temporary part: {drum_part.name} (MIDI Note {drum_part.midi_note_id})"
+            tooltip_text = (
+                f"Temporary part: {drum_part.name} (MIDI Note {drum_part.midi_note_id})"
+            )
             return display_name, tooltip_text
 
         # Check if the file is available

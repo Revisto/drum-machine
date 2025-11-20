@@ -202,20 +202,18 @@ class FileDialogHandler:
         self.open_audio_file_chooser(
             _("Add Audio Samples"),
             self._handle_samples_response_callback,
-            multiple=True
+            multiple=True,
         )
 
     def _handle_samples_response_callback(self, files, *args):
         """Handle multiple audio files selection response"""
         if files and len(files) > 0:
             # Use existing multiple files handler
-            self.window.drag_drop_handler.handle_multiple_files_drop(
-                files, None
-            )
+            self.window.drag_drop_handler.handle_multiple_files_drop(files, None)
 
     def open_audio_file_chooser(self, title, callback, *args, multiple=False):
         """Open a file chooser for audio files
-        
+
         Args:
             title (str): Dialog title
             callback (callable): Function to call with selected file(s)
@@ -225,26 +223,28 @@ class FileDialogHandler:
         # Create file filter for supported audio formats
         audio_filter = Gtk.FileFilter.new()
         audio_filter.set_name(_("Audio files"))
-        
+
         # Add supported formats
         for fmt in SUPPORTED_INPUT_AUDIO_FORMATS:
             audio_filter.add_pattern(f"*{fmt}")
-            
+
         filefilters = Gio.ListStore.new(Gtk.FileFilter)
         filefilters.append(audio_filter)
-        
+
         dialog = Gtk.FileDialog.new()
         dialog.set_title(title)
         dialog.set_filters(filefilters)
         dialog.set_modal(True)
-        
+
         def internal_callback(dialog, result):
             try:
                 if multiple:
                     files = dialog.open_multiple_finish(result)
                     if files and files.get_n_items() > 0:
                         # Convert to list of Gio.File objects
-                        file_list = [files.get_item(i) for i in range(files.get_n_items())]
+                        file_list = [
+                            files.get_item(i) for i in range(files.get_n_items())
+                        ]
                         callback(file_list, *args)
                 else:
                     file = dialog.open_finish(result)
@@ -252,7 +252,7 @@ class FileDialogHandler:
                         callback(file.get_path(), *args)
             except GLib.Error:
                 return
-        
+
         if multiple:
             dialog.open_multiple(parent=self.window, callback=internal_callback)
         else:

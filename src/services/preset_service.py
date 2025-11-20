@@ -34,7 +34,8 @@ class PresetService:
 
     def _get_part_id_for_midi_note(self, note):
         """Get drum part ID for a MIDI note, creating a temporary part if needed"""
-        drum_part = self.window.sound_service.drum_part_manager.get_or_create_part_for_midi_note(note)
+        manager = self.window.sound_service.drum_part_manager
+        drum_part = manager.get_or_create_part_for_midi_note(note)
         return drum_part.id
 
     def save_preset(self, file_path, drum_parts, bpm):
@@ -114,11 +115,11 @@ class PresetService:
                     bpm = mido.tempo2bpm(msg.tempo)
                 elif msg.type == "note_on" and msg.velocity > 0:
                     part_id = self._get_part_id_for_midi_note(msg.note)
-                    
+
                     # Initialize part in state if not already present
                     if part_id not in drum_parts_state:
                         drum_parts_state[part_id] = {}
-                    
+
                     # Convert absolute time in ticks back to a beat index
                     # assuming 16th notes
                     ticks_per_16th_note = ticks_per_beat / 4.0

@@ -79,7 +79,7 @@ class DrumPartManager:
                             # Load drum part regardless of file existence
                             drum_part = DrumPart.from_dict(part_data)
                             self._drum_parts.append(drum_part)
-                        
+
                         # Assign MIDI note IDs to parts that don't have them (migration)
                         self._assign_midi_note_ids()
             except Exception as e:
@@ -148,18 +148,19 @@ class DrumPartManager:
         return None
 
     def get_or_create_part_for_midi_note(self, midi_note: int) -> DrumPart:
-        """Get an existing drum part for a MIDI note, or create a temporary one if it doesn't exist"""
+        """Get an existing drum part for a MIDI note, or create a temporary one
+        if it doesn't exist"""
         part = self.get_part_by_midi_note(midi_note)
         if part:
             return part
-        
+
         # Create a temporary part for unknown MIDI note
         temp_part = DrumPart(
             id=str(uuid.uuid4()),
             name=f"Note {midi_note}",
             file_path="",
             is_custom=True,
-            midi_note_id=midi_note
+            midi_note_id=midi_note,
         )
         self._drum_parts.append(temp_part)
         return temp_part
@@ -255,7 +256,7 @@ class DrumPartManager:
         part = self.get_part_by_id(part_id)
         if not part:
             return False
-        
+
         part.midi_note_id = midi_note
         self._save_drum_parts()
         return True
@@ -275,23 +276,23 @@ class DrumPartManager:
     def _get_next_available_midi_note(self) -> int:
         """Get the next available MIDI note ID for custom parts"""
         used_notes = set()
-        
+
         # Collect all used MIDI note IDs
         for part in self._drum_parts:
             if part.midi_note_id is not None:
                 used_notes.add(part.midi_note_id)
-        
+
         # Start from 35 (GM percussion range start) for better compatibility
         # GM percussion standard is 35-81, but we check up to 127 for flexibility
         for note in range(35, 128):
             if note not in used_notes:
                 return note
-        
+
         # If we run out of standard percussion notes, check lower range (0-34)
         for note in range(0, 35):
             if note not in used_notes:
                 return note
-        
+
         return None
 
     def _assign_midi_note_ids(self):

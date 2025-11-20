@@ -39,7 +39,7 @@ class SoundService(ISoundService):
                 # Skip temporary parts without file paths
                 if not part.file_path:
                     continue
-                    
+
                 sound = pygame.mixer.Sound(part.file_path)
                 sound.set_volume(self._current_volume)
                 self.sounds[part.id] = sound

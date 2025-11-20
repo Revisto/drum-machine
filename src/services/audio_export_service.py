@@ -46,7 +46,7 @@ class SampleLoader:
                 except Exception as e:
                     print(f"Warning: Could not load {part.file_path}: {e}")
                     self.samples[part.id] = np.zeros((1000, 2), dtype="float32")
-    
+
     def clear_samples(self):
         """Clear loaded samples from memory"""
         self.samples = {}
@@ -110,13 +110,13 @@ class AudioExportService:
         """
         try:
             progress_callback(ExportPhase.PREPARING)
-            
+
             # Load samples fresh from current drum parts (ensures latest files)
             drum_parts = self.window.sound_service.drum_part_manager.get_all_parts()
             self.sample_loader.load_samples(drum_parts)
             # Update the renderer with the loaded samples
             self.audio_renderer.update_samples(self.sample_loader.get_samples())
-            
+
             self._validate_pattern(drum_parts_state)
 
             progress_callback(ExportPhase.RENDERING)
