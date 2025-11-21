@@ -18,6 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import pygame
+import logging
 from ..interfaces.sound import ISoundService
 from .drum_part_manager import DrumPartManager
 from ..config.constants import MIXER_CHANNELS
@@ -44,7 +45,7 @@ class SoundService(ISoundService):
                 sound.set_volume(self._current_volume)
                 self.sounds[part.id] = sound
             except Exception as e:
-                print(f"Error loading sound {part.name}: {e}")
+                logging.error(f"Error loading sound {part.name}: {e}")
 
     def reload_sounds(self):
         self.drum_part_manager.reload()

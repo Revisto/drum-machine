@@ -19,6 +19,7 @@
 
 import threading
 import time
+import logging
 from enum import Enum
 from gi.repository import GLib
 from gettext import gettext as _
@@ -183,7 +184,7 @@ class ExportTask:
             if not self.is_cancelled:
                 GLib.idle_add(completion_callback, success, filename)
         except Exception as e:
-            print(f"Export error: {e}")
+            logging.error(f"Export error: {e}")
             if not self.is_cancelled:
                 GLib.idle_add(completion_callback, False, filename)
         finally:

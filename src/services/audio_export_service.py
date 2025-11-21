@@ -20,6 +20,7 @@
 import os
 import numpy as np
 import subprocess
+import logging
 from gettext import gettext as _
 
 from ..utils.export_progress import ExportPhase
@@ -44,7 +45,7 @@ class SampleLoader:
                     audio_data = self._load_sample(part.file_path)
                     self.samples[part.id] = audio_data
                 except Exception as e:
-                    print(f"Warning: Could not load {part.file_path}: {e}")
+                    logging.warning(f"Could not load {part.file_path}: {e}")
                     self.samples[part.id] = np.zeros((1000, 2), dtype="float32")
 
     def clear_samples(self):
@@ -137,7 +138,7 @@ class AudioExportService:
             return True
 
         except Exception as e:
-            print(f"Export error: {e}")
+            logging.error(f"Export error: {e}")
             # Clear samples even on error
             self.sample_loader.clear_samples()
             self.audio_renderer.clear_samples()

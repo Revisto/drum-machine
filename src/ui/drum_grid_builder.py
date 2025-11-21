@@ -18,6 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import gi
+import logging
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
@@ -576,7 +577,7 @@ class DrumGridBuilder:
             drum_part_manager = self.window.sound_service.drum_part_manager
             drum_part = drum_part_manager.get_part_by_id(drum_id)
             if not drum_part:
-                print(f"Drum part not found: {drum_id}")
+                logging.warning(f"Drum part not found: {drum_id}")
                 return
 
             # Find and update the button
@@ -589,7 +590,7 @@ class DrumGridBuilder:
                 # Button doesn't exist, rebuild the drum parts column
                 self.rebuild_drum_parts_column()
         except Exception as e:
-            print(f"Error updating button state: {e}")
+            logging.error(f"Error updating button state: {e}")
             # Fallback: rebuild the drum parts column
             self.rebuild_drum_parts_column()
 
@@ -626,7 +627,7 @@ class DrumGridBuilder:
                 self.drum_parts_column.append(instrument_button)
 
         except Exception as e:
-            print(f"Error rebuilding drum parts column: {e}")
+            logging.error(f"Error rebuilding drum parts column: {e}")
 
     def create_single_beat_toggle(self, drum_part, beat_number_on_page, page_index):
         """Create a single beat toggle button"""
