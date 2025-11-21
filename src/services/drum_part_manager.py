@@ -281,15 +281,19 @@ class DrumPartManager:
         """Public method to reload drum parts from configuration"""
         self._load_drum_parts()
 
+    def _collect_used_notes(self) -> set:
+        """Collect all currently used MIDI notes"""
+        return {
+            part.midi_note_id
+            for part in self._drum_parts
+            if part.midi_note_id is not None
+        }
+
     def _get_next_available_midi_note(self) -> int:
-        """Get the next available MIDI note ID for custom parts based on current state"""
-        used_notes = set()
-
-        # Collect all used MIDI note IDs
-        for part in self._drum_parts:
-            if part.midi_note_id is not None:
-                used_notes.add(part.midi_note_id)
-
+        """
+        Get the next available MIDI note ID for custom parts based on current state
+        """
+        used_notes = self._collect_used_notes()
         return self._compute_next_midi_note(used_notes)
 
     def _compute_next_midi_note(self, used_notes: set) -> Optional[int]:
@@ -310,10 +314,7 @@ class DrumPartManager:
     def _assign_midi_note_ids(self):
         """Assign MIDI note IDs to parts that don't have them (migration)"""
         # First, collect all currently used notes to ensure uniqueness
-        used_notes = set()
-        for part in self._drum_parts:
-            if part.midi_note_id is not None:
-                used_notes.add(part.midi_note_id)
+        used_notes = self._collect_used_notes()
 
         for part in self._drum_parts:
             if part.midi_note_id is None:
