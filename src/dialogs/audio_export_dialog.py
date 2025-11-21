@@ -47,6 +47,7 @@ class AudioExportDialog(Adw.Dialog):
     song_row = Gtk.Template.Child()
     cover_row = Gtk.Template.Child()
     cover_button = Gtk.Template.Child()
+    warning_banner = Gtk.Template.Child()
 
     def __init__(self, window, audio_export_service, drum_parts_state, bpm):
         super().__init__()
@@ -73,6 +74,7 @@ class AudioExportDialog(Adw.Dialog):
         """Initialize the UI components"""
         self._populate_format_list()
         self._update_metadata_sensitivity()
+        self._check_temporary_parts()
 
     def _populate_format_list(self):
         """Populate the format dropdown with available formats"""
@@ -106,6 +108,42 @@ class AudioExportDialog(Adw.Dialog):
         dialog.set_initial_name(self.suggested_filename + info.ext)
 
         return dialog
+
+    def _check_temporary_parts(self):
+        """Check for temporary parts with active beats and show warning"""
+        drum_part_manager = self.window.sound_service.drum_part_manager
+        temporary_parts_with_beats = []
+
+        for part_id, part_state in self.drum_parts_state.items():
+            if not part_state:
+                continue
+
+            # Check if this part has any active beats
+            has_active_beats = any(part_state.values())
+            if not has_active_beats:
+                continue
+
+            # Check if this is a temporary part (no file path)
+            part = drum_part_manager.get_part_by_id(part_id)
+            if part and not part.file_path:
+                temporary_parts_with_beats.append(part.name)
+
+        if temporary_parts_with_beats:
+            # Show warning banner with concise title (HIG)
+            count = len(temporary_parts_with_beats)
+            if count == 1:
+                message = _("Part “{}” is Silent").format(temporary_parts_with_beats[0])
+            elif count == 2:
+                message = _("Parts “{}” and “{}” are Silent").format(
+                    temporary_parts_with_beats[0], temporary_parts_with_beats[1]
+                )
+            else:
+                message = _("{} Parts are Silent").format(count)
+
+            self.warning_banner.set_title(message)
+            self.warning_banner.set_revealed(True)
+        else:
+            self.warning_banner.set_revealed(False)
 
     def _update_metadata_sensitivity(self):
         """Update metadata fields sensitivity based on selected format"""

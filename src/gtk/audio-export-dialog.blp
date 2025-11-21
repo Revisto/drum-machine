@@ -11,6 +11,11 @@ template $AudioExportDialog: Adw.Dialog {
       show-title: true;
     }
 
+    [top]
+    Adw.Banner warning_banner {
+      revealed: false;
+    }
+
     content: Overlay main_overlay {
       [overlay]
       ProgressBar progress_bar {
