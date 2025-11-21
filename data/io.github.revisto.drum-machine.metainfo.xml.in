@@ -38,20 +38,6 @@
           <image>https://github.com/revisto/drum-machine/raw/master/data/screenshots/drum-machine-dark.png</image>
       </screenshot>
   </screenshots>
-  <categories>
-    <category>Audio</category>
-    <category>Music</category>
-    <category>GNOME</category>
-    <category>GTK</category>
-  </categories>
-  <keywords>
-    <keyword>drum</keyword>
-    <keyword>machine</keyword>
-    <keyword>rhythm</keyword>
-    <keyword>music</keyword>
-    <keyword>pattern</keyword>
-    <keyword>beats</keyword>
-  </keywords>
   <translation type="gettext">drum-machine</translation>
   <launchable type="desktop-id">io.github.revisto.drum-machine.desktop</launchable>
   <url type="homepage">https://github.com/revisto/drum-machine</url>

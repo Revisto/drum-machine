@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-08 15:25+0000\n"
-"PO-Revision-Date: 2025-08-10 23:18+0200\n"
+"POT-Creation-Date: 2025-10-12 03:26+0000\n"
+"PO-Revision-Date: 2025-10-12 17:06+0200\n"
 "Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
 "Language-Team: GNOME-NL https://matrix.to/#/#nl:gnome.org\n"
 "Language: nl\n"
@@ -19,10 +19,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
 
-#: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
+#: data/io.github.revisto.drum-machine.desktop.in:2 data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
 msgid "Drum Machine"
 msgstr "Drummachine"
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgstr "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;drummen;ritme;muziek;patroon,slagen;percussie;"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:7
 msgid "Create and play drum beats"
@@ -30,15 +34,13 @@ msgstr "Maak drumbeats en speel ze af"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:9
 msgid ""
-"Drum Machine is a modern and intuitive application for creating, playing, "
-"and managing drum patterns. Perfect for musicians, producers, and anyone "
-"interested in rhythm creation, this application provides a simple interface "
-"for drum pattern programming. Have fun!"
+"Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns. Perfect for "
+"musicians, producers, and anyone interested in rhythm creation, this application provides a simple interface for drum "
+"pattern programming. Have fun!"
 msgstr ""
-"Drummachine is een moderne en intuïtieve toepassing voor het maken, afspelen "
-"en beheren van drumpatronen. Perfect voor musici, producers en iedereen die "
-"is geïnteresseerd in het maken van ritmes, verschaft deze toepassing een "
-"eenvoudige interface voor het programmeren van drumpatronen. Veel plezier!"
+"Drummachine is een moderne en intuïtieve toepassing voor het maken, afspelen en beheren van drumpatronen. Perfect voor "
+"musici, producers en iedereen die is geïnteresseerd in het maken van ritmes, verschaft deze toepassing een eenvoudige "
+"interface voor het programmeren van drumpatronen. Veel plezier!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
@@ -50,7 +52,7 @@ msgstr "Intuïtieve op raster gebaseerde bewerker voor patronen"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
 msgid "Adjustable BPM control"
-msgstr "Aan te passen besturingselement voor BPM"
+msgstr "Aanpasbare bpm-besturing"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Volume control for overall mix"
@@ -58,239 +60,408 @@ msgstr "Volume beheren voor algehele mix"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:20
 msgid "Save and load preset patterns"
-msgstr "Voorkeuzen patronen opslaan en laden"
+msgstr "Vooringestelde patronen opslaan en laden"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Meerdere drumgeluiden, inclusief kick, snare, hi-hat en meer"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Keyboard shortcuts for quick access to all functions"
-msgstr "Toetsenbord sneltoetsen voor snelle toegang tot alle functies"
+msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
+msgstr "Audio-exportfunctie met ondersteuning voor WAV-, FLAC-, Ogg- en MP3-indelingen"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr "Metadata-ondersteuning voor inbedden van artiestnamen, tracktitels en albumhoezen"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "Sneltoetsen voor snelle toegang tot alle functies"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "Drumpatroon geladen in modus Licht"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Drumpatroon geladen in modus Donker"
 
 #: src/application.py:69
 msgid "translator-credits"
 msgstr ""
-"Dick Groskamp <dikgro@yahoo.co.uk>\n"
 "Nathan Follens <nfollens@gnome.org>\n"
+"Dick Groskamp <dikgro@yahoo.co.uk>\n"
 "Meer info over GNOME-NL https://nl.gnome.org"
 
+#: src/config/export_formats.py:43
+msgid "MP3 files"
+msgstr "MP3-bestanden"
+
+#: src/config/export_formats.py:44
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:50
+msgid "FLAC files"
+msgstr "FLAC-bestanden"
+
+#: src/config/export_formats.py:51
+msgid "FLAC (Lossless)"
+msgstr "FLAC (verliesloos)"
+
+#: src/config/export_formats.py:57
+msgid "Ogg files"
+msgstr "Ogg-bestanden"
+
+#: src/config/export_formats.py:58
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+#: src/config/export_formats.py:64
+msgid "WAV files"
+msgstr "WAV-bestanden"
+
+#: src/config/export_formats.py:65
+msgid "WAV (Uncompressed)"
+msgstr "WAV (niet gecomprimeerd)"
+
+#: src/dialogs/audio_export_dialog.py:115
+msgid "Save Audio File"
+msgstr "Audiobestand opslaan"
+
+#: src/dialogs/audio_export_dialog.py:139
+msgid "Image files"
+msgstr "Afbeeldingsbestanden"
+
+#: src/dialogs/audio_export_dialog.py:145
+msgid "Select Cover Art"
+msgstr "Selecteer een albumhoes"
+
+#: src/dialogs/audio_export_dialog.py:202
+msgid "Audio exported to {}"
+msgstr "Audio geëxporteerd naar {}"
+
+#: src/dialogs/audio_export_dialog.py:207
+msgid "Export failed"
+msgstr "Exporteren mislukt"
+
+#: src/dialogs/audio_export_dialog.py:214
+msgid "Export cancelled successfully"
+msgstr "Exporteren met succes geannuleerd"
+
+#: src/handlers/file_dialog_handler.py:51
+msgid "Default Presets"
+msgstr "Standaardvoorinstellingen"
+
+#: src/handlers/file_dialog_handler.py:83
+msgid "No Pattern"
+msgstr "Geen patroon"
+
+#: src/handlers/file_dialog_handler.py:84
+msgid "Please create a drum pattern before exporting audio."
+msgstr "Maak een drumpatroon voordat u de audio exporteert."
+
+#: src/handlers/file_dialog_handler.py:86
+msgid "_OK"
+msgstr "_Oké"
+
+#: src/handlers/file_dialog_handler.py:109 src/handlers/file_dialog_handler.py:177
+msgid "MIDI files"
+msgstr "MIDI-bestanden"
+
+#: src/handlers/file_dialog_handler.py:115
+msgid "Open MIDI File"
+msgstr "MIDI-bestand openen"
+
+#: src/handlers/file_dialog_handler.py:185
+msgid "Save Sequence"
+msgstr "Reeks opslaan"
+
+#: src/utils/export_progress.py:68
+msgid "Preparing..."
+msgstr "Voorbereiden…"
+
+#: src/utils/export_progress.py:69
+msgid "Initializing..."
+msgstr "Initialiseren…"
+
+#: src/utils/export_progress.py:71
+msgid "Rendering audio..."
+msgstr "Audio renderen…"
+
+#: src/utils/export_progress.py:72
+msgid "Processing beats..."
+msgstr "Beats verwerken…"
+
+#: src/utils/export_progress.py:74
+msgid "Saving file..."
+msgstr "Bestand opslaan…"
+
+#: src/utils/export_progress.py:75
+msgid "Writing to disk..."
+msgstr "Schrijven naar schijf…"
+
+#: src/utils/export_progress.py:77
+msgid "Exporting..."
+msgstr "Exporteren…"
+
+#: src/utils/export_progress.py:78
+msgid "Processing..."
+msgstr "Verwerken…"
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:190
+#: src/window.py:198
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} beats per minuut (bpm)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:199
+#: src/window.py:207
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% volume"
 
-#: src/window.py:214 src/window.ui:167
+#: src/window.py:222 src/window.ui:170
 msgid "Play"
 msgstr "Afspelen"
 
-#: src/window.py:218
+#: src/window.py:226
 msgid "Pause"
 msgstr "Pauzeren"
 
-#: src/window.ui:50
+#: src/window.py:264 src/window.ui:52
 msgid "Open"
 msgstr "Openen"
 
-#: src/window.ui:52 src/window.ui:55
+#: src/window.ui:54
 msgid "Open Preset"
-msgstr "Voorkeuze openen"
+msgstr "Voorinstelling openen"
 
-#: src/window.ui:56
+#: src/window.ui:57
+msgctxt "accessibility"
+msgid "Open Preset"
+msgstr "Voorinstelling openen"
+
+#: src/window.ui:58
 msgid "Open Saved Drum Pattern Preset"
-msgstr "Opgeslagen voorkeuze drumpatroon openen"
+msgstr "Opgeslagen voorinstelling voor drumpatroon openen"
 
-#: src/window.ui:74 src/window.ui:76
+#: src/window.ui:76
 msgid "Main Menu"
 msgstr "Hoofdmenu"
 
-#: src/window.ui:77
+#: src/window.ui:78
+msgctxt "accessibility"
+msgid "Main Menu"
+msgstr "Hoofdmenu"
+
+#: src/window.ui:79
 msgid "Access Keyboard Shortcuts and Application Information"
-msgstr "Toegang tot toetsenbord sneltoets en informatie over de toepassing"
+msgstr "Toegang tot sneltoetsen en informatie over de toepassing"
 
-#: src/window.ui:84 src/window.ui:86
-msgid "Save Drum Pattern"
-msgstr "Drumpatroon opslaan"
+#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:96
+msgid "Export Audio"
+msgstr "Audio exporteren"
 
-#: src/window.ui:87
-msgid "Save Current Drum Pattern as a Preset File"
-msgstr "Huidige drumpatroon opslaan als een voorkeuzebestand"
+#: src/window.ui:88
+msgctxt "accessibility"
+msgid "Export Audio"
+msgstr "Audio exporteren"
 
-#: src/window.ui:131
+#: src/window.ui:89
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "Huidige drumpatroon exporteren als audiobestand"
+
+#: src/window.ui:134
 msgid "BPM"
 msgstr "Bpm"
 
-#: src/window.ui:136 src/window.ui:140
+#: src/window.ui:139 src/window.ui:143
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Tempo aanpassen in beats per minuut (bpm)"
 
-#: src/window.ui:139
+#: src/window.ui:142
 msgid "Tempo"
 msgstr "Tempo"
 
-#: src/window.ui:181
+#: src/window.ui:184
 msgid "Adjust Volume"
 msgstr "Volume aanpassen"
 
-#: src/window.ui:204
+#: src/window.ui:207
 msgid "Reset"
 msgstr "Opnieuw instellen"
 
-#: src/window.ui:205
+#: src/window.ui:208
 msgid "Reset the Drum Sequence"
 msgstr "Drumreeks opnieuw instellen"
 
-#: src/window.ui:218
+#: src/window.ui:223
+msgid "_Save Pattern"
+msgstr "Patroon op_slaan"
+
+#: src/window.ui:229
 msgid "_Keyboard Shortcuts"
 msgstr "_Sneltoetsen"
 
-#: src/window.ui:222
+#: src/window.ui:233
 msgid "_About Drum Machine"
 msgstr "_Over Drummachine"
 
-#: src/gtk/help-overlay.ui:11
+#: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Algemeen"
 
-#: src/gtk/help-overlay.ui:14
+#: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Sneltoetsen tonen"
 
-#: src/gtk/help-overlay.ui:20
+#: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Afsluiten"
 
-#: src/gtk/help-overlay.ui:29
+#: src/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Playback Controls"
-msgstr "Besturingselementen Afspelen"
+msgstr "Besturingselementen voor afspelen"
 
-#: src/gtk/help-overlay.ui:32
+#: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Play/Pause"
-msgstr "Afspelen/Pauzeren"
+msgstr "Afspelen/pauzeren"
 
-#: src/gtk/help-overlay.ui:39
+#: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "Alles leegmaken"
 
-#: src/gtk/help-overlay.ui:48
+#: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
 msgid "BPM & Volume Controls"
-msgstr "Besturingselementen bpm & volume"
+msgstr "Besturingselementen voor bpm & volume"
 
-#: src/gtk/help-overlay.ui:51
+#: src/gtk/help-overlay.blp:45
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "Bpm verhogen"
 
-#: src/gtk/help-overlay.ui:58
+#: src/gtk/help-overlay.blp:51
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "Bpm verlagen"
 
-#: src/gtk/help-overlay.ui:65
+#: src/gtk/help-overlay.blp:57
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "Volume verhogen"
 
-#: src/gtk/help-overlay.ui:72
+#: src/gtk/help-overlay.blp:63
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Volume verlagen"
 
-#: src/gtk/help-overlay.ui:81
+#: src/gtk/help-overlay.blp:69
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "Dempen"
+
+#: src/gtk/help-overlay.blp:76
 msgctxt "shortcut window"
 msgid "Preset Management"
-msgstr "Voorkeuzen beheren"
+msgstr "Voorinstellingen beheren"
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.blp:79
 msgctxt "shortcut window"
 msgid "Load Preset"
-msgstr "Voorkeuze laden"
+msgstr "Voorinstelling laden"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.blp:85
 msgctxt "shortcut window"
 msgid "Save Preset"
-msgstr "Voorkeuze opslaan"
+msgstr "Voorinstelling opslaan"
 
-#: src/gtk/help-overlay.ui:100
+#: src/gtk/help-overlay.blp:91
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "Audio exporteren"
+
+#: src/gtk/help-overlay.blp:98
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Navigatie"
 
-#: src/gtk/help-overlay.ui:103
+#: src/gtk/help-overlay.blp:101
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Ga naar instrument"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.blp:107
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Vorige pagina"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.blp:113
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Volgende pagina"
 
-#: src/gtk/save_changes_dialog.ui:6
+#: src/gtk/save-changes-dialog.blp:5
 msgid "Save Changes?"
 msgstr "Wijzigingen opslaan?"
 
-#: src/gtk/save_changes_dialog.ui:7
-msgid ""
-"Current preset contains unsaved changes. Changes which are not saved will be "
-"permanently lost."
+#: src/gtk/save-changes-dialog.blp:6
+msgid "Current preset contains unsaved changes. Changes which are not saved will be permanently lost."
 msgstr ""
-"Huidige voorkeuze bevat niet opgeslagen wijzigingen. Wijzigingen, die niet "
-"worden opgeslagen, zullen permanent verloren gaan."
+"De huidige voorinstelling bevat niet-opgeslagen wijzigingen. Wijzigingen die u niet opslaat gaan definitief verloren."
 
-#. Cancel the operation
-#: src/gtk/save_changes_dialog.ui:14
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14
 msgid "_Cancel"
 msgstr "_Annuleren"
 
-#. Discard all changes
-#: src/gtk/save_changes_dialog.ui:15
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
 msgid "_Discard"
 msgstr "_Verwerpen"
 
-#. Save current changes
-#: src/gtk/save_changes_dialog.ui:16
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
 msgid "_Save"
 msgstr "Op_slaan"
 
-#: src/handlers/file_dialog_handler.py:48
-msgid "Default Presets"
-msgstr "Standaard voorkeuzen"
+#: src/gtk/audio-export-dialog.blp:39
+msgid "Audio Format"
+msgstr "Audioformaat"
 
-#: src/handlers/file_dialog_handler.py:76
-#: src/handlers/file_dialog_handler.py:142
-msgid "MIDI files"
-msgstr "MIDI-bestanden"
+#: src/gtk/audio-export-dialog.blp:45
+msgid "Repeat Count"
+msgstr "Aantal herhalingen"
 
-#: src/handlers/file_dialog_handler.py:82
-msgid "Open MIDI File"
-msgstr "MIDI-bestand openen"
+#: src/gtk/audio-export-dialog.blp:46
+msgid "How many times to repeat the pattern"
+msgstr "Hoeveel keer het patroon herhaald moet worden"
 
-#: src/handlers/file_dialog_handler.py:148
-msgid "Save Sequence"
-msgstr "Reeks opslaan"
+#: src/gtk/audio-export-dialog.blp:59
+msgid "Metadata"
+msgstr "Metadata"
+
+#: src/gtk/audio-export-dialog.blp:62
+msgid "Artist Name"
+msgstr "Artiestennaam"
+
+#: src/gtk/audio-export-dialog.blp:67
+msgid "Song Name"
+msgstr "Liedjesnaam"
+
+#: src/gtk/audio-export-dialog.blp:72
+msgid "Cover Art"
+msgstr "Albumhoes"
+
+#: src/gtk/audio-export-dialog.blp:76
+msgid "Choose File"
+msgstr "Bestand kiezen"
+
+#: src/gtk/audio-export-dialog.blp:105
+msgid "Cancel Export"
+msgstr "Exporteren annuleren"
