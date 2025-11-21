@@ -235,7 +235,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         return True
 
     def _save_and_close(self):
-        self.file_dialog_handler.show_save_dialog(lambda: self.cleanup_and_destroy())
+        self.file_dialog_handler.show_save_dialog(self.cleanup_and_destroy)
 
     def cleanup(self):
         """Stop playback and cleanup resources"""
