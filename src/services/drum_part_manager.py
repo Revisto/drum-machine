@@ -17,6 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+import logging
 import os
 import json
 import uuid
@@ -54,7 +55,7 @@ class DrumPartManager:
         try:
             os.makedirs(self.custom_dir, exist_ok=True)
         except Exception as e:
-            print(f"Error creating custom directory {self.custom_dir}: {e}")
+            logging.error(f"Error creating custom directory {self.custom_dir}: {e}")
             raise
 
     def _load_drum_parts(self):
@@ -70,7 +71,7 @@ class DrumPartManager:
                             # Check if file exists and log if missing
                             file_exists = os.path.exists(part_data["file_path"])
                             if not file_exists:
-                                print(
+                                logging.warning(
                                     "Missing file for drum part "
                                     f"'{part_data.get('name', 'Unknown')}': "
                                     f"{part_data['file_path']}"
@@ -83,13 +84,12 @@ class DrumPartManager:
                         # Assign MIDI note IDs to parts that don't have them (migration)
                         self._assign_midi_note_ids()
             except Exception as e:
-                print(f"Error loading drum parts config: {e}")
+                logging.error(f"Error loading drum parts config: {e}")
                 # Fall back to defaults if config is corrupted
                 self._load_default_parts()
                 self._save_drum_parts()
         else:
             # No config exists, load defaults and save them
-            print("No drum parts config found, loading defaults and saving...")
             self._load_default_parts()
             self._save_drum_parts()
 
@@ -125,7 +125,7 @@ class DrumPartManager:
             os.replace(temp_file, self.config_file)
 
         except Exception as e:
-            print(f"Error saving drum parts: {e}")
+            logging.error(f"Error saving drum parts: {e}")
             # Clean up temp file if it exists
             temp_file = self.config_file + ".tmp"
             if os.path.exists(temp_file):
@@ -179,11 +179,11 @@ class DrumPartManager:
         """Add a new custom drum part from an audio file"""
         # Validate inputs
         if not name or not source_file:
-            print(f"Invalid input: name='{name}', source_file='{source_file}'")
+            logging.error(f"Invalid input: name='{name}', source_file='{source_file}'")
             return None
 
         if not os.path.exists(source_file):
-            print(f"Source file does not exist: {source_file}")
+            logging.error(f"Source file does not exist: {source_file}")
             return None
 
         try:
@@ -198,7 +198,7 @@ class DrumPartManager:
             return drum_part
 
         except Exception as e:
-            print(f"Error adding drum part '{name}': {e}")
+            logging.error(f"Error adding drum part '{name}': {e}")
             return None
 
     def remove_part(self, part_id: str) -> bool:
@@ -217,7 +217,7 @@ class DrumPartManager:
             return True
 
         except Exception as e:
-            print(f"Error removing drum part: {e}")
+            logging.error(f"Error removing drum part: {e}")
             return False
 
     def replace_part(
@@ -226,12 +226,14 @@ class DrumPartManager:
         """Update an existing drum part with a new audio file path and name"""
         # Validate inputs
         if not part_id or not source_file:
-            print(f"Invalid input: part_id='{part_id}', source_file='{source_file}'")
+            logging.error(
+                f"Invalid input: part_id='{part_id}', source_file='{source_file}'"
+            )
             return None
 
         part = self.get_part_by_id(part_id)
         if not part:
-            print(f"Drum part not found: {part_id}")
+            logging.error(f"Drum part not found: {part_id}")
             return None
 
         try:
@@ -254,7 +256,7 @@ class DrumPartManager:
             return part
 
         except Exception as e:
-            print(f"Error updating drum part: {e}")
+            logging.error(f"Error updating drum part: {e}")
             return None
 
     def update_part_midi_note(self, part_id: str, midi_note: int) -> bool:
@@ -303,29 +305,29 @@ class DrumPartManager:
 
     def _assign_midi_note_ids(self):
         """Assign MIDI note IDs to parts that don't have them (migration)"""
-        # Collect all currently used notes
+        # First, collect all currently used notes to ensure uniqueness
         used_notes = set()
         for part in self._drum_parts:
             if part.midi_note_id is not None:
                 used_notes.add(part.midi_note_id)
-        
+
         for part in self._drum_parts:
             if part.midi_note_id is None:
                 if part.is_custom:
                     # Find next available note
                     # Start from 35 (GM percussion range start)
                     candidate_note = 35
-                    
+
                     # Find first gap in 35-127 range
                     while candidate_note in used_notes and candidate_note < 128:
                         candidate_note += 1
-                    
+
                     # If full, try 0-34
                     if candidate_note >= 128:
-                         candidate_note = 0
-                         while candidate_note in used_notes and candidate_note < 35:
-                             candidate_note += 1
-                    
+                        candidate_note = 0
+                        while candidate_note in used_notes and candidate_note < 35:
+                            candidate_note += 1
+
                     if candidate_note not in used_notes:
                         part.midi_note_id = candidate_note
                         used_notes.add(candidate_note)
