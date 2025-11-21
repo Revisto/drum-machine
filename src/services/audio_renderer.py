@@ -19,7 +19,6 @@
 
 import numpy as np
 from ..config.constants import (
-    DRUM_PARTS,
     GROUP_TOGGLE_COUNT,
     DEFAULT_FALLBACK_SAMPLE_SIZE,
 )
@@ -62,6 +61,14 @@ class AudioRenderer:
     def __init__(self, samples, sample_rate: int = 44100):
         self.samples = samples
         self.sample_rate = sample_rate
+
+    def update_samples(self, samples):
+        """Update the samples dictionary"""
+        self.samples = samples
+
+    def clear_samples(self):
+        """Clear all samples from memory"""
+        self.samples = {}
 
     def calculate_pattern_duration(
         self, drum_parts_state, bpm: int, repeat_count: int, total_beats: int
@@ -114,8 +121,7 @@ class AudioRenderer:
         """Find the latest time any sample will finish playing"""
         latest_sample_end_time = 0
 
-        for part in DRUM_PARTS:
-            part_state = drum_parts_state.get(part, {})
+        for part_id, part_state in drum_parts_state.items():
             if not part_state:
                 continue
 
@@ -125,7 +131,9 @@ class AudioRenderer:
 
             last_subdivision = max(active_subdivisions)
             trigger_time = last_subdivision / subdivisions_per_second
-            sample_length_seconds = len(self.samples.get(part, [])) / self.sample_rate
+            sample_length_seconds = (
+                len(self.samples.get(part_id, [])) / self.sample_rate
+            )
             end_time = trigger_time + sample_length_seconds
             latest_sample_end_time = max(latest_sample_end_time, end_time)
 
@@ -154,10 +162,9 @@ class AudioRenderer:
         start_sample: int,
     ):
         """Add samples for all active drum parts at this subdivision"""
-        for part in DRUM_PARTS:
-            part_state = drum_parts_state.get(part, {})
+        for part_id, part_state in drum_parts_state.items():
             if part_state.get(subdivision, False):
                 sample_data = self.samples.get(
-                    part, np.zeros(DEFAULT_FALLBACK_SAMPLE_SIZE)
+                    part_id, np.zeros(DEFAULT_FALLBACK_SAMPLE_SIZE)
                 )
                 audio_buffer.add_sample(sample_data, start_sample)

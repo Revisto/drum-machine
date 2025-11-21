@@ -45,6 +45,7 @@ class WindowActionHandler:
             ("load_preset", self.on_open_file_action, ["<primary>o"]),
             ("save_preset", self.on_save_preset_action, ["<primary>s"]),
             ("export_audio", self.on_export_audio_action, ["<primary>e"]),
+            ("add_samples", self.on_add_samples_action, ["<primary><shift>a"]),
             ("quit", self.on_quit_action, ["<primary>q"]),
             ("close_window", self.on_quit_action, ["<primary>w"]),
             ("go_to_instrument", self.handle_go_to_instrument_action, ["<primary>i"]),
@@ -94,10 +95,10 @@ class WindowActionHandler:
         self.window.volume_button.set_value(max(current_volume - 5, 0))
 
     def on_open_file_action(self, action, param):
-        self.window.on_open_file(self.window.file_preset_button)
+        self.window._on_open_file_clicked(self.window.file_preset_button)
 
     def on_save_preset_action(self, action, param):
-        self.window.on_save_preset()
+        self.window._on_save_preset_clicked()
 
     def on_export_audio_action(self, action, param):
         self.window._on_export_audio_clicked(self.window.export_audio_button)
@@ -152,3 +153,7 @@ class WindowActionHandler:
             self.window.volume_button.set_value(last_volume)
         else:
             self.window.volume_button.set_value(0)
+
+    def on_add_samples_action(self, action, param):
+        """Open file dialog to select multiple audio samples"""
+        self.window.file_dialog_handler.handle_add_samples()

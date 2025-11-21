@@ -17,7 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-DRUM_PARTS = [
+DEFAULT_DRUM_PARTS = [
     "kick",
     "kick-2",
     "kick-3",
@@ -38,3 +38,12 @@ DEFAULT_FALLBACK_SAMPLE_SIZE = (1000, 2)
 
 # Progress bar constants
 PULSE_INTERVAL_SECONDS = 1.0
+
+# Audio constants
+MIXER_CHANNELS = 32
+
+# DrumPartManager constants
+DRUM_PARTS_CONFIG_FILE = "drum_parts.json"
+
+# Supported audio file formats for input/import
+SUPPORTED_INPUT_AUDIO_FORMATS = {".wav", ".mp3", ".ogg", ".flac"}

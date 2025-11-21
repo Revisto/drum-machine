@@ -25,7 +25,7 @@ class SaveChangesService:
         If user saves, call on_save(), then mark changes as saved.
         """
         SaveChangesDialog(
-            parent_window=self.window,
+            window=self.window,
             on_save_callback=self._wrap_save_callback(on_save),
             on_discard_callback=on_discard,
         )

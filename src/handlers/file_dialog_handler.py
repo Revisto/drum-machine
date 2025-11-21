@@ -25,7 +25,7 @@ gi.require_version("Gio", "2.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Gio, GLib, Adw
 from gettext import gettext as _
-from ..config.constants import DEFAULT_PRESETS
+from ..config.constants import DEFAULT_PRESETS, SUPPORTED_INPUT_AUDIO_FORMATS
 from ..dialogs.audio_export_dialog import AudioExportDialog
 
 
@@ -67,7 +67,7 @@ class FileDialogHandler:
 
     def handle_save_preset(self):
         """Handle saving a preset"""
-        self._show_save_dialog()
+        self.show_save_dialog()
 
     def handle_export_audio(self):
         """Handle audio export"""
@@ -100,7 +100,7 @@ class FileDialogHandler:
         export_dialog.present(self.window)
 
     def _save_and_open_file(self):
-        self._show_save_dialog(self._open_file_directly)
+        self.show_save_dialog(self._open_file_directly)
 
     def _open_file_directly(self):
         """Show file open dialog"""
@@ -148,7 +148,7 @@ class FileDialogHandler:
             self._open_preset_directly(parameter)
 
     def _save_and_open_preset(self, parameter):
-        self._show_save_dialog(lambda: self._open_preset_directly(parameter))
+        self.show_save_dialog(lambda: self._open_preset_directly(parameter))
 
     def _open_preset_directly(self, parameter):
         """Load a preset directly"""
@@ -170,7 +170,7 @@ class FileDialogHandler:
 
         self.window.save_changes_service.mark_unsaved_changes(False)
 
-    def _show_save_dialog(self, after_save_callback=None):
+    def show_save_dialog(self, after_save_callback=None):
         """Show save file dialog"""
         filefilter = Gtk.FileFilter.new()
         filefilter.add_pattern("*.mid")
@@ -203,6 +203,67 @@ class FileDialogHandler:
                 return
 
         dialog.save(parent=self.window, callback=save_callback)
+
+    def handle_add_samples(self):
+        """Handle adding multiple audio samples via file dialog"""
+        self.open_audio_file_chooser(
+            _("Add Audio Samples"),
+            self._handle_samples_response_callback,
+            multiple=True,
+        )
+
+    def _handle_samples_response_callback(self, files, *args):
+        """Handle multiple audio files selection response"""
+        if files and len(files) > 0:
+            # Use existing multiple files handler
+            self.window.drag_drop_handler.handle_multiple_files_drop(files, None)
+
+    def open_audio_file_chooser(self, title, callback, *args, multiple=False):
+        """Open a file chooser for audio files
+
+        Args:
+            title (str): Dialog title
+            callback (callable): Function to call with selected file(s)
+            *args: Additional arguments to pass to callback
+            multiple (bool): Whether to allow multiple file selection
+        """
+        # Create file filter for supported audio formats
+        audio_filter = Gtk.FileFilter.new()
+        audio_filter.set_name(_("Audio files"))
+
+        # Add supported formats
+        for fmt in SUPPORTED_INPUT_AUDIO_FORMATS:
+            audio_filter.add_pattern(f"*{fmt}")
+
+        filefilters = Gio.ListStore.new(Gtk.FileFilter)
+        filefilters.append(audio_filter)
+
+        dialog = Gtk.FileDialog.new()
+        dialog.set_title(title)
+        dialog.set_filters(filefilters)
+        dialog.set_modal(True)
+
+        def internal_callback(dialog, result):
+            try:
+                if multiple:
+                    files = dialog.open_multiple_finish(result)
+                    if files and files.get_n_items() > 0:
+                        # Convert to list of Gio.File objects
+                        file_list = [
+                            files.get_item(i) for i in range(files.get_n_items())
+                        ]
+                        callback(file_list, *args)
+                else:
+                    file = dialog.open_finish(result)
+                    if file:
+                        callback(file.get_path(), *args)
+            except GLib.Error:
+                return
+
+        if multiple:
+            dialog.open_multiple(parent=self.window, callback=internal_callback)
+        else:
+            dialog.open(parent=self.window, callback=internal_callback)
 
     def _get_filename_without_extension(self, file):
         """Extract filename without extension from Gio.File"""

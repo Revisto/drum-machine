@@ -26,11 +26,11 @@ from gi.repository import Adw, Gtk
 class SaveChangesDialog(Adw.AlertDialog):
     __gtype_name__ = "SaveChangesDialog"
 
-    def __init__(self, parent_window, on_save_callback=None, on_discard_callback=None):
+    def __init__(self, window, on_save_callback=None, on_discard_callback=None):
         super().__init__()
         self._on_save_callback = on_save_callback
         self._on_discard_callback = on_discard_callback
-        self.present(parent_window)
+        self.present(window)
 
     @Gtk.Template.Callback()
     def _on_save(self, _dialog, _response):

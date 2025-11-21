@@ -47,6 +47,7 @@ class AudioExportDialog(Adw.Dialog):
     song_row = Gtk.Template.Child()
     cover_row = Gtk.Template.Child()
     cover_button = Gtk.Template.Child()
+    warning_banner = Gtk.Template.Child()
 
     def __init__(
         self, parent_window,
@@ -57,7 +58,7 @@ class AudioExportDialog(Adw.Dialog):
     ):
         super().__init__()
 
-        self.parent_window = parent_window
+        self.window = parent_window
         self.audio_export_service = audio_export_service
         self.drum_parts_state = drum_parts_state
         self.bpm = bpm
@@ -81,6 +82,7 @@ class AudioExportDialog(Adw.Dialog):
         """Initialize the UI components"""
         self._populate_format_list()
         self._update_metadata_sensitivity()
+        self._check_temporary_parts()
 
     def _populate_format_list(self):
         """Populate the format dropdown with available formats"""
@@ -118,6 +120,42 @@ class AudioExportDialog(Adw.Dialog):
 
         return dialog
 
+    def _check_temporary_parts(self):
+        """Check for temporary parts with active beats and show warning"""
+        drum_part_manager = self.window.sound_service.drum_part_manager
+        temporary_parts_with_beats = []
+
+        for part_id, part_state in self.drum_parts_state.items():
+            if not part_state:
+                continue
+
+            # Check if this part has any active beats
+            has_active_beats = any(part_state.values())
+            if not has_active_beats:
+                continue
+
+            # Check if this is a temporary part (no file path)
+            part = drum_part_manager.get_part_by_id(part_id)
+            if part and not part.file_path:
+                temporary_parts_with_beats.append(part.name)
+
+        if temporary_parts_with_beats:
+            # Show warning banner with concise title (HIG)
+            count = len(temporary_parts_with_beats)
+            if count == 1:
+                message = _("Part “{}” is Silent").format(temporary_parts_with_beats[0])
+            elif count == 2:
+                message = _("Parts “{}” and “{}” are Silent").format(
+                    temporary_parts_with_beats[0], temporary_parts_with_beats[1]
+                )
+            else:
+                message = _("{} Parts are Silent").format(count)
+
+            self.warning_banner.set_title(message)
+            self.warning_banner.set_revealed(True)
+        else:
+            self.warning_banner.set_revealed(False)
+
     def _update_metadata_sensitivity(self):
         """Update metadata fields sensitivity based on selected format"""
         selected_format = self.format_row.get_selected()
@@ -145,7 +183,7 @@ class AudioExportDialog(Adw.Dialog):
         dialog.set_title(_("Select Cover Art"))
         dialog.set_filters(filefilters)
 
-        dialog.open(parent=self.parent_window, callback=self._on_cover_selected)
+        dialog.open(parent=self.window, callback=self._on_cover_selected)
 
     def _on_cover_selected(self, dialog, result):
         """Handle cover art file selection result"""
@@ -160,7 +198,7 @@ class AudioExportDialog(Adw.Dialog):
         """Handle export button click"""
         selected_format = self.format_row.get_selected()
         dialog = self._create_file_dialog_with_format(selected_format)
-        dialog.save(parent=self.parent_window, callback=self._on_file_selected)
+        dialog.save(parent=self.window, callback=self._on_file_selected)
 
     def _on_file_selected(self, dialog, result):
         """Handle file selection from save dialog"""
@@ -198,20 +236,20 @@ class AudioExportDialog(Adw.Dialog):
     def _on_export_complete(self, success, filename):
         """Handle export completion"""
         if success:
-            self.parent_window.show_toast(
+            self.window.show_toast(
                 _("Audio exported to {}").format(os.path.basename(filename)),
                 open_file=True,
                 file_path=filename,
             )
         else:
-            self.parent_window.show_toast(_("Export failed"))
+            self.window.show_toast(_("Export failed"))
 
         self.close()
 
     def _on_cancel_clicked(self, button):
         """Handle cancel button click"""
         self.export_task.cancel_export()
-        self.parent_window.show_toast(_("Export cancelled successfully"))
+        self.window.show_toast(_("Export cancelled successfully"))
         self.close()
 
     def _on_dialog_closed(self, dialog):
@@ -257,7 +295,7 @@ class ExportMetadata:
         self.cover_art_path = file_path
         if file_path:
             filename = os.path.basename(file_path)
-            display_name = filename[:20] + "..." if len(filename) > 20 else filename
+            display_name = filename[:20] + "…" if len(filename) > 20 else filename
             self.cover_button.set_label(display_name)
 
     def set_sensitivity(self, sensitive: bool):

@@ -17,35 +17,58 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import os
 import pygame
+import logging
 from ..interfaces.sound import ISoundService
-from ..config.constants import DRUM_PARTS
+from .drum_part_manager import DrumPartManager
+from ..config.constants import MIXER_CHANNELS
 
 
 class SoundService(ISoundService):
     def __init__(self, drumkit_dir):
         pygame.init()
-        pygame.mixer.set_num_channels(32)
+        pygame.mixer.set_num_channels(MIXER_CHANNELS)
         self.drumkit_dir = drumkit_dir
+        self.drum_part_manager = DrumPartManager(drumkit_dir)
         self.sounds = {}
+        self._current_volume = 1.0
 
     def load_sounds(self):
+        self.sounds = {}
+        for part in self.drum_part_manager.get_all_parts():
+            try:
+                # Skip temporary parts without file paths
+                if not part.file_path:
+                    continue
 
-        self.sounds = {
-            drum_part: pygame.mixer.Sound(
-                os.path.join(self.drumkit_dir, f"{drum_part}.wav")
-            )
-            for drum_part in DRUM_PARTS
-        }
+                sound = pygame.mixer.Sound(part.file_path)
+                sound.set_volume(self._current_volume)
+                self.sounds[part.id] = sound
+            except Exception as e:
+                logging.error(f"Error loading sound {part.name}: {e}")
 
-    def play_sound(self, sound_name):
-        self.sounds[sound_name].play()
+    def reload_sounds(self):
+        self.drum_part_manager.reload()
+        self.load_sounds()
+
+    def reload_specific_sound(self, part_id):
+        """Reload a specific sound after drum part replacement"""
+        self.drum_part_manager.reload()
+        part = self.drum_part_manager.get_part_by_id(part_id)
+        if part:
+            sound = pygame.mixer.Sound(part.file_path)
+            sound.set_volume(self._current_volume)
+            self.sounds[part_id] = sound
+
+    def play_sound(self, part_id):
+        if part_id in self.sounds:
+            self.sounds[part_id].play()
 
     def set_volume(self, volume):
+        self._current_volume = volume / 100
         for sound in self.sounds.values():
-            sound.set_volume(volume / 100)
+            sound.set_volume(self._current_volume)
 
-    def preview_sound(self, sound_name):
-        if sound_name in self.sounds:
-            self.play_sound(sound_name)
+    def preview_sound(self, part_id):
+        if part_id in self.sounds:
+            self.play_sound(part_id)

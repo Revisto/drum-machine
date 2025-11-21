@@ -56,14 +56,16 @@ class DrumMachineApplication(Adw.Application):
             f"Adwaita {Adw.MAJOR_VERSION}.{Adw.MINOR_VERSION}.{Adw.MICRO_VERSION}"
         )
         about = Adw.AboutDialog(
-            application_name="Drum Machine",
+            application_name=_("Drum Machine"),
             application_icon="io.github.revisto.drum-machine",
             developer_name="Revisto",
             version=self.version,
             developers=["Revisto"],
             copyright="© 2024–2025 Revisto",
-            comments="Drum Machine is a modern and intuitive application for creating, "
-            "playing, and managing drum patterns.",
+            comments=_(
+                "Drum Machine is a modern and intuitive application for creating, "
+                "playing, and managing drum patterns."
+            ),
             debug_info=debug_info,
             license_type=Gtk.License.GPL_3_0,
             translator_credits=_("translator-credits"),
@@ -71,12 +73,13 @@ class DrumMachineApplication(Adw.Application):
             website="https://apps.gnome.org/DrumMachine/",
         )
         about.add_acknowledgement_section(
-            "Special thanks", ["Sepehr Rasouli", "Tobias Bernard"]
+            _("Special thanks"), ["Sepehr Rasouli", "Tobias Bernard"]
         )
         about.add_legal_section(
-            "Sounds",
-            "The drum samples used in this application are from "
-            + "<a href='https://99sounds.org/drum-samples/'>99Sounds</a>.",
+            _("Sounds"),
+            _("The drum samples used in this application are from {link}.").format(
+                link="<a href='https://99sounds.org/drum-samples/'>99Sounds</a>"
+            ),
             Gtk.License.UNKNOWN,
         )
         about.add_legal_section("Mido", None, Gtk.License.MIT_X11)

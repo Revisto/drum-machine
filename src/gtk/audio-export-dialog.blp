@@ -11,6 +11,11 @@ template $AudioExportDialog: Adw.Dialog {
       show-title: true;
     }
 
+    [top]
+    Adw.Banner warning_banner {
+      revealed: false;
+    }
+
     content: Overlay main_overlay {
       [overlay]
       ProgressBar progress_bar {
@@ -73,7 +78,7 @@ template $AudioExportDialog: Adw.Dialog {
               activatable-widget: cover_button;
 
               Button cover_button {
-                label: _("Choose File");
+                label: _("Choose File…");
                 valign: center;
               }
             }
@@ -119,7 +124,7 @@ template $AudioExportDialog: Adw.Dialog {
 
         Label status_label {
           halign: center;
-          label: "Exporting...";
+          label: "Exporting…";
 
           styles [
             "heading",
@@ -128,7 +133,7 @@ template $AudioExportDialog: Adw.Dialog {
 
         Label detail_label {
           halign: center;
-          label: "Processing...";
+          label: "Processing…";
 
           styles [
             "caption",

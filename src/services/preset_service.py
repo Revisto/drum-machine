@@ -19,39 +19,24 @@
 
 import mido
 import itertools
-from ..config.constants import DRUM_PARTS
 
 
 class PresetService:
-    def _get_midi_note_for_part(self, part):
-        mapping = {
-            "kick": 36,
-            "kick-2": 35,
-            "kick-3": 34,
-            "snare": 38,
-            "snare-2": 37,
-            "hihat": 42,
-            "hihat-2": 44,
-            "clap": 39,
-            "tom": 41,
-            "crash": 49,
-        }
-        return mapping.get(part, 0)
+    def __init__(self, window):
+        self.window = window
 
-    def _get_part_for_midi_note(self, note):
-        mapping = {
-            36: "kick",
-            35: "kick-2",
-            34: "kick-3",
-            38: "snare",
-            37: "snare-2",
-            42: "hihat",
-            44: "hihat-2",
-            39: "clap",
-            41: "tom",
-            49: "crash",
-        }
-        return mapping.get(note, None)
+    def _get_midi_note_for_part(self, part_id):
+        """Get MIDI note ID for a drum part"""
+        drum_part = self.window.sound_service.drum_part_manager.get_part_by_id(part_id)
+        if drum_part and drum_part.midi_note_id is not None:
+            return drum_part.midi_note_id
+        return 0
+
+    def _get_part_id_for_midi_note(self, note):
+        """Get drum part ID for a MIDI note, creating a temporary part if needed"""
+        manager = self.window.sound_service.drum_part_manager
+        drum_part = manager.get_or_create_part_for_midi_note(note)
+        return drum_part.id
 
     def save_preset(self, file_path, drum_parts, bpm):
         mid = mido.MidiFile()
@@ -112,7 +97,9 @@ class PresetService:
 
     def load_preset(self, file_path):
         mid = mido.MidiFile(file_path)
-        drum_parts = {part: dict() for part in DRUM_PARTS}
+        drum_parts_state = (
+            self.window.drum_machine_service.create_empty_drum_parts_state()
+        )
         bpm = 120
 
         ticks_per_beat = mid.ticks_per_beat
@@ -127,14 +114,18 @@ class PresetService:
                 if msg.type == "set_tempo":
                     bpm = mido.tempo2bpm(msg.tempo)
                 elif msg.type == "note_on" and msg.velocity > 0:
-                    part = self._get_part_for_midi_note(msg.note)
-                    if part is not None:
-                        # Convert absolute time in ticks back to a beat index
-                        # assuming 16th notes
-                        ticks_per_16th_note = ticks_per_beat / 4.0
-                        beat_index = int(
-                            round(absolute_time_in_ticks / ticks_per_16th_note)
-                        )
-                        drum_parts[part][beat_index] = True
+                    part_id = self._get_part_id_for_midi_note(msg.note)
 
-        return drum_parts, bpm
+                    # Initialize part in state if not already present
+                    if part_id not in drum_parts_state:
+                        drum_parts_state[part_id] = {}
+
+                    # Convert absolute time in ticks back to a beat index
+                    # assuming 16th notes
+                    ticks_per_16th_note = ticks_per_beat / 4.0
+                    beat_index = int(
+                        round(absolute_time_in_ticks / ticks_per_16th_note)
+                    )
+                    drum_parts_state[part_id][beat_index] = True
+
+        return drum_parts_state, bpm

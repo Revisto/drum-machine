@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-10 13:57+0330\n"
+"POT-Creation-Date: 2025-09-16 21:52+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:59
+#: src/window.ui:69
 msgid "Drum Machine"
 msgstr ""
 
@@ -222,8 +223,26 @@ msgstr ""
 msgid "Refined app icon, and adjusted brand colors for better contrast."
 msgstr ""
 
-#: src/application.py:69
+#: src/application.py:66
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns."
+msgstr ""
+
+#: src/application.py:71
 msgid "translator-credits"
+msgstr ""
+
+#: src/application.py:76
+msgid "Special thanks"
+msgstr ""
+
+#: src/application.py:79
+msgid "Sounds"
+msgstr ""
+
+#: src/application.py:80
+msgid "The drum samples used in this application are from "
 msgstr ""
 
 #: src/config/export_formats.py:43
@@ -311,6 +330,14 @@ msgstr ""
 msgid "Save Sequence"
 msgstr ""
 
+#: src/handlers/file_dialog_handler.py:204
+msgid "Audio files"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:216
+msgid "Add Audio Samples"
+msgstr ""
+
 #: src/utils/export_progress.py:68
 msgid "Preparing..."
 msgstr ""
@@ -343,26 +370,62 @@ msgstr ""
 msgid "Processing..."
 msgstr ""
 
+#: src/ui/drum_grid_builder.py:311
+msgid "Preview"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:313
+msgid "Remove"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:316
+msgid "At least one drum part must remain"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:360
+msgid "Removed drum part: {}"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:364
+msgid "Failed to remove drum part"
+msgstr ""
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:198
+#: src/window.py:195
 msgid "{} Beats per Minute (BPM)"
 msgstr ""
 
 #. Update button tooltip to show current volume level
-#: src/window.py:207
+#: src/window.py:204
 msgid "{:.0f}% Volume"
 msgstr ""
 
-#: src/window.py:222 src/window.ui:170
+#: src/window.py:219 src/window.ui:170
 msgid "Play"
 msgstr ""
 
-#: src/window.py:226
+#: src/window.py:223
 msgid "Pause"
 msgstr ""
 
-#: src/window.py:264 src/window.ui:52
+#: src/window.py:261 src/window.ui:52
 msgid "Open"
+msgstr ""
+
+#: src/window.py:279
+msgid "Added: {}"
+msgstr ""
+
+#: src/window.py:289
+msgid "Failed to add custom sound"
+msgstr ""
+
+#: src/window.py:296
+msgid "Replaced drum with: {}"
+msgstr ""
+
+#: src/window.py:301
+msgid "Failed to replace drum sound"
 msgstr ""
 
 #: src/window.ui:54
@@ -430,14 +493,18 @@ msgid "Reset the Drum Sequence"
 msgstr ""
 
 #: src/window.ui:223
+msgid "_Add Samples"
+msgstr ""
+
+#: src/window.ui:227
 msgid "_Save Pattern"
 msgstr ""
 
-#: src/window.ui:229
+#: src/window.ui:233
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/window.ui:233
+#: src/window.ui:237
 msgid "_About Drum Machine"
 msgstr ""
 

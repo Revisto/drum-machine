@@ -27,9 +27,10 @@ from gi.repository import Adw, Gtk, GLib, Gio
 
 from gettext import gettext as _
 
-from .config.constants import DRUM_PARTS, NUM_TOGGLES
+from .config.constants import NUM_TOGGLES
 from .handlers.file_dialog_handler import FileDialogHandler
 from .handlers.window_actions import WindowActionHandler
+from .handlers.drag_drop_handler import DragDropHandler
 from .services.drum_machine_service import DrumMachineService
 from .services.save_changes_service import SaveChangesService
 from .services.sound_service import SoundService
@@ -67,11 +68,11 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.sound_service = SoundService(drumkit_dir)
         self.sound_service.load_sounds()
 
-        self.audio_export_service = AudioExportService(self, drumkit_dir)
+        self.audio_export_service = AudioExportService(self)
 
-        self.ui_helper = UIHelper(self, DRUM_PARTS)
+        self.ui_helper = UIHelper(self)
         self.drum_machine_service = DrumMachineService(
-            self.sound_service, self.ui_helper
+            self, self.sound_service, self.ui_helper
         )
         self.save_changes_service = SaveChangesService(self, self.drum_machine_service)
 
@@ -80,6 +81,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_grid_builder = DrumGridBuilder(self)
         self.action_handler = WindowActionHandler(self)
         self.file_dialog_handler = FileDialogHandler(self)
+        self.drag_drop_handler = DragDropHandler(self)
 
     def _initialize_interface(self):
         """Initialize the complete interface"""
@@ -91,6 +93,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.file_dialog_handler.setup_preset_menu()
         self._connect_signals()
         self.action_handler.setup_actions()
+
+        # Setup drag and drop
+        self.drag_drop_handler.setup_drag_drop()
 
     def _connect_signals(self):
         """Connect UI signals"""
@@ -161,14 +166,6 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         """Handle export audio button click"""
         self.file_dialog_handler.handle_export_audio()
 
-    def on_open_file(self, button):
-        """Compatibility method"""
-        self._on_open_file_clicked(button)
-
-    def on_save_preset(self):
-        """Compatibility method"""
-        self._on_save_preset_clicked()
-
     def scroll_carousel_to_page(self, page_index):
         """Scrolls the carousel to a specific page if auto-scroll is enabled."""
         current_page = self.carousel.get_position()
@@ -238,7 +235,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         return True
 
     def _save_and_close(self):
-        self.file_dialog_handler._show_save_dialog(lambda: self.cleanup_and_destroy())
+        self.file_dialog_handler.show_save_dialog(self.cleanup_and_destroy)
 
     def cleanup(self):
         """Stop playback and cleanup resources"""
@@ -277,3 +274,31 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         """Open file with default app"""
         file_path = parameter.get_string()
         Gio.AppInfo.launch_default_for_uri(f"file://{file_path}", None)
+
+    def show_added_toast(self, name):
+        self.show_toast(_("Added: {}").format(name))
+
+    def add_new_drum_part(self, file_path, name, show_success_toast=True):
+        """Add a new drum part"""
+        result = self.drum_machine_service.add_new_drum_part(file_path, name)
+        if result:
+            if show_success_toast:
+                self.show_added_toast(name)
+            self.save_changes_service.mark_unsaved_changes(True)
+            return True
+        else:
+            self.show_toast(_("Failed to add custom sound"))
+            return False
+
+    def replace_drum_part(self, drum_id, file_path, name):
+        """Replace an existing drum part"""
+        result = self.drum_machine_service.replace_drum_part(drum_id, file_path, name)
+        if result:
+            self.show_toast(_("Replaced drum with: {}").format(name))
+            # Update button state to reflect new file availability
+            self.drum_grid_builder.update_drum_button(drum_id)
+            self.save_changes_service.mark_unsaved_changes(True)
+            return True
+        else:
+            self.show_toast(_("Failed to replace drum sound"))
+            return False

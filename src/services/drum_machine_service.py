@@ -21,13 +21,14 @@ import threading
 import time
 from gi.repository import GLib
 from ..interfaces.player import IPlayer
-from ..config.constants import DRUM_PARTS, NUM_TOGGLES, GROUP_TOGGLE_COUNT
+from ..config.constants import NUM_TOGGLES, GROUP_TOGGLE_COUNT
 from .preset_service import PresetService
 from .ui_helper import UIHelper
 
 
 class DrumMachineService(IPlayer):
-    def __init__(self, sound_service, ui_helper: UIHelper):
+    def __init__(self, window, sound_service, ui_helper: UIHelper):
+        self.window = window
         self.sound_service = sound_service
         self.ui_helper = ui_helper
         self.playing = False
@@ -36,14 +37,16 @@ class DrumMachineService(IPlayer):
         self.play_thread = None
         self.stop_event = threading.Event()
         self.drum_parts_state = self.create_empty_drum_parts_state()
-        self.preset_service = PresetService()
+        self.preset_service = PresetService(window)
         self.total_beats = NUM_TOGGLES
         self.beats_per_page = NUM_TOGGLES
         self.active_pages = 1
         self.playing_beat = -1
 
     def create_empty_drum_parts_state(self):
-        drum_parts_state = {part: dict() for part in DRUM_PARTS}
+        # Get drum parts from sound service
+        drum_parts = self.sound_service.drum_part_manager.get_all_parts()
+        drum_parts_state = {part.id: dict() for part in drum_parts}
         return drum_parts_state
 
     def play(self):
@@ -69,7 +72,7 @@ class DrumMachineService(IPlayer):
         max_beat = 0
         for part_state in self.drum_parts_state.values():
             if part_state:  # Check if the instrument has any active toggles
-                max_beat = max(max_beat, max(part_state.keys()))
+                max_beat = max(max_beat, *part_state.keys())
 
         # If the pattern is completely empty, default to one page.
         if max_beat == 0 and not any(self.drum_parts_state.values()):
@@ -99,6 +102,11 @@ class DrumMachineService(IPlayer):
     def load_preset(self, file_path):
         self.ui_helper.deactivate_all_toggles_in_ui()
         self.drum_parts_state, self.bpm = self.preset_service.load_preset(file_path)
+
+        # Refresh UI to show new temporary parts
+        self.window.drum_grid_builder.rebuild_drum_parts_column()
+        self.window.drum_grid_builder.rebuild_carousel()
+
         self.ui_helper.set_bpm_in_ui(self.bpm)
 
     def _play_drum_sequence(self):
@@ -120,20 +128,70 @@ class DrumMachineService(IPlayer):
                 GLib.idle_add(self.ui_helper.scroll_carousel_to_page, target_page)
 
             # Play sounds for the current beat
-            for part in DRUM_PARTS:
-                if self.drum_parts_state[part].get(current_beat, False):
-                    self.sound_service.play_sound(part)
+            drum_parts = self.sound_service.drum_part_manager.get_all_parts()
+            for part in drum_parts:
+                if self.drum_parts_state[part.id].get(current_beat, False):
+                    self.sound_service.play_sound(part.id)
 
             # Wait for the next beat
             delay_per_step = 60 / self.bpm / GROUP_TOGGLE_COUNT
             time.sleep(delay_per_step)
 
-            self.ui_helper.remove_playhead_highlight_at_beat(current_beat)
+            GLib.idle_add(
+                self.ui_helper.remove_playhead_highlight_at_beat, current_beat
+            )
 
             # Advance the playhead
             current_beat += 1
 
-    def preview_drum_part(self, part):
+    def preview_drum_part(self, part_id):
         """Preview a drum part sound"""
-        if part in DRUM_PARTS:
-            self.sound_service.preview_sound(part)
+        drum_part_manager = self.sound_service.drum_part_manager
+        if drum_part_manager.get_part_by_id(part_id):
+            self.sound_service.preview_sound(part_id)
+
+    def add_drum_part_state(self, part_id):
+        """Add a new drum part to the state"""
+        self.drum_parts_state[part_id] = {}
+
+    def add_new_drum_part(self, file_path, name):
+        """Add a new drum part from an audio file"""
+        new_part = self.sound_service.drum_part_manager.add_custom_part(name, file_path)
+        if new_part:
+            # Reload sounds
+            self.sound_service.reload_sounds()
+            # Add to drum machine state
+            self.add_drum_part_state(new_part.id)
+            # Update UI
+            self.window.drum_grid_builder.add_drum_part(new_part)
+            return new_part
+        return None
+
+    def replace_drum_part(self, drum_id, file_path, name):
+        """Replace an existing drum part with a new audio file"""
+        result = self.sound_service.drum_part_manager.replace_part(
+            drum_id, file_path, name
+        )
+        if result:
+            # Reload the specific sound for this drum part
+            self.sound_service.reload_specific_sound(drum_id)
+            # Update UI button label
+            self.window.drum_grid_builder.update_drum_button(drum_id)
+            # Update total beats in case pattern changed
+            self.update_total_beats()
+            return result
+        return None
+
+    def remove_drum_part(self, drum_id):
+        """Remove a drum part from the service"""
+        result = self.sound_service.drum_part_manager.remove_part(drum_id)
+        if result:
+            # Remove from drum machine state
+            self.drum_parts_state.pop(drum_id, None)
+            # Rebuild the UI to reflect the removal
+            self.window.drum_grid_builder.rebuild_drum_parts_column()
+            self.window.drum_grid_builder.rebuild_carousel()
+            # Update total beats in case pattern changed
+            self.update_total_beats()
+            return True
+        return False
