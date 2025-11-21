@@ -282,7 +282,7 @@ class DrumPartManager:
         self._load_drum_parts()
 
     def _get_next_available_midi_note(self) -> int:
-        """Get the next available MIDI note ID for custom parts"""
+        """Get the next available MIDI note ID for custom parts based on current state"""
         used_notes = set()
 
         # Collect all used MIDI note IDs
@@ -290,6 +290,10 @@ class DrumPartManager:
             if part.midi_note_id is not None:
                 used_notes.add(part.midi_note_id)
 
+        return self._compute_next_midi_note(used_notes)
+
+    def _compute_next_midi_note(self, used_notes: set) -> Optional[int]:
+        """Compute the next available MIDI note given a set of used notes"""
         # Start from 35 (GM percussion range start) for better compatibility
         # GM percussion standard is 35-81, but we check up to 127 for flexibility
         for note in range(35, 128):
@@ -315,20 +319,9 @@ class DrumPartManager:
             if part.midi_note_id is None:
                 if part.is_custom:
                     # Find next available note
-                    # Start from 35 (GM percussion range start)
-                    candidate_note = 35
+                    candidate_note = self._compute_next_midi_note(used_notes)
 
-                    # Find first gap in 35-127 range
-                    while candidate_note in used_notes and candidate_note < 128:
-                        candidate_note += 1
-
-                    # If full, try 0-34
-                    if candidate_note >= 128:
-                        candidate_note = 0
-                        while candidate_note in used_notes and candidate_note < 35:
-                            candidate_note += 1
-
-                    if candidate_note not in used_notes:
+                    if candidate_note is not None:
                         part.midi_note_id = candidate_note
                         used_notes.add(candidate_note)
                 else:
