@@ -77,8 +77,9 @@ class DrumMachineApplication(Adw.Application):
         )
         about.add_legal_section(
             _("Sounds"),
-            _("The drum samples used in this application are from ")
-            + "<a href='https://99sounds.org/drum-samples/'>99Sounds</a>.",
+            _("The drum samples used in this application are from {link}.").format(
+                link="<a href='https://99sounds.org/drum-samples/'>99Sounds</a>"
+            ),
             Gtk.License.UNKNOWN,
         )
         about.add_legal_section("Mido", None, Gtk.License.MIT_X11)
