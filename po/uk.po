@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-09-20 15:25+0000\n"
-"PO-Revision-Date: 2025-09-20 19:33+0300\n"
+"POT-Creation-Date: 2025-11-21 15:26+0000\n"
+"PO-Revision-Date: 2025-11-21 20:47+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -20,7 +20,8 @@ msgstr ""
 "X-Generator: Lokalize 23.04.3\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:59
+#: src/window.ui:69
 msgid "Drum Machine"
 msgstr "Драм-машина"
 
@@ -97,9 +98,31 @@ msgstr "Партитуру ударних завантажено у світло
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Партитуру ударних завантажено у темному режимі"
 
-#: src/application.py:69
+#: src/application.py:66
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns."
+msgstr ""
+"«Драм-машина» — це сучасна та інтуїтивно зрозуміла програма для створення, "
+"відтворення та керування барабанними партитурами."
+
+#: src/application.py:71
 msgid "translator-credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2025"
+
+#: src/application.py:76
+msgid "Special thanks"
+msgstr "Особливі подяки"
+
+#: src/application.py:79
+msgid "Sounds"
+msgstr "Звуки"
+
+#: src/application.py:80
+#, python-brace-format
+msgid "The drum samples used in this application are from {link}."
+msgstr ""
+"Перкусійні семпли, які використано у цій програмі, запозичено з {link}."
 
 #: src/config/export_formats.py:43
 msgid "MP3 files"
@@ -133,29 +156,327 @@ msgstr "файли WAV"
 msgid "WAV (Uncompressed)"
 msgstr "WAV (без стискання)"
 
-#: src/dialogs/audio_export_dialog.py:115
+#: src/dialogs/audio_export_dialog.py:117
 msgid "Save Audio File"
 msgstr "Зберегти звуковий файл"
 
-#: src/dialogs/audio_export_dialog.py:139
+#: src/dialogs/audio_export_dialog.py:146
+msgid "Part “{}” is Silent"
+msgstr "На партії «{}» вимкнено звук"
+
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Parts “{}” and “{}” are Silent"
+msgstr "На партіях «{}» і «{}» вимкнено звук"
+
+#: src/dialogs/audio_export_dialog.py:152
+msgid "{} Parts are Silent"
+msgstr "На партіях {} вимкнено звук"
+
+#: src/dialogs/audio_export_dialog.py:177
 msgid "Image files"
 msgstr "файли зображень"
 
-#: src/dialogs/audio_export_dialog.py:145
+#: src/dialogs/audio_export_dialog.py:183
 msgid "Select Cover Art"
 msgstr "Виберіть обкладинку"
 
-#: src/dialogs/audio_export_dialog.py:202
+#: src/dialogs/audio_export_dialog.py:240
 msgid "Audio exported to {}"
 msgstr "Звукові дані експортовано до {}"
 
-#: src/dialogs/audio_export_dialog.py:207
+#: src/dialogs/audio_export_dialog.py:245
 msgid "Export failed"
 msgstr "Не вдалося експортувати"
 
-#: src/dialogs/audio_export_dialog.py:214
+#: src/dialogs/audio_export_dialog.py:252
 msgid "Export cancelled successfully"
 msgstr "Експортування успішно скасовано"
+
+#: src/dialogs/midi_mapping_dialog.py:21
+msgid "Acoustic Bass Drum"
+msgstr "Акустичний великий барабан"
+
+#: src/dialogs/midi_mapping_dialog.py:22
+msgid "Bass Drum 1"
+msgstr "Великий барабан 1"
+
+#: src/dialogs/midi_mapping_dialog.py:23
+msgid "Side Stick"
+msgstr "удар по ободу"
+
+#: src/dialogs/midi_mapping_dialog.py:24
+msgid "Acoustic Snare"
+msgstr "Акустичний малий барабан"
+
+#: src/dialogs/midi_mapping_dialog.py:25
+msgid "Hand Clap"
+msgstr "Плескіт долонь"
+
+#: src/dialogs/midi_mapping_dialog.py:26
+msgid "Electric Snare"
+msgstr "Малий електробарабан"
+
+#: src/dialogs/midi_mapping_dialog.py:27
+msgid "Low Floor Tom"
+msgstr "Низький підлоговий томтом"
+
+#: src/dialogs/midi_mapping_dialog.py:28
+msgid "Closed Hi Hat"
+msgstr "Закритий хет"
+
+#: src/dialogs/midi_mapping_dialog.py:29
+msgid "High Floor Tom"
+msgstr "Високий напольний томтом"
+
+#: src/dialogs/midi_mapping_dialog.py:30
+msgid "Pedal Hi Hat"
+msgstr "Хет (педаллю)"
+
+#: src/dialogs/midi_mapping_dialog.py:31
+msgid "Low Tom"
+msgstr "Низький томтом"
+
+#: src/dialogs/midi_mapping_dialog.py:32
+msgid "Open Hi Hat"
+msgstr "Відкритий високий хет"
+
+#: src/dialogs/midi_mapping_dialog.py:33
+msgid "Low-Mid Tom"
+msgstr "Низький середній томтом"
+
+#: src/dialogs/midi_mapping_dialog.py:34
+msgid "Hi-Mid Tom"
+msgstr "Високий середній томтом"
+
+#: src/dialogs/midi_mapping_dialog.py:35
+msgid "Crash Cymbal 1"
+msgstr "Креш-тарілка 1"
+
+#: src/dialogs/midi_mapping_dialog.py:36
+msgid "High Tom"
+msgstr "Високий томтом"
+
+#: src/dialogs/midi_mapping_dialog.py:37
+msgid "Ride Cymbal 1"
+msgstr "Райд-тарілка 1"
+
+#: src/dialogs/midi_mapping_dialog.py:38
+msgid "Chinese Cymbal"
+msgstr "Китайська тарілка"
+
+#: src/dialogs/midi_mapping_dialog.py:39
+msgid "Ride Bell"
+msgstr "Райд-тарілка"
+
+#: src/dialogs/midi_mapping_dialog.py:40
+msgid "Tambourine"
+msgstr "Тамбурин"
+
+#: src/dialogs/midi_mapping_dialog.py:41
+msgid "Splash Cymbal"
+msgstr "Сплеш-тарілка"
+
+#: src/dialogs/midi_mapping_dialog.py:42
+msgid "Cowbell"
+msgstr "Дзвіночок"
+
+#: src/dialogs/midi_mapping_dialog.py:43
+msgid "Crash Cymbal 2"
+msgstr "Креш-тарілка 2"
+
+#: src/dialogs/midi_mapping_dialog.py:44
+msgid "Vibraslap"
+msgstr "Вібруючий слеп"
+
+#: src/dialogs/midi_mapping_dialog.py:45
+msgid "Ride Cymbal 2"
+msgstr "Райд-тарілка 2"
+
+#: src/dialogs/midi_mapping_dialog.py:46
+msgid "Hi Bongo"
+msgstr "Високий Бонґо"
+
+#: src/dialogs/midi_mapping_dialog.py:47
+msgid "Low Bongo"
+msgstr "Низьке Бонґо"
+
+#: src/dialogs/midi_mapping_dialog.py:48
+msgid "Mute Hi Conga"
+msgstr "Закрита висока конга"
+
+#: src/dialogs/midi_mapping_dialog.py:49
+msgid "Open Hi Conga"
+msgstr "Відкрита висока Конґа"
+
+#: src/dialogs/midi_mapping_dialog.py:50
+msgid "Low Conga"
+msgstr "Низька Конґа"
+
+#: src/dialogs/midi_mapping_dialog.py:51
+msgid "High Timbale"
+msgstr "Високі литаври"
+
+#: src/dialogs/midi_mapping_dialog.py:52
+msgid "Low Timbale"
+msgstr "Низькі литаври"
+
+#: src/dialogs/midi_mapping_dialog.py:53
+msgid "High Agogo"
+msgstr "Високий Аґоґо"
+
+#: src/dialogs/midi_mapping_dialog.py:54
+msgid "Low Agogo"
+msgstr "Низький Аґоґо"
+
+#: src/dialogs/midi_mapping_dialog.py:55
+msgid "Cabasa"
+msgstr "Кабаса"
+
+#: src/dialogs/midi_mapping_dialog.py:56
+msgid "Maracas"
+msgstr "Маракаси"
+
+#: src/dialogs/midi_mapping_dialog.py:57
+msgid "Short Whistle"
+msgstr "Короткий свист"
+
+#: src/dialogs/midi_mapping_dialog.py:58
+msgid "Long Whistle"
+msgstr "Довгий свист"
+
+#: src/dialogs/midi_mapping_dialog.py:59
+#| msgid "Export Audio"
+msgid "Short Guiro"
+msgstr "Коротке ґуїро"
+
+#: src/dialogs/midi_mapping_dialog.py:60
+msgid "Long Guiro"
+msgstr "Довге ґуїро"
+
+#: src/dialogs/midi_mapping_dialog.py:61
+msgid "Claves"
+msgstr "Клавес"
+
+#: src/dialogs/midi_mapping_dialog.py:62
+msgid "Hi Wood Block"
+msgstr "Висока коробочка"
+
+#: src/dialogs/midi_mapping_dialog.py:63
+msgid "Low Wood Block"
+msgstr "Низький дерев'яний блок"
+
+#: src/dialogs/midi_mapping_dialog.py:64
+msgid "Mute Cuica"
+msgstr "Закрита куїка"
+
+#: src/dialogs/midi_mapping_dialog.py:65
+msgid "Open Cuica"
+msgstr "Відкрита куїка"
+
+#: src/dialogs/midi_mapping_dialog.py:66
+msgid "Mute Triangle"
+msgstr "Закритий трикутник"
+
+#: src/dialogs/midi_mapping_dialog.py:67
+msgid "Open Triangle"
+msgstr "Відкритий трикутник"
+
+#: src/dialogs/midi_mapping_dialog.py:77 src/ui/drum_grid_builder.py:328
+msgid "MIDI Mapping"
+msgstr "Прив'язка MIDI"
+
+#. Group 1: Note Assignment
+#: src/dialogs/midi_mapping_dialog.py:107
+msgid "Note Assignment"
+msgstr "Прив'язка нот"
+
+#: src/dialogs/midi_mapping_dialog.py:110
+msgid ""
+"Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr ""
+"Призначити ноту MIDI для «{}». Це забезпечує належне відтворення при"
+" експортуванні."
+
+#. Action Row for Note
+#: src/dialogs/midi_mapping_dialog.py:117
+#| msgid "MIDI files"
+msgid "MIDI Note"
+msgstr "Нота MIDI"
+
+#: src/dialogs/midi_mapping_dialog.py:118
+msgid "The note number to trigger"
+msgstr "Номер ноти для відтворення"
+
+#. Group 2: Standard Instruments
+#: src/dialogs/midi_mapping_dialog.py:136
+#| msgctxt "shortcut window"
+#| msgid "Go to Instrument"
+msgid "Standard Instruments"
+msgstr "Стандартні інструменти"
+
+#: src/dialogs/midi_mapping_dialog.py:138
+msgid "Select a General MIDI instrument to automatically set the note."
+msgstr ""
+"Виберіть загальний інструмент MIDI для автоматичного встановлення ноти."
+
+#: src/dialogs/midi_mapping_dialog.py:142
+#| msgid "Open Preset"
+msgid "Instrument Preset"
+msgstr "Шаблон інструментів"
+
+#: src/dialogs/midi_mapping_dialog.py:185
+#| msgid "_Save"
+msgid "Save"
+msgstr "Зберегти"
+
+#: src/dialogs/midi_mapping_dialog.py:227
+msgid "Custom Note"
+msgstr "Нетипова нота"
+
+#: src/handlers/drag_drop_handler.py:88
+msgid "Not a supported audio file"
+msgstr "Не є підтримуваним звуковим файлом"
+
+#: src/handlers/drag_drop_handler.py:95
+msgid "File not found"
+msgstr "Файл не знайдено"
+
+#: src/handlers/drag_drop_handler.py:99
+msgid "Selected item is not a file"
+msgstr "Вибраний запис не є файлом"
+
+#: src/handlers/drag_drop_handler.py:105
+msgid "File too large: {:.1f}MB (max 50MB)"
+msgstr "Файл є надто великим: {:.1f}МБ (макс. 50МБ)"
+
+#: src/handlers/drag_drop_handler.py:114
+msgid "Custom Sound"
+msgstr "Нетиповий звук"
+
+#: src/handlers/drag_drop_handler.py:138
+msgid "No valid audio files found"
+msgstr "Не знайдено коректних файлів звукових даних"
+
+#: src/handlers/drag_drop_handler.py:173
+msgid "Error processing file: {}"
+msgstr "Помилка при обробці файла: {}"
+
+#: src/handlers/drag_drop_handler.py:201
+msgid "Added {} drum part, {} files skipped"
+msgstr "Додано партитуру ударних {}, {} файлів пропущено"
+
+#: src/handlers/drag_drop_handler.py:207
+msgid "Added {} drum parts, {} files skipped"
+msgstr "Додано партитури ударних {}, {} файлів пропущено"
+
+#: src/handlers/drag_drop_handler.py:212
+msgid "Added {} drum parts"
+msgstr "Додано партитури ударних {}"
+
+#. Only show skipped message if no replacement happened
+#: src/handlers/drag_drop_handler.py:215
+msgid "{} files skipped"
+msgstr "{} файлів пропущено"
 
 #: src/handlers/file_dialog_handler.py:51
 msgid "Default Presets"
@@ -187,59 +508,146 @@ msgstr "Відкрити файл MIDI"
 msgid "Save Sequence"
 msgstr "Зберегти послідовність"
 
-#: src/utils/export_progress.py:68
-msgid "Preparing..."
-msgstr "Приготування…"
+#: src/handlers/file_dialog_handler.py:210
+msgid "Add Audio Samples"
+msgstr "Додати звукові семпли"
+
+#: src/handlers/file_dialog_handler.py:232
+#| msgid "WAV files"
+msgid "Audio files"
+msgstr "файли звукових даних"
 
 #: src/utils/export_progress.py:69
-msgid "Initializing..."
+#| msgid "Preparing..."
+msgid "Preparing…"
+msgstr "Приготування…"
+
+#: src/utils/export_progress.py:70
+#| msgid "Initializing..."
+msgid "Initializing…"
 msgstr "Ініціалізація…"
 
-#: src/utils/export_progress.py:71
-msgid "Rendering audio..."
+#: src/utils/export_progress.py:72
+#| msgid "Rendering audio..."
+msgid "Rendering audio…"
 msgstr "Обробка звукових даних…"
 
-#: src/utils/export_progress.py:72
-msgid "Processing beats..."
+#: src/utils/export_progress.py:73
+#| msgid "Processing beats..."
+msgid "Processing beats…"
 msgstr "Обробка тактів…"
 
-#: src/utils/export_progress.py:74
-msgid "Saving file..."
+#: src/utils/export_progress.py:75
+#| msgid "Saving file..."
+msgid "Saving file…"
 msgstr "Збереження файла…"
 
-#: src/utils/export_progress.py:75
-msgid "Writing to disk..."
+#: src/utils/export_progress.py:76
+#| msgid "Writing to disk..."
+msgid "Writing to disk…"
 msgstr "Запис на диск…"
 
-#: src/utils/export_progress.py:77
-msgid "Exporting..."
+#: src/utils/export_progress.py:78
+#| msgid "Exporting..."
+msgid "Exporting…"
 msgstr "Експортування…"
 
-#: src/utils/export_progress.py:78
-msgid "Processing..."
+#: src/utils/export_progress.py:79
+#| msgid "Processing..."
+msgid "Processing…"
 msgstr "Обробка…"
 
+#: src/ui/drum_grid_builder.py:313
+msgid "Preview"
+msgstr "Перегляд"
+
+#: src/ui/drum_grid_builder.py:315
+msgid "Replace…"
+msgstr "Замінити…"
+
+#: src/ui/drum_grid_builder.py:318
+msgid "Replace with new sound"
+msgstr "Замінити новим звуком"
+
+#: src/ui/drum_grid_builder.py:321
+msgid "Remove"
+msgstr "Вилучити"
+
+#: src/ui/drum_grid_builder.py:324
+msgid "At least one drum part must remain"
+msgstr "Має лишитися хоча б одна партитура ударних"
+
+#: src/ui/drum_grid_builder.py:331
+#| msgid "Configure your audio export options"
+msgid "Configure MIDI note for export"
+msgstr "Налаштувати ноту MIDI для експортування"
+
+#: src/ui/drum_grid_builder.py:388
+msgid "MIDI note updated"
+msgstr "Оновлено ноту MIDI"
+
+#: src/ui/drum_grid_builder.py:396
+msgid "Select New Sound"
+msgstr "Вибрати новий звук"
+
+#: src/ui/drum_grid_builder.py:410
+msgid "Sound replaced"
+msgstr "Звук замінено"
+
+#: src/ui/drum_grid_builder.py:414
+msgid "Failed to replace sound"
+msgstr "Не вдалося замінити звук"
+
+#: src/ui/drum_grid_builder.py:425
+msgid "Removed drum part: {}"
+msgstr "Вилучено партитуру ударних: {}"
+
+#: src/ui/drum_grid_builder.py:429
+msgid "Failed to remove drum part"
+msgstr "Не вдалося вилучити партитуру ударних"
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:198
+#: src/window.py:195
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} тактів на хвилину (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:207
+#: src/window.py:204
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% гучності"
 
-#: src/window.py:222 src/window.ui:170
+#: src/window.py:219 src/window.ui:170
 msgid "Play"
 msgstr "Пуск"
 
-#: src/window.py:226
+#: src/window.py:223
 msgid "Pause"
 msgstr "Пауза"
 
-#: src/window.py:264 src/window.ui:52
+#: src/window.py:261
 msgid "Open"
 msgstr "Відкрити"
+
+#: src/window.py:279
+msgid "Added: {}"
+msgstr "Додано: {}"
+
+#: src/window.py:290
+msgid "Failed to add custom sound"
+msgstr "Не вдалося додати нетиповий звук"
+
+#: src/window.py:297
+msgid "Replaced drum with: {}"
+msgstr "Замінено ударні на: {}"
+
+#: src/window.py:303
+msgid "Failed to replace drum sound"
+msgstr "Не вдалося замінити звук ударних"
+
+#: src/window.ui:52
+#| msgid "Open"
+msgid "Open…"
+msgstr "Відкрити…"
 
 #: src/window.ui:54
 msgid "Open Preset"
@@ -267,15 +675,16 @@ msgstr "Головне меню"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Доступ до клавіатурних скорочень та відомостей про програму"
 
-#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6
-#: src/gtk/audio-export-dialog.blp:96
-msgid "Export Audio"
-msgstr "Експорт звукових даних"
+#: src/window.ui:86
+#| msgid "Export Audio"
+msgid "Export Audio…"
+msgstr "Експортувати звукові дані…"
 
 #: src/window.ui:88
+#| msgid "Export Audio"
 msgctxt "accessibility"
-msgid "Export Audio"
-msgstr "Експорт звукових даних"
+msgid "Export Audio…"
+msgstr "Експортувати звукові дані…"
 
 #: src/window.ui:89
 msgid "Export Current Drum Pattern as Audio File"
@@ -306,14 +715,19 @@ msgid "Reset the Drum Sequence"
 msgstr "Скинути послідовністю ударних"
 
 #: src/window.ui:223
-msgid "_Save Pattern"
-msgstr "_Зберегти партитуру"
+msgid "_Add Samples…"
+msgstr "_Додати семпли…"
 
-#: src/window.ui:229
+#: src/window.ui:227
+#| msgid "_Save Pattern"
+msgid "_Save Pattern…"
+msgstr "_Зберегти партитуру…"
+
+#: src/window.ui:233
 msgid "_Keyboard Shortcuts"
 msgstr "_Клавіатурні скорочення"
 
-#: src/window.ui:233
+#: src/window.ui:237
 msgid "_About Drum Machine"
 msgstr "_Про «Драм-машину»"
 
@@ -444,47 +858,53 @@ msgstr "_Відкинути"
 msgid "_Save"
 msgstr "З_берегти"
 
-#: src/gtk/audio-export-dialog.blp:39
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr "Експорт звукових даних"
+
+#: src/gtk/audio-export-dialog.blp:44
 msgid "Audio Format"
 msgstr "Формат звукових даних"
 
-#: src/gtk/audio-export-dialog.blp:45
+#: src/gtk/audio-export-dialog.blp:50
 msgid "Repeat Count"
 msgstr "Кількість повторів"
 
-#: src/gtk/audio-export-dialog.blp:46
+#: src/gtk/audio-export-dialog.blp:51
 msgid "How many times to repeat the pattern"
 msgstr "Кількість разів повторення партитури"
 
-#: src/gtk/audio-export-dialog.blp:59
+#: src/gtk/audio-export-dialog.blp:64
 msgid "Metadata"
 msgstr "Метадані"
 
-#: src/gtk/audio-export-dialog.blp:62
+#: src/gtk/audio-export-dialog.blp:67
 msgid "Artist Name"
 msgstr "Ім'я виконавця"
 
-#: src/gtk/audio-export-dialog.blp:67
+#: src/gtk/audio-export-dialog.blp:72
 msgid "Song Name"
 msgstr "Назва композиції"
 
-#: src/gtk/audio-export-dialog.blp:72
+#: src/gtk/audio-export-dialog.blp:77
 msgid "Cover Art"
 msgstr "Обкладинка"
 
-#: src/gtk/audio-export-dialog.blp:76
-msgid "Choose File"
-msgstr "Виберіть файл"
+#: src/gtk/audio-export-dialog.blp:81
+#| msgid "Choose File"
+msgid "Choose File…"
+msgstr "Вибрати файл…"
 
-#: src/gtk/audio-export-dialog.blp:105
+#: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr "Скасувати експортування"
 
+#~ msgctxt "accessibility"
+#~ msgid "Export Audio"
+#~ msgstr "Експорт звукових даних"
+
 #~ msgid "Export Settings"
 #~ msgstr "Параметри експортування"
-
-#~ msgid "Configure your audio export options"
-#~ msgstr "Налаштувати параметри експортування звукових даних"
 
 #~ msgid "Select the output audio format"
 #~ msgstr "Виберіть формат виведення звукових даних"
