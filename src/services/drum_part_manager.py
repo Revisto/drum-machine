@@ -104,7 +104,13 @@ class DrumPartManager:
 
     def _save_drum_parts(self):
         try:
-            all_parts = [part.to_dict() for part in self._drum_parts]
+            # Filter out temporary parts (those with empty file paths)
+            valid_parts = [
+                part
+                for part in self._drum_parts
+                if part.file_path and part.file_path.strip()
+            ]
+            all_parts = [part.to_dict() for part in valid_parts]
             data = {"drum_parts": all_parts}
 
             # Ensure directory exists before writing
