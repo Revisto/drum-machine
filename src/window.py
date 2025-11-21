@@ -284,6 +284,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         if result:
             if show_success_toast:
                 self.show_added_toast(name)
+            self.save_changes_service.mark_unsaved_changes(True)
             return True
         else:
             self.show_toast(_("Failed to add custom sound"))
@@ -296,6 +297,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             self.show_toast(_("Replaced drum with: {}").format(name))
             # Update button state to reflect new file availability
             self.drum_grid_builder.update_drum_button(drum_id)
+            self.save_changes_service.mark_unsaved_changes(True)
             return True
         else:
             self.show_toast(_("Failed to replace drum sound"))
