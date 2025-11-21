@@ -3,7 +3,7 @@ using Adw 1;
 
 template $SaveChangesDialog: Adw.AlertDialog {
   heading: _("Save Changes?");
-  body: _("Current preset contains unsaved changes. Changes which are not saved will be permanently lost.");
+  body: _("Current pattern contains unsaved changes. Changes which are not saved will be permanently lost.");
   close-response: "cancel";
   default-response: "save";
   response::save => $_on_save();

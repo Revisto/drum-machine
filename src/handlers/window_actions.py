@@ -42,8 +42,8 @@ class WindowActionHandler:
             ("decrease_bpm", self.decrease_bpm_action, ["minus"]),
             ("increase_volume", self.increase_volume_action, ["<primary>Up"]),
             ("decrease_volume", self.decrease_volume_action, ["<primary>Down"]),
-            ("load_preset", self.on_open_file_action, ["<primary>o"]),
-            ("save_preset", self.on_save_preset_action, ["<primary>s"]),
+            ("load_pattern", self.on_open_file_action, ["<primary>o"]),
+            ("save_pattern", self.on_save_pattern_action, ["<primary>s"]),
             ("export_audio", self.on_export_audio_action, ["<primary>e"]),
             ("add_samples", self.on_add_samples_action, ["<primary><shift>a"]),
             ("quit", self.on_quit_action, ["<primary>q"]),
@@ -95,10 +95,10 @@ class WindowActionHandler:
         self.window.volume_button.set_value(max(current_volume - 5, 0))
 
     def on_open_file_action(self, action, param):
-        self.window._on_open_file_clicked(self.window.file_preset_button)
+        self.window._on_open_file_clicked(self.window.file_pattern_button)
 
-    def on_save_preset_action(self, action, param):
-        self.window._on_save_preset_clicked()
+    def on_save_pattern_action(self, action, param):
+        self.window._on_save_pattern_clicked()
 
     def on_export_audio_action(self, action, param):
         self.window._on_export_audio_clicked(self.window.export_audio_button)

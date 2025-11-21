@@ -22,7 +22,7 @@ import time
 from gi.repository import GLib
 from ..interfaces.player import IPlayer
 from ..config.constants import NUM_TOGGLES, GROUP_TOGGLE_COUNT
-from .preset_service import PresetService
+from .pattern_service import PatternService
 from .ui_helper import UIHelper
 
 
@@ -37,7 +37,7 @@ class DrumMachineService(IPlayer):
         self.play_thread = None
         self.stop_event = threading.Event()
         self.drum_parts_state = self.create_empty_drum_parts_state()
-        self.preset_service = PresetService(window)
+        self.pattern_service = PatternService(window)
         self.total_beats = NUM_TOGGLES
         self.beats_per_page = NUM_TOGGLES
         self.active_pages = 1
@@ -96,12 +96,12 @@ class DrumMachineService(IPlayer):
         self.drum_parts_state = self.create_empty_drum_parts_state()
         self.ui_helper.deactivate_all_toggles_in_ui()
 
-    def save_preset(self, file_path):
-        self.preset_service.save_preset(file_path, self.drum_parts_state, self.bpm)
+    def save_pattern(self, file_path):
+        self.pattern_service.save_pattern(file_path, self.drum_parts_state, self.bpm)
 
-    def load_preset(self, file_path):
+    def load_pattern(self, file_path):
         self.ui_helper.deactivate_all_toggles_in_ui()
-        self.drum_parts_state, self.bpm = self.preset_service.load_preset(file_path)
+        self.drum_parts_state, self.bpm = self.pattern_service.load_pattern(file_path)
 
         # Refresh UI to show new temporary parts
         self.window.drum_grid_builder.rebuild_drum_parts_column()

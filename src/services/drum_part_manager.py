@@ -172,7 +172,7 @@ class DrumPartManager:
         return temp_part
 
     def add_temporary_part(self, drum_part: DrumPart):
-        """Add a temporary drum part (for Note X parts from presets)"""
+        """Add a temporary drum part (for Note X parts from patterns)"""
         self._drum_parts.append(drum_part)
 
     def add_custom_part(self, name: str, source_file: str) -> Optional[DrumPart]:
