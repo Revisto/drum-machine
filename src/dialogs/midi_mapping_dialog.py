@@ -203,6 +203,8 @@ class MidiMappingDialog(Adw.Dialog):
                     self.dropdown.set_selected(idx)
                 found = True
         except ValueError:
+            # ValueError is expected if val is not in self.note_map;
+            # ignore and handle as 'not found'
             pass
 
         if not found:
