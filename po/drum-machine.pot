@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-16 21:52+0330\n"
+"POT-Creation-Date: 2025-11-22 01:24+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,11 @@ msgstr ""
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:59
 #: src/window.ui:69
 msgid "Drum Machine"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:7
@@ -52,7 +57,7 @@ msgid "Volume control for overall mix"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:20
-msgid "Save and load preset patterns"
+msgid "Save and load patterns"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
@@ -80,146 +85,122 @@ msgid "Drum Pattern Loaded in Dark Mode"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:48
-msgid "drum"
-msgstr ""
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
-msgid "machine"
-msgstr ""
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:50
-msgid "rhythm"
-msgstr ""
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:51
-msgid "music"
-msgstr ""
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:52
-msgid "pattern"
-msgstr ""
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:53
-msgid "beats"
-msgstr ""
-
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:62
 msgid "Revisto"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:68
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:54
 msgid "Drum Machine 1.5.0 introduces major audio export capabilities! 🎵"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:70
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:56
 msgid ""
 "Audio Export Feature: Export your drum patterns to WAV, FLAC, Ogg Vorbis, "
 "and MP3 formats"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:71
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:57
 msgid ""
 "Metadata Support: Embed artist name, song title, and cover art in exported "
 "files"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:72
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:58
 msgid ""
 "Repeat Pattern: Set how many times your beat repeats in the exported audio"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:73
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:59
 msgid ""
 "Bug Fix: Fixed issue where multiple drum sounds weren't playing "
 "simultaneously"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:74
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:60
 msgid ""
 "Translation Updates: Updated Spanish, Russian, Georgian, Chinese, Hungarian, "
 "Swedish, and more"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:80
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:66
 msgid "Drum Machine 1.4.0 is here with some good updates! 🥁"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:82
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:68
 msgid ""
 "More pages for longer, more complex beats, because sometimes you need more "
 "than 16 steps!"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:83
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:69
 msgid ""
 "Mobile-friendly improvements, now your drum machine works better on phones "
 "(with showing half of the grid)"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:84
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:70
 msgid ""
 "Goes global! Now translated into 17 languages including Chinese, Russian, "
 "Arabic, Hebrew, and many more"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:90
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:76
 msgid ""
 "This release of Drum Machine 1.3.1 brings significant UI and functionality "
 "improvements:"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:92
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:78
 msgid ""
 "Refactored headerbar and background styling for a flat, integrated visual "
 "experience."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:93
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:79
 msgid ""
 "Enhanced accessibility with improved tooltips and descriptive labels for BPM "
 "and volume controls."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:94
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:80
 msgid ""
 "Redesigned app icon and updated text styling for clearer user interface "
 "elements."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:95
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:81
 msgid ""
 "Optimized layout breakpoints to improve responsiveness and reduce early "
 "scrolling."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:96
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:82
 msgid ""
 "Fixed padding, border-radius, and vertical alignment issues across multiple "
 "controls."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:97
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:83
 msgid ""
 "Updated file dialogs to use the Nautilus file chooser for a more modern "
 "approach."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:98
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:84
 msgid ""
 "Improved keyboard navigation focus and updated tooltips, including dedicated "
 "play and pause hints."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:99
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:85
 msgid ""
 "Transitioned to the Nautilus file chooser for a more contemporary interface."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:100
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:86
 msgid "Now accessible on narrow mobile screens with adaptive UI elements."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:101
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:87
 msgid "Refined app icon, and adjusted brand colors for better contrast."
 msgstr ""
 
@@ -242,7 +223,8 @@ msgid "Sounds"
 msgstr ""
 
 #: src/application.py:80
-msgid "The drum samples used in this application are from "
+#, python-brace-format
+msgid "The drum samples used in this application are from {link}."
 msgstr ""
 
 #: src/config/export_formats.py:43
@@ -277,116 +259,433 @@ msgstr ""
 msgid "WAV (Uncompressed)"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:104
+#: src/dialogs/audio_export_dialog.py:117
 msgid "Save Audio File"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:128
+#: src/dialogs/audio_export_dialog.py:146
+msgid "Part “{}” is Silent"
+msgstr ""
+
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Parts “{}” and “{}” are Silent"
+msgstr ""
+
+#: src/dialogs/audio_export_dialog.py:152
+msgid "{} Parts are Silent"
+msgstr ""
+
+#: src/dialogs/audio_export_dialog.py:177
 msgid "Image files"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:134
+#: src/dialogs/audio_export_dialog.py:183
 msgid "Select Cover Art"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:191
+#: src/dialogs/audio_export_dialog.py:240
 msgid "Audio exported to {}"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:196
+#: src/dialogs/audio_export_dialog.py:245
 msgid "Export failed"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:203
+#: src/dialogs/audio_export_dialog.py:252
 msgid "Export cancelled successfully"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:50
-msgid "Default Presets"
+#: src/dialogs/midi_mapping_dialog.py:21
+msgid "Acoustic Bass Drum"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:82
-msgid "No Pattern"
+#: src/dialogs/midi_mapping_dialog.py:22
+msgid "Bass Drum 1"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:23
+msgid "Side Stick"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:24
+msgid "Acoustic Snare"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:25
+msgid "Hand Clap"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:26
+msgid "Electric Snare"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:27
+msgid "Low Floor Tom"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:28
+msgid "Closed Hi Hat"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:29
+msgid "High Floor Tom"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:30
+msgid "Pedal Hi Hat"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:31
+msgid "Low Tom"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:32
+msgid "Open Hi Hat"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:33
+msgid "Low-Mid Tom"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:34
+msgid "Hi-Mid Tom"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:35
+msgid "Crash Cymbal 1"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:36
+msgid "High Tom"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:37
+msgid "Ride Cymbal 1"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:38
+msgid "Chinese Cymbal"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:39
+msgid "Ride Bell"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:40
+msgid "Tambourine"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:41
+msgid "Splash Cymbal"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:42
+msgid "Cowbell"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:43
+msgid "Crash Cymbal 2"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:44
+msgid "Vibraslap"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:45
+msgid "Ride Cymbal 2"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:46
+msgid "Hi Bongo"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:47
+msgid "Low Bongo"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:48
+msgid "Mute Hi Conga"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:49
+msgid "Open Hi Conga"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:50
+msgid "Low Conga"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:51
+msgid "High Timbale"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:52
+msgid "Low Timbale"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:53
+msgid "High Agogo"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:54
+msgid "Low Agogo"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:55
+msgid "Cabasa"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:56
+msgid "Maracas"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:57
+msgid "Short Whistle"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:58
+msgid "Long Whistle"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:59
+msgid "Short Guiro"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:60
+msgid "Long Guiro"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:61
+msgid "Claves"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:62
+msgid "Hi Wood Block"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:63
+msgid "Low Wood Block"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:64
+msgid "Mute Cuica"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:65
+msgid "Open Cuica"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:66
+msgid "Mute Triangle"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:67
+msgid "Open Triangle"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:77 src/ui/drum_grid_builder.py:328
+msgid "MIDI Mapping"
+msgstr ""
+
+#. Group 1: Note Assignment
+#: src/dialogs/midi_mapping_dialog.py:107
+msgid "Note Assignment"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:110
+msgid ""
+"Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr ""
+
+#. Action Row for Note
+#: src/dialogs/midi_mapping_dialog.py:117
+msgid "MIDI Note"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:118
+msgid "The note number to trigger"
+msgstr ""
+
+#. Group 2: Standard Instruments
+#: src/dialogs/midi_mapping_dialog.py:136
+msgid "Standard Instruments"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:138
+msgid "Select a General MIDI instrument to automatically set the note."
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:142
+msgid "Instrument Preset"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:185
+msgid "Save"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:227
+msgid "Custom Note"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:88
+msgid "Not a supported audio file"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:95
+msgid "File not found"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:99
+msgid "Selected item is not a file"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:105
+msgid "File too large: {:.1f}MB (max 50MB)"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:114
+msgid "Custom Sound"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:138
+msgid "No valid audio files found"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:173
+msgid "Error processing file: {}"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:201
+msgid "Added {} drum part, {} files skipped"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:207
+msgid "Added {} drum parts, {} files skipped"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:212
+msgid "Added {} drum parts"
+msgstr ""
+
+#. Only show skipped message if no replacement happened
+#: src/handlers/drag_drop_handler.py:215
+msgid "{} files skipped"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:51
+msgid "Default Patterns"
 msgstr ""
 
 #: src/handlers/file_dialog_handler.py:83
+msgid "No Pattern"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:84
 msgid "Please create a drum pattern before exporting audio."
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:85
+#: src/handlers/file_dialog_handler.py:86
 msgid "_OK"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:107
-#: src/handlers/file_dialog_handler.py:173
+#: src/handlers/file_dialog_handler.py:109
+#: src/handlers/file_dialog_handler.py:177
 msgid "MIDI files"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:113
+#: src/handlers/file_dialog_handler.py:115
 msgid "Open MIDI File"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:179
+#: src/handlers/file_dialog_handler.py:185
 msgid "Save Sequence"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:204
-msgid "Audio files"
-msgstr ""
-
-#: src/handlers/file_dialog_handler.py:216
+#: src/handlers/file_dialog_handler.py:210
 msgid "Add Audio Samples"
 msgstr ""
 
-#: src/utils/export_progress.py:68
-msgid "Preparing..."
+#: src/handlers/file_dialog_handler.py:232
+msgid "Audio files"
 msgstr ""
 
 #: src/utils/export_progress.py:69
-msgid "Initializing..."
+msgid "Preparing…"
 msgstr ""
 
-#: src/utils/export_progress.py:71
-msgid "Rendering audio..."
+#: src/utils/export_progress.py:70
+msgid "Initializing…"
 msgstr ""
 
 #: src/utils/export_progress.py:72
-msgid "Processing beats..."
+msgid "Rendering audio…"
 msgstr ""
 
-#: src/utils/export_progress.py:74
-msgid "Saving file..."
+#: src/utils/export_progress.py:73
+msgid "Processing beats…"
 msgstr ""
 
 #: src/utils/export_progress.py:75
-msgid "Writing to disk..."
+msgid "Saving file…"
 msgstr ""
 
-#: src/utils/export_progress.py:77
-msgid "Exporting..."
+#: src/utils/export_progress.py:76
+msgid "Writing to disk…"
 msgstr ""
 
 #: src/utils/export_progress.py:78
-msgid "Processing..."
+msgid "Exporting…"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:311
-msgid "Preview"
+#: src/utils/export_progress.py:79
+msgid "Processing…"
 msgstr ""
 
 #: src/ui/drum_grid_builder.py:313
+msgid "Preview"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:315
+msgid "Replace…"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:318
+msgid "Replace with new sound"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:321
 msgid "Remove"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:316
+#: src/ui/drum_grid_builder.py:324
 msgid "At least one drum part must remain"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:360
+#: src/ui/drum_grid_builder.py:331
+msgid "Configure MIDI note for export"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:388
+msgid "MIDI note updated"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:396
+msgid "Select New Sound"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:410
+msgid "Sound replaced"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:414
+msgid "Failed to replace sound"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:425
 msgid "Removed drum part: {}"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:364
+#: src/ui/drum_grid_builder.py:429
 msgid "Failed to remove drum part"
 msgstr ""
 
@@ -408,7 +707,7 @@ msgstr ""
 msgid "Pause"
 msgstr ""
 
-#: src/window.py:261 src/window.ui:52
+#: src/window.py:261
 msgid "Open"
 msgstr ""
 
@@ -416,29 +715,33 @@ msgstr ""
 msgid "Added: {}"
 msgstr ""
 
-#: src/window.py:289
+#: src/window.py:290
 msgid "Failed to add custom sound"
 msgstr ""
 
-#: src/window.py:296
+#: src/window.py:297
 msgid "Replaced drum with: {}"
 msgstr ""
 
-#: src/window.py:301
+#: src/window.py:303
 msgid "Failed to replace drum sound"
 msgstr ""
 
+#: src/window.ui:52
+msgid "Open…"
+msgstr ""
+
 #: src/window.ui:54
-msgid "Open Preset"
+msgid "Open Pattern"
 msgstr ""
 
 #: src/window.ui:57
 msgctxt "accessibility"
-msgid "Open Preset"
+msgid "Open Pattern"
 msgstr ""
 
 #: src/window.ui:58
-msgid "Open Saved Drum Pattern Preset"
+msgid "Open Saved Drum Pattern"
 msgstr ""
 
 #: src/window.ui:76
@@ -454,14 +757,13 @@ msgstr ""
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr ""
 
-#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6
-#: src/gtk/audio-export-dialog.blp:96
-msgid "Export Audio"
+#: src/window.ui:86
+msgid "Export Audio…"
 msgstr ""
 
 #: src/window.ui:88
 msgctxt "accessibility"
-msgid "Export Audio"
+msgid "Export Audio…"
 msgstr ""
 
 #: src/window.ui:89
@@ -493,11 +795,11 @@ msgid "Reset the Drum Sequence"
 msgstr ""
 
 #: src/window.ui:223
-msgid "_Add Samples"
+msgid "_Add Samples…"
 msgstr ""
 
 #: src/window.ui:227
-msgid "_Save Pattern"
+msgid "_Save Pattern…"
 msgstr ""
 
 #: src/window.ui:233
@@ -570,17 +872,17 @@ msgstr ""
 
 #: src/gtk/help-overlay.blp:76
 msgctxt "shortcut window"
-msgid "Preset Management"
+msgid "Pattern Management"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:79
 msgctxt "shortcut window"
-msgid "Load Preset"
+msgid "Load Pattern"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:85
 msgctxt "shortcut window"
-msgid "Save Preset"
+msgid "Save Pattern"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:91
@@ -614,8 +916,8 @@ msgstr ""
 
 #: src/gtk/save-changes-dialog.blp:6
 msgid ""
-"Current preset contains unsaved changes. Changes which are not saved will be "
-"permanently lost."
+"Current pattern contains unsaved changes. Changes which are not saved will "
+"be permanently lost."
 msgstr ""
 
 #. Translators: Cancel the operation
@@ -633,38 +935,42 @@ msgstr ""
 msgid "_Save"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.blp:39
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:44
 msgid "Audio Format"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.blp:45
+#: src/gtk/audio-export-dialog.blp:50
 msgid "Repeat Count"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.blp:46
+#: src/gtk/audio-export-dialog.blp:51
 msgid "How many times to repeat the pattern"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.blp:59
+#: src/gtk/audio-export-dialog.blp:64
 msgid "Metadata"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.blp:62
+#: src/gtk/audio-export-dialog.blp:67
 msgid "Artist Name"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.blp:67
+#: src/gtk/audio-export-dialog.blp:72
 msgid "Song Name"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.blp:72
+#: src/gtk/audio-export-dialog.blp:77
 msgid "Cover Art"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.blp:76
-msgid "Choose File"
+#: src/gtk/audio-export-dialog.blp:81
+msgid "Choose File…"
 msgstr ""
 
-#: src/gtk/audio-export-dialog.blp:105
+#: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr ""
