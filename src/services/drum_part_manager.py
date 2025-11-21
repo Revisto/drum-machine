@@ -303,12 +303,35 @@ class DrumPartManager:
 
     def _assign_midi_note_ids(self):
         """Assign MIDI note IDs to parts that don't have them (migration)"""
+        # Collect all currently used notes
+        used_notes = set()
+        for part in self._drum_parts:
+            if part.midi_note_id is not None:
+                used_notes.add(part.midi_note_id)
+        
         for part in self._drum_parts:
             if part.midi_note_id is None:
                 if part.is_custom:
-                    # Assign next available note for custom parts
-                    part.midi_note_id = self._get_next_available_midi_note()
+                    # Find next available note
+                    # Start from 35 (GM percussion range start)
+                    candidate_note = 35
+                    
+                    # Find first gap in 35-127 range
+                    while candidate_note in used_notes and candidate_note < 128:
+                        candidate_note += 1
+                    
+                    # If full, try 0-34
+                    if candidate_note >= 128:
+                         candidate_note = 0
+                         while candidate_note in used_notes and candidate_note < 35:
+                             candidate_note += 1
+                    
+                    if candidate_note not in used_notes:
+                        part.midi_note_id = candidate_note
+                        used_notes.add(candidate_note)
                 else:
                     # Assign default note for default parts
                     part_name = part.id.replace("default_", "")
                     part.midi_note_id = DEFAULT_MIDI_NOTES.get(part_name)
+                    if part.midi_note_id is not None:
+                        used_notes.add(part.midi_note_id)
