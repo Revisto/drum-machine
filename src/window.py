@@ -51,7 +51,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     clear_button = Gtk.Template.Child()
     play_pause_button = Gtk.Template.Child()
     drum_machine_box = Gtk.Template.Child()
-    file_preset_button = Gtk.Template.Child()
+    file_pattern_button = Gtk.Template.Child()
     export_audio_button = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
@@ -90,7 +90,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_machine_box.append(drum_interface)
 
         # Setup other components
-        self.file_dialog_handler.setup_preset_menu()
+        self.file_dialog_handler.setup_pattern_menu()
         self._connect_signals()
         self.action_handler.setup_actions()
 
@@ -104,7 +104,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.volume_button.connect("value-changed", self.on_volume_changed)
         self.clear_button.connect("clicked", self.handle_clear)
         self.play_pause_button.connect("clicked", self.handle_play_pause)
-        self.file_preset_button.connect("clicked", self._on_open_file_clicked)
+        self.file_pattern_button.connect("clicked", self._on_open_file_clicked)
         self.export_audio_button.connect("clicked", self._on_export_audio_clicked)
         self.drum_machine_box.connect(
             "notify::css-classes", self._on_breakpoint_changed
@@ -159,8 +159,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def _on_open_file_clicked(self, button):
         self.file_dialog_handler.handle_open_file()
 
-    def _on_save_preset_clicked(self):
-        self.file_dialog_handler.handle_save_preset()
+    def _on_save_pattern_clicked(self):
+        self.file_dialog_handler.handle_save_pattern()
 
     def _on_export_audio_clicked(self, button):
         """Handle export audio button click"""

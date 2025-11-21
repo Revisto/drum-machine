@@ -48,20 +48,20 @@ half-view</setter>
             <child type="top">
               <object class="AdwHeaderBar" id="header_bar">
                 <child type="start">
-                  <object class="AdwSplitButton" id="file_preset_button">
+                  <object class="AdwSplitButton" id="file_pattern_button">
                     <property name="label" translatable="yes">Open…</property>
                     <property name="use-underline">True</property>
-                    <property name="tooltip-text" translatable="yes">Open Preset</property>
-                    <property name="menu-model">preset_menu</property>
+                    <property name="tooltip-text" translatable="yes">Open Pattern</property>
+                    <property name="menu-model">pattern_menu</property>
                     <accessibility>
-                      <property name="label" translatable="yes" context="accessibility">Open Preset</property>
-                      <property name="description" translatable="yes">Open Saved Drum Pattern Preset</property>
+                      <property name="label" translatable="yes" context="accessibility">Open Pattern</property>
+                      <property name="description" translatable="yes">Open Saved Drum Pattern</property>
                     </accessibility>
                   </object>
                 </child>
-                <menu id="preset_menu">
+                <menu id="pattern_menu">
                   <section>
-                    <!-- Presets will be added here programmatically -->
+                    <!-- Patterns will be added here programmatically -->
                   </section>
                 </menu>
                 <child type="title">
@@ -225,7 +225,7 @@ audio-volume-medium-symbolic</property>
       </item>
       <item>
         <attribute name="label" translatable="yes">_Save Pattern…</attribute>
-        <attribute name="action">win.save_preset</attribute>
+        <attribute name="action">win.save_pattern</attribute>
       </item>
     </section>
     <section>

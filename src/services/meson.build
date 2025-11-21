@@ -8,7 +8,7 @@ services_sources = [
     'audio_renderer.py',
     'file_encoder.py',
     'ui_helper.py',
-    'preset_service.py',
+    'pattern_service.py',
     'save_changes_service.py',
 ]
 

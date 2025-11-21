@@ -35,4 +35,4 @@ test('Validate schema file',
 
 subdir('icons')
 subdir('drumkit')
-subdir('presets')
+subdir('patterns')

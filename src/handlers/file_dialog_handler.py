@@ -25,36 +25,36 @@ gi.require_version("Gio", "2.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Gio, GLib, Adw
 from gettext import gettext as _
-from ..config.constants import DEFAULT_PRESETS, SUPPORTED_INPUT_AUDIO_FORMATS
+from ..config.constants import DEFAULT_PATTERNS, SUPPORTED_INPUT_AUDIO_FORMATS
 from ..dialogs.audio_export_dialog import AudioExportDialog
 
 
 class FileDialogHandler:
-    """Handles file dialogs and preset management"""
+    """Handles file dialogs and pattern management"""
 
     def __init__(self, window):
         self.window = window
         self.filename = None
 
-    def setup_preset_menu(self):
-        """Setup the preset menu with default presets"""
+    def setup_pattern_menu(self):
+        """Setup the pattern menu with default patterns"""
         menu = Gio.Menu.new()
         section = Gio.Menu.new()
 
-        for preset in DEFAULT_PRESETS:
-            item = Gio.MenuItem.new(preset, "win.load-preset")
+        for pattern in DEFAULT_PATTERNS:
+            item = Gio.MenuItem.new(pattern, "win.load-pattern")
             item.set_action_and_target_value(
-                "win.load-preset", GLib.Variant.new_string(preset)
+                "win.load-pattern", GLib.Variant.new_string(pattern)
             )
             section.append_item(item)
 
-        menu.append_section(_("Default Presets"), section)
+        menu.append_section(_("Default Patterns"), section)
 
-        preset_action = Gio.SimpleAction.new("load-preset", GLib.VariantType.new("s"))
-        preset_action.connect("activate", self.on_preset_selected)
-        self.window.add_action(preset_action)
+        pattern_action = Gio.SimpleAction.new("load-pattern", GLib.VariantType.new("s"))
+        pattern_action.connect("activate", self.on_pattern_selected)
+        self.window.add_action(pattern_action)
 
-        self.window.file_preset_button.set_menu_model(menu)
+        self.window.file_pattern_button.set_menu_model(menu)
 
     def handle_open_file(self):
         """Handle opening a file with unsaved changes check"""
@@ -65,8 +65,8 @@ class FileDialogHandler:
         else:
             self._open_file_directly()
 
-    def handle_save_preset(self):
-        """Handle saving a preset"""
+    def handle_save_pattern(self):
+        """Handle saving a pattern"""
         self.show_save_dialog()
 
     def handle_export_audio(self):
@@ -123,8 +123,8 @@ class FileDialogHandler:
         try:
             file = dialog.open_finish(response)
             if file:
-                # Load the preset data into the service
-                self.window.drum_machine_service.load_preset(file.get_path())
+                # Load the pattern data into the service
+                self.window.drum_machine_service.load_pattern(file.get_path())
                 # Update the UI to reflect the new pattern structure
                 self.window.drum_machine_service.update_total_beats()
                 self.window.drum_grid_builder.reset_carousel_pages()
@@ -137,29 +137,29 @@ class FileDialogHandler:
         except GLib.Error:
             return
 
-    def on_preset_selected(self, action, parameter):
-        """Handle preset selection from menu"""
+    def on_pattern_selected(self, action, parameter):
+        """Handle pattern selection from menu"""
         if self.window.save_changes_service.has_unsaved_changes():
             self.window.save_changes_service.prompt_save_changes(
-                on_save=lambda: self._save_and_open_preset(parameter),
-                on_discard=lambda: self._open_preset_directly(parameter),
+                on_save=lambda: self._save_and_open_pattern(parameter),
+                on_discard=lambda: self._open_pattern_directly(parameter),
             )
         else:
-            self._open_preset_directly(parameter)
+            self._open_pattern_directly(parameter)
 
-    def _save_and_open_preset(self, parameter):
-        self.show_save_dialog(lambda: self._open_preset_directly(parameter))
+    def _save_and_open_pattern(self, parameter):
+        self.show_save_dialog(lambda: self._open_pattern_directly(parameter))
 
-    def _open_preset_directly(self, parameter):
-        """Load a preset directly"""
-        preset_name = parameter.get_string()
-        preset_dir = os.path.join(
-            os.path.dirname(__file__), "..", "..", "data", "presets"
+    def _open_pattern_directly(self, parameter):
+        """Load a pattern directly"""
+        pattern_name = parameter.get_string()
+        pattern_dir = os.path.join(
+            os.path.dirname(__file__), "..", "..", "data", "patterns"
         )
-        file_path = os.path.join(preset_dir, f"{preset_name}.mid")
+        file_path = os.path.join(pattern_dir, f"{pattern_name}.mid")
 
-        # Load the preset data into the service
-        self.window.drum_machine_service.load_preset(file_path)
+        # Load the pattern data into the service
+        self.window.drum_machine_service.load_pattern(file_path)
         # Update the UI to reflect the new pattern structure
         self.window.drum_machine_service.update_total_beats()
         self.window.drum_grid_builder.reset_carousel_pages()
@@ -194,7 +194,7 @@ class FileDialogHandler:
                     file_path = file.get_path()
                     if not file_path.endswith(".mid"):
                         file_path += ".mid"
-                    self.window.drum_machine_service.save_preset(file_path)
+                    self.window.drum_machine_service.save_pattern(file_path)
                     self.window.save_changes_service.mark_unsaved_changes(False)
                     self.filename = self._get_filename_without_extension(file)
                     if after_save_callback:
