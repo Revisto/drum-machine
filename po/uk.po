@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-11-21 15:26+0000\n"
-"PO-Revision-Date: 2025-11-21 20:47+0200\n"
+"POT-Creation-Date: 2025-11-22 03:26+0000\n"
+"PO-Revision-Date: 2025-11-22 16:01+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -67,7 +67,8 @@ msgid "Volume control for overall mix"
 msgstr "Керування гучністю для загального мікшування"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:20
-msgid "Save and load preset patterns"
+#| msgid "Save and load preset patterns"
+msgid "Save and load patterns"
 msgstr "Зберігання та завантаження партитур"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
@@ -345,7 +346,6 @@ msgid "Long Whistle"
 msgstr "Довгий свист"
 
 #: src/dialogs/midi_mapping_dialog.py:59
-#| msgid "Export Audio"
 msgid "Short Guiro"
 msgstr "Коротке ґуїро"
 
@@ -394,12 +394,11 @@ msgstr "Прив'язка нот"
 msgid ""
 "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
 msgstr ""
-"Призначити ноту MIDI для «{}». Це забезпечує належне відтворення при"
-" експортуванні."
+"Призначити ноту MIDI для «{}». Це забезпечує належне відтворення при "
+"експортуванні."
 
 #. Action Row for Note
 #: src/dialogs/midi_mapping_dialog.py:117
-#| msgid "MIDI files"
 msgid "MIDI Note"
 msgstr "Нота MIDI"
 
@@ -409,8 +408,6 @@ msgstr "Номер ноти для відтворення"
 
 #. Group 2: Standard Instruments
 #: src/dialogs/midi_mapping_dialog.py:136
-#| msgctxt "shortcut window"
-#| msgid "Go to Instrument"
 msgid "Standard Instruments"
 msgstr "Стандартні інструменти"
 
@@ -420,12 +417,10 @@ msgstr ""
 "Виберіть загальний інструмент MIDI для автоматичного встановлення ноти."
 
 #: src/dialogs/midi_mapping_dialog.py:142
-#| msgid "Open Preset"
 msgid "Instrument Preset"
 msgstr "Шаблон інструментів"
 
 #: src/dialogs/midi_mapping_dialog.py:185
-#| msgid "_Save"
 msgid "Save"
 msgstr "Зберегти"
 
@@ -479,12 +474,13 @@ msgid "{} files skipped"
 msgstr "{} файлів пропущено"
 
 #: src/handlers/file_dialog_handler.py:51
-msgid "Default Presets"
+#| msgid "Default Presets"
+msgid "Default Patterns"
 msgstr "Типові партитури"
 
 #: src/handlers/file_dialog_handler.py:83
 msgid "No Pattern"
-msgstr "Без візерунка"
+msgstr "Без партитури"
 
 #: src/handlers/file_dialog_handler.py:84
 msgid "Please create a drum pattern before exporting audio."
@@ -513,47 +509,38 @@ msgid "Add Audio Samples"
 msgstr "Додати звукові семпли"
 
 #: src/handlers/file_dialog_handler.py:232
-#| msgid "WAV files"
 msgid "Audio files"
 msgstr "файли звукових даних"
 
 #: src/utils/export_progress.py:69
-#| msgid "Preparing..."
 msgid "Preparing…"
 msgstr "Приготування…"
 
 #: src/utils/export_progress.py:70
-#| msgid "Initializing..."
 msgid "Initializing…"
 msgstr "Ініціалізація…"
 
 #: src/utils/export_progress.py:72
-#| msgid "Rendering audio..."
 msgid "Rendering audio…"
 msgstr "Обробка звукових даних…"
 
 #: src/utils/export_progress.py:73
-#| msgid "Processing beats..."
 msgid "Processing beats…"
 msgstr "Обробка тактів…"
 
 #: src/utils/export_progress.py:75
-#| msgid "Saving file..."
 msgid "Saving file…"
 msgstr "Збереження файла…"
 
 #: src/utils/export_progress.py:76
-#| msgid "Writing to disk..."
 msgid "Writing to disk…"
 msgstr "Запис на диск…"
 
 #: src/utils/export_progress.py:78
-#| msgid "Exporting..."
 msgid "Exporting…"
 msgstr "Експортування…"
 
 #: src/utils/export_progress.py:79
-#| msgid "Processing..."
 msgid "Processing…"
 msgstr "Обробка…"
 
@@ -578,7 +565,6 @@ msgid "At least one drum part must remain"
 msgstr "Має лишитися хоча б одна партитура ударних"
 
 #: src/ui/drum_grid_builder.py:331
-#| msgid "Configure your audio export options"
 msgid "Configure MIDI note for export"
 msgstr "Налаштувати ноту MIDI для експортування"
 
@@ -645,22 +631,24 @@ msgid "Failed to replace drum sound"
 msgstr "Не вдалося замінити звук ударних"
 
 #: src/window.ui:52
-#| msgid "Open"
 msgid "Open…"
 msgstr "Відкрити…"
 
 #: src/window.ui:54
-msgid "Open Preset"
-msgstr "Відкрити шаблон"
+#| msgid "No Pattern"
+msgid "Open Pattern"
+msgstr "Відкрити партитуру"
 
 #: src/window.ui:57
+#| msgid "No Pattern"
 msgctxt "accessibility"
-msgid "Open Preset"
-msgstr "Відкрити шаблон"
+msgid "Open Pattern"
+msgstr "Відкрити партитуру"
 
 #: src/window.ui:58
-msgid "Open Saved Drum Pattern Preset"
-msgstr "Відкрити збережений шаблон партитури ударних"
+#| msgid "Open Saved Drum Pattern Preset"
+msgid "Open Saved Drum Pattern"
+msgstr "Відкрити збережену партитуру ударних"
 
 #: src/window.ui:76
 msgid "Main Menu"
@@ -676,12 +664,10 @@ msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Доступ до клавіатурних скорочень та відомостей про програму"
 
 #: src/window.ui:86
-#| msgid "Export Audio"
 msgid "Export Audio…"
 msgstr "Експортувати звукові дані…"
 
 #: src/window.ui:88
-#| msgid "Export Audio"
 msgctxt "accessibility"
 msgid "Export Audio…"
 msgstr "Експортувати звукові дані…"
@@ -719,7 +705,6 @@ msgid "_Add Samples…"
 msgstr "_Додати семпли…"
 
 #: src/window.ui:227
-#| msgid "_Save Pattern"
 msgid "_Save Pattern…"
 msgstr "_Зберегти партитуру…"
 
@@ -792,19 +777,23 @@ msgid "Mute"
 msgstr "Вимкнути звук"
 
 #: src/gtk/help-overlay.blp:76
+#| msgctxt "shortcut window"
+#| msgid "Preset Management"
 msgctxt "shortcut window"
-msgid "Preset Management"
-msgstr "Керування шаблонами"
+msgid "Pattern Management"
+msgstr "Керування партитурами"
 
 #: src/gtk/help-overlay.blp:79
+#| msgid "No Pattern"
 msgctxt "shortcut window"
-msgid "Load Preset"
-msgstr "Завантажити шаблон"
+msgid "Load Pattern"
+msgstr "Завантажити партитуру"
 
 #: src/gtk/help-overlay.blp:85
+#| msgid "_Save Pattern…"
 msgctxt "shortcut window"
-msgid "Save Preset"
-msgstr "Зберегти шаблон"
+msgid "Save Pattern"
+msgstr "Зберегти партитуру"
 
 #: src/gtk/help-overlay.blp:91
 msgctxt "shortcut window"
@@ -836,11 +825,14 @@ msgid "Save Changes?"
 msgstr "Зберегти зміни?"
 
 #: src/gtk/save-changes-dialog.blp:6
+#| msgid ""
+#| "Current preset contains unsaved changes. Changes which are not saved will "
+#| "be permanently lost."
 msgid ""
-"Current preset contains unsaved changes. Changes which are not saved will be "
-"permanently lost."
+"Current pattern contains unsaved changes. Changes which are not saved will "
+"be permanently lost."
 msgstr ""
-"До поточного шаблону внесено незбережені зміни. Зміни, які не було "
+"До поточної партитури внесено незбережені зміни. Зміни, які не було "
 "збережено, буде назавжди втрачено."
 
 #. Translators: Cancel the operation
@@ -891,13 +883,27 @@ msgid "Cover Art"
 msgstr "Обкладинка"
 
 #: src/gtk/audio-export-dialog.blp:81
-#| msgid "Choose File"
 msgid "Choose File…"
 msgstr "Вибрати файл…"
 
 #: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr "Скасувати експортування"
+
+#~ msgid "Open Preset"
+#~ msgstr "Відкрити шаблон"
+
+#~ msgctxt "accessibility"
+#~ msgid "Open Preset"
+#~ msgstr "Відкрити шаблон"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Load Preset"
+#~ msgstr "Завантажити шаблон"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "Зберегти шаблон"
 
 #~ msgctxt "accessibility"
 #~ msgid "Export Audio"
