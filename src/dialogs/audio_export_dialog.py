@@ -50,11 +50,12 @@ class AudioExportDialog(Adw.Dialog):
     warning_banner = Gtk.Template.Child()
 
     def __init__(
-        self, parent_window,
+        self,
+        parent_window,
         audio_export_service,
         drum_parts_state,
         bpm,
-        suggested_filename
+        suggested_filename,
     ):
         super().__init__()
 

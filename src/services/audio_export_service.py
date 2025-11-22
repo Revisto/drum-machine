@@ -21,7 +21,6 @@ import os
 import numpy as np
 import subprocess
 import logging
-from gettext import gettext as _
 
 from ..utils.export_progress import ExportPhase
 from ..config.export_formats import ExportFormatRegistry
@@ -150,4 +149,4 @@ class AudioExportService:
             any(part_state.values()) for part_state in drum_parts_state.values()
         )
         if not has_beats:
-            raise ValueError(_("No active beats in pattern"))
+            raise ValueError("No active beats in pattern")
