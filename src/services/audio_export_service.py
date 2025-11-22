@@ -150,4 +150,4 @@ class AudioExportService:
             any(part_state.values()) for part_state in drum_parts_state.values()
         )
         if not has_beats:
-            raise ValueError(_("No active beats in pattern"))
+            raise ValueError("No active beats in pattern")

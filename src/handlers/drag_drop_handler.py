@@ -21,6 +21,7 @@ from pathlib import Path
 from gi.repository import Gtk, Gdk
 from gettext import gettext as _
 from ..config.constants import SUPPORTED_INPUT_AUDIO_FORMATS
+from ..utils.name_utils import extract_name_from_path
 
 
 class DragDropHandler:
@@ -82,6 +83,36 @@ class DragDropHandler:
         files = list(files_list)
         return self.handle_multiple_files_drop(files, drum_id)
 
+    def handle_replacement_file_selected(self, file_path, drum_id):
+        """Handle replacement file selected from file chooser
+        
+        Args:
+            file_path: Path to the selected file (str)
+            drum_id: ID of the drum part to replace
+        """
+        if not file_path:
+            return False
+
+        path = Path(file_path)
+        
+        # Validate file
+        if not self._validate_file_format(path):
+            return False
+        if not self._validate_file_access(path):
+            return False
+
+        # Extract name and replace
+        name = extract_name_from_path(path)
+        result = self.window.replace_drum_part(drum_id, str(path), name)
+
+        if result:
+            self.window.show_toast(_("Sound replaced"))
+            self.window.save_changes_service.mark_unsaved_changes(True)
+        else:
+            self.window.show_toast(_("Failed to replace sound"))
+
+        return result
+
     def _validate_file_format(self, path):
         """Validate file format is supported"""
         if path.suffix.lower() not in SUPPORTED_INPUT_AUDIO_FORMATS:
@@ -108,10 +139,6 @@ class DragDropHandler:
 
         return True
 
-    def _extract_name_from_path(self, path):
-        """Extract display name from file path"""
-        name = path.stem.replace("_", " ").replace("-", " ").title()
-        return name if name.strip() else _("Custom Sound")
 
     def handle_multiple_files_drop(self, files, drum_id_to_replace):
         """Handle files dropped at once"""
@@ -149,7 +176,7 @@ class DragDropHandler:
         # Process all files
         for i, path in enumerate(valid_files):
             try:
-                name = self._extract_name_from_path(path)
+                name = extract_name_from_path(path)
 
                 if i == 0 and drum_id_to_replace:
                     # Replace first file and show replacement toast

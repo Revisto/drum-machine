@@ -393,25 +393,10 @@ class DrumGridBuilder:
         popover.popdown()
         # Open file chooser
         self.window.file_dialog_handler.open_audio_file_chooser(
-            _("Select New Sound"), self._on_replacement_file_selected, drum_id
+            _("Select New Sound"), 
+            self.window.drag_drop_handler.handle_replacement_file_selected, 
+            drum_id
         )
-
-    def _on_replacement_file_selected(self, file_path, drum_id):
-        """Callback for when a replacement file is selected"""
-        if not file_path:
-            return
-
-        # Pass None for name so it keeps existing name or derives from filename
-        result = self.window.drum_machine_service.replace_drum_part(
-            drum_id, file_path, None
-        )
-
-        if result:
-            self.window.show_toast(_("Sound replaced"))
-            # Mark as unsaved
-            self.window.save_changes_service.mark_unsaved_changes(True)
-        else:
-            self.window.show_toast(_("Failed to replace sound"))
 
     def _on_remove_clicked(self, button, drum_id, popover):
         """Handle remove button click"""

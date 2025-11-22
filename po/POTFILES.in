@@ -8,6 +8,7 @@ src/dialogs/midi_mapping_dialog.py
 src/handlers/drag_drop_handler.py
 src/handlers/file_dialog_handler.py
 src/utils/export_progress.py
+src/utils/name_utils.py
 src/ui/drum_grid_builder.py
 src/window.py
 src/window.ui
