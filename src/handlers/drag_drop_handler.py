@@ -85,7 +85,7 @@ class DragDropHandler:
 
     def handle_replacement_file_selected(self, file_path, drum_id):
         """Handle replacement file selected from file chooser
-        
+
         Args:
             file_path: Path to the selected file (str)
             drum_id: ID of the drum part to replace
@@ -94,7 +94,7 @@ class DragDropHandler:
             return False
 
         path = Path(file_path)
-        
+
         # Validate file
         if not self._validate_file_format(path):
             return False
@@ -138,7 +138,6 @@ class DragDropHandler:
             return False
 
         return True
-
 
     def handle_multiple_files_drop(self, files, drum_id_to_replace):
         """Handle files dropped at once"""

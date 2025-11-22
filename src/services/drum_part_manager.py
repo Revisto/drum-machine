@@ -22,7 +22,6 @@ import os
 import json
 import uuid
 from typing import List, Optional, Dict
-from gettext import gettext as _
 from ..models.drum_part import DrumPart
 from ..config.constants import DEFAULT_DRUM_PARTS, DRUM_PARTS_CONFIG_FILE
 

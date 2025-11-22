@@ -21,7 +21,6 @@ import os
 import numpy as np
 import subprocess
 import logging
-from gettext import gettext as _
 
 from ..utils.export_progress import ExportPhase
 from ..config.export_formats import ExportFormatRegistry

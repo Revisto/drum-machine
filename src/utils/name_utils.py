@@ -23,14 +23,13 @@ from gettext import gettext as _
 
 def extract_name_from_path(file_path):
     """Extract display name from file path
-    
+
     Args:
         file_path: Path to the file (str or Path object)
-        
+
     Returns:
         str: Display name extracted from filename, or "Custom Sound" if empty
     """
     path = Path(file_path)
     name = path.stem.replace("_", " ").replace("-", " ").title()
     return name if name.strip() else _("Custom Sound")
-
