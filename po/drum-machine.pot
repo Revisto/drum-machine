@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-22 01:24+0330\n"
+"POT-Creation-Date: 2025-11-23 01:36+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -527,48 +527,52 @@ msgstr ""
 msgid "Custom Note"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:88
+#: src/handlers/drag_drop_handler.py:109
+msgid "Sound replaced"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:112
+msgid "Failed to replace sound"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:119
 msgid "Not a supported audio file"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:95
+#: src/handlers/drag_drop_handler.py:126
 msgid "File not found"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:99
+#: src/handlers/drag_drop_handler.py:130
 msgid "Selected item is not a file"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:105
+#: src/handlers/drag_drop_handler.py:136
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:114
-msgid "Custom Sound"
-msgstr ""
-
-#: src/handlers/drag_drop_handler.py:138
+#: src/handlers/drag_drop_handler.py:165
 msgid "No valid audio files found"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:173
+#: src/handlers/drag_drop_handler.py:200
 msgid "Error processing file: {}"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:201
+#: src/handlers/drag_drop_handler.py:228
 msgid "Added {} drum part, {} files skipped"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:207
+#: src/handlers/drag_drop_handler.py:234
 msgid "Added {} drum parts, {} files skipped"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:212
+#: src/handlers/drag_drop_handler.py:239
 msgid "Added {} drum parts"
 msgstr ""
 
 #. Only show skipped message if no replacement happened
-#: src/handlers/drag_drop_handler.py:215
+#: src/handlers/drag_drop_handler.py:242
 msgid "{} files skipped"
 msgstr ""
 
@@ -641,6 +645,10 @@ msgstr ""
 msgid "Processing…"
 msgstr ""
 
+#: src/utils/name_utils.py:35
+msgid "Custom Sound"
+msgstr ""
+
 #: src/ui/drum_grid_builder.py:313
 msgid "Preview"
 msgstr ""
@@ -674,18 +682,10 @@ msgid "Select New Sound"
 msgstr ""
 
 #: src/ui/drum_grid_builder.py:410
-msgid "Sound replaced"
-msgstr ""
-
-#: src/ui/drum_grid_builder.py:414
-msgid "Failed to replace sound"
-msgstr ""
-
-#: src/ui/drum_grid_builder.py:425
 msgid "Removed drum part: {}"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:429
+#: src/ui/drum_grid_builder.py:414
 msgid "Failed to remove drum part"
 msgstr ""
 
