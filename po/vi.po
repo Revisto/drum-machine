@@ -1,0 +1,629 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-16 21:52+0330\n"
+"PO-Revision-Date: 2025-11-22 12:30+0700\n"
+"Last-Translator: loccun <huynhloc.contact@gmail.com>\n"
+"Language-Team: \n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:2 data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:59 src/window.ui:69
+msgid "Drum Machine"
+msgstr "Drum Machine"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "Tạo và phát nhịp trống"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns. Perfect for musicians, producers, and anyone interested in rhythm creation, this application provides a simple interface for drum pattern programming. "
+"Have fun!"
+msgstr "Drum Machine là một ứng dụng hiện đại và trực quan để tạo, phát và quản lý các mẫu trống. Hoàn hảo cho nhạc sĩ, nhà sản xuất và những ai quan tâm tới sáng tạo tiết tấu, ứng dụng này cung cấp giao diện đơn giản để lập trình mẫu trống. Chúc bạn vui vẻ!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "Tính năng:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor"
+msgstr "Trình chỉnh sửa mẫu dạng lưới trực quan"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Adjustable BPM control"
+msgstr "Điều khiển BPM có thể điều chỉnh"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Volume control for overall mix"
+msgstr "Điều khiển âm lượng cho toàn bộ bản phối"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Save and load preset patterns"
+msgstr "Lưu và tải mẫu cài sẵn"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "Nhiều âm trống gồm kick, snare, hi-hat và nhiều loại khác"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
+msgstr "Tính năng xuất âm thanh hỗ trợ định dạng WAV, FLAC, Ogg và MP3"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr "Hỗ trợ metadata để nhúng tên nghệ sĩ, tiêu đề bài hát và ảnh bìa"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "Phím tắt để truy cập nhanh tất cả chức năng"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "Mẫu Trống Đã Được Tải ở Chế Độ Sáng"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "Mẫu Trống Đã Được Tải ở Chế Độ Tối"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:48
+msgid "drum"
+msgstr "trống"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+msgid "machine"
+msgstr "máy"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:50
+msgid "rhythm"
+msgstr "nhịp"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:51
+msgid "music"
+msgstr "âm nhạc"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:52
+msgid "pattern"
+msgstr "mẫu"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:53
+msgid "beats"
+msgstr "nhịp"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:62
+msgid "Revisto"
+msgstr "Revisto"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:68
+msgid "Drum Machine 1.5.0 introduces major audio export capabilities! 🎵"
+msgstr "Drum Machine 1.5.0 bổ sung tính năng xuất âm thanh mạnh mẽ! 🎵"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:70
+msgid "Audio Export Feature: Export your drum patterns to WAV, FLAC, Ogg Vorbis, and MP3 formats"
+msgstr "Tính Năng Xuất Âm Thanh: Xuất mẫu trống của bạn sang định dạng WAV, FLAC, Ogg Vorbis và MP3"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:71
+msgid "Metadata Support: Embed artist name, song title, and cover art in exported files"
+msgstr "Hỗ Trợ Metadata: Nhúng tên nghệ sĩ, tiêu đề bài hát và ảnh bìa vào tệp xuất"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:72
+msgid "Repeat Pattern: Set how many times your beat repeats in the exported audio"
+msgstr "Lặp mẫu: Đặt số lần mẫu của bạn được lặp trong tệp xuất"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:73
+msgid "Bug Fix: Fixed issue where multiple drum sounds weren't playing simultaneously"
+msgstr "Sửa lỗi: Đã sửa lỗi khiến nhiều âm trống không phát đồng thời"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:74
+msgid "Translation Updates: Updated Spanish, Russian, Georgian, Chinese, Hungarian, Swedish, and more"
+msgstr "Cập Nhật Dịch: Cập nhật tiếng Tây Ban Nha, Nga, Georgia, Trung, Hungary, Thụy Điển và nhiều ngôn ngữ khác"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:80
+msgid "Drum Machine 1.4.0 is here with some good updates! 🥁"
+msgstr "Drum Machine 1.4.0 đã có mặt với một số cập nhật hữu ích! 🥁"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:82
+msgid "More pages for longer, more complex beats, because sometimes you need more than 16 steps!"
+msgstr "Thêm trang cho nhịp dài hơn, phức tạp hơn — khi bạn cần nhiều hơn 16 bước!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:83
+msgid "Mobile-friendly improvements, now your drum machine works better on phones (with showing half of the grid)"
+msgstr "Cải tiến thân thiện di động, giờ ứng dụng drum machine hoạt động tốt hơn trên điện thoại (hiển thị nửa lưới)"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:84
+msgid "Goes global! Now translated into 17 languages including Chinese, Russian, Arabic, Hebrew, and many more"
+msgstr "Ra toàn cầu! Hiện đã được dịch sang 17 ngôn ngữ bao gồm Trung, Nga, Ả Rập, Hebrew và nhiều ngôn ngữ khác"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:90
+msgid "This release of Drum Machine 1.3.1 brings significant UI and functionality improvements:"
+msgstr "Phiên bản Drum Machine 1.3.1 này mang đến cải tiến đáng kể về giao diện và chức năng:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:92
+msgid "Refactored headerbar and background styling for a flat, integrated visual experience."
+msgstr "Tái cấu trúc thanh tiêu đề và kiểu nền để có trải nghiệm hình ảnh phẳng, tích hợp."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:93
+msgid "Enhanced accessibility with improved tooltips and descriptive labels for BPM and volume controls."
+msgstr "Nâng cao khả năng truy cập với tooltip cải tiến và nhãn mô tả cho các điều khiển BPM và âm lượng."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:94
+msgid "Redesigned app icon and updated text styling for clearer user interface elements."
+msgstr "Thiết kế lại biểu tượng ứng dụng và cập nhật kiểu chữ để các phần giao diện rõ ràng hơn."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:95
+msgid "Optimized layout breakpoints to improve responsiveness and reduce early scrolling."
+msgstr "Tối ưu breakpoint bố cục để cải thiện khả năng phản hồi và giảm cuộn sớm."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:96
+msgid "Fixed padding, border-radius, and vertical alignment issues across multiple controls."
+msgstr "Sửa lỗi padding, border-radius và căn chỉnh dọc trên nhiều điều khiển."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:97
+msgid "Updated file dialogs to use the Nautilus file chooser for a more modern approach."
+msgstr "Cập nhật hộp thoại tệp để sử dụng trình chọn tệp Nautilus cho giao diện hiện đại hơn."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:98
+msgid "Improved keyboard navigation focus and updated tooltips, including dedicated play and pause hints."
+msgstr "Cải thiện tiêu điểm điều hướng bằng bàn phím và cập nhật tooltip, bao gồm chú thích dành riêng cho phát và tạm dừng."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:99
+msgid "Transitioned to the Nautilus file chooser for a more contemporary interface."
+msgstr "Chuyển sang trình chọn tệp Nautilus cho giao diện hiện đại hơn."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:100
+msgid "Now accessible on narrow mobile screens with adaptive UI elements."
+msgstr "Giờ có thể truy cập trên màn hình di động hẹp với các phần tử giao diện thích ứng."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:101
+msgid "Refined app icon, and adjusted brand colors for better contrast."
+msgstr "Tinh chỉnh biểu tượng ứng dụng và điều chỉnh màu thương hiệu để tương phản tốt hơn."
+
+#: src/application.py:66
+msgid "Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns."
+msgstr "Drum Machine là một ứng dụng hiện đại và trực quan để tạo, phát và quản lý các mẫu trống."
+
+#: src/application.py:71
+msgid "translator-credits"
+msgstr "Loccun <huynhloc.contact@gmail.com>"
+
+#: src/application.py:76
+msgid "Special thanks"
+msgstr "Lời cảm ơn đặc biệt"
+
+#: src/application.py:79
+msgid "Sounds"
+msgstr "Âm thanh"
+
+#: src/application.py:80
+msgid "The drum samples used in this application are from "
+msgstr "Các mẫu trống sử dụng trong ứng dụng này lấy từ "
+
+#: src/config/export_formats.py:43
+msgid "MP3 files"
+msgstr "Tệp MP3"
+
+#: src/config/export_formats.py:44
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:50
+msgid "FLAC files"
+msgstr "Tệp FLAC"
+
+#: src/config/export_formats.py:51
+msgid "FLAC (Lossless)"
+msgstr "FLAC (Lossless)"
+
+#: src/config/export_formats.py:57
+msgid "Ogg files"
+msgstr "Tệp Ogg"
+
+#: src/config/export_formats.py:58
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+#: src/config/export_formats.py:64
+msgid "WAV files"
+msgstr "Tệp WAV"
+
+#: src/config/export_formats.py:65
+msgid "WAV (Uncompressed)"
+msgstr "WAV (Không nén)"
+
+#: src/dialogs/audio_export_dialog.py:104
+msgid "Save Audio File"
+msgstr "Lưu tệp âm thanh"
+
+#: src/dialogs/audio_export_dialog.py:128
+msgid "Image files"
+msgstr "Tệp hình ảnh"
+
+#: src/dialogs/audio_export_dialog.py:134
+msgid "Select Cover Art"
+msgstr "Chọn ảnh bìa"
+
+#: src/dialogs/audio_export_dialog.py:191
+msgid "Audio exported to {}"
+msgstr "Đã xuất âm thanh đến {}"
+
+#: src/dialogs/audio_export_dialog.py:196
+msgid "Export failed"
+msgstr "Xuất thất bại"
+
+#: src/dialogs/audio_export_dialog.py:203
+msgid "Export cancelled successfully"
+msgstr "Đã hủy xuất thành công"
+
+#: src/handlers/file_dialog_handler.py:50
+msgid "Default Presets"
+msgstr "Preset Mặc Định"
+
+#: src/handlers/file_dialog_handler.py:82
+msgid "No Pattern"
+msgstr "Không Có Mẫu"
+
+#: src/handlers/file_dialog_handler.py:83
+msgid "Please create a drum pattern before exporting audio."
+msgstr "Vui lòng tạo mẫu trống trước khi xuất âm thanh."
+
+#: src/handlers/file_dialog_handler.py:85
+msgid "_OK"
+msgstr "_OK"
+
+#: src/handlers/file_dialog_handler.py:107 src/handlers/file_dialog_handler.py:173
+msgid "MIDI files"
+msgstr "Tệp MIDI"
+
+#: src/handlers/file_dialog_handler.py:113
+msgid "Open MIDI File"
+msgstr "Mở Tệp MIDI"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "Lưu Chuỗi"
+
+#: src/handlers/file_dialog_handler.py:204
+msgid "Audio files"
+msgstr "Tệp âm thanh"
+
+#: src/handlers/file_dialog_handler.py:216
+msgid "Add Audio Samples"
+msgstr "Thêm Mẫu Âm Thanh"
+
+#: src/utils/export_progress.py:68
+msgid "Preparing..."
+msgstr "Đang chuẩn bị..."
+
+#: src/utils/export_progress.py:69
+msgid "Initializing..."
+msgstr "Đang khởi tạo..."
+
+#: src/utils/export_progress.py:71
+msgid "Rendering audio..."
+msgstr "Đang kết xuất âm thanh..."
+
+#: src/utils/export_progress.py:72
+msgid "Processing beats..."
+msgstr "Đang xử lý nhịp..."
+
+#: src/utils/export_progress.py:74
+msgid "Saving file..."
+msgstr "Đang lưu tệp..."
+
+#: src/utils/export_progress.py:75
+msgid "Writing to disk..."
+msgstr "Đang ghi vào đĩa..."
+
+#: src/utils/export_progress.py:77
+msgid "Exporting..."
+msgstr "Đang xuất..."
+
+#: src/utils/export_progress.py:78
+msgid "Processing..."
+msgstr "Đang xử lý..."
+
+#: src/ui/drum_grid_builder.py:311
+msgid "Preview"
+msgstr "Xem trước"
+
+#: src/ui/drum_grid_builder.py:313
+msgid "Remove"
+msgstr "Xóa"
+
+#: src/ui/drum_grid_builder.py:316
+msgid "At least one drum part must remain"
+msgstr "Phải còn ít nhất một phần trống"
+
+#: src/ui/drum_grid_builder.py:360
+msgid "Removed drum part: {}"
+msgstr "Đã xóa phần trống: {}"
+
+#: src/ui/drum_grid_builder.py:364
+msgid "Failed to remove drum part"
+msgstr "Xóa phần trống thất bại"
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:195
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} Nhịp trên phút (BPM)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:204
+msgid "{:.0f}% Volume"
+msgstr "{:.0f}% Âm Lượng"
+
+#: src/window.py:219 src/window.ui:170
+msgid "Play"
+msgstr "Phát"
+
+#: src/window.py:223
+msgid "Pause"
+msgstr "Tạm dừng"
+
+#: src/window.py:261 src/window.ui:52
+msgid "Open"
+msgstr "Mở"
+
+#: src/window.py:279
+msgid "Added: {}"
+msgstr "Đã thêm: {}"
+
+#: src/window.py:289
+msgid "Failed to add custom sound"
+msgstr "Thêm âm tùy chỉnh thất bại"
+
+#: src/window.py:296
+msgid "Replaced drum with: {}"
+msgstr "Đã thay thế trống bằng: {}"
+
+#: src/window.py:301
+msgid "Failed to replace drum sound"
+msgstr "Thay thế âm trống thất bại"
+
+#: src/window.ui:54
+msgid "Open Preset"
+msgstr "Mở mẫu cài sẵn"
+
+#: src/window.ui:57
+msgctxt "accessibility"
+msgid "Open Preset"
+msgstr "Mở Mẫu Cài Sẵn"
+
+#: src/window.ui:58
+msgid "Open Saved Drum Pattern Preset"
+msgstr "Mở preset mẫu trống đã lưu"
+
+#: src/window.ui:76
+msgid "Main Menu"
+msgstr "Menu Chính"
+
+#: src/window.ui:78
+msgctxt "accessibility"
+msgid "Main Menu"
+msgstr "Menu Chính"
+
+#: src/window.ui:79
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "Truy cập phím tắt và thông tin ứng dụng"
+
+#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:96
+msgid "Export Audio"
+msgstr "Xuất âm thanh"
+
+#: src/window.ui:88
+msgctxt "accessibility"
+msgid "Export Audio"
+msgstr "Xuất Âm Thanh"
+
+#: src/window.ui:89
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "Xuất mẫu trống hiện tại thành tệp âm thanh"
+
+#: src/window.ui:134
+msgid "BPM"
+msgstr "BPM"
+
+#: src/window.ui:139 src/window.ui:143
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "Điều chỉnh tempo theo Nhịp trên phút (BPM)"
+
+#: src/window.ui:142
+msgid "Tempo"
+msgstr "Tempo"
+
+#: src/window.ui:184
+msgid "Adjust Volume"
+msgstr "Điều chỉnh âm lượng"
+
+#: src/window.ui:207
+msgid "Reset"
+msgstr "Đặt lại"
+
+#: src/window.ui:208
+msgid "Reset the Drum Sequence"
+msgstr "Đặt lại trình tự trống"
+
+#: src/window.ui:223
+msgid "_Add Samples"
+msgstr "_Thêm Mẫu"
+
+#: src/window.ui:227
+msgid "_Save Pattern"
+msgstr "_Lưu Nẫu"
+
+#: src/window.ui:233
+msgid "_Keyboard Shortcuts"
+msgstr "_Phím Tắt"
+
+#: src/window.ui:237
+msgid "_About Drum Machine"
+msgstr "_Giới Thiệu Drum Machine"
+
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Chung"
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Hiển Thị Phím Tắt"
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Thoát"
+
+#: src/gtk/help-overlay.blp:26
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "Điều Khiển Phát Lại"
+
+#: src/gtk/help-overlay.blp:29
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "Phát/Tạm Dừng"
+
+#: src/gtk/help-overlay.blp:35
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "Xóa Tất Cả"
+
+#: src/gtk/help-overlay.blp:42
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "Điều khiển BPM & Âm Lượng"
+
+#: src/gtk/help-overlay.blp:45
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "Tăng BPM"
+
+#: src/gtk/help-overlay.blp:51
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "Giảm BPM"
+
+#: src/gtk/help-overlay.blp:57
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "Tăng Âm Lượng"
+
+#: src/gtk/help-overlay.blp:63
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "Giảm Âm Lượng"
+
+#: src/gtk/help-overlay.blp:69
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "Tắt Tiếng"
+
+#: src/gtk/help-overlay.blp:76
+msgctxt "shortcut window"
+msgid "Preset Management"
+msgstr "Quản Lý Preset"
+
+#: src/gtk/help-overlay.blp:79
+msgctxt "shortcut window"
+msgid "Load Preset"
+msgstr "Tải Preset"
+
+#: src/gtk/help-overlay.blp:85
+msgctxt "shortcut window"
+msgid "Save Preset"
+msgstr "Lưu Preset"
+
+#: src/gtk/help-overlay.blp:91
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "Xuất Âm Thanh"
+
+#: src/gtk/help-overlay.blp:98
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "Điều Hướng"
+
+#: src/gtk/help-overlay.blp:101
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr "Chuyển đến Nhạc Cụ"
+
+#: src/gtk/help-overlay.blp:107
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr "Trang Trước"
+
+#: src/gtk/help-overlay.blp:113
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr "Trang Sau"
+
+#: src/gtk/save-changes-dialog.blp:5
+msgid "Save Changes?"
+msgstr "Lưu Thay Đổi?"
+
+#: src/gtk/save-changes-dialog.blp:6
+msgid "Current preset contains unsaved changes. Changes which are not saved will be permanently lost."
+msgstr "Preset hiện tại chứa thay đổi chưa được lưu. Những thay đổi không được lưu sẽ bị mất vĩnh viễn."
+
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14
+msgid "_Cancel"
+msgstr "_Hủy"
+
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
+msgid "_Discard"
+msgstr "_Bỏ"
+
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
+msgid "_Save"
+msgstr "_Lưu"
+
+#: src/gtk/audio-export-dialog.blp:39
+msgid "Audio Format"
+msgstr "Định Dạng Âm Thanh"
+
+#: src/gtk/audio-export-dialog.blp:45
+msgid "Repeat Count"
+msgstr "Số Lần Lặp"
+
+#: src/gtk/audio-export-dialog.blp:46
+msgid "How many times to repeat the pattern"
+msgstr "Lặp mẫu bao nhiêu lần"
+
+#: src/gtk/audio-export-dialog.blp:59
+msgid "Metadata"
+msgstr "Metadata"
+
+#: src/gtk/audio-export-dialog.blp:62
+msgid "Artist Name"
+msgstr "Tên Nghệ Sĩ"
+
+#: src/gtk/audio-export-dialog.blp:67
+msgid "Song Name"
+msgstr "Tên Bài Hát"
+
+#: src/gtk/audio-export-dialog.blp:72
+msgid "Cover Art"
+msgstr "Ảnh Bìa"
+
+#: src/gtk/audio-export-dialog.blp:76
+msgid "Choose File"
+msgstr "Chọn Tệp"
+
+#: src/gtk/audio-export-dialog.blp:105
+msgid "Cancel Export"
+msgstr "Hủy Xuất"
