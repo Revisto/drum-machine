@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-11-21 15:26+0000\n"
-"PO-Revision-Date: 2025-11-22 10:49+0800\n"
+"POT-Creation-Date: 2025-11-22 15:26+0000\n"
+"PO-Revision-Date: 2025-11-23 08:07+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -63,8 +63,8 @@ msgid "Volume control for overall mix"
 msgstr "整体混音的音量控制"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:20
-msgid "Save and load preset patterns"
-msgstr "保存和加载预设模式"
+msgid "Save and load patterns"
+msgstr "保存和加载模式"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
@@ -459,8 +459,8 @@ msgid "{} files skipped"
 msgstr "跳过了 {} 个文件"
 
 #: src/handlers/file_dialog_handler.py:51
-msgid "Default Presets"
-msgstr "默认预设"
+msgid "Default Patterns"
+msgstr "默认模式"
 
 #: src/handlers/file_dialog_handler.py:83
 msgid "No Pattern"
@@ -618,17 +618,17 @@ msgid "Open…"
 msgstr "打开…"
 
 #: src/window.ui:54
-msgid "Open Preset"
-msgstr "打开预设"
+msgid "Open Pattern"
+msgstr "打开模式"
 
 #: src/window.ui:57
 msgctxt "accessibility"
-msgid "Open Preset"
-msgstr "打开预设"
+msgid "Open Pattern"
+msgstr "打开模式"
 
 #: src/window.ui:58
-msgid "Open Saved Drum Pattern Preset"
-msgstr "打开保存的击鼓模式预设"
+msgid "Open Saved Drum Pattern"
+msgstr "打开已保存的击鼓模式"
 
 #: src/window.ui:76
 msgid "Main Menu"
@@ -758,18 +758,18 @@ msgstr "静音"
 
 #: src/gtk/help-overlay.blp:76
 msgctxt "shortcut window"
-msgid "Preset Management"
-msgstr "预设管理"
+msgid "Pattern Management"
+msgstr "模式管理"
 
 #: src/gtk/help-overlay.blp:79
 msgctxt "shortcut window"
-msgid "Load Preset"
-msgstr "加载预设"
+msgid "Load Pattern"
+msgstr "加载模式"
 
 #: src/gtk/help-overlay.blp:85
 msgctxt "shortcut window"
-msgid "Save Preset"
-msgstr "保存预设"
+msgid "Save Pattern"
+msgstr "保存模式"
 
 #: src/gtk/help-overlay.blp:91
 msgctxt "shortcut window"
@@ -802,9 +802,9 @@ msgstr "保存更改吗？"
 
 #: src/gtk/save-changes-dialog.blp:6
 msgid ""
-"Current preset contains unsaved changes. Changes which are not saved will be "
-"permanently lost."
-msgstr "当前预设包含未保存更改。未保存的更改将会永久丢失。"
+"Current pattern contains unsaved changes. Changes which are not saved will "
+"be permanently lost."
+msgstr "当前模式包含未保存更改。未保存的更改将会永久丢失。"
 
 #. Translators: Cancel the operation
 #: src/gtk/save-changes-dialog.blp:14
@@ -860,6 +860,21 @@ msgstr "选择文件…"
 #: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr "取消导出"
+
+#~ msgid "Open Preset"
+#~ msgstr "打开预设"
+
+#~ msgctxt "accessibility"
+#~ msgid "Open Preset"
+#~ msgstr "打开预设"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Load Preset"
+#~ msgstr "加载预设"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "保存预设"
 
 #~ msgctxt "accessibility"
 #~ msgid "Export Audio"
