@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-11-23 15:26+0000\n"
-"PO-Revision-Date: 2025-11-23 21:45+0100\n"
+"POT-Creation-Date: 2025-11-24 15:26+0000\n"
+"PO-Revision-Date: 2025-11-24 17:29+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -234,12 +234,12 @@ msgstr "Odprti pedalni čineli"
 #: src/dialogs/midi_mapping_dialog.py:33
 #, fuzzy
 msgid "Low-Mid Tom"
-msgstr "Nizki srednji manjši prehodni boben"
+msgstr "Nizko-srednji manjši prehodni boben"
 
 #: src/dialogs/midi_mapping_dialog.py:34
 #, fuzzy
 msgid "Hi-Mid Tom"
-msgstr "Visoki srednji manjši prehodni boben"
+msgstr "Visoko-srednji manjši prehodni boben"
 
 #: src/dialogs/midi_mapping_dialog.py:35
 msgid "Crash Cymbal 1"
@@ -308,12 +308,10 @@ msgid "Low Conga"
 msgstr "Nizka konga"
 
 #: src/dialogs/midi_mapping_dialog.py:51
-#, fuzzy
 msgid "High Timbale"
 msgstr "Visoki timbali"
 
 #: src/dialogs/midi_mapping_dialog.py:52
-#, fuzzy
 msgid "Low Timbale"
 msgstr "Nizki timbali"
 
