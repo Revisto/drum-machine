@@ -18,6 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from pathlib import Path
+from typing import Optional
 from gi.repository import Gtk, Gdk
 from gettext import gettext as _
 from ..config.constants import SUPPORTED_INPUT_AUDIO_FORMATS
@@ -25,11 +26,13 @@ from ..utils.name_utils import extract_name_from_path
 
 
 class DragDropHandler:
-    def __init__(self, window):
+    def __init__(self, window) -> None:
         self.window = window
-        self.new_drum_placeholder = None
+        self.new_drum_placeholder: Optional[Gtk.Widget] = None
 
-    def setup_drag_drop(self, target_widget=None):
+    def setup_drag_drop(
+        self, target_widget: Optional[Gtk.Widget] = None
+    ) -> Gtk.DropTarget:
         if target_widget is None:
             target_widget = self.window
 

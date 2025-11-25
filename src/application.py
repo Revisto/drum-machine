@@ -18,6 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import platform
+from typing import Optional, Callable, List
 import gi
 from gettext import gettext as _
 
@@ -28,7 +29,7 @@ from .window import DrumMachineWindow
 
 
 class DrumMachineApplication(Adw.Application):
-    def __init__(self, version):
+    def __init__(self, version: str) -> None:
         super().__init__(
             application_id="io.github.revisto.drum-machine",
             flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
@@ -36,13 +37,13 @@ class DrumMachineApplication(Adw.Application):
         self.version = version
         self.create_action("about", self.on_about_action)
 
-    def do_activate(self):
+    def do_activate(self) -> None:
         win = self.props.active_window
         if not win:
             win = DrumMachineWindow(application=self)
         win.present()
 
-    def on_about_action(self, *_args):
+    def on_about_action(self, *_args) -> None:
         debug_info = f"Drum Machine {self.version}\n"
         debug_info += f"System: {platform.system()}\n"
         if platform.system() == "Linux":
@@ -86,7 +87,9 @@ class DrumMachineApplication(Adw.Application):
         about.add_legal_section("Pygame", None, Gtk.License.LGPL_2_1)
         about.present(self.props.active_window)
 
-    def create_action(self, name, callback, shortcuts=None):
+    def create_action(
+        self, name: str, callback: Callable, shortcuts: Optional[List[str]] = None
+    ) -> None:
         action = Gio.SimpleAction.new(name, None)
         action.connect("activate", callback)
         self.add_action(action)

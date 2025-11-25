@@ -18,6 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import os
+from typing import Optional
 
 import gi
 
@@ -54,13 +55,13 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     file_pattern_button = Gtk.Template.Child()
     export_audio_button = Gtk.Template.Child()
 
-    def __init__(self, **kwargs):
+    def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
         self._setup_services()
         self._setup_handlers()
         self._initialize_interface()
 
-    def _setup_services(self):
+    def _setup_services(self) -> None:
         """Initialize all services"""
         self.application = self.get_application()
         drumkit_dir = os.path.join(os.path.dirname(__file__), "..", "data", "drumkit")
@@ -76,14 +77,14 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         )
         self.save_changes_service = SaveChangesService(self, self.drum_machine_service)
 
-    def _setup_handlers(self):
+    def _setup_handlers(self) -> None:
         """Initialize UI handlers"""
         self.drum_grid_builder = DrumGridBuilder(self)
         self.action_handler = WindowActionHandler(self)
         self.file_dialog_handler = FileDialogHandler(self)
         self.drag_drop_handler = DragDropHandler(self)
 
-    def _initialize_interface(self):
+    def _initialize_interface(self) -> None:
         """Initialize the complete interface"""
         # Build drum grid
         drum_interface = self.drum_grid_builder.build_drum_machine_interface()
@@ -97,7 +98,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         # Setup drag and drop
         self.drag_drop_handler.setup_drag_drop()
 
-    def _connect_signals(self):
+    def _connect_signals(self) -> None:
         """Connect UI signals"""
         self.connect("close-request", self._on_close_request)
         self.bpm_spin_button.connect("value-changed", self.on_bpm_changed)
@@ -110,7 +111,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             "notify::css-classes", self._on_breakpoint_changed
         )
 
-    def _on_breakpoint_changed(self, box, gparam):
+    def _on_breakpoint_changed(self, box: Gtk.Box, gparam: object) -> None:
         """
         Called when the css-classes property of the drum_machine_box changes.
         """
@@ -124,7 +125,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         is_compact = "compact" in css_classes
         self.drum_grid_builder.update_drum_parts_spacing(is_compact=is_compact)
 
-    def handle_layout_change(self, is_tiny):
+    def handle_layout_change(self, is_tiny: bool) -> None:
         """
         Rebuilds the drum grid when the layout size changes.
         """
@@ -156,24 +157,26 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_grid_builder.rebuild_carousel(focus_beat_index=focus_beat_index)
 
     # Delegate methods to handlers
-    def _on_open_file_clicked(self, button):
+    def _on_open_file_clicked(self, button: Gtk.Button) -> None:
         self.file_dialog_handler.handle_open_file()
 
-    def _on_save_pattern_clicked(self):
+    def _on_save_pattern_clicked(self) -> None:
         self.file_dialog_handler.handle_save_pattern()
 
-    def _on_export_audio_clicked(self, button):
+    def _on_export_audio_clicked(self, button: Gtk.Button) -> None:
         """Handle export audio button click"""
         self.file_dialog_handler.handle_export_audio()
 
-    def scroll_carousel_to_page(self, page_index):
+    def scroll_carousel_to_page(self, page_index: int) -> None:
         """Scrolls the carousel to a specific page if auto-scroll is enabled."""
         current_page = self.carousel.get_position()
         if current_page != page_index:
             self.carousel.scroll_to(self.carousel.get_nth_page(page_index), True)
 
     # Event handlers that need to stay in window
-    def on_toggle_changed(self, toggle_button, part, index):
+    def on_toggle_changed(
+        self, toggle_button: Gtk.ToggleButton, part: str, index: int
+    ) -> None:
         state = toggle_button.get_active()
 
         if state:
@@ -187,7 +190,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         # Mark as unsaved when toggles change
         self.save_changes_service.mark_unsaved_changes(True)
 
-    def on_bpm_changed(self, spin_button):
+    def on_bpm_changed(self, spin_button: Gtk.SpinButton) -> None:
         value = spin_button.get_value()
         self.drum_machine_service.set_bpm(value)
 
@@ -198,13 +201,13 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         # Mark as unsaved when BPM changes
         self.save_changes_service.mark_unsaved_changes(True)
 
-    def on_volume_changed(self, button, value):
+    def on_volume_changed(self, button: Gtk.VolumeButton, value: float) -> None:
         self.drum_machine_service.set_volume(value)
         # Update button tooltip to show current volume level
         volume_text = _("{:.0f}% Volume").format(value)
         button.set_tooltip_text(volume_text)
 
-    def handle_clear(self, button):
+    def handle_clear(self, button: Gtk.Button) -> None:
         self.drum_machine_service.clear_all_toggles()
         # After clearing, update the total beats which will reset active_pages to 1
         self.drum_machine_service.update_total_beats()
@@ -213,7 +216,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         # Mark as saved when clearing
         self.save_changes_service.mark_unsaved_changes(False)
 
-    def handle_play_pause(self, button):
+    def handle_play_pause(self, button: Gtk.Button) -> None:
         if self.drum_machine_service.playing:
             button.set_icon_name("media-playback-start-symbolic")
             button.set_tooltip_text(_("Play"))
@@ -223,31 +226,40 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             button.set_tooltip_text(_("Pause"))
             self.drum_machine_service.play()
 
-    def on_drum_part_button_clicked(self, button, part):
+    def on_drum_part_button_clicked(self, button: Gtk.Button, part: str) -> None:
         self.drum_machine_service.preview_drum_part(part)
 
-    def _on_right_click_released(self, gesture_click, n_press, x, y, toggle_button):
+    def _on_right_click_released(
+        self,
+        gesture_click: Gtk.GestureClick,
+        n_press: int,
+        x: float,
+        y: float,
+        toggle_button: Gtk.ToggleButton,
+    ) -> None:
         toggle_button.set_active(not toggle_button.props.active)
         toggle_button.emit("toggled")
 
-    def _on_close_request(self, *args):
+    def _on_close_request(self, *args) -> bool:
         self.action_handler.on_quit_action(None, None)
         return True
 
-    def _save_and_close(self):
+    def _save_and_close(self) -> None:
         self.file_dialog_handler.show_save_dialog(self.cleanup_and_destroy)
 
-    def cleanup(self):
+    def cleanup(self) -> None:
         """Stop playback and cleanup resources"""
         if self.drum_machine_service.playing:
             self.drum_machine_service.stop()
         self.drum_machine_service.playing = False
 
-    def cleanup_and_destroy(self):
+    def cleanup_and_destroy(self) -> None:
         self.cleanup()
         self.destroy()
 
-    def show_toast(self, message, open_file=False, file_path=None):
+    def show_toast(
+        self, message: str, open_file: bool = False, file_path: Optional[str] = None
+    ) -> None:
         """Show a toast notification with optional action button"""
         toast = Adw.Toast(title=message, timeout=5)
 
@@ -262,7 +274,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
 
         self.toast_overlay.add_toast(toast)
 
-    def _setup_toast_actions(self):
+    def _setup_toast_actions(self) -> None:
         """Setup toast action handlers"""
         if not hasattr(self, "_open_action"):
             action = Gio.SimpleAction.new("open-file", GLib.VariantType.new("s"))
@@ -270,15 +282,17 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             self.add_action(action)
             self._open_action = action
 
-    def _open_file(self, action, parameter):
+    def _open_file(self, action: Gio.SimpleAction, parameter: GLib.Variant) -> None:
         """Open file with default app"""
         file_path = parameter.get_string()
         Gio.AppInfo.launch_default_for_uri(f"file://{file_path}", None)
 
-    def show_added_toast(self, name):
+    def show_added_toast(self, name: str) -> None:
         self.show_toast(_("Added: {}").format(name))
 
-    def add_new_drum_part(self, file_path, name, show_success_toast=True):
+    def add_new_drum_part(
+        self, file_path: str, name: str, show_success_toast: bool = True
+    ) -> bool:
         """Add a new drum part"""
         result = self.drum_machine_service.add_new_drum_part(file_path, name)
         if result:
@@ -290,7 +304,7 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             self.show_toast(_("Failed to add custom sound"))
             return False
 
-    def replace_drum_part(self, drum_id, file_path, name):
+    def replace_drum_part(self, drum_id: str, file_path: str, name: str) -> bool:
         """Replace an existing drum part"""
         result = self.drum_machine_service.replace_drum_part(drum_id, file_path, name)
         if result:

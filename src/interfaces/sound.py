@@ -22,18 +22,18 @@ from abc import ABC, abstractmethod
 
 class ISoundService(ABC):
     @abstractmethod
-    def load_sounds(self):
+    def load_sounds(self) -> None:
         pass
 
     @abstractmethod
-    def play_sound(self, sound_name):
+    def play_sound(self, sound_name: str) -> None:
         pass
 
     @abstractmethod
-    def set_volume(self, volume):
+    def set_volume(self, volume: float) -> None:
         pass
 
     @abstractmethod
-    def preview_sound(self, sound_name):
+    def preview_sound(self, sound_name: str) -> None:
         """Play a preview of the sound at preview volume level"""
         pass

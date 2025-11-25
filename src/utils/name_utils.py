@@ -18,10 +18,11 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from pathlib import Path
+from typing import Union
 from gettext import gettext as _
 
 
-def extract_name_from_path(file_path):
+def extract_name_from_path(file_path: Union[str, Path]) -> str:
     """Extract display name from file path
 
     Args:

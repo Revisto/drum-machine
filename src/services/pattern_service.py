@@ -19,26 +19,29 @@
 
 import mido
 import itertools
+from typing import Dict, Tuple
 
 
 class PatternService:
-    def __init__(self, window):
+    def __init__(self, window) -> None:
         self.window = window
 
-    def _get_midi_note_for_part(self, part_id):
+    def _get_midi_note_for_part(self, part_id: str) -> int:
         """Get MIDI note ID for a drum part"""
         drum_part = self.window.sound_service.drum_part_manager.get_part_by_id(part_id)
         if drum_part and drum_part.midi_note_id is not None:
             return drum_part.midi_note_id
         return 0
 
-    def _get_part_id_for_midi_note(self, note):
+    def _get_part_id_for_midi_note(self, note: int) -> str:
         """Get drum part ID for a MIDI note, creating a temporary part if needed"""
         manager = self.window.sound_service.drum_part_manager
         drum_part = manager.get_or_create_part_for_midi_note(note)
         return drum_part.id
 
-    def save_pattern(self, file_path, drum_parts, bpm):
+    def save_pattern(
+        self, file_path: str, drum_parts: Dict[str, Dict[int, bool]], bpm: float
+    ) -> None:
         mid = mido.MidiFile()
         track = mido.MidiTrack()
         mid.tracks.append(track)
@@ -95,7 +98,7 @@ class PatternService:
 
         mid.save(file_path)
 
-    def load_pattern(self, file_path):
+    def load_pattern(self, file_path: str) -> Tuple[Dict[str, Dict[int, bool]], float]:
         mid = mido.MidiFile(file_path)
         drum_parts_state = (
             self.window.drum_machine_service.create_empty_drum_parts_state()

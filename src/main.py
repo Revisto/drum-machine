@@ -21,6 +21,6 @@ import sys
 from .application import DrumMachineApplication
 
 
-def main(version):
+def main(version: str) -> int:
     app = DrumMachineApplication(version=version)
     return app.run(sys.argv)

@@ -17,7 +17,9 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-DEFAULT_DRUM_PARTS = [
+from typing import List, Set
+
+DEFAULT_DRUM_PARTS: List[str] = [
     "kick",
     "kick-2",
     "kick-3",
@@ -29,21 +31,28 @@ DEFAULT_DRUM_PARTS = [
     "tom",
     "crash",
 ]
-DEFAULT_PATTERNS = ["Shoot", "Maybe Rock", "Boom Boom", "Night", "Slow", "Chill"]
-NUM_TOGGLES = 16
-GROUP_TOGGLE_COUNT = 4
+DEFAULT_PATTERNS: List[str] = [
+    "Shoot",
+    "Maybe Rock",
+    "Boom Boom",
+    "Night",
+    "Slow",
+    "Chill",
+]
+NUM_TOGGLES: int = 16
+GROUP_TOGGLE_COUNT: int = 4
 
 # Audio rendering constants
-DEFAULT_FALLBACK_SAMPLE_SIZE = (1000, 2)
+DEFAULT_FALLBACK_SAMPLE_SIZE: tuple = (1000, 2)
 
 # Progress bar constants
-PULSE_INTERVAL_SECONDS = 1.0
+PULSE_INTERVAL_SECONDS: float = 1.0
 
 # Audio constants
-MIXER_CHANNELS = 32
+MIXER_CHANNELS: int = 32
 
 # DrumPartManager constants
-DRUM_PARTS_CONFIG_FILE = "drum_parts.json"
+DRUM_PARTS_CONFIG_FILE: str = "drum_parts.json"
 
 # Supported audio file formats for input/import
-SUPPORTED_INPUT_AUDIO_FORMATS = {".wav", ".mp3", ".ogg", ".flac"}
+SUPPORTED_INPUT_AUDIO_FORMATS: Set[str] = {".wav", ".mp3", ".ogg", ".flac"}
