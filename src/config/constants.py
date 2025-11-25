@@ -17,7 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from typing import List, Set
+from typing import List, Set, Tuple
 
 DEFAULT_DRUM_PARTS: List[str] = [
     "kick",
@@ -43,7 +43,7 @@ NUM_TOGGLES: int = 16
 GROUP_TOGGLE_COUNT: int = 4
 
 # Audio rendering constants
-DEFAULT_FALLBACK_SAMPLE_SIZE: tuple = (1000, 2)
+DEFAULT_FALLBACK_SAMPLE_SIZE: Tuple[int, int] = (1000, 2)
 
 # Progress bar constants
 PULSE_INTERVAL_SECONDS: float = 1.0
