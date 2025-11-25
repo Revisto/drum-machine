@@ -7,18 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-09-20 03:26+0000\n"
-"PO-Revision-Date: 2025-09-20 08:05+0200\n"
+"POT-Creation-Date: 2025-11-22 15:26+0000\n"
+"PO-Revision-Date: 2025-11-22 19:46+0100\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:59
+#: src/window.ui:69
 msgid "Drum Machine"
 msgstr "დრამ-მანქანა"
 
@@ -33,16 +34,15 @@ msgstr "შექმენით და დაუკარით დრამი
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:9
 msgid ""
-"Drum Machine is a modern and intuitive application for creating, playing, "
-"and managing drum patterns. Perfect for musicians, producers, and anyone "
-"interested in rhythm creation, this application provides a simple interface "
-"for drum pattern programming. Have fun!"
+"Drum Machine is a modern and intuitive application for creating, playing, and managing "
+"drum patterns. Perfect for musicians, producers, and anyone interested in rhythm "
+"creation, this application provides a simple interface for drum pattern programming. "
+"Have fun!"
 msgstr ""
-"Drum Machine თანამედროვე და ინტუიციური აპლიკაციაა დრამის ნიმუშების "
-"შესაქმნელად, დასაკრავად და სამართავად. გადასარევია მუსიკოსებისთვის, "
-"პროდიუსერებისთვის და ყველასთვის, რომელიც რითმის შექმნითაა დაინტერესებული, ეს "
-"აპლიკაცია უმარტივეს ინტერფეისს სთავაზობს დრამის ნიმუშის პროგრამირებისთვის. "
-"აბა, თქვენ იცით!"
+"Drum Machine თანამედროვე და ინტუიციური აპლიკაციაა დრამის ნიმუშების შესაქმნელად, "
+"დასაკრავად და სამართავად. გადასარევია მუსიკოსებისთვის, პროდიუსერებისთვის და "
+"ყველასთვის, რომელიც რითმის შექმნითაა დაინტერესებული, ეს აპლიკაცია უმარტივეს ინტერფეისს "
+"სთავაზობს დრამის ნიმუშის პროგრამირებისთვის. აბა, თქვენ იცით!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
@@ -61,8 +61,8 @@ msgid "Volume control for overall mix"
 msgstr "ხმის დონის კონტროლი მთელი მიქსისთვის"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:20
-msgid "Save and load preset patterns"
-msgstr "პრესეტის ნიმუშების შენახვა და ჩატვირთვა"
+msgid "Save and load patterns"
+msgstr "ნიმუშების შენახვა და ჩატვირთვა"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
@@ -75,8 +75,7 @@ msgstr "აუდიოს გატანის ფუნქციები WAV
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
 msgid "Metadata support for embedding artist name, song title, and cover art"
 msgstr ""
-"მეტამონაცემების მხარდაჭერა შემსრულებლის სახელის, სიმღერის სახელის და ყდის "
-"ჩასაშენებლად"
+"მეტამონაცემების მხარდაჭერა შემსრულებლის სახელის, სიმღერის სახელის და ყდის ჩასაშენებლად"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Keyboard shortcuts for quick access to all functions"
@@ -90,9 +89,30 @@ msgstr "Drum Pattern ჩატვირთულია ღია რეჟიმ
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Drum Pattern ჩატვირთულია მუქ რეჟიმში"
 
-#: src/application.py:69
+#: src/application.py:66
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, and managing "
+"drum patterns."
+msgstr ""
+"Drum Machine თანამედროვე და ინტუიციური აპლიკაციაა დრამის ნიმუშების შესაქმნელად, "
+"დასაკრავად და სამართავად."
+
+#: src/application.py:71
 msgid "translator-credits"
 msgstr "თემური დოღონაძე"
+
+#: src/application.py:76
+msgid "Special thanks"
+msgstr "განსაკუთრებული მადლობა"
+
+#: src/application.py:79
+msgid "Sounds"
+msgstr "ხმები"
+
+#: src/application.py:80
+#, python-brace-format
+msgid "The drum samples used in this application are from {link}."
+msgstr "დრამის ნუმუშები, რომლებიც ამ აპლიკაციაში გამოიყენება, მოდის ბმულიდან {link}."
 
 #: src/config/export_formats.py:43
 msgid "MP3 files"
@@ -126,37 +146,325 @@ msgstr "WAV ფაილები"
 msgid "WAV (Uncompressed)"
 msgstr "WAV (შეუკუმშავი)"
 
-#: src/dialogs/audio_export_dialog.py:115
+#: src/dialogs/audio_export_dialog.py:117
 msgid "Save Audio File"
 msgstr "აუდიოფაილის შენახვა"
 
-#: src/dialogs/audio_export_dialog.py:139
+#: src/dialogs/audio_export_dialog.py:146
+msgid "Part “{}” is Silent"
+msgstr "ნაწილი “{}” ჩუმია"
+
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Parts “{}” and “{}” are Silent"
+msgstr "ნაწილები “{}” და “{}” ჩუმია"
+
+#: src/dialogs/audio_export_dialog.py:152
+msgid "{} Parts are Silent"
+msgstr "{} ნაწილი ჩუმია"
+
+#: src/dialogs/audio_export_dialog.py:177
 msgid "Image files"
 msgstr "გამოსახულების ფაილები"
 
-#: src/dialogs/audio_export_dialog.py:145
+#: src/dialogs/audio_export_dialog.py:183
 msgid "Select Cover Art"
 msgstr "აირჩიეთ ყდის სურათი"
 
-#: src/dialogs/audio_export_dialog.py:202
+#: src/dialogs/audio_export_dialog.py:240
 msgid "Audio exported to {}"
 msgstr "აუდიო გატანილია ფაილში {}"
 
-#: src/dialogs/audio_export_dialog.py:207
+#: src/dialogs/audio_export_dialog.py:245
 msgid "Export failed"
 msgstr "გატანის შეცდომა"
 
-#: src/dialogs/audio_export_dialog.py:214
+#: src/dialogs/audio_export_dialog.py:252
 msgid "Export cancelled successfully"
 msgstr "გატანა წარმატებით გაუქმდა"
 
+#: src/dialogs/midi_mapping_dialog.py:21
+msgid "Acoustic Bass Drum"
+msgstr "აკუსტიკური ბას-დრამი"
+
+#: src/dialogs/midi_mapping_dialog.py:22
+msgid "Bass Drum 1"
+msgstr "ბას-დრამი 1"
+
+#: src/dialogs/midi_mapping_dialog.py:23
+msgid "Side Stick"
+msgstr "გვერდითი ჯოხი"
+
+#: src/dialogs/midi_mapping_dialog.py:24
+msgid "Acoustic Snare"
+msgstr "აკუსტიკური დოლი"
+
+#: src/dialogs/midi_mapping_dialog.py:25
+msgid "Hand Clap"
+msgstr "ტაშის დაკვრა"
+
+#: src/dialogs/midi_mapping_dialog.py:26
+msgid "Electric Snare"
+msgstr "ელექტროდოლი"
+
+#: src/dialogs/midi_mapping_dialog.py:27
+msgid "Low Floor Tom"
+msgstr "Low Floor Tom"
+
+#: src/dialogs/midi_mapping_dialog.py:28
+msgid "Closed Hi Hat"
+msgstr "დახურული ჰაი ჰეტი"
+
+#: src/dialogs/midi_mapping_dialog.py:29
+msgid "High Floor Tom"
+msgstr "High Floor Tom"
+
+#: src/dialogs/midi_mapping_dialog.py:30
+msgid "Pedal Hi Hat"
+msgstr "Pedal Hi Hat"
+
+#: src/dialogs/midi_mapping_dialog.py:31
+msgid "Low Tom"
+msgstr "Low Tom"
+
+#: src/dialogs/midi_mapping_dialog.py:32
+msgid "Open Hi Hat"
+msgstr "Open Hi Hat"
+
+#: src/dialogs/midi_mapping_dialog.py:33
+msgid "Low-Mid Tom"
+msgstr "Low-Mid Tom"
+
+#: src/dialogs/midi_mapping_dialog.py:34
+msgid "Hi-Mid Tom"
+msgstr "Hi-Mid Tom"
+
+#: src/dialogs/midi_mapping_dialog.py:35
+msgid "Crash Cymbal 1"
+msgstr "დასარტყამი თეფში 1"
+
+#: src/dialogs/midi_mapping_dialog.py:36
+msgid "High Tom"
+msgstr "High Tom"
+
+#: src/dialogs/midi_mapping_dialog.py:37
+msgid "Ride Cymbal 1"
+msgstr "Ride Cymbal 1"
+
+#: src/dialogs/midi_mapping_dialog.py:38
+msgid "Chinese Cymbal"
+msgstr "ჩინური თეფში"
+
+#: src/dialogs/midi_mapping_dialog.py:39
+msgid "Ride Bell"
+msgstr "Ride Bell"
+
+#: src/dialogs/midi_mapping_dialog.py:40
+msgid "Tambourine"
+msgstr "დაირა"
+
+#: src/dialogs/midi_mapping_dialog.py:41
+msgid "Splash Cymbal"
+msgstr "Splash Cymbal"
+
+#: src/dialogs/midi_mapping_dialog.py:42
+msgid "Cowbell"
+msgstr "ეჟვანი"
+
+#: src/dialogs/midi_mapping_dialog.py:43
+msgid "Crash Cymbal 2"
+msgstr "Crash Cymbal 2"
+
+#: src/dialogs/midi_mapping_dialog.py:44
+msgid "Vibraslap"
+msgstr "Vibraslap"
+
+#: src/dialogs/midi_mapping_dialog.py:45
+msgid "Ride Cymbal 2"
+msgstr "Ride Cymbal 2"
+
+#: src/dialogs/midi_mapping_dialog.py:46
+msgid "Hi Bongo"
+msgstr "Hi Bongo"
+
+#: src/dialogs/midi_mapping_dialog.py:47
+msgid "Low Bongo"
+msgstr "Low Bongo"
+
+#: src/dialogs/midi_mapping_dialog.py:48
+msgid "Mute Hi Conga"
+msgstr "მაღალი კონგას დადუმება"
+
+#: src/dialogs/midi_mapping_dialog.py:49
+msgid "Open Hi Conga"
+msgstr "მაღალი კონგას გახსნა"
+
+#: src/dialogs/midi_mapping_dialog.py:50
+msgid "Low Conga"
+msgstr "დაბალი კონნგა"
+
+#: src/dialogs/midi_mapping_dialog.py:51
+msgid "High Timbale"
+msgstr "High Timbale"
+
+#: src/dialogs/midi_mapping_dialog.py:52
+msgid "Low Timbale"
+msgstr "Low Timbale"
+
+#: src/dialogs/midi_mapping_dialog.py:53
+msgid "High Agogo"
+msgstr "High Agogo"
+
+#: src/dialogs/midi_mapping_dialog.py:54
+msgid "Low Agogo"
+msgstr "Low Agogo"
+
+#: src/dialogs/midi_mapping_dialog.py:55
+msgid "Cabasa"
+msgstr "Cabasa"
+
+#: src/dialogs/midi_mapping_dialog.py:56
+msgid "Maracas"
+msgstr "მარაკები"
+
+#: src/dialogs/midi_mapping_dialog.py:57
+msgid "Short Whistle"
+msgstr "მოკლე სტვენა"
+
+#: src/dialogs/midi_mapping_dialog.py:58
+msgid "Long Whistle"
+msgstr "გრძელი სტვენა"
+
+#: src/dialogs/midi_mapping_dialog.py:59
+msgid "Short Guiro"
+msgstr "მოკლე პერკუსია"
+
+#: src/dialogs/midi_mapping_dialog.py:60
+msgid "Long Guiro"
+msgstr "გრძელი პერკუსია"
+
+#: src/dialogs/midi_mapping_dialog.py:61
+msgid "Claves"
+msgstr "Claves"
+
+#: src/dialogs/midi_mapping_dialog.py:62
+msgid "Hi Wood Block"
+msgstr "მაღალი ხის ბლოკი"
+
+#: src/dialogs/midi_mapping_dialog.py:63
+msgid "Low Wood Block"
+msgstr "დაბალი ის ბლოკი"
+
+#: src/dialogs/midi_mapping_dialog.py:64
+msgid "Mute Cuica"
+msgstr "Mute Cuica"
+
+#: src/dialogs/midi_mapping_dialog.py:65
+msgid "Open Cuica"
+msgstr "Open Cuica"
+
+#: src/dialogs/midi_mapping_dialog.py:66
+msgid "Mute Triangle"
+msgstr "სამკუთხედის დადუმება"
+
+#: src/dialogs/midi_mapping_dialog.py:67
+msgid "Open Triangle"
+msgstr "სამკუთხედის გახსნა"
+
+#: src/dialogs/midi_mapping_dialog.py:77 src/ui/drum_grid_builder.py:328
+msgid "MIDI Mapping"
+msgstr "MIDI-ის ასახვა"
+
+#. Group 1: Note Assignment
+#: src/dialogs/midi_mapping_dialog.py:107
+msgid "Note Assignment"
+msgstr "ნოტის მინიჭება"
+
+#: src/dialogs/midi_mapping_dialog.py:110
+msgid "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr "მიანიჭეთ MIDI ნოტა '{}'-ისთვის. ეს უზრუნველყოფს სწორად დაკვრას გატანისას."
+
+#. Action Row for Note
+#: src/dialogs/midi_mapping_dialog.py:117
+msgid "MIDI Note"
+msgstr "MIDI ნოტა"
+
+#: src/dialogs/midi_mapping_dialog.py:118
+msgid "The note number to trigger"
+msgstr "ნოტის ნომერი გასააქტიურებლად"
+
+#. Group 2: Standard Instruments
+#: src/dialogs/midi_mapping_dialog.py:136
+msgid "Standard Instruments"
+msgstr "სტანდარტული ინსტრუმენტები"
+
+#: src/dialogs/midi_mapping_dialog.py:138
+msgid "Select a General MIDI instrument to automatically set the note."
+msgstr "აირჩიეთ ზოგადი MIDI ინსტრუმენტი ნოტის ავტომატურად დასაყენებლად."
+
+#: src/dialogs/midi_mapping_dialog.py:142
+msgid "Instrument Preset"
+msgstr "ინსტრუმენტის პრესეტი"
+
+#: src/dialogs/midi_mapping_dialog.py:185
+msgid "Save"
+msgstr "შენახვა"
+
+#: src/dialogs/midi_mapping_dialog.py:227
+msgid "Custom Note"
+msgstr "მორგებული ნოტა"
+
+#: src/handlers/drag_drop_handler.py:88
+msgid "Not a supported audio file"
+msgstr "მხარდაჭერილი აუდიოფაილი არაა"
+
+#: src/handlers/drag_drop_handler.py:95
+msgid "File not found"
+msgstr "ფაილი ვერ მოიძებნა"
+
+#: src/handlers/drag_drop_handler.py:99
+msgid "Selected item is not a file"
+msgstr "მონიშნული ელემენტი ფაილი არაა"
+
+#: src/handlers/drag_drop_handler.py:105
+msgid "File too large: {:.1f}MB (max 50MB)"
+msgstr "ფაილი მეტისმეტად დიდია: {:.1f}მბ (მაქს 50მბ)"
+
+#: src/handlers/drag_drop_handler.py:114
+msgid "Custom Sound"
+msgstr "მორგებული ხმა"
+
+#: src/handlers/drag_drop_handler.py:138
+msgid "No valid audio files found"
+msgstr "სწორი აუდიოფაილები აღმოჩენილი არაა"
+
+#: src/handlers/drag_drop_handler.py:173
+msgid "Error processing file: {}"
+msgstr "ფაილის დამუშავების შეცდომა: {}"
+
+#: src/handlers/drag_drop_handler.py:201
+msgid "Added {} drum part, {} files skipped"
+msgstr "დაემატა {} დრამის ნაწილი. გამოტოვებულია {} ფაილი"
+
+#: src/handlers/drag_drop_handler.py:207
+msgid "Added {} drum parts, {} files skipped"
+msgstr "დაემატა {} დრამის ნაწილი. გამოტოვებულია {} ფაილი"
+
+#: src/handlers/drag_drop_handler.py:212
+msgid "Added {} drum parts"
+msgstr "დაემატა {} დრამის ნაწილი"
+
+#. Only show skipped message if no replacement happened
+#: src/handlers/drag_drop_handler.py:215
+msgid "{} files skipped"
+msgstr "გამოტოვებულია {} ფაილი"
+
 #: src/handlers/file_dialog_handler.py:51
-msgid "Default Presets"
-msgstr "ნაგულისხმევი პრესეტები"
+msgid "Default Patterns"
+msgstr "ნაგულისხმევი ნიმუშები"
 
 #: src/handlers/file_dialog_handler.py:83
 msgid "No Pattern"
-msgstr "შაბლონის გარეშე"
+msgstr "ნიმუშების გარეშე"
 
 #: src/handlers/file_dialog_handler.py:84
 msgid "Please create a drum pattern before exporting audio."
@@ -166,8 +474,7 @@ msgstr "აირჩიეთ დრამის ნიმუში აუდი
 msgid "_OK"
 msgstr "_დიახ"
 
-#: src/handlers/file_dialog_handler.py:109
-#: src/handlers/file_dialog_handler.py:177
+#: src/handlers/file_dialog_handler.py:109 src/handlers/file_dialog_handler.py:177
 msgid "MIDI files"
 msgstr "MIDI ფაილები"
 
@@ -179,72 +486,148 @@ msgstr "MIDI ფაილის გახსნა"
 msgid "Save Sequence"
 msgstr "მიმდევრობის შენახვა"
 
-#: src/utils/export_progress.py:68
-msgid "Preparing..."
-msgstr "მომზადება..."
+#: src/handlers/file_dialog_handler.py:210
+msgid "Add Audio Samples"
+msgstr "აუდიოს ნიმუშების დამატება"
+
+#: src/handlers/file_dialog_handler.py:232
+msgid "Audio files"
+msgstr "აუდიო ფაილები"
 
 #: src/utils/export_progress.py:69
-msgid "Initializing..."
-msgstr "ინიციალიზაცია..."
+msgid "Preparing…"
+msgstr "მომზადება…"
 
-#: src/utils/export_progress.py:71
-msgid "Rendering audio..."
-msgstr "აუდიოს რენდერი..."
+#: src/utils/export_progress.py:70
+msgid "Initializing…"
+msgstr "ინიციალიზაცია…"
 
 #: src/utils/export_progress.py:72
-msgid "Processing beats..."
-msgstr "ტაქტის დამუშავება..."
+msgid "Rendering audio…"
+msgstr "აუდიოს რენდერი…"
 
-#: src/utils/export_progress.py:74
-msgid "Saving file..."
-msgstr "ფაილის შენახვა..."
+#: src/utils/export_progress.py:73
+msgid "Processing beats…"
+msgstr "ტაქტის დამუშავება…"
 
 #: src/utils/export_progress.py:75
-msgid "Writing to disk..."
-msgstr "დისკზე ჩაწერა..."
+msgid "Saving file…"
+msgstr "ფაილის შენახვა…"
 
-#: src/utils/export_progress.py:77
-msgid "Exporting..."
-msgstr "გატანა…"
+#: src/utils/export_progress.py:76
+msgid "Writing to disk…"
+msgstr "დისკზე ჩაწერა…"
 
 #: src/utils/export_progress.py:78
-msgid "Processing..."
-msgstr "დამუშავება..."
+msgid "Exporting…"
+msgstr "გატანა…"
+
+#: src/utils/export_progress.py:79
+msgid "Processing…"
+msgstr "დამუშავება…"
+
+#: src/ui/drum_grid_builder.py:313
+msgid "Preview"
+msgstr "მინიატურა"
+
+#: src/ui/drum_grid_builder.py:315
+msgid "Replace…"
+msgstr "ჩანაცვლება…"
+
+#: src/ui/drum_grid_builder.py:318
+msgid "Replace with new sound"
+msgstr "ჩანაცვლება ახალი ხმით"
+
+#: src/ui/drum_grid_builder.py:321
+msgid "Remove"
+msgstr "წაშლა"
+
+#: src/ui/drum_grid_builder.py:324
+msgid "At least one drum part must remain"
+msgstr "უნდა დარჩეს, სულ ცოტა, ერთი დრამის ნაწილი"
+
+#: src/ui/drum_grid_builder.py:331
+msgid "Configure MIDI note for export"
+msgstr "მოირგეთ MIDI ნოტა გასატანად"
+
+#: src/ui/drum_grid_builder.py:388
+msgid "MIDI note updated"
+msgstr "MIDI-ის ნოტა განახლდა"
+
+#: src/ui/drum_grid_builder.py:396
+msgid "Select New Sound"
+msgstr "ახალი ხმის არჩევა"
+
+#: src/ui/drum_grid_builder.py:410
+msgid "Sound replaced"
+msgstr "ხმა შეიცვალა"
+
+#: src/ui/drum_grid_builder.py:414
+msgid "Failed to replace sound"
+msgstr "ხმის შეცვლა ჩავარდა"
+
+#: src/ui/drum_grid_builder.py:425
+msgid "Removed drum part: {}"
+msgstr "წაიშალა დრამის ნაწილი: {}"
+
+#: src/ui/drum_grid_builder.py:429
+msgid "Failed to remove drum part"
+msgstr "დრამის ნაწილის წაშლის შეცდომა"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:198
+#: src/window.py:195
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} დარტყმა წუთში (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:207
+#: src/window.py:204
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% ხმა"
 
-#: src/window.py:222 src/window.ui:170
+#: src/window.py:219 src/window.ui:170
 msgid "Play"
 msgstr "დაკვრა"
 
-#: src/window.py:226
+#: src/window.py:223
 msgid "Pause"
 msgstr "შეჩერება"
 
-#: src/window.py:264 src/window.ui:52
+#: src/window.py:261
 msgid "Open"
 msgstr "გახსნა"
 
+#: src/window.py:279
+msgid "Added: {}"
+msgstr "დაემატა: {}"
+
+#: src/window.py:290
+msgid "Failed to add custom sound"
+msgstr "მორგებული ხმის დამატება ჩავარდა"
+
+#: src/window.py:297
+msgid "Replaced drum with: {}"
+msgstr "დრამი ჩანაცვლდა: {}"
+
+#: src/window.py:303
+msgid "Failed to replace drum sound"
+msgstr "დრამის ხმის ჩანაცვლების შეცდომა"
+
+#: src/window.ui:52
+msgid "Open…"
+msgstr "გახსნა…"
+
 #: src/window.ui:54
-msgid "Open Preset"
-msgstr "პრესეტის გახსნა"
+msgid "Open Pattern"
+msgstr "ნიმუშის გახსნა"
 
 #: src/window.ui:57
 msgctxt "accessibility"
-msgid "Open Preset"
-msgstr "პრესეტის გახსნა"
+msgid "Open Pattern"
+msgstr "ნიმუშის გახსნა"
 
 #: src/window.ui:58
-msgid "Open Saved Drum Pattern Preset"
-msgstr "შენახული დრამის ნიმუშის პრესეტის გახსნა"
+msgid "Open Saved Drum Pattern"
+msgstr "შენახული დრამის ნიმუშის გახსნა"
 
 #: src/window.ui:76
 msgid "Main Menu"
@@ -259,15 +642,14 @@ msgstr "მთავარი მენიუ"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "წვდომა კლავიატურის მალსახმობებთან და აპლიკაციის ინფორმაციასთან"
 
-#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6
-#: src/gtk/audio-export-dialog.blp:96
-msgid "Export Audio"
-msgstr "აუდიოს გატანა"
+#: src/window.ui:86
+msgid "Export Audio…"
+msgstr "აუდიოს გატანა…"
 
 #: src/window.ui:88
 msgctxt "accessibility"
-msgid "Export Audio"
-msgstr "აუდიოს გატანა"
+msgid "Export Audio…"
+msgstr "აუდიოს გატანა…"
 
 #: src/window.ui:89
 msgid "Export Current Drum Pattern as Audio File"
@@ -298,14 +680,18 @@ msgid "Reset the Drum Sequence"
 msgstr "დრამის მიმდევრობის ჩამოყრა"
 
 #: src/window.ui:223
-msgid "_Save Pattern"
-msgstr "ნიმუში_ს შენახვა"
+msgid "_Add Samples…"
+msgstr "ნიმუშების დ_ამატება…"
 
-#: src/window.ui:229
+#: src/window.ui:227
+msgid "_Save Pattern…"
+msgstr "ნიმუში_ს შენახვა…"
+
+#: src/window.ui:233
 msgid "_Keyboard Shortcuts"
 msgstr "_კლავიატურის მალსახმობები"
 
-#: src/window.ui:233
+#: src/window.ui:237
 msgid "_About Drum Machine"
 msgstr "დრამის მანქანის შეს_ახებ"
 
@@ -371,18 +757,18 @@ msgstr "დადუმება"
 
 #: src/gtk/help-overlay.blp:76
 msgctxt "shortcut window"
-msgid "Preset Management"
-msgstr "პრესეტების მართვა"
+msgid "Pattern Management"
+msgstr "ნიმუშების მართვა"
 
 #: src/gtk/help-overlay.blp:79
 msgctxt "shortcut window"
-msgid "Load Preset"
-msgstr "პრესეტის ჩატვირთვა"
+msgid "Load Pattern"
+msgstr "ნიმუშის ჩატვირთვა"
 
 #: src/gtk/help-overlay.blp:85
 msgctxt "shortcut window"
-msgid "Save Preset"
-msgstr "პრესეტის შენახვა"
+msgid "Save Pattern"
+msgstr "ნიმუშის შენახვა"
 
 #: src/gtk/help-overlay.blp:91
 msgctxt "shortcut window"
@@ -415,11 +801,11 @@ msgstr "შევინახო ცვლილებები?"
 
 #: src/gtk/save-changes-dialog.blp:6
 msgid ""
-"Current preset contains unsaved changes. Changes which are not saved will be "
+"Current pattern contains unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
-"მიმდინარე პრესეტი შეუნახავ ცვლილებს შეიცავს. ცვლილებები, რომლებსაც არ "
-"შეინახავთ, დაიკარგება."
+"მიმდინარე ნიმუში შეუნახავ ცვლილებს შეიცავს. ცვლილებები, რომლებსაც არ შეინახავთ, "
+"სამუდამოდ დაიკარგება."
 
 #. Translators: Cancel the operation
 #: src/gtk/save-changes-dialog.blp:14
@@ -436,47 +822,64 @@ msgstr "_მოცილება"
 msgid "_Save"
 msgstr "_შენახვა"
 
-#: src/gtk/audio-export-dialog.blp:39
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr "აუდიოს გატანა"
+
+#: src/gtk/audio-export-dialog.blp:44
 msgid "Audio Format"
 msgstr "აუდიოფორმატი"
 
-#: src/gtk/audio-export-dialog.blp:45
+#: src/gtk/audio-export-dialog.blp:50
 msgid "Repeat Count"
 msgstr "გამეორების რაოდენობა"
 
-#: src/gtk/audio-export-dialog.blp:46
+#: src/gtk/audio-export-dialog.blp:51
 msgid "How many times to repeat the pattern"
 msgstr "რამდენჯერ გავიმეორო ნიმუში"
 
-#: src/gtk/audio-export-dialog.blp:59
+#: src/gtk/audio-export-dialog.blp:64
 msgid "Metadata"
 msgstr "მეტამონაცემები"
 
-#: src/gtk/audio-export-dialog.blp:62
+#: src/gtk/audio-export-dialog.blp:67
 msgid "Artist Name"
 msgstr "შემსრულებლის სახელი"
 
-#: src/gtk/audio-export-dialog.blp:67
+#: src/gtk/audio-export-dialog.blp:72
 msgid "Song Name"
 msgstr "სიმღერის სახელი"
 
-#: src/gtk/audio-export-dialog.blp:72
+#: src/gtk/audio-export-dialog.blp:77
 msgid "Cover Art"
 msgstr "ყდის სურათი"
 
-#: src/gtk/audio-export-dialog.blp:76
-msgid "Choose File"
-msgstr "ფაილის არჩევა"
+#: src/gtk/audio-export-dialog.blp:81
+msgid "Choose File…"
+msgstr "აირჩიეთ ფაილი…"
 
-#: src/gtk/audio-export-dialog.blp:105
+#: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr "გატანის გაუქმება"
 
+#~ msgctxt "accessibility"
+#~ msgid "Open Preset"
+#~ msgstr "პრესეტის გახსნა"
+
+#~ msgctxt "accessibility"
+#~ msgid "Export Audio"
+#~ msgstr "აუდიოს გატანა"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Load Preset"
+#~ msgstr "პრესეტის ჩატვირთვა"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "პრესეტის შენახვა"
+
 #~ msgid "Export Settings"
 #~ msgstr "გატანის მორგება"
-
-#~ msgid "Configure your audio export options"
-#~ msgstr "მოირგეთ თქვენი აუდიოს გატანის პარამეტრები"
 
 #~ msgid "Select the output audio format"
 #~ msgstr "აირჩიეთ გამოტანის აუდიოფორმატი"
