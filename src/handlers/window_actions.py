@@ -70,44 +70,68 @@ class WindowActionHandler:
             self.window.application.set_accels_for_action(f"win.{name}", shortcuts)
 
     # Action handlers
-    def on_open_menu_action(self, action: Gio.SimpleAction, param: Optional[object]) -> None:
+    def on_open_menu_action(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
         self.window.menu_button.activate()
 
-    def on_show_help_overlay(self, action: Gio.SimpleAction, param: Optional[object]) -> None:
+    def on_show_help_overlay(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
         self.window.get_help_overlay().present()
 
-    def handle_play_pause_action(self, action: Gio.SimpleAction, param: Optional[object]) -> None:
+    def handle_play_pause_action(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
         self.window.handle_play_pause(self.window.play_pause_button)
 
-    def handle_clear_action(self, action: Gio.SimpleAction, param: Optional[object]) -> None:
+    def handle_clear_action(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
         self.window.handle_clear(self.window.clear_button)
 
-    def increase_bpm_action(self, action: Gio.SimpleAction, param: Optional[object]) -> None:
+    def increase_bpm_action(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
         current_bpm = self.window.bpm_spin_button.get_value()
         self.window.bpm_spin_button.set_value(current_bpm + 1)
 
-    def decrease_bpm_action(self, action: Gio.SimpleAction, param: Optional[object]) -> None:
+    def decrease_bpm_action(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
         current_bpm = self.window.bpm_spin_button.get_value()
         self.window.bpm_spin_button.set_value(current_bpm - 1)
 
-    def increase_volume_action(self, action: Gio.SimpleAction, param: Optional[object]) -> None:
+    def increase_volume_action(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
         current_volume = self.window.volume_button.get_value()
         self.window.volume_button.set_value(min(current_volume + 5, 100))
 
-    def decrease_volume_action(self, action: Gio.SimpleAction, param: Optional[object]) -> None:
+    def decrease_volume_action(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
         current_volume = self.window.volume_button.get_value()
         self.window.volume_button.set_value(max(current_volume - 5, 0))
 
-    def on_open_file_action(self, action: Gio.SimpleAction, param: Optional[object]) -> None:
+    def on_open_file_action(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
         self.window._on_open_file_clicked(self.window.file_pattern_button)
 
-    def on_save_pattern_action(self, action: Gio.SimpleAction, param: Optional[object]) -> None:
+    def on_save_pattern_action(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
         self.window._on_save_pattern_clicked()
 
-    def on_export_audio_action(self, action: Gio.SimpleAction, param: Optional[object]) -> None:
+    def on_export_audio_action(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
         self.window._on_export_audio_clicked(self.window.export_audio_button)
 
-    def on_quit_action(self, action: Optional[Gio.SimpleAction], param: Optional[object]) -> None:
+    def on_quit_action(
+        self, action: Optional[Gio.SimpleAction], param: Optional[object]
+    ) -> None:
         if self.window.save_changes_service.has_unsaved_changes():
             self.window.save_changes_service.prompt_save_changes(
                 on_save=self.window._save_and_close,
@@ -148,7 +172,9 @@ class WindowActionHandler:
             if current_page > 0:
                 carousel.scroll_to(carousel.get_nth_page(current_page - 1), True)
 
-    def handle_next_page_action(self, action: Gio.SimpleAction, param: Optional[object]) -> None:
+    def handle_next_page_action(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
         """Go to the next page."""
         if hasattr(self.window, "carousel"):
             carousel = self.window.carousel
@@ -165,6 +191,8 @@ class WindowActionHandler:
         else:
             self.window.volume_button.set_value(0)
 
-    def on_add_samples_action(self, action: Gio.SimpleAction, param: Optional[object]) -> None:
+    def on_add_samples_action(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
         """Open file dialog to select multiple audio samples"""
         self.window.file_dialog_handler.handle_add_samples()
