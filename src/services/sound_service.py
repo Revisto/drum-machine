@@ -19,21 +19,22 @@
 
 import pygame
 import logging
+from typing import Dict
 from ..interfaces.sound import ISoundService
 from .drum_part_manager import DrumPartManager
 from ..config.constants import MIXER_CHANNELS
 
 
 class SoundService(ISoundService):
-    def __init__(self, drumkit_dir):
+    def __init__(self, drumkit_dir: str) -> None:
         pygame.init()
         pygame.mixer.set_num_channels(MIXER_CHANNELS)
         self.drumkit_dir = drumkit_dir
         self.drum_part_manager = DrumPartManager(drumkit_dir)
-        self.sounds = {}
-        self._current_volume = 1.0
+        self.sounds: Dict[str, pygame.mixer.Sound] = {}
+        self._current_volume: float = 1.0
 
-    def load_sounds(self):
+    def load_sounds(self) -> None:
         self.sounds = {}
         for part in self.drum_part_manager.get_all_parts():
             try:
@@ -47,11 +48,11 @@ class SoundService(ISoundService):
             except Exception as e:
                 logging.error(f"Error loading sound {part.name}: {e}")
 
-    def reload_sounds(self):
+    def reload_sounds(self) -> None:
         self.drum_part_manager.reload()
         self.load_sounds()
 
-    def reload_specific_sound(self, part_id):
+    def reload_specific_sound(self, part_id: str) -> None:
         """Reload a specific sound after drum part replacement"""
         self.drum_part_manager.reload()
         part = self.drum_part_manager.get_part_by_id(part_id)
@@ -60,15 +61,15 @@ class SoundService(ISoundService):
             sound.set_volume(self._current_volume)
             self.sounds[part_id] = sound
 
-    def play_sound(self, part_id):
+    def play_sound(self, part_id: str) -> None:
         if part_id in self.sounds:
             self.sounds[part_id].play()
 
-    def set_volume(self, volume):
+    def set_volume(self, volume: float) -> None:
         self._current_volume = volume / 100
         for sound in self.sounds.values():
             sound.set_volume(self._current_volume)
 
-    def preview_sound(self, part_id):
+    def preview_sound(self, part_id: str) -> None:
         if part_id in self.sounds:
             self.play_sound(part_id)

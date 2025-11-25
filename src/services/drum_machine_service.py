@@ -19,6 +19,8 @@
 
 import threading
 import time
+import logging
+from typing import Dict, Optional
 from gi.repository import GLib
 from ..interfaces.player import IPlayer
 from ..config.constants import NUM_TOGGLES, GROUP_TOGGLE_COUNT
@@ -27,35 +29,37 @@ from .ui_helper import UIHelper
 
 
 class DrumMachineService(IPlayer):
-    def __init__(self, window, sound_service, ui_helper: UIHelper):
+    def __init__(self, window, sound_service, ui_helper: UIHelper) -> None:
         self.window = window
         self.sound_service = sound_service
         self.ui_helper = ui_helper
-        self.playing = False
-        self.bpm = 120
-        self.last_volume = 100
-        self.play_thread = None
-        self.stop_event = threading.Event()
-        self.drum_parts_state = self.create_empty_drum_parts_state()
+        self.playing: bool = False
+        self.bpm: float = 120
+        self.last_volume: float = 100
+        self.play_thread: Optional[threading.Thread] = None
+        self.stop_event: threading.Event = threading.Event()
+        self.drum_parts_state: Dict[str, Dict[int, bool]] = (
+            self.create_empty_drum_parts_state()
+        )
         self.pattern_service = PatternService(window)
-        self.total_beats = NUM_TOGGLES
-        self.beats_per_page = NUM_TOGGLES
-        self.active_pages = 1
-        self.playing_beat = -1
+        self.total_beats: int = NUM_TOGGLES
+        self.beats_per_page: int = NUM_TOGGLES
+        self.active_pages: int = 1
+        self.playing_beat: int = -1
 
-    def create_empty_drum_parts_state(self):
+    def create_empty_drum_parts_state(self) -> Dict[str, Dict[int, bool]]:
         # Get drum parts from sound service
         drum_parts = self.sound_service.drum_part_manager.get_all_parts()
         drum_parts_state = {part.id: dict() for part in drum_parts}
         return drum_parts_state
 
-    def play(self):
+    def play(self) -> None:
         self.playing = True
         self.stop_event.clear()
         self.play_thread = threading.Thread(target=self._play_drum_sequence)
         self.play_thread.start()
 
-    def stop(self):
+    def stop(self) -> None:
         self.playing = False
         self.stop_event.set()
         self.ui_helper.clear_all_playhead_highlights()
@@ -64,7 +68,7 @@ class DrumMachineService(IPlayer):
             self.play_thread.join()
             self.play_thread = None
 
-    def update_total_beats(self):
+    def update_total_beats(self) -> None:
         """
         Calculates the total number of beats and active pages
         based on the highest active toggle.
@@ -84,22 +88,22 @@ class DrumMachineService(IPlayer):
         self.active_pages = num_pages
         self.total_beats = self.active_pages * self.beats_per_page
 
-    def set_bpm(self, bpm):
+    def set_bpm(self, bpm: float) -> None:
         self.bpm = bpm
 
-    def set_volume(self, volume):
+    def set_volume(self, volume: float) -> None:
         self.sound_service.set_volume(volume)
         if volume != 0:
             self.last_volume = volume
 
-    def clear_all_toggles(self):
+    def clear_all_toggles(self) -> None:
         self.drum_parts_state = self.create_empty_drum_parts_state()
         self.ui_helper.deactivate_all_toggles_in_ui()
 
-    def save_pattern(self, file_path):
+    def save_pattern(self, file_path: str) -> None:
         self.pattern_service.save_pattern(file_path, self.drum_parts_state, self.bpm)
 
-    def load_pattern(self, file_path):
+    def load_pattern(self, file_path: str) -> None:
         self.ui_helper.deactivate_all_toggles_in_ui()
         self.drum_parts_state, self.bpm = self.pattern_service.load_pattern(file_path)
 
@@ -109,7 +113,7 @@ class DrumMachineService(IPlayer):
 
         self.ui_helper.set_bpm_in_ui(self.bpm)
 
-    def _play_drum_sequence(self):
+    def _play_drum_sequence(self) -> None:
         current_beat = 0
         while self.playing and not self.stop_event.is_set():
             # Check if the loop should end or wrap around
@@ -144,17 +148,17 @@ class DrumMachineService(IPlayer):
             # Advance the playhead
             current_beat += 1
 
-    def preview_drum_part(self, part_id):
+    def preview_drum_part(self, part_id: str) -> None:
         """Preview a drum part sound"""
         drum_part_manager = self.sound_service.drum_part_manager
         if drum_part_manager.get_part_by_id(part_id):
             self.sound_service.preview_sound(part_id)
 
-    def add_drum_part_state(self, part_id):
+    def add_drum_part_state(self, part_id: str) -> None:
         """Add a new drum part to the state"""
         self.drum_parts_state[part_id] = {}
 
-    def add_new_drum_part(self, file_path, name):
+    def add_new_drum_part(self, file_path: str, name: str) -> Optional[object]:
         """Add a new drum part from an audio file"""
         new_part = self.sound_service.drum_part_manager.add_custom_part(name, file_path)
         if new_part:
@@ -167,7 +171,9 @@ class DrumMachineService(IPlayer):
             return new_part
         return None
 
-    def replace_drum_part(self, drum_id, file_path, name):
+    def replace_drum_part(
+        self, drum_id: str, file_path: str, name: str
+    ) -> Optional[object]:
         """Replace an existing drum part with a new audio file"""
         result = self.sound_service.drum_part_manager.replace_part(
             drum_id, file_path, name
@@ -182,7 +188,7 @@ class DrumMachineService(IPlayer):
             return result
         return None
 
-    def remove_drum_part(self, drum_id):
+    def remove_drum_part(self, drum_id: str) -> bool:
         """Remove a drum part from the service"""
         result = self.sound_service.drum_part_manager.remove_part(drum_id)
         if result:
@@ -193,5 +199,8 @@ class DrumMachineService(IPlayer):
             self.window.drum_grid_builder.rebuild_carousel()
             # Update total beats in case pattern changed
             self.update_total_beats()
+            logging.info(f"Removed drum part: {drum_id}")
             return True
-        return False
+        else:
+            logging.error(f"Failed to remove drum part: {drum_id}")
+            return False

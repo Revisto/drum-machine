@@ -21,7 +21,8 @@ import threading
 import time
 import logging
 from enum import Enum
-from gi.repository import GLib
+from typing import Optional
+from gi.repository import GLib, Gtk, Adw
 from gettext import gettext as _
 from ..config.constants import PULSE_INTERVAL_SECONDS
 
@@ -35,17 +36,23 @@ class ExportPhase(Enum):
 class ExportProgressHandler:
     """Handles export progress updates and UI thread coordination"""
 
-    def __init__(self, progress_bar, status_overlay, status_label, detail_label):
+    def __init__(
+        self,
+        progress_bar: Gtk.ProgressBar,
+        status_overlay: Adw.ToastOverlay,
+        status_label: Gtk.Label,
+        detail_label: Gtk.Label,
+    ) -> None:
         self.progress_bar = progress_bar
         self.status_overlay = status_overlay
         self.status_label = status_label
         self.detail_label = detail_label
 
-        self.pulse_thread = None
-        self.pulse_stop_event = None
-        self.is_active = False
+        self.pulse_thread: Optional[threading.Thread] = None
+        self.pulse_stop_event: Optional[threading.Event] = None
+        self.is_active: bool = False
 
-    def start_progress_tracking(self):
+    def start_progress_tracking(self) -> None:
         """Start showing progress UI and pulse updates"""
         self.is_active = True
         self.progress_bar.set_visible(True)

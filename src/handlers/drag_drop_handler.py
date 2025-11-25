@@ -18,6 +18,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from pathlib import Path
+from typing import Optional
+import logging
 from gi.repository import Gtk, Gdk
 from gettext import gettext as _
 from ..config.constants import SUPPORTED_INPUT_AUDIO_FORMATS
@@ -25,11 +27,13 @@ from ..utils.name_utils import extract_name_from_path
 
 
 class DragDropHandler:
-    def __init__(self, window):
+    def __init__(self, window) -> None:
         self.window = window
-        self.new_drum_placeholder = None
+        self.new_drum_placeholder: Optional[Gtk.Widget] = None
 
-    def setup_drag_drop(self, target_widget=None):
+    def setup_drag_drop(
+        self, target_widget: Optional[Gtk.Widget] = None
+    ) -> Gtk.DropTarget:
         if target_widget is None:
             target_widget = self.window
 
@@ -116,6 +120,9 @@ class DragDropHandler:
     def _validate_file_format(self, path):
         """Validate file format is supported"""
         if path.suffix.lower() not in SUPPORTED_INPUT_AUDIO_FORMATS:
+            logging.warning(
+                f"Unsupported file format attempted: {path.suffix} for {path.name}"
+            )
             self.window.show_toast(_("Not a supported audio file"))
             return False
         return True
@@ -123,15 +130,18 @@ class DragDropHandler:
     def _validate_file_access(self, path):
         """Validate file exists, is accessible, and reasonable size"""
         if not path.exists():
+            logging.error(f"Dropped file not found: {path}")
             self.window.show_toast(_("File not found"))
             return False
 
         if not path.is_file():
+            logging.warning(f"Dropped item is not a file: {path}")
             self.window.show_toast(_("Selected item is not a file"))
             return False
 
         file_size_mb = path.stat().st_size / (1024 * 1024)
         if file_size_mb > 50:
+            logging.warning(f"File too large: {file_size_mb:.1f}MB - {path.name}")
             self.window.show_toast(
                 _("File too large: {:.1f}MB (max 50MB)").format(file_size_mb)
             )

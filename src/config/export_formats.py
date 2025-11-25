@@ -18,6 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from dataclasses import dataclass
+from typing import Dict
 from gettext import gettext as _
 
 
@@ -35,7 +36,7 @@ class ExportFormat:
 class ExportFormatRegistry:
     """Registry for managing available export formats"""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self._formats = {
             0: ExportFormat(
                 ext=".mp3",
@@ -67,15 +68,15 @@ class ExportFormatRegistry:
             ),
         }
 
-    def get_format(self, format_id):
+    def get_format(self, format_id: int) -> ExportFormat:
         """Get format configuration by ID"""
         return self._formats.get(format_id, self._formats[0])
 
-    def get_all_formats(self):
+    def get_all_formats(self) -> Dict[int, ExportFormat]:
         """Get all available formats"""
         return self._formats.copy()
 
-    def get_format_by_extension(self, extension):
+    def get_format_by_extension(self, extension: str) -> ExportFormat:
         """Get format configuration by file extension"""
         for fmt in self._formats.values():
             if fmt.ext == extension:

@@ -22,17 +22,17 @@ from abc import ABC, abstractmethod
 
 class IPlayer(ABC):
     @abstractmethod
-    def play(self):
+    def play(self) -> None:
         pass
 
     @abstractmethod
-    def stop(self):
+    def stop(self) -> None:
         pass
 
     @abstractmethod
-    def set_bpm(self, bpm):
+    def set_bpm(self, bpm: float) -> None:
         pass
 
     @abstractmethod
-    def set_volume(self, volume):
+    def set_volume(self, volume: float) -> None:
         pass
