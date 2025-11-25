@@ -46,7 +46,8 @@ class UIHelper:
                     toggle.get_style_context().remove_class("toggle-active")
             except AttributeError:
                 logging.debug(
-                    f"Toggle not found for playhead highlight: {part.id}_toggle_{beat_index}"
+                    f"Toggle not found for playhead highlight: "
+                    f"{part.id}_toggle_{beat_index}"
                 )
                 continue
 

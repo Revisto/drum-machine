@@ -119,7 +119,8 @@ class PatternService:
             for track in mid.tracks:
                 absolute_time_in_ticks = 0
                 for msg in track:
-                    # Keep a running total of the absolute time by adding the delta times
+                    # Keep a running total of the absolute time
+                    # by adding the delta times
                     absolute_time_in_ticks += msg.time
                     if msg.type == "set_tempo":
                         bpm = mido.tempo2bpm(msg.tempo)

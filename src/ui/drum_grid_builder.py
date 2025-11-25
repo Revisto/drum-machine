@@ -188,7 +188,8 @@ class DrumGridBuilder:
                 return True
             except AttributeError as e:
                 logging.debug(
-                    f"Toggle not found during navigation: {drum_part}_toggle_{target_beat_index}: {e}"
+                    f"Toggle not found during navigation: "
+                    f"{drum_part}_toggle_{target_beat_index}: {e}"
                 )
                 return True
         return False

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-26 00:07+0330\n"
+"POT-Creation-Date: 2025-11-26 00:09+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -483,7 +483,7 @@ msgstr ""
 msgid "Open Triangle"
 msgstr ""
 
-#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:337
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:338
 msgid "MIDI Mapping"
 msgstr ""
 
@@ -657,43 +657,43 @@ msgstr ""
 msgid "Custom Sound"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:322
+#: src/ui/drum_grid_builder.py:323
 msgid "Preview"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:324
+#: src/ui/drum_grid_builder.py:325
 msgid "Replace…"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:327
+#: src/ui/drum_grid_builder.py:328
 msgid "Replace with new sound"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:330
+#: src/ui/drum_grid_builder.py:331
 msgid "Remove"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:333
+#: src/ui/drum_grid_builder.py:334
 msgid "At least one drum part must remain"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:340
+#: src/ui/drum_grid_builder.py:341
 msgid "Configure MIDI note for export"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:397
+#: src/ui/drum_grid_builder.py:398
 msgid "MIDI note updated"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:405
+#: src/ui/drum_grid_builder.py:406
 msgid "Select New Sound"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:419
+#: src/ui/drum_grid_builder.py:420
 msgid "Removed drum part: {}"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:423
+#: src/ui/drum_grid_builder.py:424
 msgid "Failed to remove drum part"
 msgstr ""
 
