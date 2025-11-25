@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-23 01:36+0330\n"
+"POT-Creation-Date: 2025-11-25 21:54+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -259,39 +259,39 @@ msgstr ""
 msgid "WAV (Uncompressed)"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:117
+#: src/dialogs/audio_export_dialog.py:118
 msgid "Save Audio File"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:146
+#: src/dialogs/audio_export_dialog.py:147
 msgid "Part “{}” is Silent"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:148
+#: src/dialogs/audio_export_dialog.py:149
 msgid "Parts “{}” and “{}” are Silent"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:152
+#: src/dialogs/audio_export_dialog.py:153
 msgid "{} Parts are Silent"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:177
+#: src/dialogs/audio_export_dialog.py:178
 msgid "Image files"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:183
+#: src/dialogs/audio_export_dialog.py:184
 msgid "Select Cover Art"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:240
+#: src/dialogs/audio_export_dialog.py:241
 msgid "Audio exported to {}"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:245
+#: src/dialogs/audio_export_dialog.py:246
 msgid "Export failed"
 msgstr ""
 
-#: src/dialogs/audio_export_dialog.py:252
+#: src/dialogs/audio_export_dialog.py:253
 msgid "Export cancelled successfully"
 msgstr ""
 
@@ -551,28 +551,28 @@ msgstr ""
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:165
+#: src/handlers/drag_drop_handler.py:164
 msgid "No valid audio files found"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:200
+#: src/handlers/drag_drop_handler.py:199
 msgid "Error processing file: {}"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:228
+#: src/handlers/drag_drop_handler.py:227
 msgid "Added {} drum part, {} files skipped"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:234
+#: src/handlers/drag_drop_handler.py:233
 msgid "Added {} drum parts, {} files skipped"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:239
+#: src/handlers/drag_drop_handler.py:238
 msgid "Added {} drum parts"
 msgstr ""
 
 #. Only show skipped message if no replacement happened
-#: src/handlers/drag_drop_handler.py:242
+#: src/handlers/drag_drop_handler.py:241
 msgid "{} files skipped"
 msgstr ""
 
