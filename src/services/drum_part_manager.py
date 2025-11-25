@@ -21,9 +21,7 @@ import logging
 import os
 import json
 import uuid
-from pathlib import Path
 from typing import List, Optional, Dict
-from gettext import gettext as _
 from ..models.drum_part import DrumPart
 from ..config.constants import DEFAULT_DRUM_PARTS, DRUM_PARTS_CONFIG_FILE
 
@@ -221,7 +219,7 @@ class DrumPartManager:
             return False
 
     def replace_part(
-        self, part_id: str, source_file: str, new_name: str = None
+        self, part_id: str, source_file: str, new_name: str
     ) -> Optional[DrumPart]:
         """Update an existing drum part with a new audio file path and name"""
         # Validate inputs
@@ -237,14 +235,6 @@ class DrumPartManager:
             return None
 
         try:
-            # Extract name from filename if not provided
-            if not new_name:
-                new_name = (
-                    Path(source_file).stem.replace("_", " ").replace("-", " ").title()
-                )
-                if not new_name.strip():
-                    new_name = _("Custom Sound")
-
             # Update the part
             part.name = new_name
             part.file_path = source_file
