@@ -19,6 +19,7 @@
 
 import os
 import getpass
+import logging
 from gi.repository import Adw, Gtk, GLib, Gio
 from gettext import gettext as _
 
@@ -192,7 +193,8 @@ class AudioExportDialog(Adw.Dialog):
             file = dialog.open_finish(result)
             if file:
                 self.metadata_manager.set_cover_art(file.get_path())
-        except GLib.Error:
+        except GLib.Error as e:
+            logging.error(f"Failed to open cover art file: {e}")
             pass
 
     def _on_export_clicked(self, button):
@@ -207,7 +209,8 @@ class AudioExportDialog(Adw.Dialog):
             file = dialog.save_finish(result)
             if file:
                 self._start_export(file.get_path())
-        except GLib.Error:
+        except GLib.Error as e:
+            logging.error(f"Failed to save file dialog: {e}")
             pass
 
     def _start_export(self, filename):
@@ -237,12 +240,14 @@ class AudioExportDialog(Adw.Dialog):
     def _on_export_complete(self, success, filename):
         """Handle export completion"""
         if success:
+            logging.info(f"Audio export completed successfully: {filename}")
             self.window.show_toast(
                 _("Audio exported to {}").format(os.path.basename(filename)),
                 open_file=True,
                 file_path=filename,
             )
         else:
+            logging.error(f"Audio export failed for: {filename}")
             self.window.show_toast(_("Export failed"))
 
         self.close()
@@ -276,7 +281,8 @@ class ExportMetadata:
         try:
             system_username = getpass.getuser()
             self.artist_row.set_text(system_username)
-        except Exception:
+        except Exception as e:
+            logging.error(f"Failed to get system username for metadata: {e}")
             pass
 
     def get_metadata(self):

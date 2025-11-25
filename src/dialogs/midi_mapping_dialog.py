@@ -9,6 +9,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+import logging
 import gi
 
 gi.require_version("Gtk", "4.0")
@@ -202,9 +203,10 @@ class MidiMappingDialog(Adw.Dialog):
                 if self.dropdown.get_selected() != idx:
                     self.dropdown.set_selected(idx)
                 found = True
-        except ValueError:
+        except ValueError as e:
             # ValueError is expected if val is not in self.note_map;
-            # ignore and handle as 'not found'
+            # This is normal behavior for custom notes not in GM percussion map
+            logging.debug(f"MIDI note {val} not in GM percussion map: {e}")
             pass
 
         if not found:

@@ -134,14 +134,21 @@ class AudioExportService:
             self.sample_loader.clear_samples()
             self.audio_renderer.clear_samples()
 
+            logging.info(f"Audio exported successfully to {file_path}")
             return True
 
-        except Exception as e:
-            logging.error(f"Export error: {e}")
+        except ValueError as e:
+            logging.warning(f"Export validation failed: {e}")
             # Clear samples even on error
             self.sample_loader.clear_samples()
             self.audio_renderer.clear_samples()
-            return False
+            raise
+        except Exception as e:
+            logging.error(f"Export failed: {e}")
+            # Clear samples even on error
+            self.sample_loader.clear_samples()
+            self.audio_renderer.clear_samples()
+            raise
 
     def _validate_pattern(self, drum_parts_state):
         """Validate that the pattern has active beats"""

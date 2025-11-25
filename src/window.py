@@ -18,6 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import os
+import logging
 from typing import Optional
 
 import gi
@@ -66,8 +67,12 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.application = self.get_application()
         drumkit_dir = os.path.join(os.path.dirname(__file__), "..", "data", "drumkit")
 
-        self.sound_service = SoundService(drumkit_dir)
-        self.sound_service.load_sounds()
+        try:
+            self.sound_service = SoundService(drumkit_dir)
+            self.sound_service.load_sounds()
+        except Exception as e:
+            logging.critical(f"Failed to initialize sound service: {e}")
+            raise
 
         self.audio_export_service = AudioExportService(self)
 
@@ -299,8 +304,10 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             if show_success_toast:
                 self.show_added_toast(name)
             self.save_changes_service.mark_unsaved_changes(True)
+            logging.info(f"Added custom drum part: {name}")
             return True
         else:
+            logging.error(f"Failed to add custom drum part: {name} from {file_path}")
             self.show_toast(_("Failed to add custom sound"))
             return False
 
@@ -312,7 +319,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
             # Update button state to reflect new file availability
             self.drum_grid_builder.update_drum_button(drum_id)
             self.save_changes_service.mark_unsaved_changes(True)
+            logging.info(f"Replaced drum part {drum_id} with: {name}")
             return True
         else:
+            logging.error(f"Failed to replace drum part {drum_id} with {file_path}")
             self.show_toast(_("Failed to replace drum sound"))
             return False

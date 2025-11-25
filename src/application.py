@@ -18,6 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import platform
+import logging
 from typing import Optional, Callable, List
 import gi
 from gettext import gettext as _
@@ -36,11 +37,17 @@ class DrumMachineApplication(Adw.Application):
         )
         self.version = version
         self.create_action("about", self.on_about_action)
+        logging.info(f"Drum Machine {version} initialized")
 
     def do_activate(self) -> None:
         win = self.props.active_window
         if not win:
-            win = DrumMachineWindow(application=self)
+            logging.info("Creating new window")
+            try:
+                win = DrumMachineWindow(application=self)
+            except Exception as e:
+                logging.critical(f"Failed to create window: {e}")
+                raise
         win.present()
 
     def on_about_action(self, *_args) -> None:

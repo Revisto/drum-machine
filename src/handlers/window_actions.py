@@ -17,6 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+import logging
 import gi
 from typing import Optional, List, Callable
 
@@ -131,7 +132,10 @@ class WindowActionHandler:
                             self.window, f"{drum_part}_instrument_button"
                         )
                         instrument_button.grab_focus()
-                    except AttributeError:
+                    except AttributeError as e:
+                        logging.debug(
+                            f"Could not find instrument button for {drum_part}: {e}"
+                        )
                         pass
 
     def handle_previous_page_action(

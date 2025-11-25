@@ -17,6 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+import logging
 from typing import Dict
 
 
@@ -44,6 +45,9 @@ class UIHelper:
                 else:
                     toggle.get_style_context().remove_class("toggle-active")
             except AttributeError:
+                logging.debug(
+                    f"Toggle not found for playhead highlight: {part.id}_toggle_{beat_index}"
+                )
                 continue
 
     def highlight_playhead_at_beat(self, beat_index: int) -> None:
@@ -69,6 +73,9 @@ class UIHelper:
                     if toggle.get_active():
                         toggle.set_active(False)
                 except AttributeError:
+                    logging.debug(
+                        f"Toggle not found for deactivation: {part.id}_toggle_{i}"
+                    )
                     continue
 
     def load_pattern_into_ui(

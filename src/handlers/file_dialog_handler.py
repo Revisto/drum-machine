@@ -18,6 +18,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import os
+import logging
 import gi
 
 gi.require_version("Gtk", "4.0")
@@ -123,8 +124,9 @@ class FileDialogHandler:
         try:
             file = dialog.open_finish(response)
             if file:
+                file_path = file.get_path()
                 # Load the pattern data into the service
-                self.window.drum_machine_service.load_pattern(file.get_path())
+                self.window.drum_machine_service.load_pattern(file_path)
                 # Update the UI to reflect the new pattern structure
                 self.window.drum_machine_service.update_total_beats()
                 self.window.drum_grid_builder.reset_carousel_pages()
@@ -134,8 +136,12 @@ class FileDialogHandler:
                 self.filename = self._get_filename_without_extension(file)
 
                 self.window.save_changes_service.mark_unsaved_changes(False)
-        except GLib.Error:
+        except GLib.Error as e:
+            logging.debug(f"File dialog cancelled or failed: {e}")
             return
+        except Exception as e:
+            logging.error(f"Failed to open pattern file: {e}")
+            self.window.show_toast(_("Failed to open file"))
 
     def on_pattern_selected(self, action, parameter):
         """Handle pattern selection from menu"""
@@ -158,17 +164,21 @@ class FileDialogHandler:
         )
         file_path = os.path.join(pattern_dir, f"{pattern_name}.mid")
 
-        # Load the pattern data into the service
-        self.window.drum_machine_service.load_pattern(file_path)
-        # Update the UI to reflect the new pattern structure
-        self.window.drum_machine_service.update_total_beats()
-        self.window.drum_grid_builder.reset_carousel_pages()
-        self.window.ui_helper.load_pattern_into_ui(
-            self.window.drum_machine_service.drum_parts_state
-        )
-        self.filename = None
+        try:
+            # Load the pattern data into the service
+            self.window.drum_machine_service.load_pattern(file_path)
+            # Update the UI to reflect the new pattern structure
+            self.window.drum_machine_service.update_total_beats()
+            self.window.drum_grid_builder.reset_carousel_pages()
+            self.window.ui_helper.load_pattern_into_ui(
+                self.window.drum_machine_service.drum_parts_state
+            )
+            self.filename = None
 
-        self.window.save_changes_service.mark_unsaved_changes(False)
+            self.window.save_changes_service.mark_unsaved_changes(False)
+        except Exception as e:
+            logging.error(f"Failed to load default pattern '{pattern_name}': {e}")
+            self.window.show_toast(_("Failed to load pattern"))
 
     def show_save_dialog(self, after_save_callback=None):
         """Show save file dialog"""
@@ -199,7 +209,8 @@ class FileDialogHandler:
                     self.filename = self._get_filename_without_extension(file)
                     if after_save_callback:
                         after_save_callback()
-            except GLib.Error:
+            except GLib.Error as e:
+                logging.debug(f"Save dialog cancelled or failed: {e}")
                 return
 
         dialog.save(parent=self.window, callback=save_callback)
@@ -257,7 +268,8 @@ class FileDialogHandler:
                     file = dialog.open_finish(result)
                     if file:
                         callback(file.get_path(), *args)
-            except GLib.Error:
+            except GLib.Error as e:
+                logging.debug(f"File dialog cancelled or failed: {e}")
                 return
 
         if multiple:

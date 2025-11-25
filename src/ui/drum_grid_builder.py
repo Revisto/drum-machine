@@ -186,7 +186,10 @@ class DrumGridBuilder:
                 )
                 target_toggle.grab_focus()
                 return True
-            except AttributeError:
+            except AttributeError as e:
+                logging.debug(
+                    f"Toggle not found during navigation: {drum_part}_toggle_{target_beat_index}: {e}"
+                )
                 return True
         return False
 
@@ -254,7 +257,10 @@ class DrumGridBuilder:
             instrument_button = getattr(self.window, f"{drum_part}_instrument_button")
             instrument_button.grab_focus()
             return True
-        except AttributeError:
+        except AttributeError as e:
+            logging.debug(
+                f"Instrument button not found: {drum_part}_instrument_button: {e}"
+            )
             return True
 
     def _navigate_to_target(self, drum_part, global_beat_index, target_beat_index):
@@ -281,7 +287,10 @@ class DrumGridBuilder:
             )
             target_toggle.grab_focus()
             return True
-        except AttributeError:
+        except AttributeError as e:
+            logging.debug(
+                f"Target toggle not found: {drum_part}_toggle_{target_beat_index}: {e}"
+            )
             return True
 
     def _setup_instrument_button_right_click(self, button, drum_part):
@@ -575,7 +584,9 @@ class DrumGridBuilder:
                 # Button doesn't exist, rebuild the drum parts column
                 self.rebuild_drum_parts_column()
         except Exception as e:
-            logging.error(f"Error updating button state: {e}")
+            logging.error(
+                f"Error updating drum button for {drum_id}: {e}", exc_info=True
+            )
             # Fallback: rebuild the drum parts column
             self.rebuild_drum_parts_column()
 
@@ -612,7 +623,7 @@ class DrumGridBuilder:
                 self.drum_parts_column.append(instrument_button)
 
         except Exception as e:
-            logging.error(f"Error rebuilding drum parts column: {e}")
+            logging.error(f"Error rebuilding drum parts column: {e}", exc_info=True)
 
     def create_single_beat_toggle(self, drum_part, beat_number_on_page, page_index):
         """Create a single beat toggle button"""

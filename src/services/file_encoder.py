@@ -19,6 +19,7 @@
 
 import os
 import subprocess
+import logging
 from ..config.export_formats import ExportFormatRegistry
 
 
@@ -93,9 +94,14 @@ class AudioEncoder:
         try:
             stdout, stderr = process.communicate(input=audio_data.tobytes())
             if process.returncode != 0:
+                error_msg = stderr.decode() if stderr else "Unknown error"
+                logging.error(f"FFmpeg encoding failed: {error_msg}")
                 raise subprocess.CalledProcessError(
                     process.returncode, cmd, stdout, stderr
                 )
+        except subprocess.CalledProcessError as e:
+            logging.error(f"Audio encoding failed for {file_path}: {e}")
+            raise
         finally:
             if export_task:
                 export_task.current_process = None

@@ -19,6 +19,7 @@
 
 import threading
 import time
+import logging
 from typing import Dict, Optional
 from gi.repository import GLib
 from ..interfaces.player import IPlayer
@@ -198,5 +199,8 @@ class DrumMachineService(IPlayer):
             self.window.drum_grid_builder.rebuild_carousel()
             # Update total beats in case pattern changed
             self.update_total_beats()
+            logging.info(f"Removed drum part: {drum_id}")
             return True
-        return False
+        else:
+            logging.error(f"Failed to remove drum part: {drum_id}")
+            return False

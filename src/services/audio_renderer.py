@@ -17,6 +17,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+import logging
 import numpy as np
 from ..config.constants import (
     GROUP_TOGGLE_COUNT,
@@ -33,26 +34,44 @@ class AudioBuffer:
 
     def create_buffer(self, duration_seconds: float):
         """Create output buffer with calculated duration"""
-        total_samples = int(duration_seconds * self.sample_rate)
-        self.buffer = np.zeros((total_samples, 2), dtype="float32")
-        return self.buffer
+        try:
+            total_samples = int(duration_seconds * self.sample_rate)
+            self.buffer = np.zeros((total_samples, 2), dtype="float32")
+            return self.buffer
+        except (MemoryError, ValueError) as e:
+            logging.error(
+                f"Failed to create audio buffer (duration={duration_seconds}s): {e}"
+            )
+            raise
 
     def add_sample(self, sample_data: np.ndarray, start_sample: int):
         """Add a sample to the buffer at the specified position"""
         if self.buffer is None:
+            logging.warning("Attempted to add sample to uninitialized buffer")
             return
 
-        end_sample = min(start_sample + len(sample_data), len(self.buffer))
-        self.buffer[start_sample:end_sample] += sample_data[: end_sample - start_sample]
+        try:
+            end_sample = min(start_sample + len(sample_data), len(self.buffer))
+            self.buffer[start_sample:end_sample] += sample_data[
+                : end_sample - start_sample
+            ]
+        except (ValueError, TypeError) as e:
+            logging.error(f"Failed to add sample at position {start_sample}: {e}")
+            raise
 
     def normalize(self):
         """Normalize the audio buffer"""
         if self.buffer is None:
+            logging.warning("Attempted to normalize uninitialized buffer")
             return
 
-        max_amplitude = np.max(np.abs(self.buffer))
-        if max_amplitude > 0:
-            self.buffer[:] = self.buffer / max_amplitude * 0.95
+        try:
+            max_amplitude = np.max(np.abs(self.buffer))
+            if max_amplitude > 0:
+                self.buffer[:] = self.buffer / max_amplitude * 0.95
+        except (ValueError, RuntimeError) as e:
+            logging.error(f"Failed to normalize audio buffer: {e}")
+            raise
 
 
 class AudioRenderer:
