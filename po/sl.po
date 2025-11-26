@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-11-24 15:26+0000\n"
-"PO-Revision-Date: 2025-11-24 17:29+0100\n"
+"POT-Creation-Date: 2025-11-26 15:26+0000\n"
+"PO-Revision-Date: 2025-11-26 17:46+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Poedit 2.2.1\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:59
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
 #: src/window.ui:69
 msgid "Drum Machine"
 msgstr "Bobnarski stroj"
@@ -89,7 +89,7 @@ msgstr "Vzorec bobna naložen v svetlem načinu"
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Vzorec bobna naložen v temnem načinu"
 
-#: src/application.py:66
+#: src/application.py:74
 msgid ""
 "Drum Machine is a modern and intuitive application for creating, playing, and managing "
 "drum patterns."
@@ -97,523 +97,531 @@ msgstr ""
 "To je sodoben in intuitiven program za ustvarjanje, igranje in upravljanje vzorcev "
 "bobnov."
 
-#: src/application.py:71
+#: src/application.py:79
 msgid "translator-credits"
 msgstr "Martin Srebotnjak <miles@filmsi.net>"
 
-#: src/application.py:76
+#: src/application.py:84
 msgid "Special thanks"
 msgstr "Posebna zahvala"
 
-#: src/application.py:79
+#: src/application.py:87
 msgid "Sounds"
 msgstr "Zvoki"
 
-#: src/application.py:80
+#: src/application.py:88
 #, python-brace-format
 msgid "The drum samples used in this application are from {link}."
 msgstr "Vzorci bobnov, uporabljeni v tem programu, izhajajo iz {link}."
 
-#: src/config/export_formats.py:43
+#: src/config/export_formats.py:44
 msgid "MP3 files"
 msgstr "Datoteke MP3"
 
-#: src/config/export_formats.py:44
+#: src/config/export_formats.py:45
 msgid "MP3"
 msgstr "MP3"
 
-#: src/config/export_formats.py:50
+#: src/config/export_formats.py:51
 msgid "FLAC files"
 msgstr "Datoteke FLAC"
 
-#: src/config/export_formats.py:51
+#: src/config/export_formats.py:52
 msgid "FLAC (Lossless)"
 msgstr "FLAC (brez izgub)"
 
-#: src/config/export_formats.py:57
+#: src/config/export_formats.py:58
 msgid "Ogg files"
 msgstr "Datoteke Ogg"
 
-#: src/config/export_formats.py:58
+#: src/config/export_formats.py:59
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: src/config/export_formats.py:64
+#: src/config/export_formats.py:65
 msgid "WAV files"
 msgstr "Datoteke WAV"
 
-#: src/config/export_formats.py:65
+#: src/config/export_formats.py:66
 msgid "WAV (Uncompressed)"
 msgstr "WAV (nestisnjeno)"
 
-#: src/dialogs/audio_export_dialog.py:117
+#: src/dialogs/audio_export_dialog.py:119
 msgid "Save Audio File"
 msgstr "Shrani zvočno datoteko"
 
-#: src/dialogs/audio_export_dialog.py:146
+#: src/dialogs/audio_export_dialog.py:148
 msgid "Part “{}” is Silent"
 msgstr "Del »{}« je nem"
 
-#: src/dialogs/audio_export_dialog.py:148
+#: src/dialogs/audio_export_dialog.py:150
 msgid "Parts “{}” and “{}” are Silent"
 msgstr "Dela »{}« in »{}« sta nema"
 
-#: src/dialogs/audio_export_dialog.py:152
+#: src/dialogs/audio_export_dialog.py:154
 msgid "{} Parts are Silent"
 msgstr "{} delov je nemih"
 
-#: src/dialogs/audio_export_dialog.py:177
+#: src/dialogs/audio_export_dialog.py:179
 msgid "Image files"
 msgstr "Slikovne datoteke"
 
-#: src/dialogs/audio_export_dialog.py:183
+#: src/dialogs/audio_export_dialog.py:185
 msgid "Select Cover Art"
 msgstr "Izberi naslovnico"
 
-#: src/dialogs/audio_export_dialog.py:240
+#: src/dialogs/audio_export_dialog.py:245
 msgid "Audio exported to {}"
 msgstr "Zvok, izvožen v {}"
 
-#: src/dialogs/audio_export_dialog.py:245
+#: src/dialogs/audio_export_dialog.py:251
 msgid "Export failed"
 msgstr "Izvoz ni uspel"
 
-#: src/dialogs/audio_export_dialog.py:252
+#: src/dialogs/audio_export_dialog.py:258
 msgid "Export cancelled successfully"
 msgstr "Izvoz je bil uspešno preklican"
 
-#: src/dialogs/midi_mapping_dialog.py:21
+#: src/dialogs/midi_mapping_dialog.py:22
 msgid "Acoustic Bass Drum"
 msgstr "Akustični pedalni bas boben"
 
-#: src/dialogs/midi_mapping_dialog.py:22
+#: src/dialogs/midi_mapping_dialog.py:23
 msgid "Bass Drum 1"
 msgstr "Predalni bas boben 1"
 
-#: src/dialogs/midi_mapping_dialog.py:23
+#: src/dialogs/midi_mapping_dialog.py:24
 msgid "Side Stick"
 msgstr "S prečno položeno palico"
 
-#: src/dialogs/midi_mapping_dialog.py:24
+#: src/dialogs/midi_mapping_dialog.py:25
 msgid "Acoustic Snare"
 msgstr "Akustični mali boben"
 
-#: src/dialogs/midi_mapping_dialog.py:25
+#: src/dialogs/midi_mapping_dialog.py:26
 msgid "Hand Clap"
 msgstr "Plosk z rokama"
 
-#: src/dialogs/midi_mapping_dialog.py:26
+#: src/dialogs/midi_mapping_dialog.py:27
 msgid "Electric Snare"
 msgstr "Električni mali boben"
 
-#: src/dialogs/midi_mapping_dialog.py:27
+#: src/dialogs/midi_mapping_dialog.py:28
 msgid "Low Floor Tom"
 msgstr "Nizki stoječi tom-tom"
 
-#: src/dialogs/midi_mapping_dialog.py:28
+#: src/dialogs/midi_mapping_dialog.py:29
 msgid "Closed Hi Hat"
 msgstr "Zaprti pedalni čineli"
 
-#: src/dialogs/midi_mapping_dialog.py:29
+#: src/dialogs/midi_mapping_dialog.py:30
 msgid "High Floor Tom"
 msgstr "Visoki stoječi tom-tom"
 
-#: src/dialogs/midi_mapping_dialog.py:30
+#: src/dialogs/midi_mapping_dialog.py:31
 msgid "Pedal Hi Hat"
 msgstr "Pedalni čineli"
 
-#: src/dialogs/midi_mapping_dialog.py:31
+#: src/dialogs/midi_mapping_dialog.py:32
 #, fuzzy
 msgid "Low Tom"
 msgstr "Nizki manjši prehodni boben"
 
-#: src/dialogs/midi_mapping_dialog.py:32
+#: src/dialogs/midi_mapping_dialog.py:33
 msgid "Open Hi Hat"
 msgstr "Odprti pedalni čineli"
 
-#: src/dialogs/midi_mapping_dialog.py:33
+#: src/dialogs/midi_mapping_dialog.py:34
 #, fuzzy
 msgid "Low-Mid Tom"
 msgstr "Nizko-srednji manjši prehodni boben"
 
-#: src/dialogs/midi_mapping_dialog.py:34
+#: src/dialogs/midi_mapping_dialog.py:35
 #, fuzzy
 msgid "Hi-Mid Tom"
 msgstr "Visoko-srednji manjši prehodni boben"
 
-#: src/dialogs/midi_mapping_dialog.py:35
+#: src/dialogs/midi_mapping_dialog.py:36
 msgid "Crash Cymbal 1"
 msgstr "Viseča činela 1"
 
-#: src/dialogs/midi_mapping_dialog.py:36
+#: src/dialogs/midi_mapping_dialog.py:37
 #, fuzzy
 msgid "High Tom"
 msgstr "Visoki manjši prehodni boben"
 
-#: src/dialogs/midi_mapping_dialog.py:37
+#: src/dialogs/midi_mapping_dialog.py:38
 msgid "Ride Cymbal 1"
 msgstr "Ritem činela 1"
 
-#: src/dialogs/midi_mapping_dialog.py:38
+#: src/dialogs/midi_mapping_dialog.py:39
 msgid "Chinese Cymbal"
 msgstr "Kitajska činela"
 
-#: src/dialogs/midi_mapping_dialog.py:39
+#: src/dialogs/midi_mapping_dialog.py:40
 #, fuzzy
 msgid "Ride Bell"
 msgstr "Ritem činela z zvonom"
 
-#: src/dialogs/midi_mapping_dialog.py:40
+#: src/dialogs/midi_mapping_dialog.py:41
 msgid "Tambourine"
 msgstr "Tamburin"
 
-#: src/dialogs/midi_mapping_dialog.py:41
+#: src/dialogs/midi_mapping_dialog.py:42
 msgid "Splash Cymbal"
 msgstr "Spleš činele"
 
-#: src/dialogs/midi_mapping_dialog.py:42
+#: src/dialogs/midi_mapping_dialog.py:43
 msgid "Cowbell"
 msgstr "Kravji zvonec"
 
-#: src/dialogs/midi_mapping_dialog.py:43
+#: src/dialogs/midi_mapping_dialog.py:44
 msgid "Crash Cymbal 2"
 msgstr "Viseča činela 2"
 
-#: src/dialogs/midi_mapping_dialog.py:44
+#: src/dialogs/midi_mapping_dialog.py:45
 msgid "Vibraslap"
 msgstr "Vibraslap"
 
-#: src/dialogs/midi_mapping_dialog.py:45
+#: src/dialogs/midi_mapping_dialog.py:46
 msgid "Ride Cymbal 2"
 msgstr "Ritem činela 2"
 
-#: src/dialogs/midi_mapping_dialog.py:46
+#: src/dialogs/midi_mapping_dialog.py:47
 msgid "Hi Bongo"
 msgstr "Visoki bongi"
 
-#: src/dialogs/midi_mapping_dialog.py:47
+#: src/dialogs/midi_mapping_dialog.py:48
 msgid "Low Bongo"
 msgstr "Nizki bongi"
 
-#: src/dialogs/midi_mapping_dialog.py:48
+#: src/dialogs/midi_mapping_dialog.py:49
 msgid "Mute Hi Conga"
 msgstr "Utišaj visoko kongo"
 
-#: src/dialogs/midi_mapping_dialog.py:49
+#: src/dialogs/midi_mapping_dialog.py:50
 msgid "Open Hi Conga"
 msgstr "Odpri visoko kongo"
 
-#: src/dialogs/midi_mapping_dialog.py:50
+#: src/dialogs/midi_mapping_dialog.py:51
 msgid "Low Conga"
 msgstr "Nizka konga"
 
-#: src/dialogs/midi_mapping_dialog.py:51
+#: src/dialogs/midi_mapping_dialog.py:52
 msgid "High Timbale"
 msgstr "Visoki timbali"
 
-#: src/dialogs/midi_mapping_dialog.py:52
+#: src/dialogs/midi_mapping_dialog.py:53
 msgid "Low Timbale"
 msgstr "Nizki timbali"
 
-#: src/dialogs/midi_mapping_dialog.py:53
+#: src/dialogs/midi_mapping_dialog.py:54
 msgid "High Agogo"
 msgstr "Visoki agogo zvonci"
 
-#: src/dialogs/midi_mapping_dialog.py:54
+#: src/dialogs/midi_mapping_dialog.py:55
 msgid "Low Agogo"
 msgstr "Nizki agogo zvonci"
 
-#: src/dialogs/midi_mapping_dialog.py:55
+#: src/dialogs/midi_mapping_dialog.py:56
 msgid "Cabasa"
 msgstr "Kabasa"
 
-#: src/dialogs/midi_mapping_dialog.py:56
+#: src/dialogs/midi_mapping_dialog.py:57
 msgid "Maracas"
 msgstr "Marakas"
 
-#: src/dialogs/midi_mapping_dialog.py:57
+#: src/dialogs/midi_mapping_dialog.py:58
 msgid "Short Whistle"
 msgstr "Kratka piščalka"
 
-#: src/dialogs/midi_mapping_dialog.py:58
+#: src/dialogs/midi_mapping_dialog.py:59
 msgid "Long Whistle"
 msgstr "Dolga piščalka"
 
-#: src/dialogs/midi_mapping_dialog.py:59
+#: src/dialogs/midi_mapping_dialog.py:60
 msgid "Short Guiro"
 msgstr "Kratki guiro"
 
-#: src/dialogs/midi_mapping_dialog.py:60
+#: src/dialogs/midi_mapping_dialog.py:61
 msgid "Long Guiro"
 msgstr "Dolgi guiro"
 
-#: src/dialogs/midi_mapping_dialog.py:61
+#: src/dialogs/midi_mapping_dialog.py:62
 msgid "Claves"
 msgstr "Klaves"
 
-#: src/dialogs/midi_mapping_dialog.py:62
+#: src/dialogs/midi_mapping_dialog.py:63
 msgid "Hi Wood Block"
 msgstr "Visoki leseni blok"
 
-#: src/dialogs/midi_mapping_dialog.py:63
+#: src/dialogs/midi_mapping_dialog.py:64
 msgid "Low Wood Block"
 msgstr "Nizki leseni blok"
 
-#: src/dialogs/midi_mapping_dialog.py:64
+#: src/dialogs/midi_mapping_dialog.py:65
 msgid "Mute Cuica"
 msgstr "Utišaj kuiko"
 
-#: src/dialogs/midi_mapping_dialog.py:65
+#: src/dialogs/midi_mapping_dialog.py:66
 msgid "Open Cuica"
 msgstr "Odpri kuiko"
 
-#: src/dialogs/midi_mapping_dialog.py:66
+#: src/dialogs/midi_mapping_dialog.py:67
 msgid "Mute Triangle"
 msgstr "Utišaj triangel"
 
-#: src/dialogs/midi_mapping_dialog.py:67
+#: src/dialogs/midi_mapping_dialog.py:68
 msgid "Open Triangle"
 msgstr "Odpri triangel"
 
-#: src/dialogs/midi_mapping_dialog.py:77 src/ui/drum_grid_builder.py:328
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:338
 msgid "MIDI Mapping"
 msgstr "Preslikava MIDI"
 
 #. Group 1: Note Assignment
-#: src/dialogs/midi_mapping_dialog.py:107
+#: src/dialogs/midi_mapping_dialog.py:108
 msgid "Note Assignment"
 msgstr "Dodelitev not"
 
-#: src/dialogs/midi_mapping_dialog.py:110
+#: src/dialogs/midi_mapping_dialog.py:111
 msgid "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
 msgstr "Za »{}« dodelite noto MIDI. To zagotavlja pravilno predvajanje pri izvozu."
 
 #. Action Row for Note
-#: src/dialogs/midi_mapping_dialog.py:117
+#: src/dialogs/midi_mapping_dialog.py:118
 msgid "MIDI Note"
 msgstr "Nota MIDI"
 
-#: src/dialogs/midi_mapping_dialog.py:118
+#: src/dialogs/midi_mapping_dialog.py:119
 msgid "The note number to trigger"
 msgstr "Številka note za proženje"
 
 #. Group 2: Standard Instruments
-#: src/dialogs/midi_mapping_dialog.py:136
+#: src/dialogs/midi_mapping_dialog.py:137
 msgid "Standard Instruments"
 msgstr "Standardni inštrumenti"
 
-#: src/dialogs/midi_mapping_dialog.py:138
+#: src/dialogs/midi_mapping_dialog.py:139
 msgid "Select a General MIDI instrument to automatically set the note."
 msgstr "Izberite splošni inštrument MIDI, da samodejno nastavite noto."
 
-#: src/dialogs/midi_mapping_dialog.py:142
+#: src/dialogs/midi_mapping_dialog.py:143
 msgid "Instrument Preset"
 msgstr "Prednastavitev inštrumenta"
 
-#: src/dialogs/midi_mapping_dialog.py:185
+#: src/dialogs/midi_mapping_dialog.py:186
 msgid "Save"
 msgstr "Shrani"
 
-#: src/dialogs/midi_mapping_dialog.py:227
+#: src/dialogs/midi_mapping_dialog.py:229
 msgid "Custom Note"
 msgstr "Nota po meri"
 
-#: src/handlers/drag_drop_handler.py:88
+#: src/handlers/drag_drop_handler.py:113
+msgid "Sound replaced"
+msgstr "Zvok zamenjan"
+
+#: src/handlers/drag_drop_handler.py:116
+msgid "Failed to replace sound"
+msgstr "Zamenjava zvoka ni uspela"
+
+#: src/handlers/drag_drop_handler.py:126
 msgid "Not a supported audio file"
 msgstr "Ni podprta zvočna datoteka"
 
-#: src/handlers/drag_drop_handler.py:95
+#: src/handlers/drag_drop_handler.py:134
 msgid "File not found"
 msgstr "Datoteke ni mogoče najti"
 
-#: src/handlers/drag_drop_handler.py:99
+#: src/handlers/drag_drop_handler.py:139
 msgid "Selected item is not a file"
 msgstr "Izbrani element ni datoteka"
 
-#: src/handlers/drag_drop_handler.py:105
+#: src/handlers/drag_drop_handler.py:146
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr "Prevelika datoteka: {:.1f} MB (največ 50 MB)"
 
-#: src/handlers/drag_drop_handler.py:114
-msgid "Custom Sound"
-msgstr "Zvok po meri"
-
-#: src/handlers/drag_drop_handler.py:138
+#: src/handlers/drag_drop_handler.py:174
 msgid "No valid audio files found"
 msgstr "Ni mogoče najti veljavnih zvočnih datotek"
 
-#: src/handlers/drag_drop_handler.py:173
+#: src/handlers/drag_drop_handler.py:209
 msgid "Error processing file: {}"
 msgstr "Datoteka pri obdelavi datoteke: {}"
 
-#: src/handlers/drag_drop_handler.py:201
+#: src/handlers/drag_drop_handler.py:237
 msgid "Added {} drum part, {} files skipped"
 msgstr "Dodan {} bobnarski del, {} datotek preskočenih"
 
-#: src/handlers/drag_drop_handler.py:207
+#: src/handlers/drag_drop_handler.py:243
 msgid "Added {} drum parts, {} files skipped"
 msgstr "Dodanih {} bobnarskih delov, {} datotek preskočenih"
 
-#: src/handlers/drag_drop_handler.py:212
+#: src/handlers/drag_drop_handler.py:248
 msgid "Added {} drum parts"
 msgstr "Dodanih {} bobnarskih delov"
 
 #. Only show skipped message if no replacement happened
-#: src/handlers/drag_drop_handler.py:215
+#: src/handlers/drag_drop_handler.py:251
 msgid "{} files skipped"
 msgstr "{} preskočenih datotek"
 
-#: src/handlers/file_dialog_handler.py:51
+#: src/handlers/file_dialog_handler.py:52
 msgid "Default Patterns"
 msgstr "Privzeti vzorci"
 
-#: src/handlers/file_dialog_handler.py:83
+#: src/handlers/file_dialog_handler.py:84
 msgid "No Pattern"
 msgstr "Brez vzorca"
 
-#: src/handlers/file_dialog_handler.py:84
+#: src/handlers/file_dialog_handler.py:85
 msgid "Please create a drum pattern before exporting audio."
 msgstr "Pred izvozom zvoka ustvarite vzorec bobna."
 
-#: src/handlers/file_dialog_handler.py:86
+#: src/handlers/file_dialog_handler.py:87
 msgid "_OK"
 msgstr "V _redu"
 
-#: src/handlers/file_dialog_handler.py:109 src/handlers/file_dialog_handler.py:177
+#: src/handlers/file_dialog_handler.py:110 src/handlers/file_dialog_handler.py:187
 msgid "MIDI files"
 msgstr "Datoteke MIDI"
 
-#: src/handlers/file_dialog_handler.py:115
+#: src/handlers/file_dialog_handler.py:116
 msgid "Open MIDI File"
 msgstr "Odpri datoteko MIDI"
 
-#: src/handlers/file_dialog_handler.py:185
+#: src/handlers/file_dialog_handler.py:144
+msgid "Failed to open file"
+msgstr "Ni mogoče odpreti datoteke"
+
+#: src/handlers/file_dialog_handler.py:181
+msgid "Failed to load pattern"
+msgstr "Nalaganje vzorca ni uspelo"
+
+#: src/handlers/file_dialog_handler.py:195
 msgid "Save Sequence"
 msgstr "Shrani zaporedje"
 
-#: src/handlers/file_dialog_handler.py:210
+#: src/handlers/file_dialog_handler.py:221
 msgid "Add Audio Samples"
 msgstr "Dodaj zvočne vzorce"
 
-#: src/handlers/file_dialog_handler.py:232
+#: src/handlers/file_dialog_handler.py:243
 msgid "Audio files"
 msgstr "Zvočne datoteke"
 
-#: src/utils/export_progress.py:69
+#: src/utils/export_progress.py:76
 msgid "Preparing…"
 msgstr "Poteka priprava …"
 
-#: src/utils/export_progress.py:70
+#: src/utils/export_progress.py:77
 msgid "Initializing…"
 msgstr "Inicializacija ..."
 
-#: src/utils/export_progress.py:72
+#: src/utils/export_progress.py:79
 msgid "Rendering audio…"
 msgstr "Izdelovanje zvoka …"
 
-#: src/utils/export_progress.py:73
+#: src/utils/export_progress.py:80
 msgid "Processing beats…"
 msgstr "Obdelovanje ritmičnega vzorca ..."
 
-#: src/utils/export_progress.py:75
+#: src/utils/export_progress.py:82
 msgid "Saving file…"
 msgstr "Shranjevanje datoteke ..."
 
-#: src/utils/export_progress.py:76
+#: src/utils/export_progress.py:83
 msgid "Writing to disk…"
 msgstr "Pisanje na disk ..."
 
-#: src/utils/export_progress.py:78
+#: src/utils/export_progress.py:85
 msgid "Exporting…"
 msgstr "Poteka izvažanje …"
 
-#: src/utils/export_progress.py:79
+#: src/utils/export_progress.py:86
 msgid "Processing…"
 msgstr "Obdelovanje ..."
 
-#: src/ui/drum_grid_builder.py:313
+#: src/utils/name_utils.py:36
+msgid "Custom Sound"
+msgstr "Zvok po meri"
+
+#: src/ui/drum_grid_builder.py:323
 msgid "Preview"
 msgstr "Predogled"
 
-#: src/ui/drum_grid_builder.py:315
+#: src/ui/drum_grid_builder.py:325
 msgid "Replace…"
 msgstr "Zamenjaj …"
 
-#: src/ui/drum_grid_builder.py:318
+#: src/ui/drum_grid_builder.py:328
 msgid "Replace with new sound"
 msgstr "Zamenjajte z novim zvokom"
 
-#: src/ui/drum_grid_builder.py:321
+#: src/ui/drum_grid_builder.py:331
 msgid "Remove"
 msgstr "Odstrani"
 
-#: src/ui/drum_grid_builder.py:324
+#: src/ui/drum_grid_builder.py:334
 msgid "At least one drum part must remain"
 msgstr "Vsaj en bobnarski del mora ostati"
 
-#: src/ui/drum_grid_builder.py:331
+#: src/ui/drum_grid_builder.py:341
 msgid "Configure MIDI note for export"
 msgstr "Prilagodi noto MIDI za izvoz"
 
-#: src/ui/drum_grid_builder.py:388
+#: src/ui/drum_grid_builder.py:398
 msgid "MIDI note updated"
 msgstr "NNota MIDI posodobljena"
 
-#: src/ui/drum_grid_builder.py:396
+#: src/ui/drum_grid_builder.py:406
 msgid "Select New Sound"
 msgstr "Izberite nov zvok"
 
-#: src/ui/drum_grid_builder.py:410
-msgid "Sound replaced"
-msgstr "Zvok zamenjan"
-
-#: src/ui/drum_grid_builder.py:414
-msgid "Failed to replace sound"
-msgstr "Zamenjava zvoka ni uspela"
-
-#: src/ui/drum_grid_builder.py:425
+#: src/ui/drum_grid_builder.py:420
 msgid "Removed drum part: {}"
 msgstr "Odstranjen bobnarski del: {}"
 
-#: src/ui/drum_grid_builder.py:429
+#: src/ui/drum_grid_builder.py:424
 msgid "Failed to remove drum part"
 msgstr "Ni uspelo odstraniti bobnarskega dela"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:195
+#: src/window.py:203
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} udarcev na minuto (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:204
+#: src/window.py:212
 msgid "{:.0f}% Volume"
 msgstr "Glasnost {:.0f} %"
 
-#: src/window.py:219 src/window.ui:170
+#: src/window.py:227 src/window.ui:170
 msgid "Play"
 msgstr "Predvajaj"
 
-#: src/window.py:223
+#: src/window.py:231
 msgid "Pause"
 msgstr "Premor"
 
-#: src/window.py:261
+#: src/window.py:278
 msgid "Open"
 msgstr "Odpri"
 
-#: src/window.py:279
+#: src/window.py:296
 msgid "Added: {}"
 msgstr "Dodano: {}"
 
-#: src/window.py:290
+#: src/window.py:311
 msgid "Failed to add custom sound"
 msgstr "Dodajanje zvoka po meri ni uspelo"
 
-#: src/window.py:297
+#: src/window.py:318
 msgid "Replaced drum with: {}"
 msgstr "Boben zamenjan z: {}"
 
-#: src/window.py:303
+#: src/window.py:326
 msgid "Failed to replace drum sound"
 msgstr "Zamenjava zvoka bobnov ni uspela"
 
