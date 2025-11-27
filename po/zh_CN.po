@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-11-22 15:26+0000\n"
-"PO-Revision-Date: 2025-11-23 08:07+0800\n"
+"POT-Creation-Date: 2025-11-26 15:26+0000\n"
+"PO-Revision-Date: 2025-11-27 08:15+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Gtranslator 49.0\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:59
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
 #: src/window.ui:69
 msgid "Drum Machine"
 msgstr "击鼓器"
@@ -90,526 +90,534 @@ msgstr "以亮色模式加载击鼓模式"
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "以暗色模式加载击鼓模式"
 
-#: src/application.py:66
+#: src/application.py:74
 msgid ""
 "Drum Machine is a modern and intuitive application for creating, playing, "
 "and managing drum patterns."
 msgstr "击鼓器是一款用于创建、播放和管理击鼓模式现代且直观的应用程序。"
 
-#: src/application.py:71
+#: src/application.py:79
 msgid "translator-credits"
 msgstr "lumingzh <lumingzh@qq.com>, 2025."
 
-#: src/application.py:76
+#: src/application.py:84
 msgid "Special thanks"
 msgstr "特别感谢"
 
-#: src/application.py:79
+#: src/application.py:87
 msgid "Sounds"
 msgstr "声音"
 
-#: src/application.py:80
+#: src/application.py:88
 #, python-brace-format
 msgid "The drum samples used in this application are from {link}."
 msgstr "此应用程序中使用的击鼓采样来自于 {link}。"
 
-#: src/config/export_formats.py:43
+#: src/config/export_formats.py:44
 msgid "MP3 files"
 msgstr "MP3 文件"
 
-#: src/config/export_formats.py:44
+#: src/config/export_formats.py:45
 msgid "MP3"
 msgstr "MP3"
 
-#: src/config/export_formats.py:50
+#: src/config/export_formats.py:51
 msgid "FLAC files"
 msgstr "FLAC 文件"
 
-#: src/config/export_formats.py:51
+#: src/config/export_formats.py:52
 msgid "FLAC (Lossless)"
 msgstr "FLAC（无损）"
 
-#: src/config/export_formats.py:57
+#: src/config/export_formats.py:58
 msgid "Ogg files"
 msgstr "Ogg 文件"
 
-#: src/config/export_formats.py:58
+#: src/config/export_formats.py:59
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: src/config/export_formats.py:64
+#: src/config/export_formats.py:65
 msgid "WAV files"
 msgstr "WAV 文件"
 
-#: src/config/export_formats.py:65
+#: src/config/export_formats.py:66
 msgid "WAV (Uncompressed)"
 msgstr "WAV（未压缩）"
 
-#: src/dialogs/audio_export_dialog.py:117
+#: src/dialogs/audio_export_dialog.py:119
 msgid "Save Audio File"
 msgstr "保存音频文件"
 
-#: src/dialogs/audio_export_dialog.py:146
+#: src/dialogs/audio_export_dialog.py:148
 msgid "Part “{}” is Silent"
 msgstr "“{}”部分是无声的"
 
-#: src/dialogs/audio_export_dialog.py:148
+#: src/dialogs/audio_export_dialog.py:150
 msgid "Parts “{}” and “{}” are Silent"
 msgstr "“{}”和“{}”部分是无声的"
 
-#: src/dialogs/audio_export_dialog.py:152
+#: src/dialogs/audio_export_dialog.py:154
 msgid "{} Parts are Silent"
 msgstr "{} 个部分是无声的"
 
-#: src/dialogs/audio_export_dialog.py:177
+#: src/dialogs/audio_export_dialog.py:179
 msgid "Image files"
 msgstr "图像文件"
 
-#: src/dialogs/audio_export_dialog.py:183
+#: src/dialogs/audio_export_dialog.py:185
 msgid "Select Cover Art"
 msgstr "选择封面"
 
-#: src/dialogs/audio_export_dialog.py:240
+#: src/dialogs/audio_export_dialog.py:245
 msgid "Audio exported to {}"
 msgstr "音频已导出至 {}"
 
-#: src/dialogs/audio_export_dialog.py:245
+#: src/dialogs/audio_export_dialog.py:251
 msgid "Export failed"
 msgstr "导出失败"
 
-#: src/dialogs/audio_export_dialog.py:252
+#: src/dialogs/audio_export_dialog.py:258
 msgid "Export cancelled successfully"
 msgstr "导出已成功取消"
 
-#: src/dialogs/midi_mapping_dialog.py:21
+#: src/dialogs/midi_mapping_dialog.py:22
 msgid "Acoustic Bass Drum"
 msgstr "原声底鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:22
+#: src/dialogs/midi_mapping_dialog.py:23
 msgid "Bass Drum 1"
 msgstr "底鼓 1"
 
-#: src/dialogs/midi_mapping_dialog.py:23
+#: src/dialogs/midi_mapping_dialog.py:24
 msgid "Side Stick"
 msgstr "边击"
 
-#: src/dialogs/midi_mapping_dialog.py:24
+#: src/dialogs/midi_mapping_dialog.py:25
 msgid "Acoustic Snare"
 msgstr "原声军鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:25
+#: src/dialogs/midi_mapping_dialog.py:26
 msgid "Hand Clap"
 msgstr "拍手"
 
-#: src/dialogs/midi_mapping_dialog.py:26
+#: src/dialogs/midi_mapping_dialog.py:27
 msgid "Electric Snare"
 msgstr "电子军鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:27
+#: src/dialogs/midi_mapping_dialog.py:28
 msgid "Low Floor Tom"
 msgstr "低音落地桶鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:28
+#: src/dialogs/midi_mapping_dialog.py:29
 msgid "Closed Hi Hat"
 msgstr "闭合踩镲"
 
-#: src/dialogs/midi_mapping_dialog.py:29
+#: src/dialogs/midi_mapping_dialog.py:30
 msgid "High Floor Tom"
 msgstr "高音落地桶鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:30
+#: src/dialogs/midi_mapping_dialog.py:31
 msgid "Pedal Hi Hat"
 msgstr "脚踩踩镲"
 
-#: src/dialogs/midi_mapping_dialog.py:31
+#: src/dialogs/midi_mapping_dialog.py:32
 msgid "Low Tom"
 msgstr "低音桶鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:32
+#: src/dialogs/midi_mapping_dialog.py:33
 msgid "Open Hi Hat"
 msgstr "开放踩镲"
 
-#: src/dialogs/midi_mapping_dialog.py:33
+#: src/dialogs/midi_mapping_dialog.py:34
 msgid "Low-Mid Tom"
 msgstr "中低音桶鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:34
+#: src/dialogs/midi_mapping_dialog.py:35
 msgid "Hi-Mid Tom"
 msgstr "中高音桶鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:35
+#: src/dialogs/midi_mapping_dialog.py:36
 msgid "Crash Cymbal 1"
 msgstr "碎音钹 1"
 
-#: src/dialogs/midi_mapping_dialog.py:36
+#: src/dialogs/midi_mapping_dialog.py:37
 msgid "High Tom"
 msgstr "高音桶鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:37
+#: src/dialogs/midi_mapping_dialog.py:38
 msgid "Ride Cymbal 1"
 msgstr "节奏钹 1"
 
-#: src/dialogs/midi_mapping_dialog.py:38
+#: src/dialogs/midi_mapping_dialog.py:39
 msgid "Chinese Cymbal"
 msgstr "中国钹"
 
-#: src/dialogs/midi_mapping_dialog.py:39
+#: src/dialogs/midi_mapping_dialog.py:40
 msgid "Ride Bell"
 msgstr "钹帽"
 
-#: src/dialogs/midi_mapping_dialog.py:40
+#: src/dialogs/midi_mapping_dialog.py:41
 msgid "Tambourine"
 msgstr "铃鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:41
+#: src/dialogs/midi_mapping_dialog.py:42
 msgid "Splash Cymbal"
 msgstr "水钹"
 
-#: src/dialogs/midi_mapping_dialog.py:42
+#: src/dialogs/midi_mapping_dialog.py:43
 msgid "Cowbell"
 msgstr "牛铃"
 
-#: src/dialogs/midi_mapping_dialog.py:43
+#: src/dialogs/midi_mapping_dialog.py:44
 msgid "Crash Cymbal 2"
 msgstr "碎音钹 2"
 
-#: src/dialogs/midi_mapping_dialog.py:44
+#: src/dialogs/midi_mapping_dialog.py:45
 msgid "Vibraslap"
 msgstr "颤音叉"
 
-#: src/dialogs/midi_mapping_dialog.py:45
+#: src/dialogs/midi_mapping_dialog.py:46
 msgid "Ride Cymbal 2"
 msgstr "节奏钹 2"
 
-#: src/dialogs/midi_mapping_dialog.py:46
+#: src/dialogs/midi_mapping_dialog.py:47
 msgid "Hi Bongo"
 msgstr "高音邦戈鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:47
+#: src/dialogs/midi_mapping_dialog.py:48
 msgid "Low Bongo"
 msgstr "低音邦戈鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:48
+#: src/dialogs/midi_mapping_dialog.py:49
 msgid "Mute Hi Conga"
 msgstr "闷音高音康加鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:49
+#: src/dialogs/midi_mapping_dialog.py:50
 msgid "Open Hi Conga"
 msgstr "开放音高音康加鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:50
+#: src/dialogs/midi_mapping_dialog.py:51
 msgid "Low Conga"
 msgstr "低音康加鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:51
+#: src/dialogs/midi_mapping_dialog.py:52
 msgid "High Timbale"
 msgstr "高音天巴鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:52
+#: src/dialogs/midi_mapping_dialog.py:53
 msgid "Low Timbale"
 msgstr "低音天巴鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:53
+#: src/dialogs/midi_mapping_dialog.py:54
 msgid "High Agogo"
 msgstr "高音阿哥哥铃"
 
-#: src/dialogs/midi_mapping_dialog.py:54
+#: src/dialogs/midi_mapping_dialog.py:55
 msgid "Low Agogo"
 msgstr "低音阿哥哥铃"
 
-#: src/dialogs/midi_mapping_dialog.py:55
+#: src/dialogs/midi_mapping_dialog.py:56
 msgid "Cabasa"
 msgstr "卡巴萨"
 
-#: src/dialogs/midi_mapping_dialog.py:56
+#: src/dialogs/midi_mapping_dialog.py:57
 msgid "Maracas"
 msgstr "沙槌"
 
-#: src/dialogs/midi_mapping_dialog.py:57
+#: src/dialogs/midi_mapping_dialog.py:58
 msgid "Short Whistle"
 msgstr "短哨"
 
-#: src/dialogs/midi_mapping_dialog.py:58
+#: src/dialogs/midi_mapping_dialog.py:59
 msgid "Long Whistle"
 msgstr "长哨"
 
-#: src/dialogs/midi_mapping_dialog.py:59
+#: src/dialogs/midi_mapping_dialog.py:60
 msgid "Short Guiro"
 msgstr "短刮鱼"
 
-#: src/dialogs/midi_mapping_dialog.py:60
+#: src/dialogs/midi_mapping_dialog.py:61
 msgid "Long Guiro"
 msgstr "长刮鱼"
 
-#: src/dialogs/midi_mapping_dialog.py:61
+#: src/dialogs/midi_mapping_dialog.py:62
 msgid "Claves"
 msgstr "响木"
 
-#: src/dialogs/midi_mapping_dialog.py:62
+#: src/dialogs/midi_mapping_dialog.py:63
 msgid "Hi Wood Block"
 msgstr "高音木鱼"
 
-#: src/dialogs/midi_mapping_dialog.py:63
+#: src/dialogs/midi_mapping_dialog.py:64
 msgid "Low Wood Block"
 msgstr "低音木鱼"
 
-#: src/dialogs/midi_mapping_dialog.py:64
+#: src/dialogs/midi_mapping_dialog.py:65
 msgid "Mute Cuica"
 msgstr "闷音桂嘎鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:65
+#: src/dialogs/midi_mapping_dialog.py:66
 msgid "Open Cuica"
 msgstr "开放音桂嘎鼓"
 
-#: src/dialogs/midi_mapping_dialog.py:66
+#: src/dialogs/midi_mapping_dialog.py:67
 msgid "Mute Triangle"
 msgstr "闷音三角铁"
 
-#: src/dialogs/midi_mapping_dialog.py:67
+#: src/dialogs/midi_mapping_dialog.py:68
 msgid "Open Triangle"
 msgstr "开放音三角铁"
 
-#: src/dialogs/midi_mapping_dialog.py:77 src/ui/drum_grid_builder.py:328
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:338
 msgid "MIDI Mapping"
 msgstr "MIDI 映射"
 
 #. Group 1: Note Assignment
-#: src/dialogs/midi_mapping_dialog.py:107
+#: src/dialogs/midi_mapping_dialog.py:108
 msgid "Note Assignment"
 msgstr "音符分配"
 
-#: src/dialogs/midi_mapping_dialog.py:110
+#: src/dialogs/midi_mapping_dialog.py:111
 msgid ""
 "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
 msgstr "为“{}”分配 MIDI 音符。这确保了导出时可以正确播放。"
 
 #. Action Row for Note
-#: src/dialogs/midi_mapping_dialog.py:117
+#: src/dialogs/midi_mapping_dialog.py:118
 msgid "MIDI Note"
 msgstr "MIDI 音符"
 
-#: src/dialogs/midi_mapping_dialog.py:118
+#: src/dialogs/midi_mapping_dialog.py:119
 msgid "The note number to trigger"
 msgstr "要触发的音符编号"
 
 #. Group 2: Standard Instruments
-#: src/dialogs/midi_mapping_dialog.py:136
+#: src/dialogs/midi_mapping_dialog.py:137
 msgid "Standard Instruments"
 msgstr "标准乐器"
 
-#: src/dialogs/midi_mapping_dialog.py:138
+#: src/dialogs/midi_mapping_dialog.py:139
 msgid "Select a General MIDI instrument to automatically set the note."
 msgstr "选择常规 MIDI 乐器以自动设定音符。"
 
-#: src/dialogs/midi_mapping_dialog.py:142
+#: src/dialogs/midi_mapping_dialog.py:143
 msgid "Instrument Preset"
 msgstr "乐器预设"
 
-#: src/dialogs/midi_mapping_dialog.py:185
+#: src/dialogs/midi_mapping_dialog.py:186
 msgid "Save"
 msgstr "保存"
 
-#: src/dialogs/midi_mapping_dialog.py:227
+#: src/dialogs/midi_mapping_dialog.py:229
 msgid "Custom Note"
 msgstr "自定义音符"
 
-#: src/handlers/drag_drop_handler.py:88
+#: src/handlers/drag_drop_handler.py:113
+msgid "Sound replaced"
+msgstr "声音已替换"
+
+#: src/handlers/drag_drop_handler.py:116
+msgid "Failed to replace sound"
+msgstr "替换声音失败"
+
+#: src/handlers/drag_drop_handler.py:126
 msgid "Not a supported audio file"
 msgstr "不受支持的音频文件"
 
-#: src/handlers/drag_drop_handler.py:95
+#: src/handlers/drag_drop_handler.py:134
 msgid "File not found"
 msgstr "文件未找到"
 
-#: src/handlers/drag_drop_handler.py:99
+#: src/handlers/drag_drop_handler.py:139
 msgid "Selected item is not a file"
 msgstr "选中项目不是文件"
 
-#: src/handlers/drag_drop_handler.py:105
+#: src/handlers/drag_drop_handler.py:146
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr "文件太大了：{:.1f}MB（最大 50MB）"
 
-#: src/handlers/drag_drop_handler.py:114
-msgid "Custom Sound"
-msgstr "自定义声音"
-
-#: src/handlers/drag_drop_handler.py:138
+#: src/handlers/drag_drop_handler.py:174
 msgid "No valid audio files found"
 msgstr "未找到有效音频文件"
 
-#: src/handlers/drag_drop_handler.py:173
+#: src/handlers/drag_drop_handler.py:209
 msgid "Error processing file: {}"
 msgstr "处理文件时出错：{}"
 
-#: src/handlers/drag_drop_handler.py:201
+#: src/handlers/drag_drop_handler.py:237
 msgid "Added {} drum part, {} files skipped"
 msgstr "添加了 {} 个击鼓部分，跳过了 {} 个文件"
 
-#: src/handlers/drag_drop_handler.py:207
+#: src/handlers/drag_drop_handler.py:243
 msgid "Added {} drum parts, {} files skipped"
 msgstr "添加了 {} 个击鼓部分，跳过了 {} 个文件"
 
-#: src/handlers/drag_drop_handler.py:212
+#: src/handlers/drag_drop_handler.py:248
 msgid "Added {} drum parts"
 msgstr "添加了 {} 个击鼓部分"
 
 #. Only show skipped message if no replacement happened
-#: src/handlers/drag_drop_handler.py:215
+#: src/handlers/drag_drop_handler.py:251
 msgid "{} files skipped"
 msgstr "跳过了 {} 个文件"
 
-#: src/handlers/file_dialog_handler.py:51
+#: src/handlers/file_dialog_handler.py:52
 msgid "Default Patterns"
 msgstr "默认模式"
 
-#: src/handlers/file_dialog_handler.py:83
+#: src/handlers/file_dialog_handler.py:84
 msgid "No Pattern"
 msgstr "无模式"
 
-#: src/handlers/file_dialog_handler.py:84
+#: src/handlers/file_dialog_handler.py:85
 msgid "Please create a drum pattern before exporting audio."
 msgstr "请在导出音频前创建击鼓模式。"
 
-#: src/handlers/file_dialog_handler.py:86
+#: src/handlers/file_dialog_handler.py:87
 msgid "_OK"
 msgstr "确定(_O)"
 
-#: src/handlers/file_dialog_handler.py:109
-#: src/handlers/file_dialog_handler.py:177
+#: src/handlers/file_dialog_handler.py:110
+#: src/handlers/file_dialog_handler.py:187
 msgid "MIDI files"
 msgstr "MIDI 文件"
 
-#: src/handlers/file_dialog_handler.py:115
+#: src/handlers/file_dialog_handler.py:116
 msgid "Open MIDI File"
 msgstr "打开 MIDI 文件"
 
-#: src/handlers/file_dialog_handler.py:185
+#: src/handlers/file_dialog_handler.py:144
+msgid "Failed to open file"
+msgstr "打开文件失败"
+
+#: src/handlers/file_dialog_handler.py:181
+msgid "Failed to load pattern"
+msgstr "加载模式失败"
+
+#: src/handlers/file_dialog_handler.py:195
 msgid "Save Sequence"
 msgstr "保存序列"
 
-#: src/handlers/file_dialog_handler.py:210
+#: src/handlers/file_dialog_handler.py:221
 msgid "Add Audio Samples"
 msgstr "添加音频采样"
 
-#: src/handlers/file_dialog_handler.py:232
+#: src/handlers/file_dialog_handler.py:243
 msgid "Audio files"
 msgstr "音频文件"
 
-#: src/utils/export_progress.py:69
+#: src/utils/export_progress.py:76
 msgid "Preparing…"
 msgstr "正在准备…"
 
-#: src/utils/export_progress.py:70
+#: src/utils/export_progress.py:77
 msgid "Initializing…"
 msgstr "正在初始化…"
 
-#: src/utils/export_progress.py:72
+#: src/utils/export_progress.py:79
 msgid "Rendering audio…"
 msgstr "正在渲染音频…"
 
-#: src/utils/export_progress.py:73
+#: src/utils/export_progress.py:80
 msgid "Processing beats…"
 msgstr "正在处理节拍…"
 
-#: src/utils/export_progress.py:75
+#: src/utils/export_progress.py:82
 msgid "Saving file…"
 msgstr "正在保存文件…"
 
-#: src/utils/export_progress.py:76
+#: src/utils/export_progress.py:83
 msgid "Writing to disk…"
 msgstr "正在写入磁盘…"
 
-#: src/utils/export_progress.py:78
+#: src/utils/export_progress.py:85
 msgid "Exporting…"
 msgstr "正在导出…"
 
-#: src/utils/export_progress.py:79
+#: src/utils/export_progress.py:86
 msgid "Processing…"
 msgstr "正在处理…"
 
-#: src/ui/drum_grid_builder.py:313
+#: src/utils/name_utils.py:36
+msgid "Custom Sound"
+msgstr "自定义声音"
+
+#: src/ui/drum_grid_builder.py:323
 msgid "Preview"
 msgstr "预览"
 
-#: src/ui/drum_grid_builder.py:315
+#: src/ui/drum_grid_builder.py:325
 msgid "Replace…"
 msgstr "替换…"
 
-#: src/ui/drum_grid_builder.py:318
+#: src/ui/drum_grid_builder.py:328
 msgid "Replace with new sound"
 msgstr "使用新声音替换"
 
-#: src/ui/drum_grid_builder.py:321
+#: src/ui/drum_grid_builder.py:331
 msgid "Remove"
 msgstr "移除"
 
-#: src/ui/drum_grid_builder.py:324
+#: src/ui/drum_grid_builder.py:334
 msgid "At least one drum part must remain"
 msgstr "必须保留至少一个击鼓部分"
 
-#: src/ui/drum_grid_builder.py:331
+#: src/ui/drum_grid_builder.py:341
 msgid "Configure MIDI note for export"
 msgstr "配置 MIDI 音符导出选项"
 
-#: src/ui/drum_grid_builder.py:388
+#: src/ui/drum_grid_builder.py:398
 msgid "MIDI note updated"
 msgstr "MIDI 音符已更新"
 
-#: src/ui/drum_grid_builder.py:396
+#: src/ui/drum_grid_builder.py:406
 msgid "Select New Sound"
 msgstr "选择新声音"
 
-#: src/ui/drum_grid_builder.py:410
-msgid "Sound replaced"
-msgstr "声音已替换"
-
-#: src/ui/drum_grid_builder.py:414
-msgid "Failed to replace sound"
-msgstr "替换声音失败"
-
-#: src/ui/drum_grid_builder.py:425
+#: src/ui/drum_grid_builder.py:420
 msgid "Removed drum part: {}"
 msgstr "已移除击鼓部分：{}"
 
-#: src/ui/drum_grid_builder.py:429
+#: src/ui/drum_grid_builder.py:424
 msgid "Failed to remove drum part"
 msgstr "移除击鼓部分失败"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:195
+#: src/window.py:203
 msgid "{} Beats per Minute (BPM)"
 msgstr "每分钟 {} 节拍（BPM）"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:204
+#: src/window.py:212
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% 音量"
 
-#: src/window.py:219 src/window.ui:170
+#: src/window.py:227 src/window.ui:170
 msgid "Play"
 msgstr "播放"
 
-#: src/window.py:223
+#: src/window.py:231
 msgid "Pause"
 msgstr "暂停"
 
-#: src/window.py:261
+#: src/window.py:278
 msgid "Open"
 msgstr "打开"
 
-#: src/window.py:279
+#: src/window.py:296
 msgid "Added: {}"
 msgstr "已添加：{}"
 
-#: src/window.py:290
+#: src/window.py:311
 msgid "Failed to add custom sound"
 msgstr "添加自定义声音失败"
 
-#: src/window.py:297
+#: src/window.py:318
 msgid "Replaced drum with: {}"
 msgstr "已替换击鼓为：{}"
 
-#: src/window.py:303
+#: src/window.py:326
 msgid "Failed to replace drum sound"
 msgstr "替换击鼓声音失败"
 
