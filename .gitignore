@@ -83,7 +83,7 @@ ipython_config.py
 Pipfile.lock
 
 # poetry
-poetry.lock
+# poetry.lock should be committed to version control
 
 # pdm
 .pdm.toml
@@ -233,3 +233,6 @@ docs/_build/
 local/
 dev/
 test-data/
+
+# Claude Code settings
+.claude/
