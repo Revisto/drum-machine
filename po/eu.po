@@ -6,8 +6,8 @@
 msgid ""
 msgstr "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-09-14 03:26+0000\n"
-"PO-Revision-Date: 2025-09-14 13:12+0000\n"
+"POT-Creation-Date: 2025-12-02 03:26+0000\n"
+"PO-Revision-Date: 2025-12-02 13:12+0000\n"
 "Last-Translator: Asier Saratsua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "Language: eu\n"
@@ -16,9 +16,15 @@ msgstr "Project-Id-Version: drum-machine master\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
+#: src/window.ui:69
 msgid "Drum Machine"
 msgstr "Drum Machine"
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgstr "danborra;danborrak;sekuentziatzailea;erritmoa;musika;eredua;kolpeak;perkusioa;begizta;errutina;"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:7
 msgid "Create and play drum beats"
@@ -30,7 +36,7 @@ msgid ""
 "and managing drum patterns. Perfect for musicians, producers, and anyone "
 "interested in rhythm creation, this application provides a simple interface "
 "for drum pattern programming. Have fun!"
-msgstr "Drum Machine aplikazioa danbor-ereduak sortu, erreproduzitu eta kudeatzeko aplikazio moderno eta erabilerraza da. Ezin hobea musikari, produktore eta erritmoak sortzeko interesa duen edonorentzat. Aplikazio honek danbor-ereduak programatzeko interfaze sinplea eskaintzen du. Ondo pasa!"
+msgstr "Drum Machine danbor-ereduak sortu, erreproduzitu eta kudeatzeko aplikazio moderno eta erabilerraza da. Erritmoak sortu nahi duten musikari, produktore eta beste edozeinentzat pentsatua, aplikazio honek interfaze sinplea eskaintzen du danbor-ereduak programatzeko. Ondo pasa!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
@@ -49,8 +55,9 @@ msgid "Volume control for overall mix"
 msgstr "Nahaste osorako bolumen-kontrola"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:20
-msgid "Save and load preset patterns"
-msgstr "Gorde eta kargatu aurrezarritako ereduak"
+#| msgid "Save and load preset patterns"
+msgid "Save and load patterns"
+msgstr "Gorde eta kargatu ereduak"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
@@ -76,160 +83,573 @@ msgstr "Danbor-eredua modu argian kargatua"
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Danbor-eredua modu ilunean kargatua"
 
-#: src/application.py:69
+#: src/application.py:74
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns."
+msgstr "Drum Machine danbor-ereduak sortu, erreproduzitu eta kudeatzeko aplikazio moderno eta erabilerraza da."
+
+#: src/application.py:79
 msgid "translator-credits"
 msgstr "Asier Saratsua Garmendia <asiersarasua@ni.eus>"
 
-#: src/config/export_formats.py:43
+#: src/application.py:84
+msgid "Special thanks"
+msgstr "Esker bereziak"
+
+#: src/application.py:87
+msgid "Sounds"
+msgstr "Soinuak"
+
+#: src/application.py:88
+#, python-brace-format
+msgid "The drum samples used in this application are from {link}."
+msgstr "Aplikazio honetan erabilitako danbor-laginak {link} gunekoak dira."
+
+#: src/config/export_formats.py:44
 msgid "MP3 files"
 msgstr "MP3 fitxategiak"
 
-#: src/config/export_formats.py:44
+#: src/config/export_formats.py:45
 msgid "MP3"
 msgstr "MP3"
 
-#: src/config/export_formats.py:50
+#: src/config/export_formats.py:51
 msgid "FLAC files"
 msgstr "FLAC fitxategiak"
 
-#: src/config/export_formats.py:51
+#: src/config/export_formats.py:52
 msgid "FLAC (Lossless)"
 msgstr "FLAC (galerarik gabea)"
 
-#: src/config/export_formats.py:57
+#: src/config/export_formats.py:58
 msgid "Ogg files"
 msgstr "Ogg fitxategiak"
 
-#: src/config/export_formats.py:58
+#: src/config/export_formats.py:59
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: src/config/export_formats.py:64
+#: src/config/export_formats.py:65
 msgid "WAV files"
 msgstr "WAV fitxategiak"
 
-#: src/config/export_formats.py:65
+#: src/config/export_formats.py:66
 msgid "WAV (Uncompressed)"
 msgstr "WAV (konprimatu gabea)"
 
-#: src/dialogs/audio_export_dialog.py:104
+#: src/dialogs/audio_export_dialog.py:119
 msgid "Save Audio File"
 msgstr "Gorde audio-fitxategia"
 
-#: src/dialogs/audio_export_dialog.py:128
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Part “{}” is Silent"
+msgstr "“{}” atala isila da"
+
+#: src/dialogs/audio_export_dialog.py:150
+msgid "Parts “{}” and “{}” are Silent"
+msgstr "“{}” eta “{}” atalak isilak dira"
+
+#: src/dialogs/audio_export_dialog.py:154
+msgid "{} Parts are Silent"
+msgstr "{} atal isilak dira"
+
+#: src/dialogs/audio_export_dialog.py:179
 msgid "Image files"
 msgstr "Irudi-fitxategiak"
 
-#: src/dialogs/audio_export_dialog.py:134
+#: src/dialogs/audio_export_dialog.py:185
 msgid "Select Cover Art"
 msgstr "Hautatu azala"
 
-#: src/dialogs/audio_export_dialog.py:191
+#: src/dialogs/audio_export_dialog.py:245
 msgid "Audio exported to {}"
 msgstr "Audioa hona esportatu da: {}"
 
-#: src/dialogs/audio_export_dialog.py:196
+#: src/dialogs/audio_export_dialog.py:251
 msgid "Export failed"
 msgstr "Esportazioak huts egin du"
 
-#: src/dialogs/audio_export_dialog.py:203
+#: src/dialogs/audio_export_dialog.py:258
 msgid "Export cancelled successfully"
 msgstr "Esportazioa ongi eten da"
 
-#: src/handlers/file_dialog_handler.py:50
-msgid "Default Presets"
-msgstr "Aurrezarpen lehenetsiak"
+#: src/dialogs/midi_mapping_dialog.py:22
+msgid "Acoustic Bass Drum"
+msgstr "Dunbal akustikoa"
 
-#: src/handlers/file_dialog_handler.py:82
+#: src/dialogs/midi_mapping_dialog.py:23
+msgid "Bass Drum 1"
+msgstr "1. dunbala"
+
+#: src/dialogs/midi_mapping_dialog.py:24
+msgid "Side Stick"
+msgstr "Alboko makila"
+
+#: src/dialogs/midi_mapping_dialog.py:25
+msgid "Acoustic Snare"
+msgstr "Kaxa akustikoa"
+
+#: src/dialogs/midi_mapping_dialog.py:26
+msgid "Hand Clap"
+msgstr "Txaloa"
+
+#: src/dialogs/midi_mapping_dialog.py:27
+msgid "Electric Snare"
+msgstr "Kaxa elektrikoa"
+
+#: src/dialogs/midi_mapping_dialog.py:28
+msgid "Low Floor Tom"
+msgstr "Zoru baxuko danborra"
+
+#: src/dialogs/midi_mapping_dialog.py:29
+msgid "Closed Hi Hat"
+msgstr "Charleston itxia"
+
+#: src/dialogs/midi_mapping_dialog.py:30
+msgid "High Floor Tom"
+msgstr "Zoru altuko danborra"
+
+#: src/dialogs/midi_mapping_dialog.py:31
+msgid "Pedal Hi Hat"
+msgstr "Pedal-cahrlestona"
+
+#: src/dialogs/midi_mapping_dialog.py:32
+msgid "Low Tom"
+msgstr "Danbor baxua"
+
+#: src/dialogs/midi_mapping_dialog.py:33
+msgid "Open Hi Hat"
+msgstr "Charleston irekia"
+
+#: src/dialogs/midi_mapping_dialog.py:34
+msgid "Low-Mid Tom"
+msgstr "Danbor baxu-ertaina"
+
+#: src/dialogs/midi_mapping_dialog.py:35
+msgid "Hi-Mid Tom"
+msgstr "Danbora altu-ertaina"
+
+#: src/dialogs/midi_mapping_dialog.py:36
+msgid "Crash Cymbal 1"
+msgstr "1. crash txindata"
+
+#: src/dialogs/midi_mapping_dialog.py:37
+msgid "High Tom"
+msgstr "Danbor altua"
+
+#: src/dialogs/midi_mapping_dialog.py:38
+msgid "Ride Cymbal 1"
+msgstr "1. ride txindata"
+
+#: src/dialogs/midi_mapping_dialog.py:39
+msgid "Chinese Cymbal"
+msgstr "Txindata txinatarra"
+
+#: src/dialogs/midi_mapping_dialog.py:40
+msgid "Ride Bell"
+msgstr "Ride kanpaina"
+
+#: src/dialogs/midi_mapping_dialog.py:41
+msgid "Tambourine"
+msgstr "Panderoa"
+
+#: src/dialogs/midi_mapping_dialog.py:42
+msgid "Splash Cymbal"
+msgstr "Splash txindata"
+
+#: src/dialogs/midi_mapping_dialog.py:43
+msgid "Cowbell"
+msgstr "Zintzarria"
+
+#: src/dialogs/midi_mapping_dialog.py:44
+msgid "Crash Cymbal 2"
+msgstr "2. crash txindata"
+
+#: src/dialogs/midi_mapping_dialog.py:45
+msgid "Vibraslap"
+msgstr "Vibraslap-a"
+
+#: src/dialogs/midi_mapping_dialog.py:46
+msgid "Ride Cymbal 2"
+msgstr "2. ride txindata"
+
+#: src/dialogs/midi_mapping_dialog.py:47
+msgid "Hi Bongo"
+msgstr "Bongo altua"
+
+#: src/dialogs/midi_mapping_dialog.py:48
+msgid "Low Bongo"
+msgstr "Bongo baxua"
+
+#: src/dialogs/midi_mapping_dialog.py:49
+msgid "Mute Hi Conga"
+msgstr "Conga altu mutua"
+
+#: src/dialogs/midi_mapping_dialog.py:50
+msgid "Open Hi Conga"
+msgstr "Conga altu irekia"
+
+#: src/dialogs/midi_mapping_dialog.py:51
+msgid "Low Conga"
+msgstr "Conga baxua"
+
+#: src/dialogs/midi_mapping_dialog.py:52
+msgid "High Timbale"
+msgstr "Tinbal altua"
+
+#: src/dialogs/midi_mapping_dialog.py:53
+msgid "Low Timbale"
+msgstr "Tinbal baxua"
+
+#: src/dialogs/midi_mapping_dialog.py:54
+msgid "High Agogo"
+msgstr "Agogo altua"
+
+#: src/dialogs/midi_mapping_dialog.py:55
+msgid "Low Agogo"
+msgstr "Agogo baxua"
+
+#: src/dialogs/midi_mapping_dialog.py:56
+msgid "Cabasa"
+msgstr "Kabasa"
+
+#: src/dialogs/midi_mapping_dialog.py:57
+msgid "Maracas"
+msgstr "Marakak"
+
+#: src/dialogs/midi_mapping_dialog.py:58
+msgid "Short Whistle"
+msgstr "Txilibitu laburra"
+
+#: src/dialogs/midi_mapping_dialog.py:59
+msgid "Long Whistle"
+msgstr "Txilibitu luzea"
+
+#: src/dialogs/midi_mapping_dialog.py:60
+#| msgid "Export Audio"
+msgid "Short Guiro"
+msgstr "Güiro laburra"
+
+#: src/dialogs/midi_mapping_dialog.py:61
+msgid "Long Guiro"
+msgstr "Güiro luzea"
+
+#: src/dialogs/midi_mapping_dialog.py:62
+msgid "Claves"
+msgstr "Klabezina"
+
+#: src/dialogs/midi_mapping_dialog.py:63
+msgid "Hi Wood Block"
+msgstr "Kaxa txinatar altua"
+
+#: src/dialogs/midi_mapping_dialog.py:64
+msgid "Low Wood Block"
+msgstr "Kaxa txinatar baxua"
+
+#: src/dialogs/midi_mapping_dialog.py:65
+msgid "Mute Cuica"
+msgstr "Kuika mutua"
+
+#: src/dialogs/midi_mapping_dialog.py:66
+msgid "Open Cuica"
+msgstr "Kuika irekia"
+
+#: src/dialogs/midi_mapping_dialog.py:67
+msgid "Mute Triangle"
+msgstr "Triangelu mutua"
+
+#: src/dialogs/midi_mapping_dialog.py:68
+msgid "Open Triangle"
+msgstr "Triangelu irekia"
+
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:338
+msgid "MIDI Mapping"
+msgstr "MIDI mapatzea"
+
+#. Group 1: Note Assignment
+#: src/dialogs/midi_mapping_dialog.py:108
+msgid "Note Assignment"
+msgstr "Nota-esleipena"
+
+#: src/dialogs/midi_mapping_dialog.py:111
+msgid ""
+"Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr "Esleitu MIDI nota bat '{}' soinurako. Honek erreprodukzio zuzena ziurtatzen du esportatzean."
+
+#. Action Row for Note
+#: src/dialogs/midi_mapping_dialog.py:118
+#| msgid "MIDI files"
+msgid "MIDI Note"
+msgstr "MIDI nota"
+
+#: src/dialogs/midi_mapping_dialog.py:119
+msgid "The note number to trigger"
+msgstr "Abiaraziko den notaren zenbakia"
+
+#. Group 2: Standard Instruments
+#: src/dialogs/midi_mapping_dialog.py:137
+#| msgctxt "shortcut window"
+#| msgid "Go to Instrument"
+msgid "Standard Instruments"
+msgstr "Musika-tresna estandarrak"
+
+#: src/dialogs/midi_mapping_dialog.py:139
+msgid "Select a General MIDI instrument to automatically set the note."
+msgstr "Hautatu MIDI tresna orokor bat nota automatikoki ezartzeko."
+
+#: src/dialogs/midi_mapping_dialog.py:143
+#| msgid "Open Preset"
+msgid "Instrument Preset"
+msgstr "Tresna-aurrezarpena"
+
+#: src/dialogs/midi_mapping_dialog.py:186
+#| msgid "_Save"
+msgid "Save"
+msgstr "Gorde"
+
+#: src/dialogs/midi_mapping_dialog.py:229
+msgid "Custom Note"
+msgstr "Nota pertsonalizatua"
+
+#: src/handlers/drag_drop_handler.py:113
+msgid "Sound replaced"
+msgstr "Ordezkatutako soinua"
+
+#: src/handlers/drag_drop_handler.py:116
+msgid "Failed to replace sound"
+msgstr "Huts egin du soinua ordezkatzeak"
+
+#: src/handlers/drag_drop_handler.py:126
+msgid "Not a supported audio file"
+msgstr "Onartzen ez den audio-fitxategia"
+
+#: src/handlers/drag_drop_handler.py:134
+msgid "File not found"
+msgstr "Ez da fitxategia aurkitu"
+
+#: src/handlers/drag_drop_handler.py:139
+msgid "Selected item is not a file"
+msgstr "Hautatutako elementua ez da fitxategi bat"
+
+#: src/handlers/drag_drop_handler.py:146
+msgid "File too large: {:.1f}MB (max 50MB)"
+msgstr "Fitxategi luzeegia: {:.1f}MB (max 50MB)"
+
+#: src/handlers/drag_drop_handler.py:174
+msgid "No valid audio files found"
+msgstr "Ez da aurkitu baliozko audio-fitxategirik"
+
+#: src/handlers/drag_drop_handler.py:209
+msgid "Error processing file: {}"
+msgstr "Errorea fitxategia prozesatzean: {}"
+
+#: src/handlers/drag_drop_handler.py:237
+msgid "Added {} drum part, {} files skipped"
+msgstr "Danbor-atal {} gehitu da, {} fitxategi saltatu dira"
+
+#: src/handlers/drag_drop_handler.py:243
+msgid "Added {} drum parts, {} files skipped"
+msgstr "{} danbor-atal gehitu dira, {} fitxategi saltatu dira"
+
+#: src/handlers/drag_drop_handler.py:248
+msgid "Added {} drum parts"
+msgstr "{} danbor-atal gehitu dira"
+
+#. Only show skipped message if no replacement happened
+#: src/handlers/drag_drop_handler.py:251
+msgid "{} files skipped"
+msgstr "{} fitxategi saltatu dira"
+
+#: src/handlers/file_dialog_handler.py:52
+#| msgid "Default Presets"
+msgid "Default Patterns"
+msgstr "Eredu lehenetsiak"
+
+#: src/handlers/file_dialog_handler.py:84
 msgid "No Pattern"
 msgstr "Eredurik ez"
 
-#: src/handlers/file_dialog_handler.py:83
+#: src/handlers/file_dialog_handler.py:85
 msgid "Please create a drum pattern before exporting audio."
 msgstr "Sortu danbor-eredua audioa esportatu baino lehen."
 
-#: src/handlers/file_dialog_handler.py:85
+#: src/handlers/file_dialog_handler.py:87
 msgid "_OK"
 msgstr "_Ados"
 
-#: src/handlers/file_dialog_handler.py:107
-#: src/handlers/file_dialog_handler.py:173
+#: src/handlers/file_dialog_handler.py:110
+#: src/handlers/file_dialog_handler.py:187
 msgid "MIDI files"
 msgstr "MIDI fitxategiak"
 
-#: src/handlers/file_dialog_handler.py:113
+#: src/handlers/file_dialog_handler.py:116
 msgid "Open MIDI File"
 msgstr "Ireki MIDI fitxategia"
 
-#: src/handlers/file_dialog_handler.py:179
+#: src/handlers/file_dialog_handler.py:144
+msgid "Failed to open file"
+msgstr "Huts egin du fitxategia irekitzeak"
+
+#: src/handlers/file_dialog_handler.py:181
+#| msgid "Save and load preset patterns"
+msgid "Failed to load pattern"
+msgstr "Huts egin du eredua kargatzeak"
+
+#: src/handlers/file_dialog_handler.py:195
 msgid "Save Sequence"
 msgstr "Gorde sekuentzia"
 
-#: src/utils/export_progress.py:68
-msgid "Preparing..."
+#: src/handlers/file_dialog_handler.py:221
+msgid "Add Audio Samples"
+msgstr "Gehitu audio-laginak"
+
+#: src/handlers/file_dialog_handler.py:243
+#| msgid "WAV files"
+msgid "Audio files"
+msgstr "Audio-fitxategiak"
+
+#: src/utils/export_progress.py:76
+#| msgid "Preparing..."
+msgid "Preparing…"
 msgstr "Prestatzen…"
 
-#: src/utils/export_progress.py:69
-msgid "Initializing..."
+#: src/utils/export_progress.py:77
+#| msgid "Initializing..."
+msgid "Initializing…"
 msgstr "Hasieratzen…"
 
-#: src/utils/export_progress.py:71
-msgid "Rendering audio..."
+#: src/utils/export_progress.py:79
+#| msgid "Rendering audio..."
+msgid "Rendering audio…"
 msgstr "Audioa errendatzen…"
 
-#: src/utils/export_progress.py:72
-msgid "Processing beats..."
+#: src/utils/export_progress.py:80
+#| msgid "Processing beats..."
+msgid "Processing beats…"
 msgstr "Kolpeak prozesatzen…"
 
-#: src/utils/export_progress.py:74
-msgid "Saving file..."
+#: src/utils/export_progress.py:82
+#| msgid "Saving file..."
+msgid "Saving file…"
 msgstr "Fitxategia gordetzen…"
 
-#: src/utils/export_progress.py:75
-msgid "Writing to disk..."
+#: src/utils/export_progress.py:83
+#| msgid "Writing to disk..."
+msgid "Writing to disk…"
 msgstr "Diskoan idazten…"
 
-#: src/utils/export_progress.py:77
-msgid "Exporting..."
+#: src/utils/export_progress.py:85
+#| msgid "Exporting..."
+msgid "Exporting…"
 msgstr "Esportatzen…"
 
-#: src/utils/export_progress.py:78
-msgid "Processing..."
+#: src/utils/export_progress.py:86
+#| msgid "Processing..."
+msgid "Processing…"
 msgstr "Prozesatzen…"
 
+#: src/utils/name_utils.py:36
+msgid "Custom Sound"
+msgstr "Soinu pertsonalizatu"
+
+#: src/ui/drum_grid_builder.py:323
+msgid "Preview"
+msgstr "Aurrebista"
+
+#: src/ui/drum_grid_builder.py:325
+msgid "Replace…"
+msgstr "Ordeztu…"
+
+#: src/ui/drum_grid_builder.py:328
+msgid "Replace with new sound"
+msgstr "Ordeztu soinu berriarekin"
+
+#: src/ui/drum_grid_builder.py:331
+msgid "Remove"
+msgstr "Kendu"
+
+#: src/ui/drum_grid_builder.py:334
+msgid "At least one drum part must remain"
+msgstr "Gutxienez danbor-atal bat mantendu behar da"
+
+#: src/ui/drum_grid_builder.py:341
+msgid "Configure MIDI note for export"
+msgstr "Konfiguratu MIDI nota esportaziorako"
+
+#: src/ui/drum_grid_builder.py:398
+msgid "MIDI note updated"
+msgstr "MIDI nota eguneratu da"
+
+#: src/ui/drum_grid_builder.py:406
+msgid "Select New Sound"
+msgstr "Hautatu soinu berria"
+
+#: src/ui/drum_grid_builder.py:420
+msgid "Removed drum part: {}"
+msgstr "Kendu danbor-atala: {}"
+
+#: src/ui/drum_grid_builder.py:424
+msgid "Failed to remove drum part"
+msgstr "Huts egin du danbor-atala kentzeak"
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:198
+#: src/window.py:203
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} kolpe minutuko (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:207
+#: src/window.py:212
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% bolumena"
 
-#: src/window.py:222 src/window.ui:170
+#: src/window.py:227 src/window.ui:170
 msgid "Play"
 msgstr "Erreproduzitu"
 
-#: src/window.py:226
+#: src/window.py:231
 msgid "Pause"
 msgstr "Pausatu"
 
-#: src/window.py:264 src/window.ui:52
+#: src/window.py:278
 msgid "Open"
 msgstr "Ireki"
 
+#: src/window.py:296
+msgid "Added: {}"
+msgstr "Gehitua: {}"
+
+#: src/window.py:311
+msgid "Failed to add custom sound"
+msgstr "Huts egin du soinu pertsonalizatua gehitzeak"
+
+#: src/window.py:318
+msgid "Replaced drum with: {}"
+msgstr "Ordeztu danborra honekin: {}"
+
+#: src/window.py:326
+msgid "Failed to replace drum sound"
+msgstr "Huts egin du danbor-soinua ordezteak"
+
+#: src/window.ui:52
+#| msgid "Open"
+msgid "Open…"
+msgstr "Ireki…"
+
 #: src/window.ui:54
-msgid "Open Preset"
-msgstr "Ireki aurrezarpena"
+#| msgid "No Pattern"
+msgid "Open Pattern"
+msgstr "Ireki eredua"
 
 #: src/window.ui:57
+#| msgid "No Pattern"
 msgctxt "accessibility"
-msgid "Open Preset"
-msgstr "Ireki aurrezarpena"
+msgid "Open Pattern"
+msgstr "Ireki eredua"
 
 #: src/window.ui:58
-msgid "Open Saved Drum Pattern Preset"
+#| msgid "Open Saved Drum Pattern Preset"
+msgid "Open Saved Drum Pattern"
 msgstr "Ireki gordetako danbor-eredua"
 
 #: src/window.ui:76
@@ -245,15 +665,16 @@ msgstr "Menu nagusia"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Atzitu laster-teklak eta aplikazioaren informazioa"
 
-#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6
-#: src/gtk/audio-export-dialog.blp:96
-msgid "Export Audio"
-msgstr "Esportatu audioa"
+#: src/window.ui:86
+#| msgid "Export Audio"
+msgid "Export Audio…"
+msgstr "Esportatu audioa…"
 
 #: src/window.ui:88
+#| msgid "Export Audio"
 msgctxt "accessibility"
-msgid "Export Audio"
-msgstr "Esportatu audioa"
+msgid "Export Audio…"
+msgstr "Esportatu audioa…"
 
 #: src/window.ui:89
 msgid "Export Current Drum Pattern as Audio File"
@@ -284,14 +705,19 @@ msgid "Reset the Drum Sequence"
 msgstr "Berrezarri danbor-sekuentzia"
 
 #: src/window.ui:223
-msgid "_Save Pattern"
-msgstr "_Gorde eredua"
+msgid "_Add Samples…"
+msgstr "Gehitu _laginak…"
 
-#: src/window.ui:229
+#: src/window.ui:227
+#| msgid "_Save Pattern"
+msgid "_Save Pattern…"
+msgstr "_Gorde eredua…"
+
+#: src/window.ui:233
 msgid "_Keyboard Shortcuts"
 msgstr "Las_ter-teklak"
 
-#: src/window.ui:233
+#: src/window.ui:237
 msgid "_About Drum Machine"
 msgstr "Drum Machine aplikazioari _buruz"
 
@@ -356,19 +782,23 @@ msgid "Mute"
 msgstr "Mututu"
 
 #: src/gtk/help-overlay.blp:76
+#| msgctxt "shortcut window"
+#| msgid "Preset Management"
 msgctxt "shortcut window"
-msgid "Preset Management"
-msgstr "Aurrezarpen-kudeaketa"
+msgid "Pattern Management"
+msgstr "Eredu-kudeaketa"
 
 #: src/gtk/help-overlay.blp:79
+#| msgid "No Pattern"
 msgctxt "shortcut window"
-msgid "Load Preset"
-msgstr "Kargatu aurrezarpena"
+msgid "Load Pattern"
+msgstr "Kargatu eredua"
 
 #: src/gtk/help-overlay.blp:85
+#| msgid "_Save Pattern"
 msgctxt "shortcut window"
-msgid "Save Preset"
-msgstr "Gorde aurrezarpena"
+msgid "Save Pattern"
+msgstr "Gorde eredua"
 
 #: src/gtk/help-overlay.blp:91
 msgctxt "shortcut window"
@@ -400,10 +830,13 @@ msgid "Save Changes?"
 msgstr "Gorde aldaketak?"
 
 #: src/gtk/save-changes-dialog.blp:6
+#| msgid ""
+#| "Current preset contains unsaved changes. Changes which are not saved will "
+#| "be permanently lost."
 msgid ""
-"Current preset contains unsaved changes. Changes which are not saved will be "
-"permanently lost."
-msgstr "Uneko aurrezarpenak gorde gabeko aldaketak ditu. Gorde ez diren aldaketa horiek betiko galduko dira."
+"Current pattern contains unsaved changes. Changes which are not saved will "
+"be permanently lost."
+msgstr "Uneko ereduak gorde gabeko aldaketak ditu. Gorde ez diren aldaketak betiko galduko dira."
 
 #. Translators: Cancel the operation
 #: src/gtk/save-changes-dialog.blp:14
@@ -420,38 +853,59 @@ msgstr "_Baztertu"
 msgid "_Save"
 msgstr "_Gorde"
 
-#: src/gtk/audio-export-dialog.blp:39
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr "Esportatu audioa"
+
+#: src/gtk/audio-export-dialog.blp:44
 msgid "Audio Format"
 msgstr "Aidio-formatua"
 
-#: src/gtk/audio-export-dialog.blp:45
+#: src/gtk/audio-export-dialog.blp:50
 msgid "Repeat Count"
 msgstr "Errepikatu zenbaketa"
 
-#: src/gtk/audio-export-dialog.blp:46
+#: src/gtk/audio-export-dialog.blp:51
 msgid "How many times to repeat the pattern"
 msgstr "Zenbat aldiz errepikatuko den eredua"
 
-#: src/gtk/audio-export-dialog.blp:59
+#: src/gtk/audio-export-dialog.blp:64
 msgid "Metadata"
 msgstr "Metadatuak"
 
-#: src/gtk/audio-export-dialog.blp:62
+#: src/gtk/audio-export-dialog.blp:67
 msgid "Artist Name"
 msgstr "Artistaren izena"
 
-#: src/gtk/audio-export-dialog.blp:67
+#: src/gtk/audio-export-dialog.blp:72
 msgid "Song Name"
 msgstr "Abestiaren izena"
 
-#: src/gtk/audio-export-dialog.blp:72
+#: src/gtk/audio-export-dialog.blp:77
 msgid "Cover Art"
 msgstr "Azala"
 
-#: src/gtk/audio-export-dialog.blp:76
-msgid "Choose File"
-msgstr "Aukeratu fitxategia"
+#: src/gtk/audio-export-dialog.blp:81
+#| msgid "Choose File"
+msgid "Choose File…"
+msgstr "Aukeratu fitxategia…"
 
-#: src/gtk/audio-export-dialog.blp:105
+#: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr "Utzi esportazioa"
+
+#~ msgctxt "accessibility"
+#~ msgid "Open Preset"
+#~ msgstr "Ireki aurrezarpena"
+
+#~ msgctxt "accessibility"
+#~ msgid "Export Audio"
+#~ msgstr "Esportatu audioa"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Load Preset"
+#~ msgstr "Kargatu aurrezarpena"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "Gorde aurrezarpena"
