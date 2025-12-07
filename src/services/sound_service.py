@@ -26,11 +26,12 @@ from ..config.constants import MIXER_CHANNELS
 
 
 class SoundService(ISoundService):
-    def __init__(self, drumkit_dir: str) -> None:
+    def __init__(self, user_data_dir: str, bundled_sounds_dir: str = None) -> None:
         pygame.init()
         pygame.mixer.set_num_channels(MIXER_CHANNELS)
-        self.drumkit_dir = drumkit_dir
-        self.drum_part_manager = DrumPartManager(drumkit_dir)
+        self.user_data_dir = user_data_dir
+        self.bundled_sounds_dir = bundled_sounds_dir or user_data_dir
+        self.drum_part_manager = DrumPartManager(user_data_dir, self.bundled_sounds_dir)
         self.sounds: Dict[str, pygame.mixer.Sound] = {}
         self._current_volume: float = 1.0
 
