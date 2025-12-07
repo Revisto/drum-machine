@@ -41,19 +41,22 @@ DEFAULT_MIDI_NOTES = {
 
 
 class DrumPartManager:
-    def __init__(self, drumkit_dir: str):
-        self.drumkit_dir = drumkit_dir
-        self.custom_dir = os.path.join(drumkit_dir, "config")
-        self.config_file = os.path.join(self.custom_dir, DRUM_PARTS_CONFIG_FILE)
+    def __init__(self, user_data_dir: str, bundled_sounds_dir: str = None):
+        # User-writable directory for config and custom sounds
+        self.user_data_dir = user_data_dir
+        # Read-only directory with bundled default sounds (e.g., in snap)
+        self.bundled_sounds_dir = bundled_sounds_dir or user_data_dir
+        self.config_dir = os.path.join(user_data_dir, "config")
+        self.config_file = os.path.join(self.config_dir, DRUM_PARTS_CONFIG_FILE)
         self._drum_parts: List[DrumPart] = []
         self._ensure_directories()
         self._load_drum_parts()
 
     def _ensure_directories(self):
         try:
-            os.makedirs(self.custom_dir, exist_ok=True)
+            os.makedirs(self.config_dir, exist_ok=True)
         except Exception as e:
-            logging.error(f"Error creating custom directory {self.custom_dir}: {e}")
+            logging.error(f"Error creating config directory {self.config_dir}: {e}")
             raise
 
     def _load_drum_parts(self):
@@ -92,9 +95,9 @@ class DrumPartManager:
             self._save_drum_parts()
 
     def _load_default_parts(self):
-        """Load the default drum parts from the drumkit directory"""
+        """Load the default drum parts from the bundled sounds directory"""
         for name in DEFAULT_DRUM_PARTS:
-            file_path = os.path.join(self.drumkit_dir, f"{name}.wav")
+            file_path = os.path.join(self.bundled_sounds_dir, f"{name}.wav")
             if os.path.exists(file_path):
                 midi_note_id = DEFAULT_MIDI_NOTES.get(name)
                 drum_part = DrumPart.create_default(name, file_path, midi_note_id)

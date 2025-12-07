@@ -65,10 +65,18 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def _setup_services(self) -> None:
         """Initialize all services"""
         self.application = self.get_application()
-        drumkit_dir = os.path.join(os.path.dirname(__file__), "..", "data", "drumkit")
+        # Bundled sounds from app install location (read-only in snaps)
+        bundled_sounds_dir = os.path.join(
+            os.path.dirname(__file__), "..", "data", "drumkit"
+        )
+        # User data directory (writable) - uses SNAP_USER_DATA in snaps,
+        # or XDG_DATA_HOME otherwise
+        user_data_dir = os.path.join(
+            GLib.get_user_data_dir(), "drum-machine", "drumkit"
+        )
 
         try:
-            self.sound_service = SoundService(drumkit_dir)
+            self.sound_service = SoundService(user_data_dir, bundled_sounds_dir)
             self.sound_service.load_sounds()
         except Exception as e:
             logging.critical(f"Failed to initialize sound service: {e}")
