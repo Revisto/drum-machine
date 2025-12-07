@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-26 00:09+0330\n"
+"POT-Creation-Date: 2025-12-07 22:27+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -580,44 +580,32 @@ msgstr ""
 msgid "Default Patterns"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:84
-msgid "No Pattern"
-msgstr ""
-
-#: src/handlers/file_dialog_handler.py:85
-msgid "Please create a drum pattern before exporting audio."
-msgstr ""
-
-#: src/handlers/file_dialog_handler.py:87
-msgid "_OK"
-msgstr ""
-
-#: src/handlers/file_dialog_handler.py:110
-#: src/handlers/file_dialog_handler.py:187
+#: src/handlers/file_dialog_handler.py:92
+#: src/handlers/file_dialog_handler.py:171
 msgid "MIDI files"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:116
+#: src/handlers/file_dialog_handler.py:98
 msgid "Open MIDI File"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:144
+#: src/handlers/file_dialog_handler.py:127
 msgid "Failed to open file"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:181
+#: src/handlers/file_dialog_handler.py:165
 msgid "Failed to load pattern"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:195
+#: src/handlers/file_dialog_handler.py:179
 msgid "Save Sequence"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:221
+#: src/handlers/file_dialog_handler.py:205
 msgid "Add Audio Samples"
 msgstr ""
 
-#: src/handlers/file_dialog_handler.py:243
+#: src/handlers/file_dialog_handler.py:227
 msgid "Audio files"
 msgstr ""
 
@@ -693,45 +681,45 @@ msgstr ""
 msgid "Removed drum part: {}"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:424
+#: src/ui/drum_grid_builder.py:425
 msgid "Failed to remove drum part"
 msgstr ""
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:203
+#: src/window.py:220
 msgid "{} Beats per Minute (BPM)"
 msgstr ""
 
 #. Update button tooltip to show current volume level
-#: src/window.py:212
+#: src/window.py:229
 msgid "{:.0f}% Volume"
 msgstr ""
 
-#: src/window.py:227 src/window.ui:170
+#: src/window.py:246 src/window.ui:173
 msgid "Play"
 msgstr ""
 
-#: src/window.py:231
+#: src/window.py:250
 msgid "Pause"
 msgstr ""
 
-#: src/window.py:278
+#: src/window.py:297
 msgid "Open"
 msgstr ""
 
-#: src/window.py:296
+#: src/window.py:315
 msgid "Added: {}"
 msgstr ""
 
-#: src/window.py:311
+#: src/window.py:330
 msgid "Failed to add custom sound"
 msgstr ""
 
-#: src/window.py:318
+#: src/window.py:337
 msgid "Replaced drum with: {}"
 msgstr ""
 
-#: src/window.py:326
+#: src/window.py:345
 msgid "Failed to replace drum sound"
 msgstr ""
 
@@ -769,52 +757,52 @@ msgstr ""
 msgid "Export Audio…"
 msgstr ""
 
-#: src/window.ui:88
+#: src/window.ui:91
 msgctxt "accessibility"
 msgid "Export Audio…"
 msgstr ""
 
-#: src/window.ui:89
+#: src/window.ui:92
 msgid "Export Current Drum Pattern as Audio File"
 msgstr ""
 
-#: src/window.ui:134
+#: src/window.ui:137
 msgid "BPM"
 msgstr ""
 
-#: src/window.ui:139 src/window.ui:143
+#: src/window.ui:142 src/window.ui:146
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr ""
 
-#: src/window.ui:142
+#: src/window.ui:145
 msgid "Tempo"
 msgstr ""
 
-#: src/window.ui:184
+#: src/window.ui:187
 msgid "Adjust Volume"
 msgstr ""
 
-#: src/window.ui:207
+#: src/window.ui:210
 msgid "Reset"
 msgstr ""
 
-#: src/window.ui:208
+#: src/window.ui:211
 msgid "Reset the Drum Sequence"
 msgstr ""
 
-#: src/window.ui:223
+#: src/window.ui:226
 msgid "_Add Samples…"
 msgstr ""
 
-#: src/window.ui:227
+#: src/window.ui:230
 msgid "_Save Pattern…"
 msgstr ""
 
-#: src/window.ui:233
+#: src/window.ui:236
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/window.ui:237
+#: src/window.ui:240
 msgid "_About Drum Machine"
 msgstr ""
 
