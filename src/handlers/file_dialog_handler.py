@@ -24,7 +24,7 @@ import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Gio", "2.0")
 gi.require_version("Adw", "1")
-from gi.repository import Gtk, Gio, GLib, Adw
+from gi.repository import Gtk, Gio, GLib
 from gettext import gettext as _
 from ..config.constants import DEFAULT_PATTERNS, SUPPORTED_INPUT_AUDIO_FORMATS
 from ..dialogs.audio_export_dialog import AudioExportDialog
