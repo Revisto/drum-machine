@@ -72,24 +72,6 @@ class FileDialogHandler:
 
     def handle_export_audio(self):
         """Handle audio export"""
-        # Check if pattern has any active beats
-        has_active_beats = any(
-            any(beats.values())
-            for beats in self.window.drum_machine_service.drum_parts_state.values()
-        )
-
-        if not has_active_beats:
-            # Show error dialog
-            dialog = Adw.AlertDialog.new(
-                _("No Pattern"),
-                _("Please create a drum pattern before exporting audio."),
-            )
-            dialog.add_response("ok", _("_OK"))
-            dialog.set_default_response("ok")
-            dialog.set_close_response("ok")
-            dialog.present(self.window)
-            return
-
         # Show export dialog
         export_dialog = AudioExportDialog(
             self.window,
@@ -135,6 +117,7 @@ class FileDialogHandler:
                 )
                 self.filename = self._get_filename_without_extension(file)
 
+                self.window.update_export_button_sensitivity()
                 self.window.save_changes_service.mark_unsaved_changes(False)
         except GLib.Error as e:
             logging.debug(f"File dialog cancelled or failed: {e}")
@@ -175,6 +158,7 @@ class FileDialogHandler:
             )
             self.filename = None
 
+            self.window.update_export_button_sensitivity()
             self.window.save_changes_service.mark_unsaved_changes(False)
         except Exception as e:
             logging.error(f"Failed to load default pattern '{pattern_name}': {e}")

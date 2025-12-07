@@ -73,3 +73,7 @@
     box-shadow: 0 0 10px @accent_color;
     border: 2px solid @accent_color;
 }
+
+.export-button {
+    transition: 200ms ease-in-out;
+}
