@@ -420,6 +420,7 @@ class DrumGridBuilder:
             self.window.show_toast(_("Removed drum part: {}").format(drum_name))
             # Mark as unsaved when removing drum parts
             self.window.save_changes_service.mark_unsaved_changes(True)
+            self.window.update_export_button_sensitivity()
         else:
             self.window.show_toast(_("Failed to remove drum part"))
 

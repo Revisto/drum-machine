@@ -84,6 +84,9 @@ half-view</setter>
                   <object class="GtkButton" id="export_audio_button">
                     <property name="icon-name">share-symbolic</property>
                     <property name="tooltip-text" translatable="yes">Export Audio…</property>
+                    <style>
+                      <class name="export-button"/>
+                    </style>
                     <accessibility>
                       <property name="label" translatable="yes" context="accessibility">Export Audio…</property>
                       <property name="description" translatable="yes">Export Current Drum Pattern as Audio File</property>

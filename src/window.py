@@ -103,6 +103,17 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         # Setup drag and drop
         self.drag_drop_handler.setup_drag_drop()
 
+        # Initialize export button state
+        self.update_export_button_sensitivity()
+
+    def update_export_button_sensitivity(self) -> None:
+        """Update the sensitivity of the export button based on pattern state"""
+        has_active_beats = any(
+            any(beats.values())
+            for beats in self.drum_machine_service.drum_parts_state.values()
+        )
+        self.export_audio_button.set_sensitive(has_active_beats)
+
     def _connect_signals(self) -> None:
         """Connect UI signals"""
         self.connect("close-request", self._on_close_request)
@@ -192,6 +203,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         # Tell the service to recalculate the total pattern length
         self.drum_machine_service.update_total_beats()
 
+        # Update export button sensitivity
+        self.update_export_button_sensitivity()
+
         # Mark as unsaved when toggles change
         self.save_changes_service.mark_unsaved_changes(True)
 
@@ -218,6 +232,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_machine_service.update_total_beats()
         # Now, reset the carousel UI to its initial state
         self.drum_grid_builder.reset_carousel_pages()
+        # Update export button sensitivity
+        self.update_export_button_sensitivity()
         # Mark as saved when clearing
         self.save_changes_service.mark_unsaved_changes(False)
 
