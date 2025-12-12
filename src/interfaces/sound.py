@@ -37,3 +37,8 @@ class ISoundService(ABC):
     def preview_sound(self, sound_name: str) -> None:
         """Play a preview of the sound at preview volume level"""
         pass
+
+    @abstractmethod
+    def stop_all_sounds(self) -> None:
+        """Stop all currently playing sounds"""
+        pass
