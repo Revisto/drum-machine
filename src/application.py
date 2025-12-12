@@ -92,6 +92,13 @@ class DrumMachineApplication(Adw.Application):
         )
         about.add_legal_section("Mido", None, Gtk.License.MIT_X11)
         about.add_legal_section("Pygame", None, Gtk.License.LGPL_2_1)
+        about.set_release_notes(
+            """<ul>
+            <li>Add your own drum sounds</li>
+            <li>Export as MIDI</li>
+            </ul>
+            """
+        )
         about.present(self.props.active_window)
 
     def create_action(
