@@ -74,3 +74,6 @@ class SoundService(ISoundService):
     def preview_sound(self, part_id: str) -> None:
         if part_id in self.sounds:
             self.play_sound(part_id)
+
+    def stop_all_sounds(self) -> None:
+        pygame.mixer.stop()

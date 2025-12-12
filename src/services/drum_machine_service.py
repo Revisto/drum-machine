@@ -62,6 +62,7 @@ class DrumMachineService(IPlayer):
     def stop(self) -> None:
         self.playing = False
         self.stop_event.set()
+        self.sound_service.stop_all_sounds()
         self.ui_helper.clear_all_playhead_highlights()
         self.playing_beat = -1
         if self.play_thread:
