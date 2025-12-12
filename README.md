@@ -36,12 +36,16 @@ Drum Machine is a modern and intuitive application for creating, playing, and ma
 - Intuitive grid-based pattern editor with **infinite pages**
   - Navigate through unlimited pattern pages using carousel interface
   - Create complex drum sequences across multiple pages
+- **Custom samples with MIDI mapping**
+  - Add your own drum sounds
+  - Map samples to specific MIDI notes for export
 - Adjustable BPM control
 - Volume control for overall mix
-- Save and load preset patterns 
+- Save and load patterns
 - Multiple drum sounds including kick, snare, hi-hat, and more
-- **Audio export with metadata support**
+- **Audio & MIDI export**
   - Export patterns in WAV, FLAC, Ogg Vorbis, and MP3 formats
+  - Export as MIDI files with proper note mapping
   - Add artist name, song title, and cover art metadata
   - Configurable pattern repeat count for longer exports
 - Keyboard shortcuts for quick access to all functions

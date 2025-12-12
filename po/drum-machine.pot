@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-07 22:27+0330\n"
+"POT-Creation-Date: 2025-12-12 22:22+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,118 +89,155 @@ msgid "Revisto"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:54
-msgid "Drum Machine 1.5.0 introduces major audio export capabilities! 🎵"
+msgid "Drum Machine 2.0.0 is a major release with custom samples! 🎶"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:56
+msgid ""
+"Custom Samples: Add your own drum sounds and map them to specific MIDI notes "
+"for export"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:57
+msgid ""
+"MIDI Export: Export your patterns as MIDI files with proper note mapping"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:58
+msgid ""
+"Pattern Management: Presets have been refactored to a more flexible pattern "
+"system"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:59
+msgid ""
+"Bug Fixes: Sounds now stop immediately when pausing, disabled export when "
+"pattern is empty"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:60
+msgid "New Translations: Added Catalan, Greek, and Uzbek languages"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:61
+msgid ""
+"Translation Updates: Updated Slovenian, Basque, Ukrainian, Georgian, "
+"Chinese, Persian, and many more"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:67
+msgid "Drum Machine 1.5.0 introduces major audio export capabilities! 🎵"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:69
 msgid ""
 "Audio Export Feature: Export your drum patterns to WAV, FLAC, Ogg Vorbis, "
 "and MP3 formats"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:57
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:70
 msgid ""
 "Metadata Support: Embed artist name, song title, and cover art in exported "
 "files"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:58
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:71
 msgid ""
 "Repeat Pattern: Set how many times your beat repeats in the exported audio"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:59
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:72
 msgid ""
 "Bug Fix: Fixed issue where multiple drum sounds weren't playing "
 "simultaneously"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:60
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:73
 msgid ""
 "Translation Updates: Updated Spanish, Russian, Georgian, Chinese, Hungarian, "
 "Swedish, and more"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:66
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:79
 msgid "Drum Machine 1.4.0 is here with some good updates! 🥁"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:68
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:81
 msgid ""
 "More pages for longer, more complex beats, because sometimes you need more "
 "than 16 steps!"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:69
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:82
 msgid ""
 "Mobile-friendly improvements, now your drum machine works better on phones "
 "(with showing half of the grid)"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:70
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:83
 msgid ""
 "Goes global! Now translated into 17 languages including Chinese, Russian, "
 "Arabic, Hebrew, and many more"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:76
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:89
 msgid ""
 "This release of Drum Machine 1.3.1 brings significant UI and functionality "
 "improvements:"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:78
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:91
 msgid ""
 "Refactored headerbar and background styling for a flat, integrated visual "
 "experience."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:79
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:92
 msgid ""
 "Enhanced accessibility with improved tooltips and descriptive labels for BPM "
 "and volume controls."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:80
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:93
 msgid ""
 "Redesigned app icon and updated text styling for clearer user interface "
 "elements."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:81
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:94
 msgid ""
 "Optimized layout breakpoints to improve responsiveness and reduce early "
 "scrolling."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:82
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:95
 msgid ""
 "Fixed padding, border-radius, and vertical alignment issues across multiple "
 "controls."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:83
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:96
 msgid ""
 "Updated file dialogs to use the Nautilus file chooser for a more modern "
 "approach."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:84
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:97
 msgid ""
 "Improved keyboard navigation focus and updated tooltips, including dedicated "
 "play and pause hints."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:85
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:98
 msgid ""
 "Transitioned to the Nautilus file chooser for a more contemporary interface."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:86
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:99
 msgid "Now accessible on narrow mobile screens with adaptive UI elements."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:87
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:100
 msgid "Refined app icon, and adjusted brand colors for better contrast."
 msgstr ""
 
@@ -686,40 +723,40 @@ msgid "Failed to remove drum part"
 msgstr ""
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:220
+#: src/window.py:225
 msgid "{} Beats per Minute (BPM)"
 msgstr ""
 
 #. Update button tooltip to show current volume level
-#: src/window.py:229
+#: src/window.py:234
 msgid "{:.0f}% Volume"
 msgstr ""
 
-#: src/window.py:246 src/window.ui:173
+#: src/window.py:251 src/window.ui:173
 msgid "Play"
 msgstr ""
 
-#: src/window.py:250
+#: src/window.py:255
 msgid "Pause"
 msgstr ""
 
-#: src/window.py:297
+#: src/window.py:302
 msgid "Open"
 msgstr ""
 
-#: src/window.py:315
+#: src/window.py:320
 msgid "Added: {}"
 msgstr ""
 
-#: src/window.py:330
+#: src/window.py:335
 msgid "Failed to add custom sound"
 msgstr ""
 
-#: src/window.py:337
+#: src/window.py:342
 msgid "Replaced drum with: {}"
 msgstr ""
 
-#: src/window.py:345
+#: src/window.py:350
 msgid "Failed to replace drum sound"
 msgstr ""
 

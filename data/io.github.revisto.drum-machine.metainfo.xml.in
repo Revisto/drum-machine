@@ -14,12 +14,13 @@
     </p>
     <p>Features:</p>
     <ul>
-      <li>Intuitive grid-based pattern editor</li>
+      <li>Intuitive grid-based pattern editor with infinite pages</li>
+      <li>Custom samples: Add your own drum sounds with MIDI note mapping</li>
       <li>Adjustable BPM control</li>
       <li>Volume control for overall mix</li>
       <li>Save and load patterns</li>
       <li>Multiple drum sounds including kick, snare, hi-hat, and more</li>
-      <li>Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats</li>
+      <li>Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats</li>
       <li>Metadata support for embedding artist name, song title, and cover art</li>
       <li>Keyboard shortcuts for quick access to all functions</li>
     </ul>
@@ -43,12 +44,25 @@
   <url type="homepage">https://github.com/revisto/drum-machine</url>
   <url type="bugtracker">https://github.com/revisto/drum-machine/issues</url>
   <url type="vcs-browser">https://github.com/revisto/drum-machine</url>
-  <update_contact>therevisto_at_gmail.com</update_contact>
+  <update_contact>mailto:therevisto@gmail.com</update_contact>
   <developer id="gmail.com">
     <name>Revisto</name>
     <email>therevisto@gmail.com</email>
   </developer>
   <releases>
+    <release version="2.0.0" date="2025-12-12">
+      <description>
+        <p>Drum Machine 2.0.0 is a major release with custom samples! 🎶</p>
+        <ul>
+          <li>Custom Samples: Add your own drum sounds and map them to specific MIDI notes for export</li>
+          <li>MIDI Export: Export your patterns as MIDI files with proper note mapping</li>
+          <li>Pattern Management: Presets have been refactored to a more flexible pattern system</li>
+          <li>Bug Fixes: Sounds now stop immediately when pausing, disabled export when pattern is empty</li>
+          <li>New Translations: Added Catalan, Greek, and Uzbek languages</li>
+          <li>Translation Updates: Updated Slovenian, Basque, Ukrainian, Georgian, Chinese, Persian, and many more</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.5.0" date="2025-09-05">
       <description>
         <p>Drum Machine 1.5.0 introduces major audio export capabilities! 🎵</p>
