@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-11-26 15:26+0000\n"
-"PO-Revision-Date: 2025-11-27 08:15+0800\n"
+"POT-Creation-Date: 2025-12-13 03:26+0000\n"
+"PO-Revision-Date: 2025-12-13 11:47+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -51,42 +51,47 @@ msgid "Features:"
 msgstr "特性："
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
-msgid "Intuitive grid-based pattern editor"
-msgstr "直观的基于网格的模式编辑器"
+msgid "Intuitive grid-based pattern editor with infinite pages"
+msgstr "直观的基于网格具有无限页面的模式编辑器"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr "自定义采样：使用 MIDI 音符映射添加您自己的击鼓音色"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
 msgstr "可调节的 BPM 控制"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
 msgid "Volume control for overall mix"
 msgstr "整体混音的音量控制"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
 msgid "Save and load patterns"
 msgstr "保存和加载模式"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "多种击鼓音色，包括底鼓、军鼓、踩镲和其它更多音色"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
-msgstr "音频导出功能支持 WAV、FLAC、Ogg 和 MP3 格式"
-
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr "音频和 MIDI 导出功能支持 WAV、FLAC、Ogg、MP3 和 MIDI 格式"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Metadata support for embedding artist name, song title, and cover art"
 msgstr "支持嵌入艺人姓名、曲目标题和封面的元数据"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "用于快速访问所有功能的键盘快捷键"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "以亮色模式加载击鼓模式"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "以暗色模式加载击鼓模式"
 
@@ -466,44 +471,32 @@ msgstr "跳过了 {} 个文件"
 msgid "Default Patterns"
 msgstr "默认模式"
 
-#: src/handlers/file_dialog_handler.py:84
-msgid "No Pattern"
-msgstr "无模式"
-
-#: src/handlers/file_dialog_handler.py:85
-msgid "Please create a drum pattern before exporting audio."
-msgstr "请在导出音频前创建击鼓模式。"
-
-#: src/handlers/file_dialog_handler.py:87
-msgid "_OK"
-msgstr "确定(_O)"
-
-#: src/handlers/file_dialog_handler.py:110
-#: src/handlers/file_dialog_handler.py:187
+#: src/handlers/file_dialog_handler.py:92
+#: src/handlers/file_dialog_handler.py:171
 msgid "MIDI files"
 msgstr "MIDI 文件"
 
-#: src/handlers/file_dialog_handler.py:116
+#: src/handlers/file_dialog_handler.py:98
 msgid "Open MIDI File"
 msgstr "打开 MIDI 文件"
 
-#: src/handlers/file_dialog_handler.py:144
+#: src/handlers/file_dialog_handler.py:127
 msgid "Failed to open file"
 msgstr "打开文件失败"
 
-#: src/handlers/file_dialog_handler.py:181
+#: src/handlers/file_dialog_handler.py:165
 msgid "Failed to load pattern"
 msgstr "加载模式失败"
 
-#: src/handlers/file_dialog_handler.py:195
+#: src/handlers/file_dialog_handler.py:179
 msgid "Save Sequence"
 msgstr "保存序列"
 
-#: src/handlers/file_dialog_handler.py:221
+#: src/handlers/file_dialog_handler.py:205
 msgid "Add Audio Samples"
 msgstr "添加音频采样"
 
-#: src/handlers/file_dialog_handler.py:243
+#: src/handlers/file_dialog_handler.py:227
 msgid "Audio files"
 msgstr "音频文件"
 
@@ -579,45 +572,45 @@ msgstr "选择新声音"
 msgid "Removed drum part: {}"
 msgstr "已移除击鼓部分：{}"
 
-#: src/ui/drum_grid_builder.py:424
+#: src/ui/drum_grid_builder.py:425
 msgid "Failed to remove drum part"
 msgstr "移除击鼓部分失败"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:203
+#: src/window.py:225
 msgid "{} Beats per Minute (BPM)"
 msgstr "每分钟 {} 节拍（BPM）"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:212
+#: src/window.py:234
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% 音量"
 
-#: src/window.py:227 src/window.ui:170
+#: src/window.py:251 src/window.ui:173
 msgid "Play"
 msgstr "播放"
 
-#: src/window.py:231
+#: src/window.py:255
 msgid "Pause"
 msgstr "暂停"
 
-#: src/window.py:278
+#: src/window.py:302
 msgid "Open"
 msgstr "打开"
 
-#: src/window.py:296
+#: src/window.py:320
 msgid "Added: {}"
 msgstr "已添加：{}"
 
-#: src/window.py:311
+#: src/window.py:335
 msgid "Failed to add custom sound"
 msgstr "添加自定义声音失败"
 
-#: src/window.py:318
+#: src/window.py:342
 msgid "Replaced drum with: {}"
 msgstr "已替换击鼓为：{}"
 
-#: src/window.py:326
+#: src/window.py:350
 msgid "Failed to replace drum sound"
 msgstr "替换击鼓声音失败"
 
@@ -655,52 +648,52 @@ msgstr "访问键盘快捷键和应用程序信息"
 msgid "Export Audio…"
 msgstr "导出音频…"
 
-#: src/window.ui:88
+#: src/window.ui:91
 msgctxt "accessibility"
 msgid "Export Audio…"
 msgstr "导出音频…"
 
-#: src/window.ui:89
+#: src/window.ui:92
 msgid "Export Current Drum Pattern as Audio File"
 msgstr "将当前击鼓模式导出为音频文件"
 
-#: src/window.ui:134
+#: src/window.ui:137
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:139 src/window.ui:143
+#: src/window.ui:142 src/window.ui:146
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "以每分钟节拍为单位调节拍子（BPM）"
 
-#: src/window.ui:142
+#: src/window.ui:145
 msgid "Tempo"
 msgstr "拍子"
 
-#: src/window.ui:184
+#: src/window.ui:187
 msgid "Adjust Volume"
 msgstr "调整音量"
 
-#: src/window.ui:207
+#: src/window.ui:210
 msgid "Reset"
 msgstr "重置"
 
-#: src/window.ui:208
+#: src/window.ui:211
 msgid "Reset the Drum Sequence"
 msgstr "重置击鼓序列"
 
-#: src/window.ui:223
+#: src/window.ui:226
 msgid "_Add Samples…"
 msgstr "添加采样(_A)…"
 
-#: src/window.ui:227
+#: src/window.ui:230
 msgid "_Save Pattern…"
 msgstr "保存模式(_S)…"
 
-#: src/window.ui:233
+#: src/window.ui:236
 msgid "_Keyboard Shortcuts"
 msgstr "键盘快捷键(_K)"
 
-#: src/window.ui:237
+#: src/window.ui:240
 msgid "_About Drum Machine"
 msgstr "关于击鼓器(_A)"
 
@@ -868,6 +861,15 @@ msgstr "选择文件…"
 #: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr "取消导出"
+
+#~ msgid "No Pattern"
+#~ msgstr "无模式"
+
+#~ msgid "Please create a drum pattern before exporting audio."
+#~ msgstr "请在导出音频前创建击鼓模式。"
+
+#~ msgid "_OK"
+#~ msgstr "确定(_O)"
 
 #~ msgid "Open Preset"
 #~ msgstr "打开预设"
