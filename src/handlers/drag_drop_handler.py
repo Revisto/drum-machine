@@ -68,13 +68,13 @@ class DragDropHandler:
         drag_source.connect("drag-end", self._on_reorder_drag_end, button)
         button.add_controller(drag_source)
 
-    def setup_column_reorder_drop_target(self, drum_parts_column: Gtk.Box) -> None:
+    def setup_column_reorder_drop_target(self, column_widget: Gtk.Box) -> None:
         """Setup drop target on the entire drum parts column for reordering"""
         drop_target = Gtk.DropTarget.new(GObject.TYPE_STRING, Gdk.DragAction.MOVE)
         drop_target.connect("drop", self._on_column_reorder_drop)
         drop_target.connect("motion", self._on_column_reorder_motion)
         drop_target.connect("leave", self._on_column_reorder_leave)
-        drum_parts_column.add_controller(drop_target)
+        column_widget.add_controller(drop_target)
 
     def _on_reorder_drag_prepare(
         self,
