@@ -221,6 +221,32 @@ class DrumPartManager:
             logging.error(f"Error removing drum part: {e}")
             return False
 
+    def reorder_part(self, part_id: str, new_index: int) -> bool:
+        """Move a drum part to a new position in the list"""
+        part = self.get_part_by_id(part_id)
+        if not part:
+            return False
+
+        try:
+            current_index = self._drum_parts.index(part)
+            if current_index == new_index:
+                return True
+
+            self._drum_parts.remove(part)
+            self._drum_parts.insert(new_index, part)
+            self._save_drum_parts()
+            return True
+        except Exception as e:
+            logging.error(f"Error reordering drum part: {e}")
+            return False
+
+    def get_part_index(self, part_id: str) -> int:
+        """Get the index of a drum part in the list"""
+        for i, part in enumerate(self._drum_parts):
+            if part.id == part_id:
+                return i
+        return -1
+
     def replace_part(
         self, part_id: str, source_file: str, new_name: str
     ) -> Optional[DrumPart]:

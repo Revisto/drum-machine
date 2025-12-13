@@ -20,7 +20,7 @@
 from pathlib import Path
 from typing import Optional
 import logging
-from gi.repository import Gtk, Gdk
+from gi.repository import Gtk, Gdk, GObject
 from gettext import gettext as _
 from ..config.constants import SUPPORTED_INPUT_AUDIO_FORMATS
 from ..utils.name_utils import extract_name_from_path
@@ -30,6 +30,7 @@ class DragDropHandler:
     def __init__(self, window) -> None:
         self.window = window
         self.new_drum_placeholder: Optional[Gtk.Widget] = None
+        self._dragged_drum_id: Optional[str] = None
 
     def setup_drag_drop(
         self, target_widget: Optional[Gtk.Widget] = None
@@ -53,6 +54,140 @@ class DragDropHandler:
         drop_target.connect("enter", self._on_button_drag_enter, button)
         drop_target.connect("leave", self._on_button_drag_leave, button)
         button.add_controller(drop_target)
+
+    def setup_button_reorder_drag_source(self, button, drum_id):
+        """Setup drag source on drum button for reordering"""
+        drag_source = Gtk.DragSource()
+        drag_source.set_actions(Gdk.DragAction.MOVE)
+        drag_source.connect("prepare", self._on_reorder_drag_prepare, drum_id)
+        drag_source.connect("drag-begin", self._on_reorder_drag_begin, drum_id, button)
+        drag_source.connect("drag-end", self._on_reorder_drag_end, button)
+        button.add_controller(drag_source)
+
+    def setup_column_reorder_drop_target(self, drum_parts_column):
+        """Setup drop target on the entire drum parts column for reordering"""
+        drop_target = Gtk.DropTarget.new(GObject.TYPE_STRING, Gdk.DragAction.MOVE)
+        drop_target.connect("drop", self._on_column_reorder_drop)
+        drop_target.connect("motion", self._on_column_reorder_motion)
+        drop_target.connect("leave", self._on_column_reorder_leave)
+        drum_parts_column.add_controller(drop_target)
+
+    def _on_reorder_drag_prepare(self, drag_source, x, y, drum_id):
+        """Prepare data for drag"""
+        self._dragged_drum_id = drum_id
+        content = Gdk.ContentProvider.new_for_value(drum_id)
+        return content
+
+    def _on_reorder_drag_begin(self, drag_source, drag, drum_id, button):
+        """Handle drag begin for reordering"""
+        button.add_css_class("drag-source-active")
+        icon = Gtk.DragIcon.get_for_drag(drag)
+        label = Gtk.Label(label=button.get_label())
+        icon.set_child(label)
+
+    def _on_reorder_drag_end(self, drag_source, drag, delete_data, button):
+        """Handle drag end"""
+        button.remove_css_class("drag-source-active")
+        self._dragged_drum_id = None
+        self._clear_all_insertion_indicators()
+
+    def _get_insertion_index_and_widget(self, column, y):
+        """Calculate insertion index based on y position in column.
+        Returns (index, widget_to_show_line_above) or (index, None) for end."""
+        drum_parts_column = column
+        if not drum_parts_column:
+            return 0, None
+
+        child = drum_parts_column.get_first_child()
+        index = 0
+
+        while child:
+            child_y = child.get_allocation().y
+            child_height = child.get_height()
+            child_center = child_y + child_height / 2
+
+            if y < child_center:
+                return index, child
+
+            index += 1
+            child = child.get_next_sibling()
+
+        last_child = drum_parts_column.get_last_child()
+        return index, last_child
+
+    def _on_column_reorder_motion(self, drop_target, x, y):
+        """Handle drag motion over column - show insertion line"""
+        if not self._dragged_drum_id:
+            return Gdk.DragAction.MOVE
+
+        self._clear_all_insertion_indicators()
+
+        drum_parts_column = self.window.drum_grid_builder.drum_parts_column
+        insert_index, widget = self._get_insertion_index_and_widget(
+            drum_parts_column, y
+        )
+
+        if widget:
+            child = drum_parts_column.get_first_child()
+            widget_index = 0
+            while child:
+                if child == widget:
+                    break
+                widget_index += 1
+                child = child.get_next_sibling()
+
+            if insert_index > widget_index:
+                widget.add_css_class("insert-below")
+            else:
+                widget.add_css_class("insert-above")
+
+        return Gdk.DragAction.MOVE
+
+    def _on_column_reorder_leave(self, drop_target):
+        """Handle drag leave from column"""
+        self._clear_all_insertion_indicators()
+
+    def _clear_all_insertion_indicators(self):
+        """Clear all insertion indicators from drum parts column"""
+        drum_parts_column = self.window.drum_grid_builder.drum_parts_column
+        if not drum_parts_column:
+            return
+
+        child = drum_parts_column.get_first_child()
+        while child:
+            child.remove_css_class("insert-above")
+            child.remove_css_class("insert-below")
+            child = child.get_next_sibling()
+
+    def _on_column_reorder_drop(self, drop_target, value, x, y):
+        """Handle drop for reordering drum parts"""
+        source_drum_id = value
+        self._clear_all_insertion_indicators()
+
+        if not source_drum_id:
+            return False
+
+        drum_part_manager = self.window.sound_service.drum_part_manager
+        source_index = drum_part_manager.get_part_index(source_drum_id)
+
+        if source_index == -1:
+            return False
+
+        drum_parts_column = self.window.drum_grid_builder.drum_parts_column
+        target_index, _ = self._get_insertion_index_and_widget(drum_parts_column, y)
+
+        if source_index < target_index:
+            target_index -= 1
+
+        if source_index == target_index:
+            return False
+
+        if drum_part_manager.reorder_part(source_drum_id, target_index):
+            self.window.drum_grid_builder.rebuild_drum_parts_column()
+            self.window.drum_grid_builder.rebuild_carousel()
+            return True
+
+        return False
 
     def _on_drag_enter(self, _drop_target, _x, _y):
         self.window.add_css_class("drag-hover")

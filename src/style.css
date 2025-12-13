@@ -77,3 +77,22 @@
 .export-button {
     transition: 200ms ease-in-out;
 }
+
+.drag-source-active {
+    opacity: 0.5;
+}
+
+/* Remove default GTK drop target outline from column */
+box:drop(active) {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.insert-above {
+    box-shadow: 0 -3px 0 0 @accent_color;
+}
+
+.insert-below {
+    box-shadow: 0 3px 0 0 @accent_color;
+}
