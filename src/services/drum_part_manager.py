@@ -222,9 +222,21 @@ class DrumPartManager:
             return False
 
     def reorder_part(self, part_id: str, new_index: int) -> bool:
-        """Move a drum part to a new position in the list"""
+        """Move a drum part to a new position in the list.
+
+        Args:
+            part_id: The ID of the drum part to move
+            new_index: The target index (0 to len-1)
+
+        Returns:
+            True if reorder was successful, False otherwise
+        """
         part = self.get_part_by_id(part_id)
         if not part:
+            return False
+
+        if new_index < 0 or new_index >= len(self._drum_parts):
+            logging.warning(f"Invalid reorder index: {new_index}")
             return False
 
         try:
