@@ -18,9 +18,9 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from pathlib import Path
-from typing import Optional
+from typing import Optional, List, Tuple
 import logging
-from gi.repository import Gtk, Gdk, GObject
+from gi.repository import Gtk, Gdk, Gio, GObject
 from gettext import gettext as _
 from ..config.constants import SUPPORTED_INPUT_AUDIO_FORMATS
 from ..utils.name_utils import extract_name_from_path
@@ -47,7 +47,9 @@ class DragDropHandler:
         target_widget.add_controller(drop_target)
         return drop_target
 
-    def setup_button_drop_target(self, button, drum_id=None):
+    def setup_button_drop_target(
+        self, button: Gtk.Button, drum_id: Optional[str] = None
+    ) -> None:
         """Setup drop target on individual drum button for replacement"""
         drop_target = Gtk.DropTarget.new(Gdk.FileList, Gdk.DragAction.COPY)
         drop_target.connect("drop", self._on_button_drop, drum_id)
@@ -55,7 +57,9 @@ class DragDropHandler:
         drop_target.connect("leave", self._on_button_drag_leave, button)
         button.add_controller(drop_target)
 
-    def setup_button_reorder_drag_source(self, button, drum_id):
+    def setup_button_reorder_drag_source(
+        self, button: Gtk.Button, drum_id: str
+    ) -> None:
         """Setup drag source on drum button for reordering"""
         drag_source = Gtk.DragSource()
         drag_source.set_actions(Gdk.DragAction.MOVE)
@@ -64,7 +68,7 @@ class DragDropHandler:
         drag_source.connect("drag-end", self._on_reorder_drag_end, button)
         button.add_controller(drag_source)
 
-    def setup_column_reorder_drop_target(self, drum_parts_column):
+    def setup_column_reorder_drop_target(self, drum_parts_column: Gtk.Box) -> None:
         """Setup drop target on the entire drum parts column for reordering"""
         drop_target = Gtk.DropTarget.new(GObject.TYPE_STRING, Gdk.DragAction.MOVE)
         drop_target.connect("drop", self._on_column_reorder_drop)
@@ -72,33 +76,52 @@ class DragDropHandler:
         drop_target.connect("leave", self._on_column_reorder_leave)
         drum_parts_column.add_controller(drop_target)
 
-    def _on_reorder_drag_prepare(self, drag_source, x, y, drum_id):
+    def _on_reorder_drag_prepare(
+        self,
+        drag_source: Gtk.DragSource,
+        x: float,
+        y: float,
+        drum_id: str,
+    ) -> Gdk.ContentProvider:
         """Prepare data for drag"""
         self._dragged_drum_id = drum_id
         content = Gdk.ContentProvider.new_for_value(drum_id)
         return content
 
-    def _on_reorder_drag_begin(self, drag_source, drag, drum_id, button):
+    def _on_reorder_drag_begin(
+        self,
+        drag_source: Gtk.DragSource,
+        drag: Gdk.Drag,
+        drum_id: str,
+        button: Gtk.Button,
+    ) -> None:
         """Handle drag begin for reordering"""
         button.add_css_class("drag-source-active")
         icon = Gtk.DragIcon.get_for_drag(drag)
         label = Gtk.Label(label=button.get_label())
         icon.set_child(label)
 
-    def _on_reorder_drag_end(self, drag_source, drag, delete_data, button):
+    def _on_reorder_drag_end(
+        self,
+        drag_source: Gtk.DragSource,
+        drag: Gdk.Drag,
+        delete_data: bool,
+        button: Gtk.Button,
+    ) -> None:
         """Handle drag end"""
         button.remove_css_class("drag-source-active")
         self._dragged_drum_id = None
         self._clear_all_insertion_indicators()
 
-    def _get_insertion_index_and_widget(self, column, y):
+    def _get_insertion_index_and_widget(
+        self, column: Gtk.Box, y: float
+    ) -> Tuple[int, Optional[Gtk.Widget]]:
         """Calculate insertion index based on y position in column.
-        Returns (index, widget_to_show_line_above) or (index, None) for end."""
-        drum_parts_column = column
-        if not drum_parts_column:
+        Returns (index, widget_to_show_line_on) or (index, None) for end."""
+        if not column:
             return 0, None
 
-        child = drum_parts_column.get_first_child()
+        child = column.get_first_child()
         index = 0
 
         while child:
@@ -112,10 +135,12 @@ class DragDropHandler:
             index += 1
             child = child.get_next_sibling()
 
-        last_child = drum_parts_column.get_last_child()
+        last_child = column.get_last_child()
         return index, last_child
 
-    def _on_column_reorder_motion(self, drop_target, x, y):
+    def _on_column_reorder_motion(
+        self, drop_target: Gtk.DropTarget, x: float, y: float
+    ) -> Gdk.DragAction:
         """Handle drag motion over column - show insertion line"""
         if not self._dragged_drum_id:
             return Gdk.DragAction.MOVE
@@ -143,11 +168,11 @@ class DragDropHandler:
 
         return Gdk.DragAction.MOVE
 
-    def _on_column_reorder_leave(self, drop_target):
+    def _on_column_reorder_leave(self, drop_target: Gtk.DropTarget) -> None:
         """Handle drag leave from column"""
         self._clear_all_insertion_indicators()
 
-    def _clear_all_insertion_indicators(self):
+    def _clear_all_insertion_indicators(self) -> None:
         """Clear all insertion indicators from drum parts column"""
         drum_parts_column = self.window.drum_grid_builder.drum_parts_column
         if not drum_parts_column:
@@ -159,7 +184,9 @@ class DragDropHandler:
             child.remove_css_class("insert-below")
             child = child.get_next_sibling()
 
-    def _on_column_reorder_drop(self, drop_target, value, x, y):
+    def _on_column_reorder_drop(
+        self, drop_target: Gtk.DropTarget, value: str, x: float, y: float
+    ) -> bool:
         """Handle drop for reordering drum parts"""
         source_drum_id = value
         self._clear_all_insertion_indicators()
@@ -189,26 +216,34 @@ class DragDropHandler:
 
         return False
 
-    def _on_drag_enter(self, _drop_target, _x, _y):
+    def _on_drag_enter(
+        self, drop_target: Gtk.DropTarget, x: float, y: float
+    ) -> Gdk.DragAction:
         self.window.add_css_class("drag-hover")
         self.new_drum_placeholder = (
             self.window.drum_grid_builder.create_new_drum_placeholder()
         )
         return Gdk.DragAction.COPY
 
-    def _on_button_drag_enter(self, _drop_target, _x, _y, button):
+    def _on_button_drag_enter(
+        self, drop_target: Gtk.DropTarget, x: float, y: float, button: Gtk.Button
+    ) -> Gdk.DragAction:
         """Handle drag enter on drum button - highlight for replacement"""
         button.add_css_class("drag-over-replace")
         return Gdk.DragAction.COPY
 
-    def _on_button_drag_leave(self, _drop_target, button):
+    def _on_button_drag_leave(
+        self, drop_target: Gtk.DropTarget, button: Gtk.Button
+    ) -> None:
         """Handle drag leave on drum button - remove highlight"""
         button.remove_css_class("drag-over-replace")
 
-    def _on_drag_leave(self, _drop_target):
+    def _on_drag_leave(self, drop_target: Gtk.DropTarget) -> None:
         self._clear_drag_feedback()
 
-    def _on_window_drop(self, _drop_target, value, _x, _y):
+    def _on_window_drop(
+        self, drop_target: Gtk.DropTarget, value: Gdk.FileList, x: float, y: float
+    ) -> bool:
         """Handle drop on window - add new drum(s)"""
         self._clear_drag_feedback()
 
@@ -216,17 +251,24 @@ class DragDropHandler:
         files = list(files_list)
         return self.handle_multiple_files_drop(files, None)
 
-    def _on_button_drop(self, _drop_target, value, _x, _y, drum_id):
+    def _on_button_drop(
+        self,
+        drop_target: Gtk.DropTarget,
+        value: Gdk.FileList,
+        x: float,
+        y: float,
+        drum_id: Optional[str],
+    ) -> bool:
         """Handle drop on drum button - replace drum or add multiple"""
         files_list = value.get_files()
         files = list(files_list)
         return self.handle_multiple_files_drop(files, drum_id)
 
-    def handle_replacement_file_selected(self, file_path, drum_id):
+    def handle_replacement_file_selected(self, file_path: str, drum_id: str) -> bool:
         """Handle replacement file selected from file chooser
 
         Args:
-            file_path: Path to the selected file (str)
+            file_path: Path to the selected file
             drum_id: ID of the drum part to replace
         """
         if not file_path:
@@ -252,7 +294,7 @@ class DragDropHandler:
 
         return result
 
-    def _validate_file_format(self, path):
+    def _validate_file_format(self, path: Path) -> bool:
         """Validate file format is supported"""
         if path.suffix.lower() not in SUPPORTED_INPUT_AUDIO_FORMATS:
             logging.warning(
@@ -262,7 +304,7 @@ class DragDropHandler:
             return False
         return True
 
-    def _validate_file_access(self, path):
+    def _validate_file_access(self, path: Path) -> bool:
         """Validate file exists, is accessible, and reasonable size"""
         if not path.exists():
             logging.error(f"Dropped file not found: {path}")
@@ -284,12 +326,14 @@ class DragDropHandler:
 
         return True
 
-    def handle_multiple_files_drop(self, files, drum_id_to_replace):
+    def handle_multiple_files_drop(
+        self, files: List[Gio.File], drum_id_to_replace: Optional[str]
+    ) -> bool:
         """Handle files dropped at once"""
         if not files:
             return False
 
-        valid_files = []
+        valid_files: List[Path] = []
         skipped_count = 0
 
         # Filter and validate all files first
@@ -311,11 +355,16 @@ class DragDropHandler:
 
         return self._handle_files(valid_files, skipped_count, drum_id_to_replace)
 
-    def _handle_files(self, valid_files, skipped_count, drum_id_to_replace):
+    def _handle_files(
+        self,
+        valid_files: List[Path],
+        skipped_count: int,
+        drum_id_to_replace: Optional[str],
+    ) -> bool:
         """Handle files - replacement and additions"""
         success_count = 0
         replacement_done = False
-        successful_additions = []
+        successful_additions: List[str] = []
 
         # Process all files
         for i, path in enumerate(valid_files):
@@ -343,7 +392,6 @@ class DragDropHandler:
                 skipped_count += 1
                 self.window.show_toast(_("Error processing file: {}").format(str(e)))
 
-        # Show summary notifications for multiple files
         if len(valid_files) > 1:
             self._show_files_notifications(
                 success_count, skipped_count, replacement_done, successful_additions
@@ -352,8 +400,12 @@ class DragDropHandler:
         return success_count > 0
 
     def _show_files_notifications(
-        self, success_count, skipped_count, replacement_done, successful_additions
-    ):
+        self,
+        success_count: int,
+        skipped_count: int,
+        replacement_done: bool,
+        successful_additions: List[str],
+    ) -> None:
         """Show notifications for file operations"""
         if replacement_done:
             # If replacement occurred, don't count it in additions
@@ -385,7 +437,7 @@ class DragDropHandler:
             # Only show skipped message if no replacement happened
             self.window.show_toast(_("{} files skipped").format(skipped_count))
 
-    def _clear_drag_feedback(self):
+    def _clear_drag_feedback(self) -> None:
         """Clear all drag feedback visuals"""
         self.window.remove_css_class("drag-hover")
 
