@@ -118,6 +118,10 @@ class DrumGridBuilder:
         for drum_part in drum_part_manager.get_all_parts():
             instrument_button = self.create_instrument_button(drum_part)
             drum_parts.append(instrument_button)
+
+        # Setup drop target on the column for reordering
+        self.window.drag_drop_handler.setup_column_reorder_drop_target(drum_parts)
+
         return drum_parts
 
     def _create_carousel_drum_rows(self):
@@ -516,6 +520,11 @@ class DrumGridBuilder:
 
         # Apply styling based on file availability
         self._apply_button_styling(button, drum_part)
+
+        # Setup drag source for reordering
+        self.window.drag_drop_handler.setup_button_reorder_drag_source(
+            button, drum_part.id
+        )
 
         return self._create_button_container(button)
 
