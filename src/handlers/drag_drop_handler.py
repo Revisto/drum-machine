@@ -113,6 +113,17 @@ class DragDropHandler:
         self._dragged_drum_id = None
         self._clear_all_insertion_indicators()
 
+    def _get_widget_index(self, column: Gtk.Box, widget: Gtk.Widget) -> int:
+        """Get the index of a widget within its parent column"""
+        child = column.get_first_child()
+        index = 0
+        while child:
+            if child == widget:
+                return index
+            index += 1
+            child = child.get_next_sibling()
+        return -1
+
     def _get_insertion_index_and_widget(
         self, column: Gtk.Box, y: float
     ) -> Tuple[int, Optional[Gtk.Widget]]:
@@ -153,14 +164,7 @@ class DragDropHandler:
         )
 
         if widget:
-            child = drum_parts_column.get_first_child()
-            widget_index = 0
-            while child:
-                if child == widget:
-                    break
-                widget_index += 1
-                child = child.get_next_sibling()
-
+            widget_index = self._get_widget_index(drum_parts_column, widget)
             if insert_index > widget_index:
                 widget.add_css_class("insert-below")
             else:
