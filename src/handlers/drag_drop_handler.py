@@ -60,7 +60,12 @@ class DragDropHandler:
     def setup_button_reorder_drag_source(
         self, button: Gtk.Button, drum_id: str
     ) -> None:
-        """Setup drag source on drum button for reordering"""
+        """Setup drag source on drum button for reordering.
+
+        Args:
+            button: The drum part button that can be dragged
+            drum_id: The ID of the drum part associated with this button
+        """
         drag_source = Gtk.DragSource()
         drag_source.set_actions(Gdk.DragAction.MOVE)
         drag_source.connect("prepare", self._on_reorder_drag_prepare, drum_id)
