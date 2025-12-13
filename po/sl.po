@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-07 03:26+0000\n"
-"PO-Revision-Date: 2025-12-07 10:28+0100\n"
+"POT-Creation-Date: 2025-12-13 03:26+0000\n"
+"PO-Revision-Date: 2025-12-13 12:48+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? "
 "3 : 0);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 3.8\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
@@ -50,42 +50,46 @@ msgid "Features:"
 msgstr "Funkcionalnosti:"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
-msgid "Intuitive grid-based pattern editor"
-msgstr "Intuitiven urejevalnik vzorcev, ki temelji na mreži"
+msgid "Intuitive grid-based pattern editor with infinite pages"
+msgstr "Intuitiven urejevalnik vzorcev, ki temelji na mreži, z neskončnimi stranmi"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr "Vzorci po meri: dodajte svoje lastne bobnarske zvoke z MIDI-preslikavo not"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
 msgstr "Nastavljiv nadzor BPM"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
 msgid "Volume control for overall mix"
 msgstr "Nadzor glasnosti za celoten miks"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
 msgid "Save and load patterns"
 msgstr "Shranite in naložite vzorce"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Več zvokov bobnov, vključno z udarcem, zanko, činelo in še več"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
-msgstr "Funkcija izvoza zvoka s podporo za zapise WAV, FLAC, Ogg in MP3"
-
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid "Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr "Funkcija izvoza zvoka in MIDI s podporo za zapise WAV, FLAC, Ogg, MP3 in MIDI"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Metadata support for embedding artist name, song title, and cover art"
 msgstr "Podpora za metapodatke za vdelavo imen izvajalcev, naslova pesmi in naslovnice"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "Tipkovne bližnjice za hiter dostop do vseh funkcij"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "Vzorec bobna naložen v svetlem načinu"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Vzorec bobna naložen v temnem načinu"
 
@@ -466,43 +470,31 @@ msgstr "{} preskočenih datotek"
 msgid "Default Patterns"
 msgstr "Privzeti vzorci"
 
-#: src/handlers/file_dialog_handler.py:84
-msgid "No Pattern"
-msgstr "Brez vzorca"
-
-#: src/handlers/file_dialog_handler.py:85
-msgid "Please create a drum pattern before exporting audio."
-msgstr "Pred izvozom zvoka ustvarite vzorec bobna."
-
-#: src/handlers/file_dialog_handler.py:87
-msgid "_OK"
-msgstr "V _redu"
-
-#: src/handlers/file_dialog_handler.py:110 src/handlers/file_dialog_handler.py:187
+#: src/handlers/file_dialog_handler.py:92 src/handlers/file_dialog_handler.py:171
 msgid "MIDI files"
 msgstr "Datoteke MIDI"
 
-#: src/handlers/file_dialog_handler.py:116
+#: src/handlers/file_dialog_handler.py:98
 msgid "Open MIDI File"
 msgstr "Odpri datoteko MIDI"
 
-#: src/handlers/file_dialog_handler.py:144
+#: src/handlers/file_dialog_handler.py:127
 msgid "Failed to open file"
 msgstr "Ni mogoče odpreti datoteke"
 
-#: src/handlers/file_dialog_handler.py:181
+#: src/handlers/file_dialog_handler.py:165
 msgid "Failed to load pattern"
 msgstr "Nalaganje vzorca ni uspelo"
 
-#: src/handlers/file_dialog_handler.py:195
+#: src/handlers/file_dialog_handler.py:179
 msgid "Save Sequence"
 msgstr "Shrani zaporedje"
 
-#: src/handlers/file_dialog_handler.py:221
+#: src/handlers/file_dialog_handler.py:205
 msgid "Add Audio Samples"
 msgstr "Dodaj zvočne vzorce"
 
-#: src/handlers/file_dialog_handler.py:243
+#: src/handlers/file_dialog_handler.py:227
 msgid "Audio files"
 msgstr "Zvočne datoteke"
 
@@ -578,45 +570,45 @@ msgstr "Izberite nov zvok"
 msgid "Removed drum part: {}"
 msgstr "Odstranjen bobnarski del: {}"
 
-#: src/ui/drum_grid_builder.py:424
+#: src/ui/drum_grid_builder.py:425
 msgid "Failed to remove drum part"
 msgstr "Ni uspelo odstraniti bobnarskega dela"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:203
+#: src/window.py:225
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} udarcev na minuto (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:212
+#: src/window.py:234
 msgid "{:.0f}% Volume"
 msgstr "Glasnost {:.0f} %"
 
-#: src/window.py:227 src/window.ui:170
+#: src/window.py:251 src/window.ui:173
 msgid "Play"
 msgstr "Predvajaj"
 
-#: src/window.py:231
+#: src/window.py:255
 msgid "Pause"
 msgstr "Premor"
 
-#: src/window.py:278
+#: src/window.py:302
 msgid "Open"
 msgstr "Odpri"
 
-#: src/window.py:296
+#: src/window.py:320
 msgid "Added: {}"
 msgstr "Dodano: {}"
 
-#: src/window.py:311
+#: src/window.py:335
 msgid "Failed to add custom sound"
 msgstr "Dodajanje zvoka po meri ni uspelo"
 
-#: src/window.py:318
+#: src/window.py:342
 msgid "Replaced drum with: {}"
 msgstr "Boben zamenjan z: {}"
 
-#: src/window.py:326
+#: src/window.py:350
 msgid "Failed to replace drum sound"
 msgstr "Zamenjava zvoka bobnov ni uspela"
 
@@ -654,52 +646,52 @@ msgstr "Dostop do tipkovnih bližnjic in informacij o programih"
 msgid "Export Audio…"
 msgstr "Izvozi zvok …"
 
-#: src/window.ui:88
+#: src/window.ui:91
 msgctxt "accessibility"
 msgid "Export Audio…"
 msgstr "Izvozi zvok …"
 
-#: src/window.ui:89
+#: src/window.ui:92
 msgid "Export Current Drum Pattern as Audio File"
 msgstr "Shrani trenutni vzorec bobna kot zvočno datoteko"
 
-#: src/window.ui:134
+#: src/window.ui:137
 msgid "BPM"
 msgstr "UNM (BPM)"
 
-#: src/window.ui:139 src/window.ui:143
+#: src/window.ui:142 src/window.ui:146
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Prilagodi tempo v udarcih na minuto (BPM)"
 
-#: src/window.ui:142
+#: src/window.ui:145
 msgid "Tempo"
 msgstr "Tempo"
 
-#: src/window.ui:184
+#: src/window.ui:187
 msgid "Adjust Volume"
 msgstr "Prilagodi glasnost"
 
-#: src/window.ui:207
+#: src/window.ui:210
 msgid "Reset"
 msgstr "Ponastavi"
 
-#: src/window.ui:208
+#: src/window.ui:211
 msgid "Reset the Drum Sequence"
 msgstr "Ponastavi zaporedje bobna"
 
-#: src/window.ui:223
+#: src/window.ui:226
 msgid "_Add Samples…"
 msgstr "_Dodaj vzorce …"
 
-#: src/window.ui:227
+#: src/window.ui:230
 msgid "_Save Pattern…"
 msgstr "_Shrani vzorec …"
 
-#: src/window.ui:233
+#: src/window.ui:236
 msgid "_Keyboard Shortcuts"
 msgstr "_Tipkovne bližnjice"
 
-#: src/window.ui:237
+#: src/window.ui:240
 msgid "_About Drum Machine"
 msgstr "_O programu Bobnarski stroj"
 
