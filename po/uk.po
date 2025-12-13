@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-11-28 15:26+0000\n"
-"PO-Revision-Date: 2025-11-28 20:44+0200\n"
+"POT-Creation-Date: 2025-12-13 15:25+0000\n"
+"PO-Revision-Date: 2025-12-13 20:29+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -27,11 +27,10 @@ msgstr "Драм-машина"
 
 #. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.revisto.drum-machine.desktop.in:9
-msgid ""
-"drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
 msgstr ""
-"drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;ударні"
-";барабани;секвенсер;ритм;музика;партитура;такти;перкусія;цикл;грув;"
+"drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;ударні;"
+"барабани;секвенсер;ритм;музика;партитура;такти;перкусія;цикл;грув;"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:7
 msgid "Create and play drum beats"
@@ -55,46 +54,56 @@ msgid "Features:"
 msgstr "Можливості:"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
-msgid "Intuitive grid-based pattern editor"
-msgstr "Зручний редактор партитур на основі сітки"
+#| msgid "Intuitive grid-based pattern editor"
+msgid "Intuitive grid-based pattern editor with infinite pages"
+msgstr ""
+"Зручний редактор партитур на основі сітки із нескінченною кількістю сторінок"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr ""
+"Нетипові семпли: додайте ваші власні перкусійні звуки з прив'язкою до нот MIDI"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
 msgstr "Гнучке керування частотою ударів"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
 msgid "Volume control for overall mix"
 msgstr "Керування гучністю для загального мікшування"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
 msgid "Save and load patterns"
 msgstr "Зберігання та завантаження партитур"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Кілька звуків барабанів, зокрема удар, малий барабан, хай-хет тощо"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
-msgstr ""
-"Можливість експортування звукових даних з підтримкою форматів WAV, FLAC, Ogg "
-"та MP3"
-
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+#| msgid ""
+#| "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr ""
+"Експортування звукових даних та MIDI з підтримкою форматів WAV, FLAC, Ogg,"
+" MP3 і MIDI"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Metadata support for embedding artist name, song title, and cover art"
 msgstr ""
 "Підтримка метаданих для вбудовування імені виконавця, назви композиції та "
 "зображення обкладинки"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "Клавіатурні скорочення для доступу до усіх можливостей"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "Партитуру ударних завантажено у світлому режимі"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Партитуру ударних завантажено у темному режимі"
 
@@ -480,47 +489,32 @@ msgstr "{} файлів пропущено"
 msgid "Default Patterns"
 msgstr "Типові партитури"
 
-#: src/handlers/file_dialog_handler.py:84
-msgid "No Pattern"
-msgstr "Без партитури"
-
-#: src/handlers/file_dialog_handler.py:85
-msgid "Please create a drum pattern before exporting audio."
-msgstr ""
-"Будь ласка, створіть партитуру уданих, перш ніж експортувати звукові дані."
-
-#: src/handlers/file_dialog_handler.py:87
-msgid "_OK"
-msgstr "_Гаразд"
-
-#: src/handlers/file_dialog_handler.py:110
-#: src/handlers/file_dialog_handler.py:187
+#: src/handlers/file_dialog_handler.py:92
+#: src/handlers/file_dialog_handler.py:171
 msgid "MIDI files"
 msgstr "файли MIDI"
 
-#: src/handlers/file_dialog_handler.py:116
+#: src/handlers/file_dialog_handler.py:98
 msgid "Open MIDI File"
 msgstr "Відкрити файл MIDI"
 
-#: src/handlers/file_dialog_handler.py:144
-#| msgid "Failed to replace sound"
+#: src/handlers/file_dialog_handler.py:127
 msgid "Failed to open file"
 msgstr "Не вдалося відкрити файл"
 
-#: src/handlers/file_dialog_handler.py:181
-#| msgid "Save and load patterns"
+#: src/handlers/file_dialog_handler.py:165
 msgid "Failed to load pattern"
 msgstr "Не вдалося завантажити партитуру"
 
-#: src/handlers/file_dialog_handler.py:195
+#: src/handlers/file_dialog_handler.py:179
 msgid "Save Sequence"
 msgstr "Зберегти послідовність"
 
-#: src/handlers/file_dialog_handler.py:221
+#: src/handlers/file_dialog_handler.py:205
 msgid "Add Audio Samples"
 msgstr "Додати звукові семпли"
 
-#: src/handlers/file_dialog_handler.py:243
+#: src/handlers/file_dialog_handler.py:227
 msgid "Audio files"
 msgstr "файли звукових даних"
 
@@ -596,45 +590,45 @@ msgstr "Вибрати новий звук"
 msgid "Removed drum part: {}"
 msgstr "Вилучено партитуру ударних: {}"
 
-#: src/ui/drum_grid_builder.py:424
+#: src/ui/drum_grid_builder.py:425
 msgid "Failed to remove drum part"
 msgstr "Не вдалося вилучити партитуру ударних"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:203
+#: src/window.py:225
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} тактів на хвилину (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:212
+#: src/window.py:234
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% гучності"
 
-#: src/window.py:227 src/window.ui:170
+#: src/window.py:251 src/window.ui:173
 msgid "Play"
 msgstr "Пуск"
 
-#: src/window.py:231
+#: src/window.py:255
 msgid "Pause"
 msgstr "Пауза"
 
-#: src/window.py:278
+#: src/window.py:302
 msgid "Open"
 msgstr "Відкрити"
 
-#: src/window.py:296
+#: src/window.py:320
 msgid "Added: {}"
 msgstr "Додано: {}"
 
-#: src/window.py:311
+#: src/window.py:335
 msgid "Failed to add custom sound"
 msgstr "Не вдалося додати нетиповий звук"
 
-#: src/window.py:318
+#: src/window.py:342
 msgid "Replaced drum with: {}"
 msgstr "Замінено ударні на: {}"
 
-#: src/window.py:326
+#: src/window.py:350
 msgid "Failed to replace drum sound"
 msgstr "Не вдалося замінити звук ударних"
 
@@ -672,52 +666,52 @@ msgstr "Доступ до клавіатурних скорочень та ві�
 msgid "Export Audio…"
 msgstr "Експортувати звукові дані…"
 
-#: src/window.ui:88
+#: src/window.ui:91
 msgctxt "accessibility"
 msgid "Export Audio…"
 msgstr "Експортувати звукові дані…"
 
-#: src/window.ui:89
+#: src/window.ui:92
 msgid "Export Current Drum Pattern as Audio File"
 msgstr "Експортувати поточну партитуру ударних як файл звукових даних"
 
-#: src/window.ui:134
+#: src/window.ui:137
 msgid "BPM"
 msgstr "Музичний розмір"
 
-#: src/window.ui:139 src/window.ui:143
+#: src/window.ui:142 src/window.ui:146
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Скоригувати темп у тактах на хвилину (BPM)"
 
-#: src/window.ui:142
+#: src/window.ui:145
 msgid "Tempo"
 msgstr "Темп"
 
-#: src/window.ui:184
+#: src/window.ui:187
 msgid "Adjust Volume"
 msgstr "Регулювання гучності"
 
-#: src/window.ui:207
+#: src/window.ui:210
 msgid "Reset"
 msgstr "Скинути"
 
-#: src/window.ui:208
+#: src/window.ui:211
 msgid "Reset the Drum Sequence"
 msgstr "Скинути послідовністю ударних"
 
-#: src/window.ui:223
+#: src/window.ui:226
 msgid "_Add Samples…"
 msgstr "_Додати семпли…"
 
-#: src/window.ui:227
+#: src/window.ui:230
 msgid "_Save Pattern…"
 msgstr "_Зберегти партитуру…"
 
-#: src/window.ui:233
+#: src/window.ui:236
 msgid "_Keyboard Shortcuts"
 msgstr "_Клавіатурні скорочення"
 
-#: src/window.ui:237
+#: src/window.ui:240
 msgid "_About Drum Machine"
 msgstr "_Про «Драм-машину»"
 
@@ -887,6 +881,16 @@ msgstr "Вибрати файл…"
 #: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr "Скасувати експортування"
+
+#~ msgid "No Pattern"
+#~ msgstr "Без партитури"
+
+#~ msgid "Please create a drum pattern before exporting audio."
+#~ msgstr ""
+#~ "Будь ласка, створіть партитуру уданих, перш ніж експортувати звукові дані."
+
+#~ msgid "_OK"
+#~ msgstr "_Гаразд"
 
 #~ msgid "Open Preset"
 #~ msgstr "Відкрити шаблон"
