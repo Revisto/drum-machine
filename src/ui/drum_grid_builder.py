@@ -719,7 +719,8 @@ class DrumGridBuilder:
             and placeholder.get_parent() == self.drum_parts_column
         ):
             placeholder.set_reveal_child(False)
-            GLib.timeout_add(100, self._finish_remove_placeholder, placeholder)
+            placeholder.set_transition_duration(50)
+            GLib.timeout_add(50, self._finish_remove_placeholder, placeholder)
 
     def _finish_remove_placeholder(self, placeholder):
         """Actually remove the placeholder after animation completes"""
