@@ -62,7 +62,7 @@
 }
 
 
-/* New drum placeholder - styled exactly like drum-part-button but with different opacity */
+/* New drum placeholder styling */
 .new-drum-placeholder button {
     opacity: 0.6;
     color: @accent_color;

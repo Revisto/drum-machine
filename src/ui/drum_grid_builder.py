@@ -701,16 +701,28 @@ class DrumGridBuilder:
         placeholder_container = self._create_placeholder_button_container()
         placeholder_container.add_css_class("new-drum-placeholder")
 
-        self.drum_parts_column.append(placeholder_container)
+        revealer = Gtk.Revealer()
+        revealer.set_transition_type(Gtk.RevealerTransitionType.SLIDE_DOWN)
+        revealer.set_transition_duration(100)
+        revealer.set_child(placeholder_container)
 
-        placeholder_container.queue_allocate()
-        return placeholder_container
+        self.drum_parts_column.append(revealer)
+        revealer.set_reveal_child(True)
+
+        return revealer
 
     def remove_new_drum_placeholder(self, placeholder):
-        """Remove the new drum placeholder from the drum parts column"""
+        """Remove the new drum placeholder from the drum parts column with animation"""
         if (
             placeholder
             and self.drum_parts_column
             and placeholder.get_parent() == self.drum_parts_column
         ):
+            placeholder.set_reveal_child(False)
+            GLib.timeout_add(100, self._finish_remove_placeholder, placeholder)
+
+    def _finish_remove_placeholder(self, placeholder):
+        """Actually remove the placeholder after animation completes"""
+        if placeholder and placeholder.get_parent() == self.drum_parts_column:
             self.drum_parts_column.remove(placeholder)
+        return GLib.SOURCE_REMOVE
