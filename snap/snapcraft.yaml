@@ -1,0 +1,129 @@
+name: drum-machine
+title: Drum Machine
+base: core24
+license: GPL-3.0-or-later
+grade: stable
+confinement: strict
+compression: lzo
+adopt-info: drum-machine
+
+contact:
+  - therevisto@gmail.com
+issues:
+  - https://github.com/Revisto/drum-machine/issues
+donation:
+  - https://patreon.com/Revisto
+source-code:
+  - https://github.com/Revisto/drum-machine
+website:
+  - https://apps.gnome.org/DrumMachine/
+
+platforms:
+  amd64:
+  arm64:
+  armhf:
+
+plugs:
+  ffmpeg-2404:
+    interface: content
+    target: ffmpeg-platform
+    default-provider: ffmpeg-2404
+
+slots:
+  drum-machine-mpris:
+    interface: mpris
+    name: drum-machine
+  drum-machine:
+    interface: dbus
+    bus: session
+    name: io.github.revisto.drum-machine
+
+parts:
+  python-deps:
+    plugin: python
+    source: https://github.com/revisto/drum-machine.git
+    source-tag: 'v2.0.0'
+    source-depth: 1
+    python-packages:
+      - pygame
+      - mido
+      - numpy
+    organize:
+      bin: usr/bin
+      lib/python3.12/site-packages: usr/lib/python3/dist-packages
+    prime:
+      - -usr/bin/activate*
+      - -usr/bin/Activate.ps1
+      - -usr/bin/python*
+      - -usr/bin/pip*
+      - -pyvenv.cfg
+      - -share
+      - -include
+      - -lib
+      - -lib64
+      - -usr/lib/*/dist-packages/pip*
+      - -usr/lib/*/dist-packages/setuptools*
+      - -usr/lib/*/dist-packages/pkg_resources*
+
+  drum-machine:
+    after: [python-deps]
+    plugin: meson
+    source: https://github.com/revisto/drum-machine.git
+    source-tag: 'v2.0.0'
+    source-depth: 1
+    meson-parameters:
+      - --prefix=/snap/drum-machine/current/usr
+      - --buildtype=release
+    build-environment:
+      - PYTHONPATH: $CRAFT_STAGE/usr/lib/python3/dist-packages:$PYTHONPATH
+    build-snaps:
+      - blueprint-compiler/latest/edge
+    parse-info: [usr/share/metainfo/io.github.revisto.drum-machine.metainfo.xml]
+    override-build: |
+      craftctl default
+      sed -e '1c#!/usr/bin/env python3' -i ${CRAFT_PART_INSTALL}/snap/drum-machine/current/usr/bin/drum-machine
+      mkdir -p $CRAFT_PART_INSTALL/meta/gui
+      cp -r $CRAFT_PART_INSTALL/snap/drum-machine/current/usr/share/icons $CRAFT_PART_INSTALL/meta/gui/
+      for i in `find $CRAFT_PART_INSTALL/meta/gui/icons -name "*.svg" -o -name "*.png"`; do
+        mv $i "`dirname $i`/snap.$CRAFT_PROJECT_NAME.`basename $i`"
+      done
+      for i in `find $CRAFT_PART_INSTALL/snap/drum-machine/current/usr/share/icons -name "io.github.revisto.drum-machine*.svg" -o -name "io.github.revisto.drum-machine*.png"`; do
+        mv $i "`dirname $i`/snap.$CRAFT_PROJECT_NAME.`basename $i`"
+      done
+      sed -i 's/Icon=io.github.revisto.drum-machine/Icon=snap.drum-machine.io.github.revisto.drum-machine/' $CRAFT_PART_INSTALL/snap/drum-machine/current/usr/share/applications/io.github.revisto.drum-machine.desktop
+    organize:
+      snap/drum-machine/current: .
+
+  gpu-2404:
+    after: [drum-machine]
+    plugin: dump
+    source: https://github.com/canonical/gpu-snap.git
+    override-prime: |
+      craftctl default
+      ${CRAFT_PART_SRC}/bin/gpu-2404-cleanup mesa-2404
+    prime:
+      - -*
+
+  cleanup:
+    after:
+      - drum-machine
+      - gpu-2404
+    plugin: nil
+    build-snaps:
+      - gtk-common-themes
+      - gnome-46-2404
+      - core24
+      - blueprint-compiler
+
+apps:
+  drum-machine:
+    command: usr/bin/drum-machine
+    desktop: usr/share/applications/io.github.revisto.drum-machine.desktop
+    extensions: [gnome]
+    common-id: io.github.revisto.drum-machine
+    environment:
+      PYTHONPATH: $SNAP/usr/lib/python3/dist-packages:$PYTHONPATH
+      PATH: $SNAP/ffmpeg-platform/usr/bin:$PATH
+      LD_LIBRARY_PATH: $SNAP/ffmpeg-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:$LD_LIBRARY_PATH
+    plugs:
+      - audio-playback
