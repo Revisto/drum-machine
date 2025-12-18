@@ -6,8 +6,8 @@
 msgid ""
 msgstr "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-02 03:26+0000\n"
-"PO-Revision-Date: 2025-12-02 13:12+0000\n"
+"POT-Creation-Date: 2025-12-18 03:26+0000\n"
+"PO-Revision-Date: 2025-12-18 13:12+0000\n"
 "Last-Translator: Asier Saratsua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "Language: eu\n"
@@ -43,43 +43,50 @@ msgid "Features:"
 msgstr "Eginbideak:"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
-msgid "Intuitive grid-based pattern editor"
-msgstr "Ereduen editore erabilerraza, sareta formakoa"
+#| msgid "Intuitive grid-based pattern editor"
+msgid "Intuitive grid-based pattern editor with infinite pages"
+msgstr "Ereduen editorea, sareta formakoa eta orri amaigabeak dituena"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr "Lagin pertsonalizatuak: Gehitu zure dabor-soinuak MIDI noten mapatzearekin"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
 msgstr "BPM kontrol doigarria"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
 msgid "Volume control for overall mix"
 msgstr "Nahaste osorako bolumen-kontrola"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
-#| msgid "Save and load preset patterns"
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
 msgid "Save and load patterns"
 msgstr "Gorde eta kargatu ereduak"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Danbor-hots anitz, dunbala, kaxa, charlestona eta gehiago barne"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
-msgstr "Audioa esportatzeko aukera, WAV, FLAC, Ogg eta MP3 formatuak onartzen ditu"
-
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+#| msgid ""
+#| "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr "Audioa eta MIDIa esportatzeko aukera, WAV, FLAC, Ogg, MP3 eta MIDI formatuak onartzen ditu"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Metadata support for embedding artist name, song title, and cover art"
 msgstr "Metadatuak artisten izena, abestiaren izenburua eta azala kapsulatzeko"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "Lasterbideak funtzio guztiak azkar atzitzeko"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "Danbor-eredua modu argian kargatua"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Danbor-eredua modu ilunean kargatua"
 
@@ -327,7 +334,6 @@ msgid "Long Whistle"
 msgstr "Txilibitu luzea"
 
 #: src/dialogs/midi_mapping_dialog.py:60
-#| msgid "Export Audio"
 msgid "Short Guiro"
 msgstr "Güiro laburra"
 
@@ -363,7 +369,7 @@ msgstr "Triangelu mutua"
 msgid "Open Triangle"
 msgstr "Triangelu irekia"
 
-#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:338
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
 msgid "MIDI Mapping"
 msgstr "MIDI mapatzea"
 
@@ -379,7 +385,6 @@ msgstr "Esleitu MIDI nota bat '{}' soinurako. Honek erreprodukzio zuzena ziurtat
 
 #. Action Row for Note
 #: src/dialogs/midi_mapping_dialog.py:118
-#| msgid "MIDI files"
 msgid "MIDI Note"
 msgstr "MIDI nota"
 
@@ -389,8 +394,6 @@ msgstr "Abiaraziko den notaren zenbakia"
 
 #. Group 2: Standard Instruments
 #: src/dialogs/midi_mapping_dialog.py:137
-#| msgctxt "shortcut window"
-#| msgid "Go to Instrument"
 msgid "Standard Instruments"
 msgstr "Musika-tresna estandarrak"
 
@@ -399,12 +402,10 @@ msgid "Select a General MIDI instrument to automatically set the note."
 msgstr "Hautatu MIDI tresna orokor bat nota automatikoki ezartzeko."
 
 #: src/dialogs/midi_mapping_dialog.py:143
-#| msgid "Open Preset"
 msgid "Instrument Preset"
 msgstr "Tresna-aurrezarpena"
 
 #: src/dialogs/midi_mapping_dialog.py:186
-#| msgid "_Save"
 msgid "Save"
 msgstr "Gorde"
 
@@ -412,140 +413,117 @@ msgstr "Gorde"
 msgid "Custom Note"
 msgstr "Nota pertsonalizatua"
 
-#: src/handlers/drag_drop_handler.py:113
+#: src/handlers/drag_drop_handler.py:299
 msgid "Sound replaced"
 msgstr "Ordezkatutako soinua"
 
-#: src/handlers/drag_drop_handler.py:116
+#: src/handlers/drag_drop_handler.py:302
 msgid "Failed to replace sound"
 msgstr "Huts egin du soinua ordezkatzeak"
 
-#: src/handlers/drag_drop_handler.py:126
+#: src/handlers/drag_drop_handler.py:312
 msgid "Not a supported audio file"
 msgstr "Onartzen ez den audio-fitxategia"
 
-#: src/handlers/drag_drop_handler.py:134
+#: src/handlers/drag_drop_handler.py:320
 msgid "File not found"
 msgstr "Ez da fitxategia aurkitu"
 
-#: src/handlers/drag_drop_handler.py:139
+#: src/handlers/drag_drop_handler.py:325
 msgid "Selected item is not a file"
 msgstr "Hautatutako elementua ez da fitxategi bat"
 
-#: src/handlers/drag_drop_handler.py:146
+#: src/handlers/drag_drop_handler.py:332
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr "Fitxategi luzeegia: {:.1f}MB (max 50MB)"
 
-#: src/handlers/drag_drop_handler.py:174
+#: src/handlers/drag_drop_handler.py:362
 msgid "No valid audio files found"
 msgstr "Ez da aurkitu baliozko audio-fitxategirik"
 
-#: src/handlers/drag_drop_handler.py:209
+#: src/handlers/drag_drop_handler.py:402
 msgid "Error processing file: {}"
 msgstr "Errorea fitxategia prozesatzean: {}"
 
-#: src/handlers/drag_drop_handler.py:237
+#: src/handlers/drag_drop_handler.py:433
 msgid "Added {} drum part, {} files skipped"
 msgstr "Danbor-atal {} gehitu da, {} fitxategi saltatu dira"
 
-#: src/handlers/drag_drop_handler.py:243
+#: src/handlers/drag_drop_handler.py:439
 msgid "Added {} drum parts, {} files skipped"
 msgstr "{} danbor-atal gehitu dira, {} fitxategi saltatu dira"
 
-#: src/handlers/drag_drop_handler.py:248
+#: src/handlers/drag_drop_handler.py:444
 msgid "Added {} drum parts"
 msgstr "{} danbor-atal gehitu dira"
 
 #. Only show skipped message if no replacement happened
-#: src/handlers/drag_drop_handler.py:251
+#: src/handlers/drag_drop_handler.py:447
 msgid "{} files skipped"
 msgstr "{} fitxategi saltatu dira"
 
 #: src/handlers/file_dialog_handler.py:52
-#| msgid "Default Presets"
 msgid "Default Patterns"
 msgstr "Eredu lehenetsiak"
 
-#: src/handlers/file_dialog_handler.py:84
-msgid "No Pattern"
-msgstr "Eredurik ez"
-
-#: src/handlers/file_dialog_handler.py:85
-msgid "Please create a drum pattern before exporting audio."
-msgstr "Sortu danbor-eredua audioa esportatu baino lehen."
-
-#: src/handlers/file_dialog_handler.py:87
-msgid "_OK"
-msgstr "_Ados"
-
-#: src/handlers/file_dialog_handler.py:110
-#: src/handlers/file_dialog_handler.py:187
+#: src/handlers/file_dialog_handler.py:92
+#: src/handlers/file_dialog_handler.py:171
 msgid "MIDI files"
 msgstr "MIDI fitxategiak"
 
-#: src/handlers/file_dialog_handler.py:116
+#: src/handlers/file_dialog_handler.py:98
 msgid "Open MIDI File"
 msgstr "Ireki MIDI fitxategia"
 
-#: src/handlers/file_dialog_handler.py:144
+#: src/handlers/file_dialog_handler.py:127
 msgid "Failed to open file"
 msgstr "Huts egin du fitxategia irekitzeak"
 
-#: src/handlers/file_dialog_handler.py:181
-#| msgid "Save and load preset patterns"
+#: src/handlers/file_dialog_handler.py:165
 msgid "Failed to load pattern"
 msgstr "Huts egin du eredua kargatzeak"
 
-#: src/handlers/file_dialog_handler.py:195
+#: src/handlers/file_dialog_handler.py:179
 msgid "Save Sequence"
 msgstr "Gorde sekuentzia"
 
-#: src/handlers/file_dialog_handler.py:221
+#: src/handlers/file_dialog_handler.py:205
 msgid "Add Audio Samples"
 msgstr "Gehitu audio-laginak"
 
-#: src/handlers/file_dialog_handler.py:243
-#| msgid "WAV files"
+#: src/handlers/file_dialog_handler.py:227
 msgid "Audio files"
 msgstr "Audio-fitxategiak"
 
 #: src/utils/export_progress.py:76
-#| msgid "Preparing..."
 msgid "Preparing…"
 msgstr "Prestatzen…"
 
 #: src/utils/export_progress.py:77
-#| msgid "Initializing..."
 msgid "Initializing…"
 msgstr "Hasieratzen…"
 
 #: src/utils/export_progress.py:79
-#| msgid "Rendering audio..."
 msgid "Rendering audio…"
 msgstr "Audioa errendatzen…"
 
 #: src/utils/export_progress.py:80
-#| msgid "Processing beats..."
 msgid "Processing beats…"
 msgstr "Kolpeak prozesatzen…"
 
 #: src/utils/export_progress.py:82
-#| msgid "Saving file..."
 msgid "Saving file…"
 msgstr "Fitxategia gordetzen…"
 
 #: src/utils/export_progress.py:83
-#| msgid "Writing to disk..."
 msgid "Writing to disk…"
 msgstr "Diskoan idazten…"
 
 #: src/utils/export_progress.py:85
-#| msgid "Exporting..."
 msgid "Exporting…"
 msgstr "Esportatzen…"
 
 #: src/utils/export_progress.py:86
-#| msgid "Processing..."
 msgid "Processing…"
 msgstr "Prozesatzen…"
 
@@ -553,102 +531,98 @@ msgstr "Prozesatzen…"
 msgid "Custom Sound"
 msgstr "Soinu pertsonalizatu"
 
-#: src/ui/drum_grid_builder.py:323
+#: src/ui/drum_grid_builder.py:327
 msgid "Preview"
 msgstr "Aurrebista"
 
-#: src/ui/drum_grid_builder.py:325
+#: src/ui/drum_grid_builder.py:329
 msgid "Replace…"
 msgstr "Ordeztu…"
 
-#: src/ui/drum_grid_builder.py:328
+#: src/ui/drum_grid_builder.py:332
 msgid "Replace with new sound"
 msgstr "Ordeztu soinu berriarekin"
 
-#: src/ui/drum_grid_builder.py:331
+#: src/ui/drum_grid_builder.py:335
 msgid "Remove"
 msgstr "Kendu"
 
-#: src/ui/drum_grid_builder.py:334
+#: src/ui/drum_grid_builder.py:338
 msgid "At least one drum part must remain"
 msgstr "Gutxienez danbor-atal bat mantendu behar da"
 
-#: src/ui/drum_grid_builder.py:341
+#: src/ui/drum_grid_builder.py:345
 msgid "Configure MIDI note for export"
 msgstr "Konfiguratu MIDI nota esportaziorako"
 
-#: src/ui/drum_grid_builder.py:398
+#: src/ui/drum_grid_builder.py:402
 msgid "MIDI note updated"
 msgstr "MIDI nota eguneratu da"
 
-#: src/ui/drum_grid_builder.py:406
+#: src/ui/drum_grid_builder.py:410
 msgid "Select New Sound"
 msgstr "Hautatu soinu berria"
 
-#: src/ui/drum_grid_builder.py:420
+#: src/ui/drum_grid_builder.py:424
 msgid "Removed drum part: {}"
 msgstr "Kendu danbor-atala: {}"
 
-#: src/ui/drum_grid_builder.py:424
+#: src/ui/drum_grid_builder.py:429
 msgid "Failed to remove drum part"
 msgstr "Huts egin du danbor-atala kentzeak"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:203
+#: src/window.py:225
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} kolpe minutuko (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:212
+#: src/window.py:234
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% bolumena"
 
-#: src/window.py:227 src/window.ui:170
+#: src/window.py:251 src/window.ui:173
 msgid "Play"
 msgstr "Erreproduzitu"
 
-#: src/window.py:231
+#: src/window.py:255
 msgid "Pause"
 msgstr "Pausatu"
 
-#: src/window.py:278
+#: src/window.py:302
 msgid "Open"
 msgstr "Ireki"
 
-#: src/window.py:296
+#: src/window.py:320
 msgid "Added: {}"
 msgstr "Gehitua: {}"
 
-#: src/window.py:311
+#: src/window.py:335
 msgid "Failed to add custom sound"
 msgstr "Huts egin du soinu pertsonalizatua gehitzeak"
 
-#: src/window.py:318
+#: src/window.py:342
 msgid "Replaced drum with: {}"
 msgstr "Ordeztu danborra honekin: {}"
 
-#: src/window.py:326
+#: src/window.py:350
 msgid "Failed to replace drum sound"
 msgstr "Huts egin du danbor-soinua ordezteak"
 
 #: src/window.ui:52
-#| msgid "Open"
 msgid "Open…"
 msgstr "Ireki…"
 
 #: src/window.ui:54
-#| msgid "No Pattern"
 msgid "Open Pattern"
 msgstr "Ireki eredua"
 
 #: src/window.ui:57
-#| msgid "No Pattern"
 msgctxt "accessibility"
 msgid "Open Pattern"
 msgstr "Ireki eredua"
 
 #: src/window.ui:58
-#| msgid "Open Saved Drum Pattern Preset"
 msgid "Open Saved Drum Pattern"
 msgstr "Ireki gordetako danbor-eredua"
 
@@ -666,58 +640,55 @@ msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Atzitu laster-teklak eta aplikazioaren informazioa"
 
 #: src/window.ui:86
-#| msgid "Export Audio"
 msgid "Export Audio…"
 msgstr "Esportatu audioa…"
 
-#: src/window.ui:88
-#| msgid "Export Audio"
+#: src/window.ui:91
 msgctxt "accessibility"
 msgid "Export Audio…"
 msgstr "Esportatu audioa…"
 
-#: src/window.ui:89
+#: src/window.ui:92
 msgid "Export Current Drum Pattern as Audio File"
 msgstr "Esportatu uneko danbor-eredua audio-ftixategi gisa"
 
-#: src/window.ui:134
+#: src/window.ui:137
 msgid "BPM"
 msgstr "BMP"
 
-#: src/window.ui:139 src/window.ui:143
+#: src/window.ui:142 src/window.ui:146
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Doitu tempoa kolpeak minutukotan (BPM)"
 
-#: src/window.ui:142
+#: src/window.ui:145
 msgid "Tempo"
 msgstr "Tempoa"
 
-#: src/window.ui:184
+#: src/window.ui:187
 msgid "Adjust Volume"
 msgstr "Doitu bolumena"
 
-#: src/window.ui:207
+#: src/window.ui:210
 msgid "Reset"
 msgstr "Berrezarri"
 
-#: src/window.ui:208
+#: src/window.ui:211
 msgid "Reset the Drum Sequence"
 msgstr "Berrezarri danbor-sekuentzia"
 
-#: src/window.ui:223
+#: src/window.ui:226
 msgid "_Add Samples…"
 msgstr "Gehitu _laginak…"
 
-#: src/window.ui:227
-#| msgid "_Save Pattern"
+#: src/window.ui:230
 msgid "_Save Pattern…"
 msgstr "_Gorde eredua…"
 
-#: src/window.ui:233
+#: src/window.ui:236
 msgid "_Keyboard Shortcuts"
 msgstr "Las_ter-teklak"
 
-#: src/window.ui:237
+#: src/window.ui:240
 msgid "_About Drum Machine"
 msgstr "Drum Machine aplikazioari _buruz"
 
@@ -782,20 +753,16 @@ msgid "Mute"
 msgstr "Mututu"
 
 #: src/gtk/help-overlay.blp:76
-#| msgctxt "shortcut window"
-#| msgid "Preset Management"
 msgctxt "shortcut window"
 msgid "Pattern Management"
 msgstr "Eredu-kudeaketa"
 
 #: src/gtk/help-overlay.blp:79
-#| msgid "No Pattern"
 msgctxt "shortcut window"
 msgid "Load Pattern"
 msgstr "Kargatu eredua"
 
 #: src/gtk/help-overlay.blp:85
-#| msgid "_Save Pattern"
 msgctxt "shortcut window"
 msgid "Save Pattern"
 msgstr "Gorde eredua"
@@ -830,9 +797,6 @@ msgid "Save Changes?"
 msgstr "Gorde aldaketak?"
 
 #: src/gtk/save-changes-dialog.blp:6
-#| msgid ""
-#| "Current preset contains unsaved changes. Changes which are not saved will "
-#| "be permanently lost."
 msgid ""
 "Current pattern contains unsaved changes. Changes which are not saved will "
 "be permanently lost."
@@ -886,13 +850,21 @@ msgid "Cover Art"
 msgstr "Azala"
 
 #: src/gtk/audio-export-dialog.blp:81
-#| msgid "Choose File"
 msgid "Choose File…"
 msgstr "Aukeratu fitxategia…"
 
 #: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr "Utzi esportazioa"
+
+#~ msgid "No Pattern"
+#~ msgstr "Eredurik ez"
+
+#~ msgid "Please create a drum pattern before exporting audio."
+#~ msgstr "Sortu danbor-eredua audioa esportatu baino lehen."
+
+#~ msgid "_OK"
+#~ msgstr "_Ados"
 
 #~ msgctxt "accessibility"
 #~ msgid "Open Preset"
