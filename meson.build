@@ -1,5 +1,5 @@
 project('drum-machine',
-          version: '2.1.0',
+          version: '2.2.0',
     meson_version: '>= 0.62.0',
   default_options: [ 'warning_level=2', 'werror=false', ],
 )

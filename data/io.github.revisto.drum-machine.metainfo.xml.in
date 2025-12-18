@@ -50,6 +50,15 @@
     <email>therevisto@gmail.com</email>
   </developer>
   <releases>
+    <release version="2.2.0" date="2025-12-18">
+      <description>
+        <p>Drum Machine 2.2.0: Reset to Defaults!</p>
+        <ul>
+          <li>Reset to Defaults: New menu option to restore all samples, BPM, and volume to factory settings</li>
+          <li>Clear Button: Renamed from Reset, now only clears the pattern while keeping custom samples</li>
+        </ul>
+      </description>
+    </release>
     <release version="2.1.0" date="2025-12-14">
       <description>
         <p>Drum Machine 2.1.0: Drag and Drop!</p>
