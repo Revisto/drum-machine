@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-12 23:08+0330\n"
+"POT-Creation-Date: 2025-12-18 15:18+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,155 +94,171 @@ msgid "Revisto"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:55
-msgid "Drum Machine 2.0.0 is a major release with custom samples! 🎶"
+msgid "Drum Machine 2.1.0: Drag and Drop!"
 msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:57
+msgid ""
+"Drag-and-Drop: Reorder drum parts by dragging them to new positions in the "
+"drum parts column"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:58
+msgid ""
+"Slide Animations: New drum placeholder now features smooth slide-down "
+"animations for better visual feedback"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:64
+msgid "Drum Machine 2.0.0 is a major release with custom samples! 🎶"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:66
 msgid ""
 "Custom Samples: Add your own drum sounds and map them to specific MIDI notes "
 "for export"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:58
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:67
 msgid ""
 "MIDI Export: Export your patterns as MIDI files with proper note mapping"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:59
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:68
 msgid ""
 "Pattern Management: Presets have been refactored to a more flexible pattern "
 "system"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:60
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:69
 msgid ""
 "Bug Fixes: Sounds now stop immediately when pausing, disabled export when "
 "pattern is empty"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:61
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:70
 msgid "New Translations: Added Catalan, Greek, and Uzbek languages"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:62
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:71
 msgid ""
 "Translation Updates: Updated Slovenian, Basque, Ukrainian, Georgian, "
 "Chinese, Persian, and many more"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:68
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:77
 msgid "Drum Machine 1.5.0 introduces major audio export capabilities! 🎵"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:70
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:79
 msgid ""
 "Audio Export Feature: Export your drum patterns to WAV, FLAC, Ogg Vorbis, "
 "and MP3 formats"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:71
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:80
 msgid ""
 "Metadata Support: Embed artist name, song title, and cover art in exported "
 "files"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:72
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:81
 msgid ""
 "Repeat Pattern: Set how many times your beat repeats in the exported audio"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:73
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:82
 msgid ""
 "Bug Fix: Fixed issue where multiple drum sounds weren't playing "
 "simultaneously"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:74
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:83
 msgid ""
 "Translation Updates: Updated Spanish, Russian, Georgian, Chinese, Hungarian, "
 "Swedish, and more"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:80
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:89
 msgid "Drum Machine 1.4.0 is here with some good updates! 🥁"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:82
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:91
 msgid ""
 "More pages for longer, more complex beats, because sometimes you need more "
 "than 16 steps!"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:83
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:92
 msgid ""
 "Mobile-friendly improvements, now your drum machine works better on phones "
 "(with showing half of the grid)"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:84
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:93
 msgid ""
 "Goes global! Now translated into 17 languages including Chinese, Russian, "
 "Arabic, Hebrew, and many more"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:90
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:99
 msgid ""
 "This release of Drum Machine 1.3.1 brings significant UI and functionality "
 "improvements:"
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:92
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:101
 msgid ""
 "Refactored headerbar and background styling for a flat, integrated visual "
 "experience."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:93
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:102
 msgid ""
 "Enhanced accessibility with improved tooltips and descriptive labels for BPM "
 "and volume controls."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:94
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:103
 msgid ""
 "Redesigned app icon and updated text styling for clearer user interface "
 "elements."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:95
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:104
 msgid ""
 "Optimized layout breakpoints to improve responsiveness and reduce early "
 "scrolling."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:96
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:105
 msgid ""
 "Fixed padding, border-radius, and vertical alignment issues across multiple "
 "controls."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:97
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:106
 msgid ""
 "Updated file dialogs to use the Nautilus file chooser for a more modern "
 "approach."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:98
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:107
 msgid ""
 "Improved keyboard navigation focus and updated tooltips, including dedicated "
 "play and pause hints."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:99
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:108
 msgid ""
 "Transitioned to the Nautilus file chooser for a more contemporary interface."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:100
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:109
 msgid "Now accessible on narrow mobile screens with adaptive UI elements."
 msgstr ""
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:101
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:110
 msgid "Refined app icon, and adjusted brand colors for better contrast."
 msgstr ""
 
@@ -525,7 +541,7 @@ msgstr ""
 msgid "Open Triangle"
 msgstr ""
 
-#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:338
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
 msgid "MIDI Mapping"
 msgstr ""
 
@@ -569,52 +585,52 @@ msgstr ""
 msgid "Custom Note"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:113
+#: src/handlers/drag_drop_handler.py:299
 msgid "Sound replaced"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:116
+#: src/handlers/drag_drop_handler.py:302
 msgid "Failed to replace sound"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:126
+#: src/handlers/drag_drop_handler.py:312
 msgid "Not a supported audio file"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:134
+#: src/handlers/drag_drop_handler.py:320
 msgid "File not found"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:139
+#: src/handlers/drag_drop_handler.py:325
 msgid "Selected item is not a file"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:146
+#: src/handlers/drag_drop_handler.py:332
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:174
+#: src/handlers/drag_drop_handler.py:362
 msgid "No valid audio files found"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:209
+#: src/handlers/drag_drop_handler.py:402
 msgid "Error processing file: {}"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:237
+#: src/handlers/drag_drop_handler.py:433
 msgid "Added {} drum part, {} files skipped"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:243
+#: src/handlers/drag_drop_handler.py:439
 msgid "Added {} drum parts, {} files skipped"
 msgstr ""
 
-#: src/handlers/drag_drop_handler.py:248
+#: src/handlers/drag_drop_handler.py:444
 msgid "Added {} drum parts"
 msgstr ""
 
 #. Only show skipped message if no replacement happened
-#: src/handlers/drag_drop_handler.py:251
+#: src/handlers/drag_drop_handler.py:447
 msgid "{} files skipped"
 msgstr ""
 
@@ -687,43 +703,43 @@ msgstr ""
 msgid "Custom Sound"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:323
+#: src/ui/drum_grid_builder.py:327
 msgid "Preview"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:325
+#: src/ui/drum_grid_builder.py:329
 msgid "Replace…"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:328
+#: src/ui/drum_grid_builder.py:332
 msgid "Replace with new sound"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:331
+#: src/ui/drum_grid_builder.py:335
 msgid "Remove"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:334
+#: src/ui/drum_grid_builder.py:338
 msgid "At least one drum part must remain"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:341
+#: src/ui/drum_grid_builder.py:345
 msgid "Configure MIDI note for export"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:398
+#: src/ui/drum_grid_builder.py:402
 msgid "MIDI note updated"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:406
+#: src/ui/drum_grid_builder.py:410
 msgid "Select New Sound"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:420
+#: src/ui/drum_grid_builder.py:424
 msgid "Removed drum part: {}"
 msgstr ""
 
-#: src/ui/drum_grid_builder.py:425
+#: src/ui/drum_grid_builder.py:429
 msgid "Failed to remove drum part"
 msgstr ""
 
