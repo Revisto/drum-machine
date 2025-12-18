@@ -50,12 +50,11 @@ class SoundService(ISoundService):
                 logging.error(f"Error loading sound {part.name}: {e}")
 
     def reload_sounds(self) -> None:
-        self.drum_part_manager.reload()
+        """Reload all sounds from the current drum parts"""
         self.load_sounds()
 
     def reload_specific_sound(self, part_id: str) -> None:
         """Reload a specific sound after drum part replacement"""
-        self.drum_part_manager.reload()
         part = self.drum_part_manager.get_part_by_id(part_id)
         if part:
             sound = pygame.mixer.Sound(part.file_path)

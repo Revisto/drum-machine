@@ -19,6 +19,7 @@
 
 import mido
 import itertools
+from ..config.constants import DEFAULT_BPM
 
 
 class PatternService:
@@ -100,7 +101,7 @@ class PatternService:
         drum_parts_state = (
             self.window.drum_machine_service.create_empty_drum_parts_state()
         )
-        bpm = 120
+        bpm = DEFAULT_BPM
 
         ticks_per_beat = mid.ticks_per_beat
         if ticks_per_beat is None:

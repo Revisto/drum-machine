@@ -41,6 +41,8 @@ DEFAULT_PATTERNS: List[str] = [
 ]
 NUM_TOGGLES: int = 16
 GROUP_TOGGLE_COUNT: int = 4
+DEFAULT_BPM: int = 120
+DEFAULT_VOLUME: int = 100
 
 # Audio rendering constants
 DEFAULT_FALLBACK_SAMPLE_SIZE: Tuple[int, int] = (1000, 2)
@@ -50,9 +52,6 @@ PULSE_INTERVAL_SECONDS: float = 1.0
 
 # Audio constants
 MIXER_CHANNELS: int = 32
-
-# DrumPartManager constants
-DRUM_PARTS_CONFIG_FILE: str = "drum_parts.json"
 
 # Supported audio file formats for input/import
 SUPPORTED_INPUT_AUDIO_FORMATS: Set[str] = {".wav", ".mp3", ".ogg", ".flac"}

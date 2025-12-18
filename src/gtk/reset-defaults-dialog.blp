@@ -1,0 +1,16 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $ResetDefaultsDialog: Adw.AlertDialog {
+  heading: _("Reset to Defaults?");
+  body: _("This will clear the current pattern and restore all samples, BPM, and volume to their default values. This action cannot be undone.");
+  close-response: "cancel";
+  default-response: "cancel";
+  response::reset => $_on_reset();
+  response::cancel => $_on_cancel();
+
+  responses [
+    /* Translators: Cancel the operation */cancel: _("_Cancel"),
+    /* Translators: Reset to defaults */reset: _("_Reset") destructive,
+  ]
+}

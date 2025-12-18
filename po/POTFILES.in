@@ -15,3 +15,4 @@ src/window.ui
 src/gtk/help-overlay.blp
 src/gtk/save-changes-dialog.blp
 src/gtk/audio-export-dialog.blp
+src/gtk/reset-defaults-dialog.blp

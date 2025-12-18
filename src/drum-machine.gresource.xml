@@ -7,6 +7,7 @@
     <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
     <file preprocess="xml-stripblanks">gtk/save-changes-dialog.ui</file>
     <file preprocess="xml-stripblanks">gtk/audio-export-dialog.ui</file>
+    <file preprocess="xml-stripblanks">gtk/reset-defaults-dialog.ui</file>
   </gresource>
 
   <gresource prefix="/io/github/revisto/drum-machine/icons/scalable/actions/">

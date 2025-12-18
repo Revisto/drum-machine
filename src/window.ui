@@ -199,16 +199,16 @@ audio-volume-medium-symbolic</property>
                   </object>
                 </child>
                 <child>
-                  <!-- Right aligned reset button -->
-                  <object class="GtkBox" id="reset_box">
+                  <!-- Right aligned clear button -->
+                  <object class="GtkBox" id="clear_box">
                     <property name="halign">end</property>
                     <property name="valign">center</property>
                     <property name="margin-end">12</property>
                     <child>
                       <object class="GtkButton" id="clear_button">
                         <property name="valign">center</property>
-                        <property name="label" translatable="yes">Reset</property>
-                        <property name="tooltip-text" translatable="yes">Reset the Drum Sequence</property>
+                        <property name="label" translatable="yes">Clear</property>
+                        <property name="tooltip-text" translatable="yes">Clear the Drum Pattern</property>
                       </object>
                     </child>
                   </object>
@@ -229,6 +229,12 @@ audio-volume-medium-symbolic</property>
       <item>
         <attribute name="label" translatable="yes">_Save Pattern…</attribute>
         <attribute name="action">win.save_pattern</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Reset to Defaults</attribute>
+        <attribute name="action">win.reset_to_defaults</attribute>
       </item>
     </section>
     <section>
