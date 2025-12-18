@@ -245,6 +245,8 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.drum_machine_service.drum_parts_state = (
             self.drum_machine_service.create_empty_drum_parts_state()
         )
+        self.drum_machine_service.set_bpm(DEFAULT_BPM)
+        self.drum_machine_service.set_volume(DEFAULT_VOLUME)
         self.drum_grid_builder.rebuild_drum_parts_column()
         self.drum_grid_builder.rebuild_carousel()
         self.drum_machine_service.update_total_beats()
