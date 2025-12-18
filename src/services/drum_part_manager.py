@@ -40,11 +40,8 @@ DEFAULT_MIDI_NOTES = {
 
 
 class DrumPartManager:
-    def __init__(self, user_data_dir: str, bundled_sounds_dir: str = None):
-        # User-writable directory for custom sounds
-        self.user_data_dir = user_data_dir
-        # Read-only directory with bundled default sounds (e.g., in snap)
-        self.bundled_sounds_dir = bundled_sounds_dir or user_data_dir
+    def __init__(self, bundled_sounds_dir: str):
+        self.bundled_sounds_dir = bundled_sounds_dir
         self._drum_parts: List[DrumPart] = []
         self._load_default_parts()
 
