@@ -50,6 +50,15 @@
     <email>therevisto@gmail.com</email>
   </developer>
   <releases>
+    <release version="2.1.0" date="2025-12-14">
+      <description>
+        <p>Drum Machine 2.1.0: Drag and Drop!</p>
+        <ul>
+          <li>Drag-and-Drop: Reorder drum parts by dragging them to new positions in the drum parts column</li>
+          <li>Slide Animations: New drum placeholder now features smooth slide-down animations for better visual feedback</li>
+        </ul>
+      </description>
+    </release>
     <release version="2.0.0" date="2025-12-12">
       <description>
         <p>Drum Machine 2.0.0 is a major release with custom samples! 🎶</p>
