@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-18 15:18+0330\n"
+"POT-Creation-Date: 2025-12-18 23:04+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -744,40 +744,40 @@ msgid "Failed to remove drum part"
 msgstr ""
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:225
+#: src/window.py:226
 msgid "{} Beats per Minute (BPM)"
 msgstr ""
 
 #. Update button tooltip to show current volume level
-#: src/window.py:234
+#: src/window.py:235
 msgid "{:.0f}% Volume"
 msgstr ""
 
-#: src/window.py:251 src/window.ui:173
+#: src/window.py:266 src/window.ui:173
 msgid "Play"
 msgstr ""
 
-#: src/window.py:255
+#: src/window.py:270
 msgid "Pause"
 msgstr ""
 
-#: src/window.py:302
+#: src/window.py:317
 msgid "Open"
 msgstr ""
 
-#: src/window.py:320
+#: src/window.py:335
 msgid "Added: {}"
 msgstr ""
 
-#: src/window.py:335
+#: src/window.py:350
 msgid "Failed to add custom sound"
 msgstr ""
 
-#: src/window.py:342
+#: src/window.py:357
 msgid "Replaced drum with: {}"
 msgstr ""
 
-#: src/window.py:350
+#: src/window.py:365
 msgid "Failed to replace drum sound"
 msgstr ""
 
@@ -841,11 +841,11 @@ msgid "Adjust Volume"
 msgstr ""
 
 #: src/window.ui:210
-msgid "Reset"
+msgid "Clear"
 msgstr ""
 
 #: src/window.ui:211
-msgid "Reset the Drum Sequence"
+msgid "Clear the Drum Pattern"
 msgstr ""
 
 #: src/window.ui:226
@@ -857,10 +857,14 @@ msgid "_Save Pattern…"
 msgstr ""
 
 #: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr ""
+
+#: src/window.ui:242
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/window.ui:240
+#: src/window.ui:246
 msgid "_About Drum Machine"
 msgstr ""
 
@@ -975,7 +979,7 @@ msgid ""
 msgstr ""
 
 #. Translators: Cancel the operation
-#: src/gtk/save-changes-dialog.blp:14
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
 msgid "_Cancel"
 msgstr ""
 
@@ -1027,4 +1031,19 @@ msgstr ""
 
 #: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
+msgstr ""
+
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr ""
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume "
+"to their default values. This action cannot be undone."
+msgstr ""
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+msgid "_Reset"
 msgstr ""

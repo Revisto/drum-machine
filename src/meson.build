@@ -8,6 +8,7 @@ blueprint_files = files(
   'gtk/help-overlay.blp',
   'gtk/audio-export-dialog.blp',
   'gtk/save-changes-dialog.blp',
+  'gtk/reset-defaults-dialog.blp',
 )
 
 compiled_ui_dir_name = 'compiled_ui_files'

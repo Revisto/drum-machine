@@ -26,12 +26,11 @@ from ..config.constants import MIXER_CHANNELS
 
 
 class SoundService(ISoundService):
-    def __init__(self, user_data_dir: str, bundled_sounds_dir: str = None) -> None:
+    def __init__(self, bundled_sounds_dir: str) -> None:
         pygame.init()
         pygame.mixer.set_num_channels(MIXER_CHANNELS)
-        self.user_data_dir = user_data_dir
-        self.bundled_sounds_dir = bundled_sounds_dir or user_data_dir
-        self.drum_part_manager = DrumPartManager(user_data_dir, self.bundled_sounds_dir)
+        self.bundled_sounds_dir = bundled_sounds_dir
+        self.drum_part_manager = DrumPartManager(bundled_sounds_dir)
         self.sounds: Dict[str, pygame.mixer.Sound] = {}
         self._current_volume: float = 1.0
 
@@ -50,12 +49,11 @@ class SoundService(ISoundService):
                 logging.error(f"Error loading sound {part.name}: {e}")
 
     def reload_sounds(self) -> None:
-        self.drum_part_manager.reload()
+        """Reload all sounds from the current drum parts"""
         self.load_sounds()
 
     def reload_specific_sound(self, part_id: str) -> None:
         """Reload a specific sound after drum part replacement"""
-        self.drum_part_manager.reload()
         part = self.drum_part_manager.get_part_by_id(part_id)
         if part:
             sound = pygame.mixer.Sound(part.file_path)

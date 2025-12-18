@@ -23,7 +23,12 @@ import logging
 from typing import Dict, Optional
 from gi.repository import GLib
 from ..interfaces.player import IPlayer
-from ..config.constants import NUM_TOGGLES, GROUP_TOGGLE_COUNT
+from ..config.constants import (
+    NUM_TOGGLES,
+    GROUP_TOGGLE_COUNT,
+    DEFAULT_BPM,
+    DEFAULT_VOLUME,
+)
 from .pattern_service import PatternService
 from .ui_helper import UIHelper
 
@@ -34,8 +39,8 @@ class DrumMachineService(IPlayer):
         self.sound_service = sound_service
         self.ui_helper = ui_helper
         self.playing: bool = False
-        self.bpm: float = 120
-        self.last_volume: float = 100
+        self.bpm: float = DEFAULT_BPM
+        self.last_volume: float = DEFAULT_VOLUME
         self.play_thread: Optional[threading.Thread] = None
         self.stop_event: threading.Event = threading.Event()
         self.drum_parts_state: Dict[str, Dict[int, bool]] = (

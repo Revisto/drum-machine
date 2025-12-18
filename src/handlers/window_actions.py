@@ -25,6 +25,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Gio", "2.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gio
+from ..dialogs.reset_defaults_dialog import ResetDefaultsDialog
 
 
 class WindowActionHandler:
@@ -48,6 +49,7 @@ class WindowActionHandler:
             ("save_pattern", self.on_save_pattern_action, ["<primary>s"]),
             ("export_audio", self.on_export_audio_action, ["<primary>e"]),
             ("add_samples", self.on_add_samples_action, ["<primary><shift>a"]),
+            ("reset_to_defaults", self.on_reset_to_defaults_action, []),
             ("quit", self.on_quit_action, ["<primary>q"]),
             ("close_window", self.on_quit_action, ["<primary>w"]),
             ("go_to_instrument", self.handle_go_to_instrument_action, ["<primary>i"]),
@@ -196,3 +198,12 @@ class WindowActionHandler:
     ) -> None:
         """Open file dialog to select multiple audio samples"""
         self.window.file_dialog_handler.handle_add_samples()
+
+    def on_reset_to_defaults_action(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
+        """Reset drum parts to defaults with confirmation"""
+        ResetDefaultsDialog(
+            window=self.window,
+            on_reset_callback=self.window.reset_to_defaults,
+        )

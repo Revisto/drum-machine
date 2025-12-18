@@ -29,7 +29,7 @@ from gi.repository import Adw, Gtk, GLib, Gio
 
 from gettext import gettext as _
 
-from .config.constants import NUM_TOGGLES
+from .config.constants import NUM_TOGGLES, DEFAULT_BPM, DEFAULT_VOLUME
 from .handlers.file_dialog_handler import FileDialogHandler
 from .handlers.window_actions import WindowActionHandler
 from .handlers.drag_drop_handler import DragDropHandler
@@ -65,18 +65,12 @@ class DrumMachineWindow(Adw.ApplicationWindow):
     def _setup_services(self) -> None:
         """Initialize all services"""
         self.application = self.get_application()
-        # Bundled sounds from app install location (read-only in snaps)
         bundled_sounds_dir = os.path.join(
             os.path.dirname(__file__), "..", "data", "drumkit"
         )
-        # User data directory (writable) - uses SNAP_USER_DATA in snaps,
-        # or XDG_DATA_HOME otherwise
-        user_data_dir = os.path.join(
-            GLib.get_user_data_dir(), "drum-machine", "drumkit"
-        )
 
         try:
-            self.sound_service = SoundService(user_data_dir, bundled_sounds_dir)
+            self.sound_service = SoundService(bundled_sounds_dir)
             self.sound_service.load_sounds()
         except Exception as e:
             logging.critical(f"Failed to initialize sound service: {e}")
@@ -115,12 +109,13 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         self.update_export_button_sensitivity()
 
     def update_export_button_sensitivity(self) -> None:
-        """Update the sensitivity of the export button based on pattern state"""
+        """Update the sensitivity of export and clear buttons based on pattern state"""
         has_active_beats = any(
             any(beats.values())
             for beats in self.drum_machine_service.drum_parts_state.values()
         )
         self.export_audio_button.set_sensitive(has_active_beats)
+        self.clear_button.set_sensitive(has_active_beats)
 
     def _connect_signals(self) -> None:
         """Connect UI signals"""
@@ -235,14 +230,30 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         button.set_tooltip_text(volume_text)
 
     def handle_clear(self, button: Gtk.Button) -> None:
+        """Clear the pattern but keep samples"""
         self.drum_machine_service.clear_all_toggles()
-        # After clearing, update the total beats which will reset active_pages to 1
         self.drum_machine_service.update_total_beats()
-        # Now, reset the carousel UI to its initial state
         self.drum_grid_builder.reset_carousel_pages()
-        # Update export button sensitivity
         self.update_export_button_sensitivity()
-        # Mark as saved when clearing
+        self.save_changes_service.mark_unsaved_changes(False)
+
+    def reset_to_defaults(self) -> None:
+        """Clear pattern and restore default samples, BPM, and volume"""
+        self.drum_machine_service.clear_all_toggles()
+        self.sound_service.drum_part_manager.reset_to_defaults()
+        self.sound_service.reload_sounds()
+        self.drum_machine_service.drum_parts_state = (
+            self.drum_machine_service.create_empty_drum_parts_state()
+        )
+        self.drum_machine_service.set_bpm(DEFAULT_BPM)
+        self.drum_machine_service.set_volume(DEFAULT_VOLUME)
+        self.drum_grid_builder.rebuild_drum_parts_column()
+        self.drum_grid_builder.rebuild_carousel()
+        self.drum_machine_service.update_total_beats()
+        self.drum_grid_builder.reset_carousel_pages()
+        self.bpm_spin_button.set_value(DEFAULT_BPM)
+        self.volume_button.set_value(DEFAULT_VOLUME)
+        self.update_export_button_sensitivity()
         self.save_changes_service.mark_unsaved_changes(False)
 
     def handle_play_pause(self, button: Gtk.Button) -> None:
