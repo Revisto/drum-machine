@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-13 03:26+0000\n"
-"PO-Revision-Date: 2025-12-13 11:47+0800\n"
+"POT-Creation-Date: 2025-12-19 15:26+0000\n"
+"PO-Revision-Date: 2025-12-20 08:00+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -374,7 +374,7 @@ msgstr "闷音三角铁"
 msgid "Open Triangle"
 msgstr "开放音三角铁"
 
-#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:338
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
 msgid "MIDI Mapping"
 msgstr "MIDI 映射"
 
@@ -418,52 +418,52 @@ msgstr "保存"
 msgid "Custom Note"
 msgstr "自定义音符"
 
-#: src/handlers/drag_drop_handler.py:113
+#: src/handlers/drag_drop_handler.py:299
 msgid "Sound replaced"
 msgstr "声音已替换"
 
-#: src/handlers/drag_drop_handler.py:116
+#: src/handlers/drag_drop_handler.py:302
 msgid "Failed to replace sound"
 msgstr "替换声音失败"
 
-#: src/handlers/drag_drop_handler.py:126
+#: src/handlers/drag_drop_handler.py:312
 msgid "Not a supported audio file"
 msgstr "不受支持的音频文件"
 
-#: src/handlers/drag_drop_handler.py:134
+#: src/handlers/drag_drop_handler.py:320
 msgid "File not found"
 msgstr "文件未找到"
 
-#: src/handlers/drag_drop_handler.py:139
+#: src/handlers/drag_drop_handler.py:325
 msgid "Selected item is not a file"
 msgstr "选中项目不是文件"
 
-#: src/handlers/drag_drop_handler.py:146
+#: src/handlers/drag_drop_handler.py:332
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr "文件太大了：{:.1f}MB（最大 50MB）"
 
-#: src/handlers/drag_drop_handler.py:174
+#: src/handlers/drag_drop_handler.py:362
 msgid "No valid audio files found"
 msgstr "未找到有效音频文件"
 
-#: src/handlers/drag_drop_handler.py:209
+#: src/handlers/drag_drop_handler.py:402
 msgid "Error processing file: {}"
 msgstr "处理文件时出错：{}"
 
-#: src/handlers/drag_drop_handler.py:237
+#: src/handlers/drag_drop_handler.py:433
 msgid "Added {} drum part, {} files skipped"
 msgstr "添加了 {} 个击鼓部分，跳过了 {} 个文件"
 
-#: src/handlers/drag_drop_handler.py:243
+#: src/handlers/drag_drop_handler.py:439
 msgid "Added {} drum parts, {} files skipped"
 msgstr "添加了 {} 个击鼓部分，跳过了 {} 个文件"
 
-#: src/handlers/drag_drop_handler.py:248
+#: src/handlers/drag_drop_handler.py:444
 msgid "Added {} drum parts"
 msgstr "添加了 {} 个击鼓部分"
 
 #. Only show skipped message if no replacement happened
-#: src/handlers/drag_drop_handler.py:251
+#: src/handlers/drag_drop_handler.py:447
 msgid "{} files skipped"
 msgstr "跳过了 {} 个文件"
 
@@ -536,81 +536,81 @@ msgstr "正在处理…"
 msgid "Custom Sound"
 msgstr "自定义声音"
 
-#: src/ui/drum_grid_builder.py:323
+#: src/ui/drum_grid_builder.py:327
 msgid "Preview"
 msgstr "预览"
 
-#: src/ui/drum_grid_builder.py:325
+#: src/ui/drum_grid_builder.py:329
 msgid "Replace…"
 msgstr "替换…"
 
-#: src/ui/drum_grid_builder.py:328
+#: src/ui/drum_grid_builder.py:332
 msgid "Replace with new sound"
 msgstr "使用新声音替换"
 
-#: src/ui/drum_grid_builder.py:331
+#: src/ui/drum_grid_builder.py:335
 msgid "Remove"
 msgstr "移除"
 
-#: src/ui/drum_grid_builder.py:334
+#: src/ui/drum_grid_builder.py:338
 msgid "At least one drum part must remain"
 msgstr "必须保留至少一个击鼓部分"
 
-#: src/ui/drum_grid_builder.py:341
+#: src/ui/drum_grid_builder.py:345
 msgid "Configure MIDI note for export"
 msgstr "配置 MIDI 音符导出选项"
 
-#: src/ui/drum_grid_builder.py:398
+#: src/ui/drum_grid_builder.py:402
 msgid "MIDI note updated"
 msgstr "MIDI 音符已更新"
 
-#: src/ui/drum_grid_builder.py:406
+#: src/ui/drum_grid_builder.py:410
 msgid "Select New Sound"
 msgstr "选择新声音"
 
-#: src/ui/drum_grid_builder.py:420
+#: src/ui/drum_grid_builder.py:424
 msgid "Removed drum part: {}"
 msgstr "已移除击鼓部分：{}"
 
-#: src/ui/drum_grid_builder.py:425
+#: src/ui/drum_grid_builder.py:429
 msgid "Failed to remove drum part"
 msgstr "移除击鼓部分失败"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:225
+#: src/window.py:220
 msgid "{} Beats per Minute (BPM)"
 msgstr "每分钟 {} 节拍（BPM）"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:234
+#: src/window.py:229
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% 音量"
 
-#: src/window.py:251 src/window.ui:173
+#: src/window.py:262 src/window.ui:173
 msgid "Play"
 msgstr "播放"
 
-#: src/window.py:255
+#: src/window.py:266
 msgid "Pause"
 msgstr "暂停"
 
-#: src/window.py:302
+#: src/window.py:313
 msgid "Open"
 msgstr "打开"
 
-#: src/window.py:320
+#: src/window.py:331
 msgid "Added: {}"
 msgstr "已添加：{}"
 
-#: src/window.py:335
+#: src/window.py:346
 msgid "Failed to add custom sound"
 msgstr "添加自定义声音失败"
 
-#: src/window.py:342
+#: src/window.py:353
 msgid "Replaced drum with: {}"
 msgstr "已替换击鼓为：{}"
 
-#: src/window.py:350
+#: src/window.py:361
 msgid "Failed to replace drum sound"
 msgstr "替换击鼓声音失败"
 
@@ -674,12 +674,12 @@ msgid "Adjust Volume"
 msgstr "调整音量"
 
 #: src/window.ui:210
-msgid "Reset"
-msgstr "重置"
+msgid "Clear"
+msgstr "清除"
 
 #: src/window.ui:211
-msgid "Reset the Drum Sequence"
-msgstr "重置击鼓序列"
+msgid "Clear the Drum Pattern"
+msgstr "清除击鼓模式"
 
 #: src/window.ui:226
 msgid "_Add Samples…"
@@ -690,10 +690,14 @@ msgid "_Save Pattern…"
 msgstr "保存模式(_S)…"
 
 #: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr "重置为默认值(_R)"
+
+#: src/window.ui:242
 msgid "_Keyboard Shortcuts"
 msgstr "键盘快捷键(_K)"
 
-#: src/window.ui:240
+#: src/window.ui:246
 msgid "_About Drum Machine"
 msgstr "关于击鼓器(_A)"
 
@@ -808,7 +812,7 @@ msgid ""
 msgstr "当前模式包含未保存更改。未保存的更改将会永久丢失。"
 
 #. Translators: Cancel the operation
-#: src/gtk/save-changes-dialog.blp:14
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
 msgid "_Cancel"
 msgstr "取消(_C)"
 
@@ -862,6 +866,26 @@ msgstr "选择文件…"
 msgid "Cancel Export"
 msgstr "取消导出"
 
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr "重置为默认值吗？"
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume "
+"to their default values. This action cannot be undone."
+msgstr ""
+"这会清除当前击鼓模式并将所有采样、BPM 和音量恢复为它们的默认值。此操作无法撤"
+"消。"
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+msgid "_Reset"
+msgstr "重置(_R)"
+
+#~ msgid "Reset the Drum Sequence"
+#~ msgstr "重置击鼓序列"
+
 #~ msgid "No Pattern"
 #~ msgstr "无模式"
 
@@ -901,7 +925,3 @@ msgstr "取消导出"
 
 #~ msgid "Select an image file for the cover art"
 #~ msgstr "选择用于封面的图像文件"
-
-#~ msgctxt "accessibility"
-#~ msgid "Save Drum Pattern"
-#~ msgstr "保存击鼓模式"
