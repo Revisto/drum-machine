@@ -32,11 +32,11 @@
   <screenshots>
       <screenshot type="default">
           <caption>Drum Pattern Loaded in Light Mode</caption>
-          <image>https://github.com/revisto/drum-machine/raw/master/data/screenshots/drum-machine-light.png</image>
+          <image>https://github.com/revisto/drum-machine/raw/main/data/screenshots/drum-machine-light.png</image>
       </screenshot>
       <screenshot environment="gnome:dark">
           <caption>Drum Pattern Loaded in Dark Mode</caption>
-          <image>https://github.com/revisto/drum-machine/raw/master/data/screenshots/drum-machine-dark.png</image>
+          <image>https://github.com/revisto/drum-machine/raw/main/data/screenshots/drum-machine-dark.png</image>
       </screenshot>
   </screenshots>
   <translation type="gettext">drum-machine</translation>

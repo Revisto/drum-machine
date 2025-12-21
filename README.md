@@ -1,4 +1,4 @@
-[license-url]: https://github.com/revisto/drum-machine/blob/master/COPYING
+[license-url]: https://github.com/revisto/drum-machine/blob/main/COPYING
 [license-image]: https://img.shields.io/github/license/revisto/drum-machine.svg?style=for-the-badge
 [flathub-url]: https://flathub.org/apps/io.github.revisto.drum-machine
 [flathub-image]: https://img.shields.io/flathub/v/io.github.revisto.drum-machine?logo=flathub&style=for-the-badge
