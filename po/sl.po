@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-13 03:26+0000\n"
-"PO-Revision-Date: 2025-12-13 12:48+0100\n"
+"POT-Creation-Date: 2025-12-21 03:25+0000\n"
+"PO-Revision-Date: 2025-12-21 08:59+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? "
 "3 : 0);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
@@ -374,7 +374,7 @@ msgstr "Utišaj triangel"
 msgid "Open Triangle"
 msgstr "Odpri triangel"
 
-#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:338
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
 msgid "MIDI Mapping"
 msgstr "Preslikava MIDI"
 
@@ -417,52 +417,52 @@ msgstr "Shrani"
 msgid "Custom Note"
 msgstr "Nota po meri"
 
-#: src/handlers/drag_drop_handler.py:113
+#: src/handlers/drag_drop_handler.py:299
 msgid "Sound replaced"
 msgstr "Zvok zamenjan"
 
-#: src/handlers/drag_drop_handler.py:116
+#: src/handlers/drag_drop_handler.py:302
 msgid "Failed to replace sound"
 msgstr "Zamenjava zvoka ni uspela"
 
-#: src/handlers/drag_drop_handler.py:126
+#: src/handlers/drag_drop_handler.py:312
 msgid "Not a supported audio file"
 msgstr "Ni podprta zvočna datoteka"
 
-#: src/handlers/drag_drop_handler.py:134
+#: src/handlers/drag_drop_handler.py:320
 msgid "File not found"
 msgstr "Datoteke ni mogoče najti"
 
-#: src/handlers/drag_drop_handler.py:139
+#: src/handlers/drag_drop_handler.py:325
 msgid "Selected item is not a file"
 msgstr "Izbrani element ni datoteka"
 
-#: src/handlers/drag_drop_handler.py:146
+#: src/handlers/drag_drop_handler.py:332
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr "Prevelika datoteka: {:.1f} MB (največ 50 MB)"
 
-#: src/handlers/drag_drop_handler.py:174
+#: src/handlers/drag_drop_handler.py:362
 msgid "No valid audio files found"
 msgstr "Ni mogoče najti veljavnih zvočnih datotek"
 
-#: src/handlers/drag_drop_handler.py:209
+#: src/handlers/drag_drop_handler.py:402
 msgid "Error processing file: {}"
 msgstr "Datoteka pri obdelavi datoteke: {}"
 
-#: src/handlers/drag_drop_handler.py:237
+#: src/handlers/drag_drop_handler.py:433
 msgid "Added {} drum part, {} files skipped"
 msgstr "Dodan {} bobnarski del, {} datotek preskočenih"
 
-#: src/handlers/drag_drop_handler.py:243
+#: src/handlers/drag_drop_handler.py:439
 msgid "Added {} drum parts, {} files skipped"
 msgstr "Dodanih {} bobnarskih delov, {} datotek preskočenih"
 
-#: src/handlers/drag_drop_handler.py:248
+#: src/handlers/drag_drop_handler.py:444
 msgid "Added {} drum parts"
 msgstr "Dodanih {} bobnarskih delov"
 
 #. Only show skipped message if no replacement happened
-#: src/handlers/drag_drop_handler.py:251
+#: src/handlers/drag_drop_handler.py:447
 msgid "{} files skipped"
 msgstr "{} preskočenih datotek"
 
@@ -534,81 +534,81 @@ msgstr "Obdelovanje ..."
 msgid "Custom Sound"
 msgstr "Zvok po meri"
 
-#: src/ui/drum_grid_builder.py:323
+#: src/ui/drum_grid_builder.py:327
 msgid "Preview"
 msgstr "Predogled"
 
-#: src/ui/drum_grid_builder.py:325
+#: src/ui/drum_grid_builder.py:329
 msgid "Replace…"
 msgstr "Zamenjaj …"
 
-#: src/ui/drum_grid_builder.py:328
+#: src/ui/drum_grid_builder.py:332
 msgid "Replace with new sound"
 msgstr "Zamenjajte z novim zvokom"
 
-#: src/ui/drum_grid_builder.py:331
+#: src/ui/drum_grid_builder.py:335
 msgid "Remove"
 msgstr "Odstrani"
 
-#: src/ui/drum_grid_builder.py:334
+#: src/ui/drum_grid_builder.py:338
 msgid "At least one drum part must remain"
 msgstr "Vsaj en bobnarski del mora ostati"
 
-#: src/ui/drum_grid_builder.py:341
+#: src/ui/drum_grid_builder.py:345
 msgid "Configure MIDI note for export"
 msgstr "Prilagodi noto MIDI za izvoz"
 
-#: src/ui/drum_grid_builder.py:398
+#: src/ui/drum_grid_builder.py:402
 msgid "MIDI note updated"
 msgstr "NNota MIDI posodobljena"
 
-#: src/ui/drum_grid_builder.py:406
+#: src/ui/drum_grid_builder.py:410
 msgid "Select New Sound"
 msgstr "Izberite nov zvok"
 
-#: src/ui/drum_grid_builder.py:420
+#: src/ui/drum_grid_builder.py:424
 msgid "Removed drum part: {}"
 msgstr "Odstranjen bobnarski del: {}"
 
-#: src/ui/drum_grid_builder.py:425
+#: src/ui/drum_grid_builder.py:429
 msgid "Failed to remove drum part"
 msgstr "Ni uspelo odstraniti bobnarskega dela"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:225
+#: src/window.py:220
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} udarcev na minuto (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:234
+#: src/window.py:229
 msgid "{:.0f}% Volume"
 msgstr "Glasnost {:.0f} %"
 
-#: src/window.py:251 src/window.ui:173
+#: src/window.py:262 src/window.ui:173
 msgid "Play"
 msgstr "Predvajaj"
 
-#: src/window.py:255
+#: src/window.py:266
 msgid "Pause"
 msgstr "Premor"
 
-#: src/window.py:302
+#: src/window.py:313
 msgid "Open"
 msgstr "Odpri"
 
-#: src/window.py:320
+#: src/window.py:331
 msgid "Added: {}"
 msgstr "Dodano: {}"
 
-#: src/window.py:335
+#: src/window.py:346
 msgid "Failed to add custom sound"
 msgstr "Dodajanje zvoka po meri ni uspelo"
 
-#: src/window.py:342
+#: src/window.py:353
 msgid "Replaced drum with: {}"
 msgstr "Boben zamenjan z: {}"
 
-#: src/window.py:350
+#: src/window.py:361
 msgid "Failed to replace drum sound"
 msgstr "Zamenjava zvoka bobnov ni uspela"
 
@@ -672,12 +672,12 @@ msgid "Adjust Volume"
 msgstr "Prilagodi glasnost"
 
 #: src/window.ui:210
-msgid "Reset"
-msgstr "Ponastavi"
+msgid "Clear"
+msgstr "Počisti"
 
 #: src/window.ui:211
-msgid "Reset the Drum Sequence"
-msgstr "Ponastavi zaporedje bobna"
+msgid "Clear the Drum Pattern"
+msgstr "Počisti vzorec bobna"
 
 #: src/window.ui:226
 msgid "_Add Samples…"
@@ -688,10 +688,14 @@ msgid "_Save Pattern…"
 msgstr "_Shrani vzorec …"
 
 #: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr "_Ponastavi na privzeto"
+
+#: src/window.ui:242
 msgid "_Keyboard Shortcuts"
 msgstr "_Tipkovne bližnjice"
 
-#: src/window.ui:240
+#: src/window.ui:246
 msgid "_About Drum Machine"
 msgstr "_O programu Bobnarski stroj"
 
@@ -808,7 +812,7 @@ msgstr ""
 "trajno izgubljene."
 
 #. Translators: Cancel the operation
-#: src/gtk/save-changes-dialog.blp:14
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
 msgid "_Cancel"
 msgstr "Pre_kliči"
 
@@ -861,3 +865,20 @@ msgstr "Izberi datoteko ..."
 #: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr "Prekliči izvoz"
+
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr "Ali želite ponastaviti na privzete vrednosti?"
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume to their "
+"default values. This action cannot be undone."
+msgstr ""
+"To bo izbrisalo trenutni vzorec in povrnilo vse vzorce, BPM in glasnost na privzete "
+"vrednosti. Tega dejanja ni mogoče razveljaviti."
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+msgid "_Reset"
+msgstr "Po_nastavi"
