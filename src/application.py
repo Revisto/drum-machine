@@ -96,8 +96,10 @@ class DrumMachineApplication(Adw.Application):
             """
             2.2
             <ul>
-              <li>Reset to Defaults: New menu option to restore all samples, BPM, and volume to factory settings</li>
-              <li>Clear Button: Renamed from Reset, now only clears the pattern while keeping custom samples</li>
+              <li>Reset to Defaults: New menu option to restore all samples, BPM, and
+              volume to factory settings</li>
+              <li>Clear Button: Renamed from Reset, now only clears the pattern while
+              keeping custom samples</li>
             </ul>
             2.0
             <ul>
