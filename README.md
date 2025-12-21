@@ -67,6 +67,8 @@ There are lots of features that can be added, and we would love to see your cont
 
 If you want to contribute to this project, you can fork the repository and submit a pull request. You can also report a bug or request a feature by opening an issue.
 
+See [CONTRIBUTING.md](CONTRIBUTING.md) for branching workflow and contribution guidelines.
+
 Your contributions are extremely welcome and appreciated.
 
 ## Translations
