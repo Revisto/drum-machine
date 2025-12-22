@@ -3,7 +3,7 @@
 ## Branches
 
 - `dev` — default branch, all PRs go here
-- `main` — releases only, string frozen for translations
+- `main` — releases only, string freeze for translations
 
 ## Workflow
 
