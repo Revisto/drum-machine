@@ -42,8 +42,8 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/revisto/drum-machine.git"
+                    "type" : "dir",
+                    "path" : "."
                 }
             ]
         }
