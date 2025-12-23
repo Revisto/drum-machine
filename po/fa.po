@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-11-26 03:26+0000\n"
-"PO-Revision-Date: 2025-11-26 13:48+0330\n"
+"POT-Creation-Date: 2025-12-21 22:38+0000\n"
+"PO-Revision-Date: 2025-12-24 00:14+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian\n"
 "Language: fa\n"
@@ -57,42 +57,47 @@ msgid "Features:"
 msgstr "ویژگی‌ها:"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
-msgid "Intuitive grid-based pattern editor"
-msgstr "ویرایشگر ادراکی الگوی مبتنی بر شبکه"
+msgid "Intuitive grid-based pattern editor with infinite pages"
+msgstr "ویرایشگر ادراکی الگوی مبتنی بر شبکه با صفحه‌های بی‌پایان"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr "نمونه‌هیا سفارشی: افزودن صداهای کوبه‌ای خودتان با نگاشت نت MIDI."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
 msgstr "واپایش ض‌د‌د تنظیم‌پذیر"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
 msgid "Volume control for overall mix"
 msgstr "واپایش حجم صدا برای تنظیم کلی"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
 msgid "Save and load patterns"
 msgstr "ذخیره و بار کردن الگوها"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "چندین صدای کوبه‌ای از جمله دهل، طبل، سنج و بیش‌تر"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
-msgstr "قابلیت خروجی صوتی با پشتیبانی از قالب‌های WAV، ‏FLAC، ‏Ogg و MP3"
-
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr "برون‌ریزی صدا و MIDI با پشتیبانی از قالب‌های WAV، ‏FLAC، ‏Ogg،‏ MP3 و MIDI"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Metadata support for embedding artist name, song title, and cover art"
 msgstr "پشتیبانی از فراداده برای جاسازی نام هنرمند، عنوان آهنگ و طرح جلد"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "میان‌برهای صفحه‌کلید برای دسترسی سریع به همهٔ ویژگی‌ها"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "الگوی کوبه‌ای بار شده در حالت روشن"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "الگوی کوبه‌ای بار شده در حالت تیره"
 
@@ -376,7 +381,7 @@ msgstr ""
 msgid "Open Triangle"
 msgstr ""
 
-#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:338
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
 msgid "MIDI Mapping"
 msgstr "نگاشت MIDI"
 
@@ -397,7 +402,7 @@ msgstr "نت MIDI"
 
 #: src/dialogs/midi_mapping_dialog.py:119
 msgid "The note number to trigger"
-msgstr ""
+msgstr "شمارهٔ نت برای تحریک"
 
 #. Group 2: Standard Instruments
 #: src/dialogs/midi_mapping_dialog.py:137
@@ -406,7 +411,7 @@ msgstr "ساز استاندارد"
 
 #: src/dialogs/midi_mapping_dialog.py:139
 msgid "Select a General MIDI instrument to automatically set the note."
-msgstr "گزینش ساز MIDI عمومی برای تنظیم خودکار نت"
+msgstr "گزینش ساز MIDI عمومی برای تنظیم خودکار نت."
 
 #: src/dialogs/midi_mapping_dialog.py:143
 msgid "Instrument Preset"
@@ -420,52 +425,52 @@ msgstr "ذخیره"
 msgid "Custom Note"
 msgstr "نت سفارشی"
 
-#: src/handlers/drag_drop_handler.py:113
+#: src/handlers/drag_drop_handler.py:299
 msgid "Sound replaced"
 msgstr "صدا جایگزین شد"
 
-#: src/handlers/drag_drop_handler.py:116
+#: src/handlers/drag_drop_handler.py:302
 msgid "Failed to replace sound"
 msgstr "شکست در جایگزینی صدا"
 
-#: src/handlers/drag_drop_handler.py:126
+#: src/handlers/drag_drop_handler.py:312
 msgid "Not a supported audio file"
 msgstr "پروندهٔ صوتی پشتیبانی نشده"
 
-#: src/handlers/drag_drop_handler.py:134
+#: src/handlers/drag_drop_handler.py:320
 msgid "File not found"
 msgstr "پرونده پیدا نشد"
 
-#: src/handlers/drag_drop_handler.py:139
+#: src/handlers/drag_drop_handler.py:325
 msgid "Selected item is not a file"
 msgstr "ان‌چه گزیده شده پرونده نیست"
 
-#: src/handlers/drag_drop_handler.py:146
+#: src/handlers/drag_drop_handler.py:332
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr "پرونده بیش از حد بزرگ؛ {:.1f}م‌ب (بیشینه ۵۰م‌ب)"
 
-#: src/handlers/drag_drop_handler.py:174
+#: src/handlers/drag_drop_handler.py:362
 msgid "No valid audio files found"
 msgstr "هیچ پروندهٔ صوتی معتبری پیدا نشد"
 
-#: src/handlers/drag_drop_handler.py:209
+#: src/handlers/drag_drop_handler.py:402
 msgid "Error processing file: {}"
 msgstr "خطا در پردازش پرونده: {}"
 
-#: src/handlers/drag_drop_handler.py:237
+#: src/handlers/drag_drop_handler.py:433
 msgid "Added {} drum part, {} files skipped"
-msgstr ""
+msgstr "{} بخش کوبه‌ای افزوده شد. از {} پرونده پریده شد"
 
-#: src/handlers/drag_drop_handler.py:243
+#: src/handlers/drag_drop_handler.py:439
 msgid "Added {} drum parts, {} files skipped"
-msgstr ""
+msgstr "{} بخش کوبه‌ای افزوده شد. از {} پرونده پریده شد"
 
-#: src/handlers/drag_drop_handler.py:248
+#: src/handlers/drag_drop_handler.py:444
 msgid "Added {} drum parts"
-msgstr ""
+msgstr "{} بخش کوبه‌ای افزوده شد"
 
 #. Only show skipped message if no replacement happened
-#: src/handlers/drag_drop_handler.py:251
+#: src/handlers/drag_drop_handler.py:447
 msgid "{} files skipped"
 msgstr "از {} پرونده پریده شد"
 
@@ -473,44 +478,32 @@ msgstr "از {} پرونده پریده شد"
 msgid "Default Patterns"
 msgstr "الگوهای پیش‌گزیده"
 
-#: src/handlers/file_dialog_handler.py:84
-msgid "No Pattern"
-msgstr "بدون الگو"
-
-#: src/handlers/file_dialog_handler.py:85
-msgid "Please create a drum pattern before exporting audio."
-msgstr "ایجاد الگوی کوبه‌ای پیش از برون‌ریزی صدا."
-
-#: src/handlers/file_dialog_handler.py:87
-msgid "_OK"
-msgstr "_تأیید"
-
-#: src/handlers/file_dialog_handler.py:110
-#: src/handlers/file_dialog_handler.py:187
+#: src/handlers/file_dialog_handler.py:92
+#: src/handlers/file_dialog_handler.py:171
 msgid "MIDI files"
 msgstr "پرونده‌های MIDI"
 
-#: src/handlers/file_dialog_handler.py:116
+#: src/handlers/file_dialog_handler.py:98
 msgid "Open MIDI File"
 msgstr "گشودن پروندهٔ MIDI"
 
-#: src/handlers/file_dialog_handler.py:144
+#: src/handlers/file_dialog_handler.py:127
 msgid "Failed to open file"
 msgstr "شکست در گشودن پرونده"
 
-#: src/handlers/file_dialog_handler.py:181
+#: src/handlers/file_dialog_handler.py:165
 msgid "Failed to load pattern"
 msgstr "شکست در بار کردن الگو"
 
-#: src/handlers/file_dialog_handler.py:195
+#: src/handlers/file_dialog_handler.py:179
 msgid "Save Sequence"
 msgstr "ذخیرهٔ دنباله"
 
-#: src/handlers/file_dialog_handler.py:221
+#: src/handlers/file_dialog_handler.py:205
 msgid "Add Audio Samples"
 msgstr "افزودن نمونه‌های صوتی"
 
-#: src/handlers/file_dialog_handler.py:243
+#: src/handlers/file_dialog_handler.py:227
 msgid "Audio files"
 msgstr "پرونده‌های صوتی"
 
@@ -550,83 +543,83 @@ msgstr "پردازش کردن…"
 msgid "Custom Sound"
 msgstr "صدای سفارشی"
 
-#: src/ui/drum_grid_builder.py:323
+#: src/ui/drum_grid_builder.py:327
 msgid "Preview"
 msgstr "پیش‌نمایش"
 
-#: src/ui/drum_grid_builder.py:325
+#: src/ui/drum_grid_builder.py:329
 msgid "Replace…"
 msgstr "جایگزینی…"
 
-#: src/ui/drum_grid_builder.py:328
+#: src/ui/drum_grid_builder.py:332
 msgid "Replace with new sound"
 msgstr "جایگزینی با صدای جدید"
 
-#: src/ui/drum_grid_builder.py:331
+#: src/ui/drum_grid_builder.py:335
 msgid "Remove"
 msgstr "برداشتن"
 
-#: src/ui/drum_grid_builder.py:334
+#: src/ui/drum_grid_builder.py:338
 msgid "At least one drum part must remain"
-msgstr ""
+msgstr "باید کمینه یک بخش کوبه‌ای باقی بماند"
 
-#: src/ui/drum_grid_builder.py:341
+#: src/ui/drum_grid_builder.py:345
 msgid "Configure MIDI note for export"
 msgstr "پیکربندی نت MIDI برای برون‌ریزی"
 
-#: src/ui/drum_grid_builder.py:398
+#: src/ui/drum_grid_builder.py:402
 msgid "MIDI note updated"
 msgstr "نت MIDI به‌روز شد"
 
-#: src/ui/drum_grid_builder.py:406
+#: src/ui/drum_grid_builder.py:410
 msgid "Select New Sound"
 msgstr "گزینش صدای جدید"
 
-#: src/ui/drum_grid_builder.py:420
-msgid "Removed drum part: {}"
-msgstr ""
-
 #: src/ui/drum_grid_builder.py:424
+msgid "Removed drum part: {}"
+msgstr "بخش کوبه‌ای برداشته شده: {}"
+
+#: src/ui/drum_grid_builder.py:429
 msgid "Failed to remove drum part"
-msgstr ""
+msgstr "شکست در برداشتن بخش کوبه‌ای"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:203
+#: src/window.py:220
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} ضرب در دقیقه (ض‌دد)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:212
+#: src/window.py:229
 msgid "{:.0f}% Volume"
 msgstr "{:I.0f}% حجم صدا"
 
-#: src/window.py:227 src/window.ui:170
+#: src/window.py:262 src/window.ui:173
 msgid "Play"
 msgstr "پخش"
 
-#: src/window.py:231
+#: src/window.py:266
 msgid "Pause"
 msgstr "مکث"
 
-#: src/window.py:278
+#: src/window.py:313
 msgid "Open"
 msgstr "گشودن"
 
-#: src/window.py:296
+#: src/window.py:331
 msgid "Added: {}"
 msgstr "افزوده: {}"
 
-#: src/window.py:311
+#: src/window.py:346
 msgid "Failed to add custom sound"
 msgstr "شکست در افزودن صدای سفارشی"
 
-#: src/window.py:318
+#: src/window.py:353
 msgid "Replaced drum with: {}"
 msgstr ""
 
-#: src/window.py:326
+#: src/window.py:361
 msgid "Failed to replace drum sound"
-msgstr ""
+msgstr "شکست در جایگزینی صدای کوبه‌ای"
 
 #: src/window.ui:52
 msgid "Open…"
@@ -662,52 +655,56 @@ msgstr "دسترسی به اطّلاعات برنامه و میان‌برهای
 msgid "Export Audio…"
 msgstr "برون‌ریزی صدا…"
 
-#: src/window.ui:88
+#: src/window.ui:91
 msgctxt "accessibility"
 msgid "Export Audio…"
 msgstr "برون‌ریزی صدا…"
 
-#: src/window.ui:89
+#: src/window.ui:92
 msgid "Export Current Drum Pattern as Audio File"
 msgstr "ذخیرهٔ الگوی کوبه‌ای کنونی به شکل پروندهٔ صوتی"
 
-#: src/window.ui:134
+#: src/window.ui:137
 msgid "BPM"
 msgstr "ض‌دد"
 
-#: src/window.ui:139 src/window.ui:143
+#: src/window.ui:142 src/window.ui:146
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "تنظیم سرعت بر اساس ضرب در دقیقه (ض‌دد)"
 
-#: src/window.ui:142
+#: src/window.ui:145
 msgid "Tempo"
 msgstr "سرعت"
 
-#: src/window.ui:184
+#: src/window.ui:187
 msgid "Adjust Volume"
 msgstr "تنظیم حجم صدا"
 
-#: src/window.ui:207
-msgid "Reset"
-msgstr "بازنشانی"
+#: src/window.ui:210
+msgid "Clear"
+msgstr "پاک سازی"
 
-#: src/window.ui:208
-msgid "Reset the Drum Sequence"
-msgstr "بازنشانی دنبالهٔ کوبه‌ای"
+#: src/window.ui:211
+msgid "Clear the Drum Pattern"
+msgstr "پاک سازی الگوی کوبه‌ای"
 
-#: src/window.ui:223
+#: src/window.ui:226
 msgid "_Add Samples…"
 msgstr "_افزودن نمونه‌ها…"
 
-#: src/window.ui:227
+#: src/window.ui:230
 msgid "_Save Pattern…"
 msgstr "_ذخیرهٔ الگو…"
 
-#: src/window.ui:233
+#: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr "_بازنشانی به پیش‌گزیده‌ها"
+
+#: src/window.ui:242
 msgid "_Keyboard Shortcuts"
 msgstr "_میان‌برهای صفحه‌کلید"
 
-#: src/window.ui:237
+#: src/window.ui:246
 msgid "_About Drum Machine"
 msgstr "_دربارهٔ ماشین درام"
 
@@ -824,7 +821,7 @@ msgstr ""
 "دست خواهند رفت."
 
 #. Translators: Cancel the operation
-#: src/gtk/save-changes-dialog.blp:14
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
 msgid "_Cancel"
 msgstr "_لغو"
 
@@ -877,6 +874,35 @@ msgstr "گزینش پرونده…"
 #: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr "لغو برون‌ریزی"
+
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr "بازنشانی به پیش‌گزیده‌ها؟"
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume "
+"to their default values. This action cannot be undone."
+msgstr ""
+"این کار الگوی کنونی را پاک کرده و همهٔ نمونه‌ها، ض‌دد و حجم صدا را به مقدارهای "
+"پیش‌گزیده‌شان برمی‌گرداند. این کنش بازگشت‌پذیر نیست."
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+msgid "_Reset"
+msgstr "ب_رگرداندن به مقادیر اولیه"
+
+#~ msgid "No Pattern"
+#~ msgstr "بدون الگو"
+
+#~ msgid "Please create a drum pattern before exporting audio."
+#~ msgstr "ایجاد الگوی کوبه‌ای پیش از برون‌ریزی صدا."
+
+#~ msgid "_OK"
+#~ msgstr "_تأیید"
+
+#~ msgid "Reset the Drum Sequence"
+#~ msgstr "بازنشانی دنبالهٔ کوبه‌ای"
 
 #~ msgctxt "accessibility"
 #~ msgid "Open Preset"
