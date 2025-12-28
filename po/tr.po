@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-09-23 15:25+0000\n"
-"PO-Revision-Date: 2025-09-23 21:03+0300\n"
+"POT-Creation-Date: 2025-12-21 22:38+0000\n"
+"PO-Revision-Date: 2025-12-27 18:28+0300\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
@@ -18,10 +18,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
+#: src/window.ui:69
 msgid "Drum Machine"
 msgstr "Davul Makinesi"
 
@@ -51,203 +52,592 @@ msgid "Features:"
 msgstr "Özellikler:"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
-msgid "Intuitive grid-based pattern editor"
+msgid "Intuitive grid-based pattern editor with infinite pages"
 msgstr "Sezgisel ızgara tabanlı örüntü düzenleyici"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr ""
+"Özel örnekler: MIDI notası eşlemesi ile kendi davul seslerinizi ekleyin"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
 msgstr "Ayarlanabilir BPM denetimi"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
 msgid "Volume control for overall mix"
 msgstr "Genel karışım için ses denetimi"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
-msgid "Save and load preset patterns"
-msgstr "Ön ayar örüntülerini kaydet ve yükle"
-
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Save and load patterns"
+msgstr "Örüntüleri kaydet ve yükle"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Bas davulu, trampet, hi-hat ve daha çoğunu içeren çoklu davul sesleri"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
 msgstr ""
 "WAV, FLAC, Ogg ve MP3 biçimlerini destekleyen ses dışa aktarma özelliği"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Metadata support for embedding artist name, song title, and cover art"
 msgstr "Sanatçı adı, şarkı adı ve kapak resmi gömmek için üst veri desteği"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "Tüm işlevlere hızlı erişim için klavye kısayolları"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "Açık Kipte Yüklenen Davul Örüntüsü"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Koyu Kipte Yüklenen Davul Örüntüsü"
 
-#: src/application.py:69
+#: src/application.py:74
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns."
+msgstr ""
+"Davul Makinesi, davul ritimleri oluşturmak, çalmak ve yönetmek için modern "
+"ve sezgisel bir uygulamadır."
+
+#: src/application.py:79
 msgid "translator-credits"
 msgstr ""
 "Sabri Ünal <yakushabb@gmail.com>\n"
 "Emin Tufan Çetin <etcetin@gmail.com>"
 
-#: src/config/export_formats.py:43
+#: src/application.py:84
+msgid "Special thanks"
+msgstr "Özel teşekkürler"
+
+#: src/application.py:87
+msgid "Sounds"
+msgstr "Sesler"
+
+#: src/application.py:88
+#, python-brace-format
+msgid "The drum samples used in this application are from {link}."
+msgstr "Bu uygulamada kullanılan davul örnekleri {link} adresinden alınmıştır."
+
+#: src/config/export_formats.py:44
 msgid "MP3 files"
 msgstr "MP3 dosyaları"
 
-#: src/config/export_formats.py:44
+#: src/config/export_formats.py:45
 msgid "MP3"
 msgstr "MP3"
 
-#: src/config/export_formats.py:50
+#: src/config/export_formats.py:51
 msgid "FLAC files"
 msgstr "FLAC dosyaları"
 
-#: src/config/export_formats.py:51
+#: src/config/export_formats.py:52
 msgid "FLAC (Lossless)"
 msgstr "FLAC (Kayıpsız)"
 
-#: src/config/export_formats.py:57
+#: src/config/export_formats.py:58
 msgid "Ogg files"
 msgstr "Ogg dosyaları"
 
-#: src/config/export_formats.py:58
+#: src/config/export_formats.py:59
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: src/config/export_formats.py:64
+#: src/config/export_formats.py:65
 msgid "WAV files"
 msgstr "WAV dosyaları"
 
-#: src/config/export_formats.py:65
+#: src/config/export_formats.py:66
 msgid "WAV (Uncompressed)"
 msgstr "WAV (Sıkıştırılmamış)"
 
-#: src/dialogs/audio_export_dialog.py:115
+#: src/dialogs/audio_export_dialog.py:119
 msgid "Save Audio File"
 msgstr "Ses Dosyasını Kaydet"
 
-#: src/dialogs/audio_export_dialog.py:139
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Part “{}” is Silent"
+msgstr "“{}” Parçası Sessiz"
+
+#: src/dialogs/audio_export_dialog.py:150
+msgid "Parts “{}” and “{}” are Silent"
+msgstr "“{}” ve “{}” Parçaları Sessiz"
+
+#: src/dialogs/audio_export_dialog.py:154
+msgid "{} Parts are Silent"
+msgstr "{} Parça Sessiz"
+
+#: src/dialogs/audio_export_dialog.py:179
 msgid "Image files"
 msgstr "Görüntü dosyaları"
 
-#: src/dialogs/audio_export_dialog.py:145
+#: src/dialogs/audio_export_dialog.py:185
 msgid "Select Cover Art"
 msgstr "Kapak Resmi Seç"
 
-#: src/dialogs/audio_export_dialog.py:202
+#: src/dialogs/audio_export_dialog.py:245
 msgid "Audio exported to {}"
 msgstr "Ses {} konumuna dışa aktarıldı"
 
-#: src/dialogs/audio_export_dialog.py:207
+#: src/dialogs/audio_export_dialog.py:251
 msgid "Export failed"
 msgstr "Dışa aktarılamadı"
 
-#: src/dialogs/audio_export_dialog.py:214
+#: src/dialogs/audio_export_dialog.py:258
 msgid "Export cancelled successfully"
 msgstr "Dışa aktarma iptal edildi"
 
-#: src/handlers/file_dialog_handler.py:51
-msgid "Default Presets"
-msgstr "Ön Tanımlı Ön Ayarlar"
+#: src/dialogs/midi_mapping_dialog.py:22
+msgid "Acoustic Bass Drum"
+msgstr "Akustik Bas Davul"
 
-#: src/handlers/file_dialog_handler.py:83
-msgid "No Pattern"
-msgstr "Örüntü Yok"
+#: src/dialogs/midi_mapping_dialog.py:23
+msgid "Bass Drum 1"
+msgstr "Bas Davul 1"
 
-#: src/handlers/file_dialog_handler.py:84
-msgid "Please create a drum pattern before exporting audio."
-msgstr "Sesi dışa aktarmadan önce davul örüntüsü oluşturun."
+#: src/dialogs/midi_mapping_dialog.py:24
+msgid "Side Stick"
+msgstr "Yan Çubuk"
 
-#: src/handlers/file_dialog_handler.py:86
-msgid "_OK"
-msgstr "_Tamam"
+#: src/dialogs/midi_mapping_dialog.py:25
+msgid "Acoustic Snare"
+msgstr "Akustik Trampet"
 
-#: src/handlers/file_dialog_handler.py:109
-#: src/handlers/file_dialog_handler.py:177
+#: src/dialogs/midi_mapping_dialog.py:26
+msgid "Hand Clap"
+msgstr "Alkış"
+
+#: src/dialogs/midi_mapping_dialog.py:27
+msgid "Electric Snare"
+msgstr "Elektrikli Trampet"
+
+#: src/dialogs/midi_mapping_dialog.py:28
+msgid "Low Floor Tom"
+msgstr "Düşük Zemin Tom"
+
+#: src/dialogs/midi_mapping_dialog.py:29
+msgid "Closed Hi Hat"
+msgstr "Kapalı Hi Hat"
+
+#: src/dialogs/midi_mapping_dialog.py:30
+msgid "High Floor Tom"
+msgstr "Yüksek Zemin Tom"
+
+#: src/dialogs/midi_mapping_dialog.py:31
+msgid "Pedal Hi Hat"
+msgstr "Pedal Hi Hat"
+
+#: src/dialogs/midi_mapping_dialog.py:32
+msgid "Low Tom"
+msgstr "Düşük Tom"
+
+#: src/dialogs/midi_mapping_dialog.py:33
+msgid "Open Hi Hat"
+msgstr "Açık Hi Hat"
+
+#: src/dialogs/midi_mapping_dialog.py:34
+msgid "Low-Mid Tom"
+msgstr "Düşük-Orta Tom"
+
+#: src/dialogs/midi_mapping_dialog.py:35
+msgid "Hi-Mid Tom"
+msgstr "Yüksek-Orta Tom"
+
+#: src/dialogs/midi_mapping_dialog.py:36
+msgid "Crash Cymbal 1"
+msgstr "Çarpma Zili 1"
+
+#: src/dialogs/midi_mapping_dialog.py:37
+msgid "High Tom"
+msgstr "Yüksek Tom"
+
+#: src/dialogs/midi_mapping_dialog.py:38
+msgid "Ride Cymbal 1"
+msgstr "Sürme Zili 1"
+
+#: src/dialogs/midi_mapping_dialog.py:39
+msgid "Chinese Cymbal"
+msgstr "Çin Zili"
+
+#: src/dialogs/midi_mapping_dialog.py:40
+msgid "Ride Bell"
+msgstr "Zil"
+
+#: src/dialogs/midi_mapping_dialog.py:41
+msgid "Tambourine"
+msgstr "Tamburin"
+
+#: src/dialogs/midi_mapping_dialog.py:42
+msgid "Splash Cymbal"
+msgstr "Sıçrama Zili"
+
+#: src/dialogs/midi_mapping_dialog.py:43
+msgid "Cowbell"
+msgstr "İnek Zili"
+
+#: src/dialogs/midi_mapping_dialog.py:44
+msgid "Crash Cymbal 2"
+msgstr "Çarpma Zili 2"
+
+#: src/dialogs/midi_mapping_dialog.py:45
+msgid "Vibraslap"
+msgstr "Vibraslap"
+
+#: src/dialogs/midi_mapping_dialog.py:46
+msgid "Ride Cymbal 2"
+msgstr "Sürme Zil 2"
+
+#: src/dialogs/midi_mapping_dialog.py:47
+msgid "Hi Bongo"
+msgstr "Yüksek Bongo"
+
+#: src/dialogs/midi_mapping_dialog.py:48
+msgid "Low Bongo"
+msgstr "Düşük Bongo"
+
+#: src/dialogs/midi_mapping_dialog.py:49
+msgid "Mute Hi Conga"
+msgstr "Sessiz Yüksek Conga"
+
+#: src/dialogs/midi_mapping_dialog.py:50
+msgid "Open Hi Conga"
+msgstr "Açık Yüksek Conga"
+
+#: src/dialogs/midi_mapping_dialog.py:51
+msgid "Low Conga"
+msgstr "Düşük Konga"
+
+#: src/dialogs/midi_mapping_dialog.py:52
+msgid "High Timbale"
+msgstr "Yüksek Timbale"
+
+#: src/dialogs/midi_mapping_dialog.py:53
+msgid "Low Timbale"
+msgstr "Düşük Timbale"
+
+#: src/dialogs/midi_mapping_dialog.py:54
+msgid "High Agogo"
+msgstr "Yüksek Agogo"
+
+#: src/dialogs/midi_mapping_dialog.py:55
+msgid "Low Agogo"
+msgstr "Düşük Agogo"
+
+#: src/dialogs/midi_mapping_dialog.py:56
+msgid "Cabasa"
+msgstr "Cabasa"
+
+#: src/dialogs/midi_mapping_dialog.py:57
+msgid "Maracas"
+msgstr "Marakas"
+
+#: src/dialogs/midi_mapping_dialog.py:58
+msgid "Short Whistle"
+msgstr "Kısa Düdük"
+
+#: src/dialogs/midi_mapping_dialog.py:59
+msgid "Long Whistle"
+msgstr "Uzun Düdük"
+
+#: src/dialogs/midi_mapping_dialog.py:60
+msgid "Short Guiro"
+msgstr "Kısa Guiro"
+
+#: src/dialogs/midi_mapping_dialog.py:61
+msgid "Long Guiro"
+msgstr "Uzun Guiro"
+
+#: src/dialogs/midi_mapping_dialog.py:62
+msgid "Claves"
+msgstr "Claves"
+
+#: src/dialogs/midi_mapping_dialog.py:63
+msgid "Hi Wood Block"
+msgstr "Yüksek Ahşap Blok"
+
+#: src/dialogs/midi_mapping_dialog.py:64
+msgid "Low Wood Block"
+msgstr "Düşük Ahşap Blok"
+
+#: src/dialogs/midi_mapping_dialog.py:65
+msgid "Mute Cuica"
+msgstr "Cuica’yı Sustur"
+
+#: src/dialogs/midi_mapping_dialog.py:66
+msgid "Open Cuica"
+msgstr "Cuica’yı Aç"
+
+#: src/dialogs/midi_mapping_dialog.py:67
+msgid "Mute Triangle"
+msgstr "Üçgeni Sustur"
+
+#: src/dialogs/midi_mapping_dialog.py:68
+msgid "Open Triangle"
+msgstr "Üçgeni Aç"
+
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
+msgid "MIDI Mapping"
+msgstr "MIDI Eşleme"
+
+#. Group 1: Note Assignment
+#: src/dialogs/midi_mapping_dialog.py:108
+msgid "Note Assignment"
+msgstr "Nota Atama"
+
+#: src/dialogs/midi_mapping_dialog.py:111
+msgid ""
+"Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr ""
+"'{}' için MIDI notası ata. Bu, dışa aktarırken doğru çalınmasını sağlar."
+
+#. Action Row for Note
+#: src/dialogs/midi_mapping_dialog.py:118
+msgid "MIDI Note"
+msgstr "MIDI Notası"
+
+#: src/dialogs/midi_mapping_dialog.py:119
+msgid "The note number to trigger"
+msgstr "Tetiklenecek nota numarası"
+
+#. Group 2: Standard Instruments
+#: src/dialogs/midi_mapping_dialog.py:137
+msgid "Standard Instruments"
+msgstr "Standart Enstrümanlar"
+
+#: src/dialogs/midi_mapping_dialog.py:139
+msgid "Select a General MIDI instrument to automatically set the note."
+msgstr "Notayı kendiliğinden ayarlamak için Genel MIDI enstrümanı seç."
+
+#: src/dialogs/midi_mapping_dialog.py:143
+msgid "Instrument Preset"
+msgstr "Enstrüman Ön Ayarı"
+
+#: src/dialogs/midi_mapping_dialog.py:186
+msgid "Save"
+msgstr "Kaydet"
+
+#: src/dialogs/midi_mapping_dialog.py:229
+msgid "Custom Note"
+msgstr "Özel Nota"
+
+#: src/handlers/drag_drop_handler.py:299
+msgid "Sound replaced"
+msgstr "Ses değiştirildi"
+
+#: src/handlers/drag_drop_handler.py:302
+msgid "Failed to replace sound"
+msgstr "Ses değiştirilemedi"
+
+#: src/handlers/drag_drop_handler.py:312
+msgid "Not a supported audio file"
+msgstr "Desteklenmeyen ses dosyası"
+
+#: src/handlers/drag_drop_handler.py:320
+msgid "File not found"
+msgstr "Dosya bulunamadı"
+
+#: src/handlers/drag_drop_handler.py:325
+msgid "Selected item is not a file"
+msgstr "Seçilen öge dosya değil"
+
+#: src/handlers/drag_drop_handler.py:332
+msgid "File too large: {:.1f}MB (max 50MB)"
+msgstr "Dosya çok büyük: {:.1f}MB (en çok 50MB)"
+
+#: src/handlers/drag_drop_handler.py:362
+msgid "No valid audio files found"
+msgstr "Geçerli ses dosyası bulunamadı"
+
+#: src/handlers/drag_drop_handler.py:402
+msgid "Error processing file: {}"
+msgstr "Dosya işlenirken hata: {}"
+
+#: src/handlers/drag_drop_handler.py:433
+msgid "Added {} drum part, {} files skipped"
+msgstr "{} davul parçası eklendi, {} dosya atlandı"
+
+#: src/handlers/drag_drop_handler.py:439
+msgid "Added {} drum parts, {} files skipped"
+msgstr "{} davul parçası eklendi, {} dosya atlandı"
+
+#: src/handlers/drag_drop_handler.py:444
+msgid "Added {} drum parts"
+msgstr "{} davul parçası eklendi"
+
+#. Only show skipped message if no replacement happened
+#: src/handlers/drag_drop_handler.py:447
+msgid "{} files skipped"
+msgstr "{} dosya atlandı"
+
+#: src/handlers/file_dialog_handler.py:52
+msgid "Default Patterns"
+msgstr "Öntanımlı Örüntüler"
+
+#: src/handlers/file_dialog_handler.py:92
+#: src/handlers/file_dialog_handler.py:171
 msgid "MIDI files"
 msgstr "MIDI dosyaları"
 
-#: src/handlers/file_dialog_handler.py:115
+#: src/handlers/file_dialog_handler.py:98
 msgid "Open MIDI File"
 msgstr "MIDI Dosyası Aç"
 
-#: src/handlers/file_dialog_handler.py:185
+#: src/handlers/file_dialog_handler.py:127
+msgid "Failed to open file"
+msgstr "Dosya açılamadı"
+
+#: src/handlers/file_dialog_handler.py:165
+msgid "Failed to load pattern"
+msgstr "Örüntü yüklenemedi"
+
+#: src/handlers/file_dialog_handler.py:179
 msgid "Save Sequence"
 msgstr "Sırayı Kaydet"
 
-#: src/utils/export_progress.py:68
-msgid "Preparing..."
-msgstr "Hazırlanıyor..."
+#: src/handlers/file_dialog_handler.py:205
+msgid "Add Audio Samples"
+msgstr "Ses Örnekleri Ekle"
 
-#: src/utils/export_progress.py:69
-msgid "Initializing..."
-msgstr "Başlatılıyor..."
+#: src/handlers/file_dialog_handler.py:227
+msgid "Audio files"
+msgstr "Ses dosyaları"
 
-#: src/utils/export_progress.py:71
-msgid "Rendering audio..."
-msgstr "Ses oluşturuluyor..."
-
-#: src/utils/export_progress.py:72
-msgid "Processing beats..."
-msgstr "Ritimler işleniyor..."
-
-#: src/utils/export_progress.py:74
-msgid "Saving file..."
-msgstr "Dosya kaydediliyor..."
-
-#: src/utils/export_progress.py:75
-msgid "Writing to disk..."
-msgstr "Diske yazılıyor..."
+#: src/utils/export_progress.py:76
+msgid "Preparing…"
+msgstr "Hazırlanıyor…"
 
 #: src/utils/export_progress.py:77
-msgid "Exporting..."
-msgstr "Dışa aktarılıyor..."
+msgid "Initializing…"
+msgstr "Başlatılıyor…"
 
-#: src/utils/export_progress.py:78
-msgid "Processing..."
-msgstr "İşleniyor..."
+#: src/utils/export_progress.py:79
+msgid "Rendering audio…"
+msgstr "Ses oluşturuluyor…"
+
+#: src/utils/export_progress.py:80
+msgid "Processing beats…"
+msgstr "Ritimler işleniyor…"
+
+#: src/utils/export_progress.py:82
+msgid "Saving file…"
+msgstr "Dosya kaydediliyor…"
+
+#: src/utils/export_progress.py:83
+msgid "Writing to disk…"
+msgstr "Diske yazılıyor…"
+
+#: src/utils/export_progress.py:85
+msgid "Exporting…"
+msgstr "Dışa aktarılıyor…"
+
+#: src/utils/export_progress.py:86
+msgid "Processing…"
+msgstr "İşleniyor…"
+
+#: src/utils/name_utils.py:36
+msgid "Custom Sound"
+msgstr "Özel Ses"
+
+#: src/ui/drum_grid_builder.py:327
+msgid "Preview"
+msgstr "Ön İzleme"
+
+#: src/ui/drum_grid_builder.py:329
+msgid "Replace…"
+msgstr "Değiştir…"
+
+#: src/ui/drum_grid_builder.py:332
+msgid "Replace with new sound"
+msgstr "Yeni sesle değiştir"
+
+#: src/ui/drum_grid_builder.py:335
+msgid "Remove"
+msgstr "Kaldır"
+
+#: src/ui/drum_grid_builder.py:338
+msgid "At least one drum part must remain"
+msgstr "En az bir davul parçası kalmalıdır."
+
+#: src/ui/drum_grid_builder.py:345
+msgid "Configure MIDI note for export"
+msgstr "Dışa aktarma için MIDI notasını yapılandır"
+
+#: src/ui/drum_grid_builder.py:402
+msgid "MIDI note updated"
+msgstr "MIDI güncellenemedi"
+
+#: src/ui/drum_grid_builder.py:410
+msgid "Select New Sound"
+msgstr "Yeni Ses Seç"
+
+#: src/ui/drum_grid_builder.py:424
+msgid "Removed drum part: {}"
+msgstr "Davul parçası kaldırıldı: {}"
+
+#: src/ui/drum_grid_builder.py:429
+msgid "Failed to remove drum part"
+msgstr "Davul parçası kaldırılamadı"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:198
+#: src/window.py:220
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} Dakika Başına Vuruş (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:207
+#: src/window.py:229
 msgid "{:.0f}% Volume"
 msgstr "%{:.0f} Ses"
 
-#: src/window.py:222 src/window.ui:170
+#: src/window.py:262 src/window.ui:173
 msgid "Play"
 msgstr "Oynat"
 
-#: src/window.py:226
+#: src/window.py:266
 msgid "Pause"
 msgstr "Duraklat"
 
-#: src/window.py:264 src/window.ui:52
+#: src/window.py:313
 msgid "Open"
 msgstr "Aç"
 
+#: src/window.py:331
+msgid "Added: {}"
+msgstr "Eklendi: {}"
+
+#: src/window.py:346
+msgid "Failed to add custom sound"
+msgstr "Özel ses eklenemedi"
+
+#: src/window.py:353
+msgid "Replaced drum with: {}"
+msgstr "Davul şununla değiştirildi: {}"
+
+#: src/window.py:361
+msgid "Failed to replace drum sound"
+msgstr "Davul sesi değiştirilemedi"
+
+#: src/window.ui:52
+msgid "Open…"
+msgstr "Aç…"
+
 #: src/window.ui:54
-msgid "Open Preset"
-msgstr "Ön Ayar Aç"
+msgid "Open Pattern"
+msgstr "Örüntü Aç"
 
 #: src/window.ui:57
 msgctxt "accessibility"
-msgid "Open Preset"
-msgstr "Ön Ayar Aç"
+msgid "Open Pattern"
+msgstr "Örüntü Aç"
 
 #: src/window.ui:58
-msgid "Open Saved Drum Pattern Preset"
-msgstr "Kaydedilmiş Davul Örüntüsü Ön Ayarını Aç"
+msgid "Open Saved Drum Pattern"
+msgstr "Kaydedilmiş Davul Örüntüsünü Aç"
 
 #: src/window.ui:76
 msgid "Main Menu"
@@ -262,53 +652,60 @@ msgstr "Ana Menü"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Klavye Kısayollarına ve Uygulama Bilgilerine Eriş"
 
-#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6
-#: src/gtk/audio-export-dialog.blp:96
-msgid "Export Audio"
-msgstr "Sesi Dışa Aktar"
+#: src/window.ui:86
+msgid "Export Audio…"
+msgstr "Sesi Dışa Aktar…"
 
-#: src/window.ui:88
+#: src/window.ui:91
 msgctxt "accessibility"
-msgid "Export Audio"
-msgstr "Sesi Dışa Aktar"
+msgid "Export Audio…"
+msgstr "Sesi Dışa Aktar…"
 
-#: src/window.ui:89
+#: src/window.ui:92
 msgid "Export Current Drum Pattern as Audio File"
 msgstr "Geçerli Davul Örüntüsünü Ses Dosyası Olarak Dışa Aktar"
 
-#: src/window.ui:134
+#: src/window.ui:137
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:139 src/window.ui:143
+#: src/window.ui:142 src/window.ui:146
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Tempoyu Dakika Başına Vuruş (BPM) Olarak Ayarla"
 
-#: src/window.ui:142
+#: src/window.ui:145
 msgid "Tempo"
 msgstr "Tempo"
 
-#: src/window.ui:184
+#: src/window.ui:187
 msgid "Adjust Volume"
 msgstr "Sesi Ayarla"
 
-#: src/window.ui:207
-msgid "Reset"
-msgstr "Sıfırla"
+#: src/window.ui:210
+msgid "Clear"
+msgstr "Temizle"
 
-#: src/window.ui:208
-msgid "Reset the Drum Sequence"
-msgstr "Davul Sırasını Sıfırla"
+#: src/window.ui:211
+msgid "Clear the Drum Pattern"
+msgstr "Davul Örüntüsünü Temizle"
 
-#: src/window.ui:223
-msgid "_Save Pattern"
-msgstr "Örüntüsüyü _Kaydet"
+#: src/window.ui:226
+msgid "_Add Samples…"
+msgstr "Örnek _Ekle…"
 
-#: src/window.ui:229
+#: src/window.ui:230
+msgid "_Save Pattern…"
+msgstr "Örüntüsüyü _Kaydet…"
+
+#: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr "Öntanımlı Değerlere _Sıfırla"
+
+#: src/window.ui:242
 msgid "_Keyboard Shortcuts"
 msgstr "_Klavye Kısayolları"
 
-#: src/window.ui:233
+#: src/window.ui:246
 msgid "_About Drum Machine"
 msgstr "Davul Makinesi _Hakkında"
 
@@ -374,18 +771,18 @@ msgstr "Sesi Kapat"
 
 #: src/gtk/help-overlay.blp:76
 msgctxt "shortcut window"
-msgid "Preset Management"
-msgstr "Ön Ayar Yönetimi"
+msgid "Pattern Management"
+msgstr "Örüntü Yönetimi"
 
 #: src/gtk/help-overlay.blp:79
 msgctxt "shortcut window"
-msgid "Load Preset"
-msgstr "Ön Ayarı Yükle"
+msgid "Load Pattern"
+msgstr "Örüntü Yükle"
 
 #: src/gtk/help-overlay.blp:85
 msgctxt "shortcut window"
-msgid "Save Preset"
-msgstr "Ön Ayarı Kaydet"
+msgid "Save Pattern"
+msgstr "Örüntüyü Kaydet"
 
 #: src/gtk/help-overlay.blp:91
 msgctxt "shortcut window"
@@ -418,14 +815,14 @@ msgstr "Değişiklikler Kaydedilsin Mi?"
 
 #: src/gtk/save-changes-dialog.blp:6
 msgid ""
-"Current preset contains unsaved changes. Changes which are not saved will be "
-"permanently lost."
+"Current pattern contains unsaved changes. Changes which are not saved will "
+"be permanently lost."
 msgstr ""
-"Şimdiki ön ayar kaydedilmemiş değişiklikler içeriyor. Kaydedilmemiş "
+"Geçerli örüntü kaydedilmemiş değişiklikler içeriyor. Kaydedilmemiş "
 "değişiklikler kalıcı olarak yitecek."
 
 #. Translators: Cancel the operation
-#: src/gtk/save-changes-dialog.blp:14
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
 msgid "_Cancel"
 msgstr "İ_ptal"
 
@@ -439,38 +836,59 @@ msgstr "_Gözden Çıkar"
 msgid "_Save"
 msgstr "_Kaydet"
 
-#: src/gtk/audio-export-dialog.blp:39
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr "Sesi Dışa Aktar"
+
+#: src/gtk/audio-export-dialog.blp:44
 msgid "Audio Format"
 msgstr "Ses Biçimi"
 
-#: src/gtk/audio-export-dialog.blp:45
+#: src/gtk/audio-export-dialog.blp:50
 msgid "Repeat Count"
 msgstr "Yineleme Sayısı"
 
-#: src/gtk/audio-export-dialog.blp:46
+#: src/gtk/audio-export-dialog.blp:51
 msgid "How many times to repeat the pattern"
 msgstr "Örüntünün yinelenme sayısı"
 
-#: src/gtk/audio-export-dialog.blp:59
+#: src/gtk/audio-export-dialog.blp:64
 msgid "Metadata"
 msgstr "Üst Veri"
 
-#: src/gtk/audio-export-dialog.blp:62
+#: src/gtk/audio-export-dialog.blp:67
 msgid "Artist Name"
 msgstr "Sanatçı Adı"
 
-#: src/gtk/audio-export-dialog.blp:67
+#: src/gtk/audio-export-dialog.blp:72
 msgid "Song Name"
 msgstr "Şarkı Adı"
 
-#: src/gtk/audio-export-dialog.blp:72
+#: src/gtk/audio-export-dialog.blp:77
 msgid "Cover Art"
 msgstr "Kapak Resmi"
 
-#: src/gtk/audio-export-dialog.blp:76
-msgid "Choose File"
-msgstr "Dosya Seç"
+#: src/gtk/audio-export-dialog.blp:81
+msgid "Choose File…"
+msgstr "Dosya Seç…"
 
-#: src/gtk/audio-export-dialog.blp:105
+#: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr "Dışa Aktarmayı İptal Et"
+
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr "Öntanımlılara Sıfırlansın Mı?"
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume "
+"to their default values. This action cannot be undone."
+msgstr ""
+"Bu, var olan örüntüyü siler ve tüm örnekleri, BPM’yi ve ses düzeyini "
+"öntanımlı değerlerine geri yükler. Bu işlem geri alınamaz."
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+msgid "_Reset"
+msgstr "_Sıfırla"
