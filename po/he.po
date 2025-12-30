@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-15 03:26+0000\n"
-"PO-Revision-Date: 2025-08-15 14:39+0300\n"
+"POT-Creation-Date: 2025-12-21 22:38+0000\n"
+"PO-Revision-Date: 2025-12-30 19:05+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
 "Language: he\n"
@@ -16,12 +16,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
+#: src/window.ui:69
 msgid "Drum Machine"
 msgstr "מכונת תופים"
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgstr ""
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:7
 msgid "Create and play drum beats"
@@ -43,268 +49,911 @@ msgid "Features:"
 msgstr "יכולות:"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
-msgid "Intuitive grid-based pattern editor"
+#, fuzzy
+#| msgid "Intuitive grid-based pattern editor"
+msgid "Intuitive grid-based pattern editor with infinite pages"
 msgstr "עורך תבניות מבוסס רשת ברור"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
 msgstr "בקרת BPM מתכווננת"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
 msgid "Volume control for overall mix"
 msgstr "בקרת עוצמת שמע לערבול כולל"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
-msgid "Save and load preset patterns"
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+#, fuzzy
+#| msgid "Save and load preset patterns"
+msgid "Save and load patterns"
 msgstr "שמירת וטעינת תבניות שנערכו מראש"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "מגוון צלילי תיפוף כגון קיק, סנר ,הייהט ועוד"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "קיצורי מקלדת לגישה מהירה לכל הפונקציות"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "תבנית תיפוף טעונה במצב בהיר"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "תבנית תיפוף טעונה במצב כהה"
 
-#: src/application.py:69
+#: src/application.py:74
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns."
+msgstr ""
+
+#: src/application.py:79
 msgid "translator-credits"
 msgstr "ירון שהרבני <sh.yaron@gmail.com>"
 
+#: src/application.py:84
+msgid "Special thanks"
+msgstr ""
+
+#: src/application.py:87
+msgid "Sounds"
+msgstr ""
+
+#: src/application.py:88
+#, python-brace-format
+msgid "The drum samples used in this application are from {link}."
+msgstr ""
+
+#: src/config/export_formats.py:44
+#, fuzzy
+#| msgid "MIDI files"
+msgid "MP3 files"
+msgstr "קובצי MIDI"
+
+#: src/config/export_formats.py:45
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:51
+#, fuzzy
+#| msgid "MIDI files"
+msgid "FLAC files"
+msgstr "קובצי MIDI"
+
+#: src/config/export_formats.py:52
+msgid "FLAC (Lossless)"
+msgstr ""
+
+#: src/config/export_formats.py:58
+#, fuzzy
+#| msgid "MIDI files"
+msgid "Ogg files"
+msgstr "קובצי MIDI"
+
+#: src/config/export_formats.py:59
+msgid "Ogg Vorbis"
+msgstr ""
+
+#: src/config/export_formats.py:65
+#, fuzzy
+#| msgid "MIDI files"
+msgid "WAV files"
+msgstr "קובצי MIDI"
+
+#: src/config/export_formats.py:66
+msgid "WAV (Uncompressed)"
+msgstr ""
+
+#: src/dialogs/audio_export_dialog.py:119
+msgid "Save Audio File"
+msgstr "שמירת קובץ שמע"
+
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Part “{}” is Silent"
+msgstr "החלק „{}” הוא שקט"
+
+#: src/dialogs/audio_export_dialog.py:150
+msgid "Parts “{}” and “{}” are Silent"
+msgstr "החלקים „{}” ו־„{}” הם שקטים"
+
+#: src/dialogs/audio_export_dialog.py:154
+msgid "{} Parts are Silent"
+msgstr "{} חלקים הם שקטים"
+
+#: src/dialogs/audio_export_dialog.py:179
+#, fuzzy
+#| msgid "MIDI files"
+msgid "Image files"
+msgstr "קובצי MIDI"
+
+#: src/dialogs/audio_export_dialog.py:185
+msgid "Select Cover Art"
+msgstr "בחירת עטיפת אלבום"
+
+#: src/dialogs/audio_export_dialog.py:245
+msgid "Audio exported to {}"
+msgstr "השמע יוצא אל {}"
+
+#: src/dialogs/audio_export_dialog.py:251
+msgid "Export failed"
+msgstr "הייצוא נכשל"
+
+#: src/dialogs/audio_export_dialog.py:258
+msgid "Export cancelled successfully"
+msgstr "הייצוא בוטל כראוי"
+
+#: src/dialogs/midi_mapping_dialog.py:22
+msgid "Acoustic Bass Drum"
+msgstr "תוף בס אקוסטי"
+
+#: src/dialogs/midi_mapping_dialog.py:23
+msgid "Bass Drum 1"
+msgstr "תוף אקוסטי 1"
+
+#: src/dialogs/midi_mapping_dialog.py:24
+msgid "Side Stick"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:25
+msgid "Acoustic Snare"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:26
+msgid "Hand Clap"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:27
+msgid "Electric Snare"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:28
+msgid "Low Floor Tom"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:29
+msgid "Closed Hi Hat"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:30
+msgid "High Floor Tom"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:31
+msgid "Pedal Hi Hat"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:32
+msgid "Low Tom"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:33
+msgid "Open Hi Hat"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:34
+msgid "Low-Mid Tom"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:35
+msgid "Hi-Mid Tom"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:36
+msgid "Crash Cymbal 1"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:37
+msgid "High Tom"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:38
+msgid "Ride Cymbal 1"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:39
+msgid "Chinese Cymbal"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:40
+msgid "Ride Bell"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:41
+msgid "Tambourine"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:42
+msgid "Splash Cymbal"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:43
+msgid "Cowbell"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:44
+msgid "Crash Cymbal 2"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:45
+msgid "Vibraslap"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:46
+msgid "Ride Cymbal 2"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:47
+msgid "Hi Bongo"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:48
+msgid "Low Bongo"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:49
+msgid "Mute Hi Conga"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:50
+msgid "Open Hi Conga"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:51
+msgid "Low Conga"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:52
+msgid "High Timbale"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:53
+msgid "Low Timbale"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:54
+msgid "High Agogo"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:55
+msgid "Low Agogo"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:56
+msgid "Cabasa"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:57
+msgid "Maracas"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:58
+msgid "Short Whistle"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:59
+msgid "Long Whistle"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:60
+msgid "Short Guiro"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:61
+msgid "Long Guiro"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:62
+msgid "Claves"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:63
+msgid "Hi Wood Block"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:64
+msgid "Low Wood Block"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:65
+msgid "Mute Cuica"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:66
+msgid "Open Cuica"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:67
+msgid "Mute Triangle"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:68
+msgid "Open Triangle"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
+msgid "MIDI Mapping"
+msgstr ""
+
+#. Group 1: Note Assignment
+#: src/dialogs/midi_mapping_dialog.py:108
+msgid "Note Assignment"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:111
+msgid ""
+"Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr ""
+
+#. Action Row for Note
+#: src/dialogs/midi_mapping_dialog.py:118
+#, fuzzy
+#| msgid "MIDI files"
+msgid "MIDI Note"
+msgstr "קובצי MIDI"
+
+#: src/dialogs/midi_mapping_dialog.py:119
+msgid "The note number to trigger"
+msgstr ""
+
+#. Group 2: Standard Instruments
+#: src/dialogs/midi_mapping_dialog.py:137
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Go to Instrument"
+msgid "Standard Instruments"
+msgstr "מעבר לכלי"
+
+#: src/dialogs/midi_mapping_dialog.py:139
+msgid "Select a General MIDI instrument to automatically set the note."
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:143
+#, fuzzy
+#| msgid "Open Preset"
+msgid "Instrument Preset"
+msgstr "פתיחת ערכה"
+
+#: src/dialogs/midi_mapping_dialog.py:186
+#, fuzzy
+#| msgid "_Save"
+msgid "Save"
+msgstr "_שמירה"
+
+#: src/dialogs/midi_mapping_dialog.py:229
+msgid "Custom Note"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:299
+msgid "Sound replaced"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:302
+msgid "Failed to replace sound"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:312
+msgid "Not a supported audio file"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:320
+msgid "File not found"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:325
+msgid "Selected item is not a file"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:332
+msgid "File too large: {:.1f}MB (max 50MB)"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:362
+msgid "No valid audio files found"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:402
+msgid "Error processing file: {}"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:433
+msgid "Added {} drum part, {} files skipped"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:439
+msgid "Added {} drum parts, {} files skipped"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:444
+msgid "Added {} drum parts"
+msgstr ""
+
+#. Only show skipped message if no replacement happened
+#: src/handlers/drag_drop_handler.py:447
+msgid "{} files skipped"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:52
+#, fuzzy
+#| msgid "Default Presets"
+msgid "Default Patterns"
+msgstr "ערכות ברירת מחדל"
+
+#: src/handlers/file_dialog_handler.py:92
+#: src/handlers/file_dialog_handler.py:171
+msgid "MIDI files"
+msgstr "קובצי MIDI"
+
+#: src/handlers/file_dialog_handler.py:98
+msgid "Open MIDI File"
+msgstr "פתיחת קובץ MIDI"
+
+#: src/handlers/file_dialog_handler.py:127
+msgid "Failed to open file"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:165
+#, fuzzy
+#| msgid "Save and load preset patterns"
+msgid "Failed to load pattern"
+msgstr "שמירת וטעינת תבניות שנערכו מראש"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "שמירת הרצף"
+
+#: src/handlers/file_dialog_handler.py:205
+msgid "Add Audio Samples"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:227
+msgid "Audio files"
+msgstr ""
+
+#: src/utils/export_progress.py:76
+msgid "Preparing…"
+msgstr ""
+
+#: src/utils/export_progress.py:77
+msgid "Initializing…"
+msgstr ""
+
+#: src/utils/export_progress.py:79
+msgid "Rendering audio…"
+msgstr ""
+
+#: src/utils/export_progress.py:80
+msgid "Processing beats…"
+msgstr ""
+
+#: src/utils/export_progress.py:82
+msgid "Saving file…"
+msgstr ""
+
+#: src/utils/export_progress.py:83
+msgid "Writing to disk…"
+msgstr ""
+
+#: src/utils/export_progress.py:85
+msgid "Exporting…"
+msgstr ""
+
+#: src/utils/export_progress.py:86
+msgid "Processing…"
+msgstr ""
+
+#: src/utils/name_utils.py:36
+msgid "Custom Sound"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:327
+msgid "Preview"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:329
+msgid "Replace…"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:332
+msgid "Replace with new sound"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:335
+msgid "Remove"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:338
+msgid "At least one drum part must remain"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:345
+msgid "Configure MIDI note for export"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:402
+msgid "MIDI note updated"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:410
+msgid "Select New Sound"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:424
+msgid "Removed drum part: {}"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:429
+msgid "Failed to remove drum part"
+msgstr ""
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:190
+#: src/window.py:220
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} פעימות בדקה (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:199
+#: src/window.py:229
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% עוצמת שמע"
 
-#: src/window.py:214 src/window.ui:167
+#: src/window.py:262 src/window.ui:173
 msgid "Play"
 msgstr "נגינה"
 
-#: src/window.py:218
+#: src/window.py:266
 msgid "Pause"
 msgstr "השהיה"
 
-#: src/window.ui:50
+#: src/window.py:313
 msgid "Open"
 msgstr "פתיחה"
 
+#: src/window.py:331
+msgid "Added: {}"
+msgstr ""
+
+#: src/window.py:346
+msgid "Failed to add custom sound"
+msgstr ""
+
+#: src/window.py:353
+msgid "Replaced drum with: {}"
+msgstr ""
+
+#: src/window.py:361
+msgid "Failed to replace drum sound"
+msgstr ""
+
 #: src/window.ui:52
-msgid "Open Preset"
-msgstr "פתיחת ערכה"
+#, fuzzy
+#| msgid "Open"
+msgid "Open…"
+msgstr "פתיחה"
 
-#: src/window.ui:55
+#: src/window.ui:54
+#, fuzzy
+#| msgid "Save Drum Pattern"
+msgid "Open Pattern"
+msgstr "שמירת תבנית תיפוף"
+
+#: src/window.ui:57
+#, fuzzy
+#| msgid "Save Drum Pattern"
 msgctxt "accessibility"
-msgid "Open Preset"
-msgstr "פתיחת ערכה"
+msgid "Open Pattern"
+msgstr "שמירת תבנית תיפוף"
 
-#: src/window.ui:56
-msgid "Open Saved Drum Pattern Preset"
+#: src/window.ui:58
+#, fuzzy
+#| msgid "Open Saved Drum Pattern Preset"
+msgid "Open Saved Drum Pattern"
 msgstr "פתיחת ערכת תבנית תיפוף שמורה"
 
-#: src/window.ui:74
+#: src/window.ui:76
 msgid "Main Menu"
 msgstr "תפריט ראשי"
 
-#: src/window.ui:76
+#: src/window.ui:78
 msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "תפריט ראשי"
 
-#: src/window.ui:77
+#: src/window.ui:79
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "גישה לקיצורי מקלדת ולפרטים על היישום"
 
-#: src/window.ui:84
-msgid "Save Drum Pattern"
-msgstr "שמירת תבנית תיפוף"
-
 #: src/window.ui:86
-msgctxt "accessibility"
-msgid "Save Drum Pattern"
-msgstr "שמירת תבנית תיפוף"
+msgid "Export Audio…"
+msgstr ""
 
-#: src/window.ui:87
-msgid "Save Current Drum Pattern as a Preset File"
+#: src/window.ui:91
+msgctxt "accessibility"
+msgid "Export Audio…"
+msgstr ""
+
+#: src/window.ui:92
+#, fuzzy
+#| msgid "Save Current Drum Pattern as a Preset File"
+msgid "Export Current Drum Pattern as Audio File"
 msgstr "שמירת תבנית התיפוף הנוכחית כקובץ ערכה"
 
-#: src/window.ui:131
+#: src/window.ui:137
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:136 src/window.ui:140
+#: src/window.ui:142 src/window.ui:146
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "כיוון הקצב בפעימות לדקה (BPM)"
 
-#: src/window.ui:139
+#: src/window.ui:145
 msgid "Tempo"
 msgstr "קצב"
 
-#: src/window.ui:181
+#: src/window.ui:187
 msgid "Adjust Volume"
 msgstr "כיוון עוצמת שמע"
 
-#: src/window.ui:204
-msgid "Reset"
-msgstr "איפוס"
+#: src/window.ui:210
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Clear All"
+msgid "Clear"
+msgstr "לרוקן הכול"
 
-#: src/window.ui:205
-msgid "Reset the Drum Sequence"
-msgstr "איפוס רצף התיפוף"
+#: src/window.ui:211
+#, fuzzy
+#| msgid "Save Drum Pattern"
+msgid "Clear the Drum Pattern"
+msgstr "שמירת תבנית תיפוף"
 
-#: src/window.ui:218
+#: src/window.ui:226
+msgid "_Add Samples…"
+msgstr ""
+
+#: src/window.ui:230
+#, fuzzy
+#| msgid "Save Drum Pattern"
+msgid "_Save Pattern…"
+msgstr "שמירת תבנית תיפוף"
+
+#: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr ""
+
+#: src/window.ui:242
 msgid "_Keyboard Shortcuts"
 msgstr "_קיצורי מקלדת"
 
-#: src/window.ui:222
+#: src/window.ui:246
 msgid "_About Drum Machine"
 msgstr "על מכונת _תופים"
 
-#: src/gtk/help-overlay.ui:11
+#: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "כללי"
 
-#: src/gtk/help-overlay.ui:14
+#: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "הצגת קיצורי מקלדת"
 
-#: src/gtk/help-overlay.ui:20
+#: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "יציאה"
 
-#: src/gtk/help-overlay.ui:29
+#: src/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Playback Controls"
 msgstr "פקדי נגינה"
 
-#: src/gtk/help-overlay.ui:32
+#: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr "נגינה / השהיה"
 
-#: src/gtk/help-overlay.ui:39
+#: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "לרוקן הכול"
 
-#: src/gtk/help-overlay.ui:48
+#: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
 msgid "BPM & Volume Controls"
 msgstr "BPM ובקרת עוצמת שמע"
 
-#: src/gtk/help-overlay.ui:51
+#: src/gtk/help-overlay.blp:45
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "האצת פעימות לדקה"
 
-#: src/gtk/help-overlay.ui:58
+#: src/gtk/help-overlay.blp:51
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "האטת פעימות לדקה"
 
-#: src/gtk/help-overlay.ui:65
+#: src/gtk/help-overlay.blp:57
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "הגברת עוצמת שמע"
 
-#: src/gtk/help-overlay.ui:72
+#: src/gtk/help-overlay.blp:63
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "הנמכת עוצמת שמע"
 
-#: src/gtk/help-overlay.ui:79
+#: src/gtk/help-overlay.blp:69
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr "השתקה"
 
-#: src/gtk/help-overlay.ui:88
+#: src/gtk/help-overlay.blp:76
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Preset Management"
 msgctxt "shortcut window"
-msgid "Preset Management"
+msgid "Pattern Management"
 msgstr "ניהול ערכות"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.blp:79
+#, fuzzy
+#| msgid "Save Drum Pattern"
 msgctxt "shortcut window"
-msgid "Load Preset"
-msgstr "טעינת ערכה"
+msgid "Load Pattern"
+msgstr "שמירת תבנית תיפוף"
 
-#: src/gtk/help-overlay.ui:98
+#: src/gtk/help-overlay.blp:85
+#, fuzzy
+#| msgid "Save Drum Pattern"
 msgctxt "shortcut window"
-msgid "Save Preset"
-msgstr "שמירת ערכה"
+msgid "Save Pattern"
+msgstr "שמירת תבנית תיפוף"
 
-#: src/gtk/help-overlay.ui:107
+#: src/gtk/help-overlay.blp:91
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:98
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "ניווט"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.blp:101
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "מעבר לכלי"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.blp:107
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "העמוד הקודם"
 
-#: src/gtk/help-overlay.ui:124
+#: src/gtk/help-overlay.blp:113
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "העמוד הבא"
 
-#: src/gtk/save_changes_dialog.ui:6
+#: src/gtk/save-changes-dialog.blp:5
 msgid "Save Changes?"
 msgstr "לשמור את השינויים?"
 
-#: src/gtk/save_changes_dialog.ui:7
+#: src/gtk/save-changes-dialog.blp:6
+#, fuzzy
+#| msgid ""
+#| "Current preset contains unsaved changes. Changes which are not saved will "
+#| "be permanently lost."
 msgid ""
-"Current preset contains unsaved changes. Changes which are not saved will be "
-"permanently lost."
+"Current pattern contains unsaved changes. Changes which are not saved will "
+"be permanently lost."
 msgstr ""
 "הערכה הנוכחית מכילה שינויים שלא נשמרו. השינויים שלא יישמרו יאבדו לצמיתות."
 
-#. Cancel the operation
-#: src/gtk/save_changes_dialog.ui:14
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
 msgid "_Cancel"
 msgstr "_ביטול"
 
-#. Discard all changes
-#: src/gtk/save_changes_dialog.ui:15
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
 msgid "_Discard"
 msgstr "הת_עלמות"
 
-#. Save current changes
-#: src/gtk/save_changes_dialog.ui:16
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
 msgid "_Save"
 msgstr "_שמירה"
 
-#: src/handlers/file_dialog_handler.py:48
-msgid "Default Presets"
-msgstr "ערכות ברירת מחדל"
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr ""
 
-#: src/handlers/file_dialog_handler.py:76
-#: src/handlers/file_dialog_handler.py:142
-msgid "MIDI files"
-msgstr "קובצי MIDI"
+#: src/gtk/audio-export-dialog.blp:44
+msgid "Audio Format"
+msgstr ""
 
-#: src/handlers/file_dialog_handler.py:82
-msgid "Open MIDI File"
-msgstr "פתיחת קובץ MIDI"
+#: src/gtk/audio-export-dialog.blp:50
+msgid "Repeat Count"
+msgstr ""
 
-#: src/handlers/file_dialog_handler.py:148
-msgid "Save Sequence"
-msgstr "שמירת הרצף"
+#: src/gtk/audio-export-dialog.blp:51
+msgid "How many times to repeat the pattern"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:64
+msgid "Metadata"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:67
+msgid "Artist Name"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:72
+msgid "Song Name"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:77
+msgid "Cover Art"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:81
+msgid "Choose File…"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:110
+#, fuzzy
+#| msgid "_Cancel"
+msgid "Cancel Export"
+msgstr "_ביטול"
+
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr ""
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume "
+"to their default values. This action cannot be undone."
+msgstr ""
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+#, fuzzy
+#| msgid "Reset"
+msgid "_Reset"
+msgstr "איפוס"
+
+#~ msgctxt "accessibility"
+#~ msgid "Open Preset"
+#~ msgstr "פתיחת ערכה"
+
+#~ msgctxt "accessibility"
+#~ msgid "Save Drum Pattern"
+#~ msgstr "שמירת תבנית תיפוף"
+
+#~ msgid "Reset the Drum Sequence"
+#~ msgstr "איפוס רצף התיפוף"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Load Preset"
+#~ msgstr "טעינת ערכה"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "שמירת ערכה"
