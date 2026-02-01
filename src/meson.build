@@ -5,7 +5,7 @@ gnome = import('gnome')
 blueprint_compiler = find_program('blueprint-compiler', required: true)
 
 blueprint_files = files(
-  'gtk/help-overlay.blp',
+  'gtk/shortcuts-dialog.blp',
   'gtk/audio-export-dialog.blp',
   'gtk/save-changes-dialog.blp',
   'gtk/reset-defaults-dialog.blp',
