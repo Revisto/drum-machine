@@ -1,13 +1,13 @@
 # Bulgarian translation of boatswain po-file.
 # Copyright (C) 2025 twlvnn kraftwerk <kraft_werk@tutanota.com
 # This file is distributed under the same license as the drum-machine package.
-# twlvnn kraftwerk <kraft_werk@tutanota.com>, 2025.
+# twlvnn kraftwerk <kraft_werk@tutanota.com>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-10-25 03:26+0000\n"
-"PO-Revision-Date: 2025-10-25 14:50+0200\n"
+"POT-Creation-Date: 2025-12-21 22:38+0000\n"
+"PO-Revision-Date: 2026-02-05 12:13+0100\n"
 "Last-Translator: twlvnn kraftwerk <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <Bulgarian>\n"
 "Language: bg\n"
@@ -18,7 +18,8 @@ msgstr ""
 "X-Generator: Poedit 3.8\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:69
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
+#: src/window.ui:69
 msgid "Drum Machine"
 msgstr "Барабанна машина"
 
@@ -33,225 +34,614 @@ msgstr "Създаване и възпроизвеждане на барабан
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:9
 msgid ""
-"Drum Machine is a modern and intuitive application for creating, playing, "
-"and managing drum patterns. Perfect for musicians, producers, and anyone "
-"interested in rhythm creation, this application provides a simple interface "
-"for drum pattern programming. Have fun!"
+"Drum Machine is a modern and intuitive application for creating, playing, and "
+"managing drum patterns. Perfect for musicians, producers, and anyone interested "
+"in rhythm creation, this application provides a simple interface for drum "
+"pattern programming. Have fun!"
 msgstr ""
-"„Барабанна машина“ е модерна и проста програма за създаване, възпроизвеждане "
-"и управляване на барабанни шаблони. Тази програма е идеална за музиканти, "
-"продуценти и всички, които се интересуват от създаване на ритми, и "
-"предоставя прост интерфейс за програмиране на барабанни шаблони. "
-"Забавлявайте се!"
+"„Барабанна машина“ е модерна и проста програма за създаване, възпроизвеждане и "
+"управляване на барабанни шаблони. Тази програма е идеална за музиканти, "
+"продуценти и всички, които се интересуват от създаване на ритми, и предоставя "
+"прост интерфейс за програмиране на барабанни шаблони. Забавлявайте се!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
 msgstr "Функции:"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
-msgid "Intuitive grid-based pattern editor"
-msgstr "Прост мрежов редактор на барабанни шаблони"
+msgid "Intuitive grid-based pattern editor with infinite pages"
+msgstr "Прост мрежов редактор на барабанни шаблони с безкраен брой страници"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr ""
+"Собствени семпли: Добавете свои собствени барабанни звуци с привързване на MIDI "
+"ноти"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
 msgstr "Настройване на ударите в минута"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
 msgid "Volume control for overall mix"
 msgstr "Настройване на общата сила на звука"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
-msgid "Save and load preset patterns"
-msgstr "Запазване и зареждане на шаблони на барабаните"
-
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Save and load patterns"
+msgstr "Запазване и зареждане на шаблони"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Множество барабанни звуци — голям барабан, малък барабан, фус и други"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
-msgid "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
-msgstr ""
-"Функция за изнасяне на аудио с поддръжка на формати WAV, FLAC, Ogg и MP3"
-
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr ""
+"Функция за изнасяне на аудио и MIDI с поддръжка на формати WAV, FLAC, Ogg, MP3 "
+"и MIDI формати"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Metadata support for embedding artist name, song title, and cover art"
 msgstr ""
 "Поддръжка на метаданни за влагане на името на изпълнителя, заглавието на "
 "песента и корицата"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "Клавишни комбинации за бърз достъп до всички функции"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:33
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "Светъл режим на барабанния шаблон"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:37
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Светъл режим на барабанния шаблон"
 
-#: src/application.py:69
+#: src/application.py:74
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, and "
+"managing drum patterns."
+msgstr ""
+"„Барабанна машина“ е модерна и проста програма за създаване, възпроизвеждане и "
+"управляване на барабанни шаблони."
+
+#: src/application.py:79
 msgid "translator-credits"
 msgstr ""
-"twlvnn kraftwerk <kraft_werk@tutanota.com>, 2025\n"
+"twlvnn kraftwerk <kraft_werk@tutanota.com>, 2025, 2026\n"
 "\n"
 "Проектът за превод на GNOME има нужда от подкрепа.\n"
-"Научете повече за нас на <a href='https://fsa-bg.org/project/gtp'>уеб сайта</"
-"a> ни.\n"
+"Научете повече за нас на <a href='https://fsa-bg.org/project/gtp'>уеб сайта</a> "
+"ни.\n"
 "Докладвайте за грешки в превода в <a href='https://fsa-bg.org/project/gtp/"
 "newticket'>съответния раздел</a>."
 
-#: src/config/export_formats.py:43
+#: src/application.py:84
+msgid "Special thanks"
+msgstr "Специални благодарности"
+
+#: src/application.py:87
+msgid "Sounds"
+msgstr "Звуци"
+
+#: src/application.py:88
+#, python-brace-format
+msgid "The drum samples used in this application are from {link}."
+msgstr "Барабанните семпли, използвани в тази програма, са от {link}."
+
+#: src/config/export_formats.py:44
 msgid "MP3 files"
 msgstr "MP3 файлове"
 
-#: src/config/export_formats.py:44
+#: src/config/export_formats.py:45
 msgid "MP3"
 msgstr "MP3"
 
-#: src/config/export_formats.py:50
+#: src/config/export_formats.py:51
 msgid "FLAC files"
 msgstr "FLAC файлове"
 
-#: src/config/export_formats.py:51
+#: src/config/export_formats.py:52
 msgid "FLAC (Lossless)"
 msgstr "FLAC (без загуба)"
 
-#: src/config/export_formats.py:57
+#: src/config/export_formats.py:58
 msgid "Ogg files"
 msgstr "Ogg файлове"
 
-#: src/config/export_formats.py:58
+#: src/config/export_formats.py:59
 msgid "Ogg Vorbis"
 msgstr "Ogg Vorbis"
 
-#: src/config/export_formats.py:64
+#: src/config/export_formats.py:65
 msgid "WAV files"
 msgstr "WAV файлове"
 
-#: src/config/export_formats.py:65
+#: src/config/export_formats.py:66
 msgid "WAV (Uncompressed)"
 msgstr "WAV (некомпресиран)"
 
-#: src/dialogs/audio_export_dialog.py:115
+#: src/dialogs/audio_export_dialog.py:119
 msgid "Save Audio File"
 msgstr "Запазване на звуковия файл"
 
-#: src/dialogs/audio_export_dialog.py:139
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Part “{}” is Silent"
+msgstr "Част „{}“ е заглушена"
+
+#: src/dialogs/audio_export_dialog.py:150
+msgid "Parts “{}” and “{}” are Silent"
+msgstr "Частите „{}“ и „{}“ са заглушени"
+
+#: src/dialogs/audio_export_dialog.py:154
+msgid "{} Parts are Silent"
+msgstr "{} части са заглушени"
+
+#: src/dialogs/audio_export_dialog.py:179
 msgid "Image files"
 msgstr "Изображения"
 
-#: src/dialogs/audio_export_dialog.py:145
+#: src/dialogs/audio_export_dialog.py:185
 msgid "Select Cover Art"
 msgstr "Избор на корица"
 
-#: src/dialogs/audio_export_dialog.py:202
+#: src/dialogs/audio_export_dialog.py:245
 msgid "Audio exported to {}"
 msgstr "Аудиото е изнесено на {}"
 
-#: src/dialogs/audio_export_dialog.py:207
+#: src/dialogs/audio_export_dialog.py:251
 msgid "Export failed"
 msgstr "Изнасянето е неуспешно"
 
-#: src/dialogs/audio_export_dialog.py:214
+#: src/dialogs/audio_export_dialog.py:258
 msgid "Export cancelled successfully"
 msgstr "Изнасянето е прекратено"
 
-#: src/handlers/file_dialog_handler.py:51
-msgid "Default Presets"
+#: src/dialogs/midi_mapping_dialog.py:22
+msgid "Acoustic Bass Drum"
+msgstr "Акустичен голям барабан"
+
+#: src/dialogs/midi_mapping_dialog.py:23
+msgid "Bass Drum 1"
+msgstr "Великий барабан 1"
+
+#: src/dialogs/midi_mapping_dialog.py:24
+msgid "Side Stick"
+msgstr "Удар по обръча"
+
+#: src/dialogs/midi_mapping_dialog.py:25
+msgid "Acoustic Snare"
+msgstr "Акустичен малък барабан"
+
+#: src/dialogs/midi_mapping_dialog.py:26
+msgid "Hand Clap"
+msgstr "Ръкопляскане"
+
+#: src/dialogs/midi_mapping_dialog.py:27
+msgid "Electric Snare"
+msgstr "Малък електробарабан"
+
+#: src/dialogs/midi_mapping_dialog.py:28
+msgid "Low Floor Tom"
+msgstr "Нисък подови томтом"
+
+#: src/dialogs/midi_mapping_dialog.py:29
+msgid "Closed Hi Hat"
+msgstr "Затворен хет"
+
+#: src/dialogs/midi_mapping_dialog.py:30
+msgid "High Floor Tom"
+msgstr "Висок подови томтом"
+
+#: src/dialogs/midi_mapping_dialog.py:31
+msgid "Pedal Hi Hat"
+msgstr "Хет (педал)"
+
+#: src/dialogs/midi_mapping_dialog.py:32
+msgid "Low Tom"
+msgstr "Нисък томтом"
+
+#: src/dialogs/midi_mapping_dialog.py:33
+msgid "Open Hi Hat"
+msgstr "Открит висок хет"
+
+#: src/dialogs/midi_mapping_dialog.py:34
+msgid "Low-Mid Tom"
+msgstr "Нисък среден томтом"
+
+#: src/dialogs/midi_mapping_dialog.py:35
+msgid "Hi-Mid Tom"
+msgstr "Висок среден томтом"
+
+#: src/dialogs/midi_mapping_dialog.py:36
+msgid "Crash Cymbal 1"
+msgstr "Краш чинел 1"
+
+#: src/dialogs/midi_mapping_dialog.py:37
+msgid "High Tom"
+msgstr "Висок томтом"
+
+#: src/dialogs/midi_mapping_dialog.py:38
+msgid "Ride Cymbal 1"
+msgstr "Райд чинел 1"
+
+#: src/dialogs/midi_mapping_dialog.py:39
+msgid "Chinese Cymbal"
+msgstr "Китайски чинел"
+
+#: src/dialogs/midi_mapping_dialog.py:40
+msgid "Ride Bell"
+msgstr "Райд звънец"
+
+#: src/dialogs/midi_mapping_dialog.py:41
+msgid "Tambourine"
+msgstr "Дайре"
+
+#: src/dialogs/midi_mapping_dialog.py:42
+msgid "Splash Cymbal"
+msgstr "Сплаш чинел"
+
+#: src/dialogs/midi_mapping_dialog.py:43
+msgid "Cowbell"
+msgstr "Звънец"
+
+#: src/dialogs/midi_mapping_dialog.py:44
+msgid "Crash Cymbal 2"
+msgstr "Краш чинел 2"
+
+#: src/dialogs/midi_mapping_dialog.py:45
+msgid "Vibraslap"
+msgstr "Вибраслап"
+
+#: src/dialogs/midi_mapping_dialog.py:46
+msgid "Ride Cymbal 2"
+msgstr "Райд чинел 2"
+
+#: src/dialogs/midi_mapping_dialog.py:47
+msgid "Hi Bongo"
+msgstr "Висок бонго"
+
+#: src/dialogs/midi_mapping_dialog.py:48
+msgid "Low Bongo"
+msgstr "Нисък бонго"
+
+#: src/dialogs/midi_mapping_dialog.py:49
+msgid "Mute Hi Conga"
+msgstr "Затворена висока конга"
+
+#: src/dialogs/midi_mapping_dialog.py:50
+msgid "Open Hi Conga"
+msgstr "Отворена висока конга"
+
+#: src/dialogs/midi_mapping_dialog.py:51
+msgid "Low Conga"
+msgstr "Ниска конга"
+
+#: src/dialogs/midi_mapping_dialog.py:52
+msgid "High Timbale"
+msgstr "Висок тимпáн"
+
+#: src/dialogs/midi_mapping_dialog.py:53
+msgid "Low Timbale"
+msgstr "Нисък тимпáн"
+
+#: src/dialogs/midi_mapping_dialog.py:54
+msgid "High Agogo"
+msgstr "Високо агого"
+
+#: src/dialogs/midi_mapping_dialog.py:55
+msgid "Low Agogo"
+msgstr "Ниско агого"
+
+#: src/dialogs/midi_mapping_dialog.py:56
+msgid "Cabasa"
+msgstr "Кабаса"
+
+#: src/dialogs/midi_mapping_dialog.py:57
+msgid "Maracas"
+msgstr "Маракаси"
+
+#: src/dialogs/midi_mapping_dialog.py:58
+msgid "Short Whistle"
+msgstr "Кратка свирка"
+
+#: src/dialogs/midi_mapping_dialog.py:59
+msgid "Long Whistle"
+msgstr "Дълга свирка"
+
+#: src/dialogs/midi_mapping_dialog.py:60
+msgid "Short Guiro"
+msgstr "Кратко гуиро"
+
+#: src/dialogs/midi_mapping_dialog.py:61
+msgid "Long Guiro"
+msgstr "Дълго гуиро"
+
+#: src/dialogs/midi_mapping_dialog.py:62
+msgid "Claves"
+msgstr "Клавес"
+
+#: src/dialogs/midi_mapping_dialog.py:63
+msgid "Hi Wood Block"
+msgstr "Високо дървено блокче"
+
+#: src/dialogs/midi_mapping_dialog.py:64
+msgid "Low Wood Block"
+msgstr "Ниско дървено блокче"
+
+#: src/dialogs/midi_mapping_dialog.py:65
+msgid "Mute Cuica"
+msgstr "Затворена куика"
+
+#: src/dialogs/midi_mapping_dialog.py:66
+msgid "Open Cuica"
+msgstr "Отворена куика"
+
+#: src/dialogs/midi_mapping_dialog.py:67
+msgid "Mute Triangle"
+msgstr "Затворен триъгълник"
+
+#: src/dialogs/midi_mapping_dialog.py:68
+msgid "Open Triangle"
+msgstr "Отворен триъгълник"
+
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
+msgid "MIDI Mapping"
+msgstr "Привързване на MIDI"
+
+#. Group 1: Note Assignment
+#: src/dialogs/midi_mapping_dialog.py:108
+msgid "Note Assignment"
+msgstr "Привързване на ноти"
+
+#: src/dialogs/midi_mapping_dialog.py:111
+msgid "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr ""
+"Задаване на MIDI нота за „{}“. Това гарантира правилното възпроизвеждане при "
+"изнасяне."
+
+#. Action Row for Note
+#: src/dialogs/midi_mapping_dialog.py:118
+msgid "MIDI Note"
+msgstr "MIDI нота"
+
+#: src/dialogs/midi_mapping_dialog.py:119
+msgid "The note number to trigger"
+msgstr "Номер на нотата за задействане"
+
+#. Group 2: Standard Instruments
+#: src/dialogs/midi_mapping_dialog.py:137
+msgid "Standard Instruments"
+msgstr "Стандартни инструменти"
+
+#: src/dialogs/midi_mapping_dialog.py:139
+msgid "Select a General MIDI instrument to automatically set the note."
+msgstr "Изберете General MIDI инструмент за автоматично задаване на нотата."
+
+#: src/dialogs/midi_mapping_dialog.py:143
+msgid "Instrument Preset"
+msgstr "Шаблон за инструмент"
+
+#: src/dialogs/midi_mapping_dialog.py:186
+msgid "Save"
+msgstr "Запазване"
+
+#: src/dialogs/midi_mapping_dialog.py:229
+msgid "Custom Note"
+msgstr "Собствена бележка"
+
+#: src/handlers/drag_drop_handler.py:299
+msgid "Sound replaced"
+msgstr "Звукът е заместен"
+
+#: src/handlers/drag_drop_handler.py:302
+msgid "Failed to replace sound"
+msgstr "Звукът не може да бъде заместен"
+
+#: src/handlers/drag_drop_handler.py:312
+msgid "Not a supported audio file"
+msgstr "Този аудио файл не се поддържа"
+
+#: src/handlers/drag_drop_handler.py:320
+msgid "File not found"
+msgstr "Файлът не е намерен"
+
+#: src/handlers/drag_drop_handler.py:325
+msgid "Selected item is not a file"
+msgstr "Избраният елемент не е файл"
+
+#: src/handlers/drag_drop_handler.py:332
+msgid "File too large: {:.1f}MB (max 50MB)"
+msgstr "Файлът е твърде голям: {:.1f}МБ (максимум 50МБ)"
+
+#: src/handlers/drag_drop_handler.py:362
+msgid "No valid audio files found"
+msgstr "Няма намерени валидни аудио файлове"
+
+#: src/handlers/drag_drop_handler.py:402
+msgid "Error processing file: {}"
+msgstr "Файлът не може да бъде обработен: {}"
+
+#: src/handlers/drag_drop_handler.py:433
+msgid "Added {} drum part, {} files skipped"
+msgstr "Добавена е {} част с барабан, пропуснати са {} файла"
+
+#: src/handlers/drag_drop_handler.py:439
+msgid "Added {} drum parts, {} files skipped"
+msgstr "Добавени са {} части с барабан, пропуснати са {} файла"
+
+#: src/handlers/drag_drop_handler.py:444
+msgid "Added {} drum parts"
+msgstr "Добавени са {} части с барабан"
+
+#. Only show skipped message if no replacement happened
+#: src/handlers/drag_drop_handler.py:447
+msgid "{} files skipped"
+msgstr "{} файла са пропуснати"
+
+#: src/handlers/file_dialog_handler.py:52
+msgid "Default Patterns"
 msgstr "Стандартни шаблони"
 
-#: src/handlers/file_dialog_handler.py:83
-msgid "No Pattern"
-msgstr "Няма шаблон"
-
-#: src/handlers/file_dialog_handler.py:84
-msgid "Please create a drum pattern before exporting audio."
-msgstr "Създайте барабанен шаблон преди да изнасяте аудиото."
-
-#: src/handlers/file_dialog_handler.py:86
-msgid "_OK"
-msgstr "_Добре"
-
-#: src/handlers/file_dialog_handler.py:109
-#: src/handlers/file_dialog_handler.py:177
+#: src/handlers/file_dialog_handler.py:92 src/handlers/file_dialog_handler.py:171
 msgid "MIDI files"
 msgstr "MIDI файлове"
 
-#: src/handlers/file_dialog_handler.py:115
+#: src/handlers/file_dialog_handler.py:98
 msgid "Open MIDI File"
 msgstr "Отваряне на MIDI файл"
 
-#: src/handlers/file_dialog_handler.py:185
+#: src/handlers/file_dialog_handler.py:127
+msgid "Failed to open file"
+msgstr "Файлът не може да бъде отворен"
+
+#: src/handlers/file_dialog_handler.py:165
+msgid "Failed to load pattern"
+msgstr "Шаблонът не може да бъде зареден"
+
+#: src/handlers/file_dialog_handler.py:179
 msgid "Save Sequence"
 msgstr "Запазване на секвенцията"
 
-#: src/utils/export_progress.py:68
-msgid "Preparing..."
+#: src/handlers/file_dialog_handler.py:205
+msgid "Add Audio Samples"
+msgstr "Добавяне на аудио семпли"
+
+#: src/handlers/file_dialog_handler.py:227
+msgid "Audio files"
+msgstr "Аудио файлове"
+
+#: src/utils/export_progress.py:76
+msgid "Preparing…"
 msgstr "Подготвяне…"
 
-#: src/utils/export_progress.py:69
-msgid "Initializing..."
+#: src/utils/export_progress.py:77
+msgid "Initializing…"
 msgstr "Стартиране…"
 
-#: src/utils/export_progress.py:71
-msgid "Rendering audio..."
-msgstr "Рендиране на звука..."
+#: src/utils/export_progress.py:79
+msgid "Rendering audio…"
+msgstr "Рендиране на звука…"
 
-#: src/utils/export_progress.py:72
-msgid "Processing beats..."
-msgstr "Обработване на ударите..."
+#: src/utils/export_progress.py:80
+msgid "Processing beats…"
+msgstr "Обработване на ударите…"
 
-#: src/utils/export_progress.py:74
-msgid "Saving file..."
-msgstr "Запазване на файла..."
+#: src/utils/export_progress.py:82
+msgid "Saving file…"
+msgstr "Запазване на файла…"
 
-#: src/utils/export_progress.py:75
-msgid "Writing to disk..."
-msgstr "Записване на диска..."
+#: src/utils/export_progress.py:83
+msgid "Writing to disk…"
+msgstr "Записване на диска…"
 
-#: src/utils/export_progress.py:77
-msgid "Exporting..."
-msgstr "Изнасяне..."
+#: src/utils/export_progress.py:85
+msgid "Exporting…"
+msgstr "Изнасяне…"
 
-#: src/utils/export_progress.py:78
-msgid "Processing..."
-msgstr "Обработване..."
+#: src/utils/export_progress.py:86
+msgid "Processing…"
+msgstr "Обработване…"
+
+#: src/utils/name_utils.py:36
+msgid "Custom Sound"
+msgstr "Друг звук"
+
+#: src/ui/drum_grid_builder.py:327
+msgid "Preview"
+msgstr "Предварителен преглед"
+
+#: src/ui/drum_grid_builder.py:329
+msgid "Replace…"
+msgstr "Заменяне…"
+
+#: src/ui/drum_grid_builder.py:332
+msgid "Replace with new sound"
+msgstr "Заместване с нов звук"
+
+#: src/ui/drum_grid_builder.py:335
+msgid "Remove"
+msgstr "Премахване"
+
+#: src/ui/drum_grid_builder.py:338
+msgid "At least one drum part must remain"
+msgstr "Поне една част с барабан трябва да остане"
+
+#: src/ui/drum_grid_builder.py:345
+msgid "Configure MIDI note for export"
+msgstr "Настройване на MIDI нота за изнасяне"
+
+#: src/ui/drum_grid_builder.py:402
+msgid "MIDI note updated"
+msgstr "MIDI нотата е обновена"
+
+#: src/ui/drum_grid_builder.py:410
+msgid "Select New Sound"
+msgstr "Избор на нов звук"
+
+#: src/ui/drum_grid_builder.py:424
+msgid "Removed drum part: {}"
+msgstr "Частта с барабана е премахната: {}"
+
+#: src/ui/drum_grid_builder.py:429
+msgid "Failed to remove drum part"
+msgstr "Частта с барабан не може да бъде премахната"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:198
+#: src/window.py:220
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} удара в минута"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:207
+#: src/window.py:229
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% сила на звука"
 
-#: src/window.py:222 src/window.ui:170
+#: src/window.py:262 src/window.ui:173
 msgid "Play"
 msgstr "Пускане"
 
-#: src/window.py:226
+#: src/window.py:266
 msgid "Pause"
 msgstr "Пауза"
 
-#: src/window.py:264 src/window.ui:52
+#: src/window.py:313
 msgid "Open"
 msgstr "Отваряне"
 
+#: src/window.py:331
+msgid "Added: {}"
+msgstr "Добавено: {}"
+
+#: src/window.py:346
+msgid "Failed to add custom sound"
+msgstr "Звукът не може да бъде добавен"
+
+#: src/window.py:353
+msgid "Replaced drum with: {}"
+msgstr "Барабанът е заменен с: {}"
+
+#: src/window.py:361
+msgid "Failed to replace drum sound"
+msgstr "Звука на барабана не може да бъде заменен"
+
+#: src/window.ui:52
+msgid "Open…"
+msgstr "Отваряне…"
+
 #: src/window.ui:54
-msgid "Open Preset"
+msgid "Open Pattern"
 msgstr "Отваряне на шаблон"
 
 #: src/window.ui:57
 msgctxt "accessibility"
-msgid "Open Preset"
+msgid "Open Pattern"
 msgstr "Отваряне на шаблон"
 
 #: src/window.ui:58
-msgid "Open Saved Drum Pattern Preset"
+msgid "Open Saved Drum Pattern"
 msgstr "Отваряне на запазен барабанен шаблон"
 
 #: src/window.ui:76
@@ -267,53 +657,60 @@ msgstr "Основно меню"
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Достъп до клавишни комбинации и информация за програмата"
 
-#: src/window.ui:86 src/gtk/audio-export-dialog.blp:6
-#: src/gtk/audio-export-dialog.blp:96
-msgid "Export Audio"
-msgstr "Изнасяне на аудиото"
+#: src/window.ui:86
+msgid "Export Audio…"
+msgstr "Изнасяне на аудиото…"
 
-#: src/window.ui:88
+#: src/window.ui:91
 msgctxt "accessibility"
-msgid "Export Audio"
-msgstr "Изнасяне на аудиото"
+msgid "Export Audio…"
+msgstr "Изнасяне на аудиото…"
 
-#: src/window.ui:89
+#: src/window.ui:92
 msgid "Export Current Drum Pattern as Audio File"
 msgstr "Запазване на текущите барабани като звуков файл"
 
-#: src/window.ui:134
+#: src/window.ui:137
 msgid "BPM"
 msgstr "Удара/мин."
 
-#: src/window.ui:139 src/window.ui:143
+#: src/window.ui:142 src/window.ui:146
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Нагласяне на темпото в удари в минута"
 
-#: src/window.ui:142
+#: src/window.ui:145
 msgid "Tempo"
 msgstr "Темпо"
 
-#: src/window.ui:184
+#: src/window.ui:187
 msgid "Adjust Volume"
 msgstr "Нагласяне на силата на звука"
 
-#: src/window.ui:207
-msgid "Reset"
-msgstr "Нулиране"
+#: src/window.ui:210
+msgid "Clear"
+msgstr "Изчистване"
 
-#: src/window.ui:208
-msgid "Reset the Drum Sequence"
-msgstr "Връщане на барабанната секвенция"
+#: src/window.ui:211
+msgid "Clear the Drum Pattern"
+msgstr "Изчистване на барабанния шаблон"
 
-#: src/window.ui:223
-msgid "_Save Pattern"
-msgstr "_Запазване на шаблона"
+#: src/window.ui:226
+msgid "_Add Samples…"
+msgstr "_Добавяне на семпли…"
 
-#: src/window.ui:229
+#: src/window.ui:230
+msgid "_Save Pattern…"
+msgstr "_Запазване на шаблона…"
+
+#: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr "_Нулиране на настройките"
+
+#: src/window.ui:242
 msgid "_Keyboard Shortcuts"
 msgstr "_Клавишни комбинации"
 
-#: src/window.ui:233
+#: src/window.ui:246
 msgid "_About Drum Machine"
 msgstr "_Относно „Барабанна машина“"
 
@@ -379,18 +776,18 @@ msgstr "Заглушаване"
 
 #: src/gtk/help-overlay.blp:76
 msgctxt "shortcut window"
-msgid "Preset Management"
+msgid "Pattern Management"
 msgstr "Управление на шаблони"
 
 #: src/gtk/help-overlay.blp:79
 msgctxt "shortcut window"
-msgid "Load Preset"
+msgid "Load Pattern"
 msgstr "Зареждане на шаблон"
 
 #: src/gtk/help-overlay.blp:85
 msgctxt "shortcut window"
-msgid "Save Preset"
-msgstr "Запазване на шаблон"
+msgid "Save Pattern"
+msgstr "Запазване на шаблона"
 
 #: src/gtk/help-overlay.blp:91
 msgctxt "shortcut window"
@@ -423,14 +820,14 @@ msgstr "Да се запазят ли промените?"
 
 #: src/gtk/save-changes-dialog.blp:6
 msgid ""
-"Current preset contains unsaved changes. Changes which are not saved will be "
+"Current pattern contains unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
 "Текущият барабанен шаблон съдържа промени. Ако не ги запазите, те ще бъдат "
 "загубени окончателно."
 
 #. Translators: Cancel the operation
-#: src/gtk/save-changes-dialog.blp:14
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
 msgid "_Cancel"
 msgstr "_Отказване"
 
@@ -444,38 +841,85 @@ msgstr "_Отхвърляне"
 msgid "_Save"
 msgstr "_Запазване"
 
-#: src/gtk/audio-export-dialog.blp:39
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr "Изнасяне на аудиото"
+
+#: src/gtk/audio-export-dialog.blp:44
 msgid "Audio Format"
 msgstr "Звуков формат"
 
-#: src/gtk/audio-export-dialog.blp:45
+#: src/gtk/audio-export-dialog.blp:50
 msgid "Repeat Count"
 msgstr "Брой повторения"
 
-#: src/gtk/audio-export-dialog.blp:46
+#: src/gtk/audio-export-dialog.blp:51
 msgid "How many times to repeat the pattern"
 msgstr "Колко пъти да се повтори шаблона"
 
-#: src/gtk/audio-export-dialog.blp:59
+#: src/gtk/audio-export-dialog.blp:64
 msgid "Metadata"
 msgstr "Метаданни"
 
-#: src/gtk/audio-export-dialog.blp:62
+#: src/gtk/audio-export-dialog.blp:67
 msgid "Artist Name"
 msgstr "Име на изпълнителя"
 
-#: src/gtk/audio-export-dialog.blp:67
+#: src/gtk/audio-export-dialog.blp:72
 msgid "Song Name"
 msgstr "Име на песента"
 
-#: src/gtk/audio-export-dialog.blp:72
+#: src/gtk/audio-export-dialog.blp:77
 msgid "Cover Art"
 msgstr "Корица"
 
-#: src/gtk/audio-export-dialog.blp:76
-msgid "Choose File"
-msgstr "Избор на файл"
+#: src/gtk/audio-export-dialog.blp:81
+msgid "Choose File…"
+msgstr "Избор на файл…"
 
-#: src/gtk/audio-export-dialog.blp:105
+#: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr "Прекратяване на изнасянето"
+
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr "Нулиране на настройките?"
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume to "
+"their default values. This action cannot be undone."
+msgstr ""
+"Това ще изчисти текущия шаблон и ще възстанови всички семпли, удари в минута и "
+"силата на звука към техните стандартни стойности. Това действие не може да бъде "
+"върнато."
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+msgid "_Reset"
+msgstr "_Нулиране"
+
+#~ msgid "Please create a drum pattern before exporting audio."
+#~ msgstr "Създайте барабанен шаблон преди да изнасяте аудиото."
+
+#~ msgid "_OK"
+#~ msgstr "_Добре"
+
+#~ msgctxt "accessibility"
+#~ msgid "Open Preset"
+#~ msgstr "Отваряне на шаблон"
+
+#~ msgctxt "accessibility"
+#~ msgid "Export Audio"
+#~ msgstr "Изнасяне на аудиото"
+
+#~ msgid "Reset the Drum Sequence"
+#~ msgstr "Връщане на барабанната секвенция"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Load Preset"
+#~ msgstr "Зареждане на шаблон"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "Запазване на шаблон"
