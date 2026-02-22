@@ -17,17 +17,100 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/dialogs/audio_export_dialog.py:148
-msgid "Part “{}” is Silent"
-msgstr "Το Μέρος «{}» είναι Αθόρυβο"
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
+#: src/window.ui:69
+msgid "Drum Machine"
+msgstr "Μηχανή τυμπάνων"
 
-#: src/dialogs/audio_export_dialog.py:150
-msgid "Parts “{}” and “{}” are Silent"
-msgstr "Τα Μέρη «{}» και «{}» είναι Αθόρυβα"
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgstr "τύμπανα;ντραμς;drums;αλληλουχία;ρυθμός;μουσική;μοτίβο;κρούση;λούπα;drum;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
 
-#: src/dialogs/audio_export_dialog.py:154
-msgid "{} Parts are Silent"
-msgstr "{} Μέρη είναι Αθόρυβα"
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "Δημιουργήστε και αναπαράγετε ρυθμούς τυμπάνων"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr ""
+"Η Μηχανή τυμπάνων είναι μια σύγχρονη και διαισθητική εφαρμογή για τη "
+"δημιουργία, αναπαραγωγή και διαχείριση μοτίβων τυμπάνων. Ιδανική για "
+"μουσικούς, παραγωγούς και οποιονδήποτε ενδιαφέρεται για τη δημιουργία ρυθμού, "
+"αυτή η εφαρμογή παρέχει μια απλή διεπαφή για τον προγραμματισμό μοτίβων "
+"τυμπάνων. Καλή διασκέδαση!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "Χαρακτηριστικά:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor with infinite pages"
+msgstr "Διαισθητικός επεξεργαστής μοτίβων βάσει πλέγματος με άπειρες σελίδες"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr "Προσαρμοσμένα δείγματα: Προσθέστε τους δικούς σας ήχους τυμπάνων με αντιστοίχιση νοτών MIDI"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Adjustable BPM control"
+msgstr "Ρυθμιζόμενος έλεγχος BPM (ρυθμού)"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Volume control for overall mix"
+msgstr "Έλεγχος έντασης για τη συνολική μείξη"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Save and load patterns"
+msgstr "Αποθήκευση και φόρτωση μοτίβων"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "Πολλαπλοί ήχοι τυμπάνων, όπως μπότα, ταμπούρο, πιατίνια και άλλα"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr ""
+"Εξαγωγή ήχου και MIDI με υποστήριξη για μορφές WAV, FLAC, Ogg, MP3 και MIDI"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr "Υποστήριξη μεταδεδομένων για ενσωμάτωση ονόματος καλλιτέχνη, τίτλου τραγουδιού και εξωφύλλου"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "Συντομεύσεις πληκτρολογίου για γρήγορη πρόσβαση σε όλες τις λειτουργίες"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "Μοτίβο τυμπάνων φορτωμένο σε ανοιχτόχρωμη λειτουργία"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "Μοτίβο τυμπάνων φορτωμένο σε σκοτεινή λειτουργία"
+
+#: src/application.py:74
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns."
+msgstr ""
+"Η Μηχανή τυμπάνων είναι μια σύγχρονη και διαισθητική εφαρμογή για τη "
+"δημιουργία, αναπαραγωγή και διαχείριση μοτίβων τυμπάνων."
+
+#: src/application.py:79
+msgid "translator-credits"
+msgstr ""
+"Ελληνική μεταφραστική ομάδα GNOME\n"
+" Ευστάθιος Ιωσηφίδης <iosifidis@opensuse.org>\n"
+"\n"
+"Για περισσότερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
+"https://gr.gnome.org/"
 
 #: src/application.py:84
 msgid "Special thanks"
@@ -40,7 +123,77 @@ msgstr "Ήχοι"
 #: src/application.py:88
 #, python-brace-format
 msgid "The drum samples used in this application are from {link}."
-msgstr "Τα δείγματα τυμπάνων που χρησιμοποιούνται σε αυτήν την εφαρμογή προέρχονται από {link}."
+msgstr ""
+"Τα δείγματα τυμπάνων που χρησιμοποιούνται σε αυτήν την εφαρμογή προέρχονται "
+"από {link}."
+
+#: src/config/export_formats.py:44
+msgid "MP3 files"
+msgstr "Αρχεία MP3"
+
+#: src/config/export_formats.py:45
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:51
+msgid "FLAC files"
+msgstr "Αρχεία FLAC"
+
+#: src/config/export_formats.py:52
+msgid "FLAC (Lossless)"
+msgstr "FLAC (Χωρίς απώλειες)"
+
+#: src/config/export_formats.py:58
+msgid "Ogg files"
+msgstr "Αρχεία Ogg"
+
+#: src/config/export_formats.py:59
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+#: src/config/export_formats.py:65
+msgid "WAV files"
+msgstr "Αρχεία WAV"
+
+#: src/config/export_formats.py:66
+msgid "WAV (Uncompressed)"
+msgstr "WAV (Χωρίς συμπίεση)"
+
+#: src/dialogs/audio_export_dialog.py:119
+msgid "Save Audio File"
+msgstr "Αποθήκευση αρχείου ήχου"
+
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Part “{}” is Silent"
+msgstr "Το Μέρος «{}» είναι Αθόρυβο"
+
+#: src/dialogs/audio_export_dialog.py:150
+msgid "Parts “{}” and “{}” are Silent"
+msgstr "Τα Μέρη «{}» και «{}» είναι Αθόρυβα"
+
+#: src/dialogs/audio_export_dialog.py:154
+msgid "{} Parts are Silent"
+msgstr "{} Μέρη είναι Αθόρυβα"
+
+#: src/dialogs/audio_export_dialog.py:179
+msgid "Image files"
+msgstr "Αρχεία εικόνας"
+
+#: src/dialogs/audio_export_dialog.py:185
+msgid "Select Cover Art"
+msgstr "Επιλογή εξωφύλλου"
+
+#: src/dialogs/audio_export_dialog.py:245
+msgid "Audio exported to {}"
+msgstr "Ο ήχος εξήχθη στο {}"
+
+#: src/dialogs/audio_export_dialog.py:251
+msgid "Export failed"
+msgstr "Η εξαγωγή απέτυχε"
+
+#: src/dialogs/audio_export_dialog.py:258
+msgid "Export cancelled successfully"
+msgstr "Η εξαγωγή ακυρώθηκε επιτυχώς"
 
 #: src/dialogs/midi_mapping_dialog.py:22
 msgid "Acoustic Bass Drum"
@@ -195,18 +348,16 @@ msgid "Long Whistle"
 msgstr "Μακριά Σφύριγμα"
 
 #: src/dialogs/midi_mapping_dialog.py:60
-#, fuzzy
-#| msgid "Export Audio"
 msgid "Short Guiro"
-msgstr "Κοντό Guiro"
+msgstr "Κοντό γκουίρο"
 
 #: src/dialogs/midi_mapping_dialog.py:61
 msgid "Long Guiro"
-msgstr "Μακρύ Guiro"
+msgstr "Μακρύ γκουίρο"
 
 #: src/dialogs/midi_mapping_dialog.py:62
 msgid "Claves"
-msgstr "Claves"
+msgstr "Κλάβες"
 
 #: src/dialogs/midi_mapping_dialog.py:63
 msgid "Hi Wood Block"
@@ -244,11 +395,12 @@ msgstr "Αντιστοίχιση Νότας"
 #: src/dialogs/midi_mapping_dialog.py:111
 msgid ""
 "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
-msgstr "Αντιστοιχίστε μια νότα MIDI για το '{}'. Αυτό εξασφαλίζει σωστή αναπαραγωγή κατά την εξαγωγή."
+msgstr ""
+"Αντιστοιχίστε μια νότα MIDI για το '{}'. Αυτό εξασφαλίζει σωστή αναπαραγωγή "
+"κατά την εξαγωγή."
 
 #. Action Row for Note
 #: src/dialogs/midi_mapping_dialog.py:118
-#| msgid "MIDI files"
 msgid "MIDI Note"
 msgstr "Νότα MIDI"
 
@@ -258,8 +410,6 @@ msgstr "Ο αριθμός νότας για ενεργοποίηση"
 
 #. Group 2: Standard Instruments
 #: src/dialogs/midi_mapping_dialog.py:137
-#| msgctxt "shortcut window"
-#| msgid "Go to Instrument"
 msgid "Standard Instruments"
 msgstr "Πρότυπο Όργανα"
 
@@ -268,12 +418,10 @@ msgid "Select a General MIDI instrument to automatically set the note."
 msgstr "Επιλέξτε ένα General MIDI όργανο για αυτόματη ρύθμιση της νότας."
 
 #: src/dialogs/midi_mapping_dialog.py:143
-#| msgid "Open Preset"
 msgid "Instrument Preset"
 msgstr "Προκαθορισμένο Οργάνου"
 
 #: src/dialogs/midi_mapping_dialog.py:186
-#| msgid "_Save"
 msgid "Save"
 msgstr "Αποθήκευση"
 
@@ -331,10 +479,8 @@ msgid "{} files skipped"
 msgstr "{} αρχεία παραλήφθηκαν"
 
 #: src/handlers/file_dialog_handler.py:52
-#, fuzzy
-#| msgid "Default Presets"
 msgid "Default Patterns"
-msgstr "Προεπιλεγμένα Μοτίβα"
+msgstr "Προεπιλεγμένα μοτίβα"
 
 #: src/handlers/file_dialog_handler.py:92
 #: src/handlers/file_dialog_handler.py:171
@@ -350,7 +496,6 @@ msgid "Failed to open file"
 msgstr "Αποτυχία ανοίγματος αρχείου"
 
 #: src/handlers/file_dialog_handler.py:165
-#| msgid "Save and load preset patterns"
 msgid "Failed to load pattern"
 msgstr "Αποτυχία φόρτωσης μοτίβου"
 
@@ -363,9 +508,40 @@ msgid "Add Audio Samples"
 msgstr "Προσθήκη Δειγμάτων Ήχου"
 
 #: src/handlers/file_dialog_handler.py:227
-#| msgid "WAV files"
 msgid "Audio files"
 msgstr "Αρχεία ήχου"
+
+#: src/utils/export_progress.py:76
+msgid "Preparing…"
+msgstr "Προετοιμασία…"
+
+#: src/utils/export_progress.py:77
+msgid "Initializing…"
+msgstr "Αρχικοποίηση…"
+
+#: src/utils/export_progress.py:79
+msgid "Rendering audio…"
+msgstr "Απόδοση ήχου…"
+
+#: src/utils/export_progress.py:80
+msgid "Processing beats…"
+msgstr "Επεξεργασία ρυθμών…"
+
+#: src/utils/export_progress.py:82
+msgid "Saving file…"
+msgstr "Αποθήκευση αρχείου…"
+
+#: src/utils/export_progress.py:83
+msgid "Writing to disk…"
+msgstr "Εγγραφή στον δίσκο…"
+
+#: src/utils/export_progress.py:85
+msgid "Exporting…"
+msgstr "Εξαγωγή…"
+
+#: src/utils/export_progress.py:86
+msgid "Processing…"
+msgstr "Επεξεργασία…"
 
 #: src/utils/name_utils.py:36
 msgid "Custom Sound"
@@ -411,6 +587,24 @@ msgstr "Αφαιρέθηκε μέρος τύμπανου: {}"
 msgid "Failed to remove drum part"
 msgstr "Αποτυχία αφαίρεσης μέρους τύμπανου"
 
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:220
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} Χτύποι ανά λεπτό (BPM)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:229
+msgid "{:.0f}% Volume"
+msgstr "{:.0f}% Ένταση"
+
+#: src/window.py:262 src/window.ui:173
+msgid "Play"
+msgstr "Αναπαραγωγή"
+
+#: src/window.py:266
+msgid "Pause"
+msgstr "Παύση"
+
 #: src/window.py:313
 msgid "Open"
 msgstr "Άνοιγμα"
@@ -431,14 +625,71 @@ msgstr "Αντικαταστάθηκε τύμπανο με: {}"
 msgid "Failed to replace drum sound"
 msgstr "Αποτυχία αντικατάστασης ήχου τύμπανου"
 
+#: src/window.ui:52
+#| msgid "Open"
+msgid "Open…"
+msgstr "Άνοιγμα…"
+
+#: src/window.ui:54
+msgid "Open Pattern"
+msgstr "Άνοιγμα μοτίβου"
+
+#: src/window.ui:57
+msgctxt "accessibility"
+msgid "Open Pattern"
+msgstr "Άνοιγμα μοτίβου"
+
+#: src/window.ui:58
+msgid "Open Saved Drum Pattern"
+msgstr "Άνοιγμα αποθηκευμένου μοτίβου τυμπάνων"
+
+#: src/window.ui:76
+msgid "Main Menu"
+msgstr "Κύριο μενού"
+
+#: src/window.ui:78
+msgctxt "accessibility"
+msgid "Main Menu"
+msgstr "Κύριο μενού"
+
+#: src/window.ui:79
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "Πρόσβαση στις συντομεύσεις πληκτρολογίου και πληροφορίες εφαρμογής"
+
+#: src/window.ui:86
+msgid "Export Audio…"
+msgstr "Εξαγωγή ήχου…"
+
+#: src/window.ui:91
+msgctxt "accessibility"
+msgid "Export Audio…"
+msgstr "Εξαγωγή ήχου…"
+
+#: src/window.ui:92
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "Εξαγωγή του τρέχοντος μοτίβου τυμπάνων ως αρχείο ήχου"
+
+#: src/window.ui:137
+msgid "BPM"
+msgstr "BPM"
+
+#: src/window.ui:142 src/window.ui:146
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "Ρύθμιση τέμπο σε χτύπους ανά λεπτό (BPM)"
+
+#: src/window.ui:145
+msgid "Tempo"
+msgstr "Τέμπο"
+
+#: src/window.ui:187
+msgid "Adjust Volume"
+msgstr "Ρύθμιση έντασης"
+
 #: src/window.ui:210
-#| msgctxt "shortcut window"
-#| msgid "Clear All"
 msgid "Clear"
 msgstr "Εκκαθάριση"
 
 #: src/window.ui:211
-#| msgid "Open Saved Drum Pattern Preset"
 msgid "Clear the Drum Pattern"
 msgstr "Εκκαθάριση του Ρυθμικού Μοτίβου"
 
@@ -447,7 +698,6 @@ msgid "_Add Samples…"
 msgstr "_Προσθήκη Δειγμάτων…"
 
 #: src/window.ui:230
-#| msgid "_Save Pattern"
 msgid "_Save Pattern…"
 msgstr "_Αποθήκευση Μοτίβου…"
 
@@ -461,7 +711,174 @@ msgstr "_Συντομεύσεις Πληκτρολογίου"
 
 #: src/window.ui:246
 msgid "_About Drum Machine"
-msgstr "_Σχετικά με τη Μηχανή Τυμπάνων"
+msgstr "_Περί της Μηχανής τυμπάνων"
+
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Γενικά"
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Εμφάνιση συντομεύσεων"
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Έξοδος"
+
+#: src/gtk/help-overlay.blp:26
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "Στοιχεία ελέγχου αναπαραγωγής"
+
+#: src/gtk/help-overlay.blp:29
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "Αναπαραγωγή/Παύση"
+
+#: src/gtk/help-overlay.blp:35
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "Εκκαθάριση όλων"
+
+#: src/gtk/help-overlay.blp:42
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "Στοιχεία ελέγχου BPM & έντασης"
+
+#: src/gtk/help-overlay.blp:45
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "Αύξηση BPM"
+
+#: src/gtk/help-overlay.blp:51
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "Μείωση BPM"
+
+#: src/gtk/help-overlay.blp:57
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "Αύξηση έντασης"
+
+#: src/gtk/help-overlay.blp:63
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "Μείωση έντασης"
+
+#: src/gtk/help-overlay.blp:69
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "Σίγαση"
+
+#: src/gtk/help-overlay.blp:76
+msgctxt "shortcut window"
+msgid "Pattern Management"
+msgstr "Διαχείριση μοτίβων"
+
+#: src/gtk/help-overlay.blp:79
+msgctxt "shortcut window"
+msgid "Load Pattern"
+msgstr "Φόρτωση μοτίβου"
+
+#: src/gtk/help-overlay.blp:85
+msgctxt "shortcut window"
+msgid "Save Pattern"
+msgstr "Αποθήκευση μοτίβου"
+
+#: src/gtk/help-overlay.blp:91
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "Εξαγωγή ήχου"
+
+#: src/gtk/help-overlay.blp:98
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "Πλοήγηση"
+
+#: src/gtk/help-overlay.blp:101
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr "Μετάβαση σε όργανο"
+
+#: src/gtk/help-overlay.blp:107
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr "Προηγούμενη σελίδα"
+
+#: src/gtk/help-overlay.blp:113
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr "Επόμενη σελίδα"
+
+#: src/gtk/save-changes-dialog.blp:5
+msgid "Save Changes?"
+msgstr "Αποθήκευση αλλαγών;"
+
+#: src/gtk/save-changes-dialog.blp:6
+msgid ""
+"Current pattern contains unsaved changes. Changes which are not saved will "
+"be permanently lost."
+msgstr ""
+"Το τρέχον μοτίβο περιέχει μη αποθηκευμένες αλλαγές. Οι αλλαγές που δεν θα "
+"αποθηκευτούν θα χαθούν οριστικά."
+
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
+msgid "_Cancel"
+msgstr "Α_κύρωση"
+
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
+msgid "_Discard"
+msgstr "Από_ρριψη"
+
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
+msgid "_Save"
+msgstr "_Αποθήκευση"
+
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr "Εξαγωγή ήχου"
+
+#: src/gtk/audio-export-dialog.blp:44
+msgid "Audio Format"
+msgstr "Μορφή ήχου"
+
+#: src/gtk/audio-export-dialog.blp:50
+msgid "Repeat Count"
+msgstr "Αριθμός επαναλήψεων"
+
+#: src/gtk/audio-export-dialog.blp:51
+msgid "How many times to repeat the pattern"
+msgstr "Πόσες φορές θα επαναληφθεί το μοτίβο"
+
+#: src/gtk/audio-export-dialog.blp:64
+msgid "Metadata"
+msgstr "Μεταδεδομένα"
+
+#: src/gtk/audio-export-dialog.blp:67
+msgid "Artist Name"
+msgstr "Όνομα καλλιτέχνη"
+
+#: src/gtk/audio-export-dialog.blp:72
+msgid "Song Name"
+msgstr "Όνομα τραγουδιού"
+
+#: src/gtk/audio-export-dialog.blp:77
+msgid "Cover Art"
+msgstr "Εξώφυλλο"
+
+#: src/gtk/audio-export-dialog.blp:81
+msgid "Choose File…"
+msgstr "Επιλογή αρχείου…"
+
+#: src/gtk/audio-export-dialog.blp:110
+msgid "Cancel Export"
+msgstr "Ακύρωση εξαγωγής"
 
 #: src/gtk/reset-defaults-dialog.blp:5
 msgid "Reset to Defaults?"
@@ -471,11 +888,13 @@ msgstr "Επαναφορά σε Προεπιλογές;"
 msgid ""
 "This will clear the current pattern and restore all samples, BPM, and volume "
 "to their default values. This action cannot be undone."
-msgstr "Αυτό θα καθαρίσει το τρέχον μοτίβο και θα επαναφέρει όλα τα δείγματα, BPM και ένταση στις προεπιλεγμένες τιμές τους. Αυτή η ενέργεια δεν μπορεί να αναιρεθεί."
+msgstr ""
+"Αυτό θα καθαρίσει το τρέχον μοτίβο και θα επαναφέρει όλα τα δείγματα, BPM "
+"και ένταση στις προεπιλεγμένες τιμές τους. Αυτή η ενέργεια δεν μπορεί να "
+"αναιρεθεί."
 
 #. Translators: Reset to defaults
 #: src/gtk/reset-defaults-dialog.blp:14
-#| msgid "Reset"
 msgid "_Reset"
 msgstr "_Επαναφορά"
 
@@ -488,10 +907,6 @@ msgstr "_Επαναφορά"
 #~ msgctxt "accessibility"
 #~ msgid "Open Preset"
 #~ msgstr "Άνοιγμα Προκαθορισμένου"
-
-#~ msgctxt "accessibility"
-#~ msgid "Export Audio"
-#~ msgstr "Εξαγωγή Ήχου"
 
 #~ msgid "Reset the Drum Sequence"
 #~ msgstr "Επαναφορά Ακολουθίας Τυμπάνων"
