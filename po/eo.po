@@ -1,0 +1,893 @@
+# Esperanto translation for drum-machine.
+# Copyright (C) 2026 drum-machine's COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine master\n"
+"Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
+"POT-Creation-Date: 2025-12-21 22:38+0000\n"
+"PO-Revision-Date: 2026-02-27 13:37+0100\n"
+"Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
+"Language-Team: Esperanto <gnome-eo-list@gnome.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 49.0\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
+#: src/window.ui:69
+msgid "Drum Machine"
+msgstr "Drum Machine"
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgstr "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "Krei kaj ludi tamburajn batojn"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr ""
+"Drum Machine estas moderna kaj intuicia programo por krei, ludi kaj "
+"administri tamburajn ŝablonojn. Perfekta por muzikistoj, produktantoj kaj "
+"ĉiuj interesitaj pri ritma kreado, ĉi tiu programo provizas simplan "
+"interfacon por tamburaj ŝablon-programado. Amuzu vin!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "Funkcioj:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor with infinite pages"
+msgstr "Intuicia krad-bazita ŝablon-redaktilo kun senlimitaj paĝoj"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr ""
+"Propraj specimenoj: Aldonu viajn proprajn tamburajn sonojn kun MIDI-nota "
+"mapadaro"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Adjustable BPM control"
+msgstr "Agordigebla BPM-regilo"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Volume control for overall mix"
+msgstr "Laŭt-regilo por la tuta miksaĵo"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Save and load patterns"
+msgstr "Konservi kaj ŝargi ŝablonojn"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "Pluraj tamburaj sonoj inkluzive piedbato, snaporo, hiĉapo kaj pli"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr ""
+"Aŭdia kaj MIDI-eksportado kun subteno por WAV, FLAC, Ogg, MP3 kaj MIDI-"
+"formatoj"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr ""
+"Metadatuma subteno por enigi artisto-nomon, kanto-titolon kaj kovril-arton"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "Klav-mallongigoj por rapida aliro al ĉiuj funkcioj"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "Tambura ŝablono ŝargita en hela reĝimo"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "Tambura ŝablono ŝargita en malhela reĝimo"
+
+#: src/application.py:74
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns."
+msgstr ""
+"Drum Machine estas moderna kaj intuicia programo por krei, ludi kaj "
+"administri tamburajn ŝablonojn."
+
+#: src/application.py:79
+msgid "translator-credits"
+msgstr "Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>"
+
+#: src/application.py:84
+msgid "Special thanks"
+msgstr "Specialaj dankoj"
+
+#: src/application.py:87
+msgid "Sounds"
+msgstr "Sonoj"
+
+#: src/application.py:88
+#, python-brace-format
+msgid "The drum samples used in this application are from {link}."
+msgstr "La tamburaj specimenoj uzataj en ĉi tiu programo estas el {link}."
+
+#: src/config/export_formats.py:44
+msgid "MP3 files"
+msgstr "MP3-dosieroj"
+
+#: src/config/export_formats.py:45
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:51
+msgid "FLAC files"
+msgstr "FLAC-dosieroj"
+
+#: src/config/export_formats.py:52
+msgid "FLAC (Lossless)"
+msgstr "FLAC (Sen perdo)"
+
+#: src/config/export_formats.py:58
+msgid "Ogg files"
+msgstr "Ogg-dosieroj"
+
+#: src/config/export_formats.py:59
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+#: src/config/export_formats.py:65
+msgid "WAV files"
+msgstr "WAV-dosieroj"
+
+#: src/config/export_formats.py:66
+msgid "WAV (Uncompressed)"
+msgstr "WAV (Nekunpremita)"
+
+#: src/dialogs/audio_export_dialog.py:119
+msgid "Save Audio File"
+msgstr "Konservi sonaran dosieron"
+
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Part “{}” is Silent"
+msgstr "Parto „{}“ estas silenta"
+
+#: src/dialogs/audio_export_dialog.py:150
+msgid "Parts “{}” and “{}” are Silent"
+msgstr "Partoj „{}“ kaj „{}“ estas silentaj"
+
+#: src/dialogs/audio_export_dialog.py:154
+msgid "{} Parts are Silent"
+msgstr "{} partoj estas silentaj"
+
+#: src/dialogs/audio_export_dialog.py:179
+msgid "Image files"
+msgstr "Bildaj dosieroj"
+
+#: src/dialogs/audio_export_dialog.py:185
+msgid "Select Cover Art"
+msgstr "Elekti kovril-arton"
+
+#: src/dialogs/audio_export_dialog.py:245
+msgid "Audio exported to {}"
+msgstr "Sona eksportaĵo al {}"
+
+#: src/dialogs/audio_export_dialog.py:251
+msgid "Export failed"
+msgstr "Eksportado malsukcesis"
+
+#: src/dialogs/audio_export_dialog.py:258
+msgid "Export cancelled successfully"
+msgstr "Eksportado sukcese nuligita"
+
+#: src/dialogs/midi_mapping_dialog.py:22
+msgid "Acoustic Bass Drum"
+msgstr "Akustika bas-tamburo"
+
+#: src/dialogs/midi_mapping_dialog.py:23
+msgid "Bass Drum 1"
+msgstr "Bas-tamburo 1"
+
+#: src/dialogs/midi_mapping_dialog.py:24
+msgid "Side Stick"
+msgstr "Flanka bastono"
+
+#: src/dialogs/midi_mapping_dialog.py:25
+msgid "Acoustic Snare"
+msgstr "Akustika snaporo"
+
+#: src/dialogs/midi_mapping_dialog.py:26
+msgid "Hand Clap"
+msgstr "Manfrapa"
+
+#: src/dialogs/midi_mapping_dialog.py:27
+msgid "Electric Snare"
+msgstr "Elektra snaporo"
+
+#: src/dialogs/midi_mapping_dialog.py:28
+msgid "Low Floor Tom"
+msgstr "Malalta planktamo"
+
+#: src/dialogs/midi_mapping_dialog.py:29
+msgid "Closed Hi Hat"
+msgstr "Fermita hiĉapo"
+
+#: src/dialogs/midi_mapping_dialog.py:30
+msgid "High Floor Tom"
+msgstr "Alta planktamo"
+
+#: src/dialogs/midi_mapping_dialog.py:31
+msgid "Pedal Hi Hat"
+msgstr "Pedal-hiĉapo"
+
+#: src/dialogs/midi_mapping_dialog.py:32
+msgid "Low Tom"
+msgstr "Malalta tamo"
+
+#: src/dialogs/midi_mapping_dialog.py:33
+msgid "Open Hi Hat"
+msgstr "Malferma hiĉapo"
+
+#: src/dialogs/midi_mapping_dialog.py:34
+msgid "Low-Mid Tom"
+msgstr "Malalta-meza tamo"
+
+#: src/dialogs/midi_mapping_dialog.py:35
+msgid "Hi-Mid Tom"
+msgstr "Alta-meza tamo"
+
+#: src/dialogs/midi_mapping_dialog.py:36
+msgid "Crash Cymbal 1"
+msgstr "Kraŝcimbalo 1"
+
+#: src/dialogs/midi_mapping_dialog.py:37
+msgid "High Tom"
+msgstr "Alta tamo"
+
+#: src/dialogs/midi_mapping_dialog.py:38
+msgid "Ride Cymbal 1"
+msgstr "Rajdcimbalo 1"
+
+#: src/dialogs/midi_mapping_dialog.py:39
+msgid "Chinese Cymbal"
+msgstr "Ĉina cimbalo"
+
+#: src/dialogs/midi_mapping_dialog.py:40
+msgid "Ride Bell"
+msgstr "Rajdsono"
+
+#: src/dialogs/midi_mapping_dialog.py:41
+msgid "Tambourine"
+msgstr "Tamburino"
+
+#: src/dialogs/midi_mapping_dialog.py:42
+msgid "Splash Cymbal"
+msgstr "Spruccimbalo"
+
+#: src/dialogs/midi_mapping_dialog.py:43
+msgid "Cowbell"
+msgstr "Bovsono"
+
+#: src/dialogs/midi_mapping_dialog.py:44
+msgid "Crash Cymbal 2"
+msgstr "Kraŝcimbalo 2"
+
+#: src/dialogs/midi_mapping_dialog.py:45
+msgid "Vibraslap"
+msgstr "Vibrofrapo"
+
+#: src/dialogs/midi_mapping_dialog.py:46
+msgid "Ride Cymbal 2"
+msgstr "Rajdcimbalo 2"
+
+#: src/dialogs/midi_mapping_dialog.py:47
+msgid "Hi Bongo"
+msgstr "Alta bongo"
+
+#: src/dialogs/midi_mapping_dialog.py:48
+msgid "Low Bongo"
+msgstr "Malalta bongo"
+
+#: src/dialogs/midi_mapping_dialog.py:49
+msgid "Mute Hi Conga"
+msgstr "Silenta alta kongo"
+
+#: src/dialogs/midi_mapping_dialog.py:50
+msgid "Open Hi Conga"
+msgstr "Malferma alta kongo"
+
+#: src/dialogs/midi_mapping_dialog.py:51
+msgid "Low Conga"
+msgstr "Malalta kongo"
+
+#: src/dialogs/midi_mapping_dialog.py:52
+msgid "High Timbale"
+msgstr "Alta timbalo"
+
+#: src/dialogs/midi_mapping_dialog.py:53
+msgid "Low Timbale"
+msgstr "Malalta timbalo"
+
+#: src/dialogs/midi_mapping_dialog.py:54
+msgid "High Agogo"
+msgstr "Alta agogo"
+
+#: src/dialogs/midi_mapping_dialog.py:55
+msgid "Low Agogo"
+msgstr "Malalta agogo"
+
+#: src/dialogs/midi_mapping_dialog.py:56
+msgid "Cabasa"
+msgstr "Kabaso"
+
+#: src/dialogs/midi_mapping_dialog.py:57
+msgid "Maracas"
+msgstr "Marakoj"
+
+#: src/dialogs/midi_mapping_dialog.py:58
+msgid "Short Whistle"
+msgstr "Mallonga fajfilo"
+
+#: src/dialogs/midi_mapping_dialog.py:59
+msgid "Long Whistle"
+msgstr "Longa fajfilo"
+
+#: src/dialogs/midi_mapping_dialog.py:60
+msgid "Short Guiro"
+msgstr "Mallonga gviro"
+
+#: src/dialogs/midi_mapping_dialog.py:61
+msgid "Long Guiro"
+msgstr "Longa gviro"
+
+#: src/dialogs/midi_mapping_dialog.py:62
+msgid "Claves"
+msgstr "Klavoj"
+
+#: src/dialogs/midi_mapping_dialog.py:63
+msgid "Hi Wood Block"
+msgstr "Alta ligno-bloko"
+
+#: src/dialogs/midi_mapping_dialog.py:64
+msgid "Low Wood Block"
+msgstr "Malalta ligno-bloko"
+
+#: src/dialogs/midi_mapping_dialog.py:65
+msgid "Mute Cuica"
+msgstr "Silenta kuika"
+
+#: src/dialogs/midi_mapping_dialog.py:66
+msgid "Open Cuica"
+msgstr "Malferma kuika"
+
+#: src/dialogs/midi_mapping_dialog.py:67
+msgid "Mute Triangle"
+msgstr "Silenta triangolo"
+
+#: src/dialogs/midi_mapping_dialog.py:68
+msgid "Open Triangle"
+msgstr "Malferma triangolo"
+
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
+msgid "MIDI Mapping"
+msgstr "MIDI-mapado"
+
+#. Group 1: Note Assignment
+#: src/dialogs/midi_mapping_dialog.py:108
+msgid "Note Assignment"
+msgstr "Nota asignado"
+
+#: src/dialogs/midi_mapping_dialog.py:111
+msgid ""
+"Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr ""
+"Asigni MIDI-noton por '{}'. Tio certigas ĝustan ludadon dum eksportado."
+
+#. Action Row for Note
+#: src/dialogs/midi_mapping_dialog.py:118
+msgid "MIDI Note"
+msgstr "MIDI-noto"
+
+#: src/dialogs/midi_mapping_dialog.py:119
+msgid "The note number to trigger"
+msgstr "La nota numero por ekigi"
+
+#. Group 2: Standard Instruments
+#: src/dialogs/midi_mapping_dialog.py:137
+msgid "Standard Instruments"
+msgstr "Normaj instrumentoj"
+
+#: src/dialogs/midi_mapping_dialog.py:139
+msgid "Select a General MIDI instrument to automatically set the note."
+msgstr "Elektu ĝeneralan MIDI-instrumenton por aŭtomate agordi la noton."
+
+#: src/dialogs/midi_mapping_dialog.py:143
+msgid "Instrument Preset"
+msgstr "Instrument-antaŭagordo"
+
+#: src/dialogs/midi_mapping_dialog.py:186
+msgid "Save"
+msgstr "Konservi"
+
+#: src/dialogs/midi_mapping_dialog.py:229
+msgid "Custom Note"
+msgstr "Propra noto"
+
+#: src/handlers/drag_drop_handler.py:299
+msgid "Sound replaced"
+msgstr "Sono anstataŭigita"
+
+#: src/handlers/drag_drop_handler.py:302
+msgid "Failed to replace sound"
+msgstr "Malsukcesis anstataŭigi sonon"
+
+#: src/handlers/drag_drop_handler.py:312
+msgid "Not a supported audio file"
+msgstr "Ne estas subtenata sona dosiero"
+
+#: src/handlers/drag_drop_handler.py:320
+msgid "File not found"
+msgstr "Dosiero ne trovita"
+
+#: src/handlers/drag_drop_handler.py:325
+msgid "Selected item is not a file"
+msgstr "La elektita ero ne estas dosiero"
+
+#: src/handlers/drag_drop_handler.py:332
+msgid "File too large: {:.1f}MB (max 50MB)"
+msgstr "Dosiero tro granda: {:.1f}MB (maks 50MB)"
+
+#: src/handlers/drag_drop_handler.py:362
+msgid "No valid audio files found"
+msgstr "Neniaj validaj sonaj dosieroj trovitaj"
+
+#: src/handlers/drag_drop_handler.py:402
+msgid "Error processing file: {}"
+msgstr "Eraro dum traktado de dosiero: {}"
+
+#: src/handlers/drag_drop_handler.py:433
+msgid "Added {} drum part, {} files skipped"
+msgstr "Aldonita {} tambura parto, {} dosieroj preterlasitaj"
+
+#: src/handlers/drag_drop_handler.py:439
+msgid "Added {} drum parts, {} files skipped"
+msgstr "Aldonitaj {} tamburaj partoj, {} dosieroj preterlasitaj"
+
+#: src/handlers/drag_drop_handler.py:444
+msgid "Added {} drum parts"
+msgstr "Aldonitaj {} tamburaj partoj"
+
+#. Only show skipped message if no replacement happened
+#: src/handlers/drag_drop_handler.py:447
+msgid "{} files skipped"
+msgstr "{} dosieroj preterlasitaj"
+
+#: src/handlers/file_dialog_handler.py:52
+msgid "Default Patterns"
+msgstr "Defaŭltaj ŝablonoj"
+
+#: src/handlers/file_dialog_handler.py:92
+#: src/handlers/file_dialog_handler.py:171
+msgid "MIDI files"
+msgstr "MIDI-dosieroj"
+
+#: src/handlers/file_dialog_handler.py:98
+msgid "Open MIDI File"
+msgstr "Malfermi MIDI-dosieron"
+
+#: src/handlers/file_dialog_handler.py:127
+msgid "Failed to open file"
+msgstr "Malsukcesis malfermi dosieron"
+
+#: src/handlers/file_dialog_handler.py:165
+msgid "Failed to load pattern"
+msgstr "Malsukcesis ŝargi ŝablonon"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "Konservi sekvencon"
+
+#: src/handlers/file_dialog_handler.py:205
+msgid "Add Audio Samples"
+msgstr "Aldoni sonajn specimenoj"
+
+#: src/handlers/file_dialog_handler.py:227
+msgid "Audio files"
+msgstr "Sonaj dosieroj"
+
+#: src/utils/export_progress.py:76
+msgid "Preparing…"
+msgstr "Preparante…"
+
+#: src/utils/export_progress.py:77
+msgid "Initializing…"
+msgstr "Inicialigante…"
+
+#: src/utils/export_progress.py:79
+msgid "Rendering audio…"
+msgstr "Igante sonon…"
+
+#: src/utils/export_progress.py:80
+msgid "Processing beats…"
+msgstr "Traktante batojn…"
+
+#: src/utils/export_progress.py:82
+msgid "Saving file…"
+msgstr "Konservante dosieron…"
+
+#: src/utils/export_progress.py:83
+msgid "Writing to disk…"
+msgstr "Skribante al disko…"
+
+#: src/utils/export_progress.py:85
+msgid "Exporting…"
+msgstr "Eksportante…"
+
+#: src/utils/export_progress.py:86
+msgid "Processing…"
+msgstr "Traktante…"
+
+#: src/utils/name_utils.py:36
+msgid "Custom Sound"
+msgstr "Propra sono"
+
+#: src/ui/drum_grid_builder.py:327
+msgid "Preview"
+msgstr "Antaŭvido"
+
+#: src/ui/drum_grid_builder.py:329
+msgid "Replace…"
+msgstr "Anstataŭigi…"
+
+#: src/ui/drum_grid_builder.py:332
+msgid "Replace with new sound"
+msgstr "Anstataŭigi per nova sono"
+
+#: src/ui/drum_grid_builder.py:335
+msgid "Remove"
+msgstr "Forigi"
+
+#: src/ui/drum_grid_builder.py:338
+msgid "At least one drum part must remain"
+msgstr "Almenaŭ unu tambura parto devas resti"
+
+#: src/ui/drum_grid_builder.py:345
+msgid "Configure MIDI note for export"
+msgstr "Agordi MIDI-noton por eksportado"
+
+#: src/ui/drum_grid_builder.py:402
+msgid "MIDI note updated"
+msgstr "MIDI-noto ĝisdatigita"
+
+#: src/ui/drum_grid_builder.py:410
+msgid "Select New Sound"
+msgstr "Elekti novan sonon"
+
+#: src/ui/drum_grid_builder.py:424
+msgid "Removed drum part: {}"
+msgstr "Tambura parto forigita: {}"
+
+#: src/ui/drum_grid_builder.py:429
+msgid "Failed to remove drum part"
+msgstr "Malsukcesis forigi tamburan parton"
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:220
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} batoj minuton (BPM)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:229
+msgid "{:.0f}% Volume"
+msgstr "{:.0f}% laŭteco"
+
+#: src/window.py:262 src/window.ui:173
+msgid "Play"
+msgstr "Ludi"
+
+#: src/window.py:266
+msgid "Pause"
+msgstr "Paŭzi"
+
+#: src/window.py:313
+msgid "Open"
+msgstr "Malfermi"
+
+#: src/window.py:331
+msgid "Added: {}"
+msgstr "Aldonita: {}"
+
+#: src/window.py:346
+msgid "Failed to add custom sound"
+msgstr "Malsukcesis aldoni propran sonon"
+
+#: src/window.py:353
+msgid "Replaced drum with: {}"
+msgstr "Anstataŭigis tamburon per: {}"
+
+#: src/window.py:361
+msgid "Failed to replace drum sound"
+msgstr "Malsukcesis anstataŭigi tamburan sonon"
+
+#: src/window.ui:52
+msgid "Open…"
+msgstr "Malfermi…"
+
+#: src/window.ui:54
+msgid "Open Pattern"
+msgstr "Malfermi ŝablonon"
+
+#: src/window.ui:57
+msgctxt "accessibility"
+msgid "Open Pattern"
+msgstr "Malfermi ŝablonon"
+
+#: src/window.ui:58
+msgid "Open Saved Drum Pattern"
+msgstr "Malfermi konservitan tamburan ŝablonon"
+
+#: src/window.ui:76
+msgid "Main Menu"
+msgstr "Ĉefa menuo"
+
+#: src/window.ui:78
+msgctxt "accessibility"
+msgid "Main Menu"
+msgstr "Ĉefa menuo"
+
+#: src/window.ui:79
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "Aliri klav-mallongigojn kaj programajn informojn"
+
+#: src/window.ui:86
+msgid "Export Audio…"
+msgstr "Eksporti sonon…"
+
+#: src/window.ui:91
+msgctxt "accessibility"
+msgid "Export Audio…"
+msgstr "Eksporti sonon…"
+
+#: src/window.ui:92
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "Eksporti nunan tamburan ŝablonon kiel sona dosiero"
+
+#: src/window.ui:137
+msgid "BPM"
+msgstr "BPM"
+
+#: src/window.ui:142 src/window.ui:146
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "Agordi tempon en batoj minuton (BPM)"
+
+#: src/window.ui:145
+msgid "Tempo"
+msgstr "Tempo"
+
+#: src/window.ui:187
+msgid "Adjust Volume"
+msgstr "Agordi laŭtecon"
+
+#: src/window.ui:210
+msgid "Clear"
+msgstr "Viŝi"
+
+#: src/window.ui:211
+msgid "Clear the Drum Pattern"
+msgstr "Viŝi la tamburan ŝablonon"
+
+#: src/window.ui:226
+msgid "_Add Samples…"
+msgstr "_Aldoni specimenoj…"
+
+#: src/window.ui:230
+msgid "_Save Pattern…"
+msgstr "_Konservi ŝablonon…"
+
+#: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr "_Restarigi defaŭltojn"
+
+#: src/window.ui:242
+msgid "_Keyboard Shortcuts"
+msgstr "_Klav-mallongigoj"
+
+#: src/window.ui:246
+msgid "_About Drum Machine"
+msgstr "_Pri Drum Machine"
+
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Ĝenerala"
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Montri klav-mallongigojn"
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Forlasi"
+
+#: src/gtk/help-overlay.blp:26
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "Ludad-regiloj"
+
+#: src/gtk/help-overlay.blp:29
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "Ludi/Paŭzi"
+
+#: src/gtk/help-overlay.blp:35
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "Viŝi ĉion"
+
+#: src/gtk/help-overlay.blp:42
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "BPM kaj laŭt-regiloj"
+
+#: src/gtk/help-overlay.blp:45
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "Pliigi BPM"
+
+#: src/gtk/help-overlay.blp:51
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "Malpliiigi BPM"
+
+#: src/gtk/help-overlay.blp:57
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "Pliigi laŭtecon"
+
+#: src/gtk/help-overlay.blp:63
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "Malpliiigi laŭtecon"
+
+#: src/gtk/help-overlay.blp:69
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "Silentigi"
+
+#: src/gtk/help-overlay.blp:76
+msgctxt "shortcut window"
+msgid "Pattern Management"
+msgstr "Ŝablon-administrado"
+
+#: src/gtk/help-overlay.blp:79
+msgctxt "shortcut window"
+msgid "Load Pattern"
+msgstr "Ŝargi ŝablonon"
+
+#: src/gtk/help-overlay.blp:85
+msgctxt "shortcut window"
+msgid "Save Pattern"
+msgstr "Konservi ŝablonon"
+
+#: src/gtk/help-overlay.blp:91
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "Eksporti sonon"
+
+#: src/gtk/help-overlay.blp:98
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "Navigado"
+
+#: src/gtk/help-overlay.blp:101
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr "Iri al instrumento"
+
+#: src/gtk/help-overlay.blp:107
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr "Antaŭa paĝo"
+
+#: src/gtk/help-overlay.blp:113
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr "Sekva paĝo"
+
+#: src/gtk/save-changes-dialog.blp:5
+msgid "Save Changes?"
+msgstr "Konservi ŝanĝojn?"
+
+#: src/gtk/save-changes-dialog.blp:6
+msgid ""
+"Current pattern contains unsaved changes. Changes which are not saved will "
+"be permanently lost."
+msgstr ""
+"La nuna ŝablono enhavas nekonservitajn ŝanĝojn. Ŝanĝoj kiuj ne estas "
+"konservitaj estos por ĉiam perditaj."
+
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
+msgid "_Cancel"
+msgstr "_Nuligi"
+
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
+msgid "_Discard"
+msgstr "_Forĵeti"
+
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
+msgid "_Save"
+msgstr "_Konservi"
+
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr "Eksporti sonon"
+
+#: src/gtk/audio-export-dialog.blp:44
+msgid "Audio Format"
+msgstr "Sona formato"
+
+#: src/gtk/audio-export-dialog.blp:50
+msgid "Repeat Count"
+msgstr "Ripet-nombro"
+
+#: src/gtk/audio-export-dialog.blp:51
+msgid "How many times to repeat the pattern"
+msgstr "Kiom da fojoj ripeti la ŝablonon"
+
+#: src/gtk/audio-export-dialog.blp:64
+msgid "Metadata"
+msgstr "Metadatumoj"
+
+#: src/gtk/audio-export-dialog.blp:67
+msgid "Artist Name"
+msgstr "Artisto-nomo"
+
+#: src/gtk/audio-export-dialog.blp:72
+msgid "Song Name"
+msgstr "Kanto-nomo"
+
+#: src/gtk/audio-export-dialog.blp:77
+msgid "Cover Art"
+msgstr "Kovril-arto"
+
+#: src/gtk/audio-export-dialog.blp:81
+msgid "Choose File…"
+msgstr "Elekti dosieron…"
+
+#: src/gtk/audio-export-dialog.blp:110
+msgid "Cancel Export"
+msgstr "Nuligi eksportadon"
+
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr "Restarigi defaŭltojn?"
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume "
+"to their default values. This action cannot be undone."
+msgstr ""
+"Tio viŝos la nunan ŝablonon kaj restarigos ĉiujn specimenoj, BPM kaj "
+"laŭtecon al iliaj defaŭltaj valoroj. Ĉi tiu ago ne povas esti malfara."
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+msgid "_Reset"
+msgstr "_Restarigi"
