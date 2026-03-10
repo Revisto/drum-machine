@@ -2,22 +2,22 @@
 # Copyright (C) 2025, 2026 Free Software Foundation, Inc.
 # This file is distributed under the same license as the drum-machine package.
 #
-# Balázs Meskó <mesko.balazs at fsf dot hu>, 2025.
+# Balázs Meskó <mesko.balazs at fsf dot hu>, 2025, 2026.
 # Balázs Úr <ur.balazs at fsf dot hu>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
 "POT-Creation-Date: 2025-12-21 22:38+0000\n"
-"PO-Revision-Date: 2026-03-05 02:33+0100\n"
-"Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
+"PO-Revision-Date: 2026-03-09 08:57+0100\n"
+"Last-Translator: Balázs Meskó <mesko.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Poedit 3.8\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
@@ -57,6 +57,8 @@ msgstr "Intuitív rácsalapú mintaszerkesztő végtelen oldalakkal"
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
 msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
 msgstr ""
+"Egyéni minták: adja hozzá a saját dobhangjait a MIDI hangjegy-"
+"hozzárendeléssel"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
@@ -78,6 +80,7 @@ msgstr "Többféle dobhang, köztük lábdob, pergődob, lábcin és egyebek"
 msgid ""
 "Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
 msgstr ""
+"Hang és MIDI exportálása WAV, FLAC, Ogg, MP3 és MIDI formátumok támogatásával"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Metadata support for embedding artist name, song title, and cover art"
@@ -102,12 +105,14 @@ msgid ""
 "Drum Machine is a modern and intuitive application for creating, playing, "
 "and managing drum patterns."
 msgstr ""
+"A Dobgép egy modern és intuitív alkalmazás dobminták létrehozásához, "
+"lejátszásához és kezeléséhez."
 
 #: src/application.py:79
 msgid "translator-credits"
 msgstr ""
-"Meskó Balázs <mesko dot balazs at fsf dot hu>, 2025.\n"
-"Úr Balázs <ur dot balazs at fsf dot hu>, 2025."
+"Meskó Balázs <mesko dot balazs at fsf dot hu>, 2025, 2026.\n"
+"Úr Balázs <ur dot balazs at fsf dot hu>, 2025, 2026."
 
 #: src/application.py:84
 msgid "Special thanks"
@@ -120,7 +125,7 @@ msgstr "Hangok"
 #: src/application.py:88
 #, python-brace-format
 msgid "The drum samples used in this application are from {link}."
-msgstr ""
+msgstr "Az alkalmazásban használt dobminták innen származnak: {link}."
 
 #: src/config/export_formats.py:44
 msgid "MP3 files"
@@ -160,15 +165,15 @@ msgstr "Hangfájl mentése"
 
 #: src/dialogs/audio_export_dialog.py:148
 msgid "Part “{}” is Silent"
-msgstr ""
+msgstr "A(z) „{}” részlet tompított"
 
 #: src/dialogs/audio_export_dialog.py:150
 msgid "Parts “{}” and “{}” are Silent"
-msgstr ""
+msgstr "A(z) „{}” és „{}” részletek tompítottak"
 
 #: src/dialogs/audio_export_dialog.py:154
 msgid "{} Parts are Silent"
-msgstr ""
+msgstr "{} részlet tompított"
 
 #: src/dialogs/audio_export_dialog.py:179
 msgid "Image files"
@@ -192,214 +197,216 @@ msgstr "Az exportálás sikeresen megszakítva"
 
 #: src/dialogs/midi_mapping_dialog.py:22
 msgid "Acoustic Bass Drum"
-msgstr ""
+msgstr "Akusztikus lábdob"
 
 #: src/dialogs/midi_mapping_dialog.py:23
 msgid "Bass Drum 1"
-msgstr ""
+msgstr "1. lábdob"
 
 #: src/dialogs/midi_mapping_dialog.py:24
 msgid "Side Stick"
-msgstr ""
+msgstr "Peremütés"
 
 #: src/dialogs/midi_mapping_dialog.py:25
 msgid "Acoustic Snare"
-msgstr ""
+msgstr "Akusztikus pergődob"
 
 #: src/dialogs/midi_mapping_dialog.py:26
 msgid "Hand Clap"
-msgstr ""
+msgstr "Taps"
 
 #: src/dialogs/midi_mapping_dialog.py:27
 msgid "Electric Snare"
-msgstr ""
+msgstr "Elektromos pergődob"
 
 #: src/dialogs/midi_mapping_dialog.py:28
 msgid "Low Floor Tom"
-msgstr ""
+msgstr "Mély álló tam"
 
 #: src/dialogs/midi_mapping_dialog.py:29
 msgid "Closed Hi Hat"
-msgstr ""
+msgstr "Zárt lábcin"
 
 #: src/dialogs/midi_mapping_dialog.py:30
 msgid "High Floor Tom"
-msgstr ""
+msgstr "Magas álló tam"
 
 #: src/dialogs/midi_mapping_dialog.py:31
 msgid "Pedal Hi Hat"
-msgstr ""
+msgstr "Pedálos lábcin"
 
 #: src/dialogs/midi_mapping_dialog.py:32
 msgid "Low Tom"
-msgstr ""
+msgstr "Mély tam"
 
 #: src/dialogs/midi_mapping_dialog.py:33
 msgid "Open Hi Hat"
-msgstr ""
+msgstr "Nyitott lábcin"
 
 #: src/dialogs/midi_mapping_dialog.py:34
 msgid "Low-Mid Tom"
-msgstr ""
+msgstr "Középmély tam"
 
 #: src/dialogs/midi_mapping_dialog.py:35
 msgid "Hi-Mid Tom"
-msgstr ""
+msgstr "Középmagas tam"
 
 #: src/dialogs/midi_mapping_dialog.py:36
 msgid "Crash Cymbal 1"
-msgstr ""
+msgstr "1. beütőcin"
 
 #: src/dialogs/midi_mapping_dialog.py:37
 msgid "High Tom"
-msgstr ""
+msgstr "Magas tam"
 
 #: src/dialogs/midi_mapping_dialog.py:38
 msgid "Ride Cymbal 1"
-msgstr ""
+msgstr "1. kísérőcin"
 
 #: src/dialogs/midi_mapping_dialog.py:39
 msgid "Chinese Cymbal"
-msgstr ""
+msgstr "Kínai cintányér"
 
 #: src/dialogs/midi_mapping_dialog.py:40
 msgid "Ride Bell"
-msgstr ""
+msgstr "Kísérőcinkúp"
 
 #: src/dialogs/midi_mapping_dialog.py:41
 msgid "Tambourine"
-msgstr ""
+msgstr "Tamburin"
 
 #: src/dialogs/midi_mapping_dialog.py:42
 msgid "Splash Cymbal"
-msgstr ""
+msgstr "Splash cintányér"
 
 #: src/dialogs/midi_mapping_dialog.py:43
 msgid "Cowbell"
-msgstr ""
+msgstr "Kolomp"
 
 #: src/dialogs/midi_mapping_dialog.py:44
 msgid "Crash Cymbal 2"
-msgstr ""
+msgstr "2. beütőcin"
 
 #: src/dialogs/midi_mapping_dialog.py:45
 msgid "Vibraslap"
-msgstr ""
+msgstr "Vibraslap"
 
 #: src/dialogs/midi_mapping_dialog.py:46
 msgid "Ride Cymbal 2"
-msgstr ""
+msgstr "2. kísérőcin"
 
 #: src/dialogs/midi_mapping_dialog.py:47
 msgid "Hi Bongo"
-msgstr ""
+msgstr "Magas bongó"
 
 #: src/dialogs/midi_mapping_dialog.py:48
 msgid "Low Bongo"
-msgstr ""
+msgstr "Mély bongó"
 
 #: src/dialogs/midi_mapping_dialog.py:49
 msgid "Mute Hi Conga"
-msgstr ""
+msgstr "Tompított magas konga"
 
 #: src/dialogs/midi_mapping_dialog.py:50
 msgid "Open Hi Conga"
-msgstr ""
+msgstr "Nyitott magas konga"
 
 #: src/dialogs/midi_mapping_dialog.py:51
 msgid "Low Conga"
-msgstr ""
+msgstr "Mély konga"
 
 #: src/dialogs/midi_mapping_dialog.py:52
 msgid "High Timbale"
-msgstr ""
+msgstr "Magas kubai dob"
 
 #: src/dialogs/midi_mapping_dialog.py:53
 msgid "Low Timbale"
-msgstr ""
+msgstr "Mély kubai dob"
 
 #: src/dialogs/midi_mapping_dialog.py:54
 msgid "High Agogo"
-msgstr ""
+msgstr "Magas agogô"
 
 #: src/dialogs/midi_mapping_dialog.py:55
 msgid "Low Agogo"
-msgstr ""
+msgstr "Mély agogô"
 
 #: src/dialogs/midi_mapping_dialog.py:56
 msgid "Cabasa"
-msgstr ""
+msgstr "Cabasa"
 
 #: src/dialogs/midi_mapping_dialog.py:57
 msgid "Maracas"
-msgstr ""
+msgstr "Maracas"
 
 #: src/dialogs/midi_mapping_dialog.py:58
 msgid "Short Whistle"
-msgstr ""
+msgstr "Rövid síp"
 
 #: src/dialogs/midi_mapping_dialog.py:59
 msgid "Long Whistle"
-msgstr ""
+msgstr "Hosszú síp"
 
 #: src/dialogs/midi_mapping_dialog.py:60
 msgid "Short Guiro"
-msgstr ""
+msgstr "Rövid güiro"
 
 #: src/dialogs/midi_mapping_dialog.py:61
 msgid "Long Guiro"
-msgstr ""
+msgstr "Hosszú güiro"
 
 #: src/dialogs/midi_mapping_dialog.py:62
 msgid "Claves"
-msgstr ""
+msgstr "Claves"
 
 #: src/dialogs/midi_mapping_dialog.py:63
 msgid "Hi Wood Block"
-msgstr ""
+msgstr "Magas fablokk"
 
 #: src/dialogs/midi_mapping_dialog.py:64
 msgid "Low Wood Block"
-msgstr ""
+msgstr "Mély fablokk"
 
 #: src/dialogs/midi_mapping_dialog.py:65
 msgid "Mute Cuica"
-msgstr ""
+msgstr "Tompított cuíca"
 
 #: src/dialogs/midi_mapping_dialog.py:66
 msgid "Open Cuica"
-msgstr ""
+msgstr "Nyitott cuíca"
 
 #: src/dialogs/midi_mapping_dialog.py:67
 msgid "Mute Triangle"
-msgstr ""
+msgstr "Tompított triangulum"
 
 #: src/dialogs/midi_mapping_dialog.py:68
 msgid "Open Triangle"
-msgstr ""
+msgstr "Nyitott triangulum"
 
 #: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
 msgid "MIDI Mapping"
-msgstr ""
+msgstr "MIDI-hozzárendelés"
 
 #. Group 1: Note Assignment
 #: src/dialogs/midi_mapping_dialog.py:108
 msgid "Note Assignment"
-msgstr ""
+msgstr "Hangjegy-hozzárendelés"
 
 #: src/dialogs/midi_mapping_dialog.py:111
 msgid ""
 "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
 msgstr ""
+"MIDI-hangjegy hozzárendelése ehhez: „{}”. Ez biztosítja a megfelelő "
+"lejátszást exportáláskor."
 
 #. Action Row for Note
 #: src/dialogs/midi_mapping_dialog.py:118
 msgid "MIDI Note"
-msgstr ""
+msgstr "MIDI-hangjegy"
 
 #: src/dialogs/midi_mapping_dialog.py:119
 msgid "The note number to trigger"
-msgstr ""
+msgstr "Az aktiválandó hangjegy száma"
 
 #. Group 2: Standard Instruments
 #: src/dialogs/midi_mapping_dialog.py:137
@@ -409,10 +416,11 @@ msgstr "Szabványos hangszerek"
 #: src/dialogs/midi_mapping_dialog.py:139
 msgid "Select a General MIDI instrument to automatically set the note."
 msgstr ""
+"Általános MIDI-hangszer kiválasztása a hangjegy automatikus beállításához."
 
 #: src/dialogs/midi_mapping_dialog.py:143
 msgid "Instrument Preset"
-msgstr ""
+msgstr "Hangszer-előbeállítás"
 
 #: src/dialogs/midi_mapping_dialog.py:186
 msgid "Save"
@@ -420,7 +428,7 @@ msgstr "Mentés"
 
 #: src/dialogs/midi_mapping_dialog.py:229
 msgid "Custom Note"
-msgstr ""
+msgstr "Egyéni hangjegy"
 
 #: src/handlers/drag_drop_handler.py:299
 msgid "Sound replaced"
@@ -428,7 +436,7 @@ msgstr "Hang cserélve"
 
 #: src/handlers/drag_drop_handler.py:302
 msgid "Failed to replace sound"
-msgstr ""
+msgstr "Nem sikerült a hang cseréje"
 
 #: src/handlers/drag_drop_handler.py:312
 msgid "Not a supported audio file"
@@ -456,15 +464,15 @@ msgstr "Hiba a fájl feldolgozásakor: {}"
 
 #: src/handlers/drag_drop_handler.py:433
 msgid "Added {} drum part, {} files skipped"
-msgstr ""
+msgstr "{} dobrészlet hozzáadva, {} fájl kihagyva"
 
 #: src/handlers/drag_drop_handler.py:439
 msgid "Added {} drum parts, {} files skipped"
-msgstr ""
+msgstr "{} dobrészlet hozzáadva, {} fájl kihagyva"
 
 #: src/handlers/drag_drop_handler.py:444
 msgid "Added {} drum parts"
-msgstr ""
+msgstr "{} dobrészlet hozzáadva"
 
 #. Only show skipped message if no replacement happened
 #: src/handlers/drag_drop_handler.py:447
@@ -506,19 +514,19 @@ msgstr "Hangfájlok"
 
 #: src/utils/export_progress.py:76
 msgid "Preparing…"
-msgstr ""
+msgstr "Előkészület…"
 
 #: src/utils/export_progress.py:77
 msgid "Initializing…"
-msgstr ""
+msgstr "Előkészítés…"
 
 #: src/utils/export_progress.py:79
 msgid "Rendering audio…"
-msgstr ""
+msgstr "Hang előállítása…"
 
 #: src/utils/export_progress.py:80
 msgid "Processing beats…"
-msgstr ""
+msgstr "Ütemek feldolgozása…"
 
 #: src/utils/export_progress.py:82
 msgid "Saving file…"
@@ -558,15 +566,15 @@ msgstr "Eltávolítás"
 
 #: src/ui/drum_grid_builder.py:338
 msgid "At least one drum part must remain"
-msgstr ""
+msgstr "Legalább egy dobrészletnek maradnia kell"
 
 #: src/ui/drum_grid_builder.py:345
 msgid "Configure MIDI note for export"
-msgstr ""
+msgstr "MIDI-hangjegy beállítása exportáláshoz"
 
 #: src/ui/drum_grid_builder.py:402
 msgid "MIDI note updated"
-msgstr ""
+msgstr "MIDI-hangjegy frissítve"
 
 #: src/ui/drum_grid_builder.py:410
 msgid "Select New Sound"
@@ -574,11 +582,11 @@ msgstr "Új hang kiválasztása"
 
 #: src/ui/drum_grid_builder.py:424
 msgid "Removed drum part: {}"
-msgstr ""
+msgstr "Dobrészlet eltávolítva: {}"
 
 #: src/ui/drum_grid_builder.py:429
 msgid "Failed to remove drum part"
-msgstr ""
+msgstr "Nem sikerült eltávolítani a dobrészletet"
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:220
@@ -814,8 +822,8 @@ msgid ""
 "Current pattern contains unsaved changes. Changes which are not saved will "
 "be permanently lost."
 msgstr ""
-"A jelenlegi minta mentetlen változtatásokat tartalmaz. A mentetlen változtatás"
-"ok végleg el fognak veszni."
+"A jelenlegi minta mentetlen változtatásokat tartalmaz. A mentetlen "
+"változtatások végleg el fognak veszni."
 
 #. Translators: Cancel the operation
 #: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
@@ -881,6 +889,9 @@ msgid ""
 "This will clear the current pattern and restore all samples, BPM, and volume "
 "to their default values. This action cannot be undone."
 msgstr ""
+"Ez törli a jelenlegi mintázatot, és helyreállítja az összes mintát, BPM-et "
+"és hangerőt az alapértelmezett értékére. Ezt a műveletet nem lehet "
+"visszavonni."
 
 #. Translators: Reset to defaults
 #: src/gtk/reset-defaults-dialog.blp:14
