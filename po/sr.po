@@ -1,0 +1,881 @@
+# Serbian translation for drum-machine.
+# Copyright (C) 2026 drum-machine's COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+# Марко Костић <marko.m.kostic@gmail.com>,  2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine master\n"
+"Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
+"POT-Creation-Date: 2025-12-21 22:38+0000\n"
+"PO-Revision-Date: 2026-03-19 10:40+0100\n"
+"Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
+"Language-Team: Serbian <Serbian>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 3.9\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
+#: src/window.ui:69
+msgid "Drum Machine"
+msgstr "Бубањ машина"
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgstr "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;бубањ;бубњеви;секвенцер;ритам;музика;образац;шаблон;удараљке;петља;грув;"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "Стварајте и пуштајте музику на бубњевима"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr "Бубањ машина је савремен и интуитиван програм за стварање, свирање и управљање обрасцима бубња. Савршена за музичаре, продуценте и све које занима стварање ритма, овај програм пружа једноставно прочеље за програмирање образаца бубња. Забавите се!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "Могућности:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor with infinite pages"
+msgstr "Интуитиван уређивач образаца заснован на мрежи са бесконачним страницама"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr "Произвољни узорци: Додајте сопствене звукове бубња уз МИДИ мапирање нота"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Adjustable BPM control"
+msgstr "Подесиво управљање ОУМ-ом"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Volume control for overall mix"
+msgstr "Управљање јачином звука за збирни микс"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Save and load patterns"
+msgstr "Сачувајте и учитајте обрасце"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "Вишеструки звукови бубња укључујући кик, добош, фусноту и још много тога"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr "Извоз звука и МИДИ-ја уз подршку за WAV, FLAC, Ogg, MP3 и MIDI формате"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr "Подршка за метаподатке за угнежђивање имена извођача, наслова песме и омота"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "Пречице на тастатури за брз приступ свим функцијама"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "Образац бубња је учитан у светлом режиму"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "Образац бубња је учитан у тамном режиму"
+
+#: src/application.py:74
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns."
+msgstr "Бубањ машина је савремен и интуитиван програм за стварање, свирање и управљање обрасцима бубња."
+
+#: src/application.py:79
+msgid "translator-credits"
+msgstr ""
+"Марко М. Костић <marko.m.kostic@gmail.com>\n"
+"\n"
+"https://гном.срб — превод Гнома на српски језик."
+
+#: src/application.py:84
+msgid "Special thanks"
+msgstr "Посебна захвалност"
+
+#: src/application.py:87
+msgid "Sounds"
+msgstr "Звукови"
+
+#: src/application.py:88
+#, python-brace-format
+msgid "The drum samples used in this application are from {link}."
+msgstr "Узорци бубња коришћени у овом програму су са {link}."
+
+#: src/config/export_formats.py:44
+msgid "MP3 files"
+msgstr "МП3 датотеке"
+
+#: src/config/export_formats.py:45
+msgid "MP3"
+msgstr "МП3"
+
+#: src/config/export_formats.py:51
+msgid "FLAC files"
+msgstr "ФЛАЦ датотеке"
+
+#: src/config/export_formats.py:52
+msgid "FLAC (Lossless)"
+msgstr "ФЛАЦ (без губитака)"
+
+#: src/config/export_formats.py:58
+msgid "Ogg files"
+msgstr "Огг датотеке"
+
+#: src/config/export_formats.py:59
+msgid "Ogg Vorbis"
+msgstr "Огг Ворбис"
+
+#: src/config/export_formats.py:65
+msgid "WAV files"
+msgstr "ВАВ датотеке"
+
+#: src/config/export_formats.py:66
+msgid "WAV (Uncompressed)"
+msgstr "ВАВ (несажето)"
+
+#: src/dialogs/audio_export_dialog.py:119
+msgid "Save Audio File"
+msgstr "Сачувај звучну датотеку"
+
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Part “{}” is Silent"
+msgstr "Део „{}“ је утишан"
+
+#: src/dialogs/audio_export_dialog.py:150
+msgid "Parts “{}” and “{}” are Silent"
+msgstr "Делови „{}“ и „{}“ су утишани"
+
+#: src/dialogs/audio_export_dialog.py:154
+msgid "{} Parts are Silent"
+msgstr "{} делова је утишано"
+
+#: src/dialogs/audio_export_dialog.py:179
+msgid "Image files"
+msgstr "Сликовне датотеке"
+
+#: src/dialogs/audio_export_dialog.py:185
+msgid "Select Cover Art"
+msgstr "Изабери омот"
+
+#: src/dialogs/audio_export_dialog.py:245
+msgid "Audio exported to {}"
+msgstr "Звук је извезен у {}"
+
+#: src/dialogs/audio_export_dialog.py:251
+msgid "Export failed"
+msgstr "Извоз није успео"
+
+#: src/dialogs/audio_export_dialog.py:258
+msgid "Export cancelled successfully"
+msgstr "Извоз је успешно отказан"
+
+#: src/dialogs/midi_mapping_dialog.py:22
+msgid "Acoustic Bass Drum"
+msgstr "Акустични басовни бубањ"
+
+#: src/dialogs/midi_mapping_dialog.py:23
+msgid "Bass Drum 1"
+msgstr "Басовни бубањ 1"
+
+#: src/dialogs/midi_mapping_dialog.py:24
+msgid "Side Stick"
+msgstr "Ударац о ивицу"
+
+#: src/dialogs/midi_mapping_dialog.py:25
+msgid "Acoustic Snare"
+msgstr "Акустични добош"
+
+#: src/dialogs/midi_mapping_dialog.py:26
+msgid "Hand Clap"
+msgstr "Пљесак рукама"
+
+#: src/dialogs/midi_mapping_dialog.py:27
+msgid "Electric Snare"
+msgstr "Електрични добош"
+
+#: src/dialogs/midi_mapping_dialog.py:28
+msgid "Low Floor Tom"
+msgstr "Ниски подни том"
+
+#: src/dialogs/midi_mapping_dialog.py:29
+msgid "Closed Hi Hat"
+msgstr "Затворени фусно (Hi-Hat)"
+
+#: src/dialogs/midi_mapping_dialog.py:30
+msgid "High Floor Tom"
+msgstr "Високи подни том"
+
+#: src/dialogs/midi_mapping_dialog.py:31
+msgid "Pedal Hi Hat"
+msgstr "Педални фусно (Hi-Hat)"
+
+#: src/dialogs/midi_mapping_dialog.py:32
+msgid "Low Tom"
+msgstr "Ниски том"
+
+#: src/dialogs/midi_mapping_dialog.py:33
+msgid "Open Hi Hat"
+msgstr "Отворени фусно (Hi-Hat)"
+
+#: src/dialogs/midi_mapping_dialog.py:34
+msgid "Low-Mid Tom"
+msgstr "Ниски средњи том"
+
+#: src/dialogs/midi_mapping_dialog.py:35
+msgid "Hi-Mid Tom"
+msgstr "Високи средњи том"
+
+#: src/dialogs/midi_mapping_dialog.py:36
+msgid "Crash Cymbal 1"
+msgstr "Чинела краш 1"
+
+#: src/dialogs/midi_mapping_dialog.py:37
+msgid "High Tom"
+msgstr "Високи том"
+
+#: src/dialogs/midi_mapping_dialog.py:38
+msgid "Ride Cymbal 1"
+msgstr "Чинела рајд 1"
+
+#: src/dialogs/midi_mapping_dialog.py:39
+msgid "Chinese Cymbal"
+msgstr "Кинеска чинела"
+
+#: src/dialogs/midi_mapping_dialog.py:40
+msgid "Ride Bell"
+msgstr "Звоно рајда"
+
+#: src/dialogs/midi_mapping_dialog.py:41
+msgid "Tambourine"
+msgstr "Даире"
+
+#: src/dialogs/midi_mapping_dialog.py:42
+msgid "Splash Cymbal"
+msgstr "Чинела сплаш"
+
+#: src/dialogs/midi_mapping_dialog.py:43
+msgid "Cowbell"
+msgstr "Клепкуша"
+
+#: src/dialogs/midi_mapping_dialog.py:44
+msgid "Crash Cymbal 2"
+msgstr "Чинела краш 2"
+
+#: src/dialogs/midi_mapping_dialog.py:45
+msgid "Vibraslap"
+msgstr "Вибраслап"
+
+#: src/dialogs/midi_mapping_dialog.py:46
+msgid "Ride Cymbal 2"
+msgstr "Чинела рајд 2"
+
+#: src/dialogs/midi_mapping_dialog.py:47
+msgid "Hi Bongo"
+msgstr "Високи бонго"
+
+#: src/dialogs/midi_mapping_dialog.py:48
+msgid "Low Bongo"
+msgstr "Ниски бонго"
+
+#: src/dialogs/midi_mapping_dialog.py:49
+msgid "Mute Hi Conga"
+msgstr "Утишана висока конга"
+
+#: src/dialogs/midi_mapping_dialog.py:50
+msgid "Open Hi Conga"
+msgstr "Отворена висока конга"
+
+#: src/dialogs/midi_mapping_dialog.py:51
+msgid "Low Conga"
+msgstr "Ниска конга"
+
+#: src/dialogs/midi_mapping_dialog.py:52
+msgid "High Timbale"
+msgstr "Високи тимбале"
+
+#: src/dialogs/midi_mapping_dialog.py:53
+msgid "Low Timbale"
+msgstr "Ниски тимбале"
+
+#: src/dialogs/midi_mapping_dialog.py:54
+msgid "High Agogo"
+msgstr "Високи агого"
+
+#: src/dialogs/midi_mapping_dialog.py:55
+msgid "Low Agogo"
+msgstr "Ниски агого"
+
+#: src/dialogs/midi_mapping_dialog.py:56
+msgid "Cabasa"
+msgstr "Кабаса"
+
+#: src/dialogs/midi_mapping_dialog.py:57
+msgid "Maracas"
+msgstr "Маракас"
+
+#: src/dialogs/midi_mapping_dialog.py:58
+msgid "Short Whistle"
+msgstr "Кратка звиждаљка"
+
+#: src/dialogs/midi_mapping_dialog.py:59
+msgid "Long Whistle"
+msgstr "Дуга звиждаљка"
+
+#: src/dialogs/midi_mapping_dialog.py:60
+msgid "Short Guiro"
+msgstr "Кратки гуиро"
+
+#: src/dialogs/midi_mapping_dialog.py:61
+msgid "Long Guiro"
+msgstr "Дуги гуиро"
+
+#: src/dialogs/midi_mapping_dialog.py:62
+msgid "Claves"
+msgstr "Клаве"
+
+#: src/dialogs/midi_mapping_dialog.py:63
+msgid "Hi Wood Block"
+msgstr "Високи дрвени блок"
+
+#: src/dialogs/midi_mapping_dialog.py:64
+msgid "Low Wood Block"
+msgstr "Ниски дрвени блок"
+
+#: src/dialogs/midi_mapping_dialog.py:65
+msgid "Mute Cuica"
+msgstr "Пригушена куика"
+
+#: src/dialogs/midi_mapping_dialog.py:66
+msgid "Open Cuica"
+msgstr "Отворена куика"
+
+#: src/dialogs/midi_mapping_dialog.py:67
+msgid "Mute Triangle"
+msgstr "Пригушени триангл"
+
+#: src/dialogs/midi_mapping_dialog.py:68
+msgid "Open Triangle"
+msgstr "Отворени триангл"
+
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
+msgid "MIDI Mapping"
+msgstr "МИДИ мапирање"
+
+#. Group 1: Note Assignment
+#: src/dialogs/midi_mapping_dialog.py:108
+msgid "Note Assignment"
+msgstr "Додела нота"
+
+#: src/dialogs/midi_mapping_dialog.py:111
+msgid ""
+"Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr "Доделите МИДИ ноту за „{}“. Ово осигурава исправну репродукцију приликом извоза."
+
+#. Action Row for Note
+#: src/dialogs/midi_mapping_dialog.py:118
+msgid "MIDI Note"
+msgstr "МИДИ нота"
+
+#: src/dialogs/midi_mapping_dialog.py:119
+msgid "The note number to trigger"
+msgstr "Број ноте за окидање"
+
+#. Group 2: Standard Instruments
+#: src/dialogs/midi_mapping_dialog.py:137
+msgid "Standard Instruments"
+msgstr "Стандардни инструменти"
+
+#: src/dialogs/midi_mapping_dialog.py:139
+msgid "Select a General MIDI instrument to automatically set the note."
+msgstr "Изаберите Општи МИДИ инструмент да бисте аутоматски поставили ноту."
+
+#: src/dialogs/midi_mapping_dialog.py:143
+msgid "Instrument Preset"
+msgstr "Подешеност инструмента"
+
+#: src/dialogs/midi_mapping_dialog.py:186
+msgid "Save"
+msgstr "Сачувај"
+
+#: src/dialogs/midi_mapping_dialog.py:229
+msgid "Custom Note"
+msgstr "Произвољна нота"
+
+#: src/handlers/drag_drop_handler.py:299
+msgid "Sound replaced"
+msgstr "Звук је замењен"
+
+#: src/handlers/drag_drop_handler.py:302
+msgid "Failed to replace sound"
+msgstr "Нисам успео да заменим звук"
+
+#: src/handlers/drag_drop_handler.py:312
+msgid "Not a supported audio file"
+msgstr "Није подржана звучна датотека"
+
+#: src/handlers/drag_drop_handler.py:320
+msgid "File not found"
+msgstr "Датотека није пронађена"
+
+#: src/handlers/drag_drop_handler.py:325
+msgid "Selected item is not a file"
+msgstr "Изабрана ставка није датотека"
+
+#: src/handlers/drag_drop_handler.py:332
+msgid "File too large: {:.1f}MB (max 50MB)"
+msgstr "Датотека је превелика: {:.1f}MB (највише 50MB)"
+
+#: src/handlers/drag_drop_handler.py:362
+msgid "No valid audio files found"
+msgstr "Нису пронађене исправне звучне датотеке"
+
+#: src/handlers/drag_drop_handler.py:402
+msgid "Error processing file: {}"
+msgstr "Грешка приликом обраде датотеке: {}"
+
+#: src/handlers/drag_drop_handler.py:433
+msgid "Added {} drum part, {} files skipped"
+msgstr "Додат је {} део бубња, {} датотеке су прескочене"
+
+#: src/handlers/drag_drop_handler.py:439
+msgid "Added {} drum parts, {} files skipped"
+msgstr "Додато је {} делова бубња, {} датотека је прескочено"
+
+#: src/handlers/drag_drop_handler.py:444
+msgid "Added {} drum parts"
+msgstr "Додато је {} делова бубња"
+
+#. Only show skipped message if no replacement happened
+#: src/handlers/drag_drop_handler.py:447
+msgid "{} files skipped"
+msgstr "{} датотека је прескочено"
+
+#: src/handlers/file_dialog_handler.py:52
+msgid "Default Patterns"
+msgstr "Подразумевани обрасци"
+
+#: src/handlers/file_dialog_handler.py:92
+#: src/handlers/file_dialog_handler.py:171
+msgid "MIDI files"
+msgstr "МИДИ датотеке"
+
+#: src/handlers/file_dialog_handler.py:98
+msgid "Open MIDI File"
+msgstr "Отвори МИДИ датотеку"
+
+#: src/handlers/file_dialog_handler.py:127
+msgid "Failed to open file"
+msgstr "Неуспело отварање датотеке"
+
+#: src/handlers/file_dialog_handler.py:165
+msgid "Failed to load pattern"
+msgstr "Неуспело учитавање шаблона"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "Сачувај низ"
+
+#: src/handlers/file_dialog_handler.py:205
+msgid "Add Audio Samples"
+msgstr "Додај звучне узорке"
+
+#: src/handlers/file_dialog_handler.py:227
+msgid "Audio files"
+msgstr "Звучне датотеке"
+
+#: src/utils/export_progress.py:76
+msgid "Preparing…"
+msgstr "Припремам…"
+
+#: src/utils/export_progress.py:77
+msgid "Initializing…"
+msgstr "Покрећем…"
+
+#: src/utils/export_progress.py:79
+msgid "Rendering audio…"
+msgstr "Стварам звук…"
+
+#: src/utils/export_progress.py:80
+msgid "Processing beats…"
+msgstr "Обрађујем тактове…"
+
+#: src/utils/export_progress.py:82
+msgid "Saving file…"
+msgstr "Чувам датотеку…"
+
+#: src/utils/export_progress.py:83
+msgid "Writing to disk…"
+msgstr "Уписујем на диск…"
+
+#: src/utils/export_progress.py:85
+msgid "Exporting…"
+msgstr "Извозим…"
+
+#: src/utils/export_progress.py:86
+msgid "Processing…"
+msgstr "Обрађујем…"
+
+#: src/utils/name_utils.py:36
+msgid "Custom Sound"
+msgstr "Произвољни звук"
+
+#: src/ui/drum_grid_builder.py:327
+msgid "Preview"
+msgstr "Преглед"
+
+#: src/ui/drum_grid_builder.py:329
+msgid "Replace…"
+msgstr "Замени…"
+
+#: src/ui/drum_grid_builder.py:332
+msgid "Replace with new sound"
+msgstr "Замени новим звуком"
+
+#: src/ui/drum_grid_builder.py:335
+msgid "Remove"
+msgstr "Уклони"
+
+#: src/ui/drum_grid_builder.py:338
+msgid "At least one drum part must remain"
+msgstr "Најмање један део бубња мора остати"
+
+#: src/ui/drum_grid_builder.py:345
+msgid "Configure MIDI note for export"
+msgstr "Подеси МИДИ ноту за извоз"
+
+#: src/ui/drum_grid_builder.py:402
+msgid "MIDI note updated"
+msgstr "МИДИ нота је ажурирана"
+
+#: src/ui/drum_grid_builder.py:410
+msgid "Select New Sound"
+msgstr "Изаберите нови звук"
+
+#: src/ui/drum_grid_builder.py:424
+msgid "Removed drum part: {}"
+msgstr "Уклоњен део бубња: {}"
+
+#: src/ui/drum_grid_builder.py:429
+msgid "Failed to remove drum part"
+msgstr "Нисам успео да уклоним део бубња"
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:220
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} откуцаја у минуту (ОУМ)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:229
+msgid "{:.0f}% Volume"
+msgstr "{:.0f}% јачина звука"
+
+#: src/window.py:262 src/window.ui:173
+msgid "Play"
+msgstr "Пусти"
+
+#: src/window.py:266
+msgid "Pause"
+msgstr "Паузирај"
+
+#: src/window.py:313
+msgid "Open"
+msgstr "Отвори"
+
+#: src/window.py:331
+msgid "Added: {}"
+msgstr "Додато: {}"
+
+#: src/window.py:346
+msgid "Failed to add custom sound"
+msgstr "Нисам успео да додам произвољни звук"
+
+#: src/window.py:353
+msgid "Replaced drum with: {}"
+msgstr "Бубањ је замењен са: {}"
+
+#: src/window.py:361
+msgid "Failed to replace drum sound"
+msgstr "Нисам успео да заменим звук бубња"
+
+#: src/window.ui:52
+msgid "Open…"
+msgstr "Отвори…"
+
+#: src/window.ui:54
+msgid "Open Pattern"
+msgstr "Отвори шаблон"
+
+#: src/window.ui:57
+msgctxt "accessibility"
+msgid "Open Pattern"
+msgstr "Отвори шаблон"
+
+#: src/window.ui:58
+msgid "Open Saved Drum Pattern"
+msgstr "Отвори сачувани шаблон бубња"
+
+#: src/window.ui:76
+msgid "Main Menu"
+msgstr "Главни мени"
+
+#: src/window.ui:78
+msgctxt "accessibility"
+msgid "Main Menu"
+msgstr "Главни мени"
+
+#: src/window.ui:79
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "Приступите пречицама на тастатури и подацима о програму"
+
+#: src/window.ui:86
+msgid "Export Audio…"
+msgstr "Извези звук…"
+
+#: src/window.ui:91
+msgctxt "accessibility"
+msgid "Export Audio…"
+msgstr "Извези звук…"
+
+#: src/window.ui:92
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "Извези тренутни шаблон бубња као звучну датотеку"
+
+#: src/window.ui:137
+msgid "BPM"
+msgstr "ОУМ"
+
+#: src/window.ui:142 src/window.ui:146
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "Прилагоди темпо у откуцајима у минуту (ОУМ)"
+
+#: src/window.ui:145
+msgid "Tempo"
+msgstr "Темпо"
+
+#: src/window.ui:187
+msgid "Adjust Volume"
+msgstr "Прилагоди јачину звука"
+
+#: src/window.ui:210
+msgid "Clear"
+msgstr "Очисти"
+
+#: src/window.ui:211
+msgid "Clear the Drum Pattern"
+msgstr "Очисти шаблон бубња"
+
+#: src/window.ui:226
+msgid "_Add Samples…"
+msgstr "Дод_ај узорке…"
+
+#: src/window.ui:230
+msgid "_Save Pattern…"
+msgstr "_Сачувај шаблон…"
+
+#: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr "В_рати на подразумевано"
+
+#: src/window.ui:242
+msgid "_Keyboard Shortcuts"
+msgstr "Пречице _тастатуре"
+
+#: src/window.ui:246
+msgid "_About Drum Machine"
+msgstr "_О Бубњу"
+
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Опште"
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Прикажи пречице"
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Изађи"
+
+#: src/gtk/help-overlay.blp:26
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "Контроле пуштања"
+
+#: src/gtk/help-overlay.blp:29
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "Пушта/паузира"
+
+#: src/gtk/help-overlay.blp:35
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "Очисти све"
+
+#: src/gtk/help-overlay.blp:42
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "Контроле ОУМ-а и јачине звука"
+
+#: src/gtk/help-overlay.blp:45
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "Повећај ОУМ"
+
+#: src/gtk/help-overlay.blp:51
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "Смањи ОУМ"
+
+#: src/gtk/help-overlay.blp:57
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "Повећај јачину звука"
+
+#: src/gtk/help-overlay.blp:63
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "Смањи јачину звука"
+
+#: src/gtk/help-overlay.blp:69
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "Утишај"
+
+#: src/gtk/help-overlay.blp:76
+msgctxt "shortcut window"
+msgid "Pattern Management"
+msgstr "Управљање шаблонима"
+
+#: src/gtk/help-overlay.blp:79
+msgctxt "shortcut window"
+msgid "Load Pattern"
+msgstr "Учитај шаблон"
+
+#: src/gtk/help-overlay.blp:85
+msgctxt "shortcut window"
+msgid "Save Pattern"
+msgstr "Сачувај шаблон"
+
+#: src/gtk/help-overlay.blp:91
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "Извези звук"
+
+#: src/gtk/help-overlay.blp:98
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "Навигација"
+
+#: src/gtk/help-overlay.blp:101
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr "Иди на инструмент"
+
+#: src/gtk/help-overlay.blp:107
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr "Претходна страна"
+
+#: src/gtk/help-overlay.blp:113
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr "Следећа страна"
+
+#: src/gtk/save-changes-dialog.blp:5
+msgid "Save Changes?"
+msgstr "Сачувати измене?"
+
+#: src/gtk/save-changes-dialog.blp:6
+msgid ""
+"Current pattern contains unsaved changes. Changes which are not saved will "
+"be permanently lost."
+msgstr "Тренутни шаблон садржи несачуване измене. Измене које нису сачуване биће трајно изгубљене."
+
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
+msgid "_Cancel"
+msgstr "От_кажи"
+
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
+msgid "_Discard"
+msgstr "О_дбаци"
+
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
+msgid "_Save"
+msgstr "_Сачувај"
+
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr "Извези звук"
+
+#: src/gtk/audio-export-dialog.blp:44
+msgid "Audio Format"
+msgstr "Формат звука"
+
+#: src/gtk/audio-export-dialog.blp:50
+msgid "Repeat Count"
+msgstr "Број понављања"
+
+#: src/gtk/audio-export-dialog.blp:51
+msgid "How many times to repeat the pattern"
+msgstr "Колико пута поновити шаблон"
+
+#: src/gtk/audio-export-dialog.blp:64
+msgid "Metadata"
+msgstr "Метаподаци"
+
+#: src/gtk/audio-export-dialog.blp:67
+msgid "Artist Name"
+msgstr "Име извођача"
+
+#: src/gtk/audio-export-dialog.blp:72
+msgid "Song Name"
+msgstr "Назив песме"
+
+#: src/gtk/audio-export-dialog.blp:77
+msgid "Cover Art"
+msgstr "Омотница"
+
+#: src/gtk/audio-export-dialog.blp:81
+msgid "Choose File…"
+msgstr "Изаберите датотеку…"
+
+#: src/gtk/audio-export-dialog.blp:110
+msgid "Cancel Export"
+msgstr "Откажи извоз"
+
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr "Вратити на подразумевано?"
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume "
+"to their default values. This action cannot be undone."
+msgstr "Ово ће очистити тренутни шаблон и вратити све узорке, ОУМ и јачину звука на њихове подразумеване вредности. Ова радња се не може опозвати."
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+msgid "_Reset"
+msgstr "В_рати"
