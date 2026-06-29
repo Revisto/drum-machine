@@ -77,6 +77,16 @@ template $AudioExportDialog: Adw.Dialog {
               title: _("Cover Art");
               activatable-widget: cover_button;
 
+              Button cover_remove_button {
+                label: _("Remove");
+                valign: center;
+                visible: false;
+
+                styles [
+                  "destructive-action",
+                ]
+              }
+
               Button cover_button {
                 label: _("Choose File…");
                 valign: center;
