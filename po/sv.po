@@ -1,14 +1,14 @@
 # Swedish translation for drum-machine.
-# Copyright © 2025 drum-machine's COPYRIGHT HOLDER
+# Copyright © 2025-2026 drum-machine's COPYRIGHT HOLDER
 # This file is distributed under the same license as the drum-machine package.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>,  2025.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>,  2025, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-08-12 15:25+0000\n"
-"PO-Revision-Date: 2025-08-26 01:20+0200\n"
+"POT-Creation-Date: 2025-12-19 03:26+0000\n"
+"PO-Revision-Date: 2026-02-27 18:49+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -16,12 +16,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
-#: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:67
+#: data/io.github.revisto.drum-machine.desktop.in:2 data/io.github.revisto.drum-machine.metainfo.xml.in:6
+#: src/application.py:67 src/window.ui:69
 msgid "Drum Machine"
 msgstr "Drum Machine"
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgstr "trumma;trummor;sequencer;rytm;musik;slinga;slingor;mönster;slag;beats;slagverk;percussion;loop;slinga;sväng;groove;"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:7
 msgid "Create and play drum beats"
@@ -29,284 +34,884 @@ msgstr "Skapa och spela trumslag"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:9
 msgid ""
-"Drum Machine is a modern and intuitive application for creating, playing, "
-"and managing drum patterns. Perfect for musicians, producers, and anyone "
-"interested in rhythm creation, this application provides a simple interface "
-"for drum pattern programming. Have fun!"
+"Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns. Perfect for "
+"musicians, producers, and anyone interested in rhythm creation, this application provides a simple interface for drum "
+"pattern programming. Have fun!"
 msgstr ""
-"Drum Machine är ett modernt och intuitivt program för att skapa, spela och "
-"hantera trumslingor. Perfekt för musiker, producenter och alla som är "
-"intresserade av att skapa rytmer. Detta program tillhandahåller ett enkelt "
-"gränssnitt för trumslingeprogrammering. Ha så kul!"
+"Drum Machine är ett modernt och intuitivt program för att skapa, spela och hantera trumslingor. Perfekt för musiker, "
+"producenter och alla som är intresserade av att skapa rytmer. Detta program tillhandahåller ett enkelt gränssnitt för "
+"trumslingeprogrammering. Ha så kul!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
 msgstr "Funktioner:"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
-msgid "Intuitive grid-based pattern editor"
-msgstr "Intuitiv rutnätsbaserad slingredigerare"
+msgid "Intuitive grid-based pattern editor with infinite pages"
+msgstr "Intuitiv rutnätsbaserad slingredigerare med oändliga sidor"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr "Anpassade samplingar: Lägg till dina egna trumljud med MIDI-tonmappning"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
 msgstr "Justerbar BPM-kontroll"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
 msgid "Volume control for overall mix"
 msgstr "Volymkontroll för generell mix"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
-msgid "Save and load preset patterns"
-msgstr "Spara och läs in förinställda slingor"
-
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Save and load patterns"
+msgstr "Spara och läs in slingor"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Flera trumljud inkluderande bastrumma, virveltrumma, hi-hat med mera"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid "Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr "Ljud- och MIDI-export med stöd för formaten WAV, FLAC, Ogg, MP3 och MIDI"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr "Metadatastöd för att bädda in artistnamn, låttitel och omslagsgrafik"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "Tangentbordsgenvägar för snabb åtkomst till alla funktioner"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "Trumslinga inläst i ljust läge"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Trumslinga inläst i mörkt läge"
 
-#: src/application.py:69
+#: src/application.py:74
+msgid "Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns."
+msgstr "Drum Machine är ett modernt och intuitivt program för att skapa, spela upp och hantera trumslingor."
+
+#: src/application.py:79
 msgid "translator-credits"
 msgstr "Anders Jonsson <anders.jonsson@norsjovallen.se>"
 
+#: src/application.py:84
+msgid "Special thanks"
+msgstr "Tack till"
+
+#: src/application.py:87
+msgid "Sounds"
+msgstr "Ljud"
+
+#: src/application.py:88
+#, python-brace-format
+msgid "The drum samples used in this application are from {link}."
+msgstr "Trumsamplingarna som används i detta program kommer från {link}."
+
+#: src/config/export_formats.py:44
+msgid "MP3 files"
+msgstr "MP3-filer"
+
+#: src/config/export_formats.py:45
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:51
+msgid "FLAC files"
+msgstr "FLAC-filer"
+
+#: src/config/export_formats.py:52
+msgid "FLAC (Lossless)"
+msgstr "FLAC (förlustfri)"
+
+#: src/config/export_formats.py:58
+msgid "Ogg files"
+msgstr "Ogg-filer"
+
+#: src/config/export_formats.py:59
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+#: src/config/export_formats.py:65
+msgid "WAV files"
+msgstr "WAV-filer"
+
+#: src/config/export_formats.py:66
+msgid "WAV (Uncompressed)"
+msgstr "WAV (okomprimerad)"
+
+#: src/dialogs/audio_export_dialog.py:119
+msgid "Save Audio File"
+msgstr "Spara ljudfil"
+
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Part “{}” is Silent"
+msgstr "Delen ”{}” är tyst"
+
+#: src/dialogs/audio_export_dialog.py:150
+msgid "Parts “{}” and “{}” are Silent"
+msgstr "Delarna ”{}” och ”{}” är tysta"
+
+#: src/dialogs/audio_export_dialog.py:154
+msgid "{} Parts are Silent"
+msgstr "{} delar är tysta"
+
+#: src/dialogs/audio_export_dialog.py:179
+msgid "Image files"
+msgstr "Bildfiler"
+
+#: src/dialogs/audio_export_dialog.py:185
+msgid "Select Cover Art"
+msgstr "Välj omslagsgrafik"
+
+#: src/dialogs/audio_export_dialog.py:245
+msgid "Audio exported to {}"
+msgstr "Ljud exporterat till {}"
+
+#: src/dialogs/audio_export_dialog.py:251
+msgid "Export failed"
+msgstr "Exporten misslyckades"
+
+#: src/dialogs/audio_export_dialog.py:258
+msgid "Export cancelled successfully"
+msgstr "Exporten avbröts"
+
+#: src/dialogs/midi_mapping_dialog.py:22
+msgid "Acoustic Bass Drum"
+msgstr "Akustisk bastrumma"
+
+#: src/dialogs/midi_mapping_dialog.py:23
+msgid "Bass Drum 1"
+msgstr "Bastrumma 1"
+
+# Att slå med trumpinnen på den upphöjda kanten runtom trumman
+#: src/dialogs/midi_mapping_dialog.py:24
+msgid "Side Stick"
+msgstr "Kantslag"
+
+#: src/dialogs/midi_mapping_dialog.py:25
+msgid "Acoustic Snare"
+msgstr "Akustisk virveltrumma"
+
+#: src/dialogs/midi_mapping_dialog.py:26
+msgid "Hand Clap"
+msgstr "Handklappning"
+
+#: src/dialogs/midi_mapping_dialog.py:27
+msgid "Electric Snare"
+msgstr "Elektrisk virveltrumma"
+
+#: src/dialogs/midi_mapping_dialog.py:28
+msgid "Low Floor Tom"
+msgstr "Låg golvpuka"
+
+#: src/dialogs/midi_mapping_dialog.py:29
+msgid "Closed Hi Hat"
+msgstr "Stängd hi-hat"
+
+#: src/dialogs/midi_mapping_dialog.py:30
+msgid "High Floor Tom"
+msgstr "Hög golvpuka"
+
+#: src/dialogs/midi_mapping_dialog.py:31
+msgid "Pedal Hi Hat"
+msgstr "Pedal-hi-hat"
+
+#: src/dialogs/midi_mapping_dialog.py:32
+msgid "Low Tom"
+msgstr "Låg puka"
+
+#: src/dialogs/midi_mapping_dialog.py:33
+msgid "Open Hi Hat"
+msgstr "Öppen hi-hat"
+
+#: src/dialogs/midi_mapping_dialog.py:34
+msgid "Low-Mid Tom"
+msgstr "Låg-medelpuka"
+
+#: src/dialogs/midi_mapping_dialog.py:35
+msgid "Hi-Mid Tom"
+msgstr "Hög-medelpuka"
+
+#: src/dialogs/midi_mapping_dialog.py:36
+msgid "Crash Cymbal 1"
+msgstr "Kraschcymbal 1"
+
+#: src/dialogs/midi_mapping_dialog.py:37
+msgid "High Tom"
+msgstr "Hög puka"
+
+#: src/dialogs/midi_mapping_dialog.py:38
+msgid "Ride Cymbal 1"
+msgstr "Ridecymbal 1"
+
+#: src/dialogs/midi_mapping_dialog.py:39
+msgid "Chinese Cymbal"
+msgstr "Kinesisk cymbal"
+
+#: src/dialogs/midi_mapping_dialog.py:40
+msgid "Ride Bell"
+msgstr "Rideklocka"
+
+#: src/dialogs/midi_mapping_dialog.py:41
+msgid "Tambourine"
+msgstr "Tamburin"
+
+#: src/dialogs/midi_mapping_dialog.py:42
+msgid "Splash Cymbal"
+msgstr "Splashcymbal"
+
+#: src/dialogs/midi_mapping_dialog.py:43
+msgid "Cowbell"
+msgstr "Koskälla"
+
+#: src/dialogs/midi_mapping_dialog.py:44
+msgid "Crash Cymbal 2"
+msgstr "Kraschcymbal 2"
+
+#: src/dialogs/midi_mapping_dialog.py:45
+msgid "Vibraslap"
+msgstr "Vibraslap"
+
+#: src/dialogs/midi_mapping_dialog.py:46
+msgid "Ride Cymbal 2"
+msgstr "Ridecymbal 2"
+
+#: src/dialogs/midi_mapping_dialog.py:47
+msgid "Hi Bongo"
+msgstr "Hög bongo"
+
+#: src/dialogs/midi_mapping_dialog.py:48
+msgid "Low Bongo"
+msgstr "Låg bongo"
+
+#: src/dialogs/midi_mapping_dialog.py:49
+msgid "Mute Hi Conga"
+msgstr "Tystad hög conga"
+
+#: src/dialogs/midi_mapping_dialog.py:50
+msgid "Open Hi Conga"
+msgstr "Öppen hög conga"
+
+#: src/dialogs/midi_mapping_dialog.py:51
+msgid "Low Conga"
+msgstr "Låg conga"
+
+#: src/dialogs/midi_mapping_dialog.py:52
+msgid "High Timbale"
+msgstr "Hög timbale"
+
+#: src/dialogs/midi_mapping_dialog.py:53
+msgid "Low Timbale"
+msgstr "Låg timbale"
+
+#: src/dialogs/midi_mapping_dialog.py:54
+msgid "High Agogo"
+msgstr "Hög agogo"
+
+#: src/dialogs/midi_mapping_dialog.py:55
+msgid "Low Agogo"
+msgstr "Låg agogo"
+
+#: src/dialogs/midi_mapping_dialog.py:56
+msgid "Cabasa"
+msgstr "Cabasa"
+
+#: src/dialogs/midi_mapping_dialog.py:57
+msgid "Maracas"
+msgstr "Maracas"
+
+#: src/dialogs/midi_mapping_dialog.py:58
+msgid "Short Whistle"
+msgstr "Kort visselpipa"
+
+#: src/dialogs/midi_mapping_dialog.py:59
+msgid "Long Whistle"
+msgstr "Lång visselpipa"
+
+#: src/dialogs/midi_mapping_dialog.py:60
+msgid "Short Guiro"
+msgstr "Kort gurka"
+
+#: src/dialogs/midi_mapping_dialog.py:61
+msgid "Long Guiro"
+msgstr "Lång gurka"
+
+#: src/dialogs/midi_mapping_dialog.py:62
+msgid "Claves"
+msgstr "Claves"
+
+#: src/dialogs/midi_mapping_dialog.py:63
+msgid "Hi Wood Block"
+msgstr "Högt träblock"
+
+#: src/dialogs/midi_mapping_dialog.py:64
+msgid "Low Wood Block"
+msgstr "Lågt träblock"
+
+#: src/dialogs/midi_mapping_dialog.py:65
+msgid "Mute Cuica"
+msgstr "Tystad cuica"
+
+#: src/dialogs/midi_mapping_dialog.py:66
+msgid "Open Cuica"
+msgstr "Öppen cuica"
+
+#: src/dialogs/midi_mapping_dialog.py:67
+msgid "Mute Triangle"
+msgstr "Tystad triangel"
+
+#: src/dialogs/midi_mapping_dialog.py:68
+msgid "Open Triangle"
+msgstr "Öppen triangel"
+
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
+msgid "MIDI Mapping"
+msgstr "MIDI-mappning"
+
+#. Group 1: Note Assignment
+#: src/dialogs/midi_mapping_dialog.py:108
+msgid "Note Assignment"
+msgstr "Tontilldelning"
+
+#: src/dialogs/midi_mapping_dialog.py:111
+msgid "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr "Tilldela en MIDI-ton för ”{}”. Detta säkerställer korrekt uppspelning vid export."
+
+#. Action Row for Note
+#: src/dialogs/midi_mapping_dialog.py:118
+msgid "MIDI Note"
+msgstr "MIDI-ton"
+
+#: src/dialogs/midi_mapping_dialog.py:119
+msgid "The note number to trigger"
+msgstr "Tonnumret att utlösa"
+
+#. Group 2: Standard Instruments
+#: src/dialogs/midi_mapping_dialog.py:137
+msgid "Standard Instruments"
+msgstr "Standardinstrument"
+
+#: src/dialogs/midi_mapping_dialog.py:139
+msgid "Select a General MIDI instrument to automatically set the note."
+msgstr "Välj ett generellt MIDI-instrument för att automatiskt ställa in tonen."
+
+#: src/dialogs/midi_mapping_dialog.py:143
+msgid "Instrument Preset"
+msgstr "Instrumentförinställning"
+
+#: src/dialogs/midi_mapping_dialog.py:186
+msgid "Save"
+msgstr "Spara"
+
+#: src/dialogs/midi_mapping_dialog.py:229
+msgid "Custom Note"
+msgstr "Anpassad ton"
+
+#: src/handlers/drag_drop_handler.py:299
+msgid "Sound replaced"
+msgstr "Ljud ersattes"
+
+#: src/handlers/drag_drop_handler.py:302
+msgid "Failed to replace sound"
+msgstr "Misslyckades med att ersätta ljud"
+
+#: src/handlers/drag_drop_handler.py:312
+msgid "Not a supported audio file"
+msgstr "Inte en ljudfil som stöds"
+
+#: src/handlers/drag_drop_handler.py:320
+msgid "File not found"
+msgstr "Filen hittades inte"
+
+#: src/handlers/drag_drop_handler.py:325
+msgid "Selected item is not a file"
+msgstr "Det valda objektet är inte en fil"
+
+#: src/handlers/drag_drop_handler.py:332
+msgid "File too large: {:.1f}MB (max 50MB)"
+msgstr "Filen är för stor: {:.1f}MB (max 50MB)"
+
+#: src/handlers/drag_drop_handler.py:362
+msgid "No valid audio files found"
+msgstr "Inga giltiga ljudfiler hittades"
+
+#: src/handlers/drag_drop_handler.py:402
+msgid "Error processing file: {}"
+msgstr "Fel vid bearbetning av fil: {}"
+
+#: src/handlers/drag_drop_handler.py:433
+msgid "Added {} drum part, {} files skipped"
+msgstr "Lade till {} trumdel, {} filer hoppades över"
+
+#: src/handlers/drag_drop_handler.py:439
+msgid "Added {} drum parts, {} files skipped"
+msgstr "Lade till {} trumdelar, {} filer hoppades över"
+
+#: src/handlers/drag_drop_handler.py:444
+msgid "Added {} drum parts"
+msgstr "Lade till {} trumdelar"
+
+#. Only show skipped message if no replacement happened
+#: src/handlers/drag_drop_handler.py:447
+msgid "{} files skipped"
+msgstr "{} filer hoppades över"
+
+#: src/handlers/file_dialog_handler.py:52
+msgid "Default Patterns"
+msgstr "Standardslingor"
+
+#: src/handlers/file_dialog_handler.py:92 src/handlers/file_dialog_handler.py:171
+msgid "MIDI files"
+msgstr "MIDI-filer"
+
+#: src/handlers/file_dialog_handler.py:98
+msgid "Open MIDI File"
+msgstr "Öppna MIDI-fil"
+
+#: src/handlers/file_dialog_handler.py:127
+msgid "Failed to open file"
+msgstr "Misslyckades med att öppna fil"
+
+#: src/handlers/file_dialog_handler.py:165
+msgid "Failed to load pattern"
+msgstr "Misslyckades med att läsa in slinga"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "Spara sekvens"
+
+#: src/handlers/file_dialog_handler.py:205
+msgid "Add Audio Samples"
+msgstr "Lägg till ljudsamplingar"
+
+#: src/handlers/file_dialog_handler.py:227
+msgid "Audio files"
+msgstr "Ljudfiler"
+
+#: src/utils/export_progress.py:76
+msgid "Preparing…"
+msgstr "Förbereder…"
+
+#: src/utils/export_progress.py:77
+msgid "Initializing…"
+msgstr "Initierar…"
+
+#: src/utils/export_progress.py:79
+msgid "Rendering audio…"
+msgstr "Renderar ljud…"
+
+#: src/utils/export_progress.py:80
+msgid "Processing beats…"
+msgstr "Bearbetar slag…"
+
+#: src/utils/export_progress.py:82
+msgid "Saving file…"
+msgstr "Sparar fil…"
+
+#: src/utils/export_progress.py:83
+msgid "Writing to disk…"
+msgstr "Skriver till disk…"
+
+#: src/utils/export_progress.py:85
+msgid "Exporting…"
+msgstr "Exporterar…"
+
+#: src/utils/export_progress.py:86
+msgid "Processing…"
+msgstr "Bearbetar…"
+
+#: src/utils/name_utils.py:36
+msgid "Custom Sound"
+msgstr "Anpassat ljud"
+
+#: src/ui/drum_grid_builder.py:327
+msgid "Preview"
+msgstr "Förhandsgranskning"
+
+#: src/ui/drum_grid_builder.py:329
+msgid "Replace…"
+msgstr "Ersätt…"
+
+#: src/ui/drum_grid_builder.py:332
+msgid "Replace with new sound"
+msgstr "Ersätt med nytt ljud"
+
+#: src/ui/drum_grid_builder.py:335
+msgid "Remove"
+msgstr "Ta bort"
+
+#: src/ui/drum_grid_builder.py:338
+msgid "At least one drum part must remain"
+msgstr "Åtminstone en trumdel måste kvarstå"
+
+#: src/ui/drum_grid_builder.py:345
+msgid "Configure MIDI note for export"
+msgstr "Konfigurera MIDI-ton för export"
+
+#: src/ui/drum_grid_builder.py:402
+msgid "MIDI note updated"
+msgstr "MIDI-ton uppdaterad"
+
+#: src/ui/drum_grid_builder.py:410
+msgid "Select New Sound"
+msgstr "Välj nytt ljud"
+
+#: src/ui/drum_grid_builder.py:424
+msgid "Removed drum part: {}"
+msgstr "Tog bort trumdel: {}"
+
+#: src/ui/drum_grid_builder.py:429
+msgid "Failed to remove drum part"
+msgstr "Misslyckades med att ta bort trumdel"
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:190
+#: src/window.py:220
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} slag per minut (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:199
+#: src/window.py:229
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% volym"
 
-#: src/window.py:214 src/window.ui:167
+#: src/window.py:262 src/window.ui:173
 msgid "Play"
 msgstr "Spela"
 
-#: src/window.py:218
+#: src/window.py:266
 msgid "Pause"
 msgstr "Pausa"
 
-#: src/window.ui:50
+#: src/window.py:313
 msgid "Open"
 msgstr "Öppna"
 
+#: src/window.py:331
+msgid "Added: {}"
+msgstr "Lade till: {}"
+
+#: src/window.py:346
+msgid "Failed to add custom sound"
+msgstr "Misslyckades med att lägga till anpassat ljud"
+
+#: src/window.py:353
+msgid "Replaced drum with: {}"
+msgstr "Ersatte trumma med: {}"
+
+#: src/window.py:361
+msgid "Failed to replace drum sound"
+msgstr "Misslyckades med att ersätta trumljud"
+
 #: src/window.ui:52
-msgid "Open Preset"
-msgstr "Öppna förinställning"
+msgid "Open…"
+msgstr "Öppna…"
 
-#: src/window.ui:55
+#: src/window.ui:54
+msgid "Open Pattern"
+msgstr "Öppna slinga"
+
+#: src/window.ui:57
 msgctxt "accessibility"
-msgid "Open Preset"
-msgstr "Öppna förinställning"
+msgid "Open Pattern"
+msgstr "Öppna slinga"
 
-#: src/window.ui:56
-msgid "Open Saved Drum Pattern Preset"
-msgstr "Öppna sparad trumslingeförinställning"
-
-#: src/window.ui:74
-msgid "Main Menu"
-msgstr "Huvudmeny"
+#: src/window.ui:58
+msgid "Open Saved Drum Pattern"
+msgstr "Öppna sparad trumslinga"
 
 #: src/window.ui:76
+msgid "Main Menu"
+msgstr "Huvudmeny"
+
+#: src/window.ui:78
 msgctxt "accessibility"
 msgid "Main Menu"
 msgstr "Huvudmeny"
 
-#: src/window.ui:77
+#: src/window.ui:79
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr "Kom åt tangentbordsgenvägar och programinformation"
 
-#: src/window.ui:84
-msgid "Save Drum Pattern"
-msgstr "Spara trumslinga"
-
 #: src/window.ui:86
+msgid "Export Audio…"
+msgstr "Exportera ljud…"
+
+#: src/window.ui:91
 msgctxt "accessibility"
-msgid "Save Drum Pattern"
-msgstr "Spara trumslinga"
+msgid "Export Audio…"
+msgstr "Exportera ljud…"
 
-#: src/window.ui:87
-msgid "Save Current Drum Pattern as a Preset File"
-msgstr "Spara aktuell trumslinga som en förinställningsfil"
+#: src/window.ui:92
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "Spara aktuell trumslinga som en ljudfil"
 
-#: src/window.ui:131
+#: src/window.ui:137
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:136 src/window.ui:140
+#: src/window.ui:142 src/window.ui:146
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Justera tempo i slag per minut (BPM)"
 
-#: src/window.ui:139
+#: src/window.ui:145
 msgid "Tempo"
 msgstr "Tempo"
 
-#: src/window.ui:181
+#: src/window.ui:187
 msgid "Adjust Volume"
 msgstr "Justera volym"
 
-#: src/window.ui:204
-msgid "Reset"
-msgstr "Återställ"
+#: src/window.ui:210
+msgid "Clear"
+msgstr "Töm"
 
-#: src/window.ui:205
-msgid "Reset the Drum Sequence"
-msgstr "Återställ trumsekvensen"
+#: src/window.ui:211
+msgid "Clear the Drum Pattern"
+msgstr "Töm trumslingan"
 
-#: src/window.ui:218
+#: src/window.ui:226
+msgid "_Add Samples…"
+msgstr "_Lägg till samplingar…"
+
+#: src/window.ui:230
+msgid "_Save Pattern…"
+msgstr "_Spara slinga…"
+
+#: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr "Åte_rställ till standardvärden"
+
+#: src/window.ui:242
 msgid "_Keyboard Shortcuts"
 msgstr "_Tangentbordsgenvägar"
 
-#: src/window.ui:222
+#: src/window.ui:246
 msgid "_About Drum Machine"
 msgstr "_Om Drum Machine"
 
-#: src/gtk/help-overlay.ui:11
+#: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Allmänt"
 
-#: src/gtk/help-overlay.ui:14
+#: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Visa kortkommandon"
 
-#: src/gtk/help-overlay.ui:20
+#: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Avsluta"
 
-#: src/gtk/help-overlay.ui:29
+#: src/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Playback Controls"
 msgstr "Uppspelningskontroller"
 
-#: src/gtk/help-overlay.ui:32
+#: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr "Spela/pausa"
 
-#: src/gtk/help-overlay.ui:39
+#: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "Töm alla"
 
-#: src/gtk/help-overlay.ui:48
+#: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
 msgid "BPM & Volume Controls"
 msgstr "BPM- och volymkontroller"
 
-#: src/gtk/help-overlay.ui:51
+#: src/gtk/help-overlay.blp:45
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "Öka slag/minut"
 
-#: src/gtk/help-overlay.ui:58
+#: src/gtk/help-overlay.blp:51
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "Minska slag/minut"
 
-#: src/gtk/help-overlay.ui:65
+#: src/gtk/help-overlay.blp:57
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "Öka volymen"
 
-#: src/gtk/help-overlay.ui:72
+#: src/gtk/help-overlay.blp:63
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Sänk volymen"
 
-#: src/gtk/help-overlay.ui:79
+#: src/gtk/help-overlay.blp:69
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr "Tysta"
 
-#: src/gtk/help-overlay.ui:88
+#: src/gtk/help-overlay.blp:76
 msgctxt "shortcut window"
-msgid "Preset Management"
-msgstr "Förinställningshantering"
+msgid "Pattern Management"
+msgstr "Slinghantering"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.blp:79
 msgctxt "shortcut window"
-msgid "Load Preset"
-msgstr "Läs in förinställning"
+msgid "Load Pattern"
+msgstr "Läs in slinga"
 
-#: src/gtk/help-overlay.ui:98
+#: src/gtk/help-overlay.blp:85
 msgctxt "shortcut window"
-msgid "Save Preset"
-msgstr "Spara förinställning"
+msgid "Save Pattern"
+msgstr "Spara slinga"
 
-#: src/gtk/help-overlay.ui:107
+#: src/gtk/help-overlay.blp:91
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "Exportera ljud"
+
+#: src/gtk/help-overlay.blp:98
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Navigering"
 
-#: src/gtk/help-overlay.ui:110
+#: src/gtk/help-overlay.blp:101
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Gå till instrument"
 
-#: src/gtk/help-overlay.ui:117
+#: src/gtk/help-overlay.blp:107
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Föregående sida"
 
-#: src/gtk/help-overlay.ui:124
+#: src/gtk/help-overlay.blp:113
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Nästa sida"
 
-#: src/gtk/save_changes_dialog.ui:6
+#: src/gtk/save-changes-dialog.blp:5
 msgid "Save Changes?"
 msgstr "Spara ändringar?"
 
-#: src/gtk/save_changes_dialog.ui:7
-msgid ""
-"Current preset contains unsaved changes. Changes which are not saved will be "
-"permanently lost."
-msgstr ""
-"Aktuell förinställning innehåller osparade ändringar. Ändringar som inte "
-"sparas kommer gå permanent förlorade."
+#: src/gtk/save-changes-dialog.blp:6
+msgid "Current pattern contains unsaved changes. Changes which are not saved will be permanently lost."
+msgstr "Aktuell slinga innehåller osparade ändringar. Ändringar som inte sparas kommer gå permanent förlorade."
 
-#. Cancel the operation
-#: src/gtk/save_changes_dialog.ui:14
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
 msgid "_Cancel"
 msgstr "A_vbryt"
 
-#. Discard all changes
-#: src/gtk/save_changes_dialog.ui:15
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
 msgid "_Discard"
 msgstr "_Förkasta"
 
-#. Save current changes
-#: src/gtk/save_changes_dialog.ui:16
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
 msgid "_Save"
 msgstr "_Spara"
 
-#: src/handlers/file_dialog_handler.py:48
-msgid "Default Presets"
-msgstr "Standardförinställningar"
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr "Exportera ljud"
 
-#: src/handlers/file_dialog_handler.py:76
-#: src/handlers/file_dialog_handler.py:142
-msgid "MIDI files"
-msgstr "MIDI-filer"
+#: src/gtk/audio-export-dialog.blp:44
+msgid "Audio Format"
+msgstr "Ljudformat"
 
-#: src/handlers/file_dialog_handler.py:82
-msgid "Open MIDI File"
-msgstr "Öppna MIDI-fil"
+#: src/gtk/audio-export-dialog.blp:50
+msgid "Repeat Count"
+msgstr "Upprepningsantal"
 
-#: src/handlers/file_dialog_handler.py:148
-msgid "Save Sequence"
-msgstr "Spara sekvens"
+#: src/gtk/audio-export-dialog.blp:51
+msgid "How many times to repeat the pattern"
+msgstr "Hur många gånger slingan ska upprepas"
+
+#: src/gtk/audio-export-dialog.blp:64
+msgid "Metadata"
+msgstr "Metadata"
+
+#: src/gtk/audio-export-dialog.blp:67
+msgid "Artist Name"
+msgstr "Artistnamn"
+
+#: src/gtk/audio-export-dialog.blp:72
+msgid "Song Name"
+msgstr "Låtnamn"
+
+#: src/gtk/audio-export-dialog.blp:77
+msgid "Cover Art"
+msgstr "Omslagsgrafik"
+
+#: src/gtk/audio-export-dialog.blp:81
+msgid "Choose File…"
+msgstr "Välj fil…"
+
+#: src/gtk/audio-export-dialog.blp:110
+msgid "Cancel Export"
+msgstr "Avbryt export"
+
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr "Återställ till standardvärden?"
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume to their default values. This action cannot "
+"be undone."
+msgstr ""
+"Detta kommer tömma den aktuella slingan och återställa alla samplingar, BPM och volym till sina standardvärden. Denna "
+"åtgärd kan inte ångras."
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+msgid "_Reset"
+msgstr "Åte_rställ"
+
+#~ msgid "Reset the Drum Sequence"
+#~ msgstr "Återställ trumsekvensen"
+
+#~ msgid "No Pattern"
+#~ msgstr "Ingen slinga"
+
+#~ msgid "Please create a drum pattern before exporting audio."
+#~ msgstr "Skapa en trumslinga innan du exporterar ljud."
+
+#~ msgid "_OK"
+#~ msgstr "_OK"
+
+#~ msgid "Open Preset"
+#~ msgstr "Öppna förinställning"
+
+#~ msgctxt "accessibility"
+#~ msgid "Open Preset"
+#~ msgstr "Öppna förinställning"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Load Preset"
+#~ msgstr "Läs in förinställning"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "Spara förinställning"
+
+#~ msgctxt "accessibility"
+#~ msgid "Export Audio"
+#~ msgstr "Exportera ljud"
+
+#~ msgid "Export Settings"
+#~ msgstr "Exportinställningar"
+
+#~ msgid "Select the output audio format"
+#~ msgstr "Välj utdataformatet för ljud"
+
+#~ msgid "Add metadata to your exported audio"
+#~ msgstr "Lägg till metadata till ditt exporterade ljud"
+
+#~ msgid "Select an image file for the cover art"
+#~ msgstr "Välj en bildfil som omslagsgrafik"

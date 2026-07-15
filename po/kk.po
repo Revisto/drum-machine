@@ -1,0 +1,900 @@
+# Kazakh translation for drum-machine.
+# Copyright (C) 2026 drum-machine's COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>,  2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine master\n"
+"Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
+"POT-Creation-Date: 2025-12-21 22:38+0000\n"
+"PO-Revision-Date: 2026-01-25 20:45+0500\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <Kazakh>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
+#: src/window.ui:69
+msgid "Drum Machine"
+msgstr "Барабан машинасы"
+
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgstr ""
+"барабан;барабандар;секвенсор;ырғақ;музыка;ойын "
+"үлгісі;биттер;перкуссия;цикл;грув;"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "Барабан биттерін жасау және ойнату"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr ""
+"Drum Machine - барабан ойын үлгілерін жасауға, ойнатуға және басқаруға "
+"арналған заманауи және интуитивті қолданба. Музыканттарға, продюсерлерге "
+"және ырғақ жасауға қызығатындардың бәріне арналған бұл қолданба барабан ойын "
+"үлгілерін бағдарламалауға арналған қарапайым интерфейсті ұсынады. "
+"Көңіліңізді көтеріңіз!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "Мүмкіндіктері:"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor with infinite pages"
+msgstr ""
+"Шексіз беттері бар торға негізделген интуитивті ойын үлгілерінің редакторы"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr ""
+"Таңдамалы семплдер: MIDI ноталарын сәйкестендіру арқылы жеке барабан "
+"дыбыстарыңызды қосыңыз"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Adjustable BPM control"
+msgstr "Реттелетін BPM басқаруы"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Volume control for overall mix"
+msgstr "Жалпы микс үшін дыбыс деңгейін басқару"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Save and load patterns"
+msgstr "Ойын үлгілерін сақтау және жүктеу"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "Бірнеше барабан дыбыстары, соның ішінде кик, снэр, хай-хэт және т.б."
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr ""
+"WAV, FLAC, Ogg, MP3 және MIDI пішімдерін қолдайтын аудио және MIDI экспорты"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr ""
+"Орындаушы атын, ән тақырыбын және мұқаба суретін ендіруге арналған "
+"метадеректерді қолдау"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr ""
+"Барлық функцияларға жылдам қол жеткізуге арналған пернетақта жарлықтары"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "Барабан ойын үлгісі ашық режимде жүктелді"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "Барабан ойын үлгісі қараңғы режимде жүктелді"
+
+#: src/application.py:74
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns."
+msgstr ""
+"Барабан машинасы қолданбасы - барабан ойын үлгілерін жасауға, ойнатуға және "
+"басқаруға арналған заманауи және интуитивті қолданба."
+
+#: src/application.py:79
+msgid "translator-credits"
+msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
+
+#: src/application.py:84
+msgid "Special thanks"
+msgstr "Ерекше алғыс"
+
+#: src/application.py:87
+msgid "Sounds"
+msgstr "Дыбыстар"
+
+#: src/application.py:88
+#, python-brace-format
+msgid "The drum samples used in this application are from {link}."
+msgstr "Бұл қолданбада пайдаланылатын барабан семплдері {link} алынған."
+
+#: src/config/export_formats.py:44
+msgid "MP3 files"
+msgstr "MP3 файлдары"
+
+#: src/config/export_formats.py:45
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:51
+msgid "FLAC files"
+msgstr "FLAC файлдары"
+
+#: src/config/export_formats.py:52
+msgid "FLAC (Lossless)"
+msgstr "FLAC (шығынсыз)"
+
+#: src/config/export_formats.py:58
+msgid "Ogg files"
+msgstr "Ogg файлдары"
+
+#: src/config/export_formats.py:59
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+#: src/config/export_formats.py:65
+msgid "WAV files"
+msgstr "WAV файлдары"
+
+#: src/config/export_formats.py:66
+msgid "WAV (Uncompressed)"
+msgstr "WAV (сығылмаған)"
+
+#: src/dialogs/audio_export_dialog.py:119
+msgid "Save Audio File"
+msgstr "Аудио файлын сақтау"
+
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Part “{}” is Silent"
+msgstr "“{}” бөлігі дыбыссыз"
+
+#: src/dialogs/audio_export_dialog.py:150
+msgid "Parts “{}” and “{}” are Silent"
+msgstr "“{}” және “{}” бөліктері дыбыссыз"
+
+#: src/dialogs/audio_export_dialog.py:154
+msgid "{} Parts are Silent"
+msgstr "{} бөлік дыбыссыз"
+
+#: src/dialogs/audio_export_dialog.py:179
+msgid "Image files"
+msgstr "Сурет файлдары"
+
+#: src/dialogs/audio_export_dialog.py:185
+msgid "Select Cover Art"
+msgstr "Мұқаба суретін таңдау"
+
+#: src/dialogs/audio_export_dialog.py:245
+msgid "Audio exported to {}"
+msgstr "Аудио {} файлына экспортталды"
+
+#: src/dialogs/audio_export_dialog.py:251
+msgid "Export failed"
+msgstr "Экспорттау сәтсіз аяқталды"
+
+#: src/dialogs/audio_export_dialog.py:258
+msgid "Export cancelled successfully"
+msgstr "Экспорттаудан бас тарту сәтті аяқталды"
+
+#: src/dialogs/midi_mapping_dialog.py:22
+msgid "Acoustic Bass Drum"
+msgstr "Акустикалық басс-барабан"
+
+#: src/dialogs/midi_mapping_dialog.py:23
+msgid "Bass Drum 1"
+msgstr "Басс-барабан 1"
+
+#: src/dialogs/midi_mapping_dialog.py:24
+msgid "Side Stick"
+msgstr "Сайдж-стик"
+
+#: src/dialogs/midi_mapping_dialog.py:25
+msgid "Acoustic Snare"
+msgstr "Акустикалық снэр"
+
+#: src/dialogs/midi_mapping_dialog.py:26
+msgid "Hand Clap"
+msgstr "Шапалақ"
+
+#: src/dialogs/midi_mapping_dialog.py:27
+msgid "Electric Snare"
+msgstr "Электрлік снэр"
+
+#: src/dialogs/midi_mapping_dialog.py:28
+msgid "Low Floor Tom"
+msgstr "Төменгі едендік том"
+
+#: src/dialogs/midi_mapping_dialog.py:29
+msgid "Closed Hi Hat"
+msgstr "Жабық хай-хэт"
+
+#: src/dialogs/midi_mapping_dialog.py:30
+msgid "High Floor Tom"
+msgstr "Жоғары едендік том"
+
+#: src/dialogs/midi_mapping_dialog.py:31
+msgid "Pedal Hi Hat"
+msgstr "Педальдік хай-хэт"
+
+#: src/dialogs/midi_mapping_dialog.py:32
+msgid "Low Tom"
+msgstr "Төменгі том"
+
+#: src/dialogs/midi_mapping_dialog.py:33
+msgid "Open Hi Hat"
+msgstr "Ашық хай-хэт"
+
+#: src/dialogs/midi_mapping_dialog.py:34
+msgid "Low-Mid Tom"
+msgstr "Төменгі орташа том"
+
+#: src/dialogs/midi_mapping_dialog.py:35
+msgid "Hi-Mid Tom"
+msgstr "Жоғары орташа том"
+
+#: src/dialogs/midi_mapping_dialog.py:36
+msgid "Crash Cymbal 1"
+msgstr "Крэш тарелкасы 1"
+
+#: src/dialogs/midi_mapping_dialog.py:37
+msgid "High Tom"
+msgstr "Жоғары том"
+
+#: src/dialogs/midi_mapping_dialog.py:38
+msgid "Ride Cymbal 1"
+msgstr "Райд тарелкасы 1"
+
+#: src/dialogs/midi_mapping_dialog.py:39
+msgid "Chinese Cymbal"
+msgstr "Қытай тарелкасы"
+
+#: src/dialogs/midi_mapping_dialog.py:40
+msgid "Ride Bell"
+msgstr "Райд қоңырауы"
+
+#: src/dialogs/midi_mapping_dialog.py:41
+msgid "Tambourine"
+msgstr "Тамбурин"
+
+#: src/dialogs/midi_mapping_dialog.py:42
+msgid "Splash Cymbal"
+msgstr "Сплэш тарелкасы"
+
+#: src/dialogs/midi_mapping_dialog.py:43
+msgid "Cowbell"
+msgstr "Коубелл"
+
+#: src/dialogs/midi_mapping_dialog.py:44
+msgid "Crash Cymbal 2"
+msgstr "Крэш тарелкасы 2"
+
+#: src/dialogs/midi_mapping_dialog.py:45
+msgid "Vibraslap"
+msgstr "Вибраслэп"
+
+#: src/dialogs/midi_mapping_dialog.py:46
+msgid "Ride Cymbal 2"
+msgstr "Райд тарелкасы 2"
+
+#: src/dialogs/midi_mapping_dialog.py:47
+msgid "Hi Bongo"
+msgstr "Жоғары бонго"
+
+#: src/dialogs/midi_mapping_dialog.py:48
+msgid "Low Bongo"
+msgstr "Төменгі бонго"
+
+#: src/dialogs/midi_mapping_dialog.py:49
+msgid "Mute Hi Conga"
+msgstr "Тұйық жоғары конга"
+
+#: src/dialogs/midi_mapping_dialog.py:50
+msgid "Open Hi Conga"
+msgstr "Ашық жоғары конга"
+
+#: src/dialogs/midi_mapping_dialog.py:51
+msgid "Low Conga"
+msgstr "Төменгі конга"
+
+#: src/dialogs/midi_mapping_dialog.py:52
+msgid "High Timbale"
+msgstr "Жоғары тимбале"
+
+#: src/dialogs/midi_mapping_dialog.py:53
+msgid "Low Timbale"
+msgstr "Төменгі тимбале"
+
+#: src/dialogs/midi_mapping_dialog.py:54
+msgid "High Agogo"
+msgstr "Жоғары агого"
+
+#: src/dialogs/midi_mapping_dialog.py:55
+msgid "Low Agogo"
+msgstr "Төменгі агого"
+
+#: src/dialogs/midi_mapping_dialog.py:56
+msgid "Cabasa"
+msgstr "Кабаса"
+
+#: src/dialogs/midi_mapping_dialog.py:57
+msgid "Maracas"
+msgstr "Маракастар"
+
+#: src/dialogs/midi_mapping_dialog.py:58
+msgid "Short Whistle"
+msgstr "Қысқа ысқырық"
+
+#: src/dialogs/midi_mapping_dialog.py:59
+msgid "Long Whistle"
+msgstr "Ұзын ысқырық"
+
+#: src/dialogs/midi_mapping_dialog.py:60
+msgid "Short Guiro"
+msgstr "Қысқа гуиро"
+
+#: src/dialogs/midi_mapping_dialog.py:61
+msgid "Long Guiro"
+msgstr "Ұзын гуиро"
+
+#: src/dialogs/midi_mapping_dialog.py:62
+msgid "Claves"
+msgstr "Клаве"
+
+#: src/dialogs/midi_mapping_dialog.py:63
+msgid "Hi Wood Block"
+msgstr "Жоғары ағаш блок"
+
+#: src/dialogs/midi_mapping_dialog.py:64
+msgid "Low Wood Block"
+msgstr "Төменгі ағаш блок"
+
+#: src/dialogs/midi_mapping_dialog.py:65
+msgid "Mute Cuica"
+msgstr "Тұйық куика"
+
+#: src/dialogs/midi_mapping_dialog.py:66
+msgid "Open Cuica"
+msgstr "Ашық куика"
+
+#: src/dialogs/midi_mapping_dialog.py:67
+msgid "Mute Triangle"
+msgstr "Тұйық үшбұрыш"
+
+#: src/dialogs/midi_mapping_dialog.py:68
+msgid "Open Triangle"
+msgstr "Ашық үшбұрыш"
+
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
+msgid "MIDI Mapping"
+msgstr "MIDI сәйкестендіру"
+
+#. Group 1: Note Assignment
+#: src/dialogs/midi_mapping_dialog.py:108
+msgid "Note Assignment"
+msgstr "Нотаны тағайындау"
+
+#: src/dialogs/midi_mapping_dialog.py:111
+msgid ""
+"Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr ""
+"'{}' үшін MIDI нотасын тағайындаңыз. Бұл экспорттау кезінде дұрыс ойнатуды "
+"қамтамасыз етеді."
+
+#. Action Row for Note
+#: src/dialogs/midi_mapping_dialog.py:118
+msgid "MIDI Note"
+msgstr "MIDI нотасы"
+
+#: src/dialogs/midi_mapping_dialog.py:119
+msgid "The note number to trigger"
+msgstr "Іске қосылатын нота нөмірі"
+
+#. Group 2: Standard Instruments
+#: src/dialogs/midi_mapping_dialog.py:137
+msgid "Standard Instruments"
+msgstr "Стандартты аспаптар"
+
+#: src/dialogs/midi_mapping_dialog.py:139
+msgid "Select a General MIDI instrument to automatically set the note."
+msgstr "Нотаны автоматты түрде орнату үшін General MIDI аспабын таңдаңыз."
+
+#: src/dialogs/midi_mapping_dialog.py:143
+msgid "Instrument Preset"
+msgstr "Аспаптың алдын ала орнатуы"
+
+#: src/dialogs/midi_mapping_dialog.py:186
+msgid "Save"
+msgstr "Сақтау"
+
+#: src/dialogs/midi_mapping_dialog.py:229
+msgid "Custom Note"
+msgstr "Реттелетін нота"
+
+#: src/handlers/drag_drop_handler.py:299
+msgid "Sound replaced"
+msgstr "Дыбыс ауыстырылды"
+
+#: src/handlers/drag_drop_handler.py:302
+msgid "Failed to replace sound"
+msgstr "Дыбысты ауыстыру сәтсіз аяқталды"
+
+#: src/handlers/drag_drop_handler.py:312
+msgid "Not a supported audio file"
+msgstr "Қолдау көрсетілмейтін аудио файлы"
+
+#: src/handlers/drag_drop_handler.py:320
+msgid "File not found"
+msgstr "Файл табылмады"
+
+#: src/handlers/drag_drop_handler.py:325
+msgid "Selected item is not a file"
+msgstr "Таңдалған нысан файл емес"
+
+#: src/handlers/drag_drop_handler.py:332
+msgid "File too large: {:.1f}MB (max 50MB)"
+msgstr "Файл тым үлкен: {:.1f}МБ (макс. 50МБ)"
+
+#: src/handlers/drag_drop_handler.py:362
+msgid "No valid audio files found"
+msgstr "Жарамды аудио файлдар табылмады"
+
+#: src/handlers/drag_drop_handler.py:402
+msgid "Error processing file: {}"
+msgstr "Файлды өңдеу қатесі: {}"
+
+#: src/handlers/drag_drop_handler.py:433
+msgid "Added {} drum part, {} files skipped"
+msgstr "{} барабан бөлігі қосылды, {} файл өткізілді"
+
+#: src/handlers/drag_drop_handler.py:439
+msgid "Added {} drum parts, {} files skipped"
+msgstr "{} барабан бөлігі қосылды, {} файл өткізілді"
+
+#: src/handlers/drag_drop_handler.py:444
+msgid "Added {} drum parts"
+msgstr "{} барабан бөлігі қосылды"
+
+#. Only show skipped message if no replacement happened
+#: src/handlers/drag_drop_handler.py:447
+msgid "{} files skipped"
+msgstr "{} файл өткізілді"
+
+#: src/handlers/file_dialog_handler.py:52
+msgid "Default Patterns"
+msgstr "Әдепкі ойын үлгілері"
+
+#: src/handlers/file_dialog_handler.py:92
+#: src/handlers/file_dialog_handler.py:171
+msgid "MIDI files"
+msgstr "MIDI файлдары"
+
+#: src/handlers/file_dialog_handler.py:98
+msgid "Open MIDI File"
+msgstr "MIDI файлын ашу"
+
+#: src/handlers/file_dialog_handler.py:127
+msgid "Failed to open file"
+msgstr "Файлды ашу сәтсіз аяқталды"
+
+#: src/handlers/file_dialog_handler.py:165
+msgid "Failed to load pattern"
+msgstr "Ойын үлгісін жүктеу сәтсіз аяқталды"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "Тізбекті сақтау"
+
+#: src/handlers/file_dialog_handler.py:205
+msgid "Add Audio Samples"
+msgstr "Аудио сэмплдерді қосу"
+
+#: src/handlers/file_dialog_handler.py:227
+msgid "Audio files"
+msgstr "Аудио файлдары"
+
+#: src/utils/export_progress.py:76
+msgid "Preparing…"
+msgstr "Дайындау…"
+
+#: src/utils/export_progress.py:77
+msgid "Initializing…"
+msgstr "Инициализациялау…"
+
+#: src/utils/export_progress.py:79
+msgid "Rendering audio…"
+msgstr "Аудионы рендерингтеу…"
+
+#: src/utils/export_progress.py:80
+msgid "Processing beats…"
+msgstr "Биттерді өңдеу…"
+
+#: src/utils/export_progress.py:82
+msgid "Saving file…"
+msgstr "Файлды сақтау…"
+
+#: src/utils/export_progress.py:83
+msgid "Writing to disk…"
+msgstr "Дискіге жазу…"
+
+#: src/utils/export_progress.py:85
+msgid "Exporting…"
+msgstr "Экспорттау…"
+
+#: src/utils/export_progress.py:86
+msgid "Processing…"
+msgstr "Өңдеу…"
+
+#: src/utils/name_utils.py:36
+msgid "Custom Sound"
+msgstr "Таңдауыңызша дыбыс"
+
+#: src/ui/drum_grid_builder.py:327
+msgid "Preview"
+msgstr "Алдын ала қарау"
+
+#: src/ui/drum_grid_builder.py:329
+msgid "Replace…"
+msgstr "Алмастыру…"
+
+#: src/ui/drum_grid_builder.py:332
+msgid "Replace with new sound"
+msgstr "Жаңа дыбыспен алмастыру"
+
+#: src/ui/drum_grid_builder.py:335
+msgid "Remove"
+msgstr "Өшіру"
+
+#: src/ui/drum_grid_builder.py:338
+msgid "At least one drum part must remain"
+msgstr "Кем дегенде бір барабан бөлігі қалуы тиіс"
+
+#: src/ui/drum_grid_builder.py:345
+msgid "Configure MIDI note for export"
+msgstr "Экспорттау үшін MIDI нотасын баптау"
+
+#: src/ui/drum_grid_builder.py:402
+msgid "MIDI note updated"
+msgstr "MIDI нотасы жаңартылды"
+
+#: src/ui/drum_grid_builder.py:410
+msgid "Select New Sound"
+msgstr "Жаңа дыбысты таңдау"
+
+#: src/ui/drum_grid_builder.py:424
+msgid "Removed drum part: {}"
+msgstr "Өшірілген барабан бөлігі: {}"
+
+#: src/ui/drum_grid_builder.py:429
+msgid "Failed to remove drum part"
+msgstr "Барабан бөлігін өшіру сәтсіз аяқталды"
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:220
+msgid "{} Beats per Minute (BPM)"
+msgstr "Минутына {} соққы (BPM)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:229
+msgid "{:.0f}% Volume"
+msgstr "Дыбыс деңгейі {:.0f}%"
+
+#: src/window.py:262 src/window.ui:173
+msgid "Play"
+msgstr "Ойнату"
+
+#: src/window.py:266
+msgid "Pause"
+msgstr "Кідірту"
+
+#: src/window.py:313
+msgid "Open"
+msgstr "Ашу"
+
+#: src/window.py:331
+msgid "Added: {}"
+msgstr "Қосылды: {}"
+
+#: src/window.py:346
+msgid "Failed to add custom sound"
+msgstr "Таңдауыңызша дыбысты қосу сәтсіз аяқталды"
+
+#: src/window.py:353
+msgid "Replaced drum with: {}"
+msgstr "Барабан мынаған алмастырылды: {}"
+
+#: src/window.py:361
+msgid "Failed to replace drum sound"
+msgstr "Барабан дыбысын алмастыру сәтсіз аяқталды"
+
+#: src/window.ui:52
+msgid "Open…"
+msgstr "Ашу…"
+
+#: src/window.ui:54
+msgid "Open Pattern"
+msgstr "Ойын үлгісін ашу"
+
+#: src/window.ui:57
+msgctxt "accessibility"
+msgid "Open Pattern"
+msgstr "Ойын үлгісін ашу"
+
+#: src/window.ui:58
+msgid "Open Saved Drum Pattern"
+msgstr "Сақталған барабан ойын үлгісін ашу"
+
+#: src/window.ui:76
+msgid "Main Menu"
+msgstr "Бас мәзір"
+
+#: src/window.ui:78
+msgctxt "accessibility"
+msgid "Main Menu"
+msgstr "Бас мәзір"
+
+#: src/window.ui:79
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "Пернетақта жарлықтарына және қолданба ақпаратына қол жеткізу"
+
+#: src/window.ui:86
+msgid "Export Audio…"
+msgstr "Аудионы экспорттау…"
+
+#: src/window.ui:91
+msgctxt "accessibility"
+msgid "Export Audio…"
+msgstr "Аудионы экспорттау…"
+
+#: src/window.ui:92
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "Ағымдағы барабан ойын үлгісін аудио файл ретінде экспорттау"
+
+#: src/window.ui:137
+msgid "BPM"
+msgstr "BPM"
+
+#: src/window.ui:142 src/window.ui:146
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "Темпті минутына соққы (BPM) арқылы реттеу"
+
+#: src/window.ui:145
+msgid "Tempo"
+msgstr "Темп"
+
+#: src/window.ui:187
+msgid "Adjust Volume"
+msgstr "Дыбыс деңгейін реттеу"
+
+#: src/window.ui:210
+msgid "Clear"
+msgstr "Тазарту"
+
+#: src/window.ui:211
+msgid "Clear the Drum Pattern"
+msgstr "Барабан ойын үлгісін тазарту"
+
+#: src/window.ui:226
+msgid "_Add Samples…"
+msgstr "_Сэмплдерді қосу…"
+
+#: src/window.ui:230
+msgid "_Save Pattern…"
+msgstr "Ойын үлгісін _сақтау…"
+
+#: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr "Әдепкі күйге қай_тару"
+
+#: src/window.ui:242
+msgid "_Keyboard Shortcuts"
+msgstr "_Пернетақта жарлықтары"
+
+#: src/window.ui:246
+msgid "_About Drum Machine"
+msgstr "Барабан машинасы турал_ы"
+
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Жалпы"
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Жарлықтарды көрсету"
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Шығу"
+
+#: src/gtk/help-overlay.blp:26
+msgctxt "shortcut window"
+msgid "Playback Controls"
+msgstr "Ойнатуды басқару элементтері"
+
+#: src/gtk/help-overlay.blp:29
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "Ойнату/Кідірту"
+
+#: src/gtk/help-overlay.blp:35
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "Барлығын тазарту"
+
+#: src/gtk/help-overlay.blp:42
+msgctxt "shortcut window"
+msgid "BPM & Volume Controls"
+msgstr "BPM және дыбыс деңгейін басқару"
+
+#: src/gtk/help-overlay.blp:45
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "BPM арттыру"
+
+#: src/gtk/help-overlay.blp:51
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "BPM азайту"
+
+#: src/gtk/help-overlay.blp:57
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "Дыбыс деңгейін арттыру"
+
+#: src/gtk/help-overlay.blp:63
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "Дыбыс деңгейін азайту"
+
+#: src/gtk/help-overlay.blp:69
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr "Дыбысты өшіру"
+
+#: src/gtk/help-overlay.blp:76
+msgctxt "shortcut window"
+msgid "Pattern Management"
+msgstr "Ойын үлгілерін басқару"
+
+#: src/gtk/help-overlay.blp:79
+msgctxt "shortcut window"
+msgid "Load Pattern"
+msgstr "Ойын үлгісін жүктеу"
+
+#: src/gtk/help-overlay.blp:85
+msgctxt "shortcut window"
+msgid "Save Pattern"
+msgstr "Ойын үлгісін сақтау"
+
+#: src/gtk/help-overlay.blp:91
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "Аудионы экспорттау"
+
+#: src/gtk/help-overlay.blp:98
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "Навигация"
+
+#: src/gtk/help-overlay.blp:101
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr "Аспапқа өту"
+
+#: src/gtk/help-overlay.blp:107
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr "Алдыңғы бет"
+
+#: src/gtk/help-overlay.blp:113
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr "Келесі бет"
+
+#: src/gtk/save-changes-dialog.blp:5
+msgid "Save Changes?"
+msgstr "Өзгерістерді сақтау керек пе?"
+
+#: src/gtk/save-changes-dialog.blp:6
+msgid ""
+"Current pattern contains unsaved changes. Changes which are not saved will "
+"be permanently lost."
+msgstr ""
+"Ағымдағы ойын үлгісінде сақталмаған өзгерістер бар. Сақталмаған өзгерістер "
+"біржола жоғалады."
+
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
+msgid "_Cancel"
+msgstr "Бас _тарту"
+
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
+msgid "_Discard"
+msgstr "_Елемеу"
+
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
+msgid "_Save"
+msgstr "_Сақтау"
+
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr "Аудионы экспорттау"
+
+#: src/gtk/audio-export-dialog.blp:44
+msgid "Audio Format"
+msgstr "Аудио пішімі"
+
+#: src/gtk/audio-export-dialog.blp:50
+msgid "Repeat Count"
+msgstr "Қайталау саны"
+
+#: src/gtk/audio-export-dialog.blp:51
+msgid "How many times to repeat the pattern"
+msgstr "Ойын үлгісін неше рет қайталау керек"
+
+#: src/gtk/audio-export-dialog.blp:64
+msgid "Metadata"
+msgstr "Метадеректер"
+
+#: src/gtk/audio-export-dialog.blp:67
+msgid "Artist Name"
+msgstr "Орындаушы аты"
+
+#: src/gtk/audio-export-dialog.blp:72
+msgid "Song Name"
+msgstr "Өлең аты"
+
+#: src/gtk/audio-export-dialog.blp:77
+msgid "Cover Art"
+msgstr "Мұқаба суреті"
+
+#: src/gtk/audio-export-dialog.blp:81
+msgid "Choose File…"
+msgstr "Файлды таңдау…"
+
+#: src/gtk/audio-export-dialog.blp:110
+msgid "Cancel Export"
+msgstr "Экспорттаудан бас тарту"
+
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr "Әдепкі мәндерге қайтару керек пе?"
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume "
+"to their default values. This action cannot be undone."
+msgstr ""
+"Бұл ағымдағы ойын үлгісін тазартады және барлық сэмплдерді, BPM және дыбыс "
+"деңгейін олардың әдепкі мәндеріне қайтарады. Бұл әрекетті болдырмау мүмкін "
+"емес."
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+msgid "_Reset"
+msgstr "_Тастау"

@@ -1,13 +1,13 @@
 # Basque translation for drum-machine.
 # Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
 # This file is distributed under the same license as the drum-machine package.
-# Asier Saratsua Garmendia <asiersarasua@ni.eus>,  2025.
+# Asier Saratsua Garmendia <asiersarasua@ni.eus>, 2025, 2026.
 #
 msgid ""
 msgstr "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-18 03:26+0000\n"
-"PO-Revision-Date: 2025-12-18 13:12+0000\n"
+"POT-Creation-Date: 2025-12-21 22:38+0000\n"
+"PO-Revision-Date: 2026-02-22 13:12+0000\n"
 "Last-Translator: Asier Saratsua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "Language: eu\n"
@@ -43,7 +43,6 @@ msgid "Features:"
 msgstr "Eginbideak:"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
-#| msgid "Intuitive grid-based pattern editor"
 msgid "Intuitive grid-based pattern editor with infinite pages"
 msgstr "Ereduen editorea, sareta formakoa eta orri amaigabeak dituena"
 
@@ -68,8 +67,6 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Danbor-hots anitz, dunbala, kaxa, charlestona eta gehiago barne"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
-#| msgid ""
-#| "Audio export feature with support for WAV, FLAC, Ogg, and MP3 formats"
 msgid ""
 "Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
 msgstr "Audioa eta MIDIa esportatzeko aukera, WAV, FLAC, Ogg, MP3 eta MIDI formatuak onartzen ditu"
@@ -572,40 +569,40 @@ msgid "Failed to remove drum part"
 msgstr "Huts egin du danbor-atala kentzeak"
 
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:225
+#: src/window.py:220
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} kolpe minutuko (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:234
+#: src/window.py:229
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% bolumena"
 
-#: src/window.py:251 src/window.ui:173
+#: src/window.py:262 src/window.ui:173
 msgid "Play"
 msgstr "Erreproduzitu"
 
-#: src/window.py:255
+#: src/window.py:266
 msgid "Pause"
 msgstr "Pausatu"
 
-#: src/window.py:302
+#: src/window.py:313
 msgid "Open"
 msgstr "Ireki"
 
-#: src/window.py:320
+#: src/window.py:331
 msgid "Added: {}"
 msgstr "Gehitua: {}"
 
-#: src/window.py:335
+#: src/window.py:346
 msgid "Failed to add custom sound"
 msgstr "Huts egin du soinu pertsonalizatua gehitzeak"
 
-#: src/window.py:342
+#: src/window.py:353
 msgid "Replaced drum with: {}"
 msgstr "Ordeztu danborra honekin: {}"
 
-#: src/window.py:350
+#: src/window.py:361
 msgid "Failed to replace drum sound"
 msgstr "Huts egin du danbor-soinua ordezteak"
 
@@ -669,12 +666,12 @@ msgid "Adjust Volume"
 msgstr "Doitu bolumena"
 
 #: src/window.ui:210
-msgid "Reset"
-msgstr "Berrezarri"
+msgid "Clear"
+msgstr "Garbitu"
 
 #: src/window.ui:211
-msgid "Reset the Drum Sequence"
-msgstr "Berrezarri danbor-sekuentzia"
+msgid "Clear the Drum Pattern"
+msgstr "Garbitu danbor-eredua"
 
 #: src/window.ui:226
 msgid "_Add Samples…"
@@ -685,10 +682,14 @@ msgid "_Save Pattern…"
 msgstr "_Gorde eredua…"
 
 #: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr "_Berrezarri lehenespenera"
+
+#: src/window.ui:242
 msgid "_Keyboard Shortcuts"
 msgstr "Las_ter-teklak"
 
-#: src/window.ui:240
+#: src/window.ui:246
 msgid "_About Drum Machine"
 msgstr "Drum Machine aplikazioari _buruz"
 
@@ -803,7 +804,7 @@ msgid ""
 msgstr "Uneko ereduak gorde gabeko aldaketak ditu. Gorde ez diren aldaketak betiko galduko dira."
 
 #. Translators: Cancel the operation
-#: src/gtk/save-changes-dialog.blp:14
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
 msgid "_Cancel"
 msgstr "_Utzi"
 
@@ -856,6 +857,24 @@ msgstr "Aukeratu fitxategia…"
 #: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
 msgstr "Utzi esportazioa"
+
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr "Berrezarri lehenespenetara?"
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume "
+"to their default values. This action cannot be undone."
+msgstr "Honek uneko danbor-eredua garbituko du eta laginak, BMPa eta bolumena  balio lehenetsietara bueltatuko ditu. Ekintza hau ezin da desegin."
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+msgid "_Reset"
+msgstr "Berre_zarri"
+
+#~ msgid "Reset the Drum Sequence"
+#~ msgstr "Berrezarri danbor-sekuentzia"
 
 #~ msgid "No Pattern"
 #~ msgstr "Eredurik ez"

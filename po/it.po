@@ -2,14 +2,15 @@
 # Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
 # This file is distributed under the same license as the drum-machine package.
 # catoblepa <info@catoblepa.org>, 2025.
+# Salvatore Pozzuto <info@catoblepa.org>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-24 13:12+0000\n"
-"PO-Revision-Date: 2025-03-26 23:36+0100\n"
-"Last-Translator: catoblepa <info@catoblepa.org>\n"
+"Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
+"POT-Creation-Date: 2025-12-21 22:38+0000\n"
+"PO-Revision-Date: 2026-05-20 11:10+0200\n"
+"Last-Translator: Salvatore Pozzuto <info@catoblepa.org>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -18,10 +19,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Gtranslator 47.1\n"
 
-#: data/io.github.revisto.drum-machine.desktop.in:3
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/window.ui:58
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
+#: src/window.ui:69
 msgid "Drum Machine"
 msgstr "Drum Machine"
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgstr "drum;batteria;sequencer;ritmo;musica;pattern;beat;percussioni;loop;groove;"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:7
 msgid "Create and play drum beats"
@@ -45,222 +52,851 @@ msgid "Features:"
 msgstr "Funzionalità:"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
-msgid "Intuitive grid-based pattern editor"
-msgstr "Editor di pattern intuitivo basato su griglia"
+msgid "Intuitive grid-based pattern editor with infinite pages"
+msgstr "Editor di pattern intuitivo basato su griglia con pagine infinite"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr ""
+"Campioni personalizzati: aggiungi i tuoi suoni di batteria con la mappatura "
+"delle note MIDI"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
 msgstr "Regolazione dei battiti al minuto"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
 msgid "Volume control for overall mix"
 msgstr "Controllo del volume per il mix generale"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
-msgid "Save and load preset patterns"
-msgstr "Salva e carica pattern preimpostati"
-
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Save and load patterns"
+msgstr "Salva e carica pattern"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr ""
 "Suoni di batteria multipli, inclusi cassa, rullante, charleston e altro"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr ""
+"Esportazione audio e MIDI con supporto per i formati WAV, FLAC, Ogg, MP3 e "
+"MIDI"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr ""
+"Supporto ai metadati per includere nome dell'artista, titolo del brano e "
+"copertina"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
 msgid "Keyboard shortcuts for quick access to all functions"
 msgstr "Scorciatoie da tastiera per un accesso rapido a tutte le funzioni"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:31
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
 msgid "Drum Pattern Loaded in Light Mode"
 msgstr "Pattern di batteria caricato in modalità chiara"
 
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:35
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Pattern di batteria caricato in modalità scura"
 
+#: src/application.py:74
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns."
+msgstr ""
+"Drum Machine è un'applicazione moderna e intuitiva per creare, suonare e "
+"gestire pattern di batteria."
+
+#: src/application.py:79
+msgid "translator-credits"
+msgstr "Salvatore Pozzuto <info@catoblepa.org>"
+
+#: src/application.py:84
+msgid "Special thanks"
+msgstr "Ringraziamenti speciali"
+
+#: src/application.py:87
+msgid "Sounds"
+msgstr "Suoni"
+
+#: src/application.py:88
+#, python-brace-format
+msgid "The drum samples used in this application are from {link}."
+msgstr ""
+"I campioni di batteria usati in questa applicazione provengono da {link}."
+
+#: src/config/export_formats.py:44
+msgid "MP3 files"
+msgstr "File MP3"
+
+#: src/config/export_formats.py:45
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:51
+msgid "FLAC files"
+msgstr "File FLAC"
+
+#: src/config/export_formats.py:52
+msgid "FLAC (Lossless)"
+msgstr "FLAC (senza perdita)"
+
+#: src/config/export_formats.py:58
+msgid "Ogg files"
+msgstr "File Ogg"
+
+#: src/config/export_formats.py:59
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+#: src/config/export_formats.py:65
+msgid "WAV files"
+msgstr "File WAV"
+
+#: src/config/export_formats.py:66
+msgid "WAV (Uncompressed)"
+msgstr "WAV (non compresso)"
+
+#: src/dialogs/audio_export_dialog.py:119
+msgid "Save Audio File"
+msgstr "Salva file audio"
+
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Part “{}” is Silent"
+msgstr "La parte «{}» è muta"
+
+#: src/dialogs/audio_export_dialog.py:150
+msgid "Parts “{}” and “{}” are Silent"
+msgstr "Le parti «{}» e «{}» sono mute"
+
+#: src/dialogs/audio_export_dialog.py:154
+msgid "{} Parts are Silent"
+msgstr "{} parti sono mute"
+
+#: src/dialogs/audio_export_dialog.py:179
+msgid "Image files"
+msgstr "File immagine"
+
+#: src/dialogs/audio_export_dialog.py:185
+msgid "Select Cover Art"
+msgstr "Seleziona copertina"
+
+#: src/dialogs/audio_export_dialog.py:245
+msgid "Audio exported to {}"
+msgstr "Audio esportato in {}"
+
+#: src/dialogs/audio_export_dialog.py:251
+msgid "Export failed"
+msgstr "Esportazione non riuscita"
+
+#: src/dialogs/audio_export_dialog.py:258
+msgid "Export cancelled successfully"
+msgstr "Esportazione annullata correttamente"
+
+#: src/dialogs/midi_mapping_dialog.py:22
+msgid "Acoustic Bass Drum"
+msgstr "Grancassa acustica"
+
+#: src/dialogs/midi_mapping_dialog.py:23
+msgid "Bass Drum 1"
+msgstr "Cassa 1"
+
+#: src/dialogs/midi_mapping_dialog.py:24
+msgid "Side Stick"
+msgstr "Side stick"
+
+#: src/dialogs/midi_mapping_dialog.py:25
+msgid "Acoustic Snare"
+msgstr "Rullante acustico"
+
+#: src/dialogs/midi_mapping_dialog.py:26
+msgid "Hand Clap"
+msgstr "Battito di mani"
+
+#: src/dialogs/midi_mapping_dialog.py:27
+msgid "Electric Snare"
+msgstr "Rullante elettrico"
+
+#: src/dialogs/midi_mapping_dialog.py:28
+msgid "Low Floor Tom"
+msgstr "Timpano basso"
+
+#: src/dialogs/midi_mapping_dialog.py:29
+msgid "Closed Hi Hat"
+msgstr "Charleston chiuso"
+
+#: src/dialogs/midi_mapping_dialog.py:30
+msgid "High Floor Tom"
+msgstr "Timpano alto"
+
+#: src/dialogs/midi_mapping_dialog.py:31
+msgid "Pedal Hi Hat"
+msgstr "Charleston a pedale"
+
+#: src/dialogs/midi_mapping_dialog.py:32
+msgid "Low Tom"
+msgstr "Tom basso"
+
+#: src/dialogs/midi_mapping_dialog.py:33
+msgid "Open Hi Hat"
+msgstr "Charleston aperto"
+
+#: src/dialogs/midi_mapping_dialog.py:34
+msgid "Low-Mid Tom"
+msgstr "Tom medio-basso"
+
+#: src/dialogs/midi_mapping_dialog.py:35
+msgid "Hi-Mid Tom"
+msgstr "Tom medio-alto"
+
+#: src/dialogs/midi_mapping_dialog.py:36
+msgid "Crash Cymbal 1"
+msgstr "Piatto crash 1"
+
+#: src/dialogs/midi_mapping_dialog.py:37
+msgid "High Tom"
+msgstr "Tom alto"
+
+#: src/dialogs/midi_mapping_dialog.py:38
+msgid "Ride Cymbal 1"
+msgstr "Piatto ride 1"
+
+#: src/dialogs/midi_mapping_dialog.py:39
+msgid "Chinese Cymbal"
+msgstr "Piatto china"
+
+#: src/dialogs/midi_mapping_dialog.py:40
+msgid "Ride Bell"
+msgstr "Campana del ride"
+
+#: src/dialogs/midi_mapping_dialog.py:41
+msgid "Tambourine"
+msgstr "Tamburello"
+
+#: src/dialogs/midi_mapping_dialog.py:42
+msgid "Splash Cymbal"
+msgstr "Piatto splash"
+
+#: src/dialogs/midi_mapping_dialog.py:43
+msgid "Cowbell"
+msgstr "Campanaccio"
+
+#: src/dialogs/midi_mapping_dialog.py:44
+msgid "Crash Cymbal 2"
+msgstr "Piatto crash 2"
+
+#: src/dialogs/midi_mapping_dialog.py:45
+msgid "Vibraslap"
+msgstr "Vibraslap"
+
+#: src/dialogs/midi_mapping_dialog.py:46
+msgid "Ride Cymbal 2"
+msgstr "Piatto ride 2"
+
+#: src/dialogs/midi_mapping_dialog.py:47
+msgid "Hi Bongo"
+msgstr "Bongo alto"
+
+#: src/dialogs/midi_mapping_dialog.py:48
+msgid "Low Bongo"
+msgstr "Bongo basso"
+
+#: src/dialogs/midi_mapping_dialog.py:49
+msgid "Mute Hi Conga"
+msgstr "Conga alta (stoppata)"
+
+#: src/dialogs/midi_mapping_dialog.py:50
+msgid "Open Hi Conga"
+msgstr "Conga alta (aperta)"
+
+#: src/dialogs/midi_mapping_dialog.py:51
+msgid "Low Conga"
+msgstr "Conga bassa"
+
+#: src/dialogs/midi_mapping_dialog.py:52
+msgid "High Timbale"
+msgstr "Timbales alto"
+
+#: src/dialogs/midi_mapping_dialog.py:53
+msgid "Low Timbale"
+msgstr "Timbales basso"
+
+#: src/dialogs/midi_mapping_dialog.py:54
+msgid "High Agogo"
+msgstr "Agogô alto"
+
+#: src/dialogs/midi_mapping_dialog.py:55
+msgid "Low Agogo"
+msgstr "Agogô basso"
+
+#: src/dialogs/midi_mapping_dialog.py:56
+msgid "Cabasa"
+msgstr "Cabasa"
+
+#: src/dialogs/midi_mapping_dialog.py:57
+msgid "Maracas"
+msgstr "Maracas"
+
+#: src/dialogs/midi_mapping_dialog.py:58
+msgid "Short Whistle"
+msgstr "Fischietto corto"
+
+#: src/dialogs/midi_mapping_dialog.py:59
+msgid "Long Whistle"
+msgstr "Fischietto lungo"
+
+#: src/dialogs/midi_mapping_dialog.py:60
+msgid "Short Guiro"
+msgstr "Güiro corto"
+
+#: src/dialogs/midi_mapping_dialog.py:61
+msgid "Long Guiro"
+msgstr "Güiro lungo"
+
+#: src/dialogs/midi_mapping_dialog.py:62
+msgid "Claves"
+msgstr "Claves"
+
+#: src/dialogs/midi_mapping_dialog.py:63
+msgid "Hi Wood Block"
+msgstr "Woodblock alto"
+
+#: src/dialogs/midi_mapping_dialog.py:64
+msgid "Low Wood Block"
+msgstr "Woodblock basso"
+
+#: src/dialogs/midi_mapping_dialog.py:65
+msgid "Mute Cuica"
+msgstr "Cuíca (stoppata)"
+
+#: src/dialogs/midi_mapping_dialog.py:66
+msgid "Open Cuica"
+msgstr "Cuíca (aperta)"
+
+#: src/dialogs/midi_mapping_dialog.py:67
+msgid "Mute Triangle"
+msgstr "Triangolo (stoppato)"
+
+#: src/dialogs/midi_mapping_dialog.py:68
+msgid "Open Triangle"
+msgstr "Triangolo (aperto)"
+
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
+msgid "MIDI Mapping"
+msgstr "Mappatura MIDI"
+
+#. Group 1: Note Assignment
+#: src/dialogs/midi_mapping_dialog.py:108
+msgid "Note Assignment"
+msgstr "Assegnazione nota"
+
+#: src/dialogs/midi_mapping_dialog.py:111
+msgid ""
+"Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr ""
+"Assegnare una nota MIDI a «{}». Ciò assicura una riproduzione corretta "
+"in seguito all'esportazione."
+
+#. Action Row for Note
+#: src/dialogs/midi_mapping_dialog.py:118
+msgid "MIDI Note"
+msgstr "Nota MIDI"
+
+#: src/dialogs/midi_mapping_dialog.py:119
+msgid "The note number to trigger"
+msgstr "Il numero della nota da attivare"
+
+#. Group 2: Standard Instruments
+#: src/dialogs/midi_mapping_dialog.py:137
+msgid "Standard Instruments"
+msgstr "Strumenti standard"
+
+#: src/dialogs/midi_mapping_dialog.py:139
+msgid "Select a General MIDI instrument to automatically set the note."
+msgstr ""
+"Selezionare uno strumento General MIDI per impostare automaticamente la nota."
+
+#: src/dialogs/midi_mapping_dialog.py:143
+msgid "Instrument Preset"
+msgstr "Preimpostazione strumento"
+
+#: src/dialogs/midi_mapping_dialog.py:186
+msgid "Save"
+msgstr "Salva"
+
+#: src/dialogs/midi_mapping_dialog.py:229
+msgid "Custom Note"
+msgstr "Nota personalizzata"
+
+#: src/handlers/drag_drop_handler.py:299
+msgid "Sound replaced"
+msgstr "Suono sostituito"
+
+#: src/handlers/drag_drop_handler.py:302
+msgid "Failed to replace sound"
+msgstr "Sostituzione suono non riuscita"
+
+#: src/handlers/drag_drop_handler.py:312
+msgid "Not a supported audio file"
+msgstr "File audio non supportato"
+
+#: src/handlers/drag_drop_handler.py:320
+msgid "File not found"
+msgstr "File non trovato"
+
+#: src/handlers/drag_drop_handler.py:325
+msgid "Selected item is not a file"
+msgstr "L'elemento selezionato non è un file"
+
+#: src/handlers/drag_drop_handler.py:332
+msgid "File too large: {:.1f}MB (max 50MB)"
+msgstr "File troppo grande: {:.1f} MB (massimo 50 MB)"
+
+#: src/handlers/drag_drop_handler.py:362
+msgid "No valid audio files found"
+msgstr "Nessun file audio valido trovato"
+
+#: src/handlers/drag_drop_handler.py:402
+msgid "Error processing file: {}"
+msgstr "Errore nell'elaborazione del file: {}"
+
+#: src/handlers/drag_drop_handler.py:433
+msgid "Added {} drum part, {} files skipped"
+msgstr "Aggiunta {} parte di batteria, {} file saltati"
+
+#: src/handlers/drag_drop_handler.py:439
+msgid "Added {} drum parts, {} files skipped"
+msgstr "Aggiunte {} parti di batteria, {} file saltati"
+
+#: src/handlers/drag_drop_handler.py:444
+msgid "Added {} drum parts"
+msgstr "Aggiunte {} parti di batteria"
+
+#. Only show skipped message if no replacement happened
+#: src/handlers/drag_drop_handler.py:447
+msgid "{} files skipped"
+msgstr "{} file saltati"
+
+#: src/handlers/file_dialog_handler.py:52
+msgid "Default Patterns"
+msgstr "Pattern predefiniti"
+
+#: src/handlers/file_dialog_handler.py:92
+#: src/handlers/file_dialog_handler.py:171
+msgid "MIDI files"
+msgstr "File MIDI"
+
+#: src/handlers/file_dialog_handler.py:98
+msgid "Open MIDI File"
+msgstr "Apri file MIDI"
+
+#: src/handlers/file_dialog_handler.py:127
+msgid "Failed to open file"
+msgstr "Apertura file non riuscita"
+
+#: src/handlers/file_dialog_handler.py:165
+msgid "Failed to load pattern"
+msgstr "Caricamento pattern non riuscito"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr "Salva sequenza"
+
+#: src/handlers/file_dialog_handler.py:205
+msgid "Add Audio Samples"
+msgstr "Aggiungi campioni audio"
+
+#: src/handlers/file_dialog_handler.py:227
+msgid "Audio files"
+msgstr "File audio"
+
+#: src/utils/export_progress.py:76
+msgid "Preparing…"
+msgstr "Preparazione in corso"
+
+#: src/utils/export_progress.py:77
+msgid "Initializing…"
+msgstr "Inizializzazione in corso"
+
+#: src/utils/export_progress.py:79
+msgid "Rendering audio…"
+msgstr "Resa audio in corso"
+
+#: src/utils/export_progress.py:80
+msgid "Processing beats…"
+msgstr "Elaborazione battiti in corso"
+
+#: src/utils/export_progress.py:82
+msgid "Saving file…"
+msgstr "Salvataggio file in corso"
+
+#: src/utils/export_progress.py:83
+msgid "Writing to disk…"
+msgstr "Scrittura su disco in corso"
+
+#: src/utils/export_progress.py:85
+msgid "Exporting…"
+msgstr "Esportazione in corso"
+
+#: src/utils/export_progress.py:86
+msgid "Processing…"
+msgstr "Elaborazione in corso"
+
+#: src/utils/name_utils.py:36
+msgid "Custom Sound"
+msgstr "Suono personalizzato"
+
+#: src/ui/drum_grid_builder.py:327
+msgid "Preview"
+msgstr "Anteprima"
+
+#: src/ui/drum_grid_builder.py:329
+msgid "Replace…"
+msgstr "Sostituisci…"
+
+#: src/ui/drum_grid_builder.py:332
+msgid "Replace with new sound"
+msgstr "Sostituisce con un nuovo suono"
+
+#: src/ui/drum_grid_builder.py:335
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: src/ui/drum_grid_builder.py:338
+msgid "At least one drum part must remain"
+msgstr "Deve rimanere almeno una parte di batteria"
+
+#: src/ui/drum_grid_builder.py:345
+msgid "Configure MIDI note for export"
+msgstr "Configura la nota MIDI per l'esportazione"
+
+#: src/ui/drum_grid_builder.py:402
+msgid "MIDI note updated"
+msgstr "Nota MIDI aggiornata"
+
+#: src/ui/drum_grid_builder.py:410
+msgid "Select New Sound"
+msgstr "Seleziona nuovo suono"
+
+#: src/ui/drum_grid_builder.py:424
+msgid "Removed drum part: {}"
+msgstr "Parte di batteria rimossa: {}"
+
+#: src/ui/drum_grid_builder.py:429
+msgid "Failed to remove drum part"
+msgstr "Rimozione parte di batteria non riuscita"
+
 #. Update tooltip and accessibility with current BPM
-#: src/window.py:278
+#: src/window.py:220
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} battiti al minuto (BPM)"
 
 #. Update button tooltip to show current volume level
-#: src/window.py:287
+#: src/window.py:229
 msgid "{:.0f}% Volume"
 msgstr "Volume al {:.0f}%"
 
-#: src/window.py:298 src/window.ui:158
+#: src/window.py:262 src/window.ui:173
 msgid "Play"
-msgstr "Riproduci"
+msgstr "Riproduce"
 
-#: src/window.py:302
+#: src/window.py:266
 msgid "Pause"
-msgstr "Pausa"
+msgstr "Mette in pausa"
 
-#: src/window.py:317
-msgid "Default Presets"
-msgstr "Preimpostazioni predefinite"
-
-#: src/window.py:344
-msgid "MIDI files"
-msgstr "File MIDI"
-
-#: src/window.py:350
-msgid "Open MIDI File"
-msgstr "Apri file MIDI"
-
-#: src/window.ui:41
+#: src/window.py:313
 msgid "Open"
 msgstr "Apri"
 
-#: src/window.ui:43 src/window.ui:46
-msgid "Open Preset"
-msgstr "Apri preimpostazione"
+#: src/window.py:331
+msgid "Added: {}"
+msgstr "Aggiunto: {}"
 
-#: src/window.ui:47
-msgid "Open Saved Drum Pattern Preset"
-msgstr "Apri preimpostazione di pattern di batteria salvata"
+#: src/window.py:346
+msgid "Failed to add custom sound"
+msgstr "Aggiunta suono personalizzato non riuscita"
 
-#: src/window.ui:65 src/window.ui:67
+#: src/window.py:353
+msgid "Replaced drum with: {}"
+msgstr "Batteria sostituita con: {}"
+
+#: src/window.py:361
+msgid "Failed to replace drum sound"
+msgstr "Sostituzione suono di batteria non riuscita"
+
+#: src/window.ui:52
+msgid "Open…"
+msgstr "Apri…"
+
+#: src/window.ui:54
+msgid "Open Pattern"
+msgstr "Apri pattern"
+
+#: src/window.ui:57
+msgctxt "accessibility"
+msgid "Open Pattern"
+msgstr "Apri pattern"
+
+#: src/window.ui:58
+msgid "Open Saved Drum Pattern"
+msgstr "Apri pattern di batteria salvato"
+
+#: src/window.ui:76
 msgid "Main Menu"
 msgstr "Menù principale"
 
-#: src/window.ui:68
+#: src/window.ui:78
+msgctxt "accessibility"
+msgid "Main Menu"
+msgstr "Menù principale"
+
+#: src/window.ui:79
 msgid "Access Keyboard Shortcuts and Application Information"
 msgstr ""
 "Accedi alle scorciatoie da tastiera e alle informazioni sull'applicazione"
 
-#: src/window.ui:75 src/window.ui:77
-msgid "Save Drum Pattern"
-msgstr "Salva pattern di batteria"
+#: src/window.ui:86
+msgid "Export Audio…"
+msgstr "Esporta audio…"
 
-#: src/window.ui:78
-msgid "Save Current Drum Pattern as a Preset File"
-msgstr "Salva il pattern di batteria attuale come file di preimpostazione"
+#: src/window.ui:91
+msgctxt "accessibility"
+msgid "Export Audio…"
+msgstr "Esporta audio…"
 
-#: src/window.ui:122
+#: src/window.ui:92
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "Esporta il pattern di batteria attuale come file audio"
+
+#: src/window.ui:137
 msgid "BPM"
 msgstr "BPM"
 
-#: src/window.ui:127 src/window.ui:131
+#: src/window.ui:142 src/window.ui:146
 msgid "Adjust Tempo In Beats per Minute (BPM)"
 msgstr "Regola il tempo in battiti al minuto (BPM)"
 
-#: src/window.ui:130
+#: src/window.ui:145
 msgid "Tempo"
 msgstr "Tempo"
 
-#: src/window.ui:172
+#: src/window.ui:187
 msgid "Adjust Volume"
 msgstr "Regola il volume"
 
-#: src/window.ui:195
-msgid "Reset"
-msgstr "Reimposta"
+#: src/window.ui:210
+msgid "Clear"
+msgstr "Cancella"
 
-#: src/window.ui:196
-msgid "Reset the Drum Sequence"
-msgstr "Reimposta la sequenza di batteria"
+#: src/window.ui:211
+msgid "Clear the Drum Pattern"
+msgstr "Cancella il pattern di batteria"
 
-#: src/window.ui:209
+#: src/window.ui:226
+msgid "_Add Samples…"
+msgstr "_Aggiungi campioni…"
+
+#: src/window.ui:230
+msgid "_Save Pattern…"
+msgstr "_Salva pattern…"
+
+#: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr "_Ripristina valori predefiniti"
+
+#: src/window.ui:242
 msgid "_Keyboard Shortcuts"
 msgstr "Scorciatoie da _tastiera"
 
-#: src/window.ui:213
+#: src/window.ui:246
 msgid "_About Drum Machine"
 msgstr "_Informazioni su Drum Machine"
 
-#: src/gtk/help-overlay.ui:11
+#: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Generali"
 
-#: src/gtk/help-overlay.ui:14
+#: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr "Mostra scorciatoie"
+msgstr "Mostra le scorciatoie"
 
-#: src/gtk/help-overlay.ui:20
+#: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Esce"
 
-#: src/gtk/help-overlay.ui:29
+#: src/gtk/help-overlay.blp:26
 msgctxt "shortcut window"
 msgid "Playback Controls"
 msgstr "Controlli di riproduzione"
 
-#: src/gtk/help-overlay.ui:32
+#: src/gtk/help-overlay.blp:29
 msgctxt "shortcut window"
 msgid "Play/Pause"
-msgstr "Riproduci/Pausa"
+msgstr "Riproduce/Mette in pausa"
 
-#: src/gtk/help-overlay.ui:39
+#: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "Cancella tutto"
 
-#: src/gtk/help-overlay.ui:48
+#: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
 msgid "BPM & Volume Controls"
 msgstr "Controlli BPM e volume"
 
-#: src/gtk/help-overlay.ui:51
+#: src/gtk/help-overlay.blp:45
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "Aumenta i BPM"
 
-#: src/gtk/help-overlay.ui:58
+#: src/gtk/help-overlay.blp:51
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "Diminuisce i BPM"
 
-#: src/gtk/help-overlay.ui:65
+#: src/gtk/help-overlay.blp:57
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "Aumenta il volume"
 
-#: src/gtk/help-overlay.ui:72
+#: src/gtk/help-overlay.blp:63
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Diminuisce il volume"
 
-#: src/gtk/help-overlay.ui:81
+#: src/gtk/help-overlay.blp:69
 msgctxt "shortcut window"
-msgid "Preset Management"
-msgstr "Gestione preimpostazioni"
+msgid "Mute"
+msgstr "Silenzia"
 
-#: src/gtk/help-overlay.ui:84
+#: src/gtk/help-overlay.blp:76
 msgctxt "shortcut window"
-msgid "Load Preset"
-msgstr "Carica preimpostazioni"
+msgid "Pattern Management"
+msgstr "Gestione dei pattern"
 
-#: src/gtk/help-overlay.ui:91
+#: src/gtk/help-overlay.blp:79
 msgctxt "shortcut window"
-msgid "Save Preset"
-msgstr "Salva preimpostazioni"
+msgid "Load Pattern"
+msgstr "Carica pattern"
 
-#: src/gtk/save_changes_dialog.ui:6
+#: src/gtk/help-overlay.blp:85
+msgctxt "shortcut window"
+msgid "Save Pattern"
+msgstr "Salva pattern"
+
+#: src/gtk/help-overlay.blp:91
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr "Esporta audio"
+
+#: src/gtk/help-overlay.blp:98
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "Navigazione"
+
+#: src/gtk/help-overlay.blp:101
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr "Va allo strumento"
+
+#: src/gtk/help-overlay.blp:107
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr "Pagina precedente"
+
+#: src/gtk/help-overlay.blp:113
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr "Pagina successiva"
+
+#: src/gtk/save-changes-dialog.blp:5
 msgid "Save Changes?"
 msgstr "Salvare le modifiche?"
 
-#: src/gtk/save_changes_dialog.ui:7
+#: src/gtk/save-changes-dialog.blp:6
 msgid ""
-"Current preset contains unsaved changes. Changes which are not saved will be "
-"permanently lost."
+"Current pattern contains unsaved changes. Changes which are not saved will "
+"be permanently lost."
 msgstr ""
-"La preimpostazione corrente contiene modifiche non salvate. Le modifiche non "
-"salvate saranno perse definitivamente."
+"Il pattern attuale contiene modifiche non salvate. Le modifiche non salvate "
+"saranno perse definitivamente."
 
-#. Cancel the operation
-#: src/gtk/save_changes_dialog.ui:14
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
 msgid "_Cancel"
 msgstr "_Annulla"
 
-#. Discard all changes
-#: src/gtk/save_changes_dialog.ui:15
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
 msgid "_Discard"
 msgstr "S_carta"
 
-#. Save current changes
-#: src/gtk/save_changes_dialog.ui:16
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
 msgid "_Save"
 msgstr "_Salva"
+
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr "Esporta audio"
+
+#: src/gtk/audio-export-dialog.blp:44
+msgid "Audio Format"
+msgstr "Formato audio"
+
+#: src/gtk/audio-export-dialog.blp:50
+msgid "Repeat Count"
+msgstr "Numero di ripetizioni"
+
+#: src/gtk/audio-export-dialog.blp:51
+msgid "How many times to repeat the pattern"
+msgstr "Quante volte ripetere il pattern"
+
+#: src/gtk/audio-export-dialog.blp:64
+msgid "Metadata"
+msgstr "Metadati"
+
+#: src/gtk/audio-export-dialog.blp:67
+msgid "Artist Name"
+msgstr "Nome artista"
+
+#: src/gtk/audio-export-dialog.blp:72
+msgid "Song Name"
+msgstr "Titolo brano"
+
+#: src/gtk/audio-export-dialog.blp:77
+msgid "Cover Art"
+msgstr "Copertina"
+
+#: src/gtk/audio-export-dialog.blp:81
+msgid "Choose File…"
+msgstr "Scegli file…"
+
+#: src/gtk/audio-export-dialog.blp:110
+msgid "Cancel Export"
+msgstr "Annulla esportazione"
+
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr "Ripristinare i valori predefiniti?"
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume "
+"to their default values. This action cannot be undone."
+msgstr ""
+"Questa azione cancellerà il pattern attuale e ripristinerà tutti i campioni, "
+"i BPM e il volume ai loro valori predefiniti. L'azione non può essere "
+"annullata."
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+msgid "_Reset"
+msgstr "_Ripristina"
