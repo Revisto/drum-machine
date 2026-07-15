@@ -25,14 +25,16 @@
     "modules" : [
         "python-dependencies.json",
         {
-            "name": "blueprint-compiler",
-            "buildsystem": "meson",
-            "cleanup": ["*"],
-            "sources": [
+            "name" : "blueprint-compiler",
+            "buildsystem" : "meson",
+            "cleanup" : [
+                "*"
+            ],
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/blueprint-compiler",
-                    "tag": "0.18.0"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/blueprint-compiler",
+                    "tag" : "0.18.0"
                 }
             ]
         },
@@ -45,7 +47,13 @@
                     "type" : "dir",
                     "path" : "."
                 }
+            ],
+            "config-opts" : [
+                "--libdir=lib"
             ]
         }
-    ]
+    ],
+    "build-options" : {
+        "env" : {        }
+    }
 }
