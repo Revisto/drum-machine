@@ -48,6 +48,7 @@ class AudioExportDialog(Adw.Dialog):
     song_row = Gtk.Template.Child()
     cover_row = Gtk.Template.Child()
     cover_button = Gtk.Template.Child()
+    cover_remove_button = Gtk.Template.Child()
     warning_banner = Gtk.Template.Child()
 
     def __init__(
@@ -70,7 +71,7 @@ class AudioExportDialog(Adw.Dialog):
 
         # Initialize components
         self.metadata_manager = ExportMetadata(
-            self.artist_row, self.song_row, self.cover_row, self.cover_button
+            self.artist_row, self.song_row, self.cover_row, self.cover_button, self.cover_remove_button
         )
         self.progress_handler = ExportProgressHandler(
             self.progress_bar, self.status_overlay, self.status_label, self.detail_label
@@ -98,6 +99,7 @@ class AudioExportDialog(Adw.Dialog):
         self.export_button.connect("clicked", self._on_export_clicked)
         self.cancel_button.connect("clicked", self._on_cancel_clicked)
         self.cover_button.connect("clicked", self._on_cover_button_clicked)
+        self.cover_remove_button.connect("clicked", self._on_cover_remove_clicked)
         self.format_row.connect("notify::selected", self._on_format_changed)
         self.connect("closed", self._on_dialog_closed)
 
@@ -169,6 +171,10 @@ class AudioExportDialog(Adw.Dialog):
     def _on_format_changed(self, combo_row, pspec):
         """Handle format selection change"""
         self._update_metadata_sensitivity()
+
+    def _on_cover_remove_clicked(self, button):
+        """Handle cover art removal"""
+        self.metadata_manager.remove_cover_art()
 
     def _on_cover_button_clicked(self, button):
         """Handle cover art file selection"""
@@ -267,11 +273,12 @@ class AudioExportDialog(Adw.Dialog):
 class ExportMetadata:
     """Manages export metadata fields"""
 
-    def __init__(self, artist_row, song_row, cover_row, cover_button):
+    def __init__(self, artist_row, song_row, cover_row, cover_button, cover_remove_button):
         self.artist_row = artist_row
         self.song_row = song_row
         self.cover_row = cover_row
         self.cover_button = cover_button
+        self.cover_remove_button = cover_remove_button
         self.cover_art_path = None
 
         self._setup_defaults()
@@ -299,11 +306,24 @@ class ExportMetadata:
 
     def set_cover_art(self, file_path):
         """Set the cover art path and update UI"""
+        if not file_path:
+            self.remove_cover_art()
+            return
         self.cover_art_path = file_path
-        if file_path:
-            filename = os.path.basename(file_path)
-            display_name = filename[:20] + "…" if len(filename) > 20 else filename
-            self.cover_button.set_label(display_name)
+        filename = os.path.basename(file_path)
+        display_name = filename[:20] + "…" if len(filename) > 20 else filename
+        self.cover_row.set_subtitle(display_name)
+        self.cover_button.set_label(_("Change…"))
+        self.cover_button.set_visible(True)
+        self.cover_remove_button.set_visible(True)
+
+    def remove_cover_art(self):
+        """Remove the cover art and reset UI"""
+        self.cover_art_path = None
+        self.cover_row.set_subtitle("")
+        self.cover_button.set_label(_("Choose File…"))
+        self.cover_button.set_visible(False)
+        self.cover_remove_button.set_visible(False)
 
     def set_sensitivity(self, sensitive: bool):
         """Enable or disable metadata fields"""
@@ -311,3 +331,4 @@ class ExportMetadata:
         self.song_row.set_sensitive(sensitive)
         self.cover_row.set_sensitive(sensitive)
         self.cover_button.set_sensitive(sensitive)
+        self.cover_remove_button.set_sensitive(sensitive)
