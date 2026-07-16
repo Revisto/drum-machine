@@ -78,18 +78,20 @@ template $AudioExportDialog: Adw.Dialog {
               activatable-widget: cover_button;
 
               Button cover_remove_button {
-                label: _("Remove");
+                icon-name: "edit-clear-symbolic";
                 valign: center;
                 visible: false;
 
                 styles [
-                  "destructive-action",
+                  "circular",
+                  "flat",
                 ]
               }
 
               Button cover_button {
-                label: _("Choose File…");
+                label: _("Change…");
                 valign: center;
+                visible: false;
               }
             }
           }
