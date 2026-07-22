@@ -1,14 +1,14 @@
 # Chinese (China) translation for drum-machine.
 # Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
 # This file is distributed under the same license as the drum-machine package.
-# lumingzh <lumingzh@qq.com>, 2025.
+# lumingzh <lumingzh@qq.com>, 2025-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-19 15:26+0000\n"
-"PO-Revision-Date: 2025-12-20 08:00+0800\n"
+"POT-Creation-Date: 2025-12-21 22:38+0000\n"
+"PO-Revision-Date: 2026-07-23 07:37+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 49.0\n"
+"X-Generator: Gtranslator 50.0\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
@@ -95,6 +95,10 @@ msgstr "以亮色模式加载击鼓模式"
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "以暗色模式加载击鼓模式"
 
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+msgid "Revisto"
+msgstr "Revisto"
+
 #: src/application.py:74
 msgid ""
 "Drum Machine is a modern and intuitive application for creating, playing, "
@@ -103,7 +107,7 @@ msgstr "击鼓器是一款用于创建、播放和管理击鼓模式现代且直
 
 #: src/application.py:79
 msgid "translator-credits"
-msgstr "lumingzh <lumingzh@qq.com>, 2025."
+msgstr "lumingzh <lumingzh@qq.com>, 2025-2026."
 
 #: src/application.py:84
 msgid "Special thanks"
