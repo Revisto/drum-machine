@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-21 03:25+0000\n"
-"PO-Revision-Date: 2025-12-21 08:59+0100\n"
+"POT-Creation-Date: 2025-12-21 22:38+0000\n"
+"PO-Revision-Date: 2026-07-22 16:34+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? "
 "3 : 0);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 3.8\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
@@ -92,6 +92,10 @@ msgstr "Vzorec bobna naložen v svetlem načinu"
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Vzorec bobna naložen v temnem načinu"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+msgid "Revisto"
+msgstr "Revisto"
 
 #: src/application.py:74
 msgid ""
