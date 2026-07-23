@@ -1,21 +1,21 @@
 # Georgian translation for drum-machine.
 # Copyright (C) 2025 drum-machine's authors
 # This file is distributed under the same license as the drum-machine package.
-# Ekaterine Papava <papava.e@gtu.ge>, 2025.
+# Ekaterine Papava <papava.e@gtu.ge>, 2025, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-20 03:26+0000\n"
-"PO-Revision-Date: 2025-12-20 08:30+0100\n"
+"POT-Creation-Date: 2025-12-21 22:38+0000\n"
+"PO-Revision-Date: 2026-07-23 08:36+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
@@ -93,6 +93,10 @@ msgstr "Drum Pattern ჩატვირთულია ღია რეჟიმ
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Drum Pattern ჩატვირთულია მუქ რეჟიმში"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+msgid "Revisto"
+msgstr "Revisto"
 
 #: src/application.py:74
 msgid ""
