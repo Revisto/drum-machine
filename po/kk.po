@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
 "POT-Creation-Date: 2025-12-21 22:38+0000\n"
-"PO-Revision-Date: 2026-01-25 20:45+0500\n"
+"PO-Revision-Date: 2026-07-27 16:35+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <Kazakh>\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
@@ -44,8 +44,8 @@ msgid ""
 msgstr ""
 "Drum Machine - барабан ойын үлгілерін жасауға, ойнатуға және басқаруға "
 "арналған заманауи және интуитивті қолданба. Музыканттарға, продюсерлерге "
-"және ырғақ жасауға қызығатындардың бәріне арналған бұл қолданба барабан ойын "
-"үлгілерін бағдарламалауға арналған қарапайым интерфейсті ұсынады. "
+"және ырғақ жасауға қызығатындардың бәріне арналған бұл қолданба барабан "
+"ойын үлгілерін бағдарламалауға арналған қарапайым интерфейсті ұсынады. "
 "Көңіліңізді көтеріңіз!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
@@ -103,6 +103,10 @@ msgstr "Барабан ойын үлгісі ашық режимде жүкте�
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Барабан ойын үлгісі қараңғы режимде жүктелді"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+msgid "Revisto"
+msgstr "Revisto"
 
 #: src/application.py:74
 msgid ""
@@ -887,8 +891,8 @@ msgstr "Әдепкі мәндерге қайтару керек пе?"
 
 #: src/gtk/reset-defaults-dialog.blp:6
 msgid ""
-"This will clear the current pattern and restore all samples, BPM, and volume "
-"to their default values. This action cannot be undone."
+"This will clear the current pattern and restore all samples, BPM, and "
+"volume to their default values. This action cannot be undone."
 msgstr ""
 "Бұл ағымдағы ойын үлгісін тазартады және барлық сэмплдерді, BPM және дыбыс "
 "деңгейін олардың әдепкі мәндеріне қайтарады. Бұл әрекетті болдырмау мүмкін "
