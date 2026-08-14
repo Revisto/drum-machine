@@ -208,7 +208,11 @@ audio-volume-medium-symbolic</property>
                       <object class="GtkButton" id="clear_button">
                         <property name="valign">center</property>
                         <property name="label" translatable="yes">Clear</property>
-                        <property name="tooltip-text" translatable="yes">Clear the Drum Pattern</property>
+                        <property name="tooltip-text" translatable="yes">Clear the Drum Pattern, Keeping Your Samples</property>
+                        <accessibility>
+                          <property name="label" translatable="yes" context="accessibility">Clear Pattern</property>
+                          <property name="description" translatable="yes">Clear the Drum Pattern. Samples You Added Are Kept</property>
+                        </accessibility>
                       </object>
                     </child>
                   </object>
@@ -233,7 +237,7 @@ audio-volume-medium-symbolic</property>
     </section>
     <section>
       <item>
-        <attribute name="label" translatable="yes">_Reset to Defaults</attribute>
+        <attribute name="label" translatable="yes">_Reset…</attribute>
         <attribute name="action">win.reset_to_defaults</attribute>
       </item>
     </section>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-18 23:51+0330\n"
+"POT-Creation-Date: 2026-07-25 21:26-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -338,14 +338,17 @@ msgid "Save Audio File"
 msgstr ""
 
 #: src/dialogs/audio_export_dialog.py:148
+#, python-brace-format
 msgid "Part “{}” is Silent"
 msgstr ""
 
 #: src/dialogs/audio_export_dialog.py:150
+#, python-brace-format
 msgid "Parts “{}” and “{}” are Silent"
 msgstr ""
 
 #: src/dialogs/audio_export_dialog.py:154
+#, python-brace-format
 msgid "{} Parts are Silent"
 msgstr ""
 
@@ -358,6 +361,7 @@ msgid "Select Cover Art"
 msgstr ""
 
 #: src/dialogs/audio_export_dialog.py:245
+#, python-brace-format
 msgid "Audio exported to {}"
 msgstr ""
 
@@ -567,6 +571,7 @@ msgid "Note Assignment"
 msgstr ""
 
 #: src/dialogs/midi_mapping_dialog.py:111
+#, python-brace-format
 msgid ""
 "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
 msgstr ""
@@ -622,6 +627,7 @@ msgid "Selected item is not a file"
 msgstr ""
 
 #: src/handlers/drag_drop_handler.py:332
+#, python-brace-format
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr ""
 
@@ -630,23 +636,28 @@ msgid "No valid audio files found"
 msgstr ""
 
 #: src/handlers/drag_drop_handler.py:402
+#, python-brace-format
 msgid "Error processing file: {}"
 msgstr ""
 
 #: src/handlers/drag_drop_handler.py:433
+#, python-brace-format
 msgid "Added {} drum part, {} files skipped"
 msgstr ""
 
 #: src/handlers/drag_drop_handler.py:439
+#, python-brace-format
 msgid "Added {} drum parts, {} files skipped"
 msgstr ""
 
 #: src/handlers/drag_drop_handler.py:444
+#, python-brace-format
 msgid "Added {} drum parts"
 msgstr ""
 
 #. Only show skipped message if no replacement happened
 #: src/handlers/drag_drop_handler.py:447
+#, python-brace-format
 msgid "{} files skipped"
 msgstr ""
 
@@ -752,6 +763,7 @@ msgid "Select New Sound"
 msgstr ""
 
 #: src/ui/drum_grid_builder.py:424
+#, python-brace-format
 msgid "Removed drum part: {}"
 msgstr ""
 
@@ -761,39 +773,43 @@ msgstr ""
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:220
+#, python-brace-format
 msgid "{} Beats per Minute (BPM)"
 msgstr ""
 
 #. Update button tooltip to show current volume level
 #: src/window.py:229
+#, python-brace-format
 msgid "{:.0f}% Volume"
 msgstr ""
 
-#: src/window.py:262 src/window.ui:173
+#: src/window.py:265 src/window.ui:173
 msgid "Play"
 msgstr ""
 
-#: src/window.py:266
+#: src/window.py:269
 msgid "Pause"
 msgstr ""
 
-#: src/window.py:313
+#: src/window.py:316
 msgid "Open"
 msgstr ""
 
-#: src/window.py:331
+#: src/window.py:334
+#, python-brace-format
 msgid "Added: {}"
 msgstr ""
 
-#: src/window.py:346
+#: src/window.py:349
 msgid "Failed to add custom sound"
 msgstr ""
 
-#: src/window.py:353
+#: src/window.py:356
+#, python-brace-format
 msgid "Replaced drum with: {}"
 msgstr ""
 
-#: src/window.py:361
+#: src/window.py:364
 msgid "Failed to replace drum sound"
 msgstr ""
 
@@ -861,26 +877,35 @@ msgid "Clear"
 msgstr ""
 
 #: src/window.ui:211
-msgid "Clear the Drum Pattern"
+msgid "Clear the Drum Pattern, Keeping Your Samples"
 msgstr ""
 
-#: src/window.ui:226
-msgid "_Add Samples…"
+#: src/window.ui:213
+msgctxt "accessibility"
+msgid "Clear Pattern"
+msgstr ""
+
+#: src/window.ui:214
+msgid "Clear the Drum Pattern. Samples You Added Are Kept"
 msgstr ""
 
 #: src/window.ui:230
+msgid "_Add Samples…"
+msgstr ""
+
+#: src/window.ui:234
 msgid "_Save Pattern…"
 msgstr ""
 
-#: src/window.ui:236
-msgid "_Reset to Defaults"
-msgstr ""
-
-#: src/window.ui:242
-msgid "_Keyboard Shortcuts"
+#: src/window.ui:240
+msgid "_Reset…"
 msgstr ""
 
 #: src/window.ui:246
+msgid "_Keyboard Shortcuts"
+msgstr ""
+
+#: src/window.ui:250
 msgid "_About Drum Machine"
 msgstr ""
 
@@ -911,7 +936,7 @@ msgstr ""
 
 #: src/gtk/help-overlay.blp:35
 msgctxt "shortcut window"
-msgid "Clear All"
+msgid "Clear Pattern"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:42
@@ -995,7 +1020,7 @@ msgid ""
 msgstr ""
 
 #. Translators: Cancel the operation
-#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:14
 msgid "_Cancel"
 msgstr ""
 
@@ -1050,16 +1075,22 @@ msgid "Cancel Export"
 msgstr ""
 
 #: src/gtk/reset-defaults-dialog.blp:5
-msgid "Reset to Defaults?"
+msgid "Reset Drum Machine?"
 msgstr ""
 
 #: src/gtk/reset-defaults-dialog.blp:6
 msgid ""
-"This will clear the current pattern and restore all samples, BPM, and volume "
-"to their default values. This action cannot be undone."
+"Clearing the pattern keeps the samples you added. Restoring defaults removes "
+"custom samples and resets MIDI mappings, BPM, and volume. This action cannot "
+"be undone."
 msgstr ""
 
-#. Translators: Reset to defaults
-#: src/gtk/reset-defaults-dialog.blp:14
-msgid "_Reset"
+#. Translators: Clear the pattern but keep custom samples
+#: src/gtk/reset-defaults-dialog.blp:15
+msgid "Clear _Pattern"
+msgstr ""
+
+#. Translators: Remove custom samples and restore default settings
+#: src/gtk/reset-defaults-dialog.blp:16
+msgid "_Restore Defaults"
 msgstr ""

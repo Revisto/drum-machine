@@ -2,15 +2,17 @@ using Gtk 4.0;
 using Adw 1;
 
 template $ResetDefaultsDialog: Adw.AlertDialog {
-  heading: _("Reset to Defaults?");
-  body: _("This will clear the current pattern and restore all samples, BPM, and volume to their default values. This action cannot be undone.");
+  heading: _("Reset Drum Machine?");
+  body: _("Clearing the pattern keeps the samples you added. Restoring defaults removes custom samples and resets MIDI mappings, BPM, and volume. This action cannot be undone.");
   close-response: "cancel";
   default-response: "cancel";
+  response::clear => $_on_clear();
   response::reset => $_on_reset();
   response::cancel => $_on_cancel();
 
   responses [
     /* Translators: Cancel the operation */cancel: _("_Cancel"),
-    /* Translators: Reset to defaults */reset: _("_Reset") destructive,
+    /* Translators: Clear the pattern but keep custom samples */clear: _("Clear _Pattern"),
+    /* Translators: Remove custom samples and restore default settings */reset: _("_Restore Defaults") destructive,
   ]
 }

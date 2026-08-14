@@ -202,8 +202,9 @@ class WindowActionHandler:
     def on_reset_to_defaults_action(
         self, action: Gio.SimpleAction, param: Optional[object]
     ) -> None:
-        """Reset drum parts to defaults with confirmation"""
+        """Ask whether to clear the pattern only or restore every default"""
         ResetDefaultsDialog(
             window=self.window,
             on_reset_callback=self.window.reset_to_defaults,
+            on_clear_callback=self.window.clear_pattern,
         )
