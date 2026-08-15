@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
 "POT-Creation-Date: 2025-12-21 22:38+0000\n"
-"PO-Revision-Date: 2026-07-23 07:37+0800\n"
+"PO-Revision-Date: 2026-08-15 17:37+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -72,7 +72,7 @@ msgstr "保存和加载模式"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
-msgstr "多种击鼓音色，包括底鼓、军鼓、踩镲和其它更多音色"
+msgstr "多种击鼓音色，包括底鼓、军鼓、踩镲和其他更多音色"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
 msgid ""
