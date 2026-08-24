@@ -1,0 +1,99 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.ShortcutsDialog shortcuts_dialog {
+  Adw.ShortcutsSection {
+    title: C_("shortcut window", "General");
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Show Shortcuts");
+      action-name: "app.shortcuts";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Quit");
+      action-name: "win.quit";
+    }
+  }
+
+  Adw.ShortcutsSection {
+    title: C_("shortcut window", "Playback");
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Play/Pause");
+      action-name: "win.play_pause";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Clear All");
+      action-name: "win.clear_toggles";
+    }
+  }
+
+  Adw.ShortcutsSection {
+    title: C_("shortcut window", "BPM & Volume");
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Increase BPM");
+      action-name: "win.increase_bpm";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Decrease BPM");
+      action-name: "win.decrease_bpm";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Increase Volume");
+      action-name: "win.increase_volume";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Decrease Volume");
+      action-name: "win.decrease_volume";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Mute");
+      action-name: "win.mute";
+    }
+  }
+
+  Adw.ShortcutsSection {
+    title: C_("shortcut window", "Pattern");
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Load Pattern");
+      action-name: "win.load_pattern";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Save Pattern");
+      action-name: "win.save_pattern";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Export Audio");
+      action-name: "win.export_audio";
+    }
+  }
+
+  Adw.ShortcutsSection {
+    title: C_("shortcut window", "Navigation");
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Go to Instrument");
+      action-name: "win.go_to_instrument";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Previous Page");
+      action-name: "win.previous_page";
+    }
+
+    Adw.ShortcutsItem {
+      title: C_("shortcut window", "Next Page");
+      action-name: "win.next_page";
+    }
+  }
+}

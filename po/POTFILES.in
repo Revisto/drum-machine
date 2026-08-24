@@ -12,7 +12,7 @@ src/utils/name_utils.py
 src/ui/drum_grid_builder.py
 src/window.py
 src/window.ui
-src/gtk/help-overlay.blp
+src/gtk/shortcuts-dialog.blp
 src/gtk/save-changes-dialog.blp
 src/gtk/audio-export-dialog.blp
 src/gtk/reset-defaults-dialog.blp
