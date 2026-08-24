@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-18 23:51+0330\n"
+"POT-Creation-Date: 2026-08-24 18:40+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -884,102 +884,102 @@ msgstr ""
 msgid "_About Drum Machine"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:11
+#: src/gtk/shortcuts-dialog.blp:6
 msgctxt "shortcut window"
 msgid "General"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:14
+#: src/gtk/shortcuts-dialog.blp:9
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:19
+#: src/gtk/shortcuts-dialog.blp:14
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:26
+#: src/gtk/shortcuts-dialog.blp:20
 msgctxt "shortcut window"
-msgid "Playback Controls"
+msgid "Playback"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:29
+#: src/gtk/shortcuts-dialog.blp:23
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:35
+#: src/gtk/shortcuts-dialog.blp:28
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:42
+#: src/gtk/shortcuts-dialog.blp:34
 msgctxt "shortcut window"
-msgid "BPM & Volume Controls"
+msgid "BPM & Volume"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:45
+#: src/gtk/shortcuts-dialog.blp:37
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:51
+#: src/gtk/shortcuts-dialog.blp:42
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:57
+#: src/gtk/shortcuts-dialog.blp:47
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:63
+#: src/gtk/shortcuts-dialog.blp:52
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:69
+#: src/gtk/shortcuts-dialog.blp:57
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:76
+#: src/gtk/shortcuts-dialog.blp:63
 msgctxt "shortcut window"
-msgid "Pattern Management"
+msgid "Pattern"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:79
+#: src/gtk/shortcuts-dialog.blp:66
 msgctxt "shortcut window"
 msgid "Load Pattern"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:85
+#: src/gtk/shortcuts-dialog.blp:71
 msgctxt "shortcut window"
 msgid "Save Pattern"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:91
+#: src/gtk/shortcuts-dialog.blp:76
 msgctxt "shortcut window"
 msgid "Export Audio"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:98
+#: src/gtk/shortcuts-dialog.blp:82
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:101
+#: src/gtk/shortcuts-dialog.blp:85
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:107
+#: src/gtk/shortcuts-dialog.blp:90
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:113
+#: src/gtk/shortcuts-dialog.blp:95
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr ""
