@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-21 22:38+0000\n"
-"PO-Revision-Date: 2026-07-22 16:34+0200\n"
+"POT-Creation-Date: 2026-08-24 15:19+0000\n"
+"PO-Revision-Date: 2026-08-24 17:59+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -703,102 +703,102 @@ msgstr "_Tipkovne bližnjice"
 msgid "_About Drum Machine"
 msgstr "_O programu Bobnarski stroj"
 
-#: src/gtk/help-overlay.blp:11
+#: src/gtk/shortcuts-dialog.blp:6
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Splošno"
 
-#: src/gtk/help-overlay.blp:14
+#: src/gtk/shortcuts-dialog.blp:9
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Pokaži tipkovne bližnjice‫"
 
-#: src/gtk/help-overlay.blp:19
+#: src/gtk/shortcuts-dialog.blp:14
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Izhod"
 
-#: src/gtk/help-overlay.blp:26
+#: src/gtk/shortcuts-dialog.blp:20
 msgctxt "shortcut window"
-msgid "Playback Controls"
-msgstr "Kontrolniki predvajanja"
+msgid "Playback"
+msgstr "Predvajaj"
 
-#: src/gtk/help-overlay.blp:29
+#: src/gtk/shortcuts-dialog.blp:23
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr "Predvajaj / premor"
 
-#: src/gtk/help-overlay.blp:35
+#: src/gtk/shortcuts-dialog.blp:28
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "Počisti vse"
 
-#: src/gtk/help-overlay.blp:42
+#: src/gtk/shortcuts-dialog.blp:34
 msgctxt "shortcut window"
-msgid "BPM & Volume Controls"
+msgid "BPM & Volume"
 msgstr "BPM in nadzor glasnosti"
 
-#: src/gtk/help-overlay.blp:45
+#: src/gtk/shortcuts-dialog.blp:37
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "Povečajte BPM"
 
-#: src/gtk/help-overlay.blp:51
+#: src/gtk/shortcuts-dialog.blp:42
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "Zmanjšanje BPM"
 
-#: src/gtk/help-overlay.blp:57
+#: src/gtk/shortcuts-dialog.blp:47
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "Povečaj glasnost"
 
-#: src/gtk/help-overlay.blp:63
+#: src/gtk/shortcuts-dialog.blp:52
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Zmanjšaj glasnost"
 
-#: src/gtk/help-overlay.blp:69
+#: src/gtk/shortcuts-dialog.blp:57
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr "Utišaj"
 
-#: src/gtk/help-overlay.blp:76
+#: src/gtk/shortcuts-dialog.blp:63
 msgctxt "shortcut window"
-msgid "Pattern Management"
-msgstr "Upravljanje vzorcev"
+msgid "Pattern"
+msgstr "Vzorec"
 
-#: src/gtk/help-overlay.blp:79
+#: src/gtk/shortcuts-dialog.blp:66
 msgctxt "shortcut window"
 msgid "Load Pattern"
 msgstr "Naloži vzorec"
 
-#: src/gtk/help-overlay.blp:85
+#: src/gtk/shortcuts-dialog.blp:71
 msgctxt "shortcut window"
 msgid "Save Pattern"
 msgstr "Shrani vzorec"
 
-#: src/gtk/help-overlay.blp:91
+#: src/gtk/shortcuts-dialog.blp:76
 msgctxt "shortcut window"
 msgid "Export Audio"
 msgstr "Izvozi zvok"
 
-#: src/gtk/help-overlay.blp:98
+#: src/gtk/shortcuts-dialog.blp:82
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Krmarjenje"
 
-#: src/gtk/help-overlay.blp:101
+#: src/gtk/shortcuts-dialog.blp:85
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Pojdi na inštrument"
 
-#: src/gtk/help-overlay.blp:107
+#: src/gtk/shortcuts-dialog.blp:90
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Skoči na predhodno stran"
 
-#: src/gtk/help-overlay.blp:113
+#: src/gtk/shortcuts-dialog.blp:95
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Skoči na naslednjo stran"
