@@ -18,32 +18,27 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from typing import List, Set, Tuple
-from gettext import gettext as _
 
-# Default drum part names shown in the UI
 DEFAULT_DRUM_PARTS: List[str] = [
-    _("kick"),
-    _("kick-2"),
-    _("kick-3"),
-    _("snare"),
-    _("snare-2"),
-    _("hihat"),
-    _("hihat-2"),
-    _("clap"),
-    _("tom"),
-    _("crash"),
+    "kick",
+    "kick-2",
+    "kick-3",
+    "snare",
+    "snare-2",
+    "hihat",
+    "hihat-2",
+    "clap",
+    "tom",
+    "crash",
 ]
-
-# Default rhythm pattern names shown in the UI
 DEFAULT_PATTERNS: List[str] = [
-    _("Shoot"),
-    _("Maybe Rock"),
-    _("Boom Boom"),
-    _("Night"),
-    _("Slow"),
-    _("Chill"),
+    "Shoot",
+    "Maybe Rock",
+    "Boom Boom",
+    "Night",
+    "Slow",
+    "Chill",
 ]
-
 NUM_TOGGLES: int = 16
 GROUP_TOGGLE_COUNT: int = 4
 DEFAULT_BPM: int = 120
