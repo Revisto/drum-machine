@@ -240,7 +240,7 @@ audio-volume-medium-symbolic</property>
     <section>
       <item>
         <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
-        <attribute name="action">win.show-help-overlay</attribute>
+        <attribute name="action">app.shortcuts</attribute>
       </item>
       <item>
         <attribute name="label" translatable="yes">_About Drum Machine</attribute>
