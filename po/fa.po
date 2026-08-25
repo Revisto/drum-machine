@@ -2,14 +2,14 @@
 # Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
 # This file is distributed under the same license as the drum-machine package.
 # میر سبحان <me@mirsobhan.ir>, 2025.
-# Danial Behzadi <dani.behzi@ubuntu.com>, 2025.
+# Danial Behzadi <dani.behzi@ubuntu.com>, 2025-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-21 22:38+0000\n"
-"PO-Revision-Date: 2025-12-24 00:14+0330\n"
+"POT-Creation-Date: 2026-08-24 15:19+0000\n"
+"PO-Revision-Date: 2026-08-25 22:16+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian\n"
 "Language: fa\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 "X-DL-Lang: fa\n"
 "X-DL-Module: drum-machine\n"
 "X-DL-Branch: master\n"
@@ -44,13 +44,13 @@ msgstr "ایجاد و پخش ضرب‌های کوبه‌ای"
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:9
 msgid ""
 "Drum Machine is a modern and intuitive application for creating, playing, and "
-"managing drum patterns. Perfect for musicians, producers, and anyone "
-"interested in rhythm creation, this application provides a simple interface "
-"for drum pattern programming. Have fun!"
+"managing drum patterns. Perfect for musicians, producers, and anyone interested "
+"in rhythm creation, this application provides a simple interface for drum "
+"pattern programming. Have fun!"
 msgstr ""
-"ماشین درام برنامه‌ای نوین و ادراکی برای ایجاد، پخش و مدیریت الگوهای کوبه‌ای "
-"است. این برنامه که مناسب آهنگسازان، تهیه‌کنندگان و هرکسی در تولید ضرباهنگ است، "
-"میانایی ساده برای برنامه ریزی الگوهای کوبه‌ای فراهم می‌کند. خوش بگذرانید!"
+"ماشین درام برنامه‌ای نوین و ادراکی برای ایجاد، پخش و مدیریت الگوهای کوبه‌ای است. "
+"این برنامه که مناسب آهنگسازان، تهیه‌کنندگان و هرکسی در تولید ضرباهنگ است، میانایی "
+"ساده برای برنامه ریزی الگوهای کوبه‌ای فراهم می‌کند. خوش بگذرانید!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
@@ -62,7 +62,7 @@ msgstr "ویرایشگر ادراکی الگوی مبتنی بر شبکه با �
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
 msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
-msgstr "نمونه‌هیا سفارشی: افزودن صداهای کوبه‌ای خودتان با نگاشت نت MIDI."
+msgstr "نمونه‌های سفارشی: افزودن صداهای کوبه‌ای خودتان با نگاشت نت MIDI"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
@@ -100,6 +100,10 @@ msgstr "الگوی کوبه‌ای بار شده در حالت روشن"
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "الگوی کوبه‌ای بار شده در حالت تیره"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+msgid "Revisto"
+msgstr "رویستو"
 
 #: src/application.py:74
 msgid ""
@@ -391,8 +395,7 @@ msgid "Note Assignment"
 msgstr "تخصیص نت"
 
 #: src/dialogs/midi_mapping_dialog.py:111
-msgid ""
-"Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgid "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
 msgstr "تخصیص نت MIDI برای «{}». برای اطمینان از پخش درست هنگام برون‌ریزی."
 
 #. Action Row for Note
@@ -478,8 +481,7 @@ msgstr "از {} پرونده پریده شد"
 msgid "Default Patterns"
 msgstr "الگوهای پیش‌گزیده"
 
-#: src/handlers/file_dialog_handler.py:92
-#: src/handlers/file_dialog_handler.py:171
+#: src/handlers/file_dialog_handler.py:92 src/handlers/file_dialog_handler.py:171
 msgid "MIDI files"
 msgstr "پرونده‌های MIDI"
 
@@ -708,102 +710,102 @@ msgstr "_میان‌برهای صفحه‌کلید"
 msgid "_About Drum Machine"
 msgstr "_دربارهٔ ماشین درام"
 
-#: src/gtk/help-overlay.blp:11
+#: src/gtk/shortcuts-dialog.blp:6
 msgctxt "shortcut window"
 msgid "General"
 msgstr "عمومی"
 
-#: src/gtk/help-overlay.blp:14
+#: src/gtk/shortcuts-dialog.blp:9
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "نمایش میان‌برها"
 
-#: src/gtk/help-overlay.blp:19
+#: src/gtk/shortcuts-dialog.blp:14
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "خروج"
 
-#: src/gtk/help-overlay.blp:26
+#: src/gtk/shortcuts-dialog.blp:20
 msgctxt "shortcut window"
-msgid "Playback Controls"
-msgstr "واپایش‌های پخش"
+msgid "Playback"
+msgstr "پخش"
 
-#: src/gtk/help-overlay.blp:29
+#: src/gtk/shortcuts-dialog.blp:23
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr "پخش/مکث"
 
-#: src/gtk/help-overlay.blp:35
+#: src/gtk/shortcuts-dialog.blp:28
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "پاک‌سازی همه"
 
-#: src/gtk/help-overlay.blp:42
+#: src/gtk/shortcuts-dialog.blp:34
 msgctxt "shortcut window"
-msgid "BPM & Volume Controls"
-msgstr "واپایش‌های حجم صدا و ض‌د‌د"
+msgid "BPM & Volume"
+msgstr "حجم صدا و ض‌د‌د"
 
-#: src/gtk/help-overlay.blp:45
+#: src/gtk/shortcuts-dialog.blp:37
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "افزایش ض‌دد"
 
-#: src/gtk/help-overlay.blp:51
+#: src/gtk/shortcuts-dialog.blp:42
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "کاهش ض‌دد"
 
-#: src/gtk/help-overlay.blp:57
+#: src/gtk/shortcuts-dialog.blp:47
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "افزایش حجم صدا"
 
-#: src/gtk/help-overlay.blp:63
+#: src/gtk/shortcuts-dialog.blp:52
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "کاهش حجم صدا"
 
-#: src/gtk/help-overlay.blp:69
+#: src/gtk/shortcuts-dialog.blp:57
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr "خموش"
 
-#: src/gtk/help-overlay.blp:76
+#: src/gtk/shortcuts-dialog.blp:63
 msgctxt "shortcut window"
-msgid "Pattern Management"
-msgstr "مدیریت الگو"
+msgid "Pattern"
+msgstr "الگو"
 
-#: src/gtk/help-overlay.blp:79
+#: src/gtk/shortcuts-dialog.blp:66
 msgctxt "shortcut window"
 msgid "Load Pattern"
 msgstr "بار کردن الگو"
 
-#: src/gtk/help-overlay.blp:85
+#: src/gtk/shortcuts-dialog.blp:71
 msgctxt "shortcut window"
 msgid "Save Pattern"
 msgstr "ذخیرهٔ الگو"
 
-#: src/gtk/help-overlay.blp:91
+#: src/gtk/shortcuts-dialog.blp:76
 msgctxt "shortcut window"
 msgid "Export Audio"
 msgstr "برون‌ریزی صدا"
 
-#: src/gtk/help-overlay.blp:98
+#: src/gtk/shortcuts-dialog.blp:82
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "پیمایش"
 
-#: src/gtk/help-overlay.blp:101
+#: src/gtk/shortcuts-dialog.blp:85
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "رفتن به ساز"
 
-#: src/gtk/help-overlay.blp:107
+#: src/gtk/shortcuts-dialog.blp:90
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "صفحهٔ پیشین"
 
-#: src/gtk/help-overlay.blp:113
+#: src/gtk/shortcuts-dialog.blp:95
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "صفحهٔ بعدی"
@@ -881,8 +883,8 @@ msgstr "بازنشانی به پیش‌گزیده‌ها؟"
 
 #: src/gtk/reset-defaults-dialog.blp:6
 msgid ""
-"This will clear the current pattern and restore all samples, BPM, and volume "
-"to their default values. This action cannot be undone."
+"This will clear the current pattern and restore all samples, BPM, and volume to "
+"their default values. This action cannot be undone."
 msgstr ""
 "این کار الگوی کنونی را پاک کرده و همهٔ نمونه‌ها، ض‌دد و حجم صدا را به مقدارهای "
 "پیش‌گزیده‌شان برمی‌گرداند. این کنش بازگشت‌پذیر نیست."
@@ -892,8 +894,13 @@ msgstr ""
 msgid "_Reset"
 msgstr "ب_رگرداندن به مقادیر اولیه"
 
-#~ msgid "No Pattern"
-#~ msgstr "بدون الگو"
+#~ msgctxt "shortcut window"
+#~ msgid "Playback Controls"
+#~ msgstr "واپایش‌های پخش"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Pattern Management"
+#~ msgstr "مدیریت الگو"
 
 #~ msgid "Please create a drum pattern before exporting audio."
 #~ msgstr "ایجاد الگوی کوبه‌ای پیش از برون‌ریزی صدا."
