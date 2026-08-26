@@ -2,20 +2,22 @@
 # Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
 # This file is distributed under the same license as the drum-machine package.
 # Thomas Silvestre <t.silvestre@gravitysoftware.be>, 2025.
+# Guillaume Bernard <associations@guillaume-bernard.fr>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-21 22:38+0000\n"
-"PO-Revision-Date: 2026-03-29 11:51+0900\n"
-"Last-Translator: Julien Humbert <julroy67@gmail.com>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2026-08-24 15:19+0000\n"
+"PO-Revision-Date: 2026-08-26 07:44+0200\n"
+"Last-Translator: Guillaume Bernard <associations@guillaume-bernard.fr>\n"
+"Language-Team: French\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Gtranslator 50.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
@@ -51,7 +53,9 @@ msgstr "Fonctionnalités :"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
 msgid "Intuitive grid-based pattern editor with infinite pages"
-msgstr "Éditeur de motifs intuitif basé sur une grille avec un nombre de pages illimité"
+msgstr ""
+"Éditeur de motifs intuitif basé sur une grille avec un nombre de pages "
+"illimité"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
 msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
@@ -101,6 +105,10 @@ msgstr "Motif de batterie chargé en mode clair"
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Motif de batterie chargé en mode sombre"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+msgid "Revisto"
+msgstr "Revisto"
 
 #: src/application.py:74
 msgid ""
@@ -715,102 +723,102 @@ msgstr "_Raccourcis clavier"
 msgid "_About Drum Machine"
 msgstr "_À propos de Drum Machine"
 
-#: src/gtk/help-overlay.blp:11
+#: src/gtk/shortcuts-dialog.blp:6
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Général"
 
-#: src/gtk/help-overlay.blp:14
+#: src/gtk/shortcuts-dialog.blp:9
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Montrer les raccourcis"
 
-#: src/gtk/help-overlay.blp:19
+#: src/gtk/shortcuts-dialog.blp:14
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Quitter"
 
-#: src/gtk/help-overlay.blp:26
+#: src/gtk/shortcuts-dialog.blp:20
 msgctxt "shortcut window"
-msgid "Playback Controls"
-msgstr "Commandes de lecture"
+msgid "Playback"
+msgstr "Lecture"
 
-#: src/gtk/help-overlay.blp:29
+#: src/gtk/shortcuts-dialog.blp:23
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr "Jouer/Pause"
 
-#: src/gtk/help-overlay.blp:35
+#: src/gtk/shortcuts-dialog.blp:28
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "Tout effacer"
 
-#: src/gtk/help-overlay.blp:42
+#: src/gtk/shortcuts-dialog.blp:34
 msgctxt "shortcut window"
-msgid "BPM & Volume Controls"
-msgstr "Contrôles du BPM et du volume"
+msgid "BPM & Volume"
+msgstr "BPM et volume"
 
-#: src/gtk/help-overlay.blp:45
+#: src/gtk/shortcuts-dialog.blp:37
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "Augmenter le BPM"
 
-#: src/gtk/help-overlay.blp:51
+#: src/gtk/shortcuts-dialog.blp:42
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "Diminuer le BPM"
 
-#: src/gtk/help-overlay.blp:57
+#: src/gtk/shortcuts-dialog.blp:47
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "Augmenter le volume"
 
-#: src/gtk/help-overlay.blp:63
+#: src/gtk/shortcuts-dialog.blp:52
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Diminuer le volume"
 
-#: src/gtk/help-overlay.blp:69
+#: src/gtk/shortcuts-dialog.blp:57
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr "Couper le son"
 
-#: src/gtk/help-overlay.blp:76
+#: src/gtk/shortcuts-dialog.blp:63
 msgctxt "shortcut window"
-msgid "Pattern Management"
-msgstr "Gestion des motifs"
+msgid "Pattern"
+msgstr "Motif"
 
-#: src/gtk/help-overlay.blp:79
+#: src/gtk/shortcuts-dialog.blp:66
 msgctxt "shortcut window"
 msgid "Load Pattern"
 msgstr "Charger un motif"
 
-#: src/gtk/help-overlay.blp:85
+#: src/gtk/shortcuts-dialog.blp:71
 msgctxt "shortcut window"
 msgid "Save Pattern"
 msgstr "Enregistrer le motif"
 
-#: src/gtk/help-overlay.blp:91
+#: src/gtk/shortcuts-dialog.blp:76
 msgctxt "shortcut window"
 msgid "Export Audio"
 msgstr "Exporter l’audio"
 
-#: src/gtk/help-overlay.blp:98
+#: src/gtk/shortcuts-dialog.blp:82
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Navigation"
 
-#: src/gtk/help-overlay.blp:101
+#: src/gtk/shortcuts-dialog.blp:85
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Aller à l’instrument"
 
-#: src/gtk/help-overlay.blp:107
+#: src/gtk/shortcuts-dialog.blp:90
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Page précédente"
 
-#: src/gtk/help-overlay.blp:113
+#: src/gtk/shortcuts-dialog.blp:95
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Page suivante"
@@ -899,6 +907,14 @@ msgstr ""
 msgid "_Reset"
 msgstr "_Réinitialiser"
 
+#~ msgctxt "shortcut window"
+#~ msgid "Playback Controls"
+#~ msgstr "Commandes de lecture"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Pattern Management"
+#~ msgstr "Gestion des motifs"
+
 #~ msgid "drum"
 #~ msgstr "batterie"
 
@@ -913,9 +929,6 @@ msgstr "_Réinitialiser"
 
 #~ msgid "beats"
 #~ msgstr "battements"
-
-#~ msgid "Revisto"
-#~ msgstr "Revisto"
 
 #~ msgid ""
 #~ "This release of Drum Machine 1.3.1 brings significant UI and "
