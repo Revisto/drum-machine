@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-21 22:38+0000\n"
-"PO-Revision-Date: 2026-07-27 16:35+0500\n"
+"POT-Creation-Date: 2026-08-24 15:19+0000\n"
+"PO-Revision-Date: 2026-08-29 11:45+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <Kazakh>\n"
 "Language: kk\n"
@@ -23,8 +23,7 @@ msgstr ""
 msgid "Drum Machine"
 msgstr "Барабан машинасы"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localise the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.revisto.drum-machine.desktop.in:9
 msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
 msgstr ""
@@ -44,8 +43,8 @@ msgid ""
 msgstr ""
 "Drum Machine - барабан ойын үлгілерін жасауға, ойнатуға және басқаруға "
 "арналған заманауи және интуитивті қолданба. Музыканттарға, продюсерлерге "
-"және ырғақ жасауға қызығатындардың бәріне арналған бұл қолданба барабан "
-"ойын үлгілерін бағдарламалауға арналған қарапайым интерфейсті ұсынады. "
+"және ырғақ жасауға қызығатындардың бәріне арналған бұл қолданба барабан ойын "
+"үлгілерін бағдарламалауға арналған қарапайым интерфейсті ұсынады. "
 "Көңіліңізді көтеріңіз!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
@@ -718,102 +717,102 @@ msgstr "_Пернетақта жарлықтары"
 msgid "_About Drum Machine"
 msgstr "Барабан машинасы турал_ы"
 
-#: src/gtk/help-overlay.blp:11
+#: src/gtk/shortcuts-dialog.blp:6
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Жалпы"
 
-#: src/gtk/help-overlay.blp:14
+#: src/gtk/shortcuts-dialog.blp:9
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Жарлықтарды көрсету"
 
-#: src/gtk/help-overlay.blp:19
+#: src/gtk/shortcuts-dialog.blp:14
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Шығу"
 
-#: src/gtk/help-overlay.blp:26
+#: src/gtk/shortcuts-dialog.blp:20
 msgctxt "shortcut window"
-msgid "Playback Controls"
-msgstr "Ойнатуды басқару элементтері"
+msgid "Playback"
+msgstr "Ойнату"
 
-#: src/gtk/help-overlay.blp:29
+#: src/gtk/shortcuts-dialog.blp:23
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr "Ойнату/Кідірту"
 
-#: src/gtk/help-overlay.blp:35
+#: src/gtk/shortcuts-dialog.blp:28
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "Барлығын тазарту"
 
-#: src/gtk/help-overlay.blp:42
+#: src/gtk/shortcuts-dialog.blp:34
 msgctxt "shortcut window"
-msgid "BPM & Volume Controls"
-msgstr "BPM және дыбыс деңгейін басқару"
+msgid "BPM & Volume"
+msgstr "BPM және дыбыс деңгейі"
 
-#: src/gtk/help-overlay.blp:45
+#: src/gtk/shortcuts-dialog.blp:37
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "BPM арттыру"
 
-#: src/gtk/help-overlay.blp:51
+#: src/gtk/shortcuts-dialog.blp:42
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "BPM азайту"
 
-#: src/gtk/help-overlay.blp:57
+#: src/gtk/shortcuts-dialog.blp:47
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "Дыбыс деңгейін арттыру"
 
-#: src/gtk/help-overlay.blp:63
+#: src/gtk/shortcuts-dialog.blp:52
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Дыбыс деңгейін азайту"
 
-#: src/gtk/help-overlay.blp:69
+#: src/gtk/shortcuts-dialog.blp:57
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr "Дыбысты өшіру"
 
-#: src/gtk/help-overlay.blp:76
+#: src/gtk/shortcuts-dialog.blp:63
 msgctxt "shortcut window"
-msgid "Pattern Management"
-msgstr "Ойын үлгілерін басқару"
+msgid "Pattern"
+msgstr "Ойын үлгісі"
 
-#: src/gtk/help-overlay.blp:79
+#: src/gtk/shortcuts-dialog.blp:66
 msgctxt "shortcut window"
 msgid "Load Pattern"
 msgstr "Ойын үлгісін жүктеу"
 
-#: src/gtk/help-overlay.blp:85
+#: src/gtk/shortcuts-dialog.blp:71
 msgctxt "shortcut window"
 msgid "Save Pattern"
 msgstr "Ойын үлгісін сақтау"
 
-#: src/gtk/help-overlay.blp:91
+#: src/gtk/shortcuts-dialog.blp:76
 msgctxt "shortcut window"
 msgid "Export Audio"
 msgstr "Аудионы экспорттау"
 
-#: src/gtk/help-overlay.blp:98
+#: src/gtk/shortcuts-dialog.blp:82
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Навигация"
 
-#: src/gtk/help-overlay.blp:101
+#: src/gtk/shortcuts-dialog.blp:85
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Аспапқа өту"
 
-#: src/gtk/help-overlay.blp:107
+#: src/gtk/shortcuts-dialog.blp:90
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Алдыңғы бет"
 
-#: src/gtk/help-overlay.blp:113
+#: src/gtk/shortcuts-dialog.blp:95
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Келесі бет"
@@ -891,8 +890,8 @@ msgstr "Әдепкі мәндерге қайтару керек пе?"
 
 #: src/gtk/reset-defaults-dialog.blp:6
 msgid ""
-"This will clear the current pattern and restore all samples, BPM, and "
-"volume to their default values. This action cannot be undone."
+"This will clear the current pattern and restore all samples, BPM, and volume "
+"to their default values. This action cannot be undone."
 msgstr ""
 "Бұл ағымдағы ойын үлгісін тазартады және барлық сэмплдерді, BPM және дыбыс "
 "деңгейін олардың әдепкі мәндеріне қайтарады. Бұл әрекетті болдырмау мүмкін "
@@ -902,3 +901,11 @@ msgstr ""
 #: src/gtk/reset-defaults-dialog.blp:14
 msgid "_Reset"
 msgstr "_Тастау"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Playback Controls"
+#~ msgstr "Ойнатуды басқару элементтері"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Pattern Management"
+#~ msgstr "Ойын үлгілерін басқару"
