@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-21 22:38+0000\n"
-"PO-Revision-Date: 2026-03-03 07:38+0100\n"
+"POT-Creation-Date: 2026-08-24 15:19+0000\n"
+"PO-Revision-Date: 2026-09-04 20:16+0200\n"
 "Last-Translator: twlvnn kraftwerk <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <Bulgarian>\n"
 "Language: bg\n"
@@ -18,11 +18,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
-#: data/io.github.revisto.drum-machine.desktop.in:2
-#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
-#: src/window.ui:69
+#: data/io.github.revisto.drum-machine.desktop.in:2 data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67 src/window.ui:69
 msgid "Drum Machine"
 msgstr "Дръм машина"
 
@@ -37,16 +35,11 @@ msgstr "Създаване и възпроизвеждане на барабан
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:9
 msgid ""
-"Drum Machine is a modern and intuitive application for creating, playing, "
-"and managing drum patterns. Perfect for musicians, producers, and anyone "
-"interested in rhythm creation, this application provides a simple interface "
-"for drum pattern programming. Have fun!"
+"Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface for drum pattern programming. Have fun!"
 msgstr ""
-"„Дръм машина“ е модерна и проста програма за създаване, възпроизвеждане и "
-"управляване на барабанни шаблони. Тази програма е идеална за музиканти, "
-"продуценти и всички, които се интересуват от създаване на ритми, и "
-"предоставя прост интерфейс за програмиране на барабанни шаблони. "
-"Забавлявайте се!"
+"„Дръм машина“ е модерна и проста програма за създаване, възпроизвеждане и управляване на барабанни шаблони. Тази програма е идеална за музиканти, "
+"продуценти и всички, които се интересуват от създаване на ритми, и предоставя прост интерфейс за програмиране на барабанни шаблони. Забавлявайте се!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
@@ -58,9 +51,7 @@ msgstr "Прост мрежов редактор на барабанни шаб�
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
 msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
-msgstr ""
-"Собствени семпли: Добавете свои собствени барабанни звуци със задаване на "
-"ноти по MIDI"
+msgstr "Собствени семпли: Добавете свои собствени барабанни звуци със задаване на ноти по MIDI"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
@@ -79,17 +70,12 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "Множество барабанни звуци — голям барабан, малък барабан, фус и други"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
-msgid ""
-"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
-msgstr ""
-"Функция за изнасяне на аудио и MIDI с поддръжка на формати WAV, FLAC, Ogg, "
-"MP3 и MIDI"
+msgid "Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr "Функция за изнасяне на аудио и MIDI с поддръжка на формати WAV, FLAC, Ogg, MP3 и MIDI"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Metadata support for embedding artist name, song title, and cover art"
-msgstr ""
-"Поддръжка на метаданни за влагане на името на изпълнителя, заглавието на "
-"песента и обложката"
+msgstr "Поддръжка на метаданни за влагане на името на изпълнителя, заглавието на песента и обложката"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:25
 msgid "Keyboard shortcuts for quick access to all functions"
@@ -103,13 +89,13 @@ msgstr "Светъл режим на барабанния шаблон"
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Светъл режим на барабанния шаблон"
 
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+msgid "Revisto"
+msgstr "Revisto"
+
 #: src/application.py:74
-msgid ""
-"Drum Machine is a modern and intuitive application for creating, playing, "
-"and managing drum patterns."
-msgstr ""
-"„Дръм машина“ е модерна и проста програма за създаване, възпроизвеждане и "
-"управляване на барабанни шаблони."
+msgid "Drum Machine is a modern and intuitive application for creating, playing, and managing drum patterns."
+msgstr "„Дръм машина“ е модерна и проста програма за създаване, възпроизвеждане и управляване на барабанни шаблони."
 
 #: src/application.py:79
 msgid "translator-credits"
@@ -117,10 +103,8 @@ msgstr ""
 "twlvnn kraftwerk <kraft_werk@tutanota.com>, 2025, 2026\n"
 "\n"
 "Проектът за превод на GNOME има нужда от подкрепа.\n"
-"Научете повече за нас на <a href='https://fsa-bg.org/project/gtp'>уеб сайта</"
-"a> ни.\n"
-"Докладвайте за грешки в превода в <a href='https://fsa-bg.org/project/gtp/"
-"newticket'>съответния раздел</a>."
+"Научете повече за нас на <a href='https://fsa-bg.org/project/gtp'>уеб сайта</a> ни.\n"
+"Докладвайте за грешки в превода в <a href='https://fsa-bg.org/project/gtp/newticket'>съответния раздел</a>."
 
 #: src/application.py:84
 msgid "Special thanks"
@@ -401,11 +385,8 @@ msgid "Note Assignment"
 msgstr "Задаване на ноти по MIDI"
 
 #: src/dialogs/midi_mapping_dialog.py:111
-msgid ""
-"Assign a MIDI note for '{}'. This ensures correct playback when exporting."
-msgstr ""
-"Задаване на MIDI нота за „{}“. Това гарантира правилното възпроизвеждане при "
-"изнасяне."
+msgid "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr "Задаване на MIDI нота за „{}“. Това гарантира правилното възпроизвеждане при изнасяне."
 
 #. Action Row for Note
 #: src/dialogs/midi_mapping_dialog.py:118
@@ -490,8 +471,7 @@ msgstr "{} файла са пропуснати"
 msgid "Default Patterns"
 msgstr "Стандартни шаблони"
 
-#: src/handlers/file_dialog_handler.py:92
-#: src/handlers/file_dialog_handler.py:171
+#: src/handlers/file_dialog_handler.py:92 src/handlers/file_dialog_handler.py:171
 msgid "MIDI files"
 msgstr "MIDI файлове"
 
@@ -720,102 +700,102 @@ msgstr "_Клавишни комбинации"
 msgid "_About Drum Machine"
 msgstr "_Относно „Дръм машина“"
 
-#: src/gtk/help-overlay.blp:11
+#: src/gtk/shortcuts-dialog.blp:6
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Общи"
 
-#: src/gtk/help-overlay.blp:14
+#: src/gtk/shortcuts-dialog.blp:9
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Показване на клавишните комбинации"
 
-#: src/gtk/help-overlay.blp:19
+#: src/gtk/shortcuts-dialog.blp:14
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Спиране на програмата"
 
-#: src/gtk/help-overlay.blp:26
+#: src/gtk/shortcuts-dialog.blp:20
 msgctxt "shortcut window"
-msgid "Playback Controls"
-msgstr "Контроли на възпроизвеждане"
+msgid "Playback"
+msgstr "Възпроизвеждане"
 
-#: src/gtk/help-overlay.blp:29
+#: src/gtk/shortcuts-dialog.blp:23
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr "Изпълнение/пауза"
 
-#: src/gtk/help-overlay.blp:35
+#: src/gtk/shortcuts-dialog.blp:28
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "Изчистване на всичко"
 
-#: src/gtk/help-overlay.blp:42
+#: src/gtk/shortcuts-dialog.blp:34
 msgctxt "shortcut window"
-msgid "BPM & Volume Controls"
-msgstr "Удари/мин. и контроли за звука"
+msgid "BPM & Volume"
+msgstr "Удари/мин. и звук"
 
-#: src/gtk/help-overlay.blp:45
+#: src/gtk/shortcuts-dialog.blp:37
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "Ускоряване на ударите/мин."
 
-#: src/gtk/help-overlay.blp:51
+#: src/gtk/shortcuts-dialog.blp:42
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "Забавяне на ударите/мин."
 
-#: src/gtk/help-overlay.blp:57
+#: src/gtk/shortcuts-dialog.blp:47
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "Увеличаване на звука"
 
-#: src/gtk/help-overlay.blp:63
+#: src/gtk/shortcuts-dialog.blp:52
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Намаляване на звука"
 
-#: src/gtk/help-overlay.blp:69
+#: src/gtk/shortcuts-dialog.blp:57
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr "Заглушаване"
 
-#: src/gtk/help-overlay.blp:76
+#: src/gtk/shortcuts-dialog.blp:63
 msgctxt "shortcut window"
-msgid "Pattern Management"
-msgstr "Управление на шаблони"
+msgid "Pattern"
+msgstr "Шаблон"
 
-#: src/gtk/help-overlay.blp:79
+#: src/gtk/shortcuts-dialog.blp:66
 msgctxt "shortcut window"
 msgid "Load Pattern"
 msgstr "Зареждане на шаблон"
 
-#: src/gtk/help-overlay.blp:85
+#: src/gtk/shortcuts-dialog.blp:71
 msgctxt "shortcut window"
 msgid "Save Pattern"
 msgstr "Запазване на шаблона"
 
-#: src/gtk/help-overlay.blp:91
+#: src/gtk/shortcuts-dialog.blp:76
 msgctxt "shortcut window"
 msgid "Export Audio"
 msgstr "Изнасяне на аудиото"
 
-#: src/gtk/help-overlay.blp:98
+#: src/gtk/shortcuts-dialog.blp:82
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Навигация"
 
-#: src/gtk/help-overlay.blp:101
+#: src/gtk/shortcuts-dialog.blp:85
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Към инструмент"
 
-#: src/gtk/help-overlay.blp:107
+#: src/gtk/shortcuts-dialog.blp:90
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Предишна страница"
 
-#: src/gtk/help-overlay.blp:113
+#: src/gtk/shortcuts-dialog.blp:95
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Следваща страница"
@@ -825,12 +805,8 @@ msgid "Save Changes?"
 msgstr "Да се запазят ли промените?"
 
 #: src/gtk/save-changes-dialog.blp:6
-msgid ""
-"Current pattern contains unsaved changes. Changes which are not saved will "
-"be permanently lost."
-msgstr ""
-"Текущият барабанен шаблон съдържа промени. Ако не ги запазите, те ще се "
-"загубят окончателно."
+msgid "Current pattern contains unsaved changes. Changes which are not saved will be permanently lost."
+msgstr "Текущият барабанен шаблон съдържа промени. Ако не ги запазите, те ще се загубят окончателно."
 
 #. Translators: Cancel the operation
 #: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
@@ -892,15 +868,20 @@ msgid "Reset to Defaults?"
 msgstr "Нулиране на настройките?"
 
 #: src/gtk/reset-defaults-dialog.blp:6
-msgid ""
-"This will clear the current pattern and restore all samples, BPM, and volume "
-"to their default values. This action cannot be undone."
+msgid "This will clear the current pattern and restore all samples, BPM, and volume to their default values. This action cannot be undone."
 msgstr ""
-"Това ще изчисти текущия шаблон и ще възстанови всички семпли, удари в минута "
-"и силата на звука към техните стандартни стойности. Това действие не може да "
-"се отмени."
+"Това ще изчисти текущия шаблон и ще възстанови всички семпли, удари в минута и силата на звука към техните стандартни стойности. Това действие не може "
+"да се отмени."
 
 #. Translators: Reset to defaults
 #: src/gtk/reset-defaults-dialog.blp:14
 msgid "_Reset"
 msgstr "_Нулиране"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Playback Controls"
+#~ msgstr "Контроли на възпроизвеждане"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Pattern Management"
+#~ msgstr "Управление на шаблони"
