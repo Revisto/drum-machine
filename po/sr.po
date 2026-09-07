@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-21 22:38+0000\n"
+"POT-Creation-Date: 2026-08-24 15:19+0000\n"
 "PO-Revision-Date: 2026-03-19 10:40+0100\n"
 "Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "Language-Team: Serbian <Serbian>\n"
@@ -40,7 +40,11 @@ msgid ""
 "and managing drum patterns. Perfect for musicians, producers, and anyone "
 "interested in rhythm creation, this application provides a simple interface "
 "for drum pattern programming. Have fun!"
-msgstr "Бубањ машина је савремен и интуитиван програм за стварање, свирање и управљање обрасцима бубња. Савршена за музичаре, продуценте и све које занима стварање ритма, овај програм пружа једноставно прочеље за програмирање образаца бубња. Забавите се!"
+msgstr ""
+"Бубањ машина је савремен и интуитиван програм за стварање, свирање и "
+"управљање обрасцима бубња. Савршена за музичаре, продуценте и све које "
+"занима стварање ритма, овај програм пружа једноставно прочеље за "
+"програмирање образаца бубња. Забавите се!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
@@ -48,11 +52,13 @@ msgstr "Могућности:"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:17
 msgid "Intuitive grid-based pattern editor with infinite pages"
-msgstr "Интуитиван уређивач образаца заснован на мрежи са бесконачним страницама"
+msgstr ""
+"Интуитиван уређивач образаца заснован на мрежи са бесконачним страницама"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:18
 msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
-msgstr "Произвољни узорци: Додајте сопствене звукове бубња уз МИДИ мапирање нота"
+msgstr ""
+"Произвољни узорци: Додајте сопствене звукове бубња уз МИДИ мапирање нота"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:19
 msgid "Adjustable BPM control"
@@ -68,7 +74,8 @@ msgstr "Сачувајте и учитајте обрасце"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:22
 msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
-msgstr "Вишеструки звукови бубња укључујући кик, добош, фусноту и још много тога"
+msgstr ""
+"Вишеструки звукови бубња укључујући кик, добош, фусноту и још много тога"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
 msgid ""
@@ -77,7 +84,8 @@ msgstr "Извоз звука и МИДИ-ја уз подршку за WAV, FLA
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:24
 msgid "Metadata support for embedding artist name, song title, and cover art"
-msgstr "Подршка за метаподатке за угнежђивање имена извођача, наслова песме и омота"
+msgstr ""
+"Подршка за метаподатке за угнежђивање имена извођача, наслова песме и омота"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:25
 msgid "Keyboard shortcuts for quick access to all functions"
@@ -91,11 +99,17 @@ msgstr "Образац бубња је учитан у светлом режим
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Образац бубња је учитан у тамном режиму"
 
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+msgid "Revisto"
+msgstr "Ревисто"
+
 #: src/application.py:74
 msgid ""
 "Drum Machine is a modern and intuitive application for creating, playing, "
 "and managing drum patterns."
-msgstr "Бубањ машина је савремен и интуитиван програм за стварање, свирање и управљање обрасцима бубња."
+msgstr ""
+"Бубањ машина је савремен и интуитиван програм за стварање, свирање и "
+"управљање обрасцима бубња."
 
 #: src/application.py:79
 msgid "translator-credits"
@@ -385,7 +399,9 @@ msgstr "Додела нота"
 #: src/dialogs/midi_mapping_dialog.py:111
 msgid ""
 "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
-msgstr "Доделите МИДИ ноту за „{}“. Ово осигурава исправну репродукцију приликом извоза."
+msgstr ""
+"Доделите МИДИ ноту за „{}“. Ово осигурава исправну репродукцију приликом "
+"извоза."
 
 #. Action Row for Note
 #: src/dialogs/midi_mapping_dialog.py:118
@@ -700,102 +716,102 @@ msgstr "Пречице _тастатуре"
 msgid "_About Drum Machine"
 msgstr "_О Бубњу"
 
-#: src/gtk/help-overlay.blp:11
+#: src/gtk/shortcuts-dialog.blp:6
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Опште"
 
-#: src/gtk/help-overlay.blp:14
+#: src/gtk/shortcuts-dialog.blp:9
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Прикажи пречице"
 
-#: src/gtk/help-overlay.blp:19
+#: src/gtk/shortcuts-dialog.blp:14
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Изађи"
 
-#: src/gtk/help-overlay.blp:26
+#: src/gtk/shortcuts-dialog.blp:20
 msgctxt "shortcut window"
-msgid "Playback Controls"
-msgstr "Контроле пуштања"
+msgid "Playback"
+msgstr "Пуштање"
 
-#: src/gtk/help-overlay.blp:29
+#: src/gtk/shortcuts-dialog.blp:23
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr "Пушта/паузира"
 
-#: src/gtk/help-overlay.blp:35
+#: src/gtk/shortcuts-dialog.blp:28
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "Очисти све"
 
-#: src/gtk/help-overlay.blp:42
+#: src/gtk/shortcuts-dialog.blp:34
 msgctxt "shortcut window"
-msgid "BPM & Volume Controls"
-msgstr "Контроле ОУМ-а и јачине звука"
+msgid "BPM & Volume"
+msgstr "БПМ и јачина звука"
 
-#: src/gtk/help-overlay.blp:45
+#: src/gtk/shortcuts-dialog.blp:37
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "Повећај ОУМ"
 
-#: src/gtk/help-overlay.blp:51
+#: src/gtk/shortcuts-dialog.blp:42
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "Смањи ОУМ"
 
-#: src/gtk/help-overlay.blp:57
+#: src/gtk/shortcuts-dialog.blp:47
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "Повећај јачину звука"
 
-#: src/gtk/help-overlay.blp:63
+#: src/gtk/shortcuts-dialog.blp:52
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Смањи јачину звука"
 
-#: src/gtk/help-overlay.blp:69
+#: src/gtk/shortcuts-dialog.blp:57
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr "Утишај"
 
-#: src/gtk/help-overlay.blp:76
+#: src/gtk/shortcuts-dialog.blp:63
 msgctxt "shortcut window"
-msgid "Pattern Management"
-msgstr "Управљање шаблонима"
+msgid "Pattern"
+msgstr "Образац"
 
-#: src/gtk/help-overlay.blp:79
+#: src/gtk/shortcuts-dialog.blp:66
 msgctxt "shortcut window"
 msgid "Load Pattern"
 msgstr "Учитај шаблон"
 
-#: src/gtk/help-overlay.blp:85
+#: src/gtk/shortcuts-dialog.blp:71
 msgctxt "shortcut window"
 msgid "Save Pattern"
 msgstr "Сачувај шаблон"
 
-#: src/gtk/help-overlay.blp:91
+#: src/gtk/shortcuts-dialog.blp:76
 msgctxt "shortcut window"
 msgid "Export Audio"
 msgstr "Извези звук"
 
-#: src/gtk/help-overlay.blp:98
+#: src/gtk/shortcuts-dialog.blp:82
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Навигација"
 
-#: src/gtk/help-overlay.blp:101
+#: src/gtk/shortcuts-dialog.blp:85
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Иди на инструмент"
 
-#: src/gtk/help-overlay.blp:107
+#: src/gtk/shortcuts-dialog.blp:90
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Претходна страна"
 
-#: src/gtk/help-overlay.blp:113
+#: src/gtk/shortcuts-dialog.blp:95
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Следећа страна"
@@ -808,7 +824,9 @@ msgstr "Сачувати измене?"
 msgid ""
 "Current pattern contains unsaved changes. Changes which are not saved will "
 "be permanently lost."
-msgstr "Тренутни шаблон садржи несачуване измене. Измене које нису сачуване биће трајно изгубљене."
+msgstr ""
+"Тренутни шаблон садржи несачуване измене. Измене које нису сачуване биће "
+"трајно изгубљене."
 
 #. Translators: Cancel the operation
 #: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
@@ -873,7 +891,9 @@ msgstr "Вратити на подразумевано?"
 msgid ""
 "This will clear the current pattern and restore all samples, BPM, and volume "
 "to their default values. This action cannot be undone."
-msgstr "Ово ће очистити тренутни шаблон и вратити све узорке, ОУМ и јачину звука на њихове подразумеване вредности. Ова радња се не може опозвати."
+msgstr ""
+"Ово ће очистити тренутни шаблон и вратити све узорке, ОУМ и јачину звука на "
+"њихове подразумеване вредности. Ова радња се не може опозвати."
 
 #. Translators: Reset to defaults
 #: src/gtk/reset-defaults-dialog.blp:14
