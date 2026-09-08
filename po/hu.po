@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
 "POT-Creation-Date: 2026-08-24 15:19+0000\n"
-"PO-Revision-Date: 2026-09-01 09:27+0200\n"
+"PO-Revision-Date: 2026-09-09 00:03+0200\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
@@ -733,7 +733,6 @@ msgid "Quit"
 msgstr "Kilépés"
 
 #: src/gtk/shortcuts-dialog.blp:20
-#| msgid "Play"
 msgctxt "shortcut window"
 msgid "Playback"
 msgstr "Lejátszás"
@@ -749,8 +748,6 @@ msgid "Clear All"
 msgstr "Összes törlése"
 
 #: src/gtk/shortcuts-dialog.blp:34
-#| msgctxt "shortcut window"
-#| msgid "BPM & Volume Controls"
 msgctxt "shortcut window"
 msgid "BPM & Volume"
 msgstr "BPM és hangerő"
@@ -781,11 +778,10 @@ msgid "Mute"
 msgstr "Némítás"
 
 #: src/gtk/shortcuts-dialog.blp:63
-#, fuzzy
 #| msgid "Open Pattern"
 msgctxt "shortcut window"
 msgid "Pattern"
-msgstr "Minta megnyitása"
+msgstr "Minta"
 
 #: src/gtk/shortcuts-dialog.blp:66
 msgctxt "shortcut window"
