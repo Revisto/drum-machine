@@ -6,8 +6,8 @@
 msgid ""
 msgstr "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-21 22:38+0000\n"
-"PO-Revision-Date: 2026-02-22 13:12+0000\n"
+"POT-Creation-Date: 2026-08-24 15:19+0000\n"
+"PO-Revision-Date: 2026-09-13 13:12+0000\n"
 "Last-Translator: Asier Saratsua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "Language: eu\n"
@@ -86,6 +86,10 @@ msgstr "Danbor-eredua modu argian kargatua"
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:38
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr "Danbor-eredua modu ilunean kargatua"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+msgid "Revisto"
+msgstr "Revisto"
 
 #: src/application.py:74
 msgid ""
@@ -693,102 +697,102 @@ msgstr "Las_ter-teklak"
 msgid "_About Drum Machine"
 msgstr "Drum Machine aplikazioari _buruz"
 
-#: src/gtk/help-overlay.blp:11
+#: src/gtk/shortcuts-dialog.blp:6
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Orokorra"
 
-#: src/gtk/help-overlay.blp:14
+#: src/gtk/shortcuts-dialog.blp:9
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
 msgstr "Erakutsi lasterbideak"
 
-#: src/gtk/help-overlay.blp:19
+#: src/gtk/shortcuts-dialog.blp:14
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Irten"
 
-#: src/gtk/help-overlay.blp:26
+#: src/gtk/shortcuts-dialog.blp:20
 msgctxt "shortcut window"
-msgid "Playback Controls"
-msgstr "Erreprodukzio-kontrolak"
+msgid "Playback"
+msgstr "Erreproduzitu"
 
-#: src/gtk/help-overlay.blp:29
+#: src/gtk/shortcuts-dialog.blp:23
 msgctxt "shortcut window"
 msgid "Play/Pause"
 msgstr "Erreproduzitu/pausarazi"
 
-#: src/gtk/help-overlay.blp:35
+#: src/gtk/shortcuts-dialog.blp:28
 msgctxt "shortcut window"
 msgid "Clear All"
 msgstr "Garbitu denak"
 
-#: src/gtk/help-overlay.blp:42
+#: src/gtk/shortcuts-dialog.blp:34
 msgctxt "shortcut window"
-msgid "BPM & Volume Controls"
-msgstr "BPMa eta bolumen-kontrolak"
+msgid "BPM & Volume"
+msgstr "BPMa eta bolumena"
 
-#: src/gtk/help-overlay.blp:45
+#: src/gtk/shortcuts-dialog.blp:37
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr "Handitu BPMa"
 
-#: src/gtk/help-overlay.blp:51
+#: src/gtk/shortcuts-dialog.blp:42
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr "Txikitu BMPa"
 
-#: src/gtk/help-overlay.blp:57
+#: src/gtk/shortcuts-dialog.blp:47
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr "Igo bolumena"
 
-#: src/gtk/help-overlay.blp:63
+#: src/gtk/shortcuts-dialog.blp:52
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr "Jaitsi bolumena"
 
-#: src/gtk/help-overlay.blp:69
+#: src/gtk/shortcuts-dialog.blp:57
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr "Mututu"
 
-#: src/gtk/help-overlay.blp:76
+#: src/gtk/shortcuts-dialog.blp:63
 msgctxt "shortcut window"
-msgid "Pattern Management"
-msgstr "Eredu-kudeaketa"
+msgid "Pattern"
+msgstr "Eredua"
 
-#: src/gtk/help-overlay.blp:79
+#: src/gtk/shortcuts-dialog.blp:66
 msgctxt "shortcut window"
 msgid "Load Pattern"
 msgstr "Kargatu eredua"
 
-#: src/gtk/help-overlay.blp:85
+#: src/gtk/shortcuts-dialog.blp:71
 msgctxt "shortcut window"
 msgid "Save Pattern"
 msgstr "Gorde eredua"
 
-#: src/gtk/help-overlay.blp:91
+#: src/gtk/shortcuts-dialog.blp:76
 msgctxt "shortcut window"
 msgid "Export Audio"
 msgstr "Esportatu audioa"
 
-#: src/gtk/help-overlay.blp:98
+#: src/gtk/shortcuts-dialog.blp:82
 msgctxt "shortcut window"
 msgid "Navigation"
 msgstr "Nabigazioa"
 
-#: src/gtk/help-overlay.blp:101
+#: src/gtk/shortcuts-dialog.blp:85
 msgctxt "shortcut window"
 msgid "Go to Instrument"
 msgstr "Joan musika-tresnara"
 
-#: src/gtk/help-overlay.blp:107
+#: src/gtk/shortcuts-dialog.blp:90
 msgctxt "shortcut window"
 msgid "Previous Page"
 msgstr "Aurreko orria"
 
-#: src/gtk/help-overlay.blp:113
+#: src/gtk/shortcuts-dialog.blp:95
 msgctxt "shortcut window"
 msgid "Next Page"
 msgstr "Hurrengo orria"
@@ -873,11 +877,16 @@ msgstr "Honek uneko danbor-eredua garbituko du eta laginak, BMPa eta bolumena  b
 msgid "_Reset"
 msgstr "Berre_zarri"
 
+#~ msgctxt "shortcut window"
+#~ msgid "Playback Controls"
+#~ msgstr "Erreprodukzio-kontrolak"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Pattern Management"
+#~ msgstr "Eredu-kudeaketa"
+
 #~ msgid "Reset the Drum Sequence"
 #~ msgstr "Berrezarri danbor-sekuentzia"
-
-#~ msgid "No Pattern"
-#~ msgstr "Eredurik ez"
 
 #~ msgid "Please create a drum pattern before exporting audio."
 #~ msgstr "Sortu danbor-eredua audioa esportatu baino lehen."
