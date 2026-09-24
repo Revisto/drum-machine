@@ -1,0 +1,1096 @@
+# Japanese translation for drum-machine.
+# Copyright (C) 2025 drum-machine's COPYRIGHT HOLDER
+# This file is distributed under the same license as the drum-machine package.
+# Ivan Yanulevich <ivanyanulevich@gmail.com>, 2025.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: drum-machine master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-24 18:40+0330\n"
+"PO-Revision-Date: 2025-03-24 14:07+0000\n"
+"Last-Translator: Ivan Yanulevich <ivanyanulevich@gmail.com>\n"
+"Language-Team: Japanese <https://gnome.jp/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.5\n"
+
+#: data/io.github.revisto.drum-machine.desktop.in:2
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
+#: src/window.ui:69
+msgid "Drum Machine"
+msgstr "ドラムマシン"
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#: data/io.github.revisto.drum-machine.desktop.in:9
+msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
+msgstr "drum;drums;ドラム;ドラム;sequencer;シーケンサー;rhythm;リズム;music;音楽;pattern;パターン;beats;ビート;percussion;打楽器;loop;ループ;groove;グルーブ;"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:7
+msgid "Create and play drum beats"
+msgstr "ドラムビートを作成して再生"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:9
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns. Perfect for musicians, producers, and anyone "
+"interested in rhythm creation, this application provides a simple interface "
+"for drum pattern programming. Have fun!"
+msgstr ""
+"ドラムマシンは、ドラムパターンを作成、再生、管理するための現代的で直感的なア"
+"プリケーションです。ミュージシャン、プロデューサー、リズム作成に興味のある方"
+"に最適で、このアプリケーションはドラムパターンプログラミングのためのシンプル"
+"なインターフェースを提供します。楽しんでください！"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:15
+msgid "Features:"
+msgstr "特徴: "
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:17
+msgid "Intuitive grid-based pattern editor with infinite pages"
+msgstr "直感的なグリッドベースで無限にページのあるパターンエディタ"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:18
+msgid "Custom samples: Add your own drum sounds with MIDI note mapping"
+msgstr "カスタムサンプル: MIDI ノートマッピングを使用して独自のドラムサウンドを追加"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:19
+msgid "Adjustable BPM control"
+msgstr "調整可能なBPMコントロール"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:20
+msgid "Volume control for overall mix"
+msgstr "全体のミックスのためのボリュームコントロール"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:21
+msgid "Save and load patterns"
+msgstr "パターンの保存と読み込み"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:22
+msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
+msgstr "キック、スネア、ハイハットなどの複数のドラムサウンド"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:23
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgstr ""
+"WAV、FLAC、Ogg、MP3、および MIDI 形式をサポートしたオーディオおよび MIDI エクスポート"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:24
+msgid "Metadata support for embedding artist name, song title, and cover art"
+msgstr "アーティスト名、楽曲タイトル、カバーアートを埋め込むためのメタデータサポート"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:25
+msgid "Keyboard shortcuts for quick access to all functions"
+msgstr "すべての機能への迅速なアクセスのためのキーボードショートカット"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:34
+msgid "Drum Pattern Loaded in Light Mode"
+msgstr "ライトモードでドラムパターンが読み込まれました"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:38
+msgid "Drum Pattern Loaded in Dark Mode"
+msgstr "ダークモードでドラムパターンが読み込まれました"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+msgid "Revisto"
+msgstr "Revisto"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:55
+msgid "Drum Machine 2.2.0: Reset to Defaults!"
+msgstr "Drum Machine 2.2.0: デフォルトにリセット!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:57
+msgid ""
+"Reset to Defaults: New menu option to restore all samples, BPM, and volume "
+"to factory settings"
+msgstr "デフォルトにリセット: すべてのサンプル、BPM、およびボリュームを出荷時の設定に戻す新しいメニューオプション"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:58
+msgid ""
+"Clear Button: Renamed from Reset, now only clears the pattern while keeping "
+"custom samples"
+msgstr "クリアボタン: リセットから名前が変更され、カスタムサンプルを保持しつつパターンのみクリアするようになりました"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:64
+msgid "Drum Machine 2.1.0: Drag and Drop!"
+msgstr "ドラムマシン 2.1.0: ドラッグ＆ドロップ!"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:66
+msgid ""
+"Drag-and-Drop: Reorder drum parts by dragging them to new positions in the "
+"drum parts column"
+msgstr "ドラッグ＆ドロップ: ドラムパーツの列でドラムパーツを新しい位置にドラッグして順序を変更できます"
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:67
+msgid ""
+"Slide Animations: New drum placeholder now features smooth slide-down "
+"animations for better visual feedback"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:73
+msgid "Drum Machine 2.0.0 is a major release with custom samples! 🎶"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:75
+msgid ""
+"Custom Samples: Add your own drum sounds and map them to specific MIDI notes "
+"for export"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:76
+msgid ""
+"MIDI Export: Export your patterns as MIDI files with proper note mapping"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:77
+msgid ""
+"Pattern Management: Presets have been refactored to a more flexible pattern "
+"system"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:78
+msgid ""
+"Bug Fixes: Sounds now stop immediately when pausing, disabled export when "
+"pattern is empty"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:79
+msgid "New Translations: Added Catalan, Greek, and Uzbek languages"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:80
+msgid ""
+"Translation Updates: Updated Slovenian, Basque, Ukrainian, Georgian, "
+"Chinese, Persian, and many more"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:86
+msgid "Drum Machine 1.5.0 introduces major audio export capabilities! 🎵"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:88
+msgid ""
+"Audio Export Feature: Export your drum patterns to WAV, FLAC, Ogg Vorbis, "
+"and MP3 formats"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:89
+msgid ""
+"Metadata Support: Embed artist name, song title, and cover art in exported "
+"files"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:90
+msgid ""
+"Repeat Pattern: Set how many times your beat repeats in the exported audio"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:91
+msgid ""
+"Bug Fix: Fixed issue where multiple drum sounds weren't playing "
+"simultaneously"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:92
+msgid ""
+"Translation Updates: Updated Spanish, Russian, Georgian, Chinese, Hungarian, "
+"Swedish, and more"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:98
+msgid "Drum Machine 1.4.0 is here with some good updates! 🥁"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:100
+msgid ""
+"More pages for longer, more complex beats, because sometimes you need more "
+"than 16 steps!"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:101
+msgid ""
+"Mobile-friendly improvements, now your drum machine works better on phones "
+"(with showing half of the grid)"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:102
+msgid ""
+"Goes global! Now translated into 17 languages including Chinese, Russian, "
+"Arabic, Hebrew, and many more"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:108
+msgid ""
+"This release of Drum Machine 1.3.1 brings significant UI and functionality "
+"improvements:"
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:110
+msgid ""
+"Refactored headerbar and background styling for a flat, integrated visual "
+"experience."
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:111
+msgid ""
+"Enhanced accessibility with improved tooltips and descriptive labels for BPM "
+"and volume controls."
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:112
+msgid ""
+"Redesigned app icon and updated text styling for clearer user interface "
+"elements."
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:113
+msgid ""
+"Optimized layout breakpoints to improve responsiveness and reduce early "
+"scrolling."
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:114
+msgid ""
+"Fixed padding, border-radius, and vertical alignment issues across multiple "
+"controls."
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:115
+msgid ""
+"Updated file dialogs to use the Nautilus file chooser for a more modern "
+"approach."
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:116
+msgid ""
+"Improved keyboard navigation focus and updated tooltips, including dedicated "
+"play and pause hints."
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:117
+msgid ""
+"Transitioned to the Nautilus file chooser for a more contemporary interface."
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:118
+msgid "Now accessible on narrow mobile screens with adaptive UI elements."
+msgstr ""
+
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:119
+msgid "Refined app icon, and adjusted brand colors for better contrast."
+msgstr ""
+
+#: src/application.py:74
+msgid ""
+"Drum Machine is a modern and intuitive application for creating, playing, "
+"and managing drum patterns."
+msgstr ""
+"ドラムマシンは、ドラムパターンを作成、再生、管理するための現代的で直感的なアプリケーションです。"
+
+#: src/application.py:79
+msgid "translator-credits"
+msgstr ""
+"Ivan Yanulevich <ivanyanulevich@gmail.com>\n"
+"GNOME Japanese Translation Team <https://gnome.jp/>\n"
+"Kusano Takayuki <https://tkusano.jp/>"
+
+#: src/application.py:84
+msgid "Special thanks"
+msgstr ""
+
+#: src/application.py:87
+msgid "Sounds"
+msgstr ""
+
+#: src/application.py:88
+#, python-brace-format
+msgid "The drum samples used in this application are from {link}."
+msgstr "このアプリケーションで使用されているドラムサンプルは {link} からのものです。"
+
+#: src/config/export_formats.py:44
+msgid "MP3 files"
+msgstr "MP3 ファイル"
+
+#: src/config/export_formats.py:45
+msgid "MP3"
+msgstr "MP3"
+
+#: src/config/export_formats.py:51
+msgid "FLAC files"
+msgstr "FLAC ファイル"
+
+#: src/config/export_formats.py:52
+msgid "FLAC (Lossless)"
+msgstr "FLAC (ロスレス)"
+
+#: src/config/export_formats.py:58
+msgid "Ogg files"
+msgstr "Oggファイル"
+
+#: src/config/export_formats.py:59
+msgid "Ogg Vorbis"
+msgstr "Ogg Vorbis"
+
+#: src/config/export_formats.py:65
+msgid "WAV files"
+msgstr "WAV ファイル"
+
+#: src/config/export_formats.py:66
+msgid "WAV (Uncompressed)"
+msgstr "WAV (非圧縮)"
+
+#: src/dialogs/audio_export_dialog.py:119
+msgid "Save Audio File"
+msgstr "オーディオファイルを保存"
+
+#: src/dialogs/audio_export_dialog.py:148
+msgid "Part “{}” is Silent"
+msgstr "パート “{}” はサイレントです"
+
+#: src/dialogs/audio_export_dialog.py:150
+msgid "Parts “{}” and “{}” are Silent"
+msgstr "パート “{}” と “{}” はサイレントです"
+
+#: src/dialogs/audio_export_dialog.py:154
+msgid "{} Parts are Silent"
+msgstr "{} パートはサイレントです   "
+
+#: src/dialogs/audio_export_dialog.py:179
+msgid "Image files"
+msgstr "画像ファイル"
+
+#: src/dialogs/audio_export_dialog.py:185
+msgid "Select Cover Art"
+msgstr "カバーアートを選択"
+
+#: src/dialogs/audio_export_dialog.py:245
+msgid "Audio exported to {}"
+msgstr "{} にオーディオがエクスポートされました"
+
+#: src/dialogs/audio_export_dialog.py:251
+msgid "Export failed"
+msgstr "エクスポートに失敗しました"
+
+#: src/dialogs/audio_export_dialog.py:258
+msgid "Export cancelled successfully"
+msgstr "エクスポートのキャンセルが成功しました"
+
+#: src/dialogs/midi_mapping_dialog.py:22
+msgid "Acoustic Bass Drum"
+msgstr "アコースティックバスドラム"
+
+#: src/dialogs/midi_mapping_dialog.py:23
+msgid "Bass Drum 1"
+msgstr "バスドラム 1"
+
+#: src/dialogs/midi_mapping_dialog.py:24
+msgid "Side Stick"
+msgstr "サイドスティック"
+
+#: src/dialogs/midi_mapping_dialog.py:25
+msgid "Acoustic Snare"
+msgstr "アコースティックスネア"
+
+#: src/dialogs/midi_mapping_dialog.py:26
+msgid "Hand Clap"
+msgstr "ハンドクラップ"
+
+#: src/dialogs/midi_mapping_dialog.py:27
+msgid "Electric Snare"
+msgstr "エレクトリックスネア"
+
+#: src/dialogs/midi_mapping_dialog.py:28
+msgid "Low Floor Tom"
+msgstr "ローフロアタム"
+
+#: src/dialogs/midi_mapping_dialog.py:29
+msgid "Closed Hi Hat"
+msgstr "クローズドハイハット"
+
+#: src/dialogs/midi_mapping_dialog.py:30
+msgid "High Floor Tom"
+msgstr "ハイフロアタム"
+
+#: src/dialogs/midi_mapping_dialog.py:31
+msgid "Pedal Hi Hat"
+msgstr "ペダルハイハット"
+
+#: src/dialogs/midi_mapping_dialog.py:32
+msgid "Low Tom"
+msgstr "ロータム"
+
+#: src/dialogs/midi_mapping_dialog.py:33
+msgid "Open Hi Hat"
+msgstr "オープンハイハット"
+
+#: src/dialogs/midi_mapping_dialog.py:34
+msgid "Low-Mid Tom"
+msgstr "ローミッドタム"
+
+#: src/dialogs/midi_mapping_dialog.py:35
+msgid "Hi-Mid Tom"
+msgstr "ハイミッドタム"
+
+#: src/dialogs/midi_mapping_dialog.py:36
+msgid "Crash Cymbal 1"
+msgstr "クラッシュシンバル 1"
+
+#: src/dialogs/midi_mapping_dialog.py:37
+msgid "High Tom"
+msgstr "ハイタム"
+
+#: src/dialogs/midi_mapping_dialog.py:38
+msgid "Ride Cymbal 1"
+msgstr "ライドシンバル 1"
+
+#: src/dialogs/midi_mapping_dialog.py:39
+msgid "Chinese Cymbal"
+msgstr "チャイナシンバル"
+
+#: src/dialogs/midi_mapping_dialog.py:40
+msgid "Ride Bell"
+msgstr "ライドベル"
+
+#: src/dialogs/midi_mapping_dialog.py:41
+msgid "Tambourine"
+msgstr "タンバリン"
+
+#: src/dialogs/midi_mapping_dialog.py:42
+msgid "Splash Cymbal"
+msgstr "スプラッシュシンバル    "
+
+#: src/dialogs/midi_mapping_dialog.py:43
+msgid "Cowbell"
+msgstr "カウベル"
+
+#: src/dialogs/midi_mapping_dialog.py:44
+msgid "Crash Cymbal 2"
+msgstr "クラッシュシンバル 2"
+
+#: src/dialogs/midi_mapping_dialog.py:45
+msgid "Vibraslap"
+msgstr "ビブラスラップ"
+
+#: src/dialogs/midi_mapping_dialog.py:46
+msgid "Ride Cymbal 2"
+msgstr "ライドシンバル 2"
+
+#: src/dialogs/midi_mapping_dialog.py:47
+msgid "Hi Bongo"
+msgstr "ハイボンゴ"
+
+#: src/dialogs/midi_mapping_dialog.py:48
+msgid "Low Bongo"
+msgstr "ローボンゴ"
+
+#: src/dialogs/midi_mapping_dialog.py:49
+msgid "Mute Hi Conga"
+msgstr "ミュートハイコンガ"
+
+#: src/dialogs/midi_mapping_dialog.py:50
+msgid "Open Hi Conga"
+msgstr ""
+
+#: src/dialogs/midi_mapping_dialog.py:51
+msgid "Low Conga"
+msgstr "ローコンガ"
+
+#: src/dialogs/midi_mapping_dialog.py:52
+msgid "High Timbale"
+msgstr "ハイティンバレス"
+
+#: src/dialogs/midi_mapping_dialog.py:53
+msgid "Low Timbale"
+msgstr "ローティンバレス"
+
+#: src/dialogs/midi_mapping_dialog.py:54
+msgid "High Agogo"
+msgstr "ハイアゴゴ"
+
+#: src/dialogs/midi_mapping_dialog.py:55
+msgid "Low Agogo"
+msgstr "ローアゴゴ"
+
+#: src/dialogs/midi_mapping_dialog.py:56
+msgid "Cabasa"
+msgstr "カバサ"
+
+#: src/dialogs/midi_mapping_dialog.py:57
+msgid "Maracas"
+msgstr "マラカス"
+
+#: src/dialogs/midi_mapping_dialog.py:58
+msgid "Short Whistle"
+msgstr "ショートホイッスル"
+
+#: src/dialogs/midi_mapping_dialog.py:59
+msgid "Long Whistle"
+msgstr "ロングホイッスル"
+
+#: src/dialogs/midi_mapping_dialog.py:60
+msgid "Short Guiro"
+msgstr "ショートギロ"
+
+#: src/dialogs/midi_mapping_dialog.py:61
+msgid "Long Guiro"
+msgstr "ロングギロ"
+
+#: src/dialogs/midi_mapping_dialog.py:62
+msgid "Claves"
+msgstr "クラベス"
+
+#: src/dialogs/midi_mapping_dialog.py:63
+msgid "Hi Wood Block"
+msgstr "ハイウッドブロック"
+
+#: src/dialogs/midi_mapping_dialog.py:64
+msgid "Low Wood Block"
+msgstr "ローウッドブロック"
+
+#: src/dialogs/midi_mapping_dialog.py:65
+msgid "Mute Cuica"
+msgstr "ミュートクイーカ"
+
+#: src/dialogs/midi_mapping_dialog.py:66
+msgid "Open Cuica"
+msgstr "オープンクイーカ"
+
+#: src/dialogs/midi_mapping_dialog.py:67
+msgid "Mute Triangle"
+msgstr "ミュートトライアングル"
+
+#: src/dialogs/midi_mapping_dialog.py:68
+msgid "Open Triangle"
+msgstr "オープントライアングル"
+
+#: src/dialogs/midi_mapping_dialog.py:78 src/ui/drum_grid_builder.py:342
+msgid "MIDI Mapping"
+msgstr "MIDI マッピング"
+
+#. Group 1: Note Assignment
+#: src/dialogs/midi_mapping_dialog.py:108
+msgid "Note Assignment"
+msgstr "ノート割り当て"
+
+#: src/dialogs/midi_mapping_dialog.py:111
+msgid ""
+"Assign a MIDI note for '{}'. This ensures correct playback when exporting."
+msgstr " '{}' のための MIDI ノートを割り当てます。これにより、エクスポート時に正しく再生されることが保証されます。"
+
+#. Action Row for Note
+#: src/dialogs/midi_mapping_dialog.py:118
+msgid "MIDI Note"
+msgstr "MIDI ノート"
+
+#: src/dialogs/midi_mapping_dialog.py:119
+msgid "The note number to trigger"
+msgstr ""
+
+#. Group 2: Standard Instruments
+#: src/dialogs/midi_mapping_dialog.py:137
+msgid "Standard Instruments"
+msgstr "標準楽器"
+
+#: src/dialogs/midi_mapping_dialog.py:139
+msgid "Select a General MIDI instrument to automatically set the note."
+msgstr "ノートを自動的に設定するために、General MIDI 楽器を選択します。"
+
+#: src/dialogs/midi_mapping_dialog.py:143
+msgid "Instrument Preset"
+msgstr "楽器プリセット"
+
+#: src/dialogs/midi_mapping_dialog.py:186
+msgid "Save"
+msgstr "保存"
+
+#: src/dialogs/midi_mapping_dialog.py:229
+msgid "Custom Note"
+msgstr "カスタムノート"
+
+#: src/handlers/drag_drop_handler.py:299
+msgid "Sound replaced"
+msgstr "音が置き換えられました"
+
+#: src/handlers/drag_drop_handler.py:302
+msgid "Failed to replace sound"
+msgstr "音の置き換えに失敗しました"
+
+#: src/handlers/drag_drop_handler.py:312
+msgid "Not a supported audio file"
+msgstr "サポートされていないオーディオファイルです"
+
+#: src/handlers/drag_drop_handler.py:320
+msgid "File not found"
+msgstr "ファイルが見つかりません"
+
+#: src/handlers/drag_drop_handler.py:325
+msgid "Selected item is not a file"
+msgstr "選択されたアイテムはファイルではありません"
+
+#: src/handlers/drag_drop_handler.py:332
+msgid "File too large: {:.1f}MB (max 50MB)"
+msgstr "ファイルが大きすぎます: {:.1f}MB (最大 50MB)"
+
+#: src/handlers/drag_drop_handler.py:362
+msgid "No valid audio files found"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:402
+msgid "Error processing file: {}"
+msgstr "ファイルの処理中にエラー: {}"
+
+#: src/handlers/drag_drop_handler.py:433
+msgid "Added {} drum part, {} files skipped"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:439
+msgid "Added {} drum parts, {} files skipped"
+msgstr ""
+
+#: src/handlers/drag_drop_handler.py:444
+msgid "Added {} drum parts"
+msgstr ""
+
+#. Only show skipped message if no replacement happened
+#: src/handlers/drag_drop_handler.py:447
+msgid "{} files skipped"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:52
+msgid "Default Patterns"
+msgstr "デフォルトパターン"
+
+#: src/handlers/file_dialog_handler.py:92
+#: src/handlers/file_dialog_handler.py:171
+msgid "MIDI files"
+msgstr "MIDIファイル"
+
+#: src/handlers/file_dialog_handler.py:98
+msgid "Open MIDI File"
+msgstr "MIDIファイルを開く"
+
+#: src/handlers/file_dialog_handler.py:127
+msgid "Failed to open file"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:165
+msgid "Failed to load pattern"
+msgstr "パターンの読み込みに失敗しました"
+
+#: src/handlers/file_dialog_handler.py:179
+msgid "Save Sequence"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:205
+msgid "Add Audio Samples"
+msgstr ""
+
+#: src/handlers/file_dialog_handler.py:227
+msgid "Audio files"
+msgstr ""
+
+#: src/utils/export_progress.py:76
+msgid "Preparing…"
+msgstr ""
+
+#: src/utils/export_progress.py:77
+msgid "Initializing…"
+msgstr ""
+
+#: src/utils/export_progress.py:79
+msgid "Rendering audio…"
+msgstr ""
+
+#: src/utils/export_progress.py:80
+msgid "Processing beats…"
+msgstr ""
+
+#: src/utils/export_progress.py:82
+msgid "Saving file…"
+msgstr ""
+
+#: src/utils/export_progress.py:83
+msgid "Writing to disk…"
+msgstr ""
+
+#: src/utils/export_progress.py:85
+msgid "Exporting…"
+msgstr ""
+
+#: src/utils/export_progress.py:86
+msgid "Processing…"
+msgstr ""
+
+#: src/utils/name_utils.py:36
+msgid "Custom Sound"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:327
+msgid "Preview"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:329
+msgid "Replace…"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:332
+msgid "Replace with new sound"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:335
+msgid "Remove"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:338
+msgid "At least one drum part must remain"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:345
+msgid "Configure MIDI note for export"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:402
+msgid "MIDI note updated"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:410
+msgid "Select New Sound"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:424
+msgid "Removed drum part: {}"
+msgstr ""
+
+#: src/ui/drum_grid_builder.py:429
+msgid "Failed to remove drum part"
+msgstr ""
+
+#. Update tooltip and accessibility with current BPM
+#: src/window.py:220
+msgid "{} Beats per Minute (BPM)"
+msgstr "{} ビート/分 (BPM)"
+
+#. Update button tooltip to show current volume level
+#: src/window.py:229
+msgid "{:.0f}% Volume"
+msgstr "{:.0f}% ボリューム"
+
+#: src/window.py:262 src/window.ui:173
+msgid "Play"
+msgstr "再生"
+
+#: src/window.py:266
+msgid "Pause"
+msgstr "一時停止"
+
+#: src/window.py:313
+msgid "Open"
+msgstr "開く"
+
+#: src/window.py:331
+msgid "Added: {}"
+msgstr ""
+
+#: src/window.py:346
+msgid "Failed to add custom sound"
+msgstr ""
+
+#: src/window.py:353
+msgid "Replaced drum with: {}"
+msgstr ""
+
+#: src/window.py:361
+msgid "Failed to replace drum sound"
+msgstr ""
+
+#: src/window.ui:52
+msgid "Open…"
+msgstr "開く…"
+
+#: src/window.ui:54
+msgid "Open Pattern"
+msgstr "パターンを開く"
+
+#: src/window.ui:57
+msgctxt "accessibility"
+msgid "Open Pattern"
+msgstr "パターンを開く"
+
+#: src/window.ui:58
+msgid "Open Saved Drum Pattern"
+msgstr "保存されたドラムパターンを開く"
+
+#: src/window.ui:76
+msgid "Main Menu"
+msgstr "メインメニュー"
+
+#: src/window.ui:78
+msgctxt "accessibility"
+msgid "Main Menu"
+msgstr "メインメニュー"
+
+#: src/window.ui:79
+msgid "Access Keyboard Shortcuts and Application Information"
+msgstr "キーボードショートカットとアプリケーション情報にアクセス"
+
+#: src/window.ui:86
+msgid "Export Audio…"
+msgstr ""
+
+#: src/window.ui:91
+msgctxt "accessibility"
+msgid "Export Audio…"
+msgstr ""
+
+#: src/window.ui:92
+msgid "Export Current Drum Pattern as Audio File"
+msgstr "現在のドラムパターンをオーディオファイルとしてエクスポート"
+
+#: src/window.ui:137
+msgid "BPM"
+msgstr "BPM"
+
+#: src/window.ui:142 src/window.ui:146
+msgid "Adjust Tempo In Beats per Minute (BPM)"
+msgstr "ビート/分 (BPM) でテンポを調整"
+
+#: src/window.ui:145
+msgid "Tempo"
+msgstr "テンポ"
+
+#: src/window.ui:187
+msgid "Adjust Volume"
+msgstr "ボリュームを調整"
+
+#: src/window.ui:210
+msgid "Clear"
+msgstr "クリア"
+
+#: src/window.ui:211
+msgid "Clear the Drum Pattern"
+msgstr "ドラムパターンをクリア"
+
+#: src/window.ui:226
+msgid "_Add Samples…"
+msgstr ""
+
+#: src/window.ui:230
+msgid "_Save Pattern…"
+msgstr "パターンを保存(_S)…"
+
+#: src/window.ui:236
+msgid "_Reset to Defaults"
+msgstr "デフォルトにリセット(_R)"
+
+#: src/window.ui:242
+msgid "_Keyboard Shortcuts"
+msgstr "_キーボードショートカット"
+
+#: src/window.ui:246
+msgid "_About Drum Machine"
+msgstr "_ドラムマシンについて"
+
+#: src/gtk/shortcuts-dialog.blp:6
+msgctxt "shortcut window"
+msgid "General"
+msgstr "一般"
+
+#: src/gtk/shortcuts-dialog.blp:9
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "ショートカットを表示"
+
+#: src/gtk/shortcuts-dialog.blp:14
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "終了"
+
+#: src/gtk/shortcuts-dialog.blp:20
+msgctxt "shortcut window"
+msgid "Playback"
+msgstr "再生"
+
+#: src/gtk/shortcuts-dialog.blp:23
+msgctxt "shortcut window"
+msgid "Play/Pause"
+msgstr "再生/一時停止"
+
+#: src/gtk/shortcuts-dialog.blp:28
+msgctxt "shortcut window"
+msgid "Clear All"
+msgstr "すべてクリア"
+
+#: src/gtk/shortcuts-dialog.blp:34
+msgctxt "shortcut window"
+msgid "BPM & Volume"
+msgstr "BPM & ボリューム"
+
+#: src/gtk/shortcuts-dialog.blp:37
+msgctxt "shortcut window"
+msgid "Increase BPM"
+msgstr "BPMを増やす"
+
+#: src/gtk/shortcuts-dialog.blp:42
+msgctxt "shortcut window"
+msgid "Decrease BPM"
+msgstr "BPMを減らす"
+
+#: src/gtk/shortcuts-dialog.blp:47
+msgctxt "shortcut window"
+msgid "Increase Volume"
+msgstr "ボリュームを増やす"
+
+#: src/gtk/shortcuts-dialog.blp:52
+msgctxt "shortcut window"
+msgid "Decrease Volume"
+msgstr "ボリュームを減らす"
+
+#: src/gtk/shortcuts-dialog.blp:57
+msgctxt "shortcut window"
+msgid "Mute"
+msgstr ""
+
+#: src/gtk/shortcuts-dialog.blp:63
+msgctxt "shortcut window"
+msgid "Pattern"
+msgstr ""
+
+#: src/gtk/shortcuts-dialog.blp:66
+msgctxt "shortcut window"
+msgid "Load Pattern"
+msgstr "ドラムパターンを読み込み"
+
+#: src/gtk/shortcuts-dialog.blp:71
+msgctxt "shortcut window"
+msgid "Save Pattern"
+msgstr "ドラムパターンを保存"
+
+#: src/gtk/shortcuts-dialog.blp:76
+msgctxt "shortcut window"
+msgid "Export Audio"
+msgstr ""
+
+#: src/gtk/shortcuts-dialog.blp:82
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr ""
+
+#: src/gtk/shortcuts-dialog.blp:85
+msgctxt "shortcut window"
+msgid "Go to Instrument"
+msgstr ""
+
+#: src/gtk/shortcuts-dialog.blp:90
+msgctxt "shortcut window"
+msgid "Previous Page"
+msgstr ""
+
+#: src/gtk/shortcuts-dialog.blp:95
+msgctxt "shortcut window"
+msgid "Next Page"
+msgstr ""
+
+#: src/gtk/save-changes-dialog.blp:5
+msgid "Save Changes?"
+msgstr "変更を保存しますか？"
+
+#: src/gtk/save-changes-dialog.blp:6
+msgid ""
+"Current pattern contains unsaved changes. Changes which are not saved will "
+"be permanently lost."
+msgstr ""
+"現在のパターンには保存されていない変更が含まれています。保存されていない変"
+"更は永久に失われます。"
+
+#. Translators: Cancel the operation
+#: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
+msgid "_Cancel"
+msgstr "_キャンセル"
+
+#. Translators: Discard all changes
+#: src/gtk/save-changes-dialog.blp:15
+msgid "_Discard"
+msgstr "_破棄"
+
+#. Translators: Save current changes
+#: src/gtk/save-changes-dialog.blp:16
+msgid "_Save"
+msgstr "_保存"
+
+#: src/gtk/audio-export-dialog.blp:6 src/gtk/audio-export-dialog.blp:101
+msgid "Export Audio"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:44
+msgid "Audio Format"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:50
+msgid "Repeat Count"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:51
+msgid "How many times to repeat the pattern"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:64
+msgid "Metadata"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:67
+msgid "Artist Name"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:72
+msgid "Song Name"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:77
+msgid "Cover Art"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:81
+msgid "Choose File…"
+msgstr ""
+
+#: src/gtk/audio-export-dialog.blp:110
+msgid "Cancel Export"
+msgstr "エクスポートをキャンセル"
+
+#: src/gtk/reset-defaults-dialog.blp:5
+msgid "Reset to Defaults?"
+msgstr ""
+
+#: src/gtk/reset-defaults-dialog.blp:6
+msgid ""
+"This will clear the current pattern and restore all samples, BPM, and volume "
+"to their default values. This action cannot be undone."
+msgstr ""
+
+#. Translators: Reset to defaults
+#: src/gtk/reset-defaults-dialog.blp:14
+msgid "_Reset"
+msgstr "リセット(_R)"
+
+#~ msgid "Reset the Drum Sequence"
+#~ msgstr "ドラムシーケンスをリセット"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Playback Controls"
+#~ msgstr "再生コントロール"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Preset Management"
+#~ msgstr "プリセット管理"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Load Preset"
+#~ msgstr "プリセットを読み込む"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Save Preset"
+#~ msgstr "プリセットを保存"
