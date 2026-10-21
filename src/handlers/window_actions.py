@@ -38,6 +38,7 @@ class WindowActionHandler:
         """Setup all window actions and keyboard shortcuts"""
         actions = [
             ("open_menu", self.on_open_menu_action, ["F10"]),
+            ("show-help-overlay", self.on_show_help_overlay, ["<primary>question"]),
             ("play_pause", self.handle_play_pause_action, ["space"]),
             ("clear_toggles", self.handle_clear_action, ["<primary>Delete"]),
             ("increase_bpm", self.increase_bpm_action, ["plus", "equal"]),
@@ -75,6 +76,11 @@ class WindowActionHandler:
         self, action: Gio.SimpleAction, param: Optional[object]
     ) -> None:
         self.window.menu_button.activate()
+
+    def on_show_help_overlay(
+        self, action: Gio.SimpleAction, param: Optional[object]
+    ) -> None:
+        self.window.get_help_overlay().present()
 
     def handle_play_pause_action(
         self, action: Gio.SimpleAction, param: Optional[object]
@@ -196,8 +202,9 @@ class WindowActionHandler:
     def on_reset_to_defaults_action(
         self, action: Gio.SimpleAction, param: Optional[object]
     ) -> None:
-        """Reset drum parts to defaults with confirmation"""
+        """Ask whether to clear the pattern only or restore every default"""
         ResetDefaultsDialog(
             window=self.window,
             on_reset_callback=self.window.reset_to_defaults,
+            on_clear_callback=self.window.clear_pattern,
         )

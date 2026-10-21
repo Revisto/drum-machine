@@ -26,10 +26,17 @@ from gi.repository import Adw, Gtk
 class ResetDefaultsDialog(Adw.AlertDialog):
     __gtype_name__ = "ResetDefaultsDialog"
 
-    def __init__(self, window, on_reset_callback=None):
+    def __init__(self, window, on_reset_callback=None, on_clear_callback=None):
         super().__init__()
         self._on_reset_callback = on_reset_callback
+        self._on_clear_callback = on_clear_callback
         self.present(window)
+
+    @Gtk.Template.Callback()
+    def _on_clear(self, _dialog, _response):
+        if callable(self._on_clear_callback):
+            self._on_clear_callback()
+        self.close()
 
     @Gtk.Template.Callback()
     def _on_reset(self, _dialog, _response):
