@@ -230,6 +230,9 @@ class DrumMachineWindow(Adw.ApplicationWindow):
         button.set_tooltip_text(volume_text)
 
     def handle_clear(self, button: Gtk.Button) -> None:
+        self.clear_pattern()
+
+    def clear_pattern(self) -> None:
         """Clear the pattern but keep samples"""
         self.drum_machine_service.clear_all_toggles()
         self.drum_machine_service.update_total_beats()
