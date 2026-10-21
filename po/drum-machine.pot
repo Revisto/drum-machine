@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-24 18:40+0330\n"
+"POT-Creation-Date: 2026-10-21 07:53+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -299,6 +299,70 @@ msgstr ""
 #: src/application.py:88
 #, python-brace-format
 msgid "The drum samples used in this application are from {link}."
+msgstr ""
+
+#: src/config/constants.py:25
+msgid "kick"
+msgstr ""
+
+#: src/config/constants.py:26
+msgid "kick-2"
+msgstr ""
+
+#: src/config/constants.py:27
+msgid "kick-3"
+msgstr ""
+
+#: src/config/constants.py:28
+msgid "snare"
+msgstr ""
+
+#: src/config/constants.py:29
+msgid "snare-2"
+msgstr ""
+
+#: src/config/constants.py:30
+msgid "hihat"
+msgstr ""
+
+#: src/config/constants.py:31
+msgid "hihat-2"
+msgstr ""
+
+#: src/config/constants.py:32
+msgid "clap"
+msgstr ""
+
+#: src/config/constants.py:33
+msgid "tom"
+msgstr ""
+
+#: src/config/constants.py:34
+msgid "crash"
+msgstr ""
+
+#: src/config/constants.py:39
+msgid "Shoot"
+msgstr ""
+
+#: src/config/constants.py:40
+msgid "Maybe Rock"
+msgstr ""
+
+#: src/config/constants.py:41
+msgid "Boom Boom"
+msgstr ""
+
+#: src/config/constants.py:42
+msgid "Night"
+msgstr ""
+
+#: src/config/constants.py:43
+msgid "Slow"
+msgstr ""
+
+#: src/config/constants.py:44
+msgid "Chill"
 msgstr ""
 
 #: src/config/export_formats.py:44
