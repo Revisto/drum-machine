@@ -8,7 +8,7 @@ on:
 
 jobs:
   lint:
-    name: Lint with flake8
+    name: Lint (pre-commit)
     runs-on: ubuntu-latest
 
     steps:
@@ -17,16 +17,27 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install dependencies
+      - name: Install system tools used by the hooks
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y appstream desktop-file-utils libglib2.0-bin
+      - name: Install pre-commit
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements/ci.txt
-      - name: Lint
-        run: |
-          # Stop the build if there are Python syntax errors or undefined names
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics --builtins="_"
-          # Exit if any flake8 issue is found (errors or warnings)
-          flake8 . --count --max-complexity=10 --max-line-length=88 --statistics
+      - name: Cache pre-commit environments
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
+      # Skipped here:
+      # - check-pot runs in its own job below.
+      # - blueprint-format needs libadwaita newer than ubuntu-latest ships;
+      #   the Flatpak job already compiles the .blp files with the real SDK.
+      - name: Run pre-commit
+        env:
+          SKIP: check-pot,blueprint-format
+        run: pre-commit run --all-files --show-diff-on-failure
 
   translation-check:
     name: Check translation template
@@ -43,46 +54,8 @@ jobs:
           pip install meson ninja
           sudo apt-get update
           sudo apt-get install -y gettext blueprint-compiler desktop-file-utils libglib2.0-dev
-      - name: Setup build directory
-        run: |
-          meson setup builddir
       - name: Check if .pot file needs updating
-        run: |
-          # Backup the original .pot file from the checkout
-          cp po/drum-machine.pot po/drum-machine.pot.orig
-
-          # Regenerate the .pot file
-          meson compile -C builddir drum-machine-pot
-
-          # Verify the generated .pot file exists
-          if [ ! -f po/drum-machine.pot ]; then
-            echo "::error::Failed to generate .pot file. Build may have failed."
-            exit 1
-          fi
-          
-          # Normalize both files by:
-          # 1. Replacing timestamp with placeholder
-          # 2. Removing line number references (e.g., ":123" -> "")
-          normalize_pot() {
-            sed -E \
-              -e 's/POT-Creation-Date: [0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}\+[0-9]{4}/POT-Creation-Date: TIMESTAMP/g' \
-              -e '/^#:/ s/:[0-9]+//g' \
-              "$1"
-          }
-          
-          normalize_pot po/drum-machine.pot.orig > po/drum-machine.pot.orig.normalized
-          normalize_pot po/drum-machine.pot > po/drum-machine.pot.normalized
-          
-          # Compare normalized files (ignore whitespace differences)
-          if ! diff -u --ignore-all-space po/drum-machine.pot.orig.normalized po/drum-machine.pot.normalized > /dev/null; then
-            echo "::error file=po/drum-machine.pot::Translation template (.pot file) is out of date. Please run 'meson compile -C builddir drum-machine-pot' and commit the updated po/drum-machine.pot file."
-            echo ""
-            echo "Diff of changes needed:"
-            diff -u po/drum-machine.pot.orig.normalized po/drum-machine.pot.normalized || true
-            exit 1
-          fi
-          
-          echo "✓ Translation template is up to date"
+        run: scripts/check-pot.sh
 
   flatpak:
     name: Flatpak Builder

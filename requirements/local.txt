@@ -1,3 +1,2 @@
 -r base.txt
-pre_commit
-flake8
+pre-commit

@@ -1,10 +1,59 @@
 repos:
--   repo: https://github.com/PyCQA/flake8
-    rev: 7.3.0
+  # Python
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 26.10.1
     hooks:
-    -   id: flake8
-        name: flake8-syntax
-        args: [--count, '--select=E9,F63,F7,F82', --show-source, --statistics, --builtins="_"]
-    -   id: flake8
-        name: flake8-style
-        args: [--count, --max-complexity=10, --max-line-length=88, --statistics]
+      - id: black
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.1
+    hooks:
+      - id: ruff-check
+
+  # YAML / GitHub Actions
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.38.0
+    hooks:
+      - id: yamllint
+
+  - repo: https://github.com/Mateusz-Grzelinski/actionlint-py
+    rev: v1.7.12.25
+    hooks:
+      - id: actionlint
+
+  # GNOME / Flatpak tooling. These use system binaries, so install
+  # blueprint-compiler, appstream, desktop-file-utils, gettext, meson and
+  # libglib2.0-bin first (see CONTRIBUTING.md).
+  - repo: local
+    hooks:
+      - id: blueprint-format
+        name: blueprint-compiler format
+        entry: blueprint-compiler format --fix
+        language: system
+        files: \.blp$
+
+      - id: glib-compile-schemas
+        name: glib-compile-schemas (validate)
+        entry: glib-compile-schemas --strict --dry-run data/
+        language: system
+        files: \.gschema\.xml$
+        pass_filenames: false
+
+      - id: appstreamcli-validate
+        name: appstreamcli validate
+        entry: appstreamcli validate --no-net --explain
+        language: system
+        files: \.metainfo\.xml(\.in)?$
+
+      - id: desktop-file-validate
+        name: desktop-file-validate
+        entry: scripts/validate-desktop.sh
+        language: system
+        files: \.desktop(\.in)?$
+
+      - id: check-pot
+        name: translation template (.pot) is up to date
+        entry: scripts/check-pot.sh
+        language: system
+        files: ^(po/POTFILES\.in|src/.*\.(py|ui|blp)|data/.*\.(in|xml))$
+        pass_filenames: false
