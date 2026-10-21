@@ -2,6 +2,7 @@ data/io.github.revisto.drum-machine.desktop.in
 data/io.github.revisto.drum-machine.metainfo.xml.in
 data/io.github.revisto.drum-machine.gschema.xml
 src/application.py
+src/config/constants.py
 src/config/export_formats.py
 src/dialogs/audio_export_dialog.py
 src/dialogs/midi_mapping_dialog.py
