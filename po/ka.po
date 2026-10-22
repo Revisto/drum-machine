@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2026-08-24 15:19+0000\n"
-"PO-Revision-Date: 2026-08-25 06:55+0200\n"
+"POT-Creation-Date: 2026-10-21 04:25+0000\n"
+"PO-Revision-Date: 2026-10-22 06:45+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
@@ -123,6 +123,70 @@ msgstr "ხმები"
 msgid "The drum samples used in this application are from {link}."
 msgstr "დრამის ნუმუშები, რომლებიც ამ აპლიკაციაში გამოიყენება, მოდის ბმულიდან {link}."
 
+#: src/config/constants.py:25
+msgid "kick"
+msgstr "დარტყმა"
+
+#: src/config/constants.py:26
+msgid "kick-2"
+msgstr "დარტყმა-2"
+
+#: src/config/constants.py:27
+msgid "kick-3"
+msgstr "დარტყმა-3"
+
+#: src/config/constants.py:28
+msgid "snare"
+msgstr "დოლი"
+
+#: src/config/constants.py:29
+msgid "snare-2"
+msgstr "დოლი-2"
+
+#: src/config/constants.py:30
+msgid "hihat"
+msgstr "ჰაი-ჰეტი"
+
+#: src/config/constants.py:31
+msgid "hihat-2"
+msgstr "ჰაი-ჰეტი-2"
+
+#: src/config/constants.py:32
+msgid "clap"
+msgstr "ტაში"
+
+#: src/config/constants.py:33
+msgid "tom"
+msgstr "tom"
+
+#: src/config/constants.py:34
+msgid "crash"
+msgstr "crash"
+
+#: src/config/constants.py:39
+msgid "Shoot"
+msgstr "სროლა"
+
+#: src/config/constants.py:40
+msgid "Maybe Rock"
+msgstr "Maybe Rock"
+
+#: src/config/constants.py:41
+msgid "Boom Boom"
+msgstr "Boom Boom"
+
+#: src/config/constants.py:42
+msgid "Night"
+msgstr "ღამე"
+
+#: src/config/constants.py:43
+msgid "Slow"
+msgstr "ნელი"
+
+#: src/config/constants.py:44
+msgid "Chill"
+msgstr "ცივი"
+
 #: src/config/export_formats.py:44
 msgid "MP3 files"
 msgstr "MP3 ფაილები"
@@ -160,14 +224,17 @@ msgid "Save Audio File"
 msgstr "აუდიოფაილის შენახვა"
 
 #: src/dialogs/audio_export_dialog.py:148
+#, python-brace-format
 msgid "Part “{}” is Silent"
 msgstr "ნაწილი “{}” ჩუმია"
 
 #: src/dialogs/audio_export_dialog.py:150
+#, python-brace-format
 msgid "Parts “{}” and “{}” are Silent"
 msgstr "ნაწილები “{}” და “{}” ჩუმია"
 
 #: src/dialogs/audio_export_dialog.py:154
+#, python-brace-format
 msgid "{} Parts are Silent"
 msgstr "{} ნაწილი ჩუმია"
 
@@ -180,6 +247,7 @@ msgid "Select Cover Art"
 msgstr "აირჩიეთ ყდის სურათი"
 
 #: src/dialogs/audio_export_dialog.py:245
+#, python-brace-format
 msgid "Audio exported to {}"
 msgstr "აუდიო გატანილია ფაილში {}"
 
@@ -389,6 +457,7 @@ msgid "Note Assignment"
 msgstr "ნოტის მინიჭება"
 
 #: src/dialogs/midi_mapping_dialog.py:111
+#, python-brace-format
 msgid "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
 msgstr "მიანიჭეთ MIDI ნოტა '{}'-ისთვის. ეს უზრუნველყოფს სწორად დაკვრას გატანისას."
 
@@ -443,6 +512,7 @@ msgid "Selected item is not a file"
 msgstr "მონიშნული ელემენტი ფაილი არაა"
 
 #: src/handlers/drag_drop_handler.py:332
+#, python-brace-format
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr "ფაილი მეტისმეტად დიდია: {:.1f}მბ (მაქს 50მბ)"
 
@@ -451,23 +521,28 @@ msgid "No valid audio files found"
 msgstr "სწორი აუდიოფაილები აღმოჩენილი არაა"
 
 #: src/handlers/drag_drop_handler.py:402
+#, python-brace-format
 msgid "Error processing file: {}"
 msgstr "ფაილის დამუშავების შეცდომა: {}"
 
 #: src/handlers/drag_drop_handler.py:433
+#, python-brace-format
 msgid "Added {} drum part, {} files skipped"
 msgstr "დაემატა {} დრამის ნაწილი. გამოტოვებულია {} ფაილი"
 
 #: src/handlers/drag_drop_handler.py:439
+#, python-brace-format
 msgid "Added {} drum parts, {} files skipped"
 msgstr "დაემატა {} დრამის ნაწილი. გამოტოვებულია {} ფაილი"
 
 #: src/handlers/drag_drop_handler.py:444
+#, python-brace-format
 msgid "Added {} drum parts"
 msgstr "დაემატა {} დრამის ნაწილი"
 
 #. Only show skipped message if no replacement happened
 #: src/handlers/drag_drop_handler.py:447
+#, python-brace-format
 msgid "{} files skipped"
 msgstr "გამოტოვებულია {} ფაილი"
 
@@ -572,6 +647,7 @@ msgid "Select New Sound"
 msgstr "ახალი ხმის არჩევა"
 
 #: src/ui/drum_grid_builder.py:424
+#, python-brace-format
 msgid "Removed drum part: {}"
 msgstr "წაიშალა დრამის ნაწილი: {}"
 
@@ -581,11 +657,13 @@ msgstr "დრამის ნაწილის წაშლის შეცდ
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:220
+#, python-brace-format
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} დარტყმა წუთში (BPM)"
 
 #. Update button tooltip to show current volume level
 #: src/window.py:229
+#, python-brace-format
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% ხმა"
 
@@ -602,6 +680,7 @@ msgid "Open"
 msgstr "გახსნა"
 
 #: src/window.py:331
+#, python-brace-format
 msgid "Added: {}"
 msgstr "დაემატა: {}"
 
@@ -610,6 +689,7 @@ msgid "Failed to add custom sound"
 msgstr "მორგებული ხმის დამატება ჩავარდა"
 
 #: src/window.py:353
+#, python-brace-format
 msgid "Replaced drum with: {}"
 msgstr "დრამი ჩანაცვლდა: {}"
 
