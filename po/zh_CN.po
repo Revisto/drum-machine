@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2026-08-24 15:19+0000\n"
-"PO-Revision-Date: 2026-08-25 07:54+0800\n"
+"POT-Creation-Date: 2026-10-21 04:25+0000\n"
+"PO-Revision-Date: 2026-10-23 08:18+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 50.0\n"
+"X-Generator: Gtranslator 51.0\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
@@ -122,6 +122,70 @@ msgstr "声音"
 msgid "The drum samples used in this application are from {link}."
 msgstr "此应用程序中使用的击鼓采样来自于 {link}。"
 
+#: src/config/constants.py:25
+msgid "kick"
+msgstr "底鼓"
+
+#: src/config/constants.py:26
+msgid "kick-2"
+msgstr "底鼓-2"
+
+#: src/config/constants.py:27
+msgid "kick-3"
+msgstr "底鼓-3"
+
+#: src/config/constants.py:28
+msgid "snare"
+msgstr "军鼓"
+
+#: src/config/constants.py:29
+msgid "snare-2"
+msgstr "军鼓-2"
+
+#: src/config/constants.py:30
+msgid "hihat"
+msgstr "踩镲"
+
+#: src/config/constants.py:31
+msgid "hihat-2"
+msgstr "踩镲-2"
+
+#: src/config/constants.py:32
+msgid "clap"
+msgstr "拍手"
+
+#: src/config/constants.py:33
+msgid "tom"
+msgstr "桶鼓"
+
+#: src/config/constants.py:34
+msgid "crash"
+msgstr "碎音钹"
+
+#: src/config/constants.py:39
+msgid "Shoot"
+msgstr "射击"
+
+#: src/config/constants.py:40
+msgid "Maybe Rock"
+msgstr "轻摇滚"
+
+#: src/config/constants.py:41
+msgid "Boom Boom"
+msgstr "轰隆"
+
+#: src/config/constants.py:42
+msgid "Night"
+msgstr "夜晚"
+
+#: src/config/constants.py:43
+msgid "Slow"
+msgstr "慢速"
+
+#: src/config/constants.py:44
+msgid "Chill"
+msgstr "松弛"
+
 #: src/config/export_formats.py:44
 msgid "MP3 files"
 msgstr "MP3 文件"
@@ -159,14 +223,17 @@ msgid "Save Audio File"
 msgstr "保存音频文件"
 
 #: src/dialogs/audio_export_dialog.py:148
+#, python-brace-format
 msgid "Part “{}” is Silent"
 msgstr "“{}”部分是无声的"
 
 #: src/dialogs/audio_export_dialog.py:150
+#, python-brace-format
 msgid "Parts “{}” and “{}” are Silent"
 msgstr "“{}”和“{}”部分是无声的"
 
 #: src/dialogs/audio_export_dialog.py:154
+#, python-brace-format
 msgid "{} Parts are Silent"
 msgstr "{} 个部分是无声的"
 
@@ -179,6 +246,7 @@ msgid "Select Cover Art"
 msgstr "选择封面"
 
 #: src/dialogs/audio_export_dialog.py:245
+#, python-brace-format
 msgid "Audio exported to {}"
 msgstr "音频已导出至 {}"
 
@@ -388,6 +456,7 @@ msgid "Note Assignment"
 msgstr "音符分配"
 
 #: src/dialogs/midi_mapping_dialog.py:111
+#, python-brace-format
 msgid ""
 "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
 msgstr "为“{}”分配 MIDI 音符。这确保了导出时可以正确播放。"
@@ -443,6 +512,7 @@ msgid "Selected item is not a file"
 msgstr "选中项目不是文件"
 
 #: src/handlers/drag_drop_handler.py:332
+#, python-brace-format
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr "文件太大了：{:.1f}MB（最大 50MB）"
 
@@ -451,23 +521,28 @@ msgid "No valid audio files found"
 msgstr "未找到有效音频文件"
 
 #: src/handlers/drag_drop_handler.py:402
+#, python-brace-format
 msgid "Error processing file: {}"
 msgstr "处理文件时出错：{}"
 
 #: src/handlers/drag_drop_handler.py:433
+#, python-brace-format
 msgid "Added {} drum part, {} files skipped"
 msgstr "添加了 {} 个击鼓部分，跳过了 {} 个文件"
 
 #: src/handlers/drag_drop_handler.py:439
+#, python-brace-format
 msgid "Added {} drum parts, {} files skipped"
 msgstr "添加了 {} 个击鼓部分，跳过了 {} 个文件"
 
 #: src/handlers/drag_drop_handler.py:444
+#, python-brace-format
 msgid "Added {} drum parts"
 msgstr "添加了 {} 个击鼓部分"
 
 #. Only show skipped message if no replacement happened
 #: src/handlers/drag_drop_handler.py:447
+#, python-brace-format
 msgid "{} files skipped"
 msgstr "跳过了 {} 个文件"
 
@@ -573,6 +648,7 @@ msgid "Select New Sound"
 msgstr "选择新声音"
 
 #: src/ui/drum_grid_builder.py:424
+#, python-brace-format
 msgid "Removed drum part: {}"
 msgstr "已移除击鼓部分：{}"
 
@@ -582,11 +658,13 @@ msgstr "移除击鼓部分失败"
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:220
+#, python-brace-format
 msgid "{} Beats per Minute (BPM)"
 msgstr "每分钟 {} 节拍（BPM）"
 
 #. Update button tooltip to show current volume level
 #: src/window.py:229
+#, python-brace-format
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% 音量"
 
@@ -603,6 +681,7 @@ msgid "Open"
 msgstr "打开"
 
 #: src/window.py:331
+#, python-brace-format
 msgid "Added: {}"
 msgstr "已添加：{}"
 
@@ -611,6 +690,7 @@ msgid "Failed to add custom sound"
 msgstr "添加自定义声音失败"
 
 #: src/window.py:353
+#, python-brace-format
 msgid "Replaced drum with: {}"
 msgstr "已替换击鼓为：{}"
 
