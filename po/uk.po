@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2026-08-24 15:19+0000\n"
-"PO-Revision-Date: 2026-08-24 21:03+0300\n"
+"POT-Creation-Date: 2026-10-21 04:25+0000\n"
+"PO-Revision-Date: 2026-10-23 20:55+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -136,6 +136,70 @@ msgid "The drum samples used in this application are from {link}."
 msgstr ""
 "Перкусійні семпли, які використано у цій програмі, запозичено з {link}."
 
+#: src/config/constants.py:25
+msgid "kick"
+msgstr "удар"
+
+#: src/config/constants.py:26
+msgid "kick-2"
+msgstr "удар-2"
+
+#: src/config/constants.py:27
+msgid "kick-3"
+msgstr "удар-3"
+
+#: src/config/constants.py:28
+msgid "snare"
+msgstr "пастка"
+
+#: src/config/constants.py:29
+msgid "snare-2"
+msgstr "пастка-2"
+
+#: src/config/constants.py:30
+msgid "hihat"
+msgstr "хай-хет"
+
+#: src/config/constants.py:31
+msgid "hihat-2"
+msgstr "хай-хет-2"
+
+#: src/config/constants.py:32
+msgid "clap"
+msgstr "плескання"
+
+#: src/config/constants.py:33
+msgid "tom"
+msgstr "том"
+
+#: src/config/constants.py:34
+msgid "crash"
+msgstr "краш"
+
+#: src/config/constants.py:39
+msgid "Shoot"
+msgstr "Знімок"
+
+#: src/config/constants.py:40
+msgid "Maybe Rock"
+msgstr "Можливо, рок"
+
+#: src/config/constants.py:41
+msgid "Boom Boom"
+msgstr "Бум-бум"
+
+#: src/config/constants.py:42
+msgid "Night"
+msgstr "Ніч"
+
+#: src/config/constants.py:43
+msgid "Slow"
+msgstr "Повільно"
+
+#: src/config/constants.py:44
+msgid "Chill"
+msgstr "Розслаблення"
+
 #: src/config/export_formats.py:44
 msgid "MP3 files"
 msgstr "файли MP3"
@@ -173,14 +237,17 @@ msgid "Save Audio File"
 msgstr "Зберегти звуковий файл"
 
 #: src/dialogs/audio_export_dialog.py:148
+#, python-brace-format
 msgid "Part “{}” is Silent"
 msgstr "На партії «{}» вимкнено звук"
 
 #: src/dialogs/audio_export_dialog.py:150
+#, python-brace-format
 msgid "Parts “{}” and “{}” are Silent"
 msgstr "На партіях «{}» і «{}» вимкнено звук"
 
 #: src/dialogs/audio_export_dialog.py:154
+#, python-brace-format
 msgid "{} Parts are Silent"
 msgstr "На партіях {} вимкнено звук"
 
@@ -193,6 +260,7 @@ msgid "Select Cover Art"
 msgstr "Виберіть обкладинку"
 
 #: src/dialogs/audio_export_dialog.py:245
+#, python-brace-format
 msgid "Audio exported to {}"
 msgstr "Звукові дані експортовано до {}"
 
@@ -402,6 +470,7 @@ msgid "Note Assignment"
 msgstr "Прив'язка нот"
 
 #: src/dialogs/midi_mapping_dialog.py:111
+#, python-brace-format
 msgid ""
 "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
 msgstr ""
@@ -460,6 +529,7 @@ msgid "Selected item is not a file"
 msgstr "Вибраний запис не є файлом"
 
 #: src/handlers/drag_drop_handler.py:332
+#, python-brace-format
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr "Файл є надто великим: {:.1f}МБ (макс. 50МБ)"
 
@@ -468,23 +538,28 @@ msgid "No valid audio files found"
 msgstr "Не знайдено коректних файлів звукових даних"
 
 #: src/handlers/drag_drop_handler.py:402
+#, python-brace-format
 msgid "Error processing file: {}"
 msgstr "Помилка при обробці файла: {}"
 
 #: src/handlers/drag_drop_handler.py:433
+#, python-brace-format
 msgid "Added {} drum part, {} files skipped"
 msgstr "Додано партитуру ударних {}, {} файлів пропущено"
 
 #: src/handlers/drag_drop_handler.py:439
+#, python-brace-format
 msgid "Added {} drum parts, {} files skipped"
 msgstr "Додано партитури ударних {}, {} файлів пропущено"
 
 #: src/handlers/drag_drop_handler.py:444
+#, python-brace-format
 msgid "Added {} drum parts"
 msgstr "Додано партитури ударних {}"
 
 #. Only show skipped message if no replacement happened
 #: src/handlers/drag_drop_handler.py:447
+#, python-brace-format
 msgid "{} files skipped"
 msgstr "{} файлів пропущено"
 
@@ -590,6 +665,7 @@ msgid "Select New Sound"
 msgstr "Вибрати новий звук"
 
 #: src/ui/drum_grid_builder.py:424
+#, python-brace-format
 msgid "Removed drum part: {}"
 msgstr "Вилучено партитуру ударних: {}"
 
@@ -599,11 +675,13 @@ msgstr "Не вдалося вилучити партитуру ударних"
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:220
+#, python-brace-format
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} тактів на хвилину (BPM)"
 
 #. Update button tooltip to show current volume level
 #: src/window.py:229
+#, python-brace-format
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% гучності"
 
@@ -620,6 +698,7 @@ msgid "Open"
 msgstr "Відкрити"
 
 #: src/window.py:331
+#, python-brace-format
 msgid "Added: {}"
 msgstr "Додано: {}"
 
@@ -628,6 +707,7 @@ msgid "Failed to add custom sound"
 msgstr "Не вдалося додати нетиповий звук"
 
 #: src/window.py:353
+#, python-brace-format
 msgid "Replaced drum with: {}"
 msgstr "Замінено ударні на: {}"
 
@@ -738,7 +818,6 @@ msgid "Quit"
 msgstr "Вийти"
 
 #: src/gtk/shortcuts-dialog.blp:20
-#| msgid "Play"
 msgctxt "shortcut window"
 msgid "Playback"
 msgstr "Відтворення"
@@ -754,8 +833,6 @@ msgid "Clear All"
 msgstr "Очистити все"
 
 #: src/gtk/shortcuts-dialog.blp:34
-#| msgctxt "shortcut window"
-#| msgid "BPM & Volume Controls"
 msgctxt "shortcut window"
 msgid "BPM & Volume"
 msgstr "Темп і гучність"
@@ -786,7 +863,6 @@ msgid "Mute"
 msgstr "Вимкнути звук"
 
 #: src/gtk/shortcuts-dialog.blp:63
-#| msgid "No Pattern"
 msgctxt "shortcut window"
 msgid "Pattern"
 msgstr "Партитура"
