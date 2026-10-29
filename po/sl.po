@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2026-08-24 15:19+0000\n"
-"PO-Revision-Date: 2026-08-24 17:59+0200\n"
+"POT-Creation-Date: 2026-10-21 04:25+0000\n"
+"PO-Revision-Date: 2026-10-29 08:44+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -122,6 +122,70 @@ msgstr "Zvoki"
 msgid "The drum samples used in this application are from {link}."
 msgstr "Vzorci bobnov, uporabljeni v tem programu, izhajajo iz {link}."
 
+#: src/config/constants.py:25
+msgid "kick"
+msgstr "bas"
+
+#: src/config/constants.py:26
+msgid "kick-2"
+msgstr "bas-2"
+
+#: src/config/constants.py:27
+msgid "kick-3"
+msgstr "bas-3"
+
+#: src/config/constants.py:28
+msgid "snare"
+msgstr "maliboben"
+
+#: src/config/constants.py:29
+msgid "snare-2"
+msgstr "maliboben-2"
+
+#: src/config/constants.py:30
+msgid "hihat"
+msgstr "pedalničineli"
+
+#: src/config/constants.py:31
+msgid "hihat-2"
+msgstr "pedalničineli-2"
+
+#: src/config/constants.py:32
+msgid "clap"
+msgstr "plosk"
+
+#: src/config/constants.py:33
+msgid "tom"
+msgstr "prehodni"
+
+#: src/config/constants.py:34
+msgid "crash"
+msgstr "viseča"
+
+#: src/config/constants.py:39
+msgid "Shoot"
+msgstr "Udarno"
+
+#: src/config/constants.py:40
+msgid "Maybe Rock"
+msgstr "Morda rock"
+
+#: src/config/constants.py:41
+msgid "Boom Boom"
+msgstr "Bum bum"
+
+#: src/config/constants.py:42
+msgid "Night"
+msgstr "Nočno"
+
+#: src/config/constants.py:43
+msgid "Slow"
+msgstr "Počasi"
+
+#: src/config/constants.py:44
+msgid "Chill"
+msgstr "Skulirano"
+
 #: src/config/export_formats.py:44
 msgid "MP3 files"
 msgstr "Datoteke MP3"
@@ -159,14 +223,17 @@ msgid "Save Audio File"
 msgstr "Shrani zvočno datoteko"
 
 #: src/dialogs/audio_export_dialog.py:148
+#, python-brace-format
 msgid "Part “{}” is Silent"
 msgstr "Del »{}« je nem"
 
 #: src/dialogs/audio_export_dialog.py:150
+#, python-brace-format
 msgid "Parts “{}” and “{}” are Silent"
 msgstr "Dela »{}« in »{}« sta nema"
 
 #: src/dialogs/audio_export_dialog.py:154
+#, python-brace-format
 msgid "{} Parts are Silent"
 msgstr "{} delov je nemih"
 
@@ -179,6 +246,7 @@ msgid "Select Cover Art"
 msgstr "Izberi naslovnico"
 
 #: src/dialogs/audio_export_dialog.py:245
+#, python-brace-format
 msgid "Audio exported to {}"
 msgstr "Zvok, izvožen v {}"
 
@@ -216,7 +284,7 @@ msgstr "Električni mali boben"
 
 #: src/dialogs/midi_mapping_dialog.py:28
 msgid "Low Floor Tom"
-msgstr "Nizki stoječi tom-tom"
+msgstr "Nizki stoječi prehodni boben"
 
 #: src/dialogs/midi_mapping_dialog.py:29
 msgid "Closed Hi Hat"
@@ -224,7 +292,7 @@ msgstr "Zaprti pedalni čineli"
 
 #: src/dialogs/midi_mapping_dialog.py:30
 msgid "High Floor Tom"
-msgstr "Visoki stoječi tom-tom"
+msgstr "Visoki stoječi prehodni boben"
 
 #: src/dialogs/midi_mapping_dialog.py:31
 msgid "Pedal Hi Hat"
@@ -388,6 +456,7 @@ msgid "Note Assignment"
 msgstr "Dodelitev not"
 
 #: src/dialogs/midi_mapping_dialog.py:111
+#, python-brace-format
 msgid "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
 msgstr "Za »{}« dodelite noto MIDI. To zagotavlja pravilno predvajanje pri izvozu."
 
@@ -442,6 +511,7 @@ msgid "Selected item is not a file"
 msgstr "Izbrani element ni datoteka"
 
 #: src/handlers/drag_drop_handler.py:332
+#, python-brace-format
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr "Prevelika datoteka: {:.1f} MB (največ 50 MB)"
 
@@ -450,23 +520,28 @@ msgid "No valid audio files found"
 msgstr "Ni mogoče najti veljavnih zvočnih datotek"
 
 #: src/handlers/drag_drop_handler.py:402
+#, python-brace-format
 msgid "Error processing file: {}"
 msgstr "Datoteka pri obdelavi datoteke: {}"
 
 #: src/handlers/drag_drop_handler.py:433
+#, python-brace-format
 msgid "Added {} drum part, {} files skipped"
 msgstr "Dodan {} bobnarski del, {} datotek preskočenih"
 
 #: src/handlers/drag_drop_handler.py:439
+#, python-brace-format
 msgid "Added {} drum parts, {} files skipped"
 msgstr "Dodanih {} bobnarskih delov, {} datotek preskočenih"
 
 #: src/handlers/drag_drop_handler.py:444
+#, python-brace-format
 msgid "Added {} drum parts"
 msgstr "Dodanih {} bobnarskih delov"
 
 #. Only show skipped message if no replacement happened
 #: src/handlers/drag_drop_handler.py:447
+#, python-brace-format
 msgid "{} files skipped"
 msgstr "{} preskočenih datotek"
 
@@ -571,6 +646,7 @@ msgid "Select New Sound"
 msgstr "Izberite nov zvok"
 
 #: src/ui/drum_grid_builder.py:424
+#, python-brace-format
 msgid "Removed drum part: {}"
 msgstr "Odstranjen bobnarski del: {}"
 
@@ -580,11 +656,13 @@ msgstr "Ni uspelo odstraniti bobnarskega dela"
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:220
+#, python-brace-format
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} udarcev na minuto (BPM)"
 
 #. Update button tooltip to show current volume level
 #: src/window.py:229
+#, python-brace-format
 msgid "{:.0f}% Volume"
 msgstr "Glasnost {:.0f} %"
 
@@ -601,6 +679,7 @@ msgid "Open"
 msgstr "Odpri"
 
 #: src/window.py:331
+#, python-brace-format
 msgid "Added: {}"
 msgstr "Dodano: {}"
 
@@ -609,6 +688,7 @@ msgid "Failed to add custom sound"
 msgstr "Dodajanje zvoka po meri ni uspelo"
 
 #: src/window.py:353
+#, python-brace-format
 msgid "Replaced drum with: {}"
 msgstr "Boben zamenjan z: {}"
 
