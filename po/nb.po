@@ -1,15 +1,15 @@
 # Norwegian Bokmål translation for drum-machine.
 # Copyright (C) 2026 drum-machine's COPYRIGHT HOLDER
 # This file is distributed under the same license as the drum-machine package.
-# Kjartan Maraas <kjartan.maraas@gmail.com>, 2026.
+# Kjartan Maraas <kmaraas@gnome.org>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2025-12-21 22:38+0000\n"
-"PO-Revision-Date: 2026-05-14 23:06+0200\n"
-"Last-Translator: Kjartan Maraas <kjartan.maraas@proton.me>\n"
+"POT-Creation-Date: 2026-10-21 04:25+0000\n"
+"PO-Revision-Date: 2026-10-31 10:12+0100\n"
+"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian Bokmål <nb@li.org>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
@@ -89,6 +89,10 @@ msgstr ""
 msgid "Drum Pattern Loaded in Dark Mode"
 msgstr ""
 
+#: data/io.github.revisto.drum-machine.metainfo.xml.in:49
+msgid "Revisto"
+msgstr ""
+
 #: src/application.py:74
 msgid ""
 "Drum Machine is a modern and intuitive application for creating, playing, "
@@ -111,6 +115,70 @@ msgstr "Lyder"
 #, python-brace-format
 msgid "The drum samples used in this application are from {link}."
 msgstr ""
+
+#: src/config/constants.py:25
+msgid "kick"
+msgstr "basstromme"
+
+#: src/config/constants.py:26
+msgid "kick-2"
+msgstr "basstromme-2"
+
+#: src/config/constants.py:27
+msgid "kick-3"
+msgstr "basstromme-3"
+
+#: src/config/constants.py:28
+msgid "snare"
+msgstr "skarp"
+
+#: src/config/constants.py:29
+msgid "snare-2"
+msgstr "skarp-2"
+
+#: src/config/constants.py:30
+msgid "hihat"
+msgstr "hihat"
+
+#: src/config/constants.py:31
+msgid "hihat-2"
+msgstr "hihat-2"
+
+#: src/config/constants.py:32
+msgid "clap"
+msgstr "klapp"
+
+#: src/config/constants.py:33
+msgid "tom"
+msgstr "tam"
+
+#: src/config/constants.py:34
+msgid "crash"
+msgstr "krasj"
+
+#: src/config/constants.py:39
+msgid "Shoot"
+msgstr ""
+
+#: src/config/constants.py:40
+msgid "Maybe Rock"
+msgstr "Kanskje rock"
+
+#: src/config/constants.py:41
+msgid "Boom Boom"
+msgstr ""
+
+#: src/config/constants.py:42
+msgid "Night"
+msgstr "Natt"
+
+#: src/config/constants.py:43
+msgid "Slow"
+msgstr "Sakte"
+
+#: src/config/constants.py:44
+msgid "Chill"
+msgstr "Chill"
 
 #: src/config/export_formats.py:44
 msgid "MP3 files"
@@ -149,14 +217,17 @@ msgid "Save Audio File"
 msgstr "Lagre lydfil"
 
 #: src/dialogs/audio_export_dialog.py:148
+#, python-brace-format
 msgid "Part “{}” is Silent"
 msgstr ""
 
 #: src/dialogs/audio_export_dialog.py:150
+#, python-brace-format
 msgid "Parts “{}” and “{}” are Silent"
 msgstr ""
 
 #: src/dialogs/audio_export_dialog.py:154
+#, python-brace-format
 msgid "{} Parts are Silent"
 msgstr ""
 
@@ -169,6 +240,7 @@ msgid "Select Cover Art"
 msgstr "Velg omslagskunst"
 
 #: src/dialogs/audio_export_dialog.py:245
+#, python-brace-format
 msgid "Audio exported to {}"
 msgstr ""
 
@@ -378,6 +450,7 @@ msgid "Note Assignment"
 msgstr ""
 
 #: src/dialogs/midi_mapping_dialog.py:111
+#, python-brace-format
 msgid ""
 "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
 msgstr ""
@@ -433,6 +506,7 @@ msgid "Selected item is not a file"
 msgstr ""
 
 #: src/handlers/drag_drop_handler.py:332
+#, python-brace-format
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr ""
 
@@ -441,23 +515,28 @@ msgid "No valid audio files found"
 msgstr ""
 
 #: src/handlers/drag_drop_handler.py:402
+#, python-brace-format
 msgid "Error processing file: {}"
 msgstr ""
 
 #: src/handlers/drag_drop_handler.py:433
+#, python-brace-format
 msgid "Added {} drum part, {} files skipped"
 msgstr ""
 
 #: src/handlers/drag_drop_handler.py:439
+#, python-brace-format
 msgid "Added {} drum parts, {} files skipped"
 msgstr ""
 
 #: src/handlers/drag_drop_handler.py:444
+#, python-brace-format
 msgid "Added {} drum parts"
 msgstr ""
 
 #. Only show skipped message if no replacement happened
 #: src/handlers/drag_drop_handler.py:447
+#, python-brace-format
 msgid "{} files skipped"
 msgstr ""
 
@@ -563,6 +642,7 @@ msgid "Select New Sound"
 msgstr ""
 
 #: src/ui/drum_grid_builder.py:424
+#, python-brace-format
 msgid "Removed drum part: {}"
 msgstr ""
 
@@ -572,11 +652,13 @@ msgstr ""
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:220
+#, python-brace-format
 msgid "{} Beats per Minute (BPM)"
 msgstr ""
 
 #. Update button tooltip to show current volume level
 #: src/window.py:229
+#, python-brace-format
 msgid "{:.0f}% Volume"
 msgstr ""
 
@@ -593,6 +675,7 @@ msgid "Open"
 msgstr "Åpne"
 
 #: src/window.py:331
+#, python-brace-format
 msgid "Added: {}"
 msgstr ""
 
@@ -601,6 +684,7 @@ msgid "Failed to add custom sound"
 msgstr ""
 
 #: src/window.py:353
+#, python-brace-format
 msgid "Replaced drum with: {}"
 msgstr ""
 
@@ -665,15 +749,15 @@ msgstr "Tempo"
 
 #: src/window.ui:187
 msgid "Adjust Volume"
-msgstr ""
+msgstr "Juster volum"
 
 #: src/window.ui:210
 msgid "Clear"
-msgstr ""
+msgstr "Tøm"
 
 #: src/window.ui:211
 msgid "Clear the Drum Pattern"
-msgstr ""
+msgstr "Tøm trommemønsteret"
 
 #: src/window.ui:226
 msgid "_Add Samples…"
@@ -681,123 +765,123 @@ msgstr ""
 
 #: src/window.ui:230
 msgid "_Save Pattern…"
-msgstr ""
+msgstr "_Lagre mønster …"
 
 #: src/window.ui:236
 msgid "_Reset to Defaults"
-msgstr ""
+msgstr "Sett tilbake til fo_rvalg"
 
 #: src/window.ui:242
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Tastatursnarveier"
 
 #: src/window.ui:246
 msgid "_About Drum Machine"
-msgstr ""
+msgstr "_Om Trommemaskin"
 
-#: src/gtk/help-overlay.blp:11
+#: src/gtk/shortcuts-dialog.blp:6
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Generelt"
 
-#: src/gtk/help-overlay.blp:14
+#: src/gtk/shortcuts-dialog.blp:9
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Vis snarveier"
 
-#: src/gtk/help-overlay.blp:19
+#: src/gtk/shortcuts-dialog.blp:14
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Avslutt"
 
-#: src/gtk/help-overlay.blp:26
+#: src/gtk/shortcuts-dialog.blp:20
 msgctxt "shortcut window"
-msgid "Playback Controls"
-msgstr ""
+msgid "Playback"
+msgstr "Spill av"
 
-#: src/gtk/help-overlay.blp:29
+#: src/gtk/shortcuts-dialog.blp:23
 msgctxt "shortcut window"
 msgid "Play/Pause"
-msgstr ""
+msgstr "Spill av/pause"
 
-#: src/gtk/help-overlay.blp:35
+#: src/gtk/shortcuts-dialog.blp:28
 msgctxt "shortcut window"
 msgid "Clear All"
-msgstr ""
+msgstr "Tøm alle"
 
-#: src/gtk/help-overlay.blp:42
+#: src/gtk/shortcuts-dialog.blp:34
 msgctxt "shortcut window"
-msgid "BPM & Volume Controls"
+msgid "BPM & Volume"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:45
+#: src/gtk/shortcuts-dialog.blp:37
 msgctxt "shortcut window"
 msgid "Increase BPM"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:51
+#: src/gtk/shortcuts-dialog.blp:42
 msgctxt "shortcut window"
 msgid "Decrease BPM"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:57
+#: src/gtk/shortcuts-dialog.blp:47
 msgctxt "shortcut window"
 msgid "Increase Volume"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:63
+#: src/gtk/shortcuts-dialog.blp:52
 msgctxt "shortcut window"
 msgid "Decrease Volume"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:69
+#: src/gtk/shortcuts-dialog.blp:57
 msgctxt "shortcut window"
 msgid "Mute"
 msgstr "Demp"
 
-#: src/gtk/help-overlay.blp:76
+#: src/gtk/shortcuts-dialog.blp:63
 msgctxt "shortcut window"
-msgid "Pattern Management"
-msgstr ""
+msgid "Pattern"
+msgstr "Mønster"
 
-#: src/gtk/help-overlay.blp:79
+#: src/gtk/shortcuts-dialog.blp:66
 msgctxt "shortcut window"
 msgid "Load Pattern"
-msgstr ""
+msgstr "Last mønster"
 
-#: src/gtk/help-overlay.blp:85
+#: src/gtk/shortcuts-dialog.blp:71
 msgctxt "shortcut window"
 msgid "Save Pattern"
-msgstr ""
+msgstr "Lagre mønster"
 
-#: src/gtk/help-overlay.blp:91
+#: src/gtk/shortcuts-dialog.blp:76
 msgctxt "shortcut window"
 msgid "Export Audio"
-msgstr ""
+msgstr "Eksporter lyd"
 
-#: src/gtk/help-overlay.blp:98
+#: src/gtk/shortcuts-dialog.blp:82
 msgctxt "shortcut window"
 msgid "Navigation"
-msgstr ""
+msgstr "Navigering"
 
-#: src/gtk/help-overlay.blp:101
+#: src/gtk/shortcuts-dialog.blp:85
 msgctxt "shortcut window"
 msgid "Go to Instrument"
-msgstr ""
+msgstr "Gå til instrument"
 
-#: src/gtk/help-overlay.blp:107
+#: src/gtk/shortcuts-dialog.blp:90
 msgctxt "shortcut window"
 msgid "Previous Page"
-msgstr ""
+msgstr "Forrige side"
 
-#: src/gtk/help-overlay.blp:113
+#: src/gtk/shortcuts-dialog.blp:95
 msgctxt "shortcut window"
 msgid "Next Page"
-msgstr ""
+msgstr "Neste side"
 
 #: src/gtk/save-changes-dialog.blp:5
 msgid "Save Changes?"
-msgstr ""
+msgstr "Lagre endringer?"
 
 #: src/gtk/save-changes-dialog.blp:6
 msgid ""
@@ -850,7 +934,7 @@ msgstr "Navn på sang"
 
 #: src/gtk/audio-export-dialog.blp:77
 msgid "Cover Art"
-msgstr ""
+msgstr "Omslagsbilde"
 
 #: src/gtk/audio-export-dialog.blp:81
 msgid "Choose File…"
@@ -858,7 +942,7 @@ msgstr "Velg fil …"
 
 #: src/gtk/audio-export-dialog.blp:110
 msgid "Cancel Export"
-msgstr ""
+msgstr "Avbryt eksport"
 
 #: src/gtk/reset-defaults-dialog.blp:5
 msgid "Reset to Defaults?"
