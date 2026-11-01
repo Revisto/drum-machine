@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2026-08-24 15:19+0000\n"
-"PO-Revision-Date: 2026-09-20 16:32+0330\n"
+"POT-Creation-Date: 2026-10-21 04:25+0000\n"
+"PO-Revision-Date: 2026-11-01 16:19+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian\n"
 "Language: fa\n"
@@ -44,13 +44,13 @@ msgstr "ایجاد و پخش ضرب‌های کوبه‌ای"
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:9
 msgid ""
 "Drum Machine is a modern and intuitive application for creating, playing, and "
-"managing drum patterns. Perfect for musicians, producers, and anyone interested in "
-"rhythm creation, this application provides a simple interface for drum pattern "
-"programming. Have fun!"
+"managing drum patterns. Perfect for musicians, producers, and anyone interested "
+"in rhythm creation, this application provides a simple interface for drum "
+"pattern programming. Have fun!"
 msgstr ""
-"ماشین درام برنامه‌ای نوین و ادراکی برای ایجاد، پخش و مدیریت الگوهای کوبه‌ای است. این "
-"برنامه که مناسب آهنگسازان، تهیه‌کنندگان و هرکسی در تولید ضرباهنگ است، میانایی ساده "
-"برای برنامه ریزی الگوهای کوبه‌ای فراهم می‌کند. خوش بگذرانید!"
+"ماشین درام برنامه‌ای نوین و ادراکی برای ایجاد، پخش و مدیریت الگوهای کوبه‌ای است. "
+"این برنامه که مناسب آهنگسازان، تهیه‌کنندگان و هرکسی در تولید ضرباهنگ است، میانایی "
+"ساده برای برنامه ریزی الگوهای کوبه‌ای فراهم می‌کند. خوش بگذرانید!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
 msgid "Features:"
@@ -81,7 +81,8 @@ msgid "Multiple drum sounds including kick, snare, hi-hat, and more"
 msgstr "چندین صدای کوبه‌ای از جمله دهل، طبل، سنج و بیش‌تر"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:23
-msgid "Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
+msgid ""
+"Audio and MIDI export with support for WAV, FLAC, Ogg, MP3, and MIDI formats"
 msgstr "برون‌ریزی صدا و MIDI با پشتیبانی از قالب‌های WAV، ‏FLAC، ‏Ogg،‏ MP3 و MIDI"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:24
@@ -127,6 +128,70 @@ msgstr "صداها"
 #, python-brace-format
 msgid "The drum samples used in this application are from {link}."
 msgstr "منبع نمونه‌های کوبی استفاده شده در این برنامه: {link}."
+
+#: src/config/constants.py:25
+msgid "kick"
+msgstr "دهل"
+
+#: src/config/constants.py:26
+msgid "kick-2"
+msgstr "دها-۲"
+
+#: src/config/constants.py:27
+msgid "kick-3"
+msgstr "دهل-۳"
+
+#: src/config/constants.py:28
+msgid "snare"
+msgstr "طبل کوچک"
+
+#: src/config/constants.py:29
+msgid "snare-2"
+msgstr "طبل کوچک-2"
+
+#: src/config/constants.py:30
+msgid "hihat"
+msgstr "سنج دوتایی"
+
+#: src/config/constants.py:31
+msgid "hihat-2"
+msgstr "سنج دوتایی-۲"
+
+#: src/config/constants.py:32
+msgid "clap"
+msgstr "دست زدن"
+
+#: src/config/constants.py:33
+msgid "tom"
+msgstr "تام"
+
+#: src/config/constants.py:34
+msgid "crash"
+msgstr "کرش"
+
+#: src/config/constants.py:39
+msgid "Shoot"
+msgstr "شوت"
+
+#: src/config/constants.py:40
+msgid "Maybe Rock"
+msgstr "شاید راک"
+
+#: src/config/constants.py:41
+msgid "Boom Boom"
+msgstr "بوم بوم"
+
+#: src/config/constants.py:42
+msgid "Night"
+msgstr "شب"
+
+#: src/config/constants.py:43
+msgid "Slow"
+msgstr "آهسته"
+
+#: src/config/constants.py:44
+msgid "Chill"
+msgstr "لش"
 
 #: src/config/export_formats.py:44
 msgid "MP3 files"
@@ -834,8 +899,8 @@ msgid ""
 "Current pattern contains unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
-"الگوی کنونی تغییراتی ذخیره نشده دارد. تغییراتی که ذخیره نشده‌اند برای همیشه از دست "
-"خواهند رفت."
+"الگوی کنونی تغییراتی ذخیره نشده دارد. تغییراتی که ذخیره نشده‌اند برای همیشه از "
+"دست خواهند رفت."
 
 #. Translators: Cancel the operation
 #: src/gtk/save-changes-dialog.blp:14 src/gtk/reset-defaults-dialog.blp:13
