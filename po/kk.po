@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2026-08-24 15:19+0000\n"
-"PO-Revision-Date: 2026-08-29 11:45+0500\n"
+"POT-Creation-Date: 2026-10-21 04:25+0000\n"
+"PO-Revision-Date: 2026-11-06 22:36+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <Kazakh>\n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #: data/io.github.revisto.drum-machine.desktop.in:2
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:6 src/application.py:67
@@ -23,7 +23,8 @@ msgstr ""
 msgid "Drum Machine"
 msgstr "Барабан машинасы"
 
-#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localise the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.revisto.drum-machine.desktop.in:9
 msgid "drum;drums;sequencer;rhythm;music;pattern;beats;percussion;loop;groove;"
 msgstr ""
@@ -43,8 +44,8 @@ msgid ""
 msgstr ""
 "Drum Machine - барабан ойын үлгілерін жасауға, ойнатуға және басқаруға "
 "арналған заманауи және интуитивті қолданба. Музыканттарға, продюсерлерге "
-"және ырғақ жасауға қызығатындардың бәріне арналған бұл қолданба барабан ойын "
-"үлгілерін бағдарламалауға арналған қарапайым интерфейсті ұсынады. "
+"және ырғақ жасауға қызығатындардың бәріне арналған бұл қолданба барабан "
+"ойын үлгілерін бағдарламалауға арналған қарапайым интерфейсті ұсынады. "
 "Көңіліңізді көтеріңіз!"
 
 #: data/io.github.revisto.drum-machine.metainfo.xml.in:15
@@ -132,6 +133,70 @@ msgstr "Дыбыстар"
 msgid "The drum samples used in this application are from {link}."
 msgstr "Бұл қолданбада пайдаланылатын барабан семплдері {link} алынған."
 
+#: src/config/constants.py:25
+msgid "kick"
+msgstr "кик"
+
+#: src/config/constants.py:26
+msgid "kick-2"
+msgstr "кик-2"
+
+#: src/config/constants.py:27
+msgid "kick-3"
+msgstr "кик-3"
+
+#: src/config/constants.py:28
+msgid "snare"
+msgstr "снэр"
+
+#: src/config/constants.py:29
+msgid "snare-2"
+msgstr "снэр-2"
+
+#: src/config/constants.py:30
+msgid "hihat"
+msgstr "хай-хэт"
+
+#: src/config/constants.py:31
+msgid "hihat-2"
+msgstr "хай-хэт-2"
+
+#: src/config/constants.py:32
+msgid "clap"
+msgstr "шапалақ"
+
+#: src/config/constants.py:33
+msgid "tom"
+msgstr "том"
+
+#: src/config/constants.py:34
+msgid "crash"
+msgstr "крэш"
+
+#: src/config/constants.py:39
+msgid "Shoot"
+msgstr "Ату"
+
+#: src/config/constants.py:40
+msgid "Maybe Rock"
+msgstr "Мүмкін рок"
+
+#: src/config/constants.py:41
+msgid "Boom Boom"
+msgstr "Бум-бум"
+
+#: src/config/constants.py:42
+msgid "Night"
+msgstr "Түн"
+
+#: src/config/constants.py:43
+msgid "Slow"
+msgstr "Баяу"
+
+#: src/config/constants.py:44
+msgid "Chill"
+msgstr "Чилл"
+
 #: src/config/export_formats.py:44
 msgid "MP3 files"
 msgstr "MP3 файлдары"
@@ -169,14 +234,17 @@ msgid "Save Audio File"
 msgstr "Аудио файлын сақтау"
 
 #: src/dialogs/audio_export_dialog.py:148
+#, python-brace-format
 msgid "Part “{}” is Silent"
 msgstr "“{}” бөлігі дыбыссыз"
 
 #: src/dialogs/audio_export_dialog.py:150
+#, python-brace-format
 msgid "Parts “{}” and “{}” are Silent"
 msgstr "“{}” және “{}” бөліктері дыбыссыз"
 
 #: src/dialogs/audio_export_dialog.py:154
+#, python-brace-format
 msgid "{} Parts are Silent"
 msgstr "{} бөлік дыбыссыз"
 
@@ -189,6 +257,7 @@ msgid "Select Cover Art"
 msgstr "Мұқаба суретін таңдау"
 
 #: src/dialogs/audio_export_dialog.py:245
+#, python-brace-format
 msgid "Audio exported to {}"
 msgstr "Аудио {} файлына экспортталды"
 
@@ -398,6 +467,7 @@ msgid "Note Assignment"
 msgstr "Нотаны тағайындау"
 
 #: src/dialogs/midi_mapping_dialog.py:111
+#, python-brace-format
 msgid ""
 "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
 msgstr ""
@@ -455,6 +525,7 @@ msgid "Selected item is not a file"
 msgstr "Таңдалған нысан файл емес"
 
 #: src/handlers/drag_drop_handler.py:332
+#, python-brace-format
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr "Файл тым үлкен: {:.1f}МБ (макс. 50МБ)"
 
@@ -463,23 +534,28 @@ msgid "No valid audio files found"
 msgstr "Жарамды аудио файлдар табылмады"
 
 #: src/handlers/drag_drop_handler.py:402
+#, python-brace-format
 msgid "Error processing file: {}"
 msgstr "Файлды өңдеу қатесі: {}"
 
 #: src/handlers/drag_drop_handler.py:433
+#, python-brace-format
 msgid "Added {} drum part, {} files skipped"
 msgstr "{} барабан бөлігі қосылды, {} файл өткізілді"
 
 #: src/handlers/drag_drop_handler.py:439
+#, python-brace-format
 msgid "Added {} drum parts, {} files skipped"
 msgstr "{} барабан бөлігі қосылды, {} файл өткізілді"
 
 #: src/handlers/drag_drop_handler.py:444
+#, python-brace-format
 msgid "Added {} drum parts"
 msgstr "{} барабан бөлігі қосылды"
 
 #. Only show skipped message if no replacement happened
 #: src/handlers/drag_drop_handler.py:447
+#, python-brace-format
 msgid "{} files skipped"
 msgstr "{} файл өткізілді"
 
@@ -585,6 +661,7 @@ msgid "Select New Sound"
 msgstr "Жаңа дыбысты таңдау"
 
 #: src/ui/drum_grid_builder.py:424
+#, python-brace-format
 msgid "Removed drum part: {}"
 msgstr "Өшірілген барабан бөлігі: {}"
 
@@ -594,11 +671,13 @@ msgstr "Барабан бөлігін өшіру сәтсіз аяқталды"
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:220
+#, python-brace-format
 msgid "{} Beats per Minute (BPM)"
 msgstr "Минутына {} соққы (BPM)"
 
 #. Update button tooltip to show current volume level
 #: src/window.py:229
+#, python-brace-format
 msgid "{:.0f}% Volume"
 msgstr "Дыбыс деңгейі {:.0f}%"
 
@@ -615,6 +694,7 @@ msgid "Open"
 msgstr "Ашу"
 
 #: src/window.py:331
+#, python-brace-format
 msgid "Added: {}"
 msgstr "Қосылды: {}"
 
@@ -623,6 +703,7 @@ msgid "Failed to add custom sound"
 msgstr "Таңдауыңызша дыбысты қосу сәтсіз аяқталды"
 
 #: src/window.py:353
+#, python-brace-format
 msgid "Replaced drum with: {}"
 msgstr "Барабан мынаған алмастырылды: {}"
 
@@ -890,8 +971,8 @@ msgstr "Әдепкі мәндерге қайтару керек пе?"
 
 #: src/gtk/reset-defaults-dialog.blp:6
 msgid ""
-"This will clear the current pattern and restore all samples, BPM, and volume "
-"to their default values. This action cannot be undone."
+"This will clear the current pattern and restore all samples, BPM, and "
+"volume to their default values. This action cannot be undone."
 msgstr ""
 "Бұл ағымдағы ойын үлгісін тазартады және барлық сэмплдерді, BPM және дыбыс "
 "деңгейін олардың әдепкі мәндеріне қайтарады. Бұл әрекетті болдырмау мүмкін "
