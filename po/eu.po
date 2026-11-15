@@ -6,8 +6,8 @@
 msgid ""
 msgstr "Project-Id-Version: drum-machine master\n"
 "Report-Msgid-Bugs-To: https://github.com/revisto/drum-machine/issues\n"
-"POT-Creation-Date: 2026-08-24 15:19+0000\n"
-"PO-Revision-Date: 2026-09-13 13:12+0000\n"
+"POT-Creation-Date: 2026-10-21 04:25+0000\n"
+"PO-Revision-Date: 2026-11-15 13:12+0000\n"
 "Last-Translator: Asier Saratsua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "Language: eu\n"
@@ -114,6 +114,70 @@ msgstr "Soinuak"
 msgid "The drum samples used in this application are from {link}."
 msgstr "Aplikazio honetan erabilitako danbor-laginak {link} gunekoak dira."
 
+#: src/config/constants.py:25
+msgid "kick"
+msgstr "dunbala"
+
+#: src/config/constants.py:26
+msgid "kick-2"
+msgstr "dunbala-2"
+
+#: src/config/constants.py:27
+msgid "kick-3"
+msgstr "dunbala-3"
+
+#: src/config/constants.py:28
+msgid "snare"
+msgstr "kaxa"
+
+#: src/config/constants.py:29
+msgid "snare-2"
+msgstr "kaxa-2"
+
+#: src/config/constants.py:30
+msgid "hihat"
+msgstr "charlestona"
+
+#: src/config/constants.py:31
+msgid "hihat-2"
+msgstr "charlestona-2"
+
+#: src/config/constants.py:32
+msgid "clap"
+msgstr "txaloa"
+
+#: src/config/constants.py:33
+msgid "tom"
+msgstr "danborra"
+
+#: src/config/constants.py:34
+msgid "crash"
+msgstr "txindata"
+
+#: src/config/constants.py:39
+msgid "Shoot"
+msgstr "Metraileta"
+
+#: src/config/constants.py:40
+msgid "Maybe Rock"
+msgstr "Agian rocka"
+
+#: src/config/constants.py:41
+msgid "Boom Boom"
+msgstr "Boom boom"
+
+#: src/config/constants.py:42
+msgid "Night"
+msgstr "Gaua"
+
+#: src/config/constants.py:43
+msgid "Slow"
+msgstr "Motela"
+
+#: src/config/constants.py:44
+msgid "Chill"
+msgstr "Freskoa"
+
 #: src/config/export_formats.py:44
 msgid "MP3 files"
 msgstr "MP3 fitxategiak"
@@ -151,14 +215,17 @@ msgid "Save Audio File"
 msgstr "Gorde audio-fitxategia"
 
 #: src/dialogs/audio_export_dialog.py:148
+#, python-brace-format
 msgid "Part “{}” is Silent"
 msgstr "“{}” atala isila da"
 
 #: src/dialogs/audio_export_dialog.py:150
+#, python-brace-format
 msgid "Parts “{}” and “{}” are Silent"
 msgstr "“{}” eta “{}” atalak isilak dira"
 
 #: src/dialogs/audio_export_dialog.py:154
+#, python-brace-format
 msgid "{} Parts are Silent"
 msgstr "{} atal isilak dira"
 
@@ -171,6 +238,7 @@ msgid "Select Cover Art"
 msgstr "Hautatu azala"
 
 #: src/dialogs/audio_export_dialog.py:245
+#, python-brace-format
 msgid "Audio exported to {}"
 msgstr "Audioa hona esportatu da: {}"
 
@@ -220,7 +288,7 @@ msgstr "Zoru altuko danborra"
 
 #: src/dialogs/midi_mapping_dialog.py:31
 msgid "Pedal Hi Hat"
-msgstr "Pedal-cahrlestona"
+msgstr "Pedal-charlestona"
 
 #: src/dialogs/midi_mapping_dialog.py:32
 msgid "Low Tom"
@@ -236,7 +304,7 @@ msgstr "Danbor baxu-ertaina"
 
 #: src/dialogs/midi_mapping_dialog.py:35
 msgid "Hi-Mid Tom"
-msgstr "Danbora altu-ertaina"
+msgstr "Danbor altu-ertaina"
 
 #: src/dialogs/midi_mapping_dialog.py:36
 msgid "Crash Cymbal 1"
@@ -380,6 +448,7 @@ msgid "Note Assignment"
 msgstr "Nota-esleipena"
 
 #: src/dialogs/midi_mapping_dialog.py:111
+#, python-brace-format
 msgid ""
 "Assign a MIDI note for '{}'. This ensures correct playback when exporting."
 msgstr "Esleitu MIDI nota bat '{}' soinurako. Honek erreprodukzio zuzena ziurtatzen du esportatzean."
@@ -435,6 +504,7 @@ msgid "Selected item is not a file"
 msgstr "Hautatutako elementua ez da fitxategi bat"
 
 #: src/handlers/drag_drop_handler.py:332
+#, python-brace-format
 msgid "File too large: {:.1f}MB (max 50MB)"
 msgstr "Fitxategi luzeegia: {:.1f}MB (max 50MB)"
 
@@ -443,23 +513,28 @@ msgid "No valid audio files found"
 msgstr "Ez da aurkitu baliozko audio-fitxategirik"
 
 #: src/handlers/drag_drop_handler.py:402
+#, python-brace-format
 msgid "Error processing file: {}"
 msgstr "Errorea fitxategia prozesatzean: {}"
 
 #: src/handlers/drag_drop_handler.py:433
+#, python-brace-format
 msgid "Added {} drum part, {} files skipped"
 msgstr "Danbor-atal {} gehitu da, {} fitxategi saltatu dira"
 
 #: src/handlers/drag_drop_handler.py:439
+#, python-brace-format
 msgid "Added {} drum parts, {} files skipped"
 msgstr "{} danbor-atal gehitu dira, {} fitxategi saltatu dira"
 
 #: src/handlers/drag_drop_handler.py:444
+#, python-brace-format
 msgid "Added {} drum parts"
 msgstr "{} danbor-atal gehitu dira"
 
 #. Only show skipped message if no replacement happened
 #: src/handlers/drag_drop_handler.py:447
+#, python-brace-format
 msgid "{} files skipped"
 msgstr "{} fitxategi saltatu dira"
 
@@ -565,6 +640,7 @@ msgid "Select New Sound"
 msgstr "Hautatu soinu berria"
 
 #: src/ui/drum_grid_builder.py:424
+#, python-brace-format
 msgid "Removed drum part: {}"
 msgstr "Kendu danbor-atala: {}"
 
@@ -574,11 +650,13 @@ msgstr "Huts egin du danbor-atala kentzeak"
 
 #. Update tooltip and accessibility with current BPM
 #: src/window.py:220
+#, python-brace-format
 msgid "{} Beats per Minute (BPM)"
 msgstr "{} kolpe minutuko (BPM)"
 
 #. Update button tooltip to show current volume level
 #: src/window.py:229
+#, python-brace-format
 msgid "{:.0f}% Volume"
 msgstr "{:.0f}% bolumena"
 
@@ -595,6 +673,7 @@ msgid "Open"
 msgstr "Ireki"
 
 #: src/window.py:331
+#, python-brace-format
 msgid "Added: {}"
 msgstr "Gehitua: {}"
 
@@ -603,6 +682,7 @@ msgid "Failed to add custom sound"
 msgstr "Huts egin du soinu pertsonalizatua gehitzeak"
 
 #: src/window.py:353
+#, python-brace-format
 msgid "Replaced drum with: {}"
 msgstr "Ordeztu danborra honekin: {}"
 
@@ -828,7 +908,7 @@ msgstr "Esportatu audioa"
 
 #: src/gtk/audio-export-dialog.blp:44
 msgid "Audio Format"
-msgstr "Aidio-formatua"
+msgstr "Audio-formatua"
 
 #: src/gtk/audio-export-dialog.blp:50
 msgid "Repeat Count"
