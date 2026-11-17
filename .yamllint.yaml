@@ -1,0 +1,16 @@
+extends: default
+
+ignore: |
+  build/
+  builddir/
+  .flatpak-builder/
+
+rules:
+  document-start: disable
+  # Long shell one-liners are normal in CI and snap configs
+  line-length: disable
+  comments:
+    min-spaces-from-content: 1
+  truthy:
+    # GitHub Actions uses `on:` as a key
+    check-keys: false

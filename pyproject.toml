@@ -1,0 +1,31 @@
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+extend-exclude = '''
+/(
+  | \.flatpak-builder
+  | build
+  | builddir
+)/
+'''
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+extend-exclude = [".flatpak-builder", "build", "builddir"]
+# gettext's _() is installed as a builtin at runtime
+builtins = ["_"]
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle errors
+  "W",   # pycodestyle warnings
+  "F",   # pyflakes
+  "C90", # mccabe complexity
+]
+ignore = [
+  "E402", # module-level import not at top (GI version requirements)
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
